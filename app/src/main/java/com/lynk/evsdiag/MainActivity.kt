@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowInsets
 import android.view.WindowInsetsController
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
@@ -61,6 +62,11 @@ class MainActivity : AppCompatActivity() {
             requestRuntimeCarPermissions()
             startPolling()
         }
+
+        energyView.setActionCallbacks(
+            onSingleTripResetOptionChanged = ::changeSingleTripResetOption,
+            onSubtotalResetRequested = ::resetSubtotalTrip,
+        )
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -106,7 +112,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 energyView.setSnapshot(snapshot, isPreview = false)
                 energyView.setTrendPoints(
-                    trendStore.loadForLastDistance(snapshot.odometerKm),
+                    trendStore.loadForLastHours(24),
                 )
                 delay(5_000L)
             }
@@ -137,6 +143,52 @@ class MainActivity : AppCompatActivity() {
         }
         if (missing.isNotEmpty()) {
             requestPermissions(missing.toTypedArray(), CAR_PERMISSION_REQUEST)
+        }
+    }
+
+    private fun changeSingleTripResetOption(option: Int) {
+        if (previewMode) {
+            simulatedProperties.setSingleTripResetOption(option)
+            energyView.setSnapshot(simulatedProperties.snapshot(), isPreview = true)
+            return
+        }
+        lifecycleScope.launch {
+            val (success, refreshed) = withContext(Dispatchers.IO) {
+                val success = reader.writeSingleTripResetOption(option)
+                success to reader.readSnapshot()
+            }
+            val fallback = if (success) {
+                option
+            } else if (option == SimulatedCarProperties.RESET_OPTION_CHARGING) {
+                SimulatedCarProperties.RESET_OPTION_PARKING
+            } else {
+                SimulatedCarProperties.RESET_OPTION_CHARGING
+            }
+            energyView.setSnapshot(
+                refreshed.copy(singleTripResetOption = refreshed.singleTripResetOption ?: fallback),
+                isPreview = false,
+            )
+            if (!success) {
+                Toast.makeText(this@MainActivity, "车机未授权修改自动重置方式", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun resetSubtotalTrip() {
+        if (previewMode) {
+            simulatedProperties.resetSubtotalTrip()
+            energyView.setSnapshot(simulatedProperties.snapshot(), isPreview = true)
+            return
+        }
+        lifecycleScope.launch {
+            val (success, refreshed) = withContext(Dispatchers.IO) {
+                val success = reader.resetSubtotalTrip()
+                success to reader.readSnapshot()
+            }
+            energyView.setSnapshot(refreshed, isPreview = false)
+            if (!success) {
+                Toast.makeText(this@MainActivity, "车机未授权重置小计里程", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

@@ -57,8 +57,17 @@ Use `--es value null` to simulate an unavailable property.
 
 Version `0.6.0` removes the two bottom action pills from the energy page. Tap
 anywhere inside the large left information card, or swipe up, to open mileage
-statistics as a vertically stacked overlay. Tap the back/title area or swipe down
-to return. The statistics cards
-use current trip properties. The emulator synthesizes a curve around the simulated
-average; on a vehicle, the app stores real average-fuel samples with odometer
-positions and limits the chart to the latest 100 km.
+statistics with a short fade and upward offset. Tap the back/title area or swipe
+down to return.
+
+The original property mapping is preserved:
+
+- Trip area `2` is the current trip.
+- Trip area `1` is the subtotal trip.
+- Current-trip reset mode reads and writes property `612369152`, using the
+  original charging (`612369154`) and parking (`612369156`) option values.
+- Subtotal reset writes property `612368896` only after confirmation.
+
+The vehicle chart keeps real average-fuel samples and offers 12-hour and 24-hour
+windows. Resetting the subtotal values does not clear that history. The emulator
+keeps an independent synthetic curve so the same behavior can be verified.

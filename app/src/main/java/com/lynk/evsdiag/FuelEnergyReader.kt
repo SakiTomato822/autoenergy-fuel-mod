@@ -17,6 +17,7 @@ data class FuelEnergySnapshot(
     val trip2DistanceKm: Float?,
     val trip2AvgSpeed: Float?,
     val trip2DurationMinutes: Int?,
+    val singleTripResetOption: Int?,
     val diagnostics: List<String>,
 ) {
     val summary: String
@@ -42,6 +43,8 @@ class FuelEnergyReader(private val context: Context) {
         private const val API_TRIP_TOTAL_DISTANCE = 612373760
         private const val API_TRIP_AVG_SPEED = 612372992
         private const val API_TRIP_TOTAL_DURATION = 612374016
+        private const val API_SINGLE_TRIP_RESET_OPTION = 612369152
+        private const val API_SUBTOTAL_TRIP_RESET = 612368896
 
         private const val MAX_REASONABLE_RANGE_KM = 5000
         private const val MAX_REASONABLE_ODOMETER_KM = 2_000_000f
@@ -84,6 +87,14 @@ class FuelEnergyReader(private val context: Context) {
                 val trip2Distance = tripDistanceProp?.let { readWrappedFloat(mgr, it, 2, diagnostics, "trip2Distance") }
                 val trip2Speed = tripSpeedProp?.let { readWrappedFloat(mgr, it, 2, diagnostics, "trip2AvgSpeed") }
                 val trip2Duration = tripDurationProp?.let { readWrappedInt(mgr, it, 2, diagnostics, "trip2Duration") }
+                val singleTripResetOption = wrapperBridge?.readAdaptedInt(
+                    manager = mgr,
+                    API_SINGLE_TRIP_RESET_OPTION,
+                    isFunctionType = true,
+                    areaId = 0,
+                    diagnostics = diagnostics,
+                    label = "singleTripResetOption",
+                )
 
                 FuelEnergySnapshot(
                     avgFuelTrip1 = avgFuelTrip1,
@@ -98,6 +109,7 @@ class FuelEnergyReader(private val context: Context) {
                     trip2DistanceKm = trip2Distance,
                     trip2AvgSpeed = trip2Speed,
                     trip2DurationMinutes = trip2Duration,
+                    singleTripResetOption = singleTripResetOption,
                     diagnostics = diagnostics,
                 )
             } finally {
@@ -118,10 +130,55 @@ class FuelEnergyReader(private val context: Context) {
                 trip2DistanceKm = null,
                 trip2AvgSpeed = null,
                 trip2DurationMinutes = null,
+                singleTripResetOption = null,
                 diagnostics = diagnostics,
             )
         }
     }
+
+    fun writeSingleTripResetOption(value: Int): Boolean = withPropertyManager { mgr ->
+        val diagnostics = mutableListOf<String>()
+        val bridge = WrapperBridge.create(context, diagnostics) ?: return@withPropertyManager false
+        bridge.writeAdaptedInt(
+            manager = mgr,
+            apiId = API_SINGLE_TRIP_RESET_OPTION,
+            isFunctionType = true,
+            areaId = 0,
+            apiValue = value,
+            diagnostics = diagnostics,
+        )
+    } ?: false
+
+    fun resetSubtotalTrip(): Boolean = withPropertyManager { mgr ->
+        val diagnostics = mutableListOf<String>()
+        val bridge = WrapperBridge.create(context, diagnostics) ?: return@withPropertyManager false
+        bridge.writeBoolean(
+            manager = mgr,
+            apiId = API_SUBTOTAL_TRIP_RESET,
+            isFunctionType = true,
+            areaId = 0,
+            value = true,
+            diagnostics = diagnostics,
+        )
+    } ?: false
+
+    private fun <T> withPropertyManager(block: (Any) -> T): T? = runCatching {
+        val carClass = Class.forName("android.car.Car")
+        val car = carClass.getMethod("createCar", Context::class.java).invoke(null, context)
+            ?: return@runCatching null
+        try {
+            val propertyService = runCatching {
+                carClass.getField("PROPERTY_SERVICE").get(null) as String
+            }.getOrElse { "property" }
+            val manager = car.javaClass
+                .getMethod("getCarManager", String::class.java)
+                .invoke(car, propertyService)
+                ?: return@runCatching null
+            block(manager)
+        } finally {
+            runCatching { car.javaClass.getMethod("disconnect").invoke(car) }
+        }
+    }.getOrNull()
 
     private fun readWrappedInt(mgr: Any, propId: Int, areaId: Int, diagnostics: MutableList<String>, label: String): Int? {
         return runCatching {
@@ -263,9 +320,7 @@ class FuelEnergyReader(private val context: Context) {
         fun resolvePropertyId(apiId: Int, isFunctionType: Boolean, diagnostics: MutableList<String>): Int? {
             val wrappedType = if (isFunctionType) 2 else 3
             return try {
-                val wrappedObj = wrapper.javaClass
-                    .getMethod("getWrappedPropertyId", Int::class.javaPrimitiveType, Int::class.javaPrimitiveType)
-                    .invoke(wrapper, wrappedType, apiId)
+                val wrappedObj = wrappedProperty(apiId, isFunctionType)
                 val propId = wrappedObj?.javaClass?.getMethod("getPropertyId")?.invoke(wrappedObj) as? Int
                 diagnostics += "wrapper.map api=$apiId type=$wrappedType -> $propId"
                 propId
@@ -273,6 +328,97 @@ class FuelEnergyReader(private val context: Context) {
                 diagnostics += "wrapper.map api=$apiId type=$wrappedType error=${t.javaClass.simpleName}"
                 null
             }
+        }
+
+        fun readAdaptedInt(
+            manager: Any,
+            apiId: Int,
+            isFunctionType: Boolean,
+            areaId: Int,
+            diagnostics: MutableList<String>,
+            label: String,
+        ): Int? = runCatching {
+            val wrappedObj = wrappedProperty(apiId, isFunctionType)
+                ?: error("wrapper property unavailable")
+            val propertyId = wrappedObj.javaClass.getMethod("getPropertyId").invoke(wrappedObj) as Int
+            val rawValue = manager.javaClass
+                .getMethod("getIntProperty", Int::class.javaPrimitiveType, Int::class.javaPrimitiveType)
+                .invoke(manager, propertyId, areaId) as Int
+            val adaptMethod = wrappedObj.javaClass.methods.first {
+                it.name == "getPropertyAdaptValue" && it.parameterCount == 1
+            }
+            val apiValue = (adaptMethod.invoke(wrappedObj, rawValue) as Number).toInt()
+            diagnostics += "$label=$apiValue raw=$rawValue propertyId=$propertyId"
+            apiValue
+        }.getOrElse {
+            diagnostics += "$label adapt error=${it.javaClass.simpleName}: ${it.message}"
+            null
+        }
+
+        fun writeAdaptedInt(
+            manager: Any,
+            apiId: Int,
+            isFunctionType: Boolean,
+            areaId: Int,
+            apiValue: Int,
+            diagnostics: MutableList<String>,
+        ): Boolean = runCatching {
+            val wrappedObj = wrappedProperty(apiId, isFunctionType)
+                ?: error("wrapper property unavailable")
+            val propertyId = wrappedObj.javaClass.getMethod("getPropertyId").invoke(wrappedObj) as Int
+            val valueMethod = wrappedObj.javaClass.methods.first {
+                it.name == "getPropertyValue" && it.parameterCount == 1
+            }
+            val rawValue = (valueMethod.invoke(wrappedObj, apiValue) as Number).toInt()
+            manager.javaClass
+                .getMethod(
+                    "setIntProperty",
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType,
+                )
+                .invoke(manager, propertyId, areaId, rawValue)
+            diagnostics += "wrapper.write api=$apiId propertyId=$propertyId apiValue=$apiValue raw=$rawValue"
+            true
+        }.getOrElse {
+            diagnostics += "wrapper.write api=$apiId error=${it.javaClass.simpleName}: ${it.message}"
+            false
+        }
+
+        fun writeBoolean(
+            manager: Any,
+            apiId: Int,
+            isFunctionType: Boolean,
+            areaId: Int,
+            value: Boolean,
+            diagnostics: MutableList<String>,
+        ): Boolean = runCatching {
+            val propertyId = resolvePropertyId(apiId, isFunctionType, diagnostics)
+                ?: error("wrapper property unavailable")
+            manager.javaClass
+                .getMethod(
+                    "setBooleanProperty",
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType,
+                    Boolean::class.javaPrimitiveType,
+                )
+                .invoke(manager, propertyId, areaId, value)
+            diagnostics += "wrapper.writeBoolean api=$apiId propertyId=$propertyId value=$value"
+            true
+        }.getOrElse {
+            diagnostics += "wrapper.writeBoolean api=$apiId error=${it.javaClass.simpleName}: ${it.message}"
+            false
+        }
+
+        private fun wrappedProperty(apiId: Int, isFunctionType: Boolean): Any? {
+            val wrappedType = if (isFunctionType) 2 else 3
+            return wrapper.javaClass
+                .getMethod(
+                    "getWrappedPropertyId",
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType,
+                )
+                .invoke(wrapper, wrappedType, apiId)
         }
     }
 }

@@ -72,6 +72,11 @@ class FuelTrendStore(context: Context) {
         return if (distancePoints.isNotEmpty()) distancePoints else all.takeLast(1)
     }
 
+    fun loadForLastHours(hours: Int): List<FuelTrendPoint> {
+        val cutoff = System.currentTimeMillis() - hours.coerceAtLeast(1) * 60L * 60L * 1000L
+        return load().filter { it.timestampMs >= cutoff }
+    }
+
     private fun persist(points: List<FuelTrendPoint>) {
         val encoded = points.joinToString("|") {
             "${it.timestampMs},${it.value},${it.odometerKm ?: ""}"

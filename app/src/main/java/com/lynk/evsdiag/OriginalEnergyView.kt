@@ -31,6 +31,8 @@ class OriginalEnergyView @JvmOverloads constructor(
     companion object {
         private const val DESIGN_WIDTH = 1920f
         private const val DESIGN_HEIGHT = 1080f
+        private const val RESET_OPTION_CHARGING = 612369154
+        private const val RESET_OPTION_PARKING = 612369156
     }
 
     private val backgroundBitmap = decodeBitmap(R.drawable.energy_background_fuel_only)
@@ -42,6 +44,12 @@ class OriginalEnergyView @JvmOverloads constructor(
     private var touchDownX = 0f
     private var touchDownY = 0f
     private var trendPoints: List<FuelTrendPoint> = emptyList()
+    private var selectedResetOption = RESET_OPTION_PARKING
+    private var selectedHistoryHours = 12
+    private var previewCurveAverage = 11.2f
+    private var showSubtotalResetConfirmation = false
+    private var onSingleTripResetOptionChanged: ((Int) -> Unit)? = null
+    private var onSubtotalResetRequested: (() -> Unit)? = null
 
     private val medium = lynkcoTypeface(R.font.lynkco_type_medium)
     private val regular = medium
@@ -52,6 +60,13 @@ class OriginalEnergyView @JvmOverloads constructor(
     private val panelRect = RectF()
     private val mainEntryBounds = RectF(78f, 150f, 790f, 890f)
     private val statisticsBackBounds = RectF(42f, 36f, 315f, 142f)
+    private val parkingResetBounds = RectF(365f, 188f, 495f, 248f)
+    private val chargingResetBounds = RectF(495f, 188f, 625f, 248f)
+    private val subtotalResetBounds = RectF(500f, 610f, 625f, 666f)
+    private val history12Bounds = RectF(1545f, 188f, 1675f, 248f)
+    private val history24Bounds = RectF(1680f, 188f, 1810f, 248f)
+    private val resetDialogCancelBounds = RectF(1065f, 570f, 1195f, 630f)
+    private val resetDialogConfirmBounds = RectF(1210f, 570f, 1340f, 630f)
 
     private val curveOffsets = floatArrayOf(
         -2.6f, 1.8f, -4.1f, 0.6f, 4.8f, -1.5f, -3.2f, 2.5f, 7.2f, -0.8f,
@@ -68,12 +83,28 @@ class OriginalEnergyView @JvmOverloads constructor(
     fun setSnapshot(value: FuelEnergySnapshot, isPreview: Boolean) {
         snapshot = value
         preview = isPreview
+        if (isPreview && value.avgFuelTrip1 != null && value.avgFuelTrip1 > 0.1f) {
+            previewCurveAverage = value.avgFuelTrip1
+        }
+        if (value.singleTripResetOption == RESET_OPTION_CHARGING ||
+            value.singleTripResetOption == RESET_OPTION_PARKING
+        ) {
+            selectedResetOption = value.singleTripResetOption
+        }
         invalidate()
     }
 
     fun setTrendPoints(value: List<FuelTrendPoint>) {
         trendPoints = value
         invalidate()
+    }
+
+    fun setActionCallbacks(
+        onSingleTripResetOptionChanged: (Int) -> Unit,
+        onSubtotalResetRequested: () -> Unit,
+    ) {
+        this.onSingleTripResetOptionChanged = onSingleTripResetOptionChanged
+        this.onSubtotalResetRequested = onSubtotalResetRequested
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -88,10 +119,16 @@ class OriginalEnergyView @JvmOverloads constructor(
 
         drawMainPage(canvas)
         if (pageProgress > 0f) {
-            canvas.save()
-            canvas.translate(0f, DESIGN_HEIGHT * (1f - pageProgress))
+            val layer = canvas.saveLayerAlpha(
+                0f,
+                0f,
+                DESIGN_WIDTH,
+                DESIGN_HEIGHT,
+                (255f * pageProgress).roundToInt().coerceIn(0, 255),
+            )
+            canvas.translate(0f, 30f * (1f - pageProgress))
             drawMileageStatisticsPage(canvas)
-            canvas.restore()
+            canvas.restoreToCount(layer)
         }
 
         canvas.restore()
@@ -118,6 +155,27 @@ class OriginalEnergyView @JvmOverloads constructor(
                 val scale = min(width / DESIGN_WIDTH, height / DESIGN_HEIGHT)
                 if (scale <= 0f || pageAnimator?.isRunning == true) return true
 
+                performClick()
+                val contentDx = (width - DESIGN_WIDTH * scale) / 2f
+                val contentDy = (height - DESIGN_HEIGHT * scale) / 2f
+                val x = (event.x - contentDx) / scale
+                val y = (event.y - contentDy) / scale
+                if (showSubtotalResetConfirmation) {
+                    when {
+                        resetDialogCancelBounds.contains(x, y) -> {
+                            showSubtotalResetConfirmation = false
+                            invalidate()
+                        }
+
+                        resetDialogConfirmBounds.contains(x, y) -> {
+                            showSubtotalResetConfirmation = false
+                            invalidate()
+                            onSubtotalResetRequested?.invoke()
+                        }
+                    }
+                    return true
+                }
+
                 val deltaX = (event.x - touchDownX) / scale
                 val deltaY = (event.y - touchDownY) / scale
                 val isVerticalSwipe = abs(deltaY) > 120f && abs(deltaY) > abs(deltaX) * 1.2f
@@ -127,15 +185,20 @@ class OriginalEnergyView @JvmOverloads constructor(
                     return true
                 }
 
-                performClick()
-                val dx = (width - DESIGN_WIDTH * scale) / 2f
-                val dy = (height - DESIGN_HEIGHT * scale) / 2f
-                val x = (event.x - dx) / scale
-                val y = (event.y - dy) / scale
                 if (pageProgress < 0.5f && mainEntryBounds.contains(x, y)) {
                     animatePageTo(1f)
-                } else if (pageProgress >= 0.5f && statisticsBackBounds.contains(x, y)) {
-                    animatePageTo(0f)
+                } else if (pageProgress >= 0.5f) {
+                    when {
+                        statisticsBackBounds.contains(x, y) -> animatePageTo(0f)
+                        parkingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_PARKING)
+                        chargingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_CHARGING)
+                        subtotalResetBounds.contains(x, y) -> {
+                            showSubtotalResetConfirmation = true
+                            invalidate()
+                        }
+                        history12Bounds.contains(x, y) -> selectHistoryHours(12)
+                        history24Bounds.contains(x, y) -> selectHistoryHours(24)
+                    }
                 }
                 return true
             }
@@ -158,7 +221,7 @@ class OriginalEnergyView @JvmOverloads constructor(
     private fun animatePageTo(target: Float) {
         pageAnimator?.cancel()
         pageAnimator = ValueAnimator.ofFloat(pageProgress, target).apply {
-            duration = 360L
+            duration = 220L
             interpolator = DecelerateInterpolator()
             addUpdateListener {
                 pageProgress = it.animatedValue as Float
@@ -171,6 +234,19 @@ class OriginalEnergyView @JvmOverloads constructor(
         } else {
             "能量中心，点击左侧卡片查看里程统计"
         }
+    }
+
+    private fun selectResetOption(option: Int) {
+        if (selectedResetOption == option) return
+        selectedResetOption = option
+        invalidate()
+        onSingleTripResetOptionChanged?.invoke(option)
+    }
+
+    private fun selectHistoryHours(hours: Int) {
+        if (selectedHistoryHours == hours) return
+        selectedHistoryHours = hours
+        invalidate()
     }
 
     private fun drawLeftInformation(canvas: Canvas) {
@@ -197,8 +273,8 @@ class OriginalEnergyView @JvmOverloads constructor(
 
         line(canvas, 126f, 495f, 724f, 495f, Color.argb(80, 94, 176, 218))
 
-        metric(canvas, "平均油耗 · 本次", fuelText(data?.avgFuelTrip1), "L/100km", 126f, 566f)
-        metric(canvas, "平均油耗 · 长期", fuelText(data?.avgFuelTrip2), "L/100km", 430f, 566f)
+        metric(canvas, "平均油耗 · 本次", fuelText(data?.avgFuelTrip2), "L/100km", 126f, 566f)
+        metric(canvas, "平均油耗 · 长期", fuelText(data?.avgFuelTrip1), "L/100km", 430f, 566f)
         metric(canvas, "小计里程", distanceText(data?.trip1DistanceKm), "km", 126f, 716f)
         metric(canvas, "总里程", distanceText(data?.odometerKm), "km", 430f, 716f)
 
@@ -302,89 +378,133 @@ class OriginalEnergyView @JvmOverloads constructor(
         drawChevron(canvas, 74f, 90f, 17f, Color.WHITE, pointsRight = false)
         text(canvas, "里程统计", 118f, 105f, 40f, Color.WHITE, medium)
 
-        drawGlassPanel(canvas, RectF(78f, 165f, 650f, 492f))
-        drawGlassPanel(canvas, RectF(78f, 520f, 650f, 975f))
+        drawGlassPanel(canvas, RectF(78f, 165f, 650f, 555f))
+        drawGlassPanel(canvas, RectF(78f, 585f, 650f, 975f))
         drawGlassPanel(canvas, RectF(680f, 165f, 1840f, 975f))
 
         drawCurrentTripCard(canvas)
         drawTripSummaryCard(canvas)
         drawFuelCurveCard(canvas)
+        if (showSubtotalResetConfirmation) drawSubtotalResetConfirmation(canvas)
+    }
+
+    private fun drawSubtotalResetConfirmation(canvas: Canvas) {
+        paint.shader = null
+        paint.style = Paint.Style.FILL
+        paint.color = Color.argb(150, 0, 5, 9)
+        canvas.drawRect(0f, 0f, DESIGN_WIDTH, DESIGN_HEIGHT, paint)
+
+        val bounds = RectF(555f, 385f, 1365f, 665f)
+        paint.alpha = 255
+        paint.color = Color.WHITE
+        paint.shader = LinearGradient(
+            bounds.left,
+            bounds.top,
+            bounds.right,
+            bounds.bottom,
+            intArrayOf(Color.rgb(35, 55, 67), Color.rgb(22, 39, 50)),
+            null,
+            Shader.TileMode.CLAMP,
+        )
+        canvas.drawRoundRect(bounds, 16f, 16f, paint)
+        paint.shader = null
+        paint.style = Paint.Style.STROKE
+        paint.strokeWidth = 1.5f
+        paint.color = Color.argb(90, 182, 214, 229)
+        canvas.drawRoundRect(bounds, 16f, 16f, paint)
+        paint.style = Paint.Style.FILL
+
+        text(canvas, "重置小计里程", 610f, 458f, 31f, Color.WHITE, medium)
+        text(
+            canvas,
+            "确认清除小计里程累计数据？能耗曲线不会被重置。",
+            610f,
+            516f,
+            20f,
+            Color.rgb(190, 211, 222),
+            regular,
+        )
+        drawPill(canvas, resetDialogCancelBounds, "取消", active = false)
+        drawPill(canvas, resetDialogConfirmBounds, "重置", active = true)
     }
 
     private fun drawCurrentTripCard(canvas: Canvas) {
         val data = snapshot
         text(canvas, "本次里程", 122f, 226f, 31f, Color.WHITE, medium)
-        drawPill(canvas, RectF(385f, 190f, 510f, 246f), "停车重置", active = true)
-        drawPill(canvas, RectF(516f, 190f, 625f, 246f), "补能重置", active = false)
-
-        statMetric(
+        drawTwoSegmentControl(
             canvas,
-            durationText(data?.trip1DurationMinutes),
-            "行驶时长",
-            175f,
-            325f,
-        )
-        statMetric(
-            canvas,
-            distanceText(data?.trip1DistanceKm) + " km",
-            "行驶里程",
-            373f,
-            325f,
-        )
-        statMetric(
-            canvas,
-            speedText(data?.trip1AvgSpeed) + " km/h",
-            "平均车速",
-            555f,
-            325f,
+            RectF(365f, 188f, 625f, 248f),
+            leftLabel = "停车重置",
+            rightLabel = "补能重置",
+            leftActive = selectedResetOption != RESET_OPTION_CHARGING,
         )
 
-        line(canvas, 278f, 285f, 278f, 410f, Color.argb(85, 207, 225, 235))
-        line(canvas, 468f, 285f, 468f, 410f, Color.argb(85, 207, 225, 235))
+        val resetDescription = if (selectedResetOption == RESET_OPTION_CHARGING) {
+            "*当前为最近一次加油重置后到现在的里程数据，能耗曲线不会被重置"
+        } else {
+            "*当前为最近一次驻车重置后到现在的里程数据，能耗曲线不会被重置"
+        }
+        text(canvas, resetDescription, 122f, 282f, 15f, Color.rgb(174, 199, 211), regular)
+
+        statMetric(canvas, durationText(data?.trip2DurationMinutes), "行驶时长", 220f, 350f)
+        statMetric(canvas, distanceText(data?.trip2DistanceKm) + " km", "行驶里程", 505f, 350f)
+        statMetric(canvas, speedText(data?.trip2AvgSpeed) + " km/h", "平均车速", 220f, 472f)
+        statMetric(canvas, fuelText(data?.avgFuelTrip2) + " L/100km", "本次油耗", 505f, 472f)
+
+        line(canvas, 364f, 308f, 364f, 525f, Color.argb(85, 207, 225, 235))
+        line(canvas, 122f, 414f, 608f, 414f, Color.argb(70, 207, 225, 235))
     }
 
     private fun drawTripSummaryCard(canvas: Canvas) {
         val data = snapshot
-        text(canvas, "小计里程", 122f, 582f, 31f, Color.WHITE, medium)
-        drawPill(canvas, RectF(505f, 548f, 625f, 604f), "重置数据", active = false)
+        text(canvas, "小计里程", 122f, 646f, 31f, Color.WHITE, medium)
+        drawPill(canvas, subtotalResetBounds, "重置数据", active = false)
 
-        statMetric(canvas, durationText(data?.trip2DurationMinutes), "行驶时长", 175f, 677f)
-        statMetric(canvas, distanceText(data?.trip2DistanceKm), "行驶里程 km", 373f, 677f)
-        statMetric(canvas, speedText(data?.trip2AvgSpeed), "平均车速 km/h", 555f, 677f)
-        line(canvas, 278f, 635f, 278f, 746f, Color.argb(85, 207, 225, 235))
-        line(canvas, 468f, 635f, 468f, 746f, Color.argb(85, 207, 225, 235))
+        statMetric(canvas, durationText(data?.trip1DurationMinutes), "行驶时长", 220f, 755f)
+        statMetric(canvas, distanceText(data?.trip1DistanceKm) + " km", "行驶里程", 505f, 755f)
+        statMetric(canvas, speedText(data?.trip1AvgSpeed) + " km/h", "平均车速", 220f, 890f)
+        statMetric(canvas, fuelText(data?.avgFuelTrip1) + " L/100km", "平均油耗", 505f, 890f)
 
-        statMetric(canvas, fuelText(data?.avgFuelTrip2), "平均油耗 L/100km", 125f, 800f)
-        statMetric(canvas, fuelText(data?.avgFuelTrip1), "本次油耗 L/100km", 385f, 800f)
-        line(canvas, 350f, 770f, 350f, 862f, Color.argb(85, 207, 225, 235))
-
-        text(canvas, "能耗分布", 122f, 895f, 21f, Color.rgb(205, 221, 230), medium)
-        panelRect.set(122f, 918f, 606f, 930f)
-        paint.color = Color.rgb(20, 220, 92)
-        canvas.drawRoundRect(RectF(122f, 918f, 548f, 930f), 6f, 6f, paint)
-        paint.color = Color.rgb(37, 173, 245)
-        canvas.drawRect(548f, 918f, 588f, 930f, paint)
-        paint.color = Color.rgb(225, 232, 224)
-        canvas.drawRoundRect(RectF(588f, 918f, 606f, 930f), 6f, 6f, paint)
-        text(canvas, "驾驶 88%", 122f, 958f, 17f, Color.rgb(184, 205, 216), regular)
-        text(canvas, "空调 9%", 360f, 958f, 17f, Color.rgb(184, 205, 216), regular)
-        text(canvas, "其他 3%", 518f, 958f, 17f, Color.rgb(184, 205, 216), regular)
+        line(canvas, 364f, 700f, 364f, 940f, Color.argb(85, 207, 225, 235))
+        line(canvas, 122f, 822f, 608f, 822f, Color.argb(70, 207, 225, 235))
     }
 
     private fun drawFuelCurveCard(canvas: Canvas) {
         val data = snapshot
         text(canvas, "能耗曲线", 730f, 226f, 31f, Color.WHITE, medium)
-        drawChevron(canvas, 885f, 213f, 10f, Color.rgb(220, 232, 238), pointsRight = false, vertical = true)
 
-        drawPill(canvas, RectF(1295f, 188f, 1415f, 248f), "电耗", active = false)
-        drawPill(canvas, RectF(1418f, 188f, 1538f, 248f), "油耗", active = true)
-        drawPill(canvas, RectF(1570f, 188f, 1690f, 248f), "近50km", active = false)
-        drawPill(canvas, RectF(1693f, 188f, 1813f, 248f), "近100km", active = true)
+        drawPill(canvas, history12Bounds, "12小时", active = selectedHistoryHours == 12)
+        drawPill(canvas, history24Bounds, "24小时", active = selectedHistoryHours == 24)
 
-        val average = (data?.avgFuelTrip1 ?: 11.2f).coerceIn(1f, 20f)
+        val fallbackAverage = if (preview) {
+            previewCurveAverage
+        } else {
+            data?.avgFuelTrip1 ?: 11.2f
+        }.coerceIn(1f, 20f)
+        val now = System.currentTimeMillis()
+        val windowMs = selectedHistoryHours * 60L * 60L * 1000L
+        val cutoff = now - windowMs
+        val points: List<Pair<Float, Float>> = if (preview) {
+            curveOffsets.mapIndexed { index, offset ->
+                index / max(1f, curveOffsets.lastIndex.toFloat()) to
+                    (fallbackAverage + offset).coerceIn(1.5f, 20f)
+            }
+        } else {
+            val history = trendPoints
+                .filter { it.timestampMs >= cutoff }
+                .takeLast(1440)
+                .map {
+                    ((it.timestampMs - cutoff).toFloat() / windowMs)
+                        .coerceIn(0f, 1f) to it.value.coerceIn(0f, 20f)
+                }
+            if (history.size >= 2) history else {
+                listOf(0f to fallbackAverage, 1f to fallbackAverage)
+            }
+        }
+        val average = points.map { it.second }.average().toFloat().coerceIn(1f, 20f)
         text(canvas, "■", 730f, 306f, 18f, Color.rgb(20, 187, 244), medium)
         text(canvas, "L/100km", 755f, 306f, 19f, Color.rgb(210, 227, 236), regular)
-        val averageLabel = "平均油耗: ${fuelText(data?.avgFuelTrip1)} L/100km"
+        val averageLabel = "平均油耗: ${fuelText(average)} L/100km"
         paint.textSize = 19f
         paint.typeface = medium
         text(
@@ -410,16 +530,11 @@ class OriginalEnergyView @JvmOverloads constructor(
         line(canvas, chartLeft, chartTop, chartLeft, chartBottom, Color.argb(90, 185, 214, 228))
         line(canvas, chartLeft, chartBottom, chartRight, chartBottom, Color.argb(90, 185, 214, 228))
 
-        val points = if (preview) {
-            curveOffsets.map { (average + it).coerceIn(1.5f, 20f) }
-        } else {
-            val history = trendPoints.takeLast(60).map { it.value.coerceIn(0f, 20f) }
-            if (history.size >= 2) history else listOf(average, average)
-        }
         val curvePath = Path()
         val areaPath = Path()
-        points.forEachIndexed { index, value ->
-            val x = chartLeft + (chartRight - chartLeft) * index / max(1, points.lastIndex)
+        points.forEachIndexed { index, point ->
+            val x = chartLeft + (chartRight - chartLeft) * point.first
+            val value = point.second
             val y = chartBottom - (chartBottom - chartTop) * value / 20f
             if (index == 0) {
                 curvePath.moveTo(x, y)
@@ -462,7 +577,11 @@ class OriginalEnergyView @JvmOverloads constructor(
         canvas.drawCircle(chartRight, averageY, 6f, paint)
         text(canvas, fuelText(average), chartRight + 10f, averageY + 7f, 17f, Color.WHITE, medium)
 
-        val xLabels = listOf("-100km", "-80", "-60", "-40", "-20", "此刻")
+        val xLabels = if (selectedHistoryHours == 12) {
+            listOf("-12h", "-9h", "-6h", "-3h", "此刻")
+        } else {
+            listOf("-24h", "-18h", "-12h", "-6h", "此刻")
+        }
         xLabels.forEachIndexed { index, label ->
             val x = chartLeft + (chartRight - chartLeft) * index / (xLabels.size - 1)
             paint.textSize = 18f
@@ -493,6 +612,57 @@ class OriginalEnergyView @JvmOverloads constructor(
         paint.color = Color.argb(55, 213, 231, 240)
         canvas.drawRoundRect(bounds, 12f, 12f, paint)
         paint.style = Paint.Style.FILL
+    }
+
+    private fun drawTwoSegmentControl(
+        canvas: Canvas,
+        bounds: RectF,
+        leftLabel: String,
+        rightLabel: String,
+        leftActive: Boolean,
+    ) {
+        paint.style = Paint.Style.FILL
+        paint.color = Color.argb(92, 210, 221, 226)
+        canvas.drawRoundRect(bounds, 7f, 7f, paint)
+
+        val centerX = bounds.centerX()
+        val activeBounds = if (leftActive) {
+            RectF(bounds.left, bounds.top, centerX, bounds.bottom)
+        } else {
+            RectF(centerX, bounds.top, bounds.right, bounds.bottom)
+        }
+        paint.color = Color.rgb(8, 172, 235)
+        canvas.drawRoundRect(activeBounds, 7f, 7f, paint)
+        if (leftActive) {
+            canvas.drawRect(centerX - 7f, bounds.top, centerX, bounds.bottom, paint)
+        } else {
+            canvas.drawRect(centerX, bounds.top, centerX + 7f, bounds.bottom, paint)
+        }
+
+        line(
+            canvas,
+            centerX,
+            bounds.top + 10f,
+            centerX,
+            bounds.bottom - 10f,
+            Color.argb(80, 233, 242, 246),
+        )
+        centeredText(
+            canvas,
+            leftLabel,
+            RectF(bounds.left, bounds.top, centerX, bounds.bottom),
+            17f,
+            Color.WHITE,
+            medium,
+        )
+        centeredText(
+            canvas,
+            rightLabel,
+            RectF(centerX, bounds.top, bounds.right, bounds.bottom),
+            17f,
+            Color.WHITE,
+            medium,
+        )
     }
 
     private fun drawPill(canvas: Canvas, bounds: RectF, label: String, active: Boolean) {
