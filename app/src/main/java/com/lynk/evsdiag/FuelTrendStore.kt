@@ -5,6 +5,7 @@ import android.content.Context
 data class FuelTrendPoint(
     val timestampMs: Long,
     val value: Float,
+    val odometerKm: Float? = null,
 )
 
 class FuelTrendStore(context: Context) {
@@ -26,10 +27,11 @@ class FuelTrendStore(context: Context) {
         val points = raw.split("|")
             .mapNotNull { token ->
                 val parts = token.split(",")
-                if (parts.size != 2) return@mapNotNull null
+                if (parts.size !in 2..3) return@mapNotNull null
                 val ts = parts[0].toLongOrNull() ?: return@mapNotNull null
                 val value = parts[1].toFloatOrNull() ?: return@mapNotNull null
-                FuelTrendPoint(ts, value)
+                val odometerKm = parts.getOrNull(2)?.toFloatOrNull()
+                FuelTrendPoint(ts, value, odometerKm)
             }
             .filter { it.timestampMs >= cutoff }
             .takeLast(MAX_POINTS)
@@ -42,7 +44,7 @@ class FuelTrendStore(context: Context) {
         return points
     }
 
-    fun append(value: Float) {
+    fun append(value: Float, odometerKm: Float? = null) {
         val current = load().toMutableList()
         val now = System.currentTimeMillis()
         val last = current.lastOrNull()
@@ -53,14 +55,27 @@ class FuelTrendStore(context: Context) {
             val forcedSnapshotDue = deltaMs >= FORCED_SNAPSHOT_INTERVAL_MS
             if (tooSoon || (unchanged && !forcedSnapshotDue)) return
         }
-        current += FuelTrendPoint(now, value)
+        current += FuelTrendPoint(now, value, odometerKm)
         persist(current.takeLast(MAX_POINTS))
     }
 
     fun latest(): FuelTrendPoint? = load().lastOrNull()
 
+    fun loadForLastDistance(currentOdometerKm: Float?, distanceKm: Float = 100f): List<FuelTrendPoint> {
+        val all = load()
+        if (currentOdometerKm == null) return all
+        val cutoff = currentOdometerKm - distanceKm
+        val distancePoints = all.filter { point ->
+            val odometer = point.odometerKm ?: return@filter false
+            odometer in cutoff..(currentOdometerKm + 1f)
+        }
+        return if (distancePoints.isNotEmpty()) distancePoints else all.takeLast(1)
+    }
+
     private fun persist(points: List<FuelTrendPoint>) {
-        val encoded = points.joinToString("|") { "${it.timestampMs},${it.value}" }
+        val encoded = points.joinToString("|") {
+            "${it.timestampMs},${it.value},${it.odometerKm ?: ""}"
+        }
         prefs.edit().putString(PREF_KEY_POINTS, encoded).apply()
     }
 }

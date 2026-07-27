@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var reader: FuelEnergyReader
     private lateinit var energyView: OriginalEnergyView
     private lateinit var simulatedProperties: SimulatedCarProperties
+    private lateinit var trendStore: FuelTrendStore
     private var pollJob: Job? = null
     private var previewMode = false
     private var simulationReceiverRegistered = false
@@ -48,6 +49,7 @@ class MainActivity : AppCompatActivity() {
         enterImmersiveMode()
 
         reader = FuelEnergyReader(this)
+        trendStore = FuelTrendStore(this)
         energyView = findViewById(R.id.energyView)
 
         previewMode = runCatching { Class.forName("android.car.Car") }.isFailure
@@ -98,7 +100,14 @@ class MainActivity : AppCompatActivity() {
         pollJob = lifecycleScope.launch {
             while (isActive) {
                 val snapshot = withContext(Dispatchers.IO) { reader.readSnapshot() }
+                val averageFuel = snapshot.avgFuelTrip1 ?: snapshot.avgFuelTrip2
+                if (averageFuel != null) {
+                    trendStore.append(averageFuel, snapshot.odometerKm)
+                }
                 energyView.setSnapshot(snapshot, isPreview = false)
+                energyView.setTrendPoints(
+                    trendStore.loadForLastDistance(snapshot.odometerKm),
+                )
                 delay(5_000L)
             }
         }

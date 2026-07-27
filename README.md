@@ -52,3 +52,13 @@ Use `--es value null` to simulate an unavailable property.
 | Trip distance | `612373760` | `1` or `2` |
 | Trip average speed | `612372992` | `1` or `2` |
 | Trip duration | `612374016` | `1` or `2` |
+
+## Mileage statistics navigation
+
+Version `0.6.0` removes the two bottom action pills from the energy page. Tap
+anywhere inside the large left information card, or swipe up, to open mileage
+statistics as a vertically stacked overlay. Tap the back/title area or swipe down
+to return. The statistics cards
+use current trip properties. The emulator synthesizes a curve around the simulated
+average; on a vehicle, the app stores real average-fuel samples with odometer
+positions and limits the chart to the latest 100 km.

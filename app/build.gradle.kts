@@ -11,8 +11,8 @@ android {
         applicationId = "com.lynk.autoenergyfuel"
         minSdk = 30
         targetSdk = 34
-        versionCode = 12
-        versionName = "0.5.0-carproperty-simulator"
+        versionCode = 13
+        versionName = "0.6.0-mileage-navigation"
     }
 
     buildTypes {
