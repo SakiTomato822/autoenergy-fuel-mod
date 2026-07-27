@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">能量中心</string>
+    <string name="title">Fuel Energy Space</string>
+    <string name="subtitle">Independent package based on the original AutoEnergy read path. Fuel-first layout, electric UI trimmed, and local trend line used when the factory fuel curve is missing.</string>
+    <string name="check_root_button">Root Check</string>
+    <string name="refresh_button">Refresh</string>
+    <string name="root_status_default">Root is optional here. Primary data path follows the original AutoEnergy property chain.</string>
+    <string name="data_status_default">Waiting for vehicle properties…</string>
+    <string name="primary_range_label">Remaining Range</string>
+    <string name="primary_range_unit">km</string>
+    <string name="card_avg_fuel_trip1">Avg Fuel Trip 1</string>
+    <string name="card_avg_fuel_trip2">Avg Fuel Trip 2</string>
+    <string name="card_fuel_percent">Fuel Level</string>
+    <string name="card_oil_range">Fuel Range</string>
+    <string name="card_total_odo">Odometer</string>
+    <string name="card_unit">Source</string>
+    <string name="trend_title">Fuel Trend</string>
+    <string name="trend_hint">This line is a local trend built from readable average fuel samples. It fills the gap when the factory fuel array is absent.</string>
+    <string name="trip_section">Trip Snapshot</string>
+    <string name="diag_section">Diagnostics</string>
+</resources>
