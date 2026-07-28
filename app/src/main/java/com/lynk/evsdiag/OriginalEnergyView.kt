@@ -16,6 +16,7 @@ import android.graphics.Typeface
 import android.graphics.fonts.Font
 import android.graphics.fonts.FontFamily
 import android.util.AttributeSet
+import android.view.HapticFeedbackConstants
 import android.view.MotionEvent
 import android.view.View
 import android.view.animation.DecelerateInterpolator
@@ -50,6 +51,7 @@ class OriginalEnergyView @JvmOverloads constructor(
     private var showSubtotalResetConfirmation = false
     private var onSingleTripResetOptionChanged: ((Int) -> Unit)? = null
     private var onSubtotalResetRequested: (() -> Unit)? = null
+    private var onDiagnosticsRequested: (() -> Unit)? = null
 
     private val medium = lynkcoTypeface(R.font.lynkco_type_medium)
     private val regular = medium
@@ -68,10 +70,15 @@ class OriginalEnergyView @JvmOverloads constructor(
     private val resetDialogCancelBounds = RectF(1065f, 570f, 1195f, 630f)
     private val resetDialogConfirmBounds = RectF(1210f, 570f, 1340f, 630f)
 
-    private val curveOffsets = floatArrayOf(
+    private val curveOffsets12Hours = floatArrayOf(
         -2.6f, 1.8f, -4.1f, 0.6f, 4.8f, -1.5f, -3.2f, 2.5f, 7.2f, -0.8f,
         5.9f, -2.1f, 1.1f, -4.5f, 3.7f, -1.2f, 6.4f, -3.4f, 0.9f, 8.0f,
         -0.5f, 4.3f, -2.8f, 2.1f, -3.7f, 0.5f, 5.2f, -1.7f, 1.6f, 6.9f,
+    )
+    private val curveOffsets24Hours = floatArrayOf(
+        -1.5f, -0.8f, 0.4f, 1.8f, 0.9f, -0.6f, -1.4f, 0.2f, 2.6f,
+        1.1f, -0.9f, -1.7f, -0.3f, 1.5f, 3.2f, 1.4f, 0.1f, -1.2f,
+        -0.5f, 0.8f, 2.1f, 1.0f, -0.7f, 0.3f, 1.6f,
     )
 
     init {
@@ -102,9 +109,11 @@ class OriginalEnergyView @JvmOverloads constructor(
     fun setActionCallbacks(
         onSingleTripResetOptionChanged: (Int) -> Unit,
         onSubtotalResetRequested: () -> Unit,
+        onDiagnosticsRequested: () -> Unit,
     ) {
         this.onSingleTripResetOptionChanged = onSingleTripResetOptionChanged
         this.onSubtotalResetRequested = onSubtotalResetRequested
+        this.onDiagnosticsRequested = onDiagnosticsRequested
     }
 
     override fun onDraw(canvas: Canvas) {
@@ -178,6 +187,18 @@ class OriginalEnergyView @JvmOverloads constructor(
 
                 val deltaX = (event.x - touchDownX) / scale
                 val deltaY = (event.y - touchDownY) / scale
+                val pressDurationMs = event.eventTime - event.downTime
+                if (
+                    pageProgress < 0.5f &&
+                    pressDurationMs >= 1_200L &&
+                    abs(deltaX) < 45f &&
+                    abs(deltaY) < 45f &&
+                    mainEntryBounds.contains(x, y)
+                ) {
+                    performHapticFeedback(HapticFeedbackConstants.LONG_PRESS)
+                    onDiagnosticsRequested?.invoke()
+                    return true
+                }
                 val isVerticalSwipe = abs(deltaY) > 120f && abs(deltaY) > abs(deltaX) * 1.2f
                 if (isVerticalSwipe) {
                     if (pageProgress < 0.5f && deltaY < 0f) animatePageTo(1f)
@@ -485,8 +506,13 @@ class OriginalEnergyView @JvmOverloads constructor(
         val windowMs = selectedHistoryHours * 60L * 60L * 1000L
         val cutoff = now - windowMs
         val points: List<Pair<Float, Float>> = if (preview) {
-            curveOffsets.mapIndexed { index, offset ->
-                index / max(1f, curveOffsets.lastIndex.toFloat()) to
+            val offsets = if (selectedHistoryHours == 12) {
+                curveOffsets12Hours
+            } else {
+                curveOffsets24Hours
+            }
+            offsets.mapIndexed { index, offset ->
+                index / max(1f, offsets.lastIndex.toFloat()) to
                     (fallbackAverage + offset).coerceIn(1.5f, 20f)
             }
         } else {

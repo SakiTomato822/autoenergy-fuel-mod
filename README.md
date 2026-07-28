@@ -70,4 +70,26 @@ The original property mapping is preserved:
 
 The vehicle chart keeps real average-fuel samples and offers 12-hour and 24-hour
 windows. Resetting the subtotal values does not clear that history. The emulator
-keeps an independent synthetic curve so the same behavior can be verified.
+keeps separate 12-hour and 24-hour synthetic histories so the switch can be
+verified without vehicle data.
+
+## Diagnostic logs
+
+Version `0.6.1` adds persistent diagnostic logging for vehicle-data access,
+permission results, CarProperty mapping, data availability changes, reset
+actions, and unexpected failures. Routine polling is summarized once a minute
+instead of writing every five seconds.
+
+Long-press the large left information card for about 1.2 seconds to open the
+in-app log viewer. It can refresh, copy, or clear the log. The active log is also
+stored here on the head unit:
+
+```text
+/sdcard/Android/data/com.lynk.autoenergyfuel/files/logs/autoenergy.log
+```
+
+The file rolls at 768 KiB and keeps two backups. It can be collected over ADB:
+
+```powershell
+adb pull /sdcard/Android/data/com.lynk.autoenergyfuel/files/logs/autoenergy.log
+```

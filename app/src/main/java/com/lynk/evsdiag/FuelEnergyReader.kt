@@ -136,31 +136,49 @@ class FuelEnergyReader(private val context: Context) {
         }
     }
 
-    fun writeSingleTripResetOption(value: Int): Boolean = withPropertyManager { mgr ->
+    fun writeSingleTripResetOption(value: Int): Boolean {
         val diagnostics = mutableListOf<String>()
-        val bridge = WrapperBridge.create(context, diagnostics) ?: return@withPropertyManager false
-        bridge.writeAdaptedInt(
-            manager = mgr,
-            apiId = API_SINGLE_TRIP_RESET_OPTION,
-            isFunctionType = true,
-            areaId = 0,
-            apiValue = value,
-            diagnostics = diagnostics,
-        )
-    } ?: false
+        val result = withPropertyManager { mgr ->
+            val bridge = WrapperBridge.create(context, diagnostics) ?: return@withPropertyManager false
+            bridge.writeAdaptedInt(
+                manager = mgr,
+                apiId = API_SINGLE_TRIP_RESET_OPTION,
+                isFunctionType = true,
+                areaId = 0,
+                apiValue = value,
+                diagnostics = diagnostics,
+            )
+        } ?: false
+        diagnostics.forEach { AppLog.d("WRITE", it) }
+        if (result) {
+            AppLog.i("WRITE", "single-trip reset option succeeded value=$value")
+        } else {
+            AppLog.w("WRITE", "single-trip reset option failed value=$value")
+        }
+        return result
+    }
 
-    fun resetSubtotalTrip(): Boolean = withPropertyManager { mgr ->
+    fun resetSubtotalTrip(): Boolean {
         val diagnostics = mutableListOf<String>()
-        val bridge = WrapperBridge.create(context, diagnostics) ?: return@withPropertyManager false
-        bridge.writeBoolean(
-            manager = mgr,
-            apiId = API_SUBTOTAL_TRIP_RESET,
-            isFunctionType = true,
-            areaId = 0,
-            value = true,
-            diagnostics = diagnostics,
-        )
-    } ?: false
+        val result = withPropertyManager { mgr ->
+            val bridge = WrapperBridge.create(context, diagnostics) ?: return@withPropertyManager false
+            bridge.writeBoolean(
+                manager = mgr,
+                apiId = API_SUBTOTAL_TRIP_RESET,
+                isFunctionType = true,
+                areaId = 0,
+                value = true,
+                diagnostics = diagnostics,
+            )
+        } ?: false
+        diagnostics.forEach { AppLog.d("WRITE", it) }
+        if (result) {
+            AppLog.i("WRITE", "subtotal reset succeeded")
+        } else {
+            AppLog.w("WRITE", "subtotal reset failed")
+        }
+        return result
+    }
 
     private fun <T> withPropertyManager(block: (Any) -> T): T? = runCatching {
         val carClass = Class.forName("android.car.Car")
@@ -178,6 +196,8 @@ class FuelEnergyReader(private val context: Context) {
         } finally {
             runCatching { car.javaClass.getMethod("disconnect").invoke(car) }
         }
+    }.onFailure {
+        AppLog.e("CAR", "failed to acquire/use CarPropertyManager", it)
     }.getOrNull()
 
     private fun readWrappedInt(mgr: Any, propId: Int, areaId: Int, diagnostics: MutableList<String>, label: String): Int? {
