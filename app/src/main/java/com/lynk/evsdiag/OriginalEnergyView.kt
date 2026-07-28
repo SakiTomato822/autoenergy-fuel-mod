@@ -10,6 +10,7 @@ import android.graphics.DashPathEffect
 import android.graphics.LinearGradient
 import android.graphics.Paint
 import android.graphics.Path
+import android.graphics.Rect
 import android.graphics.RectF
 import android.graphics.Shader
 import android.graphics.Typeface
@@ -31,7 +32,7 @@ class OriginalEnergyView @JvmOverloads constructor(
 ) : View(context, attrs) {
     companion object {
         private const val DESIGN_WIDTH = 1920f
-        private const val DESIGN_HEIGHT = 1080f
+        private const val DESIGN_HEIGHT = 968f
         private const val RESET_OPTION_CHARGING = 612369154
         private const val RESET_OPTION_PARKING = 612369156
     }
@@ -400,8 +401,8 @@ class OriginalEnergyView @JvmOverloads constructor(
         text(canvas, "里程统计", 118f, 105f, 40f, Color.WHITE, medium)
 
         drawGlassPanel(canvas, RectF(78f, 165f, 650f, 555f))
-        drawGlassPanel(canvas, RectF(78f, 585f, 650f, 975f))
-        drawGlassPanel(canvas, RectF(680f, 165f, 1840f, 975f))
+        drawGlassPanel(canvas, RectF(78f, 585f, 650f, 952f))
+        drawGlassPanel(canvas, RectF(680f, 165f, 1840f, 952f))
 
         drawCurrentTripCard(canvas)
         drawTripSummaryCard(canvas)
@@ -821,7 +822,16 @@ class OriginalEnergyView @JvmOverloads constructor(
 
     private fun drawBitmapLayer(canvas: Canvas, bitmap: Bitmap?) {
         if (bitmap == null) return
-        canvas.drawBitmap(bitmap, null, RectF(0f, 0f, DESIGN_WIDTH, DESIGN_HEIGHT), paint)
+        val sourceHeight = min(
+            bitmap.height,
+            (bitmap.width * DESIGN_HEIGHT / DESIGN_WIDTH).roundToInt(),
+        )
+        canvas.drawBitmap(
+            bitmap,
+            Rect(0, 0, bitmap.width, sourceHeight),
+            RectF(0f, 0f, DESIGN_WIDTH, DESIGN_HEIGHT),
+            paint,
+        )
     }
 
     private fun fuelCylinder(): Bitmap? {

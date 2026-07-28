@@ -6,11 +6,11 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.os.Build
 import android.os.Bundle
-import android.view.View
-import android.view.WindowInsets
-import android.view.WindowInsetsController
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        WindowCompat.setDecorFitsSystemWindows(window, true)
         AppLog.initialize(this)
         val metrics = resources.displayMetrics
         AppLog.i(
@@ -59,11 +60,11 @@ class MainActivity : AppCompatActivity() {
                 "display=${metrics.widthPixels}x${metrics.heightPixels}@${metrics.densityDpi}dpi",
         )
         setContentView(R.layout.activity_main)
-        enterImmersiveMode()
 
         reader = FuelEnergyReader(this)
         trendStore = FuelTrendStore(this)
         energyView = findViewById(R.id.energyView)
+        logContentViewport()
 
         previewMode = runCatching { Class.forName("android.car.Car") }.isFailure
         if (previewMode) {
@@ -82,11 +83,6 @@ class MainActivity : AppCompatActivity() {
             onSubtotalResetRequested = ::resetSubtotalTrip,
             onDiagnosticsRequested = ::openDiagnostics,
         )
-    }
-
-    override fun onWindowFocusChanged(hasFocus: Boolean) {
-        super.onWindowFocusChanged(hasFocus)
-        if (hasFocus) enterImmersiveMode()
     }
 
     override fun onStart() {
@@ -147,21 +143,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun enterImmersiveMode() {
-        if (android.os.Build.VERSION.SDK_INT >= 30) {
-            window.insetsController?.apply {
-                hide(WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars())
-                systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
-            }
-        } else {
-            @Suppress("DEPRECATION")
-            window.decorView.systemUiVisibility =
-                View.SYSTEM_UI_FLAG_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or
-                    View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY or
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN or
-                    View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION or
-                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+    private fun logContentViewport() {
+        energyView.post {
+            val insets = ViewCompat.getRootWindowInsets(energyView)
+                ?.getInsets(WindowInsetsCompat.Type.systemBars())
+            AppLog.i(
+                "DISPLAY",
+                "content=${energyView.width}x${energyView.height} " +
+                    "systemInsets=${insets?.left},${insets?.top},${insets?.right},${insets?.bottom} " +
+                    "decorFitsSystemWindows=true",
+            )
         }
     }
 

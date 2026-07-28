@@ -1,5 +1,6 @@
 .gradle/
 .idea/
+artifacts/
 **/build/
 local.properties
 *.jks

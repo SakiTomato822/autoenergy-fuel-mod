@@ -11,7 +11,7 @@
 <p align="center">
   <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
   <img alt="API 30" src="https://img.shields.io/badge/API-30-566C7A">
-  <img alt="Version 0.6.1" src="https://img.shields.io/badge/version-v0.6.1-16ACE3">
+  <img alt="Version 0.6.2" src="https://img.shields.io/badge/version-v0.6.2-16ACE3">
   <a href="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml">
     <img alt="Build debug APK" src="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml/badge.svg">
   </a>
@@ -35,6 +35,7 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 - 独立的 12 小时 / 24 小时油耗曲线
 - 原车停车重置、补能重置和小计里程重置属性写入
 - API 30、16:9 横屏车机布局
+- 为车机状态栏和底部 SystemUI 保留安全区域
 - 内置 CarProperty 模拟器与多种驾驶场景
 - 持久化滚动诊断日志和应用内日志查看器
 - 领克车机字体适配
@@ -65,7 +66,7 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 | 项目 | 当前状态 |
 | --- | --- |
 | 最低系统 | Android 11 / API 30 |
-| 目标画布 | 16:9 横屏，主要按 1920×1080 调试 |
+| 目标屏幕 | 16:9 横屏，1920×1080；应用内容画布为 1920×968 |
 | 车辆环境 | 领克 / Flyme Auto，依赖厂商 CarProperty 与 AdapterAPI |
 | 模拟器 | 无 `android.car.Car` 时自动启用内置模拟数据 |
 | 原厂应用 | 使用独立包名，不覆盖原厂包 |
@@ -73,6 +74,8 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 | 数据写入 | 重置操作会调用车辆属性，务必先在安全环境验证 |
 
 不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车建议先只观察数据读取情况，并通过诊断日志确认属性映射，再尝试重置操作。不要在驾驶过程中调试、操作 ADB 或查看日志。
+
+`v0.6.2` 会自动探测车机上的 `AdapterAPIImpl` 构造方式；若包装器仍不可用，则依据已提取版本的实现启用属性 ID 原样直通，并把实际构造器、映射结果和底层异常写入日志，便于继续适配不同系统版本。
 
 ## 构建
 
@@ -195,6 +198,7 @@ tools/                 辅助验证脚本
 - `v0.5.0`：模拟器与燃油主界面基线
 - `v0.6.0`：里程统计页面与纯油车布局
 - `v0.6.1`：诊断日志、12h / 24h 曲线修复与 API 30 验证
+- `v0.6.2`：SystemUI 安全区、AdapterAPI 构造器探测与属性 ID 直通兼容
 
 ## 声明
 
