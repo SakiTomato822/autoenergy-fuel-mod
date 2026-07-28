@@ -11,7 +11,7 @@
 <p align="center">
   <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
   <img alt="API 30" src="https://img.shields.io/badge/API-30-566C7A">
-  <img alt="Version 0.6.2" src="https://img.shields.io/badge/version-v0.6.2-16ACE3">
+  <img alt="Version 0.6.3" src="https://img.shields.io/badge/version-v0.6.3-16ACE3">
   <a href="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml">
     <img alt="Build debug APK" src="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml/badge.svg">
   </a>
@@ -66,7 +66,7 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 | 项目 | 当前状态 |
 | --- | --- |
 | 最低系统 | Android 11 / API 30 |
-| 目标屏幕 | 16:9 横屏，1920×1080；应用内容画布为 1920×968 |
+| 目标屏幕 | 16:9 横屏，1920×1080；实车 SystemUI 安全内容区为 1920×896 |
 | 车辆环境 | 领克 / Flyme Auto，依赖厂商 CarProperty 与 AdapterAPI |
 | 模拟器 | 无 `android.car.Car` 时自动启用内置模拟数据 |
 | 原厂应用 | 使用独立包名，不覆盖原厂包 |
@@ -75,7 +75,9 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 
 不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车建议先只观察数据读取情况，并通过诊断日志确认属性映射，再尝试重置操作。不要在驾驶过程中调试、操作 ADB 或查看日志。
 
-`v0.6.2` 会自动探测车机上的 `AdapterAPIImpl` 构造方式；若包装器仍不可用，则依据已提取版本的实现启用属性 ID 原样直通，并把实际构造器、映射结果和底层异常写入日志，便于继续适配不同系统版本。
+`v0.6.3` 根据 DHU615G 实车日志兼容 CarProperty 的实际数值类型：Flyme 将平均油耗和里程以 `Integer` 十分位值返回，应用会在读取后乘以 `0.1`，不再强制转换为 `Float`。燃油百分比还会尝试 Android 标准 `FUEL_LEVEL / INFO_FUEL_CAPACITY` 降级计算，续航可在标准油量与平均油耗均可读时估算。
+
+原厂燃油百分比、原厂续航和总里程在部分固件上受系统签名级 `CAR_VENDOR_EXTENSION` 权限保护。独立签名 APK 无法通过普通运行时授权取得该权限；此时应用只会使用可读的标准属性或显示空值，并在诊断日志中写明 `SecurityException`，不会伪造实车数据。
 
 ## 构建
 
@@ -199,6 +201,7 @@ tools/                 辅助验证脚本
 - `v0.6.0`：里程统计页面与纯油车布局
 - `v0.6.1`：诊断日志、12h / 24h 曲线修复与 API 30 验证
 - `v0.6.2`：SystemUI 安全区、AdapterAPI 构造器探测与属性 ID 直通兼容
+- `v0.6.3`：整数十分位 CarProperty 兼容、标准油量降级与签名权限诊断
 
 ## 声明
 

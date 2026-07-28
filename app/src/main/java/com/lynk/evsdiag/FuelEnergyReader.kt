@@ -4,6 +4,7 @@ import android.content.Context
 import dalvik.system.DexClassLoader
 import java.io.File
 import java.lang.reflect.InvocationTargetException
+import kotlin.math.roundToInt
 
 data class FuelEnergySnapshot(
     val avgFuelTrip1: Float?,
@@ -35,6 +36,8 @@ data class FuelEnergySnapshot(
 
 class FuelEnergyReader(private val context: Context) {
     companion object {
+        private const val DIRECT_INFO_FUEL_CAPACITY = 291504388
+        private const val DIRECT_FUEL_LEVEL = 291504903
         private const val DIRECT_RANGE_REMAINING = 291504904
         private const val DIRECT_PERF_ODOMETER = 291504644
 
@@ -87,21 +90,78 @@ class FuelEnergyReader(private val context: Context) {
                 val tripSpeedProp = wrapperBridge.resolvePropertyId(API_TRIP_AVG_SPEED, true, diagnostics)
                 val tripDurationProp = wrapperBridge.resolvePropertyId(API_TRIP_TOTAL_DURATION, true, diagnostics)
 
-                val totalRange = readDirectFloatAsInt(mgr, DIRECT_RANGE_REMAINING, 0, diagnostics, "rangeRemaining")
-                val fuelPercent = fuelPercentProp?.let { readWrappedInt(mgr, it, 0, diagnostics, "fuelPercent") }
-                val oilRange = oilRangeProp?.let { readWrappedFloatAsInt(mgr, it, 0, diagnostics, "oilRange") }
-                val odometer = readDirectPropertyFloat(mgr, DIRECT_PERF_ODOMETER, 0, diagnostics, "perfOdometer")
+                // The Flyme adapter returns Integer tenths for average fuel and trip distance
+                // on this DHU. Reading them through getFloatProperty causes ClassCastException.
+                val avgFuelTrip1 = avgFuelProp?.let {
+                    readNumericProperty(mgr, it, 1, diagnostics, "avgFuelTrip1", integerScale = 0.1f)
+                }
+                val avgFuelTrip2 = avgFuelProp?.let {
+                    readNumericProperty(mgr, it, 2, diagnostics, "avgFuelTrip2", integerScale = 0.1f)
+                }
 
-                val avgFuelTrip1 = avgFuelProp?.let { readWrappedFloat(mgr, it, 1, diagnostics, "avgFuelTrip1") }
-                val avgFuelTrip2 = avgFuelProp?.let { readWrappedFloat(mgr, it, 2, diagnostics, "avgFuelTrip2") }
-
-                val trip1Distance = tripDistanceProp?.let { readWrappedFloat(mgr, it, 1, diagnostics, "trip1Distance") }
-                val trip1Speed = tripSpeedProp?.let { readWrappedFloat(mgr, it, 1, diagnostics, "trip1AvgSpeed") }
+                val trip1Distance = tripDistanceProp?.let {
+                    readNumericProperty(mgr, it, 1, diagnostics, "trip1Distance", integerScale = 0.1f)
+                }
+                val trip1Speed = tripSpeedProp?.let {
+                    readNumericProperty(mgr, it, 1, diagnostics, "trip1AvgSpeed")
+                }
                 val trip1Duration = tripDurationProp?.let { readWrappedInt(mgr, it, 1, diagnostics, "trip1Duration") }
 
-                val trip2Distance = tripDistanceProp?.let { readWrappedFloat(mgr, it, 2, diagnostics, "trip2Distance") }
-                val trip2Speed = tripSpeedProp?.let { readWrappedFloat(mgr, it, 2, diagnostics, "trip2AvgSpeed") }
+                val trip2Distance = tripDistanceProp?.let {
+                    readNumericProperty(mgr, it, 2, diagnostics, "trip2Distance", integerScale = 0.1f)
+                }
+                val trip2Speed = tripSpeedProp?.let {
+                    readNumericProperty(mgr, it, 2, diagnostics, "trip2AvgSpeed")
+                }
                 val trip2Duration = tripDurationProp?.let { readWrappedInt(mgr, it, 2, diagnostics, "trip2Duration") }
+
+                val vendorFuelPercent = fuelPercentProp?.let {
+                    readWrappedInt(mgr, it, 0, diagnostics, "fuelPercent")
+                }
+                val fuelLevel = readNumericProperty(
+                    mgr,
+                    DIRECT_FUEL_LEVEL,
+                    0,
+                    diagnostics,
+                    "fuelLevel",
+                )
+                val fuelCapacity = readNumericProperty(
+                    mgr,
+                    DIRECT_INFO_FUEL_CAPACITY,
+                    0,
+                    diagnostics,
+                    "fuelCapacity",
+                )
+                val derivedFuelPercent = deriveFuelPercent(fuelLevel, fuelCapacity, diagnostics)
+                val fuelPercent = vendorFuelPercent ?: derivedFuelPercent
+
+                val standardRange = readNumericProperty(
+                    mgr,
+                    DIRECT_RANGE_REMAINING,
+                    0,
+                    diagnostics,
+                    "rangeRemaining",
+                )?.roundToInt()
+                val vendorOilRange = oilRangeProp?.let {
+                    readNumericProperty(mgr, it, 0, diagnostics, "oilRange")?.roundToInt()
+                }
+                val calculatedRange = deriveRange(
+                    fuelLevel = fuelLevel,
+                    fuelCapacity = fuelCapacity,
+                    fuelPercent = fuelPercent,
+                    averageFuel = avgFuelTrip2 ?: avgFuelTrip1,
+                    diagnostics = diagnostics,
+                )
+                val oilRange = vendorOilRange ?: standardRange ?: calculatedRange
+                val totalRange = standardRange ?: oilRange
+
+                val odometer = readNumericProperty(
+                    mgr,
+                    DIRECT_PERF_ODOMETER,
+                    0,
+                    diagnostics,
+                    "perfOdometer",
+                )
                 val singleTripResetOption = wrapperBridge.readAdaptedInt(
                     manager = mgr,
                     API_SINGLE_TRIP_RESET_OPTION,
@@ -241,6 +301,92 @@ class FuelEnergyReader(private val context: Context) {
         }
     }
 
+    /**
+     * Reads CarPropertyValue without declaring an expected boxed type. ECARX/Flyme exposes
+     * several logical float properties as Integer tenths, and the typed API then throws a
+     * ClassCastException before the app can inspect the actual value.
+     */
+    private fun readNumericProperty(
+        mgr: Any,
+        propId: Int,
+        areaId: Int,
+        diagnostics: MutableList<String>,
+        label: String,
+        integerScale: Float = 1f,
+    ): Float? {
+        val genericResult = runCatching {
+            val propertyValue = mgr.javaClass
+                .getMethod(
+                    "getProperty",
+                    Int::class.javaPrimitiveType,
+                    Int::class.javaPrimitiveType,
+                )
+                .invoke(mgr, propId, areaId)
+                ?: error("getProperty returned null")
+            propertyValue.javaClass.getMethod("getValue").invoke(propertyValue) as? Number
+                ?: error("property value is not numeric")
+        }
+
+        genericResult.getOrNull()?.let { raw ->
+            val isInteger = raw is Byte || raw is Short || raw is Int || raw is Long
+            val scale = if (isInteger) integerScale else 1f
+            val value = raw.toFloat() * scale
+            diagnostics += "$label=$value raw=$raw type=${raw.javaClass.simpleName} scale=$scale via getProperty($propId,$areaId)"
+            return sanitizeFloat(label, value, diagnostics)
+        }
+
+        genericResult.exceptionOrNull()?.let {
+            diagnostics += "$label error=${throwableSummary(it)} getProperty($propId,$areaId)"
+        }
+
+        return runCatching {
+            val value = mgr.javaClass
+                .getMethod("getFloatProperty", Int::class.javaPrimitiveType, Int::class.javaPrimitiveType)
+                .invoke(mgr, propId, areaId) as Float
+            diagnostics += "$label=$value via getFloatProperty($propId,$areaId) fallback"
+            sanitizeFloat(label, value, diagnostics)
+        }.getOrElse {
+            diagnostics += "$label error=${throwableSummary(it)} getFloatProperty($propId,$areaId) fallback"
+            null
+        }
+    }
+
+    private fun deriveFuelPercent(
+        fuelLevel: Float?,
+        fuelCapacity: Float?,
+        diagnostics: MutableList<String>,
+    ): Int? {
+        if (fuelLevel == null || fuelCapacity == null || fuelCapacity <= 0f) return null
+        val percent = (fuelLevel / fuelCapacity * 100f).roundToInt()
+        if (percent !in 0..100) {
+            diagnostics += "fuelPercent derived invalid=$percent level=$fuelLevel capacity=$fuelCapacity"
+            return null
+        }
+        diagnostics += "fuelPercent=$percent derived from standard fuelLevel/fuelCapacity"
+        return percent
+    }
+
+    private fun deriveRange(
+        fuelLevel: Float?,
+        fuelCapacity: Float?,
+        fuelPercent: Int?,
+        averageFuel: Float?,
+        diagnostics: MutableList<String>,
+    ): Int? {
+        if (fuelLevel == null || averageFuel == null || averageFuel <= 0.1f) return null
+
+        // Android's standard FUEL_LEVEL and INFO_FUEL_CAPACITY use millilitres.
+        // A few vendor implementations expose litres instead, so capacity identifies the unit.
+        val fuelLitres = if ((fuelCapacity ?: fuelLevel) > 500f) fuelLevel / 1000f else fuelLevel
+        val range = (fuelLitres / averageFuel * 100f).roundToInt()
+        if (range !in 0..MAX_REASONABLE_RANGE_KM) {
+            diagnostics += "oilRange derived invalid=$range fuelLitres=$fuelLitres avg=$averageFuel"
+            return null
+        }
+        diagnostics += "oilRange=$range derived fuelLitres=$fuelLitres avg=$averageFuel fuelPercent=$fuelPercent"
+        return range
+    }
+
     private fun readWrappedFloatAsInt(mgr: Any, propId: Int, areaId: Int, diagnostics: MutableList<String>, label: String): Int? {
         return readWrappedFloat(mgr, propId, areaId, diagnostics, label)?.toInt()
     }
@@ -296,6 +442,7 @@ class FuelEnergyReader(private val context: Context) {
         }
         val valid = when (label) {
             "rangeRemaining", "oilRange" -> value >= 0f && value <= MAX_REASONABLE_RANGE_KM
+            "fuelLevel", "fuelCapacity" -> value >= 0f && value <= 500_000f
             "perfOdometer" -> value >= 0f && value <= MAX_REASONABLE_ODOMETER_KM
             "avgFuelTrip1", "avgFuelTrip2" -> value >= 0f && value <= 100f
             "trip1Distance", "trip2Distance" -> value >= 0f && value <= MAX_REASONABLE_ODOMETER_KM
@@ -336,12 +483,8 @@ class FuelEnergyReader(private val context: Context) {
                 )
                 val factoryResult = runCatching {
                     val carClass = loader.loadClass("com.ecarx.xui.adaptapi.car.Car")
-                    val factories = carClass.methods.filter { it.name == "createWrapper" }
-                    diagnostics += "wrapper.factories=${factories.joinToString { methodSignature(it.parameterTypes) }}"
-                    val method = factories.firstOrNull {
-                        it.parameterCount == 1 && it.parameterTypes[0].isInstance(context)
-                    } ?: error("no compatible createWrapper factory")
-                    diagnostics += "wrapper.createWrapper signature=${methodSignature(method.parameterTypes)}"
+                    val method = carClass.getMethod("createWrapper", Context::class.java)
+                    diagnostics += "wrapper.createWrapper exact=${methodSignature(method.parameterTypes)}"
                     method.invoke(null, context) ?: error("createWrapper returned null")
                 }
                 factoryResult.getOrNull()?.let {
@@ -354,25 +497,11 @@ class FuelEnergyReader(private val context: Context) {
 
                 val implementationResult = runCatching {
                     val implClass = loader.loadClass("com.ecarx.xui.adaptapi.car.impl.WrapperImpl")
-                    val constructors = implClass.declaredConstructors
                     diagnostics += "wrapper.impl classLoader=${implClass.classLoader?.javaClass?.name}"
-                    diagnostics += "wrapper.impl constructors=${constructors.joinToString { methodSignature(it.parameterTypes) }}"
-                    val candidate = constructors
-                        .mapNotNull { constructor ->
-                            val args = constructor.parameterTypes.map { parameterType ->
-                                when {
-                                    parameterType.isInstance(context) -> context
-                                    parameterType.isInstance(loader) -> loader
-                                    else -> return@mapNotNull null
-                                }
-                            }.toTypedArray()
-                            constructor to args
-                        }
-                        .minByOrNull { it.first.parameterCount }
-                        ?: error("no compatible WrapperImpl constructor")
-                    diagnostics += "wrapper.impl selected=${methodSignature(candidate.first.parameterTypes)}"
-                    candidate.first.isAccessible = true
-                    candidate.first.newInstance(*candidate.second)
+                    diagnostics += "wrapper.impl trying=(android.content.Context)"
+                    implClass.getDeclaredConstructor(Context::class.java)
+                        .apply { isAccessible = true }
+                        .newInstance(context)
                 }
                 implementationResult.getOrNull()?.let {
                     diagnostics += "wrapper.impl ok class=${it.javaClass.name}"
