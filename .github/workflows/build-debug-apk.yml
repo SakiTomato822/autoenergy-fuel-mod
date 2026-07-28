@@ -1,6 +1,11 @@
 name: Build Debug APK
 
 on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
   workflow_dispatch:
 
 jobs:
@@ -37,5 +42,5 @@ jobs:
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: evs-v12-probe-v02-debug-apk
+          name: autoenergy-fuel-ui-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
