@@ -35,6 +35,8 @@ data class FuelEnergySnapshot(
 }
 
 class FuelEnergyReader(private val context: Context) {
+    private val vhalSource = VhalGrpcSource()
+
     companion object {
         private const val DIRECT_INFO_FUEL_CAPACITY = 291504388
         private const val DIRECT_FUEL_LEVEL = 291504903
@@ -94,26 +96,28 @@ class FuelEnergyReader(private val context: Context) {
                 // on this DHU. Reading them through getFloatProperty causes ClassCastException.
                 val avgFuelTrip1 = avgFuelProp?.let {
                     readNumericProperty(mgr, it, 1, diagnostics, "avgFuelTrip1", integerScale = 0.1f)
-                }
+                } ?: vhalSource.readNumeric(API_AVG_FUEL, 1, diagnostics, "avgFuelTrip1", integerScale = 0.1f)
                 val avgFuelTrip2 = avgFuelProp?.let {
                     readNumericProperty(mgr, it, 2, diagnostics, "avgFuelTrip2", integerScale = 0.1f)
-                }
+                } ?: vhalSource.readNumeric(API_AVG_FUEL, 2, diagnostics, "avgFuelTrip2", integerScale = 0.1f)
 
                 val trip1Distance = tripDistanceProp?.let {
                     readNumericProperty(mgr, it, 1, diagnostics, "trip1Distance", integerScale = 0.1f)
-                }
+                } ?: vhalSource.readNumeric(API_TRIP_TOTAL_DISTANCE, 1, diagnostics, "trip1Distance", integerScale = 0.1f)
                 val trip1Speed = tripSpeedProp?.let {
                     readNumericProperty(mgr, it, 1, diagnostics, "trip1AvgSpeed")
-                }
+                } ?: vhalSource.readNumeric(API_TRIP_AVG_SPEED, 1, diagnostics, "trip1AvgSpeed")
                 val trip1Duration = tripDurationProp?.let { readWrappedInt(mgr, it, 1, diagnostics, "trip1Duration") }
+                    ?: vhalSource.readNumeric(API_TRIP_TOTAL_DURATION, 1, diagnostics, "trip1Duration")?.roundToInt()
 
                 val trip2Distance = tripDistanceProp?.let {
                     readNumericProperty(mgr, it, 2, diagnostics, "trip2Distance", integerScale = 0.1f)
-                }
+                } ?: vhalSource.readNumeric(API_TRIP_TOTAL_DISTANCE, 2, diagnostics, "trip2Distance", integerScale = 0.1f)
                 val trip2Speed = tripSpeedProp?.let {
                     readNumericProperty(mgr, it, 2, diagnostics, "trip2AvgSpeed")
-                }
+                } ?: vhalSource.readNumeric(API_TRIP_AVG_SPEED, 2, diagnostics, "trip2AvgSpeed")
                 val trip2Duration = tripDurationProp?.let { readWrappedInt(mgr, it, 2, diagnostics, "trip2Duration") }
+                    ?: vhalSource.readNumeric(API_TRIP_TOTAL_DURATION, 2, diagnostics, "trip2Duration")?.roundToInt()
 
                 val vendorFuelPercent = fuelPercentProp?.let {
                     readWrappedInt(mgr, it, 0, diagnostics, "fuelPercent")
@@ -124,24 +128,28 @@ class FuelEnergyReader(private val context: Context) {
                     0,
                     diagnostics,
                     "fuelLevel",
-                )
+                ) ?: vhalSource.readNumeric(DIRECT_FUEL_LEVEL, 0, diagnostics, "fuelLevel")
                 val fuelCapacity = readNumericProperty(
                     mgr,
                     DIRECT_INFO_FUEL_CAPACITY,
                     0,
                     diagnostics,
                     "fuelCapacity",
-                )
-                val derivedFuelPercent = deriveFuelPercent(fuelLevel, fuelCapacity, diagnostics)
+                ) ?: vhalSource.readNumeric(DIRECT_INFO_FUEL_CAPACITY, 0, diagnostics, "fuelCapacity")
+                val directFuelPercent = fuelLevel
+                    ?.takeIf { it in 0f..100f && (fuelCapacity ?: 0f) > 100f }
+                    ?.roundToInt()
+                    ?.also { diagnostics += "fuelPercent=$it accepted from VHAL fuelLevel percentage-like value" }
+                val derivedFuelPercent = directFuelPercent ?: deriveFuelPercent(fuelLevel, fuelCapacity, diagnostics)
                 val fuelPercent = vendorFuelPercent ?: derivedFuelPercent
 
-                val standardRange = readNumericProperty(
+                val standardRange = (readNumericProperty(
                     mgr,
                     DIRECT_RANGE_REMAINING,
                     0,
                     diagnostics,
                     "rangeRemaining",
-                )?.roundToInt()
+                ) ?: vhalSource.readNumeric(DIRECT_RANGE_REMAINING, 0, diagnostics, "rangeRemaining"))?.roundToInt()
                 val vendorOilRange = oilRangeProp?.let {
                     readNumericProperty(mgr, it, 0, diagnostics, "oilRange")?.roundToInt()
                 }
@@ -161,7 +169,7 @@ class FuelEnergyReader(private val context: Context) {
                     0,
                     diagnostics,
                     "perfOdometer",
-                )
+                ) ?: vhalSource.readNumeric(DIRECT_PERF_ODOMETER, 0, diagnostics, "perfOdometer")
                 val singleTripResetOption = wrapperBridge.readAdaptedInt(
                     manager = mgr,
                     API_SINGLE_TRIP_RESET_OPTION,
@@ -171,6 +179,7 @@ class FuelEnergyReader(private val context: Context) {
                     label = "singleTripResetOption",
                 )
 
+                vhalSource.appendDiagnostics(diagnostics)
                 FuelEnergySnapshot(
                     avgFuelTrip1 = avgFuelTrip1,
                     avgFuelTrip2 = avgFuelTrip2,
@@ -209,6 +218,10 @@ class FuelEnergyReader(private val context: Context) {
                 diagnostics = diagnostics,
             )
         }
+    }
+
+    fun close() {
+        vhalSource.close()
     }
 
     fun writeSingleTripResetOption(value: Int): Boolean {

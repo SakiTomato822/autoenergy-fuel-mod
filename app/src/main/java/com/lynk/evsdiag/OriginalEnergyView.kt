@@ -47,7 +47,7 @@ class OriginalEnergyView @JvmOverloads constructor(
     private var touchDownY = 0f
     private var trendPoints: List<FuelTrendPoint> = emptyList()
     private var selectedResetOption = RESET_OPTION_PARKING
-    private var selectedHistoryHours = 12
+    private var selectedHistoryDistanceKm = 50
     private var previewCurveAverage = 11.2f
     private var showSubtotalResetConfirmation = false
     private var onSingleTripResetOptionChanged: ((Int) -> Unit)? = null
@@ -71,12 +71,12 @@ class OriginalEnergyView @JvmOverloads constructor(
     private val resetDialogCancelBounds = RectF(1065f, 570f, 1195f, 630f)
     private val resetDialogConfirmBounds = RectF(1210f, 570f, 1340f, 630f)
 
-    private val curveOffsets12Hours = floatArrayOf(
+    private val curveOffsets50Km = floatArrayOf(
         -2.6f, 1.8f, -4.1f, 0.6f, 4.8f, -1.5f, -3.2f, 2.5f, 7.2f, -0.8f,
         5.9f, -2.1f, 1.1f, -4.5f, 3.7f, -1.2f, 6.4f, -3.4f, 0.9f, 8.0f,
         -0.5f, 4.3f, -2.8f, 2.1f, -3.7f, 0.5f, 5.2f, -1.7f, 1.6f, 6.9f,
     )
-    private val curveOffsets24Hours = floatArrayOf(
+    private val curveOffsets100Km = floatArrayOf(
         -1.5f, -0.8f, 0.4f, 1.8f, 0.9f, -0.6f, -1.4f, 0.2f, 2.6f,
         1.1f, -0.9f, -1.7f, -0.3f, 1.5f, 3.2f, 1.4f, 0.1f, -1.2f,
         -0.5f, 0.8f, 2.1f, 1.0f, -0.7f, 0.3f, 1.6f,
@@ -218,8 +218,8 @@ class OriginalEnergyView @JvmOverloads constructor(
                             showSubtotalResetConfirmation = true
                             invalidate()
                         }
-                        history12Bounds.contains(x, y) -> selectHistoryHours(12)
-                        history24Bounds.contains(x, y) -> selectHistoryHours(24)
+                        history12Bounds.contains(x, y) -> selectHistoryDistance(50)
+                        history24Bounds.contains(x, y) -> selectHistoryDistance(100)
                     }
                 }
                 return true
@@ -265,9 +265,9 @@ class OriginalEnergyView @JvmOverloads constructor(
         onSingleTripResetOptionChanged?.invoke(option)
     }
 
-    private fun selectHistoryHours(hours: Int) {
-        if (selectedHistoryHours == hours) return
-        selectedHistoryHours = hours
+    private fun selectHistoryDistance(distanceKm: Int) {
+        if (selectedHistoryDistanceKm == distanceKm) return
+        selectedHistoryDistanceKm = distanceKm
         invalidate()
     }
 
@@ -495,40 +495,51 @@ class OriginalEnergyView @JvmOverloads constructor(
         val data = snapshot
         text(canvas, "能耗曲线", 730f, 226f, 31f, Color.WHITE, medium)
 
-        drawPill(canvas, history12Bounds, "12小时", active = selectedHistoryHours == 12)
-        drawPill(canvas, history24Bounds, "24小时", active = selectedHistoryHours == 24)
+        drawPill(canvas, history12Bounds, "近50km", active = selectedHistoryDistanceKm == 50)
+        drawPill(canvas, history24Bounds, "近100km", active = selectedHistoryDistanceKm == 100)
 
         val fallbackAverage = if (preview) {
             previewCurveAverage
         } else {
             data?.avgFuelTrip1 ?: 11.2f
         }.coerceIn(1f, 20f)
-        val now = System.currentTimeMillis()
-        val windowMs = selectedHistoryHours * 60L * 60L * 1000L
-        val cutoff = now - windowMs
+        val windowDistance = selectedHistoryDistanceKm.toFloat()
         val points: List<Pair<Float, Float>> = if (preview) {
-            val offsets = if (selectedHistoryHours == 12) {
-                curveOffsets12Hours
+            val offsets = if (selectedHistoryDistanceKm == 50) {
+                curveOffsets50Km
             } else {
-                curveOffsets24Hours
+                curveOffsets100Km
             }
             offsets.mapIndexed { index, offset ->
                 index / max(1f, offsets.lastIndex.toFloat()) to
                     (fallbackAverage + offset).coerceIn(1.5f, 20f)
             }
         } else {
+            val latestDistance = trendPoints.lastOrNull()?.distanceKm
+            val cutoff = (latestDistance ?: 0f) - windowDistance
             val history = trendPoints
-                .filter { it.timestampMs >= cutoff }
-                .takeLast(1440)
+                .filter { it.distanceKm >= cutoff }
                 .map {
-                    ((it.timestampMs - cutoff).toFloat() / windowMs)
+                    ((it.distanceKm - cutoff) / windowDistance)
                         .coerceIn(0f, 1f) to it.value.coerceIn(0f, 20f)
                 }
             if (history.size >= 2) history else {
                 listOf(0f to fallbackAverage, 1f to fallbackAverage)
             }
         }
-        val average = points.map { it.second }.average().toFloat().coerceIn(1f, 20f)
+        val visibleTrend = if (preview) {
+            emptyList()
+        } else {
+            val latestDistance = trendPoints.lastOrNull()?.distanceKm ?: 0f
+            val cutoff = latestDistance - windowDistance
+            trendPoints.filter { it.distanceKm >= cutoff }
+        }
+        val weightedDistance = visibleTrend.sumOf { it.spanKm.toDouble() }.toFloat()
+        val average = if (weightedDistance > 0f) {
+            visibleTrend.sumOf { (it.value * it.spanKm).toDouble() }.toFloat() / weightedDistance
+        } else {
+            points.map { it.second }.average().toFloat()
+        }.coerceIn(1f, 20f)
         text(canvas, "■", 730f, 306f, 18f, Color.rgb(20, 187, 244), medium)
         text(canvas, "L/100km", 755f, 306f, 19f, Color.rgb(210, 227, 236), regular)
         val averageLabel = "平均油耗: ${fuelText(average)} L/100km"
@@ -604,10 +615,10 @@ class OriginalEnergyView @JvmOverloads constructor(
         canvas.drawCircle(chartRight, averageY, 6f, paint)
         text(canvas, fuelText(average), chartRight + 10f, averageY + 7f, 17f, Color.WHITE, medium)
 
-        val xLabels = if (selectedHistoryHours == 12) {
-            listOf("-12h", "-9h", "-6h", "-3h", "此刻")
+        val xLabels = if (selectedHistoryDistanceKm == 50) {
+            listOf("-50km", "-40", "-30", "-20", "-10", "此刻")
         } else {
-            listOf("-24h", "-18h", "-12h", "-6h", "此刻")
+            listOf("-100km", "-80", "-60", "-40", "-20", "此刻")
         }
         xLabels.forEachIndexed { index, label ->
             val x = chartLeft + (chartRight - chartLeft) * index / (xLabels.size - 1)

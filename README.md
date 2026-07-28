@@ -11,7 +11,7 @@
 <p align="center">
   <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
   <img alt="API 30" src="https://img.shields.io/badge/API-30-566C7A">
-  <img alt="Version 0.6.3" src="https://img.shields.io/badge/version-v0.6.3-16ACE3">
+  <img alt="Version 0.6.4" src="https://img.shields.io/badge/version-v0.6.4-16ACE3">
   <a href="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml">
     <img alt="Build debug APK" src="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml/badge.svg">
   </a>
@@ -32,7 +32,7 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 - 本次 / 长期平均油耗、小计里程与总里程
 - 上下叠加的里程统计页面，无底部双选项卡
 - 本次里程与小计里程的时长、距离、平均车速和平均油耗
-- 独立的 12 小时 / 24 小时油耗曲线
+- 跨行程持久化的近 50 km / 近 100 km 分段油耗曲线
 - 原车停车重置、补能重置和小计里程重置属性写入
 - API 30、16:9 横屏车机布局
 - 为车机状态栏和底部 SystemUI 保留安全区域
@@ -67,13 +67,17 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 | --- | --- |
 | 最低系统 | Android 11 / API 30 |
 | 目标屏幕 | 16:9 横屏，1920×1080；实车 SystemUI 安全内容区为 1920×896 |
-| 车辆环境 | 领克 / Flyme Auto，依赖厂商 CarProperty 与 AdapterAPI |
+| 车辆环境 | 领克 / Flyme Auto，使用 CarProperty，并以本地只读 VHAL 数据流补充受限字段 |
 | 模拟器 | 无 `android.car.Car` 时自动启用内置模拟数据 |
 | 原厂应用 | 使用独立包名，不覆盖原厂包 |
 | 数据读取 | 取决于车机系统签名权限、属性映射和车型支持 |
 | 数据写入 | 重置操作会调用车辆属性，务必先在安全环境验证 |
 
 不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车建议先只观察数据读取情况，并通过诊断日志确认属性映射，再尝试重置操作。不要在驾驶过程中调试、操作 ADB 或查看日志。
+
+`v0.6.4` 保留 CarProperty 作为主要数据源，同时连接 DHU 本机 `127.0.0.1:8500` 的只读 VHAL gRPC 数据流，为受 `CAR_VENDOR_EXTENSION` 限制的油量、续航和总里程提供降级来源。该通道只调用属性流与全量快照接口，不包含任何 VHAL 写入实现。
+
+油耗曲线不依赖纯燃油车型上为空的原厂曲线数组。应用根据“本次平均油耗 × 本次里程”推算累计耗油量，每累计约 3 km 生成一个区间油耗点；本次里程重置时只重建计算基线，已记录的近 50 km / 近 100 km 历史仍会保留。
 
 `v0.6.3` 根据 DHU615G 实车日志兼容 CarProperty 的实际数值类型：Flyme 将平均油耗和里程以 `Integer` 十分位值返回，应用会在读取后乘以 `0.1`，不再强制转换为 `Float`。燃油百分比还会尝试 Android 标准 `FUEL_LEVEL / INFO_FUEL_CAPACITY` 降级计算，续航可在标准油量与平均油耗均可读时估算。
 
@@ -202,6 +206,7 @@ tools/                 辅助验证脚本
 - `v0.6.1`：诊断日志、12h / 24h 曲线修复与 API 30 验证
 - `v0.6.2`：SystemUI 安全区、AdapterAPI 构造器探测与属性 ID 直通兼容
 - `v0.6.3`：整数十分位 CarProperty 兼容、标准油量降级与签名权限诊断
+- `v0.6.4`：只读 VHAL gRPC 降级数据源与近 50 / 100 km 分段油耗曲线
 
 ## 声明
 

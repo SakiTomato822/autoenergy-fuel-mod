@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         pollJob?.cancel()
+        reader.close()
         AppLog.i("LIFECYCLE", "onDestroy polling cancelled")
         super.onDestroy()
     }
@@ -127,13 +128,13 @@ class MainActivity : AppCompatActivity() {
                     val snapshot = withContext(Dispatchers.IO) { reader.readSnapshot() }
                     pollSequence += 1
                     logSnapshot(snapshot)
-                    val averageFuel = snapshot.avgFuelTrip1 ?: snapshot.avgFuelTrip2
-                    if (averageFuel != null) {
-                        trendStore.append(averageFuel, snapshot.odometerKm)
-                    }
+                    trendStore.observe(
+                        averageFuel = snapshot.avgFuelTrip2,
+                        tripDistanceKm = snapshot.trip2DistanceKm,
+                    )
                     energyView.setSnapshot(snapshot, isPreview = false)
                     energyView.setTrendPoints(
-                        trendStore.loadForLastHours(24),
+                        trendStore.loadForLastDistance(100f),
                     )
                 }.onFailure {
                     AppLog.e("POLL", "poll#$pollSequence failed", it)
