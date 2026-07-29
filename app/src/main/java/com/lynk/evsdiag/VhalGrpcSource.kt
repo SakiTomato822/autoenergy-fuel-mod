@@ -19,6 +19,7 @@ import java.util.concurrent.Executors
 import java.util.concurrent.ScheduledExecutorService
 import java.util.concurrent.TimeUnit
 import java.util.concurrent.atomic.AtomicBoolean
+import java.util.concurrent.atomic.AtomicInteger
 import java.util.concurrent.atomic.AtomicReference
 
 /**
@@ -30,10 +31,12 @@ import java.util.concurrent.atomic.AtomicReference
 class VhalGrpcSource : Closeable {
     companion object {
         private const val HOST = "127.0.0.1"
-        private const val PORT = 8500
+        // EVCC's native VhalNative_getGrpcPort() returns 0x9c44 (40004).
+        // Port 8500 exists only in its Java exception fallback.
+        private const val PORT = 40004
+        private const val CLIENT_ID = "evcam_prop_client"
         private const val STREAM_METHOD = "vhal_proto.VehicleServer/StartPropertyValuesStream"
         private const val SEND_ALL_METHOD = "vhal_proto.VehicleServer/SendAllPropertyValuesToStream"
-        private const val RECONNECT_DELAY_SECONDS = 5L
         private val DIAGNOSTIC_PROPERTY_IDS = setOf(
             291504388, // fuel capacity
             291504644, // odometer
@@ -89,6 +92,7 @@ class VhalGrpcSource : Closeable {
     private val started = AtomicBoolean(false)
     private val closed = AtomicBoolean(false)
     private val reconnectScheduled = AtomicBoolean(false)
+    private val reconnectAttempt = AtomicInteger(0)
     private val firstUnparsedLogged = AtomicBoolean(false)
     private val loggedProperties = ConcurrentHashMap.newKeySet<Key>()
     private val state = AtomicReference("idle")
@@ -136,7 +140,7 @@ class VhalGrpcSource : Closeable {
                 )
                 put(
                     Metadata.Key.of("client_id", Metadata.ASCII_STRING_MARSHALLER),
-                    "autoenergy_fuel_readonly",
+                    CLIENT_ID,
                 )
             }
             val newChannel = OkHttpChannelBuilder
@@ -148,6 +152,10 @@ class VhalGrpcSource : Closeable {
                 .intercept(MetadataUtils.newAttachHeadersInterceptor(headers))
                 .build()
             channel = newChannel
+            AppLog.i(
+                "VHAL",
+                "opening read-only stream endpoint=$HOST:$PORT clientId=$CLIENT_ID",
+            )
 
             val streamCall = newChannel.newCall(
                 descriptor(MethodDescriptor.MethodType.SERVER_STREAMING, STREAM_METHOD),
@@ -158,6 +166,7 @@ class VhalGrpcSource : Closeable {
                 ByteArray(0),
                 object : StreamObserver<ByteArray> {
                     override fun onNext(chunk: ByteArray) {
+                        reconnectAttempt.set(0)
                         val parsed = VhalProtoParser.parseChunk(chunk)
                         if (parsed.isEmpty() && firstUnparsedLogged.compareAndSet(false, true)) {
                             AppLog.w(
@@ -202,10 +211,11 @@ class VhalGrpcSource : Closeable {
                     ),
                     ByteArray(0),
                 )
+            }.onSuccess {
+                AppLog.i("VHAL", "initial property snapshot requested")
             }.onFailure {
-                lastError.set("SendAll: ${it.javaClass.simpleName}: ${it.message}")
+                lastError.set("SendAll: ${throwableSummary(it)}")
             }
-            AppLog.i("VHAL", "read-only stream requested endpoint=$HOST:$PORT")
         } catch (t: Throwable) {
             failAndReconnect(t)
         }
@@ -214,14 +224,24 @@ class VhalGrpcSource : Closeable {
     private fun failAndReconnect(error: Throwable) {
         if (closed.get()) return
         if (!reconnectScheduled.compareAndSet(false, true)) return
-        val summary = "${error.javaClass.simpleName}: ${error.message}"
+        val summary = throwableSummary(error)
+        val attempt = reconnectAttempt.incrementAndGet()
+        val delaySeconds = when (attempt) {
+            1 -> 5L
+            2 -> 15L
+            3 -> 30L
+            else -> 60L
+        }
         lastError.set(summary)
-        state.set("retrying")
-        AppLog.w("VHAL", "stream unavailable; retry in ${RECONNECT_DELAY_SECONDS}s: $summary")
+        state.set("retrying(${delaySeconds}s)")
+        AppLog.w(
+            "VHAL",
+            "stream unavailable attempt=$attempt; retry in ${delaySeconds}s: $summary",
+        )
         val failedChannel = channel
         channel = null
         failedChannel?.shutdownNow()
-        executor.schedule(::connect, RECONNECT_DELAY_SECONDS, TimeUnit.SECONDS)
+        executor.schedule(::connect, delaySeconds, TimeUnit.SECONDS)
     }
 
     override fun close() {
@@ -241,6 +261,13 @@ class VhalGrpcSource : Closeable {
 
     private fun hexHead(bytes: ByteArray): String =
         bytes.take(16).joinToString(separator = "") { "%02x".format(it.toInt() and 0xff) }
+
+    private fun throwableSummary(error: Throwable): String =
+        generateSequence(error as Throwable?) { it.cause }
+            .take(4)
+            .joinToString(separator = " <- ") {
+                "${it.javaClass.simpleName}: ${it.message ?: "(no message)"}"
+            }
 
     private object VhalProtoParser {
         fun parseChunk(chunk: ByteArray): List<Value> {

@@ -12,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
@@ -124,7 +125,7 @@ class MainActivity : AppCompatActivity() {
         AppLog.i("POLL", "vehicle polling started interval=5000ms")
         pollJob = lifecycleScope.launch {
             while (isActive) {
-                runCatching {
+                try {
                     val snapshot = withContext(Dispatchers.IO) { reader.readSnapshot() }
                     pollSequence += 1
                     logSnapshot(snapshot)
@@ -136,8 +137,10 @@ class MainActivity : AppCompatActivity() {
                     energyView.setTrendPoints(
                         trendStore.loadForLastDistance(100f),
                     )
-                }.onFailure {
-                    AppLog.e("POLL", "poll#$pollSequence failed", it)
+                } catch (cancelled: CancellationException) {
+                    throw cancelled
+                } catch (error: Throwable) {
+                    AppLog.e("POLL", "poll#$pollSequence failed", error)
                 }
                 delay(5_000L)
             }

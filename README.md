@@ -11,7 +11,7 @@
 <p align="center">
   <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
   <img alt="API 30" src="https://img.shields.io/badge/API-30-566C7A">
-  <img alt="Version 0.6.4" src="https://img.shields.io/badge/version-v0.6.4-16ACE3">
+  <img alt="Version 0.6.5" src="https://img.shields.io/badge/version-v0.6.5-16ACE3">
   <a href="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml">
     <img alt="Build debug APK" src="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml/badge.svg">
   </a>
@@ -75,7 +75,7 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 
 不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车建议先只观察数据读取情况，并通过诊断日志确认属性映射，再尝试重置操作。不要在驾驶过程中调试、操作 ADB 或查看日志。
 
-`v0.6.4` 保留 CarProperty 作为主要数据源，同时连接 DHU 本机 `127.0.0.1:8500` 的只读 VHAL gRPC 数据流，为受 `CAR_VENDOR_EXTENSION` 限制的油量、续航和总里程提供降级来源。该通道只调用属性流与全量快照接口，不包含任何 VHAL 写入实现。
+`v0.6.5` 保留 CarProperty 作为主要数据源，同时连接 DHU 本机 `127.0.0.1:40004` 的只读 VHAL gRPC 数据流，为受 `CAR_VENDOR_EXTENSION` 限制的油量、续航和总里程提供降级来源。端口与客户端标识来自 EVCC 的 native 实现；该通道只调用属性流与全量快照接口，不包含任何 VHAL 写入实现。
 
 油耗曲线不依赖纯燃油车型上为空的原厂曲线数组。应用根据“本次平均油耗 × 本次里程”推算累计耗油量，每累计约 3 km 生成一个区间油耗点；本次里程重置时只重建计算基线，已记录的近 50 km / 近 100 km 历史仍会保留。
 
@@ -207,6 +207,7 @@ tools/                 辅助验证脚本
 - `v0.6.2`：SystemUI 安全区、AdapterAPI 构造器探测与属性 ID 直通兼容
 - `v0.6.3`：整数十分位 CarProperty 兼容、标准油量降级与签名权限诊断
 - `v0.6.4`：只读 VHAL gRPC 降级数据源与近 50 / 100 km 分段油耗曲线
+- `v0.6.5`：修正 EVCC native VHAL 端口与客户端标识，改进重连和退出日志
 
 ## 声明
 
