@@ -46,7 +46,7 @@ class OriginalEnergyView @JvmOverloads constructor(
     private var touchDownX = 0f
     private var touchDownY = 0f
     private var trendPoints: List<FuelTrendPoint> = emptyList()
-    private var selectedResetOption = RESET_OPTION_PARKING
+    private var selectedResetOption: Int? = null
     private var selectedHistoryDistanceKm = 50
     private var previewCurveAverage = 11.2f
     private var showSubtotalResetConfirmation = false
@@ -260,8 +260,6 @@ class OriginalEnergyView @JvmOverloads constructor(
 
     private fun selectResetOption(option: Int) {
         if (selectedResetOption == option) return
-        selectedResetOption = option
-        invalidate()
         onSingleTripResetOptionChanged?.invoke(option)
     }
 
@@ -458,10 +456,12 @@ class OriginalEnergyView @JvmOverloads constructor(
             RectF(365f, 188f, 625f, 248f),
             leftLabel = "停车重置",
             rightLabel = "补能重置",
-            leftActive = selectedResetOption != RESET_OPTION_CHARGING,
+            leftActive = selectedResetOption?.let { it == RESET_OPTION_PARKING },
         )
 
-        val resetDescription = if (selectedResetOption == RESET_OPTION_CHARGING) {
+        val resetDescription = if (selectedResetOption == null) {
+            "*自动重置方式状态未知，等待车辆读回确认"
+        } else if (selectedResetOption == RESET_OPTION_CHARGING) {
             "*当前为最近一次加油重置后到现在的里程数据，能耗曲线不会被重置"
         } else {
             "*当前为最近一次驻车重置后到现在的里程数据，能耗曲线不会被重置"
@@ -657,23 +657,23 @@ class OriginalEnergyView @JvmOverloads constructor(
         bounds: RectF,
         leftLabel: String,
         rightLabel: String,
-        leftActive: Boolean,
+        leftActive: Boolean?,
     ) {
         paint.style = Paint.Style.FILL
         paint.color = Color.argb(92, 210, 221, 226)
         canvas.drawRoundRect(bounds, 7f, 7f, paint)
 
         val centerX = bounds.centerX()
-        val activeBounds = if (leftActive) {
+        val activeBounds = if (leftActive == true) {
             RectF(bounds.left, bounds.top, centerX, bounds.bottom)
         } else {
             RectF(centerX, bounds.top, bounds.right, bounds.bottom)
         }
         paint.color = Color.rgb(8, 172, 235)
-        canvas.drawRoundRect(activeBounds, 7f, 7f, paint)
-        if (leftActive) {
+        if (leftActive != null) canvas.drawRoundRect(activeBounds, 7f, 7f, paint)
+        if (leftActive == true) {
             canvas.drawRect(centerX - 7f, bounds.top, centerX, bounds.bottom, paint)
-        } else {
+        } else if (leftActive == false) {
             canvas.drawRect(centerX, bounds.top, centerX + 7f, bounds.bottom, paint)
         }
 

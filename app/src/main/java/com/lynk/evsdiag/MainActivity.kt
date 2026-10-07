@@ -198,15 +198,8 @@ class MainActivity : AppCompatActivity() {
                 val success = reader.writeSingleTripResetOption(option)
                 success to reader.readSnapshot()
             }
-            val fallback = if (success) {
-                option
-            } else if (option == SimulatedCarProperties.RESET_OPTION_CHARGING) {
-                SimulatedCarProperties.RESET_OPTION_PARKING
-            } else {
-                SimulatedCarProperties.RESET_OPTION_CHARGING
-            }
             energyView.setSnapshot(
-                refreshed.copy(singleTripResetOption = refreshed.singleTripResetOption ?: fallback),
+                refreshed,
                 isPreview = false,
             )
             AppLog.i(

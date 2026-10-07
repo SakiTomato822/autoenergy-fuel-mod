@@ -11,7 +11,7 @@
 <p align="center">
   <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
   <img alt="API 30" src="https://img.shields.io/badge/API-30-566C7A">
-  <img alt="Version 0.6.5" src="https://img.shields.io/badge/version-v0.6.5-16ACE3">
+  <img alt="Version 0.6.6" src="https://img.shields.io/badge/version-v0.6.6-16ACE3">
   <a href="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml">
     <img alt="Build debug APK" src="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml/badge.svg">
   </a>
@@ -167,6 +167,20 @@ adb shell am broadcast `
 
 ## 诊断日志
 
+### 0.6.6：DHU615G MCU 只读数据
+
+针对 [实车反馈 #1](https://github.com/SakiTomato822/autoenergy-fuel-mod/issues/1)，新增固定属性白名单的 `dumpsys car_service get-property-value` 读取，不使用 Root、不通过此通道写入车辆设置。安装后需要在已连接车机的 ADB 上执行一次：
+
+```sh
+adb shell pm grant com.lynk.autoenergyfuel android.permission.DUMP
+```
+
+此权限不能由普通运行时弹窗授予；未授予时会记录明确提示，旧数据通道仍保留。按反馈中的 MCU 字节格式校验属性、Area 0、可用状态和长度，再做大端无符号解码：本次油耗 `0x28700440`、小计油耗 `0x28700048`、单位 `0x28700026`、油量百分比 `0x2870043a`、续航 `0x2870001e`、自动重置方式 `0x28700022`。
+
+油耗仅在单位原始值为 1 时按当前十分位约定转换。该倍率来自既有适配约定，仍需与仪表对照验证。MCU 值优先于不可靠的适配层默认 0；未映射适配层的油耗 0 不再冒充有效数据。没有 MCU 里程映射证据，本版不保证里程和曲线因此恢复。曲线仍需有效的本次平均油耗与本次里程共同驱动。
+
+重置方式初始显示状态未知，点击后不提前选中，写入失败不切换为相反选项，只接受车辆读回或保留最近一次确认状态。此版本未作实车 APK 验证，不包含 3D Demo。
+
 在主页面长按左侧大卡片约 1.2 秒，可以打开应用内日志查看器。日志会记录：
 
 - App、设备、系统和显示参数
@@ -208,6 +222,7 @@ tools/                 辅助验证脚本
 - `v0.6.3`：整数十分位 CarProperty 兼容、标准油量降级与签名权限诊断
 - `v0.6.4`：只读 VHAL gRPC 降级数据源与近 50 / 100 km 分段油耗曲线
 - `v0.6.5`：修正 EVCC native VHAL 端口与客户端标识，改进重连和退出日志
+- `v0.6.6`：MCU DUMP 只读数据路径、适配层假零过滤、重置方式读回状态修正
 
 ## 声明
 

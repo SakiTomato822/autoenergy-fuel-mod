@@ -72,6 +72,7 @@ class FuelEnergyReader(private val context: Context) {
 
     fun readSnapshot(): FuelEnergySnapshot {
         val diagnostics = mutableListOf<String>()
+        val mcu = McuDumpSource(context).read(diagnostics)
         return runCatching {
             val carClass = Class.forName("android.car.Car")
             val car = carClass.getMethod("createCar", Context::class.java).invoke(null, context)
@@ -216,6 +217,27 @@ class FuelEnergyReader(private val context: Context) {
                 trip2DurationMinutes = null,
                 singleTripResetOption = null,
                 diagnostics = diagnostics,
+            )
+        }.let { snapshot ->
+            val supportedUnit = mcu["fuelUnit"] == 1L
+            fun fuel(key: String): Float? = mcu[key]?.takeIf { supportedUnit && it in 0..1000 }?.div(10f)
+            val identity = diagnostics.any { it.startsWith("wrapper.identity enabled") }
+            fun trustedAverage(value: Float?): Float? = if (identity && value == 0f) {
+                diagnostics += "averageFuel zero from unmapped adapter not confirmed; displaying unavailable"
+                null
+            } else value
+            snapshot.copy(
+                avgFuelTrip1 = fuel("subtotalFuel") ?: trustedAverage(snapshot.avgFuelTrip1),
+                avgFuelTrip2 = fuel("currentFuel") ?: trustedAverage(snapshot.avgFuelTrip2),
+                fuelPercent = mcu["fuelPercent"]?.takeIf { it in 0..100 }?.toInt() ?: snapshot.fuelPercent,
+                oilRangeKm = mcu["oilRange"]?.takeIf { it in 0..5000 }?.toInt() ?: snapshot.oilRangeKm,
+                totalRangeKm = mcu["oilRange"]?.takeIf { it in 0..5000 }?.toInt() ?: snapshot.totalRangeKm,
+                singleTripResetOption = when (mcu["resetOption"]) {
+                    1L -> 612369154
+                    2L -> 612369156
+                    else -> snapshot.singleTripResetOption
+                },
+                diagnostics = diagnostics.toList(),
             )
         }
     }
