@@ -31,16 +31,20 @@ jobs:
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          # The default includes the removed legacy "tools" package.
+          packages: platform-tools
 
       - name: Install SDK packages
         run: |
           sdkmanager --install "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
-      - name: Build debug APK
-        run: gradle --no-daemon :app:assembleDebug
+      - name: Build and test debug APK
+        run: gradle --no-daemon :app:assembleDebug :app:testDebugUnitTest
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: autoenergy-fuel-ui-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
