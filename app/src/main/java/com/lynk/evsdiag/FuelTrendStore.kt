@@ -12,32 +12,18 @@ data class FuelTrendPoint(
 /** All durable history and sampling progress live in the shared JSON source. */
 class FuelTrendStore(private val context: Context) {
     fun observe(averageFuel: Float?, tripDistanceKm: Float?) {
-        if (averageFuel == null || tripDistanceKm == null || !averageFuel.isFinite() || !tripDistanceKm.isFinite()) return
-        if (averageFuel !in 0.1f..60f || tripDistanceKm < 0f) return
-        val fuel = averageFuel * tripDistanceKm / 100f
         var added = false
         LocalFuelDataSource.update(context) { previous ->
-            if (!previous.hasPrevious || tripDistanceKm - previous.previousDistanceKm < -0.5f) {
-                return@update previous.copy(hasPrevious = true, previousDistanceKm = tripDistanceKm, previousFuelLitres = fuel)
+            val next = FuelTrendCalculator.observe(previous, averageFuel, tripDistanceKm, System.currentTimeMillis())
+            added = next.points.size > previous.points.size
+            if (added) next.points.last().let {
+                AppLog.i("TREND", "estimated segment appended distance=${it.spanKm} consumption=${it.value}")
             }
-            val deltaDistance = tripDistanceKm - previous.previousDistanceKm
-            // Retain the fuel baseline while idling, so fuel burned at zero
-            // distance contributes to the next driven segment.
-            if (deltaDistance <= 0f) return@update previous
-            val distance = previous.pendingDistanceKm + deltaDistance
-            val consumed = previous.pendingFuelLitres + fuel - previous.previousFuelLitres
-            val progress = previous.copy(previousDistanceKm = tripDistanceKm, previousFuelLitres = fuel,
-                chartDistanceKm = previous.chartDistanceKm + deltaDistance,
-                pendingDistanceKm = distance, pendingFuelLitres = consumed)
-            if (distance < 3f) return@update progress
-            val consumption = consumed / distance * 100f
-            if (!consumption.isFinite() || consumption !in 0f..60f) {
-                return@update if (distance < 12f) progress else progress.copy(pendingDistanceKm = 0f, pendingFuelLitres = 0f)
+            if (previous.pendingDistanceKm > 0f && next.pendingDistanceKm == 0f && !added &&
+                tripDistanceKm != null && tripDistanceKm < previous.previousDistanceKm) {
+                AppLog.i("TREND", "trip reset; discarded unfinished segment=${previous.pendingDistanceKm}km")
             }
-            added = true
-            val point = FuelTrendPoint(System.currentTimeMillis(), consumption, progress.chartDistanceKm, distance)
-            AppLog.i("TREND", "segment appended distance=$distance consumption=$consumption")
-            progress.copy(points = progress.points + point, pendingDistanceKm = 0f, pendingFuelLitres = 0f)
+            next
         }
         LocalFuelDataSource.flush(force = added)
     }

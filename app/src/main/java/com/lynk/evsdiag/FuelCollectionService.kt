@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.IBinder
+import android.os.SystemClock
 import androidx.core.app.NotificationCompat
 import androidx.core.content.ContextCompat
 import kotlinx.coroutines.*
@@ -49,9 +50,14 @@ class FuelCollectionService : Service() {
             val store = FuelTrendStore(applicationContext)
             var sequence = 0L
             var lastErrors = emptySet<String>()
+            var previousStartMs: Long? = null
             while (isActive) {
+                val startedMs = SystemClock.elapsedRealtime()
+                val intervalMs = previousStartMs?.let { startedMs - it }
+                previousStartMs = startedMs
                 try {
                     val snapshot = reader.readSnapshot()
+                    val readMs = SystemClock.elapsedRealtime() - startedMs
                     FuelCollectionState.publish(snapshot)
                     store.observe(snapshot.avgFuelTrip2, snapshot.trip2DistanceKm)
                     sequence++
@@ -63,6 +69,10 @@ class FuelCollectionService : Service() {
                     (errors - lastErrors).forEach { AppLog.w("CAR", it) }
                     lastErrors = errors
                     store.flush()
+                    val totalMs = SystemClock.elapsedRealtime() - startedMs
+                    val timing = "sample#$sequence readMs=$readMs totalMs=$totalMs startIntervalMs=$intervalMs configuredPauseMs=5000"
+                    if (totalMs >= 5_000L) AppLog.w("COLLECTOR", "slow sequential snapshot; $timing")
+                    else if (sequence == 1L || sequence % 12L == 0L) AppLog.i("COLLECTOR", timing)
                 } catch (cancelled: CancellationException) { throw cancelled }
                 catch (error: Throwable) { AppLog.e("COLLECTOR", "sample failed", error) }
                 delay(5_000L)
