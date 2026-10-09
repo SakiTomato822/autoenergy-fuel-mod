@@ -36,6 +36,7 @@ data class FuelEnergySnapshot(
 
 class FuelEnergyReader(private val context: Context) {
     private val vhalSource = VhalGrpcSource()
+    private val shellFuelSource = CarShellFuelSource(context)
 
     companion object {
         private const val DIRECT_INFO_FUEL_CAPACITY = 291504388
@@ -72,7 +73,7 @@ class FuelEnergyReader(private val context: Context) {
 
     fun readSnapshot(): FuelEnergySnapshot {
         val diagnostics = mutableListOf<String>()
-        val mcu = McuDumpSource(context).read(diagnostics)
+        val shellFuel = shellFuelSource.read(diagnostics)
         return runCatching {
             val carClass = Class.forName("android.car.Car")
             val car = carClass.getMethod("createCar", Context::class.java).invoke(null, context)
@@ -85,6 +86,9 @@ class FuelEnergyReader(private val context: Context) {
                     ?: throw IllegalStateException("getCarManager(property) returned null")
 
                 val wrapperBridge = WrapperBridge.create(context, diagnostics)
+                // AdapterAPI swallows vendor permission errors and can return 0
+                // for average consumption. Prefer validated MCU bytes when DUMP
+                // is granted, instead of treating that 0 as a real reading.
 
                 val fuelPercentProp = wrapperBridge.resolvePropertyId(API_FUEL_PERCENT, false, diagnostics)
                 val oilRangeProp = wrapperBridge.resolvePropertyId(API_OIL_RANGE, false, diagnostics)
@@ -95,29 +99,29 @@ class FuelEnergyReader(private val context: Context) {
 
                 // The Flyme adapter returns Integer tenths for average fuel and trip distance
                 // on this DHU. Reading them through getFloatProperty causes ClassCastException.
-                val avgFuelTrip1 = avgFuelProp?.let {
+                val avgFuelTrip1 = shellFuel.avgFuelSubtotal ?: avgFuelProp?.let {
                     readNumericProperty(mgr, it, 1, diagnostics, "avgFuelTrip1", integerScale = 0.1f)
                 } ?: vhalSource.readNumeric(API_AVG_FUEL, 1, diagnostics, "avgFuelTrip1", integerScale = 0.1f)
-                val avgFuelTrip2 = avgFuelProp?.let {
+                val avgFuelTrip2 = shellFuel.avgFuelThisTrip ?: avgFuelProp?.let {
                     readNumericProperty(mgr, it, 2, diagnostics, "avgFuelTrip2", integerScale = 0.1f)
                 } ?: vhalSource.readNumeric(API_AVG_FUEL, 2, diagnostics, "avgFuelTrip2", integerScale = 0.1f)
 
-                val trip1Distance = tripDistanceProp?.let {
+                val trip1Distance = shellFuel.subtotalDistanceKm ?: tripDistanceProp?.let {
                     readNumericProperty(mgr, it, 1, diagnostics, "trip1Distance", integerScale = 0.1f)
                 } ?: vhalSource.readNumeric(API_TRIP_TOTAL_DISTANCE, 1, diagnostics, "trip1Distance", integerScale = 0.1f)
-                val trip1Speed = tripSpeedProp?.let {
+                val trip1Speed = shellFuel.subtotalSpeedKmh ?: tripSpeedProp?.let {
                     readNumericProperty(mgr, it, 1, diagnostics, "trip1AvgSpeed")
                 } ?: vhalSource.readNumeric(API_TRIP_AVG_SPEED, 1, diagnostics, "trip1AvgSpeed")
-                val trip1Duration = tripDurationProp?.let { readWrappedInt(mgr, it, 1, diagnostics, "trip1Duration") }
+                val trip1Duration = shellFuel.subtotalDurationMinutes ?: tripDurationProp?.let { readWrappedInt(mgr, it, 1, diagnostics, "trip1Duration") }
                     ?: vhalSource.readNumeric(API_TRIP_TOTAL_DURATION, 1, diagnostics, "trip1Duration")?.roundToInt()
 
-                val trip2Distance = tripDistanceProp?.let {
+                val trip2Distance = shellFuel.currentDistanceKm ?: tripDistanceProp?.let {
                     readNumericProperty(mgr, it, 2, diagnostics, "trip2Distance", integerScale = 0.1f)
                 } ?: vhalSource.readNumeric(API_TRIP_TOTAL_DISTANCE, 2, diagnostics, "trip2Distance", integerScale = 0.1f)
-                val trip2Speed = tripSpeedProp?.let {
+                val trip2Speed = shellFuel.currentSpeedKmh ?: tripSpeedProp?.let {
                     readNumericProperty(mgr, it, 2, diagnostics, "trip2AvgSpeed")
                 } ?: vhalSource.readNumeric(API_TRIP_AVG_SPEED, 2, diagnostics, "trip2AvgSpeed")
-                val trip2Duration = tripDurationProp?.let { readWrappedInt(mgr, it, 2, diagnostics, "trip2Duration") }
+                val trip2Duration = shellFuel.currentDurationMinutes ?: tripDurationProp?.let { readWrappedInt(mgr, it, 2, diagnostics, "trip2Duration") }
                     ?: vhalSource.readNumeric(API_TRIP_TOTAL_DURATION, 2, diagnostics, "trip2Duration")?.roundToInt()
 
                 val vendorFuelPercent = fuelPercentProp?.let {
@@ -142,7 +146,9 @@ class FuelEnergyReader(private val context: Context) {
                     ?.roundToInt()
                     ?.also { diagnostics += "fuelPercent=$it accepted from VHAL fuelLevel percentage-like value" }
                 val derivedFuelPercent = directFuelPercent ?: deriveFuelPercent(fuelLevel, fuelCapacity, diagnostics)
-                val fuelPercent = vendorFuelPercent ?: derivedFuelPercent
+                // DHU615G exposes the real MCU values as vendor byte arrays. The
+                // standard VHAL properties can instead contain placeholder values.
+                val fuelPercent = vendorFuelPercent ?: shellFuel.fuelPercent ?: derivedFuelPercent
 
                 val standardRange = (readNumericProperty(
                     mgr,
@@ -161,17 +167,17 @@ class FuelEnergyReader(private val context: Context) {
                     averageFuel = avgFuelTrip2 ?: avgFuelTrip1,
                     diagnostics = diagnostics,
                 )
-                val oilRange = vendorOilRange ?: standardRange ?: calculatedRange
+                val oilRange = vendorOilRange ?: shellFuel.fuelRangeKm ?: standardRange ?: calculatedRange
                 val totalRange = standardRange ?: oilRange
 
-                val odometer = readNumericProperty(
+                val odometer = shellFuel.odometerKm ?: readNumericProperty(
                     mgr,
                     DIRECT_PERF_ODOMETER,
                     0,
                     diagnostics,
                     "perfOdometer",
                 ) ?: vhalSource.readNumeric(DIRECT_PERF_ODOMETER, 0, diagnostics, "perfOdometer")
-                val singleTripResetOption = wrapperBridge.readAdaptedInt(
+                val singleTripResetOption = shellFuel.singleTripResetOption ?: wrapperBridge.readAdaptedInt(
                     manager = mgr,
                     API_SINGLE_TRIP_RESET_OPTION,
                     isFunctionType = true,
@@ -183,17 +189,19 @@ class FuelEnergyReader(private val context: Context) {
                 vhalSource.appendDiagnostics(diagnostics)
                 FuelEnergySnapshot(
                     avgFuelTrip1 = avgFuelTrip1,
-                    avgFuelTrip2 = avgFuelTrip2,
+                    // A cumulative L/100km value has no usable denominator
+                    // until this trip has covered some distance.
+                    avgFuelTrip2 = if (shellFuel.currentDistanceKm == 0f) null else avgFuelTrip2,
                     fuelPercent = fuelPercent,
                     oilRangeKm = oilRange,
                     totalRangeKm = totalRange,
                     odometerKm = odometer,
-                    trip1DistanceKm = trip1Distance,
-                    trip1AvgSpeed = trip1Speed,
-                    trip1DurationMinutes = trip1Duration,
-                    trip2DistanceKm = trip2Distance,
-                    trip2AvgSpeed = trip2Speed,
-                    trip2DurationMinutes = trip2Duration,
+                    trip1DistanceKm = if (wrapperBridge.isIdentity && shellFuel.subtotalDistanceKm == null && trip1Distance == 0f) null else trip1Distance,
+                    trip1AvgSpeed = if (wrapperBridge.isIdentity && shellFuel.subtotalSpeedKmh == null && trip1Speed == 0f) null else trip1Speed,
+                    trip1DurationMinutes = if (wrapperBridge.isIdentity && shellFuel.subtotalDurationMinutes == null && trip1Duration == 0) null else trip1Duration,
+                    trip2DistanceKm = if (wrapperBridge.isIdentity && shellFuel.currentDistanceKm == null && trip2Distance == 0f) null else trip2Distance,
+                    trip2AvgSpeed = if (wrapperBridge.isIdentity && shellFuel.currentSpeedKmh == null && trip2Speed == 0f) null else trip2Speed,
+                    trip2DurationMinutes = if (wrapperBridge.isIdentity && shellFuel.currentDurationMinutes == null && trip2Duration == 0) null else trip2Duration,
                     singleTripResetOption = singleTripResetOption,
                     diagnostics = diagnostics,
                 )
@@ -219,24 +227,26 @@ class FuelEnergyReader(private val context: Context) {
                 diagnostics = diagnostics,
             )
         }.let { snapshot ->
-            val supportedUnit = mcu["fuelUnit"] == 1L
-            fun fuel(key: String): Float? = mcu[key]?.takeIf { supportedUnit && it in 0..1000 }?.div(10f)
             val identity = diagnostics.any { it.startsWith("wrapper.identity enabled") }
             fun trustedAverage(value: Float?): Float? = if (identity && value == 0f) {
                 diagnostics += "averageFuel zero from unmapped adapter not confirmed; displaying unavailable"
                 null
             } else value
             snapshot.copy(
-                avgFuelTrip1 = fuel("subtotalFuel") ?: trustedAverage(snapshot.avgFuelTrip1),
-                avgFuelTrip2 = fuel("currentFuel") ?: trustedAverage(snapshot.avgFuelTrip2),
-                fuelPercent = mcu["fuelPercent"]?.takeIf { it in 0..100 }?.toInt() ?: snapshot.fuelPercent,
-                oilRangeKm = mcu["oilRange"]?.takeIf { it in 0..5000 }?.toInt() ?: snapshot.oilRangeKm,
-                totalRangeKm = mcu["oilRange"]?.takeIf { it in 0..5000 }?.toInt() ?: snapshot.totalRangeKm,
-                singleTripResetOption = when (mcu["resetOption"]) {
-                    1L -> 612369154
-                    2L -> 612369156
-                    else -> snapshot.singleTripResetOption
-                },
+                avgFuelTrip1 = shellFuel.avgFuelSubtotal ?: trustedAverage(snapshot.avgFuelTrip1),
+                avgFuelTrip2 = if (shellFuel.currentDistanceKm == 0f) null
+                    else shellFuel.avgFuelThisTrip ?: trustedAverage(snapshot.avgFuelTrip2),
+                fuelPercent = shellFuel.fuelPercent ?: snapshot.fuelPercent,
+                oilRangeKm = shellFuel.fuelRangeKm ?: snapshot.oilRangeKm,
+                totalRangeKm = shellFuel.fuelRangeKm ?: snapshot.totalRangeKm,
+                odometerKm = shellFuel.odometerKm ?: snapshot.odometerKm,
+                trip1DistanceKm = shellFuel.subtotalDistanceKm ?: snapshot.trip1DistanceKm,
+                trip2DistanceKm = shellFuel.currentDistanceKm ?: snapshot.trip2DistanceKm,
+                trip1AvgSpeed = shellFuel.subtotalSpeedKmh ?: snapshot.trip1AvgSpeed,
+                trip2AvgSpeed = shellFuel.currentSpeedKmh ?: snapshot.trip2AvgSpeed,
+                trip1DurationMinutes = shellFuel.subtotalDurationMinutes ?: snapshot.trip1DurationMinutes,
+                trip2DurationMinutes = shellFuel.currentDurationMinutes ?: snapshot.trip2DurationMinutes,
+                singleTripResetOption = shellFuel.singleTripResetOption ?: snapshot.singleTripResetOption,
                 diagnostics = diagnostics.toList(),
             )
         }
@@ -494,6 +504,7 @@ class FuelEnergyReader(private val context: Context) {
     private class WrapperBridge private constructor(
         private val wrapper: Any?,
     ) {
+        val isIdentity: Boolean get() = wrapper == null
         companion object {
             fun create(context: Context, diagnostics: MutableList<String>): WrapperBridge {
                 val artifacts = listOf(

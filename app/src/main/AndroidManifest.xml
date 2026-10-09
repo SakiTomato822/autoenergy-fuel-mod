@@ -3,6 +3,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.DUMP" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.car.permission.CAR_ENERGY" />
     <uses-permission android:name="android.car.permission.CAR_INFO" />
     <uses-permission android:name="android.car.permission.CAR_SPEED" />
@@ -32,6 +36,18 @@
             android:exported="false"
             android:screenOrientation="landscape"
             android:configChanges="orientation|screenSize" />
+        <service android:name="com.lynk.dvrprobe.FuelCollectionService"
+            android:exported="false" android:stopWithTask="false"
+            android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Read-only vehicle MCU fuel and trip history collection" />
+        </service>
+        <receiver android:name="com.lynk.dvrprobe.FuelBootReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

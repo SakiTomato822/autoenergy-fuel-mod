@@ -94,11 +94,11 @@ class OriginalEnergyView @JvmOverloads constructor(
         if (isPreview && value.avgFuelTrip1 != null && value.avgFuelTrip1 > 0.1f) {
             previewCurveAverage = value.avgFuelTrip1
         }
-        if (value.singleTripResetOption == RESET_OPTION_CHARGING ||
+        selectedResetOption = if (value.singleTripResetOption == RESET_OPTION_CHARGING ||
             value.singleTripResetOption == RESET_OPTION_PARKING
         ) {
-            selectedResetOption = value.singleTripResetOption
-        }
+            value.singleTripResetOption
+        } else null
         invalidate()
     }
 
@@ -120,8 +120,17 @@ class OriginalEnergyView @JvmOverloads constructor(
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         val scale = min(width / DESIGN_WIDTH, height / DESIGN_HEIGHT)
+        if (scale <= 0f) return
         val dx = (width - DESIGN_WIDTH * scale) / 2f
         val dy = (height - DESIGN_HEIGHT * scale) / 2f
+
+        // Fill the viewport behind the design so its safe-area fit cannot
+        // produce black side bars. Only this decorative wallpaper is stretched.
+        backgroundBitmap?.let {
+            paint.alpha = 255
+            paint.shader = null
+            canvas.drawBitmap(it, null, RectF(0f, 0f, width.toFloat(), height.toFloat()), paint)
+        }
 
         canvas.save()
         canvas.translate(dx, dy)
@@ -166,10 +175,10 @@ class OriginalEnergyView @JvmOverloads constructor(
                 if (scale <= 0f || pageAnimator?.isRunning == true) return true
 
                 performClick()
-                val contentDx = (width - DESIGN_WIDTH * scale) / 2f
-                val contentDy = (height - DESIGN_HEIGHT * scale) / 2f
-                val x = (event.x - contentDx) / scale
-                val y = (event.y - contentDy) / scale
+                val dx = (width - DESIGN_WIDTH * scale) / 2f
+                val dy = (height - DESIGN_HEIGHT * scale) / 2f
+                val x = (event.x - dx) / scale
+                val y = (event.y - dy) / scale
                 if (showSubtotalResetConfirmation) {
                     when {
                         resetDialogCancelBounds.contains(x, y) -> {
@@ -214,7 +223,7 @@ class OriginalEnergyView @JvmOverloads constructor(
                         statisticsBackBounds.contains(x, y) -> animatePageTo(0f)
                         parkingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_PARKING)
                         chargingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_CHARGING)
-                        subtotalResetBounds.contains(x, y) -> {
+                        preview && subtotalResetBounds.contains(x, y) -> {
                             showSubtotalResetConfirmation = true
                             invalidate()
                         }
@@ -259,6 +268,7 @@ class OriginalEnergyView @JvmOverloads constructor(
     }
 
     private fun selectResetOption(option: Int) {
+        if (!preview) return
         if (selectedResetOption == option) return
         onSingleTripResetOptionChanged?.invoke(option)
     }
@@ -455,17 +465,18 @@ class OriginalEnergyView @JvmOverloads constructor(
             canvas,
             RectF(365f, 188f, 625f, 248f),
             leftLabel = "停车重置",
-            rightLabel = "补能重置",
-            leftActive = selectedResetOption?.let { it == RESET_OPTION_PARKING },
+            rightLabel = "加油重置",
+            leftActive = selectedResetOption == RESET_OPTION_PARKING,
+            rightActive = selectedResetOption == RESET_OPTION_CHARGING,
         )
 
         val resetDescription = if (selectedResetOption == null) {
             "*自动重置方式状态未知，等待车辆读回确认"
         } else if (selectedResetOption == RESET_OPTION_CHARGING) {
             "*当前为最近一次加油重置后到现在的里程数据，能耗曲线不会被重置"
-        } else {
+        } else if (selectedResetOption == RESET_OPTION_PARKING) {
             "*当前为最近一次驻车重置后到现在的里程数据，能耗曲线不会被重置"
-        }
+        } else "*暂时无法读取车辆的自动重置方式"
         text(canvas, resetDescription, 122f, 282f, 15f, Color.rgb(174, 199, 211), regular)
 
         statMetric(canvas, durationText(data?.trip2DurationMinutes), "行驶时长", 220f, 350f)
@@ -480,7 +491,7 @@ class OriginalEnergyView @JvmOverloads constructor(
     private fun drawTripSummaryCard(canvas: Canvas) {
         val data = snapshot
         text(canvas, "小计里程", 122f, 646f, 31f, Color.WHITE, medium)
-        drawPill(canvas, subtotalResetBounds, "重置数据", active = false)
+        if (preview) drawPill(canvas, subtotalResetBounds, "重置数据", active = false)
 
         statMetric(canvas, durationText(data?.trip1DurationMinutes), "行驶时长", 220f, 755f)
         statMetric(canvas, distanceText(data?.trip1DistanceKm) + " km", "行驶里程", 505f, 755f)
@@ -657,24 +668,27 @@ class OriginalEnergyView @JvmOverloads constructor(
         bounds: RectF,
         leftLabel: String,
         rightLabel: String,
-        leftActive: Boolean?,
+        leftActive: Boolean,
+        rightActive: Boolean = !leftActive,
     ) {
         paint.style = Paint.Style.FILL
         paint.color = Color.argb(92, 210, 221, 226)
         canvas.drawRoundRect(bounds, 7f, 7f, paint)
 
         val centerX = bounds.centerX()
-        val activeBounds = if (leftActive == true) {
+        val activeBounds = if (leftActive) {
             RectF(bounds.left, bounds.top, centerX, bounds.bottom)
         } else {
             RectF(centerX, bounds.top, bounds.right, bounds.bottom)
         }
-        paint.color = Color.rgb(8, 172, 235)
-        if (leftActive != null) canvas.drawRoundRect(activeBounds, 7f, 7f, paint)
-        if (leftActive == true) {
-            canvas.drawRect(centerX - 7f, bounds.top, centerX, bounds.bottom, paint)
-        } else if (leftActive == false) {
-            canvas.drawRect(centerX, bounds.top, centerX + 7f, bounds.bottom, paint)
+        if (leftActive || rightActive) {
+            paint.color = Color.rgb(8, 172, 235)
+            canvas.drawRoundRect(activeBounds, 7f, 7f, paint)
+            if (leftActive) {
+                canvas.drawRect(centerX - 7f, bounds.top, centerX, bounds.bottom, paint)
+            } else {
+                canvas.drawRect(centerX, bounds.top, centerX + 7f, bounds.bottom, paint)
+            }
         }
 
         line(

@@ -11,7 +11,7 @@
 <p align="center">
   <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
   <img alt="API 30" src="https://img.shields.io/badge/API-30-566C7A">
-  <img alt="Version 0.6.6" src="https://img.shields.io/badge/version-v0.6.6-16ACE3">
+  <img alt="Version 0.6.7" src="https://img.shields.io/badge/version-v0.6.7-16ACE3">
   <a href="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml">
     <img alt="Build debug APK" src="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml/badge.svg">
   </a>
@@ -33,7 +33,9 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 - 上下叠加的里程统计页面，无底部双选项卡
 - 本次里程与小计里程的时长、距离、平均车速和平均油耗
 - 跨行程持久化的近 50 km / 近 100 km 分段油耗曲线
-- 原车停车重置、补能重置和小计里程重置属性写入
+- 实车只读显示停车 / 加油重置方式；模拟器保留重置交互
+- 前台服务后台采集，开机与覆盖安装后自动启动
+- Download/AutoEnergyData 下的 JSON 本地数据源及旧历史迁移
 - API 30、16:9 横屏车机布局
 - 为车机状态栏和底部 SystemUI 保留安全区域
 - 内置 CarProperty 模拟器与多种驾驶场景
@@ -71,9 +73,9 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 | 模拟器 | 无 `android.car.Car` 时自动启用内置模拟数据 |
 | 原厂应用 | 使用独立包名，不覆盖原厂包 |
 | 数据读取 | 取决于车机系统签名权限、属性映射和车型支持 |
-| 数据写入 | 重置操作会调用车辆属性，务必先在安全环境验证 |
+| 重置操作 | 实车界面只读显示车辆设置；模拟器允许交互 |
 
-不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车建议先只观察数据读取情况，并通过诊断日志确认属性映射，再尝试重置操作。不要在驾驶过程中调试、操作 ADB 或查看日志。
+不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车请通过诊断日志确认属性映射，并与仪表对照。不要在驾驶过程中调试、操作 ADB 或查看日志。
 
 `v0.6.5` 保留 CarProperty 作为主要数据源，同时连接 DHU 本机 `127.0.0.1:40004` 的只读 VHAL gRPC 数据流，为受 `CAR_VENDOR_EXTENSION` 限制的油量、续航和总里程提供降级来源。端口与客户端标识来自 EVCC 的 native 实现；该通道只调用属性流与全量快照接口，不包含任何 VHAL 写入实现。
 
@@ -81,7 +83,7 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 
 `v0.6.3` 根据 DHU615G 实车日志兼容 CarProperty 的实际数值类型：Flyme 将平均油耗和里程以 `Integer` 十分位值返回，应用会在读取后乘以 `0.1`，不再强制转换为 `Float`。燃油百分比还会尝试 Android 标准 `FUEL_LEVEL / INFO_FUEL_CAPACITY` 降级计算，续航可在标准油量与平均油耗均可读时估算。
 
-原厂燃油百分比、原厂续航和总里程在部分固件上受系统签名级 `CAR_VENDOR_EXTENSION` 权限保护。独立签名 APK 无法通过普通运行时授权取得该权限；此时应用只会使用可读的标准属性或显示空值，并在诊断日志中写明 `SecurityException`，不会伪造实车数据。
+原厂燃油百分比、原厂续航和总里程在部分固件上受系统签名级 `CAR_VENDOR_EXTENSION` 权限保护。独立签名 APK 无法通过普通运行时授权取得该权限；此时应用优先使用已授予 DUMP 的 MCU 只读通道，再尝试其他可读属性或显示空值，并在诊断日志中写明 `SecurityException`，不会伪造实车数据。
 
 ## 构建
 
@@ -97,7 +99,7 @@ gradle.bat :app:assembleDebug
 app/build/outputs/apk/debug/app-debug.apk
 ```
 
-仓库中的 GitHub Actions 工作流也会执行 Debug APK 构建。
+仓库中的 GitHub Actions 工作流会执行 Debug APK 构建和单元测试。Debug 包使用独立包名和调试签名，可与已有版本并排安装。
 
 ## 安装
 
@@ -105,11 +107,15 @@ app/build/outputs/apk/debug/app-debug.apk
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-应用包名：
+Debug 包名为 `com.lynk.autoenergyfuel.dhureadonly`；Release 包名为 `com.lynk.autoenergyfuel`。当前仓库 CI 生成 Debug 包，与原包分开安装。覆盖升级要求使用相同签名。
 
-```text
-com.lynk.autoenergyfuel
-```
+## 后台记录与本地数据
+
+首次打开实车界面后，前台服务持续读取数据；关闭页面不停止记录。每次读取完成后等待约 5 秒，每累计约 3 km 保存一个分段油耗点。曲线由累计平均油耗和里程差分估算，受原始油耗的十分位精度影响。
+
+历史与采集基线保存在 `Download/AutoEnergyData/history-*.json`，不是 SharedPreferences 备份。新点立即写入，普通采集进度最多约每分钟写入；保留当前与前一代文件，含格式、版本和 SHA-256 校验。旧版 SharedPreferences 历史会自动迁移。长按主卡片打开诊断页，可立即保存或选择已有 JSON 继续记录。
+
+应用重启会读取 JSON 恢复基线。删除应用后共享文件通常仍保留，重新安装后请手动选择原文件，并重新授予 DUMP。物理重启和完整卸载重装流程尚未实测；强行停止应用后需手动打开，厂商后台策略也可能限制自启动。
 
 ## 车辆属性映射
 
@@ -167,19 +173,34 @@ adb shell am broadcast `
 
 ## 诊断日志
 
-### 0.6.6：DHU615G MCU 只读数据
+### 0.6.7：DHU615G 的只读 MCU 读取
 
-针对 [实车反馈 #1](https://github.com/SakiTomato822/autoenergy-fuel-mod/issues/1)，新增固定属性白名单的 `dumpsys car_service get-property-value` 读取，不使用 Root、不通过此通道写入车辆设置。安装后需要在已连接车机的 ADB 上执行一次：
+此修复在声明并授予 `android.permission.DUMP` 后，使用
+`dumpsys car_service get-property-value` 读取真实 MCU 字节属性。
+该通道仅查询数据，不进行属性写入，也不依赖 40004 端口。
+
+Debug 包名为 `com.lynk.autoenergyfuel.dhureadonly`，名称为“能量中心 MCU 测试版”，可与官方版本并排安装。安装后，通过 ADB 执行一次：
 
 ```sh
-adb shell pm grant com.lynk.autoenergyfuel android.permission.DUMP
+adb shell pm grant com.lynk.autoenergyfuel.dhureadonly android.permission.DUMP
 ```
 
-此权限不能由普通运行时弹窗授予；未授予时会记录明确提示，旧数据通道仍保留。按反馈中的 MCU 字节格式校验属性、Area 0、可用状态和长度，再做大端无符号解码：本次油耗 `0x28700440`、小计油耗 `0x28700048`、单位 `0x28700026`、油量百分比 `0x2870043a`、续航 `0x2870001e`、自动重置方式 `0x28700022`。
+DHU615G 实机核对的映射如下，area 均为 0，字节使用大端无符号解码：
 
-油耗仅在单位原始值为 1 时按当前十分位约定转换。该倍率来自既有适配约定，仍需与仪表对照验证。MCU 值优先于不可靠的适配层默认 0；未映射适配层的油耗 0 不再冒充有效数据。没有 MCU 里程映射证据，本版不保证里程和曲线因此恢复。曲线仍需有效的本次平均油耗与本次里程共同驱动。
+| 数据 | 原始属性 | 字节数 | 换算 | 本次实机读取 |
+| --- | --- | --- | --- | --- |
+| 本次平均油耗 | `0x28700440` | 2 | 原始值 / 10 | `[0,57]` → 5.7 L/100 km |
+| 小计平均油耗 | `0x28700048` | 2 | 原始值 / 10 | `[0,56]` → 5.6 L/100 km |
+| 剩余油量 | `0x2870043a` | 2 | 原始值 | `[0,17]` → 17% |
+| 燃油续航 | `0x2870001e` | 4 | 原始值 | `[0,0,0,97]` → 97 km |
 
-重置方式初始显示状态未知，点击后不提前选中，写入失败不切换为相反选项，只接受车辆读回或保留最近一次确认状态。此版本未作实车 APK 验证，不包含 3D Demo。
+不要将适配层返回的 0 自动视为真实平均油耗：在本机，底层
+`VehicleSignalManager` 捕获 `CAR_VENDOR_EXTENSION` 权限异常后，
+上层仍收到 0。当前版本优先使用状态正常、长度正确且范围有效的
+MCU 字节数据。其他车型仍需独立核对属性和倍率；本次核对的油耗单位字段
+`0x28700026` 返回 `[1]`，只有单位为 1 才转换 MCU 平均油耗。
+
+解析同时兼容 `VehiclePropValue{prop=..., areaId=...}` 和实车 `Property:0x...,zone:0x0,...,bytes: [...]`。总里程、本次 / 小计里程、平均车速、时长的属性表见 [0.6.7 更新记录](docs/release-v0.6.7.md)。时长与总里程倍率仍需逐项对照仪表确认。
 
 在主页面长按左侧大卡片约 1.2 秒，可以打开应用内日志查看器。日志会记录：
 
@@ -193,13 +214,13 @@ adb shell pm grant com.lynk.autoenergyfuel android.permission.DUMP
 日志文件：
 
 ```text
-/sdcard/Android/data/com.lynk.autoenergyfuel/files/logs/autoenergy.log
+/data/user/0/com.lynk.autoenergyfuel.dhureadonly/files/logs/autoenergy.log
 ```
 
-每个日志文件最大 768 KiB，并保留两份滚动备份。可通过 ADB 导出：
+每个日志文件最大 768 KiB，并保留两份滚动备份。Debug 包可通过 ADB 导出：
 
 ```powershell
-adb pull /sdcard/Android/data/com.lynk.autoenergyfuel/files/logs/autoenergy.log
+adb shell run-as com.lynk.autoenergyfuel.dhureadonly cat files/logs/autoenergy.log
 ```
 
 ## 仓库结构
@@ -223,6 +244,7 @@ tools/                 辅助验证脚本
 - `v0.6.4`：只读 VHAL gRPC 降级数据源与近 50 / 100 km 分段油耗曲线
 - `v0.6.5`：修正 EVCC native VHAL 端口与客户端标识，改进重连和退出日志
 - `v0.6.6`：MCU DUMP 只读数据路径、适配层假零过滤、重置方式读回状态修正
+- `v0.6.7`：实车解析格式修复、行程 / 总里程补全、等比例界面、后台采集与 JSON 本地数据源
 
 ## 声明
 

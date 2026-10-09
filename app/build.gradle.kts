@@ -11,8 +11,8 @@ android {
         applicationId = "com.lynk.autoenergyfuel"
         minSdk = 30
         targetSdk = 34
-        versionCode = 19
-        versionName = "0.6.6"
+        versionCode = 23
+        versionName = "0.6.7"
     }
 
     buildTypes {
@@ -25,6 +25,7 @@ android {
         }
         debug {
             isMinifyEnabled = false
+            applicationIdSuffix = ".dhureadonly"
         }
     }
 
@@ -44,6 +45,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.code.gson:gson:2.10.1")
     testImplementation("junit:junit:4.13.2")
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")

@@ -12,11 +12,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.CancellationException
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
@@ -36,9 +35,6 @@ class MainActivity : AppCompatActivity() {
     private var pollJob: Job? = null
     private var previewMode = false
     private var simulationReceiverRegistered = false
-    private var pollSequence = 0L
-    private var lastAvailabilitySignature: String? = null
-    private var lastErrorDiagnostics: Set<String> = emptySet()
 
     private val simulationReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -120,29 +116,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun startPolling() {
+        FuelCollectionService.start(this)
         pollJob?.cancel()
-        pollSequence = 0L
-        AppLog.i("POLL", "vehicle polling started interval=5000ms")
         pollJob = lifecycleScope.launch {
-            while (isActive) {
-                try {
-                    val snapshot = withContext(Dispatchers.IO) { reader.readSnapshot() }
-                    pollSequence += 1
-                    logSnapshot(snapshot)
-                    trendStore.observe(
-                        averageFuel = snapshot.avgFuelTrip2,
-                        tripDistanceKm = snapshot.trip2DistanceKm,
-                    )
-                    energyView.setSnapshot(snapshot, isPreview = false)
-                    energyView.setTrendPoints(
-                        trendStore.loadForLastDistance(100f),
-                    )
-                } catch (cancelled: CancellationException) {
-                    throw cancelled
-                } catch (error: Throwable) {
-                    AppLog.e("POLL", "poll#$pollSequence failed", error)
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                FuelCollectionState.snapshots.collect { snapshot ->
+                    if (snapshot != null) {
+                        energyView.setSnapshot(snapshot, isPreview = false)
+                        energyView.setTrendPoints(withContext(Dispatchers.IO) {
+                            runCatching { trendStore.loadForLastDistance(100f) }
+                                .onFailure { AppLog.e("DATA", "history unavailable; select an intact JSON file", it) }
+                                .getOrDefault(emptyList())
+                        })
+                    }
                 }
-                delay(5_000L)
             }
         }
     }
@@ -236,49 +223,6 @@ class MainActivity : AppCompatActivity() {
     private fun openDiagnostics() {
         AppLog.i("UI", "diagnostics requested from main card long press")
         startActivity(Intent(this, DiagnosticsActivity::class.java))
-    }
-
-    private fun logSnapshot(snapshot: FuelEnergySnapshot) {
-        val availability = listOf(
-            snapshot.avgFuelTrip1 != null,
-            snapshot.avgFuelTrip2 != null,
-            snapshot.fuelPercent != null,
-            snapshot.oilRangeKm != null,
-            snapshot.totalRangeKm != null,
-            snapshot.odometerKm != null,
-            snapshot.trip1DistanceKm != null,
-            snapshot.trip2DistanceKm != null,
-        ).joinToString(separator = "") { if (it) "1" else "0" }
-
-        val shouldLogSummary =
-            pollSequence == 1L ||
-                availability != lastAvailabilitySignature ||
-                pollSequence % 12L == 0L
-        if (shouldLogSummary) {
-            AppLog.i(
-                "SNAPSHOT",
-                "poll#$pollSequence availability=$availability " +
-                    "avg1=${snapshot.avgFuelTrip1} avg2=${snapshot.avgFuelTrip2} " +
-                    "fuel=${snapshot.fuelPercent}% oilRange=${snapshot.oilRangeKm}km " +
-                    "totalRange=${snapshot.totalRangeKm}km odo=${snapshot.odometerKm}km " +
-                    "trip1=${snapshot.trip1DistanceKm}km trip2=${snapshot.trip2DistanceKm}km " +
-                    "reset=${snapshot.singleTripResetOption}",
-            )
-            lastAvailabilitySignature = availability
-        }
-
-        if (pollSequence == 1L) {
-            snapshot.diagnostics.forEach { AppLog.d("CAR", it) }
-        }
-        val errors = snapshot.diagnostics
-            .filter {
-                it.contains("error", ignoreCase = true) ||
-                    it.contains("invalid", ignoreCase = true) ||
-                    it.contains("null", ignoreCase = true)
-            }
-            .toSet()
-        (errors - lastErrorDiagnostics).forEach { AppLog.w("CAR", it) }
-        lastErrorDiagnostics = errors
     }
 
 }

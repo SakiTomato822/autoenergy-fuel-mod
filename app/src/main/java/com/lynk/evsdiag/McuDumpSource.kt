@@ -16,6 +16,10 @@ class McuDumpSource(private val context: Context) {
             Triple("currentFuel", "28700440", 2), Triple("subtotalFuel", "28700048", 2),
             Triple("fuelUnit", "28700026", 1), Triple("fuelPercent", "2870043a", 2),
             Triple("oilRange", "2870001e", 4), Triple("resetOption", "28700022", 1),
+            Triple("odometer", "2870043b", 4), Triple("subtotalDistance", "28700020", 4),
+            Triple("currentDistance", "2870043c", 4), Triple("subtotalSpeed", "28700047", 2),
+            Triple("currentSpeed", "2870043e", 2), Triple("subtotalDuration", "28700049", 4),
+            Triple("currentDuration", "2870043d", 4),
         )
         val result = mutableMapOf<String, Long>()
         for ((label, id, length) in properties) {
@@ -49,10 +53,10 @@ class McuDumpSource(private val context: Context) {
 
 internal object McuDumpParser {
     fun parse(text: String, property: Long, length: Int): Long? {
-        val prop = Regex("(?:prop|propertyId|mProp)\\s*[=:]\\s*(0x[0-9a-fA-F]+|[0-9]+)\\b").find(text)?.groupValues?.get(1) ?: return null
+        val prop = Regex("(?:Property|prop|propertyId|mProp)\\s*[=:]\\s*(0x[0-9a-fA-F]+|[0-9]+)\\b").find(text)?.groupValues?.get(1) ?: return null
         val actual = if (prop.startsWith("0x")) prop.substring(2).toLongOrNull(16) else prop.toLongOrNull()
         if (actual != property) return null
-        if (!Regex("(?:areaId|area|mAreaId)\\s*[=:]\\s*(?:0x0|0)\\b").containsMatchIn(text)) return null
+        if (!Regex("(?:zone|areaId|area|mAreaId)\\s*[=:]\\s*(?:0x0|0)\\b").containsMatchIn(text)) return null
         if (!Regex("(?:status|mStatus)\\s*[=:]\\s*(?:0|AVAILABLE)\\b").containsMatchIn(text)) return null
         val raw = Regex("(?:byteValues|bytes|mByteValues)\\s*[=:]\\s*\\[([^]]*)]").find(text)?.groupValues?.get(1) ?: return null
         val tokens = raw.split(',').map { it.trim() }

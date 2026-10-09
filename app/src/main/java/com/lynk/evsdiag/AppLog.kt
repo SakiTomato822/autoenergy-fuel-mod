@@ -22,10 +22,9 @@ object AppLog {
     fun initialize(context: Context) {
         synchronized(lock) {
             if (logFile != null) return
-            val directory = context.applicationContext
-                .getExternalFilesDir(null)
-                ?.resolve("logs")
-                ?: File(context.applicationContext.filesDir, "logs")
+            // App-private storage stays writable when restored external directories
+            // have mismatched ownership, as observed on this head unit.
+            val directory = File(context.applicationContext.filesDir, "logs")
             directory.mkdirs()
             logFile = File(directory, LOG_FILE_NAME)
         }
