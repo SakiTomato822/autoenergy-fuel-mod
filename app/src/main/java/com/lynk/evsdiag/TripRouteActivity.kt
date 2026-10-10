@@ -19,6 +19,11 @@ import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.sync.Semaphore
+import kotlinx.coroutines.sync.withPermit
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.math.*
@@ -54,13 +59,14 @@ class TripRouteActivity : AppCompatActivity() {
         header.addView(button("‹ 返回") { finish() })
         header.addView(label("行程轨迹", 30f), LinearLayout.LayoutParams(0, dp(72), 1f).apply { marginStart = dp(22) })
         header.addView(button("历史行程", ::chooseHistory))
+        header.addView(button("在线底图", ::toggleMap), LinearLayout.LayoutParams(-2, -2).apply { marginStart = dp(16) })
         if (runCatching { Class.forName("android.car.Car") }.isFailure) {
             header.addView(button("演示轨迹", ::showDemo), LinearLayout.LayoutParams(-2, -2).apply { marginStart = dp(16) })
         }
         recording = button("开始记录", ::toggleRecording)
         header.addView(recording, LinearLayout.LayoutParams(-2, -2).apply { marginStart = dp(16) })
         root.addView(header)
-        status = label("定位仅在主动开始后启用 · 本地保存，不上传", 22f)
+        status = label("定位仅在主动开始后启用 · 行程本地保存 · 在线底图需单独同意", 22f)
         root.addView(status, LinearLayout.LayoutParams(-1, dp(64)))
         val body = LinearLayout(this)
         route = RouteCanvas { point ->
@@ -72,7 +78,7 @@ class TripRouteActivity : AppCompatActivity() {
             orientation = LinearLayout.VERTICAL; setPadding(dp(28), dp(24), dp(24), dp(24))
             background = GradientDrawable().apply { setColor(Color.rgb(27, 43, 56)); cornerRadius = dp(12).toFloat() }
         }
-        details = label("尚无轨迹\n\n主动开始记录后，等待车机提供有效定位。\n\n当前为无底图轨迹预览，不显示道路或地名。", 24f)
+        details = label("尚无轨迹\n\n主动开始记录后，等待车机提供有效定位。\n\n可点击在线底图，查看 OSM 道路和已有地标。", 24f)
         sidebar.addView(details, LinearLayout.LayoutParams(-1, 0, 1f))
         sidebar.addView(label("蓝色：低速  ·  青色：中速\n金色：较高速  ·  灰色：速度未知\n失去定位时断开连线", 20f))
         body.addView(sidebar, LinearLayout.LayoutParams(0, -1, 1f).apply { marginStart = dp(22) })
@@ -94,10 +100,28 @@ class TripRouteActivity : AppCompatActivity() {
                 runCatching { TripRouteStore.list(this@TripRouteActivity).firstOrNull()?.let(TripRouteStore::read) }
             }
             if (shownPoints.isEmpty() && !TripRouteState.state.value.recording) {
-                latest.onSuccess { it?.let { points -> display(points); status.text = "最近保存的行程 · 本地无底图预览" } }
+                latest.onSuccess { it?.let { points -> display(points); status.text = "最近保存的行程 · 本地轨迹" } }
                     .onFailure { status.text = "无法读取行程：${it.message}" }
             }
         }
+    }
+
+    override fun onDestroy() {
+        if (::route.isInitialized) route.releaseMap()
+        super.onDestroy()
+    }
+
+    private fun toggleMap() {
+        if (route.online) { route.online = false; status.text = "底图已关闭 · 行程仍保存在本机"; return }
+        val dialog = android.app.Dialog(this)
+        val panel = dialogPanel("启用 OSM 在线底图？")
+        panel.addView(label("底图显示道路和已有地标，不提供导航或地点搜索。\n请求地图时，OSM 服务会收到你的 IP 和所查看区域；不会上传完整行程文件。\n公共服务可能较慢或不可达。不批量下载离线地图，断网仍可查看轨迹。", 24f),
+            LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(20); bottomMargin = dp(24) })
+        val actions = LinearLayout(this).apply { gravity = Gravity.END }
+        actions.addView(dialogButton("取消") { dialog.dismiss() })
+        actions.addView(dialogButton("同意并启用") { dialog.dismiss(); route.online = true },
+            LinearLayout.LayoutParams(-2, -2).apply { marginStart = dp(20) })
+        panel.addView(actions); showPanel(dialog, panel)
     }
 
     private fun toggleRecording() {
@@ -107,7 +131,7 @@ class TripRouteActivity : AppCompatActivity() {
         }
         val dialog = android.app.Dialog(this)
         val panel = dialogPanel("开始记录行程？")
-        panel.addView(label("将使用车机定位，切换到导航后仍持续记录，直到你主动结束。\n轨迹仅存本机，不上传；未接入道路底图。卸载 App 会删除轨迹。\n请停车后操作。", 24f).apply { gravity = Gravity.START },
+        panel.addView(label("将使用车机定位，切换到导航后仍持续记录，直到你主动结束。\n行程文件仅存本机；若单独启用在线底图，服务商会收到所查看区域。卸载 App 会删除轨迹。\n请停车后操作。", 24f).apply { gravity = Gravity.START },
             LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(24); bottomMargin = dp(28) })
         val actions = LinearLayout(this).apply { gravity = Gravity.END }
         actions.addView(dialogButton("取消") { dialog.dismiss() })
@@ -140,7 +164,7 @@ class TripRouteActivity : AppCompatActivity() {
                     dialog.dismiss()
                     lifecycleScope.launch {
                         val points = withContext(Dispatchers.IO) { runCatching { TripRouteStore.read(file) } }
-                        points.onSuccess { followLive = false; display(it); status.text = "历史行程 · 本地无底图预览" }
+                        points.onSuccess { followLive = false; display(it); status.text = "历史行程 · 本地轨迹" }
                             .onFailure { status.text = "行程读取失败：${it.message}" }
                     }
                 }, LinearLayout.LayoutParams(-1, dp(70)).apply { topMargin = dp(12) })
@@ -152,7 +176,7 @@ class TripRouteActivity : AppCompatActivity() {
     }
     private fun display(points: List<RoutePoint>) {
         shownPoints = points
-        route.points = points; route.invalidate()
+        route.showRoute(points)
         val metres = points.zipWithNext().sumOf { (a, b) -> if (b.breakBefore) 0.0 else RouteGeometry.distanceMetres(a, b) }
         val duration = if (points.size < 2) 0 else ((points.last().elapsedMs - points.first().elapsedMs) / 60_000).coerceAtLeast(0)
         details.text = "定位轨迹长度\n%.2f km\n\n记录跨度\n%d min\n\n有效定位\n%d 个点\n\n点击轨迹查看读数\n\n轨迹长度含定位误差，不能替代车辆里程。".format(metres / 1000, duration, points.size) +
@@ -165,7 +189,7 @@ class TripRouteActivity : AppCompatActivity() {
             26.0 + i * 0.00012, 119.0 + sin(i / 13.0) * 0.002 + i * 0.00002,
             5f, (15 + i % 70).toFloat(), 6.2f, i / 10f, i == 0 || i == 45) }
         display(points)
-        status.text = "演示轨迹 · 合成数据，未写入行程文件 · 无道路底图"
+        status.text = "演示轨迹 · 合成数据，未写入行程文件（不保证贴合道路）"
     }
     private fun label(value: String, size: Float) = TextView(this).apply {
         text = value; textSize = size; setTextColor(Color.rgb(211, 230, 241))
@@ -195,29 +219,92 @@ class TripRouteActivity : AppCompatActivity() {
         dialog.window?.setLayout((resources.displayMetrics.widthPixels * 0.62f).roundToInt(), -2)
     }
 
-    private inner class RouteCanvas(val selected: (RoutePoint) -> Unit) : View(this@TripRouteActivity) {
+    private inner class RouteCanvas(val selected: (RoutePoint) -> Unit) : View(this@TripRouteActivity), RouteMapController {
         var points: List<RoutePoint> = emptyList()
+        var online = false
+            set(value) { field = value; generation++; pending.clear(); mapScope.cancel()
+                tileFailed = false
+                mapScope = CoroutineScope(SupervisorJob() + Dispatchers.Main); invalidate() }
+        private var mapScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
+        private val tiles = OsmTileCache(this@TripRouteActivity)
+        private val memory = object : android.util.LruCache<String, Bitmap>(8 * 1024 * 1024) {
+            override fun sizeOf(key: String, value: Bitmap) = value.byteCount
+        }
+        private val pending = mutableSetOf<String>()
+        private val retryAfter = mutableMapOf<String, Long>()
+        private val requests = Semaphore(2)
+        private var generation = 0
+        private var zoom = 15
+        private var centerX = 0.5
+        private var centerY = 0.5
+        private var needsFit = true
+        private var downX = 0f; private var downY = 0f
+        private var lastX = 0f; private var lastY = 0f
+        private var dragged = false
+        private var tileFailed = false
         private var projected: List<PointF> = emptyList()
         private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
+        override fun showRoute(points: List<RoutePoint>) {
+            if (this.points.firstOrNull()?.timestampMs != points.firstOrNull()?.timestampMs) needsFit = true
+            this.points = points; invalidate()
+        }
+        override fun fitRoute() { needsFit = true; invalidate() }
+        override fun releaseMap() { generation++; mapScope.cancel(); memory.evictAll() }
+        private fun requestTile(z: Int, x: Int, y: Int, key: String) {
+            if (key in pending || System.currentTimeMillis() < (retryAfter[key] ?: 0)) return
+            // At most one viewport worth of work; no background prefetch.
+            if (pending.size >= 48) return
+            pending.add(key)
+            val version = generation
+            mapScope.launch {
+                try {
+                    val bitmap = withContext(Dispatchers.IO) { requests.withPermit { runCatching { tiles.load(z, x, y) }.getOrNull() } }
+                    if (version != generation) return@launch
+                    if (bitmap != null) memory.put(key, bitmap)
+                    else {
+                        if (retryAfter.size > 512) retryAfter.clear()
+                        retryAfter[key] = System.currentTimeMillis() + 60_000
+                        if (!tileFailed) AppLog.w("MAP", "OSM tile unavailable; route overlay retained (coordinates omitted)")
+                        tileFailed = true
+                    }
+                    invalidate()
+                } finally { if (version == generation) pending.remove(key) }
+            }
+        }
         override fun onDraw(canvas: Canvas) {
             super.onDraw(canvas)
             paint.color = Color.rgb(22, 38, 51)
             canvas.drawRoundRect(0f, 0f, width.toFloat(), height.toFloat(), dp(12).toFloat(), dp(12).toFloat(), paint)
             if (points.isEmpty()) {
                 paint.color = Color.rgb(147, 174, 192); paint.textSize = dp(26).toFloat(); paint.textAlign = Paint.Align.CENTER
-                canvas.drawText("等待行程轨迹 · 暂未接入底图", width / 2f, height / 2f, paint)
+                canvas.drawText("等待行程轨迹 · 有定位后显示所处区域", width / 2f, height / 2f, paint)
                 paint.textAlign = Paint.Align.LEFT
                 return
             }
-            val referenceLat = points.map { it.latitude }.average()
-            val referenceLon = points.first().longitude
-            val raw = points.map { (it.longitude - referenceLon) * cos(Math.toRadians(referenceLat)) to -it.latitude }
+            val raw = points.map { WebMercator.x(it.longitude) to WebMercator.y(it.latitude) }
             val minX = raw.minOf { it.first }; val maxX = raw.maxOf { it.first }
             val minY = raw.minOf { it.second }; val maxY = raw.maxOf { it.second }
-            val padding = dp(64).toFloat()
-            val scale = min((width - padding * 2) / max(maxX - minX, 0.0001), (height - padding * 2) / max(maxY - minY, 0.0001))
-            projected = raw.map { PointF((width / 2 + (it.first - (minX + maxX) / 2) * scale).toFloat(),
-                (height / 2 + (it.second - (minY + maxY) / 2) * scale).toFloat()) }
+            if (needsFit) {
+                zoom = WebMercator.fitZoom(maxX - minX, maxY - minY, width, height)
+                centerX = (minX + maxX) / 2; centerY = (minY + maxY) / 2; needsFit = false
+            }
+            val scale = WebMercator.worldSize(zoom)
+            val left = centerX * scale - width / 2.0; val top = centerY * scale - height / 2.0
+            canvas.save(); canvas.clipRect(0, 0, width, height)
+            if (online) {
+                val count = 1 shl zoom
+                val firstX = floor(left / 256).toInt(); val lastX = floor((left + width) / 256).toInt()
+                val firstY = floor(top / 256).toInt().coerceAtLeast(0); val lastY = floor((top + height) / 256).toInt().coerceAtMost(count - 1)
+                for (x in firstX..lastX) for (y in firstY..lastY) {
+                    val wrappedX = ((x % count) + count) % count
+                    val key = "$zoom-$wrappedX-$y"
+                    val bitmap = memory.get(key)
+                    if (bitmap != null) { paint.color = Color.WHITE; canvas.drawBitmap(bitmap,
+                        null, RectF((x * 256 - left).toFloat(), (y * 256 - top).toFloat(), (x * 256 + 256 - left).toFloat(), (y * 256 + 256 - top).toFloat()), paint) }
+                    else requestTile(zoom, wrappedX, y, key)
+                }
+            }
+            projected = raw.map { PointF((it.first * scale - left).toFloat(), (it.second * scale - top).toFloat()) }
             paint.strokeWidth = dp(5).toFloat(); paint.strokeCap = Paint.Cap.ROUND
             for (i in 1 until projected.size) {
                 if (points[i].breakBefore) continue
@@ -231,10 +318,49 @@ class TripRouteActivity : AppCompatActivity() {
                 paint.color = if (i == 0) Color.rgb(65, 203, 159) else Color.rgb(239, 115, 111)
                 canvas.drawCircle(projected[i].x, projected[i].y, dp(7).toFloat(), paint)
             }
+            canvas.restore()
+            paint.color = Color.rgb(27, 43, 56)
+            canvas.drawRect(0f, 0f, dp(310).toFloat(), dp(52).toFloat(), paint)
+            paint.color = Color.WHITE; paint.textSize = dp(22).toFloat()
+            canvas.drawText("＋      −      全程", dp(18).toFloat(), dp(35).toFloat(), paint)
+            val caption = if (online) "© OpenStreetMap contributors" else "底图关闭 · 仅轨迹"
+            paint.textSize = dp(18).toFloat()
+            val boxWidth = paint.measureText(caption) + dp(24)
+            paint.color = Color.rgb(27, 43, 56)
+            canvas.drawRect(width - boxWidth, height - dp(38).toFloat(), width.toFloat(), height.toFloat(), paint)
+            paint.color = Color.WHITE; canvas.drawText(caption, width - boxWidth + dp(12), height - dp(12).toFloat(), paint)
+            if (online && (pending.isNotEmpty() || tileFailed)) {
+                paint.color = Color.rgb(27, 43, 56); canvas.drawRect(0f, height - dp(38).toFloat(), dp(410).toFloat(), height.toFloat(), paint)
+                paint.color = Color.WHITE
+                canvas.drawText(if (tileFailed) "部分底图未加载 · 轨迹仍可用" else "正在加载在线底图…", dp(12).toFloat(), height - dp(12).toFloat(), paint)
+            }
         }
         override fun onTouchEvent(event: MotionEvent): Boolean {
+            if (event.actionMasked == MotionEvent.ACTION_DOWN) {
+                downX = event.x; downY = event.y; lastX = event.x; lastY = event.y; dragged = false
+            }
+            if (event.actionMasked == MotionEvent.ACTION_MOVE) {
+                if (hypot(event.x - downX, event.y - downY) > dp(12)) dragged = true
+                if (dragged && points.isNotEmpty()) {
+                    centerX = (centerX - (event.x - lastX) / WebMercator.worldSize(zoom)).coerceIn(0.0, 1.0)
+                    centerY = (centerY - (event.y - lastY) / WebMercator.worldSize(zoom)).coerceIn(0.0, 1.0)
+                    invalidate()
+                }
+                lastX = event.x; lastY = event.y
+            }
             if (event.actionMasked == MotionEvent.ACTION_UP) {
+                if (dragged) return true
                 performClick()
+                if (event.y <= dp(52) && event.x <= dp(310)) {
+                    zoom = when { event.x < dp(88) -> (zoom + 1).coerceAtMost(18)
+                        event.x < dp(168) -> (zoom - 1).coerceAtLeast(2)
+                        else -> { fitRoute(); zoom } }
+                    invalidate(); return true
+                }
+                if (online && event.y >= height - dp(38) && event.x > width - dp(330)) {
+                    runCatching { startActivity(Intent(Intent.ACTION_VIEW, android.net.Uri.parse("https://www.openstreetmap.org/copyright"))) }
+                    return true
+                }
                 projected.indices.minByOrNull { hypot(projected[it].x - event.x, projected[it].y - event.y) }?.let { index ->
                     if (hypot(projected[index].x - event.x, projected[index].y - event.y) <= dp(60)) selected(points[index])
                 }
