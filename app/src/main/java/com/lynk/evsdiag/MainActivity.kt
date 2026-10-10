@@ -80,6 +80,7 @@ class MainActivity : AppCompatActivity() {
             onSubtotalResetRequested = ::resetSubtotalTrip,
             onDiagnosticsRequested = ::openDiagnostics,
         )
+        energyView.setRouteCallback { startActivity(Intent(this, TripRouteActivity::class.java)) }
     }
 
     override fun onStart() {

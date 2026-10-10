@@ -13,6 +13,7 @@ android {
         targetSdk = 34
         versionCode = 23
         versionName = "0.6.7"
+        testInstrumentationRunner = "com.lynk.dvrprobe.RouteSmokeInstrumentation"
     }
 
     buildTypes {

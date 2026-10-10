@@ -64,10 +64,12 @@ class OriginalEnergyView @JvmOverloads constructor(
     private val mainEntryBounds = RectF(78f, 150f, 790f, 890f)
     private val statisticsEntryBounds = RectF(106f, 766f, 762f, 864f)
     private var entryPressed = false
-    private val primaryText = Color.rgb(241, 243, 246)
-    private val secondaryText = Color.rgb(160, 168, 180)
-    private val surfaceColor = Color.rgb(34, 38, 45)
-    private val accentColor = Color.rgb(63, 174, 235)
+    private val primaryText = Color.rgb(235, 244, 250)
+    private val secondaryText = Color.rgb(147, 174, 192)
+    private val surfaceColor = Color.rgb(27, 43, 56)
+    private val accentColor = Color.rgb(48, 170, 224)
+    private val routeEntryBounds = RectF(1500f, 48f, 1838f, 120f)
+    private var onRouteRequested: (() -> Unit)? = null
     private val statisticsBackBounds = RectF(42f, 36f, 315f, 142f)
     private val parkingResetBounds = RectF(365f, 188f, 495f, 248f)
     private val chargingResetBounds = RectF(495f, 188f, 625f, 248f)
@@ -112,6 +114,8 @@ class OriginalEnergyView @JvmOverloads constructor(
         trendPoints = value
         invalidate()
     }
+
+    fun setRouteCallback(callback: () -> Unit) { onRouteRequested = callback }
 
     fun setActionCallbacks(
         onSingleTripResetOptionChanged: (Int) -> Unit,
@@ -244,6 +248,7 @@ class OriginalEnergyView @JvmOverloads constructor(
                     animatePageTo(1f)
                 } else if (pageProgress >= 0.5f) {
                     when {
+                        routeEntryBounds.contains(x, y) -> onRouteRequested?.invoke()
                         statisticsBackBounds.contains(x, y) -> animatePageTo(0f)
                         parkingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_PARKING)
                         chargingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_CHARGING)
@@ -311,7 +316,7 @@ class OriginalEnergyView @JvmOverloads constructor(
         val data = snapshot
         panelRect.set(78f, 150f, 790f, 890f)
         paint.shader = null
-        paint.color = Color.argb(225, 26, 31, 39)
+        paint.color = Color.argb(235, 20, 35, 48)
         canvas.drawRoundRect(panelRect, 16f, 16f, paint)
 
         text(canvas, "能量中心", 126f, 225f, 36f, primaryText, medium)
@@ -335,7 +340,7 @@ class OriginalEnergyView @JvmOverloads constructor(
         text(canvas, "总里程", 440f, 680f, 22f, secondaryText, medium)
         text(canvas, distanceText(data?.odometerKm) + " km", 440f, 723f, 30f, primaryText, medium)
 
-        paint.color = if (entryPressed) Color.rgb(61, 67, 77) else Color.rgb(43, 49, 59)
+        paint.color = if (entryPressed) Color.rgb(44, 70, 89) else Color.rgb(31, 51, 68)
         canvas.drawRoundRect(statisticsEntryBounds, 12f, 12f, paint)
         text(canvas, "里程统计", 130f, 804f, 26f, primaryText, medium)
         text(canvas, "本次行程、小计与油耗估算", 130f, 840f, 22f, secondaryText, medium)
@@ -359,6 +364,9 @@ class OriginalEnergyView @JvmOverloads constructor(
             Color.rgb(153, 190, 210),
             italic,
         )
+        val litres = FuelQuantity.estimateLitres(percent)
+        text(canvas, if (litres == null) "-- L" else "约 %.1f L".format(java.util.Locale.CHINA, litres),
+            1328f, markerY + 72f, 22f, secondaryText, medium)
         canvas.restore()
 
         paint.style = Paint.Style.STROKE
@@ -403,13 +411,14 @@ class OriginalEnergyView @JvmOverloads constructor(
     private fun drawMileageStatisticsPage(canvas: Canvas) {
         paint.alpha = 255
         paint.style = Paint.Style.FILL
-        paint.color = Color.rgb(21, 24, 30)
+        paint.color = Color.rgb(13, 25, 36)
         paint.shader = null
         canvas.drawRect(0f, 0f, DESIGN_WIDTH, DESIGN_HEIGHT, paint)
         paint.shader = null
 
         drawChevron(canvas, 74f, 90f, 17f, Color.WHITE, pointsRight = false)
         text(canvas, "里程统计", 118f, 105f, 40f, Color.WHITE, medium)
+        drawPill(canvas, routeEntryBounds, "行程轨迹  ›", active = false)
 
         drawGlassPanel(canvas, RectF(78f, 165f, 650f, 555f))
         drawGlassPanel(canvas, RectF(78f, 585f, 650f, 952f))
@@ -682,7 +691,7 @@ class OriginalEnergyView @JvmOverloads constructor(
         rightActive: Boolean = !leftActive,
     ) {
         paint.style = Paint.Style.FILL
-        paint.color = Color.rgb(48, 54, 64)
+        paint.color = Color.rgb(36, 57, 74)
         canvas.drawRoundRect(bounds, 7f, 7f, paint)
 
         val centerX = bounds.centerX()
@@ -730,7 +739,7 @@ class OriginalEnergyView @JvmOverloads constructor(
     private fun drawPill(canvas: Canvas, bounds: RectF, label: String, active: Boolean) {
         paint.shader = null
         paint.style = Paint.Style.FILL
-        paint.color = if (active) accentColor else Color.rgb(48, 54, 64)
+        paint.color = if (active) accentColor else Color.rgb(36, 57, 74)
         canvas.drawRoundRect(bounds, 7f, 7f, paint)
         centeredText(
             canvas,

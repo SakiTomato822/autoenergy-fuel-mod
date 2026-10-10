@@ -16,9 +16,15 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 object FuelCollectionState {
+    data class TimedReading(val snapshot: FuelEnergySnapshot, val readCompletedElapsedMs: Long)
+    @Volatile var latestTimedReading: TimedReading? = null
+        private set
     private val current = MutableStateFlow<FuelEnergySnapshot?>(null)
     val snapshots = current.asStateFlow()
-    fun publish(snapshot: FuelEnergySnapshot) { current.value = snapshot }
+    fun publish(snapshot: FuelEnergySnapshot) {
+        latestTimedReading = TimedReading(snapshot, SystemClock.elapsedRealtime())
+        current.value = snapshot
+    }
 }
 
 class FuelCollectionService : Service() {
