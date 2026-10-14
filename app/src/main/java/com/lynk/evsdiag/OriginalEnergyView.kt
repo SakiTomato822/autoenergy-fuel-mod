@@ -152,6 +152,20 @@ class OriginalEnergyView @JvmOverloads constructor(
             paint.shader = null
             canvas.drawBitmap(it, null, RectF(0f, 0f, width.toFloat(), height.toFloat()), paint)
         }
+        paint.style = Paint.Style.FILL
+        paint.shader = null
+        if (lightMode) {
+            paint.color = Color.argb(185, 242, 246, 247)
+            canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
+        }
+        // Extend the statistics page into the safe-fit margins without
+        // stretching its content, including during the page animation.
+        if (pageProgress > 0f) {
+            paint.color = pageBackground
+            paint.alpha = (255f * pageProgress).roundToInt().coerceIn(0, 255)
+            canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
+        }
+        paint.alpha = 255
 
         canvas.save()
         canvas.translate(dx, dy)
@@ -346,7 +360,7 @@ class OriginalEnergyView @JvmOverloads constructor(
         val data = snapshot
         panelRect.set(78f, 150f, 790f, 890f)
         paint.shader = null
-        paint.color = Color.argb(235, 20, 35, 48)
+        paint.color = if (lightMode) surfaceColor else Color.argb(235, 20, 35, 48)
         canvas.drawRoundRect(panelRect, 16f, 16f, paint)
 
         text(canvas, "能量中心", 126f, 225f, 36f, primaryText, medium)
@@ -357,7 +371,8 @@ class OriginalEnergyView @JvmOverloads constructor(
         val rangeWidth = paint.measureText(range)
         text(canvas, "km", 126f + rangeWidth + 14f, 412f, 28f, secondaryText, regular)
 
-        line(canvas, 126f, 462f, 742f, 462f, Color.argb(28, 255, 255, 255))
+        line(canvas, 126f, 462f, 742f, 462f,
+            if (lightMode) Color.argb(70, 84, 111, 126) else Color.argb(28, 255, 255, 255))
 
         text(canvas, "本次平均油耗", 126f, 516f, 24f, secondaryText, medium)
         text(canvas, fuelText(data?.avgFuelTrip2), 126f, 585f, 58f, primaryText, medium)
@@ -395,7 +410,7 @@ class OriginalEnergyView @JvmOverloads constructor(
             1328f,
             markerY + 40f,
             24f,
-            Color.rgb(153, 190, 210),
+            if (lightMode) secondaryText else Color.rgb(153, 190, 210),
             italic,
         )
         val litres = FuelQuantity.estimateLitres(percent)
@@ -436,7 +451,7 @@ class OriginalEnergyView @JvmOverloads constructor(
             numberWidth + 6f,
             72f,
             28f,
-            Color.rgb(170, 204, 222),
+            if (lightMode) secondaryText else Color.rgb(170, 204, 222),
             medium,
         )
         canvas.restore()
@@ -608,7 +623,7 @@ class OriginalEnergyView @JvmOverloads constructor(
             points.map { it.second }.average().toFloat()
         }.coerceIn(1f, 20f)
         text(canvas, "■", 730f, 306f, 18f, Color.rgb(20, 187, 244), medium)
-        text(canvas, "L/100km", 755f, 306f, 19f, Color.rgb(210, 227, 236), regular)
+        text(canvas, "L/100km", 755f, 306f, 19f, if (lightMode) secondaryText else Color.rgb(210, 227, 236), regular)
         val hasCurve = preview || visibleTrend.size >= 2
         val averageLabel = if (hasCurve) "分段均值 ${fuelText(average)} L/100km" else "暂无有效分段"
         paint.textSize = 19f
@@ -619,7 +634,7 @@ class OriginalEnergyView @JvmOverloads constructor(
             1795f - paint.measureText(averageLabel),
             306f,
             19f,
-            Color.rgb(220, 232, 238),
+            if (lightMode) secondaryText else Color.rgb(220, 232, 238),
             medium,
         )
 
@@ -630,11 +645,14 @@ class OriginalEnergyView @JvmOverloads constructor(
         for (step in 0..4) {
             val value = step * 5f
             val y = chartBottom - (chartBottom - chartTop) * value / 20f
-            line(canvas, chartLeft, y, chartRight, y, Color.argb(54, 174, 205, 221))
-            text(canvas, value.roundToInt().toString(), 725f, y + 7f, 18f, Color.rgb(179, 203, 215), regular)
+            line(canvas, chartLeft, y, chartRight, y,
+                if (lightMode) Color.argb(65, 84, 111, 126) else Color.argb(54, 174, 205, 221))
+            text(canvas, value.roundToInt().toString(), 725f, y + 7f, 18f,
+                if (lightMode) secondaryText else Color.rgb(179, 203, 215), regular)
         }
-        line(canvas, chartLeft, chartTop, chartLeft, chartBottom, Color.argb(90, 185, 214, 228))
-        line(canvas, chartLeft, chartBottom, chartRight, chartBottom, Color.argb(90, 185, 214, 228))
+        val axisColor = if (lightMode) Color.argb(120, 84, 111, 126) else Color.argb(90, 185, 214, 228)
+        line(canvas, chartLeft, chartTop, chartLeft, chartBottom, axisColor)
+        line(canvas, chartLeft, chartBottom, chartRight, chartBottom, axisColor)
 
         if (!hasCurve) {
             centeredText(canvas, "行驶后生成油耗估算", RectF(chartLeft, 510f, chartRight, 570f), 30f, primaryText, medium)
@@ -662,8 +680,8 @@ class OriginalEnergyView @JvmOverloads constructor(
             chartTop,
             0f,
             chartBottom,
-            Color.argb(230, 0, 166, 242),
-            Color.argb(108, 0, 99, 191),
+            if (lightMode) Color.argb(95, 0, 128, 190) else Color.argb(230, 0, 166, 242),
+            if (lightMode) Color.argb(35, 0, 128, 190) else Color.argb(108, 0, 99, 191),
             Shader.TileMode.CLAMP,
         )
         paint.style = Paint.Style.FILL
@@ -672,14 +690,14 @@ class OriginalEnergyView @JvmOverloads constructor(
 
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = 3f
-        paint.color = Color.rgb(75, 225, 255)
+        paint.color = if (lightMode) accentColor else Color.rgb(75, 225, 255)
         paint.strokeJoin = Paint.Join.ROUND
         canvas.drawPath(curvePath, paint)
 
         val averageY = chartBottom - (chartBottom - chartTop) * average / 20f
         paint.pathEffect = DashPathEffect(floatArrayOf(5f, 6f), 0f)
         paint.strokeWidth = 2f
-        paint.color = Color.rgb(159, 247, 255)
+        paint.color = if (lightMode) secondaryText else Color.rgb(159, 247, 255)
         canvas.drawLine(chartLeft, averageY, chartRight, averageY, paint)
         paint.pathEffect = null
         paint.style = Paint.Style.FILL
@@ -703,7 +721,8 @@ class OriginalEnergyView @JvmOverloads constructor(
                 xLabels.lastIndex -> x - paint.measureText(label)
                 else -> x - paint.measureText(label) / 2f
             }
-            text(canvas, label, labelX, 900f, 18f, Color.rgb(194, 214, 224), regular)
+            text(canvas, label, labelX, 900f, 18f,
+                if (lightMode) secondaryText else Color.rgb(194, 214, 224), regular)
         }
     }
 
