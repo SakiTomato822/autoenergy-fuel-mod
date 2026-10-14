@@ -47,12 +47,16 @@ jobs:
           ANDROID_DEBUG_KEYSTORE_BASE64: ${{ secrets.ANDROID_DEBUG_KEYSTORE_BASE64 }}
         run: |
           test -n "$ANDROID_DEBUG_KEYSTORE_BASE64" || { echo "Signing Secret is missing" >&2; exit 1; }
-          mkdir -p "$HOME/.android"
-          printf '%s' "$ANDROID_DEBUG_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/debug.keystore"
-          chmod 600 "$HOME/.android/debug.keystore"
+          key_path="$RUNNER_TEMP/autoenergy-debug.keystore"
+          printf '%s' "$ANDROID_DEBUG_KEYSTORE_BASE64" | base64 --decode > "$key_path"
+          chmod 600 "$key_path"
+          echo "AUTOENERGY_DEBUG_KEYSTORE=$key_path" >> "$GITHUB_ENV"
+          keytool -list -v -keystore "$key_path" -storepass android -alias androiddebugkey \
+            | tr -d ':' \
+            | grep -qi 'SHA256: 91F7B9D6496414A0FAB0A87C8FCC60F929DF0DD9FA4D4A9A52215869178BAB8D'
 
       - name: Build and test debug APK
-        run: gradle --no-daemon :app:assembleDebug :app:testDebugUnitTest
+        run: gradle --no-daemon --no-build-cache --rerun-tasks :app:assembleDebug :app:testDebugUnitTest
 
       - name: Verify upgrade signature and APK metadata
         run: |
