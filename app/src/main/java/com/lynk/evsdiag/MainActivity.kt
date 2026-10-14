@@ -54,6 +54,15 @@ class MainActivity : AppCompatActivity() {
         reader = FuelEnergyReader(this)
         trendStore = FuelTrendStore(this)
         energyView = findViewById(R.id.energyView)
+        val uiPrefs = getSharedPreferences("autoenergy_ui", MODE_PRIVATE)
+        val initialLightMode = uiPrefs.getBoolean("light_mode", false)
+        energyView.setTheme(initialLightMode)
+        applySystemBars(initialLightMode)
+        energyView.setThemeCallback { isLight ->
+            uiPrefs.edit().putBoolean("light_mode", isLight).apply()
+            applySystemBars(isLight)
+            AppLog.i("UI", "theme changed=${if (isLight) "light" else "dark"}")
+        }
         permissions = FuelPermissionGate(this) { if (!previewMode) startPolling() }
         logContentViewport()
 
@@ -213,6 +222,15 @@ class MainActivity : AppCompatActivity() {
     private fun openDiagnostics() {
         AppLog.i("UI", "diagnostics requested from main card long press")
         startActivity(Intent(this, DiagnosticsActivity::class.java))
+    }
+
+    private fun applySystemBars(isLight: Boolean) {
+        window.statusBarColor = if (isLight) 0xFFEFF4F6.toInt() else 0xFF09111A.toInt()
+        window.navigationBarColor = if (isLight) 0xFFEFF4F6.toInt() else 0xFF09111A.toInt()
+        @Suppress("DEPRECATION")
+        window.decorView.systemUiVisibility = if (isLight) {
+            android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+        } else 0
     }
 
 }

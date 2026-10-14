@@ -26,6 +26,41 @@ import kotlinx.coroutines.withContext
 class DiagnosticsActivity : AppCompatActivity() {
     private lateinit var logText: TextView
     private lateinit var logScroll: ScrollView
+    private val exportData = registerForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
+        if (uri == null) return@registerForActivityResult
+        lifecycleScope.launch {
+            val result = withContext(Dispatchers.IO) {
+                runCatching { LocalFuelDataSource.exportTo(this@DiagnosticsActivity, uri) }
+            }
+            Toast.makeText(
+                this@DiagnosticsActivity,
+                result.fold({ "已导出 $it 个曲线点" }, { "导出失败：${it.message}" }),
+                Toast.LENGTH_LONG,
+            ).show()
+        }
+    }
+    private val importData = registerForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        if (uri == null) return@registerForActivityResult
+        androidx.appcompat.app.AlertDialog.Builder(this)
+            .setTitle("导入并切换当前数据？")
+            .setMessage("将先验证所选 JSON，再用其中的历史与采集进度继续记录。当前数据会保留为回退副本。")
+            .setPositiveButton("导入并切换") { _, _ ->
+                lifecycleScope.launch {
+                    val result = withContext(Dispatchers.IO) {
+                        runCatching { LocalFuelDataSource.importFrom(this@DiagnosticsActivity, uri) }
+                    }
+                    result.onFailure { AppLog.e("DATA", "JSON import failed", it) }
+                    Toast.makeText(
+                        this@DiagnosticsActivity,
+                        result.fold({ "已导入 $it 个曲线点" }, { "导入失败：${it.message}" }),
+                        Toast.LENGTH_LONG,
+                    ).show()
+                    refreshLog()
+                }
+            }
+            .setNegativeButton("取消", null)
+            .show()
+    }
     private val chooseData = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
         if (uri != null) androidx.appcompat.app.AlertDialog.Builder(this)
             .setTitle("使用已有数据文件")
@@ -95,6 +130,14 @@ class DiagnosticsActivity : AppCompatActivity() {
         root.addView(titleRow)
 
         val dataRow = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL }
+        dataRow.addView(actionButton("导出 JSON") {
+            runCatching { exportData.launch("autoenergy-data-${System.currentTimeMillis()}.json") }
+                .onFailure { Toast.makeText(this@DiagnosticsActivity, "无法打开导出位置", Toast.LENGTH_SHORT).show() }
+        })
+        dataRow.addView(actionButton("导入 JSON") {
+            runCatching { importData.launch(arrayOf("application/json", "text/json", "*/*")) }
+                .onFailure { Toast.makeText(this@DiagnosticsActivity, "无法打开文件选择器", Toast.LENGTH_SHORT).show() }
+        })
         dataRow.addView(actionButton("权限检测") {
             startActivity(Intent(this, MainActivity::class.java)
                 .putExtra(FuelPermissionGate.EXTRA_CHECK, true)
@@ -112,7 +155,7 @@ class DiagnosticsActivity : AppCompatActivity() {
             runCatching { chooseData.launch("application/json") }.onFailure { Toast.makeText(this, "请通过文件管理器选择 JSON", Toast.LENGTH_LONG).show() }
         })
         dataRow.addView(TextView(this).apply {
-            text = "本地数据源：Download/AutoEnergyData · 曲线点立即保存，采集进度每分钟保存"
+            text = "自动读取 Download/AutoEnergyData · 支持导入 / 导出 JSON · 曲线点立即保存"
             textSize = 16f
             setTextColor(Color.WHITE)
             setPadding(dp(20), dp(12), 0, 0)

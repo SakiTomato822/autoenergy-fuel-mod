@@ -63,7 +63,7 @@ jobs:
           "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --print-certs app/build/outputs/apk/debug/app-debug.apk | tee apk-certificate.txt
           grep -q 'SHA-256 digest: 91f7b9d6496414a0fab0a87c8fcc60f929df0dd9fa4d4a9a52215869178bab8d' apk-certificate.txt
           "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging app/build/outputs/apk/debug/app-debug.apk | tee apk-metadata.txt
-          grep -q "name='com.lynk.autoenergyfuel.dhureadonly'.*versionCode='24'.*versionName='1.0.0'" apk-metadata.txt
+          grep -q "name='com.lynk.autoenergyfuel.dhureadonly'.*versionCode='25'.*versionName='1.0.1'" apk-metadata.txt
           if grep -Eq 'ACCESS_FINE_LOCATION|ACCESS_COARSE_LOCATION|FOREGROUND_SERVICE_LOCATION' apk-metadata.txt; then
             echo 'Pure fuel APK must not request GPS permissions' >&2
             exit 1

@@ -11,8 +11,8 @@ android {
         applicationId = "com.lynk.autoenergyfuel"
         minSdk = 30
         targetSdk = 34
-        versionCode = 24
-        versionName = "1.0.0"
+        versionCode = 25
+        versionName = "1.0.1"
     }
 
     signingConfigs {
