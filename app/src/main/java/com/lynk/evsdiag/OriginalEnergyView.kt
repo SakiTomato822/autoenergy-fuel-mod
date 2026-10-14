@@ -54,7 +54,8 @@ class OriginalEnergyView @JvmOverloads constructor(
     private var onSingleTripResetOptionChanged: ((Int) -> Unit)? = null
     private var onSubtotalResetRequested: (() -> Unit)? = null
     private var onDiagnosticsRequested: (() -> Unit)? = null
-    private var onThemeChanged: ((Boolean) -> Unit)? = null
+    private var onThemeChanged: (() -> Unit)? = null
+    private var themeModeLabel = "随系统"
 
     private val medium = lynkcoTypeface(R.font.lynkco_type_medium)
     private val regular = medium
@@ -69,11 +70,11 @@ class OriginalEnergyView @JvmOverloads constructor(
     private var entryPressed = false
     private val primaryText: Int get() = if (lightMode) Color.rgb(28, 46, 58) else Color.rgb(235, 244, 250)
     private val secondaryText: Int get() = if (lightMode) Color.rgb(84, 111, 126) else Color.rgb(147, 174, 192)
-    private val surfaceColor: Int get() = if (lightMode) Color.rgb(239, 244, 246) else Color.rgb(27, 43, 56)
+    private val surfaceColor: Int get() = if (lightMode) Color.rgb(214, 225, 230) else Color.rgb(27, 43, 56)
     private val accentColor: Int get() = if (lightMode) Color.rgb(0, 128, 190) else Color.rgb(48, 170, 224)
     private val strongText: Int get() = if (lightMode) Color.rgb(20, 36, 48) else Color.WHITE
-    private val pageBackground: Int get() = if (lightMode) Color.rgb(236, 242, 244) else Color.rgb(13, 25, 36)
-    private val inactiveChip: Int get() = if (lightMode) Color.rgb(214, 225, 230) else Color.rgb(36, 57, 74)
+    private val pageBackground: Int get() = if (lightMode) Color.rgb(196, 209, 216) else Color.rgb(13, 25, 36)
+    private val inactiveChip: Int get() = if (lightMode) Color.rgb(190, 207, 215) else Color.rgb(36, 57, 74)
     private val statisticsBackBounds = RectF(42f, 36f, 315f, 142f)
     private val parkingResetBounds = RectF(365f, 188f, 495f, 248f)
     private val chargingResetBounds = RectF(495f, 188f, 625f, 248f)
@@ -119,12 +120,13 @@ class OriginalEnergyView @JvmOverloads constructor(
         invalidate()
     }
 
-    fun setTheme(isLight: Boolean) {
+    fun setTheme(isLight: Boolean, modeLabel: String) {
         lightMode = isLight
+        themeModeLabel = modeLabel
         invalidate()
     }
 
-    fun setThemeCallback(callback: (Boolean) -> Unit) {
+    fun setThemeCallback(callback: () -> Unit) {
         onThemeChanged = callback
     }
 
@@ -155,7 +157,7 @@ class OriginalEnergyView @JvmOverloads constructor(
         paint.style = Paint.Style.FILL
         paint.shader = null
         if (lightMode) {
-            paint.color = Color.argb(185, 242, 246, 247)
+            paint.color = Color.argb(225, 205, 216, 221)
             canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
         }
         // Extend the statistics page into the safe-fit margins without
@@ -191,11 +193,6 @@ class OriginalEnergyView @JvmOverloads constructor(
     private fun drawMainPage(canvas: Canvas) {
         paint.alpha = 255
         paint.style = Paint.Style.FILL
-        drawBitmapLayer(canvas, backgroundBitmap)
-        if (lightMode) {
-            paint.color = Color.argb(185, 242, 246, 247)
-            canvas.drawRect(0f, 0f, DESIGN_WIDTH, DESIGN_HEIGHT, paint)
-        }
         drawBitmapLayer(canvas, fuelCylinder())
         drawLeftInformation(canvas)
         drawFuelInformation(canvas)
@@ -204,11 +201,11 @@ class OriginalEnergyView @JvmOverloads constructor(
 
     private fun drawThemeToggle(canvas: Canvas) {
         paint.style = Paint.Style.FILL
-        paint.color = if (lightMode) Color.argb(215, 255, 255, 255) else Color.argb(175, 25, 44, 57)
+        paint.color = if (lightMode) surfaceColor else Color.argb(175, 25, 44, 57)
         canvas.drawRoundRect(themeBounds, 26f, 26f, paint)
         val icon = if (lightMode) "☼" else "☾"
         text(canvas, icon, themeBounds.left + 18f, themeBounds.top + 46f, 28f, accentColor, medium)
-        text(canvas, if (lightMode) "浅色" else "深色", themeBounds.left + 56f, themeBounds.top + 45f, 20f, primaryText, medium)
+        text(canvas, themeModeLabel, themeBounds.left + 56f, themeBounds.top + 45f, 20f, primaryText, medium)
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -247,9 +244,7 @@ class OriginalEnergyView @JvmOverloads constructor(
                 val x = (event.x - dx) / scale
                 val y = (event.y - dy) / scale
                 if (themeBounds.contains(x, y)) {
-                    lightMode = !lightMode
-                    onThemeChanged?.invoke(lightMode)
-                    invalidate()
+                    onThemeChanged?.invoke()
                     return true
                 }
                 if (showSubtotalResetConfirmation) {

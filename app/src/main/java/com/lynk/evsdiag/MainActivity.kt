@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.content.res.Configuration
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private var previewMode = false
     private var simulationReceiverRegistered = false
     private lateinit var permissions: FuelPermissionGate
+    private var themeMode = AppThemeMode.SYSTEM
 
     private val simulationReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -55,13 +57,12 @@ class MainActivity : AppCompatActivity() {
         trendStore = FuelTrendStore(this)
         energyView = findViewById(R.id.energyView)
         val uiPrefs = getSharedPreferences("autoenergy_ui", MODE_PRIVATE)
-        val initialLightMode = uiPrefs.getBoolean("light_mode", false)
-        energyView.setTheme(initialLightMode)
-        applySystemBars(initialLightMode)
-        energyView.setThemeCallback { isLight ->
-            uiPrefs.edit().putBoolean("light_mode", isLight).apply()
-            applySystemBars(isLight)
-            AppLog.i("UI", "theme changed=${if (isLight) "light" else "dark"}")
+        themeMode = AppThemeMode.fromStored(uiPrefs.getString("theme_mode", null))
+        applyTheme()
+        energyView.setThemeCallback {
+            themeMode = themeMode.next()
+            uiPrefs.edit().putString("theme_mode", themeMode.name).apply()
+            applyTheme()
         }
         permissions = FuelPermissionGate(this) { if (!previewMode) startPolling() }
         logContentViewport()
@@ -115,7 +116,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        if (::energyView.isInitialized) applyTheme()
         if (::permissions.isInitialized && !previewMode) permissions.check(promptWhenMissing = false)
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+        if (::energyView.isInitialized) applyTheme()
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -225,12 +232,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun applySystemBars(isLight: Boolean) {
-        window.statusBarColor = if (isLight) 0xFFEFF4F6.toInt() else 0xFF09111A.toInt()
-        window.navigationBarColor = if (isLight) 0xFFEFF4F6.toInt() else 0xFF09111A.toInt()
+        window.statusBarColor = if (isLight) 0xFFCDD9DF.toInt() else 0xFF09111A.toInt()
+        window.navigationBarColor = if (isLight) 0xFFCDD9DF.toInt() else 0xFF09111A.toInt()
         @Suppress("DEPRECATION")
         window.decorView.systemUiVisibility = if (isLight) {
             android.view.View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or android.view.View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
         } else 0
+    }
+
+    private fun applyTheme() {
+        val systemNight = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK == Configuration.UI_MODE_NIGHT_YES
+        val isLight = themeMode.isLight(systemNight)
+        energyView.setTheme(isLight, themeMode.label)
+        applySystemBars(isLight)
+        AppLog.i("UI", "theme mode=${themeMode.name} systemNight=$systemNight light=$isLight")
     }
 
 }
