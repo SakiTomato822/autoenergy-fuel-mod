@@ -4,10 +4,12 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.BitmapShader
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.DashPathEffect
 import android.graphics.LinearGradient
+import android.graphics.Matrix
 import android.graphics.Paint
 import android.graphics.Path
 import android.graphics.Rect
@@ -38,6 +40,8 @@ class OriginalEnergyView @JvmOverloads constructor(
     }
 
     private val backgroundBitmap = decodeBitmap(R.drawable.energy_background_fuel_only)
+    private val backgroundShader = backgroundBitmap?.let { BitmapShader(it, Shader.TileMode.CLAMP, Shader.TileMode.CLAMP) }
+    private val backgroundMatrix = Matrix()
     private val bitmapCache = mutableMapOf<Int, Bitmap>()
     private var snapshot: FuelEnergySnapshot? = null
     private var preview = false
@@ -147,12 +151,18 @@ class OriginalEnergyView @JvmOverloads constructor(
         val dx = (width - DESIGN_WIDTH * scale) / 2f
         val dy = (height - DESIGN_HEIGHT * scale) / 2f
 
-        // Fill the viewport behind the design so its safe-area fit cannot
-        // produce black side bars. Only this decorative wallpaper is stretched.
+        // Match the liquid layer's design coordinates, extending the wallpaper
+        // at the edges rather than stretching a second copy behind it.
         backgroundBitmap?.let {
             paint.alpha = 255
-            paint.shader = null
-            canvas.drawBitmap(it, null, RectF(0f, 0f, width.toFloat(), height.toFloat()), paint)
+            paint.style = Paint.Style.FILL
+            paint.color = Color.WHITE
+            val sourceHeight = min(it.height, (it.width * DESIGN_HEIGHT / DESIGN_WIDTH).roundToInt())
+            backgroundMatrix.setScale(scale * DESIGN_WIDTH / it.width, scale * DESIGN_HEIGHT / sourceHeight)
+            backgroundMatrix.postTranslate(dx, dy)
+            backgroundShader?.setLocalMatrix(backgroundMatrix)
+            paint.shader = backgroundShader
+            canvas.drawRect(0f, 0f, width.toFloat(), height.toFloat(), paint)
         }
         paint.style = Paint.Style.FILL
         paint.shader = null
