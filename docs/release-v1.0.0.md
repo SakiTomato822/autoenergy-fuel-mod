@@ -34,6 +34,6 @@
 - APK 包名为 `com.lynk.autoenergyfuel.dhureadonly`，versionCode `24`，versionName `1.0.0`；
 - APK 不声明精确定位、粗略定位或定位前台服务权限；
 - 签名证书 SHA-256 为 `91f7b9d6496414a0fab0a87c8fcc60f929df0dd9fa4d4a9a52215869178bab8d`，与 `0.6.7` 预发布 APK 一致，可覆盖对应 Debug 包；
-- 云端 APK SHA-256 为 `07c89d360c3b2a80e11058712dc96fd8800d45f788ad0e3e27f9918f71aee31d`。
+- Release 附件直接取自通过上述检查的 GitHub Actions 产物。
 
 `0.6.7` 的历史模拟器或实车记录仅适用于当时版本，不构成 `1.0.0` 实车验证。1.0.0 的授权弹窗、车型数据完整性和长时间采集稳定性仍需在目标车机上确认。
