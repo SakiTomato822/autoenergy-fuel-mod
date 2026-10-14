@@ -53,7 +53,7 @@ jobs:
           echo "AUTOENERGY_DEBUG_KEYSTORE=$key_path" >> "$GITHUB_ENV"
           keytool -list -v -keystore "$key_path" -storepass android -alias androiddebugkey \
             | tr -d ':' \
-            | grep -qi 'SHA256: 91F7B9D6496414A0FAB0A87C8FCC60F929DF0DD9FA4D4A9A52215869178BAB8D'
+            | grep -qi 'SHA256 91F7B9D6496414A0FAB0A87C8FCC60F929DF0DD9FA4D4A9A52215869178BAB8D'
 
       - name: Build and test debug APK
         run: gradle --no-daemon --no-build-cache --rerun-tasks :app:assembleDebug :app:testDebugUnitTest
