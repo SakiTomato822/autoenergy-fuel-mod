@@ -11,9 +11,8 @@ android {
         applicationId = "com.lynk.autoenergyfuel"
         minSdk = 30
         targetSdk = 34
-        versionCode = 23
-        versionName = "0.6.7"
-        testInstrumentationRunner = "com.lynk.dvrprobe.RouteSmokeInstrumentation"
+        versionCode = 24
+        versionName = "1.0.0"
     }
 
     buildTypes {

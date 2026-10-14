@@ -11,24 +11,30 @@
 <p align="center">
   <img alt="Android 11+" src="https://img.shields.io/badge/Android-11%2B-3DDC84?logo=android&logoColor=white">
   <img alt="API 30" src="https://img.shields.io/badge/API-30-566C7A">
-  <img alt="Version 0.6.7" src="https://img.shields.io/badge/version-v0.6.7-16ACE3">
+  <img alt="Version 1.0.0 prerelease" src="https://img.shields.io/badge/version-v1.0.0--pre--release-16ACE3">
   <a href="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml">
     <img alt="Build debug APK" src="https://github.com/SakiTomato822/autoenergy-fuel-mod/actions/workflows/build-debug-apk.yml/badge.svg">
   </a>
 </p>
 
 > [!IMPORTANT]
-> 这是一个非官方实验项目，目前只针对特定领克 / Flyme Auto 车机环境开发。模拟器通过不代表车辆一定授予 CarProperty 读取或写入权限，请先阅读[兼容性与风险](#兼容性与风险)。
+> 当前版本为 `1.0.0` 预发布版（versionCode 24），是面向特定领克 / Flyme Auto 车机的非官方实验项目。模拟器通过不代表车辆一定授予 CarProperty 读取权限；实车兼容性仍需逐车验证。请先阅读[兼容性与权限](#兼容性与权限)。
 
 ## 项目简介
 
-AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横屏界面，重点展示续航、燃油余量、平均油耗、里程和行驶统计，同时保留真实车辆属性读取与原车重置逻辑。
+AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横屏界面，重点展示续航、燃油余量、平均油耗、里程和行驶统计。实车重置方式只读显示；模拟器保留交互演示。
 
-应用使用独立包名 `com.lynk.autoenergyfuel`，不会覆盖原厂能量中心。普通 Android 模拟器没有 `android.car.Car` 时，会自动切换到内置车辆数据模拟器，便于在电脑上检查界面和交互。
+应用使用独立包名 `com.lynk.autoenergyfuel`，不会覆盖原厂能量中心。没有 `android.car.Car` 的 Android 模拟器会自动切换到内置车辆数据模拟器。
+
+1.0.0 回归纯油耗与里程统计范围：不包含 OSM 在线地图、GPS 轨迹记录或座舱桌面 Demo。油量升数按车主确认的 50 L 标称容量和车辆油量百分比估算，仅作近似显示；采集、油耗曲线计算和本地历史存储继续保留。详细说明见 [1.0.0 预发布说明](docs/release-v1.0.0.md)。
+
+本版基于已发布的 `v0.6.7-osm-preview`（`ffc4760`）修改；旧发布与 Git 历史继续保留。
+独立座舱项目：[lynk06-cockpit](https://github.com/SakiTomato822/lynk06-cockpit)。
 
 ## 主要功能
 
 - 续航里程、燃油余量与动态液柱展示
+- 按 50 L 标称油箱和油量百分比估算剩余升数（近似值）
 - 本次 / 长期平均油耗、小计里程与总里程
 - 上下叠加的里程统计页面，无底部双选项卡
 - 本次里程与小计里程的时长、距离、平均车速和平均油耗
@@ -63,7 +69,7 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
   <img src="docs/images/diagnostics.png" alt="应用内诊断日志页面">
 </details>
 
-## 兼容性与风险
+## 兼容性与权限
 
 | 项目 | 当前状态 |
 | --- | --- |
@@ -75,11 +81,15 @@ AutoEnergy Fuel UI 将原车能量中心改造成更适合纯燃油车型的横�
 | 数据读取 | 取决于车机系统签名权限、属性映射和车型支持 |
 | 重置操作 | 实车界面只读显示车辆设置；模拟器允许交互 |
 
-不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车请通过诊断日志确认属性映射，并与仪表对照。不要在驾驶过程中调试、操作 ADB 或查看日志。
+不同车型、系统版本和权限策略可能返回空值、异常值或拒绝访问。首次装车请通过诊断页的权限检测和日志确认属性映射，并与仪表对照。不要在驾驶过程中调试、操作 ADB 或查看日志。
+
+应用启动时只检查 `android.permission.DUMP` 的实际授权状态；未授权时会先说明用途并等待用户确认，不会静默提权。确认后才会尝试限时执行系统授权命令，并再次检查系统状态。若设备不允许、命令失败或超时，页面会显示可复制的准确 ADB 指令；完成 ADB 操作后返回应用重新检测。若 DUMP 已授权，应用直接读取，不调用 `su`，也不会安装或配置 root。
+
+`CAR_ENERGY` 和 `CAR_SPEED` 是独立的 Android 运行时权限，会在说明用途并经用户确认后另行请求。部分车机把 `CAR_VENDOR_EXTENSION` 等能力限制为系统签名权限；普通 APK 无法自行取得，应用不会尝试授予这些权限。没有 DUMP 时仍会尝试有限的 CarProperty 备用读取；读数缺失或被拒绝会如实显示不可用，不把失败伪装成有效数据。
 
 `v0.6.5` 保留 CarProperty 作为主要数据源，同时连接 DHU 本机 `127.0.0.1:40004` 的只读 VHAL gRPC 数据流，为受 `CAR_VENDOR_EXTENSION` 限制的油量、续航和总里程提供降级来源。端口与客户端标识来自 EVCC 的 native 实现；该通道只调用属性流与全量快照接口，不包含任何 VHAL 写入实现。
 
-油耗曲线不依赖纯燃油车型上为空的原厂曲线数组。应用根据“本次平均油耗 × 本次里程”推算累计耗油量，每累计约 3 km 生成一个区间油耗点；本次里程重置时只重建计算基线，已记录的近 50 km / 近 100 km 历史仍会保留。
+油耗曲线不依赖纯燃油车型上为空的原厂曲线数组。采集器沿用 0.6.7 的小计累计平均油耗与小计里程（`avgFuelTrip2` / `trip2DistanceKm`）推算累计耗油量，每累计约 3 km 生成一个区间油耗点；累计里程重置时只重建计算基线，已记录的近 50 km / 近 100 km 历史仍会保留。
 
 `v0.6.3` 根据 DHU615G 实车日志兼容 CarProperty 的实际数值类型：Flyme 将平均油耗和里程以 `Integer` 十分位值返回，应用会在读取后乘以 `0.1`，不再强制转换为 `Float`。燃油百分比还会尝试 Android 标准 `FUEL_LEVEL / INFO_FUEL_CAPACITY` 降级计算，续航可在标准油量与平均油耗均可读时估算。
 
@@ -100,6 +110,12 @@ app/build/outputs/apk/debug/app-debug.apk
 ```
 
 仓库中的 GitHub Actions 工作流会执行 Debug APK 构建和单元测试。Debug 包使用独立包名和调试签名，可与已有版本并排安装。
+
+## 包名与升级
+
+版本 `1.0.0` 使用 versionCode `24`。Release 包名仍为 `com.lynk.autoenergyfuel`；Debug 包名仍为 `com.lynk.autoenergyfuel.dhureadonly`，两者可并排安装。覆盖安装必须同时满足包名相同且签名一致：CI Debug 包不能覆盖 Release 包，Release 升级也需要沿用原 Release 签名。
+
+升级前不要卸载旧版。应用继续使用 `Download/AutoEnergyData/history-*.json`，保留既有油耗历史和采集基线；旧版 SharedPreferences 历史迁移逻辑也继续保留。若卸载后重装，通常需手动选择共享 JSON 并重新授权 DUMP。
 
 ## 安装
 
@@ -235,6 +251,8 @@ tools/                 辅助验证脚本
 ```
 
 ## 版本
+
+- `v1.0.0`（预发布，versionCode 24）：回归纯油耗范围；保留油量升数估算、油耗里程计算、后台采集和本地历史；移除地图、GPS 轨迹及座舱 Demo。权限检测和首次授权流程以预发布说明及最终设备验证为准。
 
 - `v0.5.0`：模拟器与燃油主界面基线
 - `v0.6.0`：里程统计页面与纯油车布局

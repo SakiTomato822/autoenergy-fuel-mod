@@ -11,3 +11,5 @@ captures/
 .cxx/
 __pycache__/
 *.py[cod]
+*.log
+hs_err_pid*

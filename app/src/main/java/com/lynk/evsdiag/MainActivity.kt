@@ -20,14 +20,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
-    companion object {
-        private const val CAR_PERMISSION_REQUEST = 1001
-        private val runtimeCarPermissions = arrayOf(
-            "android.car.permission.CAR_ENERGY",
-            "android.car.permission.CAR_SPEED",
-        )
-    }
-
     private lateinit var reader: FuelEnergyReader
     private lateinit var energyView: OriginalEnergyView
     private lateinit var simulatedProperties: SimulatedCarProperties
@@ -35,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     private var pollJob: Job? = null
     private var previewMode = false
     private var simulationReceiverRegistered = false
+    private lateinit var permissions: FuelPermissionGate
 
     private val simulationReceiver = object : BroadcastReceiver() {
         override fun onReceive(context: Context, intent: Intent) {
@@ -61,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         reader = FuelEnergyReader(this)
         trendStore = FuelTrendStore(this)
         energyView = findViewById(R.id.energyView)
+        permissions = FuelPermissionGate(this) { if (!previewMode) startPolling() }
         logContentViewport()
 
         previewMode = runCatching { Class.forName("android.car.Car") }.isFailure
@@ -71,8 +65,7 @@ class MainActivity : AppCompatActivity() {
             energyView.setSnapshot(simulatedProperties.snapshot(), isPreview = true)
         } else {
             AppLog.i("MODE", "android.car.Car available; using vehicle CarProperty data")
-            requestRuntimeCarPermissions()
-            startPolling()
+            permissions.check(promptWhenMissing = true)
         }
 
         energyView.setActionCallbacks(
@@ -80,7 +73,9 @@ class MainActivity : AppCompatActivity() {
             onSubtotalResetRequested = ::resetSubtotalTrip,
             onDiagnosticsRequested = ::openDiagnostics,
         )
-        energyView.setRouteCallback { startActivity(Intent(this, TripRouteActivity::class.java)) }
+        if (intent.getBooleanExtra(FuelPermissionGate.EXTRA_CHECK, false) && previewMode) {
+            permissions.check(promptWhenMissing = true)
+        }
     }
 
     override fun onStart() {
@@ -109,16 +104,34 @@ class MainActivity : AppCompatActivity() {
         super.onStop()
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (::permissions.isInitialized && !previewMode) permissions.check(promptWhenMissing = false)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        if (intent.getBooleanExtra(FuelPermissionGate.EXTRA_CHECK, false)) {
+            permissions.check(promptWhenMissing = true)
+        }
+    }
+
     override fun onDestroy() {
         pollJob?.cancel()
+        if (::permissions.isInitialized) permissions.close()
         reader.close()
         AppLog.i("LIFECYCLE", "onDestroy polling cancelled")
         super.onDestroy()
     }
 
     private fun startPolling() {
-        FuelCollectionService.start(this)
-        pollJob?.cancel()
+        if (pollJob?.isActive == true || isFinishing || isDestroyed) return
+        runCatching { FuelCollectionService.start(this) }.onFailure {
+            AppLog.e("PERMISSION", "collector startup failed", it)
+            Toast.makeText(this, "采集服务未能启动，请在诊断页查看原因", Toast.LENGTH_LONG).show()
+            return
+        }
         pollJob = lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 FuelCollectionState.snapshots.collect { snapshot ->
@@ -148,30 +161,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun requestRuntimeCarPermissions() {
-        val missing = runtimeCarPermissions.filter {
-            checkSelfPermission(it) != android.content.pm.PackageManager.PERMISSION_GRANTED
-        }
-        if (missing.isNotEmpty()) {
-            AppLog.w("PERMISSION", "requesting missing car permissions=$missing")
-            requestPermissions(missing.toTypedArray(), CAR_PERMISSION_REQUEST)
-        } else {
-            AppLog.i("PERMISSION", "runtime car permissions already granted")
-        }
-    }
-
-    override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray,
-    ) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode != CAR_PERMISSION_REQUEST) return
-        val result = permissions.mapIndexed { index, permission ->
-            "$permission=${grantResults.getOrNull(index) == android.content.pm.PackageManager.PERMISSION_GRANTED}"
-        }
-        AppLog.i("PERMISSION", "runtime permission result=$result")
-    }
 
     private fun changeSingleTripResetOption(option: Int) {
         AppLog.i("ACTION", "single-trip reset option requested value=$option previewMode=$previewMode")

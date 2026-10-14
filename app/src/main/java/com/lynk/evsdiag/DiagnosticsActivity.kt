@@ -95,6 +95,12 @@ class DiagnosticsActivity : AppCompatActivity() {
         root.addView(titleRow)
 
         val dataRow = LinearLayout(this).apply { orientation = LinearLayout.HORIZONTAL }
+        dataRow.addView(actionButton("权限检测") {
+            startActivity(Intent(this, MainActivity::class.java)
+                .putExtra(FuelPermissionGate.EXTRA_CHECK, true)
+                .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP))
+            finish()
+        })
         dataRow.addView(actionButton("立即保存 JSON") {
             lifecycleScope.launch {
                 val result = withContext(Dispatchers.IO) { runCatching { LocalFuelDataSource.read(this@DiagnosticsActivity); LocalFuelDataSource.flush(force = true) } }

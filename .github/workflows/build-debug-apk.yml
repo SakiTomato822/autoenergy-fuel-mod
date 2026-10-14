@@ -1,4 +1,4 @@
-name: Build Debug APK
+name: Build Fuel APK
 
 on:
   push:
@@ -7,6 +7,9 @@ on:
     tags:
       - "v*"
   workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   build:
@@ -39,8 +42,38 @@ jobs:
         run: |
           sdkmanager --install "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 
+      - name: Restore existing APK signing key
+        env:
+          ANDROID_DEBUG_KEYSTORE_BASE64: ${{ secrets.ANDROID_DEBUG_KEYSTORE_BASE64 }}
+        run: |
+          test -n "$ANDROID_DEBUG_KEYSTORE_BASE64" || { echo "Signing Secret is missing" >&2; exit 1; }
+          mkdir -p "$HOME/.android"
+          printf '%s' "$ANDROID_DEBUG_KEYSTORE_BASE64" | base64 --decode > "$HOME/.android/debug.keystore"
+          chmod 600 "$HOME/.android/debug.keystore"
+
       - name: Build and test debug APK
         run: gradle --no-daemon :app:assembleDebug :app:testDebugUnitTest
+
+      - name: Verify upgrade signature and APK metadata
+        run: |
+          "$ANDROID_HOME/build-tools/34.0.0/apksigner" verify --print-certs app/build/outputs/apk/debug/app-debug.apk | tee apk-certificate.txt
+          grep -q 'SHA-256 digest: 91f7b9d6496414a0fab0a87c8fcc60f929df0dd9fa4d4a9a52215869178bab8d' apk-certificate.txt
+          "$ANDROID_HOME/build-tools/34.0.0/aapt" dump badging app/build/outputs/apk/debug/app-debug.apk | tee apk-metadata.txt
+          grep -q "name='com.lynk.autoenergyfuel.dhureadonly'.*versionCode='24'.*versionName='1.0.0'" apk-metadata.txt
+          if grep -Eq 'ACCESS_FINE_LOCATION|ACCESS_COARSE_LOCATION|FOREGROUND_SERVICE_LOCATION' apk-metadata.txt; then
+            echo 'Pure fuel APK must not request GPS permissions' >&2
+            exit 1
+          fi
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: autoenergy-fuel-test-reports
+          path: |
+            app/build/reports/tests/testDebugUnitTest/
+            app/build/test-results/testDebugUnitTest/
+          if-no-files-found: ignore
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4

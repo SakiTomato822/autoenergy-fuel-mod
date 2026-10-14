@@ -68,8 +68,6 @@ class OriginalEnergyView @JvmOverloads constructor(
     private val secondaryText = Color.rgb(147, 174, 192)
     private val surfaceColor = Color.rgb(27, 43, 56)
     private val accentColor = Color.rgb(48, 170, 224)
-    private val routeEntryBounds = RectF(1500f, 48f, 1838f, 120f)
-    private var onRouteRequested: (() -> Unit)? = null
     private val statisticsBackBounds = RectF(42f, 36f, 315f, 142f)
     private val parkingResetBounds = RectF(365f, 188f, 495f, 248f)
     private val chargingResetBounds = RectF(495f, 188f, 625f, 248f)
@@ -114,8 +112,6 @@ class OriginalEnergyView @JvmOverloads constructor(
         trendPoints = value
         invalidate()
     }
-
-    fun setRouteCallback(callback: () -> Unit) { onRouteRequested = callback }
 
     fun setActionCallbacks(
         onSingleTripResetOptionChanged: (Int) -> Unit,
@@ -248,7 +244,6 @@ class OriginalEnergyView @JvmOverloads constructor(
                     animatePageTo(1f)
                 } else if (pageProgress >= 0.5f) {
                     when {
-                        routeEntryBounds.contains(x, y) -> onRouteRequested?.invoke()
                         statisticsBackBounds.contains(x, y) -> animatePageTo(0f)
                         parkingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_PARKING)
                         chargingResetBounds.contains(x, y) -> selectResetOption(RESET_OPTION_CHARGING)
@@ -418,7 +413,6 @@ class OriginalEnergyView @JvmOverloads constructor(
 
         drawChevron(canvas, 74f, 90f, 17f, Color.WHITE, pointsRight = false)
         text(canvas, "里程统计", 118f, 105f, 40f, Color.WHITE, medium)
-        drawPill(canvas, routeEntryBounds, "行程轨迹  ›", active = false)
 
         drawGlassPanel(canvas, RectF(78f, 165f, 650f, 555f))
         drawGlassPanel(canvas, RectF(78f, 585f, 650f, 952f))

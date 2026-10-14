@@ -9,7 +9,9 @@ import java.util.concurrent.TimeUnit
 class McuDumpSource(private val context: Context) {
     fun read(diagnostics: MutableList<String>): Map<String, Long> {
         if (context.checkSelfPermission("android.permission.DUMP") != PackageManager.PERMISSION_GRANTED) {
-            diagnostics += "mcu.dump unavailable: grant android.permission.DUMP via ADB once"
+            diagnostics += "mcu.dump unavailable: open diagnostics permission check; command=" +
+                DumpPermissionCommand.adb(context.packageName,
+                    DumpPermissionCommand.userIdFromUid(android.os.Process.myUid()))
             return emptyMap()
         }
         val properties = listOf(
