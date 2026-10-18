@@ -4,13 +4,12 @@ import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import java.io.File
-import java.net.HttpURLConnection
-import java.net.URL
 import java.util.Properties
 
 /** Only called for visible tiles, on an IO worker. No prefetch or offline download. */
 internal class OsmTileCache(context: Context) {
     private val directory = File(context.cacheDir, "osm-tiles").apply { mkdirs() }
+    private val http by lazy { MapTileHttp(directory) }
     fun load(z: Int, x: Int, y: Int): Bitmap? {
         val file = File(directory, "$z-$x-$y.png")
         val metadata = File(directory, "$z-$x-$y.meta")
@@ -21,18 +20,14 @@ internal class OsmTileCache(context: Context) {
         if (file.exists() && now < (headers.getProperty("expires")?.toLongOrNull() ?: 0L)) {
             BitmapFactory.decodeFile(file.path)?.let { return it }
         }
-        val connection = URL("https://tile.openstreetmap.org/$z/$x/$y.png").openConnection() as HttpURLConnection
-        try {
-            connection.connectTimeout = 6000; connection.readTimeout = 6000
-            connection.setRequestProperty("User-Agent", "AutoEnergyFuel/${BuildConfig.VERSION_NAME} (+https://github.com/SakiTomato822/autoenergy-fuel-mod)")
-            if (file.exists()) {
-                headers.getProperty("etag")?.let { connection.setRequestProperty("If-None-Match", it) }
-                headers.getProperty("modified")?.let { connection.setRequestProperty("If-Modified-Since", it) }
-            }
-            val code = connection.responseCode
-            if (code != 200 && code != 304) return null
+        http.get("https://tile.openstreetmap.org/$z/$x/$y.png",
+            if (file.exists()) headers.getProperty("etag") else null,
+            if (file.exists()) headers.getProperty("modified") else null).use { response ->
+            val code = response.code
+            check(response.header("x-blocked") == null) { "tile provider refused request" }
+            check(code == 200 || code == 304) { "tile HTTP $code" }
             if (code == 200) {
-                val bytes = connection.inputStream.use { stream ->
+                val bytes = checkNotNull(response.body) { "missing tile body" }.byteStream().use { stream ->
                     // Bound untrusted network responses before decoding.
                     val output = java.io.ByteArrayOutputStream()
                     val buffer = ByteArray(8192)
@@ -47,20 +42,22 @@ internal class OsmTileCache(context: Context) {
                 }
                 val bounds = BitmapFactory.Options().apply { inJustDecodeBounds = true }
                 BitmapFactory.decodeByteArray(bytes, 0, bytes.size, bounds)
-                if (bounds.outWidth != 256 || bounds.outHeight != 256) return null
+                check(bounds.outWidth == 256 && bounds.outHeight == 256) { "invalid tile image" }
                 file.writeBytes(bytes)
             }
             val sevenDays = 7L * 24 * 60 * 60 * 1000
-            val maxAge = Regex("max-age=(\\d+)").find(connection.getHeaderField("Cache-Control") ?: "")
+            val maxAge = Regex("max-age=(\\d+)").find(response.header("Cache-Control") ?: "")
                 ?.groupValues?.get(1)?.toLongOrNull()?.coerceAtMost(31_536_000)?.times(1000)
             // Respect longer server lifetimes; retain at least seven days as OSM requests.
-            headers.setProperty("expires", maxOf(now + sevenDays, now + (maxAge ?: 0), connection.expiration).toString())
-            connection.getHeaderField("ETag")?.let { headers.setProperty("etag", it) }
-            connection.getHeaderField("Last-Modified")?.let { headers.setProperty("modified", it) }
+            val expires = runCatching { java.time.ZonedDateTime.parse(response.header("Expires"),
+                java.time.format.DateTimeFormatter.RFC_1123_DATE_TIME).toInstant().toEpochMilli() }.getOrDefault(0L)
+            headers.setProperty("expires", maxOf(now + sevenDays, now + (maxAge ?: 0), expires).toString())
+            response.header("ETag")?.let { headers.setProperty("etag", it) }
+            response.header("Last-Modified")?.let { headers.setProperty("modified", it) }
             metadata.outputStream().use { headers.store(it, null) }
             trim()
             return BitmapFactory.decodeFile(file.path)
-        } finally { connection.disconnect() }
+        }
     }
     private fun trim() {
         val files = directory.listFiles()?.filter { it.extension == "png" } ?: return

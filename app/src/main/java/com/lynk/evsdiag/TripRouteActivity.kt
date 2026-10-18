@@ -115,7 +115,7 @@ class TripRouteActivity : AppCompatActivity() {
         if (route.online) { route.online = false; status.text = "底图已关闭 · 行程仍保存在本机"; return }
         val dialog = android.app.Dialog(this)
         val panel = dialogPanel("启用 OSM 在线底图？")
-        panel.addView(label("底图显示道路和已有地标，不提供导航或地点搜索。\n请求地图时，OSM 服务会收到你的 IP 和所查看区域；不会上传完整行程文件。\n公共服务可能较慢或不可达。不批量下载离线地图，断网仍可查看轨迹。", 24f),
+        panel.addView(label("底图显示道路和已有地标，不提供导航或地点搜索。\n请求地图时，OSM 服务会收到你的 IP 和所查看区域；不会上传完整行程文件。\n连接失败时，通过 Cloudflare HTTPS DNS 解析地图域名，不发送轨迹坐标。\n公共服务可能较慢或不可达。不批量下载离线地图，断网仍可查看轨迹。", 24f),
             LinearLayout.LayoutParams(-1, -2).apply { topMargin = dp(20); bottomMargin = dp(24) })
         val actions = LinearLayout(this).apply { gravity = Gravity.END }
         actions.addView(dialogButton("取消") { dialog.dismiss() })
@@ -223,6 +223,7 @@ class TripRouteActivity : AppCompatActivity() {
         var points: List<RoutePoint> = emptyList()
         var online = false
             set(value) { field = value; generation++; pending.clear(); mapScope.cancel()
+                retryAfter.clear()
                 tileFailed = false
                 mapScope = CoroutineScope(SupervisorJob() + Dispatchers.Main); invalidate() }
         private var mapScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
@@ -258,14 +259,16 @@ class TripRouteActivity : AppCompatActivity() {
             val version = generation
             mapScope.launch {
                 try {
-                    val bitmap = withContext(Dispatchers.IO) { requests.withPermit { runCatching { tiles.load(z, x, y) }.getOrNull() } }
+                    val result = withContext(Dispatchers.IO) { requests.withPermit { runCatching { tiles.load(z, x, y) } } }
+                    val bitmap = result.getOrNull()
                     if (version != generation) return@launch
-                    if (bitmap != null) memory.put(key, bitmap)
+                    if (bitmap != null) { memory.put(key, bitmap); retryAfter.remove(key) }
                     else {
                         if (retryAfter.size > 512) retryAfter.clear()
                         retryAfter[key] = System.currentTimeMillis() + 60_000
-                        if (!tileFailed) AppLog.w("MAP", "OSM tile unavailable; route overlay retained (coordinates omitted)")
+                        if (!tileFailed) AppLog.w("MAP", "OSM tile unavailable kind=${result.exceptionOrNull()?.javaClass?.simpleName ?: "invalidImage"}; route overlay retained (coordinates omitted)")
                         tileFailed = true
+                        postInvalidateDelayed(60_000)
                     }
                     invalidate()
                 } finally { if (version == generation) pending.remove(key) }
@@ -292,17 +295,20 @@ class TripRouteActivity : AppCompatActivity() {
             val left = centerX * scale - width / 2.0; val top = centerY * scale - height / 2.0
             canvas.save(); canvas.clipRect(0, 0, width, height)
             if (online) {
+                var visibleFailure = false
                 val count = 1 shl zoom
                 val firstX = floor(left / 256).toInt(); val lastX = floor((left + width) / 256).toInt()
                 val firstY = floor(top / 256).toInt().coerceAtLeast(0); val lastY = floor((top + height) / 256).toInt().coerceAtMost(count - 1)
                 for (x in firstX..lastX) for (y in firstY..lastY) {
                     val wrappedX = ((x % count) + count) % count
                     val key = "$zoom-$wrappedX-$y"
+                    if (System.currentTimeMillis() < (retryAfter[key] ?: 0L)) visibleFailure = true
                     val bitmap = memory.get(key)
                     if (bitmap != null) { paint.color = Color.WHITE; canvas.drawBitmap(bitmap,
                         null, RectF((x * 256 - left).toFloat(), (y * 256 - top).toFloat(), (x * 256 + 256 - left).toFloat(), (y * 256 + 256 - top).toFloat()), paint) }
                     else requestTile(zoom, wrappedX, y, key)
                 }
+                tileFailed = visibleFailure
             }
             projected = raw.map { PointF((it.first * scale - left).toFloat(), (it.second * scale - top).toFloat()) }
             paint.strokeWidth = dp(5).toFloat(); paint.strokeCap = Paint.Cap.ROUND

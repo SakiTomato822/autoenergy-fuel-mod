@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+    implementation("com.squareup.okhttp3:okhttp-dnsoverhttps:4.12.0")
     implementation("com.google.code.gson:gson:2.10.1")
     testImplementation("junit:junit:4.13.2")
     implementation("androidx.core:core-ktx:1.13.1")
