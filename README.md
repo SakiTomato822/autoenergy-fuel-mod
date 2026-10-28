@@ -18,7 +18,7 @@
 </p>
 
 > [!IMPORTANT]
-> 当前版本为 `1.0.0` 预发布版（versionCode 24），是面向特定领克 / Flyme Auto 车机的非官方实验项目。模拟器通过不代表车辆一定授予 CarProperty 读取权限；实车兼容性仍需逐车验证。请先阅读[兼容性与权限](#兼容性与权限)。
+> 当前版本为 `1.0.2` 预发布版（versionCode 26），是面向特定领克 / Flyme Auto 车机的非官方实验项目。模拟器通过不代表车辆一定授予 CarProperty 读取权限；实车兼容性仍需逐车验证。请先阅读[兼容性与权限](#兼容性与权限)。
 
 ## 项目简介
 
@@ -113,9 +113,9 @@ app/build/outputs/apk/debug/app-debug.apk
 
 ## 包名与升级
 
-版本 `1.0.0` 使用 versionCode `24`。Release 包名仍为 `com.lynk.autoenergyfuel`；Debug 包名仍为 `com.lynk.autoenergyfuel.dhureadonly`，两者可并排安装。覆盖安装必须同时满足包名相同且签名一致：CI Debug 包不能覆盖 Release 包，Release 升级也需要沿用原 Release 签名。
+版本 `1.0.2` 使用 versionCode `26`。Release 包名仍为 `com.lynk.autoenergyfuel`；Debug 包名仍为 `com.lynk.autoenergyfuel.dhureadonly`，两者可并排安装。覆盖安装必须同时满足包名相同且签名一致：CI Debug 包不能覆盖 Release 包，Release 升级也需要沿用原 Release 签名。
 
-升级前不要卸载旧版。应用继续使用 `Download/AutoEnergyData/history-*.json`，保留既有油耗历史和采集基线；旧版 SharedPreferences 历史迁移逻辑也继续保留。若卸载后重装，通常需手动选择共享 JSON 并重新授权 DUMP。
+升级前不要卸载旧版。应用继续使用 `Download/AutoEnergyData/history-*.json`，保留既有油耗历史和采集基线；旧版 SharedPreferences 历史迁移逻辑也继续保留。卸载后重装会按文件名自动尝试恢复历史，也可在诊断页导入 / 导出 JSON。
 
 ## 安装
 
@@ -251,6 +251,8 @@ tools/                 辅助验证脚本
 ```
 
 ## 版本
+
+- `v1.0.2`（预发布，versionCode 26）：合入 DHU615G 实车适配提交，修复 1920×968 全视口背景、安全区、随系统夜间模式和浅色曲线对比度。
 
 - `v1.0.0`（预发布，versionCode 24）：回归纯油耗范围；保留油量升数估算、油耗里程计算、后台采集和本地历史；移除地图、GPS 轨迹及座舱 Demo。权限检测和首次授权流程以预发布说明及最终设备验证为准。
 
