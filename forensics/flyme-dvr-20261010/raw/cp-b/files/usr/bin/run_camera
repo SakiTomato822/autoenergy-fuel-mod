@@ -1,0 +1,6 @@
+#!/bin/bash
+set -e
+var=$(cat /proc/sys/kernel/printk)
+echo 0 > /proc/sys/kernel/printk
+se_v4l2_cap_drm -c 15
+echo $var > /proc/sys/kernel/printk

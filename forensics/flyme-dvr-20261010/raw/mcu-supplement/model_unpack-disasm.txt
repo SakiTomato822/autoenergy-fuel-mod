@@ -1,0 +1,139 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00439984 <.data+0x19984>:
+  439984:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  439988:	b097      	sub	sp, #92	@ 0x5c
+  43998a:	ac02      	add	r4, sp, #8
+  43998c:	e884 000f 	stmia.w	r4, {r0, r1, r2, r3}
+  439990:	460b      	mov	r3, r1
+  439992:	f89d 2010 	ldrb.w	r2, [sp, #16]
+  439996:	9905      	ldr	r1, [sp, #20]
+  439998:	2b1a      	cmp	r3, #26
+  43999a:	d105      	bne.n	0x4399a8
+  43999c:	4848      	ldr	r0, [pc, #288]	@ (0x439ac0)
+  43999e:	b017      	add	sp, #92	@ 0x5c
+  4399a0:	e8bd 4ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  4399a4:	f023 b9c8 	b.w	0x45cd38
+  4399a8:	2b1f      	cmp	r3, #31
+  4399aa:	d101      	bne.n	0x4399b0
+  4399ac:	4845      	ldr	r0, [pc, #276]	@ (0x439ac4)
+  4399ae:	e7f6      	b.n	0x43999e
+  4399b0:	2b20      	cmp	r3, #32
+  4399b2:	d101      	bne.n	0x4399b8
+  4399b4:	4844      	ldr	r0, [pc, #272]	@ (0x439ac8)
+  4399b6:	e7f2      	b.n	0x43999e
+  4399b8:	0e1c      	lsrs	r4, r3, #24
+  4399ba:	f1b3 5f80 	cmp.w	r3, #268435456	@ 0x10000000
+  4399be:	f89d 0011 	ldrb.w	r0, [sp, #17]
+  4399c2:	46a0      	mov	r8, r4
+  4399c4:	9400      	str	r4, [sp, #0]
+  4399c6:	f88d 4018 	strb.w	r4, [sp, #24]
+  4399ca:	ea4f 4413 	mov.w	r4, r3, lsr #16
+  4399ce:	f88d 301b 	strb.w	r3, [sp, #27]
+  4399d2:	f88d 4019 	strb.w	r4, [sp, #25]
+  4399d6:	ea4f 2413 	mov.w	r4, r3, lsr #8
+  4399da:	f88d 201c 	strb.w	r2, [sp, #28]
+  4399de:	f88d 401a 	strb.w	r4, [sp, #26]
+  4399e2:	d210      	bcs.n	0x439a06
+  4399e4:	f1a0 0209 	sub.w	r2, r0, #9
+  4399e8:	b2d3      	uxtb	r3, r2
+  4399ea:	2b47      	cmp	r3, #71	@ 0x47
+  4399ec:	d80b      	bhi.n	0x439a06
+  4399ee:	2700      	movs	r7, #0
+  4399f0:	f8df 90e8 	ldr.w	r9, [pc, #232]	@ 0x439adc
+  4399f4:	f8df a0e8 	ldr.w	sl, [pc, #232]	@ 0x439ae0
+  4399f8:	f10d 001d 	add.w	r0, sp, #29
+  4399fc:	f023 f99c 	bl	0x45cd38
+  439a00:	b2fb      	uxtb	r3, r7
+  439a02:	4598      	cmp	r8, r3
+  439a04:	d802      	bhi.n	0x439a0c
+  439a06:	b017      	add	sp, #92	@ 0x5c
+  439a08:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  439a0c:	f89d b019 	ldrb.w	fp, [sp, #25]
+  439a10:	f8bd 401a 	ldrh.w	r4, [sp, #26]
+  439a14:	f1ab 0e03 	sub.w	lr, fp, #3
+  439a18:	ba64      	rev16	r4, r4
+  439a1a:	fa5f f38e 	uxtb.w	r3, lr
+  439a1e:	b2a4      	uxth	r4, r4
+  439a20:	2b07      	cmp	r3, #7
+  439a22:	d8f0      	bhi.n	0x439a06
+  439a24:	2500      	movs	r5, #0
+  439a26:	f1ab 0302 	sub.w	r3, fp, #2
+  439a2a:	4628      	mov	r0, r5
+  439a2c:	4629      	mov	r1, r5
+  439a2e:	9301      	str	r3, [sp, #4]
+  439a30:	b2eb      	uxtb	r3, r5
+  439a32:	9a01      	ldr	r2, [sp, #4]
+  439a34:	3501      	adds	r5, #1
+  439a36:	4293      	cmp	r3, r2
+  439a38:	db2c      	blt.n	0x439a94
+  439a3a:	f5b4 7f4d 	cmp.w	r4, #820	@ 0x334
+  439a3e:	d2e2      	bcs.n	0x439a06
+  439a40:	f819 5034 	ldrb.w	r5, [r9, r4, lsl #3]
+  439a44:	f85a 3024 	ldr.w	r3, [sl, r4, lsl #2]
+  439a48:	4798      	blx	r3
+  439a4a:	2dff      	cmp	r5, #255	@ 0xff
+  439a4c:	d012      	beq.n	0x439a74
+  439a4e:	eb09 04c4 	add.w	r4, r9, r4, lsl #3
+  439a52:	7863      	ldrb	r3, [r4, #1]
+  439a54:	b173      	cbz	r3, 0x439a74
+  439a56:	2301      	movs	r3, #1
+  439a58:	4a1c      	ldr	r2, [pc, #112]	@ (0x439acc)
+  439a5a:	5553      	strb	r3, [r2, r5]
+  439a5c:	7922      	ldrb	r2, [r4, #4]
+  439a5e:	4b1c      	ldr	r3, [pc, #112]	@ (0x439ad0)
+  439a60:	555a      	strb	r2, [r3, r5]
+  439a62:	4b1c      	ldr	r3, [pc, #112]	@ (0x439ad4)
+  439a64:	8862      	ldrh	r2, [r4, #2]
+  439a66:	f823 2015 	strh.w	r2, [r3, r5, lsl #1]
+  439a6a:	4b1b      	ldr	r3, [pc, #108]	@ (0x439ad8)
+  439a6c:	441d      	add	r5, r3
+  439a6e:	2303      	movs	r3, #3
+  439a70:	f885 30d8 	strb.w	r3, [r5, #216]	@ 0xd8
+  439a74:	3701      	adds	r7, #1
+  439a76:	9b00      	ldr	r3, [sp, #0]
+  439a78:	42bb      	cmp	r3, r7
+  439a7a:	d0c1      	beq.n	0x439a00
+  439a7c:	f10b 0102 	add.w	r1, fp, #2
+  439a80:	ab06      	add	r3, sp, #24
+  439a82:	f1cb 023f 	rsb	r2, fp, #63	@ 0x3f
+  439a86:	f10d 0019 	add.w	r0, sp, #25
+  439a8a:	fa53 f181 	uxtab	r1, r3, r1
+  439a8e:	f023 f953 	bl	0x45cd38
+  439a92:	e7b5      	b.n	0x439a00
+  439a94:	aa16      	add	r2, sp, #88	@ 0x58
+  439a96:	441a      	add	r2, r3
+  439a98:	ebae 0303 	sub.w	r3, lr, r3
+  439a9c:	00db      	lsls	r3, r3, #3
+  439a9e:	f812 2c3c 	ldrb.w	r2, [r2, #-60]
+  439aa2:	f1a3 0620 	sub.w	r6, r3, #32
+  439aa6:	f1c3 0c20 	rsb	ip, r3, #32
+  439aaa:	fa02 f303 	lsl.w	r3, r2, r3
+  439aae:	fa02 f606 	lsl.w	r6, r2, r6
+  439ab2:	fa22 fc0c 	lsr.w	ip, r2, ip
+  439ab6:	4318      	orrs	r0, r3
+  439ab8:	ea46 060c 	orr.w	r6, r6, ip
+  439abc:	4331      	orrs	r1, r6
+  439abe:	e7b7      	b.n	0x439a30
+  439ac0:	0621      	lsls	r1, r4, #24
+  439ac2:	2040      	movs	r0, #64	@ 0x40
+  439ac4:	0609      	lsls	r1, r1, #24
+  439ac6:	2040      	movs	r0, #64	@ 0x40
+  439ac8:	05f9      	lsls	r1, r7, #23
+  439aca:	2040      	movs	r0, #64	@ 0x40
+  439acc:	8769      	strh	r1, [r5, #58]	@ 0x3a
+  439ace:	2041      	movs	r0, #65	@ 0x41
+  439ad0:	82b2      	strh	r2, [r6, #20]
+  439ad2:	2041      	movs	r0, #65	@ 0x41
+  439ad4:	a5fc      	add	r5, pc, #1008	@ (adr r5, 0x439ec8)
+  439ad6:	2040      	movs	r0, #64	@ 0x40
+  439ad8:	a590      	add	r5, pc, #576	@ (adr r5, 0x439d1c)
+  439ada:	2041      	movs	r0, #65	@ 0x41
+  439adc:	910a      	str	r1, [sp, #40]	@ 0x28
+  439ade:	0048      	lsls	r0, r1, #1
+  439ae0:	aaac      	add	r2, sp, #688	@ 0x2b0
+  439ae2:	0048      	lsls	r0, r1, #1

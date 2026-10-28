@@ -1,0 +1,81 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0046cb08 <.data+0x4cb08>:
+  46cb08:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  46cb0c:	4698      	mov	r8, r3
+  46cb0e:	4b2d      	ldr	r3, [pc, #180]	@ (0x46cbc4)
+  46cb10:	2805      	cmp	r0, #5
+  46cb12:	b087      	sub	sp, #28
+  46cb14:	f853 5020 	ldr.w	r5, [r3, r0, lsl #2]
+  46cb18:	460f      	mov	r7, r1
+  46cb1a:	4b2b      	ldr	r3, [pc, #172]	@ (0x46cbc8)
+  46cb1c:	4614      	mov	r4, r2
+  46cb1e:	f853 9020 	ldr.w	r9, [r3, r0, lsl #2]
+  46cb22:	bf8c      	ite	hi
+  46cb24:	2000      	movhi	r0, #0
+  46cb26:	2001      	movls	r0, #1
+  46cb28:	f7b8 fe0e 	bl	0x425748
+  46cb2c:	1e10      	subs	r0, r2, #0
+  46cb2e:	bf18      	it	ne
+  46cb30:	2001      	movne	r0, #1
+  46cb32:	f7b8 fe09 	bl	0x425748
+  46cb36:	7916      	ldrb	r6, [r2, #4]
+  46cb38:	4648      	mov	r0, r9
+  46cb3a:	f002 f981 	bl	0x46ee40
+  46cb3e:	4286      	cmp	r6, r0
+  46cb40:	4639      	mov	r1, r7
+  46cb42:	bf8c      	ite	hi
+  46cb44:	2000      	movhi	r0, #0
+  46cb46:	2001      	movls	r0, #1
+  46cb48:	f7b8 fdfe 	bl	0x425748
+  46cb4c:	f8d5 3628 	ldr.w	r3, [r5, #1576]	@ 0x628
+  46cb50:	f895 2624 	ldrb.w	r2, [r5, #1572]	@ 0x624
+  46cb54:	4648      	mov	r0, r9
+  46cb56:	f002 fd2f 	bl	0x46f5b8
+  46cb5a:	bb78      	cbnz	r0, 0x46cbbc
+  46cb5c:	eb05 1b07 	add.w	fp, r5, r7, lsl #4
+  46cb60:	f04f 0a02 	mov.w	sl, #2
+  46cb64:	f8db 6004 	ldr.w	r6, [fp, #4]
+  46cb68:	bb56      	cbnz	r6, 0x46cbc0
+  46cb6a:	4639      	mov	r1, r7
+  46cb6c:	4648      	mov	r0, r9
+  46cb6e:	f7ff fe1b 	bl	0x46c7a8
+  46cb72:	7b23      	ldrb	r3, [r4, #12]
+  46cb74:	6862      	ldr	r2, [r4, #4]
+  46cb76:	f88b 3008 	strb.w	r3, [fp, #8]
+  46cb7a:	7ae3      	ldrb	r3, [r4, #11]
+  46cb7c:	6825      	ldr	r5, [r4, #0]
+  46cb7e:	2b00      	cmp	r3, #0
+  46cb80:	f88b 3009 	strb.w	r3, [fp, #9]
+  46cb84:	f8cb a004 	str.w	sl, [fp, #4]
+  46cb88:	f8cb 600c 	str.w	r6, [fp, #12]
+  46cb8c:	bf14      	ite	ne
+  46cb8e:	231c      	movne	r3, #28
+  46cb90:	230c      	moveq	r3, #12
+  46cb92:	7aa7      	ldrb	r7, [r4, #10]
+  46cb94:	e9cd 5203 	strd	r5, r2, [sp, #12]
+  46cb98:	8922      	ldrh	r2, [r4, #8]
+  46cb9a:	9302      	str	r3, [sp, #8]
+  46cb9c:	f8ad 2014 	strh.w	r2, [sp, #20]
+  46cba0:	f88d 7016 	strb.w	r7, [sp, #22]
+  46cba4:	f001 ff54 	bl	0x46ea50
+  46cba8:	9b10      	ldr	r3, [sp, #64]	@ 0x40
+  46cbaa:	4642      	mov	r2, r8
+  46cbac:	a902      	add	r1, sp, #8
+  46cbae:	9600      	str	r6, [sp, #0]
+  46cbb0:	f002 facd 	bl	0x46f14e
+  46cbb4:	4630      	mov	r0, r6
+  46cbb6:	b007      	add	sp, #28
+  46cbb8:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  46cbbc:	2604      	movs	r6, #4
+  46cbbe:	e7f9      	b.n	0x46cbb4
+  46cbc0:	4656      	mov	r6, sl
+  46cbc2:	e7f7      	b.n	0x46cbb4
+  46cbc4:	3988      	subs	r1, #136	@ 0x88
+  46cbc6:	2042      	movs	r0, #66	@ 0x42
+  46cbc8:	97dc      	str	r7, [sp, #880]	@ 0x370
+  46cbca:	0049      	lsls	r1, r1, #1

@@ -1,0 +1,4 @@
+Sun Oct 11 22:32:37 CST 2026
+-r-------- 1 root root 163968 2026-10-11 22:32 /sys/firmware/fdt
+lrwxrwxrwx   1 root root 29 2026-10-11 22:32 /proc/device-tree -> /sys/firmware/devicetree/base
+drwxr-xr-x 289 root root  0 2026-10-11 22:32 /sys/firmware/devicetree/base

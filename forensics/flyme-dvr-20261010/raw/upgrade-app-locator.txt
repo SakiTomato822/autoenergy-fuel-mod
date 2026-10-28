@@ -1,0 +1,16 @@
+Sun Oct 11 20:42:27 CST 2026
+/data/data/com.flyme.auto.update/databases/ota_upgrade_pre.db
+/data/data/com.flyme.auto.update/databases/ota_upgrade_pre.db-journal
+/data/data/com.flyme.auto.update/shared_prefs/ecarx_fota_file.xml
+/data/data/com.flyme.auto.update/shared_prefs/sp_sbc_status.xml
+/data/data/com.flyme.auto.update/shared_prefs/ota_upgrade_result_file_name.xml
+/data/data/com.flyme.auto.update/shared_prefs/ota_mpu_upgrade_check_daily_file_name.xml
+/data/data/com.flyme.auto.update/shared_prefs/ota_upgrade_result_has_full_file_name.xml
+/system/app/ECarXOtaApp:
+total 2748
+-rw-r--r-- 1 root root 2813150 2009-01-01 08:00 ECarXOtaApp.apk
+
+/system/priv-app/ECarXOtaService:
+total 88
+-rw-r--r-- 1 root root 82334 2009-01-01 08:00 ECarXOtaService.apk
+drwxr-xr-x 3 root root  4096 2009-01-01 08:00 oat

@@ -1,0 +1,651 @@
+
+forensics/flyme-dvr-20261010/raw/kernel-max96722-probe-pages.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000b43924 <.data+0x924>:
+  b43924:	d503233f 	paciasp
+  b43928:	d10443ff 	sub	sp, sp, #0x110
+  b4392c:	d5384101 	mrs	x1, sp_el0
+  b43930:	a9017bfd 	stp	x29, x30, [sp, #16]
+  b43934:	910043fd 	add	x29, sp, #0x10
+  b43938:	a9035bf5 	stp	x21, x22, [sp, #48]
+  b4393c:	aa0003f6 	mov	x22, x0
+  b43940:	a90463f7 	stp	x23, x24, [sp, #64]
+  b43944:	910082d7 	add	x23, x22, #0x20
+  b43948:	f942f020 	ldr	x0, [x1, #1504]
+  b4394c:	f90087e0 	str	x0, [sp, #264]
+  b43950:	d2800000 	mov	x0, #0x0                   	// #0
+  b43954:	9102a3e0 	add	x0, sp, #0xa8
+  b43958:	97d735e6 	bl	0x1110f0 // KERNEL_SYMBOL ktime_get_real_ts64
+  b4395c:	f94057e0 	ldr	x0, [sp, #168]
+  b43960:	9102e3e2 	add	x2, sp, #0xb8
+  b43964:	52800001 	mov	w1, #0x0                   	// #0
+  b43968:	97d74616 	bl	0x1151c0 // KERNEL_SYMBOL time64_to_tm
+  b4396c:	d2869b62 	mov	x2, #0x34db                	// #13531
+  b43970:	b0007428 	adrp	x8, 0x19c8000
+  b43974:	f2baf6c2 	movk	x2, #0xd7b6, lsl #16
+  b43978:	9138a108 	add	x8, x8, #0xe28 // STATIC_STRING@19c8e28 "max96722_probe: start version:23-02-20 V1 str \n"
+  b4397c:	f9405be7 	ldr	x7, [sp, #176]
+  b43980:	f2dbd042 	movk	x2, #0xde82, lsl #32
+  b43984:	f2e86362 	movk	x2, #0x431b, lsl #48
+  b43988:	f90003e8 	str	x8, [sp]
+  b4398c:	29580fe4 	ldp	w4, w3, [sp, #192]
+  b43990:	9b427ce2 	smulh	x2, x7, x2
+  b43994:	295717e6 	ldp	w6, w5, [sp, #184]
+  b43998:	11002084 	add	w4, w4, #0x8
+  b4399c:	9352fc42 	asr	x2, x2, #18
+  b439a0:	90007420 	adrp	x0, 0x19c7000
+  b439a4:	f9406be1 	ldr	x1, [sp, #208]
+  b439a8:	cb87fc47 	sub	x7, x2, x7, asr #63
+  b439ac:	b940cbe2 	ldr	w2, [sp, #200]
+  b439b0:	91378000 	add	x0, x0, #0xde0
+  b439b4:	911db021 	add	x1, x1, #0x76c
+  b439b8:	11000442 	add	w2, w2, #0x1
+  b439bc:	9417d625 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b439c0:	aa1703e0 	mov	x0, x23
+  b439c4:	5281b802 	mov	w2, #0xdc0                 	// #3520
+  b439c8:	d2813501 	mov	x1, #0x9a8                 	// #2472
+  b439cc:	97f45476 	bl	0x858ba4 // KERNEL_SYMBOL devm_kmalloc
+  b439d0:	b4002100 	cbz	x0, 0xb43df0
+  b439d4:	a90253f3 	stp	x19, x20, [sp, #32]
+  b439d8:	52800024 	mov	w4, #0x1                   	// #1
+  b439dc:	aa0003f3 	mov	x19, x0
+  b439e0:	3926401f 	strb	wzr, [x0, #2448]
+  b439e4:	b0007435 	adrp	x21, 0x19c8000
+  b439e8:	39122004 	strb	w4, [x0, #1160]
+  b439ec:	913962b5 	add	x21, x21, #0xe58 // STATIC_STRING@19c8e58 "vehicle_config_gpio147"
+  b439f0:	f9416ee0 	ldr	x0, [x23, #728]
+  b439f4:	aa1503e1 	mov	x1, x21
+  b439f8:	d2800003 	mov	x3, #0x0                   	// #0
+  b439fc:	52800002 	mov	w2, #0x0                   	// #0
+  b43a00:	97ebcc08 	bl	0x636a20 // KERNEL_SYMBOL of_get_named_gpio_flags
+  b43a04:	2a0003f4 	mov	w20, w0
+  b43a08:	7107fc1f 	cmp	w0, #0x1ff
+  b43a0c:	54002228 	b.hi	0xb43e50  // b.pmore
+  b43a10:	aa1503e2 	mov	x2, x21
+  b43a14:	2a0003e1 	mov	w1, w0
+  b43a18:	aa1703e0 	mov	x0, x23
+  b43a1c:	a9056bf9 	stp	x25, x26, [sp, #80]
+  b43a20:	a90673fb 	stp	x27, x28, [sp, #96]
+  b43a24:	97ebc848 	bl	0x635b44 // KERNEL_SYMBOL devm_gpio_request
+  b43a28:	2a1403e0 	mov	w0, w20
+  b43a2c:	b9099674 	str	w20, [x19, #2452]
+  b43a30:	90005594 	adrp	x20, 0x15f3000
+  b43a34:	913a6294 	add	x20, x20, #0xe98
+  b43a38:	97ebaa07 	bl	0x62e254 // KERNEL_SYMBOL gpio_to_desc
+  b43a3c:	912da295 	add	x21, x20, #0xb68
+  b43a40:	52800001 	mov	w1, #0x0                   	// #0
+  b43a44:	97ebb3a7 	bl	0x6308e0 // KERNEL_SYMBOL gpiod_direction_output_raw
+  b43a48:	aa1503e1 	mov	x1, x21
+  b43a4c:	b0007420 	adrp	x0, 0x19c8000
+  b43a50:	913a4000 	add	x0, x0, #0xe90
+  b43a54:	9417d5ff 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43a58:	b9499660 	ldr	w0, [x19, #2452]
+  b43a5c:	97eba9fe 	bl	0x62e254 // KERNEL_SYMBOL gpio_to_desc
+  b43a60:	52800001 	mov	w1, #0x0                   	// #0
+  b43a64:	97ebb48f 	bl	0x630ca0 // KERNEL_SYMBOL gpiod_set_raw_value
+  b43a68:	910ca281 	add	x1, x20, #0x328
+  b43a6c:	b0007420 	adrp	x0, 0x19c8000
+  b43a70:	9110c000 	add	x0, x0, #0x430
+  b43a74:	9417d5f7 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43a78:	52800040 	mov	w0, #0x2                   	// #2
+  b43a7c:	97fffcda 	bl	0xb42de4 // KERNEL_SYMBOL is_match_config_read_from_veh
+  b43a80:	72001c1f 	tst	w0, #0xff
+  b43a84:	540000a1 	b.ne	0xb43a98  // b.any
+  b43a88:	52800060 	mov	w0, #0x3                   	// #3
+  b43a8c:	97fffcd6 	bl	0xb42de4 // KERNEL_SYMBOL is_match_config_read_from_veh
+  b43a90:	72001c1f 	tst	w0, #0xff
+  b43a94:	54001d20 	b.eq	0xb43e38  // b.none
+  b43a98:	912da281 	add	x1, x20, #0xb68
+  b43a9c:	b0007420 	adrp	x0, 0x19c8000
+  b43aa0:	913aa000 	add	x0, x0, #0xea8
+  b43aa4:	9417d5eb 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43aa8:	52800020 	mov	w0, #0x1                   	// #1
+  b43aac:	39264260 	strb	w0, [x19, #2448]
+  b43ab0:	f9416ee0 	ldr	x0, [x23, #728]
+  b43ab4:	d2800003 	mov	x3, #0x0                   	// #0
+  b43ab8:	52800002 	mov	w2, #0x0                   	// #0
+  b43abc:	b000743b 	adrp	x27, 0x19c8000
+  b43ac0:	913bc37b 	add	x27, x27, #0xef0 // STATIC_STRING@19c8ef0 "pdb_gpio_1"
+  b43ac4:	aa1b03e1 	mov	x1, x27
+  b43ac8:	97ebcbd6 	bl	0x636a20 // KERNEL_SYMBOL of_get_named_gpio_flags
+  b43acc:	912da281 	add	x1, x20, #0xb68
+  b43ad0:	2a0003f5 	mov	w21, w0
+  b43ad4:	b0007420 	adrp	x0, 0x19c8000
+  b43ad8:	913c0000 	add	x0, x0, #0xf00
+  b43adc:	9417d5dd 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43ae0:	f941b660 	ldr	x0, [x19, #872]
+  b43ae4:	b50005c0 	cbnz	x0, 0xb43b9c
+  b43ae8:	f9416ee0 	ldr	x0, [x23, #728]
+  b43aec:	910d6262 	add	x2, x19, #0x358
+  b43af0:	d2800004 	mov	x4, #0x0                   	// #0
+  b43af4:	d2800023 	mov	x3, #0x1                   	// #1
+  b43af8:	b0007421 	adrp	x1, 0x19c8000
+  b43afc:	913c6021 	add	x1, x1, #0xf18 // STATIC_STRING@19c8f18 "rpmsg_src_id"
+  b43b00:	940651d0 	bl	0xcd8240 // KERNEL_SYMBOL of_property_read_variable_u32_array
+  b43b04:	912de298 	add	x24, x20, #0xb78
+  b43b08:	f9416ee0 	ldr	x0, [x23, #728]
+  b43b0c:	910d7262 	add	x2, x19, #0x35c
+  b43b10:	d2800004 	mov	x4, #0x0                   	// #0
+  b43b14:	d2800023 	mov	x3, #0x1                   	// #1
+  b43b18:	b0007421 	adrp	x1, 0x19c8000
+  b43b1c:	913ca021 	add	x1, x1, #0xf28 // STATIC_STRING@19c8f28 "rpmsg_dst_id"
+  b43b20:	940651c8 	bl	0xcd8240 // KERNEL_SYMBOL of_property_read_variable_u32_array
+  b43b24:	f9416ee0 	ldr	x0, [x23, #728]
+  b43b28:	910d8262 	add	x2, x19, #0x360
+  b43b2c:	d2800004 	mov	x4, #0x0                   	// #0
+  b43b30:	d2800023 	mov	x3, #0x1                   	// #1
+  b43b34:	b0007421 	adrp	x1, 0x19c8000
+  b43b38:	913ce021 	add	x1, x1, #0xf38 // STATIC_STRING@19c8f38 "rpmsg_endpoint_src_id"
+  b43b3c:	940651c1 	bl	0xcd8240 // KERNEL_SYMBOL of_property_read_variable_u32_array
+  b43b40:	f9416ee0 	ldr	x0, [x23, #728]
+  b43b44:	910d9262 	add	x2, x19, #0x364
+  b43b48:	d2800004 	mov	x4, #0x0                   	// #0
+  b43b4c:	d2800023 	mov	x3, #0x1                   	// #1
+  b43b50:	b0007421 	adrp	x1, 0x19c8000
+  b43b54:	913d4021 	add	x1, x1, #0xf50 // STATIC_STRING@19c8f50 "rpmsg_endpoint_dst_id"
+  b43b58:	940651ba 	bl	0xcd8240 // KERNEL_SYMBOL of_property_read_variable_u32_array
+  b43b5c:	910d8266 	add	x6, x19, #0x360
+  b43b60:	aa1803e1 	mov	x1, x24
+  b43b64:	b0007420 	adrp	x0, 0x19c8000
+  b43b68:	913da000 	add	x0, x0, #0xf68
+  b43b6c:	297f0cc2 	ldp	w2, w3, [x6, #-8]
+  b43b70:	294014c4 	ldp	w4, w5, [x6]
+  b43b74:	9417d5b7 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43b78:	b9435a60 	ldr	w0, [x19, #856]
+  b43b7c:	b9435e61 	ldr	w1, [x19, #860]
+  b43b80:	9406cd00 	bl	0xcf6f80 // KERNEL_SYMBOL find_rpmsg_dev
+  b43b84:	b50017a0 	cbnz	x0, 0xb43e78
+  b43b88:	b0007420 	adrp	x0, 0x19c8000
+  b43b8c:	aa1803e1 	mov	x1, x24
+  b43b90:	913e0000 	add	x0, x0, #0xf80
+  b43b94:	52814ac2 	mov	w2, #0xa56                 	// #2646
+  b43b98:	9417d5ae 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43b9c:	9110027a 	add	x26, x19, #0x400
+  b43ba0:	910e0260 	add	x0, x19, #0x380
+  b43ba4:	52800fa1 	mov	w1, #0x7d                  	// #125
+  b43ba8:	b27b7be2 	mov	x2, #0xfffffffe0           	// #68719476704
+  b43bac:	f901be62 	str	x2, [x19, #888]
+  b43bb0:	f0003005 	adrp	x5, 0x1146000
+  b43bb4:	f901c260 	str	x0, [x19, #896]
+  b43bb8:	912ca0a5 	add	x5, x5, #0xb28
+  b43bbc:	b904a261 	str	w1, [x19, #1184]
+  b43bc0:	d0ffa9d9 	adrp	x25, 0x7d000
+  b43bc4:	f8188340 	stur	x0, [x26, #-120]
+  b43bc8:	91315339 	add	x25, x25, #0xc54
+  b43bcc:	f901ca65 	str	x5, [x19, #912]
+  b43bd0:	d2800004 	mov	x4, #0x0                   	// #0
+  b43bd4:	aa1903e1 	mov	x1, x25
+  b43bd8:	910ea260 	add	x0, x19, #0x3a8
+  b43bdc:	d2800003 	mov	x3, #0x0                   	// #0
+  b43be0:	52a00402 	mov	w2, #0x200000              	// #2097152
+  b43be4:	97d721ac 	bl	0x10c294 // KERNEL_SYMBOL init_timer_key
+  b43be8:	f000f3b8 	adrp	x24, 0x29ba000
+  b43bec:	52800063 	mov	w3, #0x3                   	// #3
+  b43bf0:	912b2302 	add	x2, x24, #0xac8
+  b43bf4:	f9004ef3 	str	x19, [x23, #152]
+  b43bf8:	9100205c 	add	x28, x2, #0x8
+  b43bfc:	f9011276 	str	x22, [x19, #544]
+  b43c00:	aa1c03e2 	mov	x2, x28
+  b43c04:	390dc663 	strb	w3, [x19, #881]
+  b43c08:	9112a260 	add	x0, x19, #0x4a8
+  b43c0c:	b0007421 	adrp	x1, 0x19c8000
+  b43c10:	913f6021 	add	x1, x1, #0xfd8 // STATIC_STRING@19c8fd8 "&max96722_data->sensor_lock"
+  b43c14:	97d60ec3 	bl	0xc7720 // KERNEL_SYMBOL __mutex_init
+  b43c18:	91236260 	add	x0, x19, #0x8d8
+  b43c1c:	aa1c03e2 	mov	x2, x28
+  b43c20:	b0007421 	adrp	x1, 0x19c8000
+  b43c24:	913fe021 	add	x1, x1, #0xff8 // STATIC_STRING@19c8ff8 "&max96722_data->sensor_read_lock"
+  b43c28:	97d60ebe 	bl	0xc7720 // KERNEL_SYMBOL __mutex_init
+  b43c2c:	794006c0 	ldrh	w0, [x22, #2]
+  b43c30:	7100a41f 	cmp	w0, #0x29
+  b43c34:	540014c1 	b.ne	0xb43ecc  // b.any
+  b43c38:	aa1b03e1 	mov	x1, x27
+  b43c3c:	d2800322 	mov	x2, #0x19                  	// #25
+  b43c40:	f2c00b82 	movk	x2, #0x5c, lsl #32
+  b43c44:	f901aa62 	str	x2, [x19, #848]
+  b43c48:	2a1503e0 	mov	w0, w21
+  b43c4c:	97ebc8c1 	bl	0x635f50 // KERNEL_SYMBOL gpio_request
+  b43c50:	52800021 	mov	w1, #0x1                   	// #1
+  b43c54:	2a1503e0 	mov	w0, w21
+  b43c58:	97fffcdf 	bl	0xb42fd4 // KERNEL_SYMBOL gpio_direction_output.isra.0
+  b43c5c:	52800040 	mov	w0, #0x2                   	// #2
+  b43c60:	97fffccc 	bl	0xb42f90 // KERNEL_SYMBOL sensor_delay.part.0
+  b43c64:	52800001 	mov	w1, #0x0                   	// #0
+  b43c68:	2a1503e0 	mov	w0, w21
+  b43c6c:	97fffcda 	bl	0xb42fd4 // KERNEL_SYMBOL gpio_direction_output.isra.0
+  b43c70:	52800040 	mov	w0, #0x2                   	// #2
+  b43c74:	97fffcc7 	bl	0xb42f90 // KERNEL_SYMBOL sensor_delay.part.0
+  b43c78:	52800021 	mov	w1, #0x1                   	// #1
+  b43c7c:	2a1503e0 	mov	w0, w21
+  b43c80:	97fffcd5 	bl	0xb42fd4 // KERNEL_SYMBOL gpio_direction_output.isra.0
+  b43c84:	52800040 	mov	w0, #0x2                   	// #2
+  b43c88:	97fffcc2 	bl	0xb42f90 // KERNEL_SYMBOL sensor_delay.part.0
+  b43c8c:	f9416ee0 	ldr	x0, [x23, #728]
+  b43c90:	912f4281 	add	x1, x20, #0xbd0
+  b43c94:	94063a28 	bl	0xcd2534 // KERNEL_SYMBOL of_device_is_compatible
+  b43c98:	34001240 	cbz	w0, 0xb43ee0
+  b43c9c:	d0007420 	adrp	x0, 0x19c9000
+  b43ca0:	91008000 	add	x0, x0, #0x20
+  b43ca4:	9417d56b 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43ca8:	392b231f 	strb	wzr, [x24, #2760]
+  b43cac:	396b2300 	ldrb	w0, [x24, #2760]
+  b43cb0:	d000daf8 	adrp	x24, 0x26a1000
+  b43cb4:	f9011276 	str	x22, [x19, #544]
+  b43cb8:	911b0318 	add	x24, x24, #0x6c0
+  b43cbc:	7100041f 	cmp	w0, #0x1
+  b43cc0:	54001561 	b.ne	0xb43f6c  // b.any
+  b43cc4:	528401e0 	mov	w0, #0x200f                	// #8207
+  b43cc8:	b9023260 	str	w0, [x19, #560]
+  b43ccc:	b9412701 	ldr	w1, [x24, #292]
+  b43cd0:	b9412b00 	ldr	w0, [x24, #296]
+  b43cd4:	b9022a61 	str	w1, [x19, #552]
+  b43cd8:	b9022e60 	str	w0, [x19, #556]
+  b43cdc:	79068a61 	strh	w1, [x19, #836]
+  b43ce0:	79068e60 	strh	w0, [x19, #838]
+  b43ce4:	f9416ee0 	ldr	x0, [x23, #728]
+  b43ce8:	528000e4 	mov	w4, #0x7                   	// #7
+  b43cec:	b9023a64 	str	w4, [x19, #568]
+  b43cf0:	d0007421 	adrp	x1, 0x19c9000
+  b43cf4:	d2800003 	mov	x3, #0x0                   	// #0
+  b43cf8:	91032021 	add	x1, x1, #0xc8 // STATIC_STRING@19c90c8 "camera_lock_gpio_1"
+  b43cfc:	52800002 	mov	w2, #0x0                   	// #0
+  b43d00:	97ebcb48 	bl	0x636a20 // KERNEL_SYMBOL of_get_named_gpio_flags
+  b43d04:	b9049660 	str	w0, [x19, #1172]
+  b43d08:	2a0003e1 	mov	w1, w0
+  b43d0c:	7107fc1f 	cmp	w0, #0x1ff
+  b43d10:	540015a9 	b.ls	0xb43fc4  // b.plast
+  b43d14:	d0007420 	adrp	x0, 0x19c9000
+  b43d18:	9105c000 	add	x0, x0, #0x170
+  b43d1c:	9417d54d 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43d20:	79468a67 	ldrh	w7, [x19, #836]
+  b43d24:	d2800029 	mov	x9, #0x1                   	// #1
+  b43d28:	79468e65 	ldrh	w5, [x19, #838]
+  b43d2c:	529f9808 	mov	w8, #0xfcc0                	// #64704
+  b43d30:	52800023 	mov	w3, #0x1                   	// #1
+  b43d34:	5280480b 	mov	w11, #0x240                 	// #576
+  b43d38:	d282000a 	mov	x10, #0x1000                	// #4096
+  b43d3c:	f2c003c9 	movk	x9, #0x1e, lsl #32
+  b43d40:	52802e46 	mov	w6, #0x172                 	// #370
+  b43d44:	d2803204 	mov	x4, #0x190                 	// #400
+  b43d48:	72a03368 	movk	w8, #0x19b, lsl #16
+  b43d4c:	b9023663 	str	w3, [x19, #564]
+  b43d50:	79048a6b 	strh	w11, [x19, #580]
+  b43d54:	aa1603e1 	mov	x1, x22
+  b43d58:	f9012e6a 	str	x10, [x19, #600]
+  b43d5c:	913de282 	add	x2, x20, #0xf78
+  b43d60:	f9013269 	str	x9, [x19, #608]
+  b43d64:	aa1303e0 	mov	x0, x19
+  b43d68:	b902ba7f 	str	wzr, [x19, #696]
+  b43d6c:	390af263 	strb	w3, [x19, #700]
+  b43d70:	b9030268 	str	w8, [x19, #768]
+  b43d74:	b9030667 	str	w7, [x19, #772]
+  b43d78:	f901867f 	str	xzr, [x19, #776]
+  b43d7c:	b9031266 	str	w6, [x19, #784]
+  b43d80:	b9031665 	str	w5, [x19, #788]
+  b43d84:	f9018e7f 	str	xzr, [x19, #792]
+  b43d88:	f9019264 	str	x4, [x19, #800]
+  b43d8c:	f901967f 	str	xzr, [x19, #808]
+  b43d90:	b903327f 	str	wzr, [x19, #816]
+  b43d94:	b903427f 	str	wzr, [x19, #832]
+  b43d98:	97ff6913 	bl	0xb1e1e4 // KERNEL_SYMBOL v4l2_i2c_subdev_init
+  b43d9c:	b9409e64 	ldr	w4, [x19, #156]
+  b43da0:	52800025 	mov	w5, #0x1                   	// #1
+  b43da4:	d2800043 	mov	x3, #0x2                   	// #2
+  b43da8:	72a00045 	movk	w5, #0x2, lsl #16
+  b43dac:	321e0084 	orr	w4, w4, #0x4
+  b43db0:	b9002e65 	str	w5, [x19, #44]
+  b43db4:	b9009e64 	str	w4, [x19, #156]
+  b43db8:	91050262 	add	x2, x19, #0x140
+  b43dbc:	f900ba63 	str	x3, [x19, #368]
+  b43dc0:	aa1303e0 	mov	x0, x19
+  b43dc4:	f900d663 	str	x3, [x19, #424]
+  b43dc8:	52800081 	mov	w1, #0x4                   	// #4
+  b43dcc:	f900f263 	str	x3, [x19, #480]
+  b43dd0:	f9010e63 	str	x3, [x19, #536]
+  b43dd4:	97fecdbf 	bl	0xaf74d0 // KERNEL_SYMBOL media_entity_pads_init
+  b43dd8:	2a0003f5 	mov	w21, w0
+  b43ddc:	36f81220 	tbz	w0, #31, 0xb44020
+  b43de0:	a94253f3 	ldp	x19, x20, [sp, #32]
+  b43de4:	a9456bf9 	ldp	x25, x26, [sp, #80]
+  b43de8:	a94673fb 	ldp	x27, x28, [sp, #96]
+  b43dec:	14000002 	b	0xb43df4
+  b43df0:	12800175 	mov	w21, #0xfffffff4            	// #-12
+  b43df4:	d5384100 	mrs	x0, sp_el0
+  b43df8:	f94087e1 	ldr	x1, [sp, #264]
+  b43dfc:	f942f002 	ldr	x2, [x0, #1504]
+  b43e00:	eb020021 	subs	x1, x1, x2
+  b43e04:	d2800002 	mov	x2, #0x0                   	// #0
+  b43e08:	54000101 	b.ne	0xb43e28  // b.any
+  b43e0c:	2a1503e0 	mov	w0, w21
+  b43e10:	a9417bfd 	ldp	x29, x30, [sp, #16]
+  b43e14:	a9435bf5 	ldp	x21, x22, [sp, #48]
+  b43e18:	a94463f7 	ldp	x23, x24, [sp, #64]
+  b43e1c:	910443ff 	add	sp, sp, #0x110
+  b43e20:	d50323bf 	autiasp
+  b43e24:	d65f03c0 	ret
+  b43e28:	a90253f3 	stp	x19, x20, [sp, #32]
+  b43e2c:	a9056bf9 	stp	x25, x26, [sp, #80]
+  b43e30:	a90673fb 	stp	x27, x28, [sp, #96]
+  b43e34:	941841e3 	bl	0x11545c0 // KERNEL_SYMBOL __stack_chk_fail
+  b43e38:	aa1503e1 	mov	x1, x21
+  b43e3c:	b0007420 	adrp	x0, 0x19c8000
+  b43e40:	913b2000 	add	x0, x0, #0xec8
+  b43e44:	9417d503 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43e48:	3926427f 	strb	wzr, [x19, #2448]
+  b43e4c:	17ffff19 	b	0xb43ab0
+  b43e50:	90005581 	adrp	x1, 0x15f3000
+  b43e54:	913a6021 	add	x1, x1, #0xe98
+  b43e58:	2a0003e2 	mov	w2, w0
+  b43e5c:	912da021 	add	x1, x1, #0xb68
+  b43e60:	b0007420 	adrp	x0, 0x19c8000
+  b43e64:	128002b5 	mov	w21, #0xffffffea            	// #-22
+  b43e68:	9139c000 	add	x0, x0, #0xe70
+  b43e6c:	9417d4f9 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43e70:	a94253f3 	ldp	x19, x20, [sp, #32]
+  b43e74:	17ffffe0 	b	0xb43df4
+  b43e78:	a94e1fe6 	ldp	x6, x7, [sp, #224]
+  b43e7c:	91002000 	add	x0, x0, #0x8 // STATIC_STRING@19c8008 "reg=0x%02x, val=0x%02x\n"
+  b43e80:	a94f17e4 	ldp	x4, x5, [sp, #240]
+  b43e84:	9101c3e3 	add	x3, sp, #0x70
+  b43e88:	f941b268 	ldr	x8, [x19, #864]
+  b43e8c:	aa1303e2 	mov	x2, x19
+  b43e90:	90000001 	adrp	x1, 0xb43000
+  b43e94:	911a8021 	add	x1, x1, #0x6a0
+  b43e98:	a9071fe6 	stp	x6, x7, [sp, #112]
+  b43e9c:	a90817e4 	stp	x4, x5, [sp, #128]
+  b43ea0:	f9004be8 	str	x8, [sp, #144]
+  b43ea4:	f90083e8 	str	x8, [sp, #256]
+  b43ea8:	9406c2d7 	bl	0xcf4a04 // KERNEL_SYMBOL rpmsg_create_ept
+  b43eac:	f901b660 	str	x0, [x19, #872]
+  b43eb0:	b5ffe760 	cbnz	x0, 0xb43b9c
+  b43eb4:	aa1803e1 	mov	x1, x24
+  b43eb8:	b0007420 	adrp	x0, 0x19c8000
+  b43ebc:	52814be2 	mov	w2, #0xa5f                 	// #2655
+  b43ec0:	913ea000 	add	x0, x0, #0xfa8
+  b43ec4:	9417d4e3 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43ec8:	17ffff35 	b	0xb43b9c
+  b43ecc:	7101ac1f 	cmp	w0, #0x6b
+  b43ed0:	54ffede1 	b.ne	0xb43c8c  // b.any
+  b43ed4:	aa1b03e1 	mov	x1, x27
+  b43ed8:	d2800202 	mov	x2, #0x10                  	// #16
+  b43edc:	17ffff59 	b	0xb43c40
+  b43ee0:	f9416ee0 	ldr	x0, [x23, #728]
+  b43ee4:	91326281 	add	x1, x20, #0xc98
+  b43ee8:	94063993 	bl	0xcd2534 // KERNEL_SYMBOL of_device_is_compatible
+  b43eec:	340000e0 	cbz	w0, 0xb43f08
+  b43ef0:	d0007420 	adrp	x0, 0x19c9000
+  b43ef4:	91010000 	add	x0, x0, #0x40
+  b43ef8:	9417d4d6 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43efc:	52800020 	mov	w0, #0x1                   	// #1
+  b43f00:	392b2300 	strb	w0, [x24, #2760]
+  b43f04:	17ffff6a 	b	0xb43cac
+  b43f08:	f9416ee0 	ldr	x0, [x23, #728]
+  b43f0c:	91358281 	add	x1, x20, #0xd60
+  b43f10:	94063989 	bl	0xcd2534 // KERNEL_SYMBOL of_device_is_compatible
+  b43f14:	340000e0 	cbz	w0, 0xb43f30
+  b43f18:	d0007420 	adrp	x0, 0x19c9000
+  b43f1c:	91018000 	add	x0, x0, #0x60
+  b43f20:	9417d4cc 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43f24:	52800040 	mov	w0, #0x2                   	// #2
+  b43f28:	392b2300 	strb	w0, [x24, #2760]
+  b43f2c:	17ffff60 	b	0xb43cac
+  b43f30:	f9416ee0 	ldr	x0, [x23, #728]
+  b43f34:	9138a281 	add	x1, x20, #0xe28
+  b43f38:	9406397f 	bl	0xcd2534 // KERNEL_SYMBOL of_device_is_compatible
+  b43f3c:	340000e0 	cbz	w0, 0xb43f58
+  b43f40:	d0007420 	adrp	x0, 0x19c9000
+  b43f44:	91022000 	add	x0, x0, #0x88
+  b43f48:	9417d4c2 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43f4c:	52800060 	mov	w0, #0x3                   	// #3
+  b43f50:	392b2300 	strb	w0, [x24, #2760]
+  b43f54:	17ffff56 	b	0xb43cac
+  b43f58:	d0007420 	adrp	x0, 0x19c9000
+  b43f5c:	9102a000 	add	x0, x0, #0xa8
+  b43f60:	9417d4bc 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43f64:	392b231f 	strb	wzr, [x24, #2760]
+  b43f68:	17ffff51 	b	0xb43cac
+  b43f6c:	7100081f 	cmp	w0, #0x2
+  b43f70:	54000141 	b.ne	0xb43f98  // b.any
+  b43f74:	52860240 	mov	w0, #0x3012                	// #12306
+  b43f78:	b941c701 	ldr	w1, [x24, #452]
+  b43f7c:	b9023260 	str	w0, [x19, #560]
+  b43f80:	b941cb00 	ldr	w0, [x24, #456]
+  b43f84:	b9022a61 	str	w1, [x19, #552]
+  b43f88:	b9022e60 	str	w0, [x19, #556]
+  b43f8c:	79068a61 	strh	w1, [x19, #836]
+  b43f90:	79068e60 	strh	w0, [x19, #838]
+  b43f94:	17ffff54 	b	0xb43ce4
+  b43f98:	71000c1f 	cmp	w0, #0x3
+  b43f9c:	528401e0 	mov	w0, #0x200f                	// #8207
+  b43fa0:	b9023260 	str	w0, [x19, #560]
+  b43fa4:	54ffe941 	b.ne	0xb43ccc  // b.any
+  b43fa8:	b941e701 	ldr	w1, [x24, #484]
+  b43fac:	b941eb00 	ldr	w0, [x24, #488]
+  b43fb0:	b9022a61 	str	w1, [x19, #552]
+  b43fb4:	b9022e60 	str	w0, [x19, #556]
+  b43fb8:	79068a61 	strh	w1, [x19, #836]
+  b43fbc:	79068e60 	strh	w0, [x19, #838]
+  b43fc0:	17ffff49 	b	0xb43ce4
+  b43fc4:	d0007421 	adrp	x1, 0x19c9000
+  b43fc8:	91038021 	add	x1, x1, #0xe0 // STATIC_STRING@19c90e0 "max96722_lock_detect"
+  b43fcc:	97ebc7e1 	bl	0x635f50 // KERNEL_SYMBOL gpio_request
+  b43fd0:	72001c1f 	tst	w0, #0xff
+  b43fd4:	540000a0 	b.eq	0xb43fe8  // b.none
+  b43fd8:	b9449661 	ldr	w1, [x19, #1172]
+  b43fdc:	d0007420 	adrp	x0, 0x19c9000
+  b43fe0:	9103e000 	add	x0, x0, #0xf8
+  b43fe4:	9417d49b 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b43fe8:	b9449660 	ldr	w0, [x19, #1172]
+  b43fec:	97eba89a 	bl	0x62e254 // KERNEL_SYMBOL gpio_to_desc
+  b43ff0:	97ebb361 	bl	0x630d74 // KERNEL_SYMBOL gpiod_direction_input
+  b43ff4:	72001c1f 	tst	w0, #0xff
+  b43ff8:	540000a0 	b.eq	0xb4400c  // b.none
+  b43ffc:	b9449661 	ldr	w1, [x19, #1172]
+  b44000:	b0007420 	adrp	x0, 0x19c9000
+  b44004:	9104c000 	add	x0, x0, #0x130
+  b44008:	9417d492 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b4400c:	b9449660 	ldr	w0, [x19, #1172]
+  b44010:	97eba891 	bl	0x62e254 // KERNEL_SYMBOL gpio_to_desc
+  b44014:	97eba84f 	bl	0x62e150 // KERNEL_SYMBOL gpiod_to_irq
+  b44018:	b9049a60 	str	w0, [x19, #1176]
+  b4401c:	17ffff41 	b	0xb43d20
+  b44020:	913ee281 	add	x1, x20, #0xfb8
+  b44024:	d2800022 	mov	x2, #0x1                   	// #1
+  b44028:	f2a00042 	movk	x2, #0x2, lsl #16
+  b4402c:	f9001a62 	str	x2, [x19, #48]
+  b44030:	f9003261 	str	x1, [x19, #96]
+  b44034:	aa1303e0 	mov	x0, x19
+  b44038:	97ff379f 	bl	0xb11eb4 // KERNEL_SYMBOL v4l2_async_register_subdev
+  b4403c:	2a0003e3 	mov	w3, w0
+  b44040:	36f800c0 	tbz	w0, #31, 0xb44058
+  b44044:	b0007421 	adrp	x1, 0x19c9000
+  b44048:	912da282 	add	x2, x20, #0xb68
+  b4404c:	91068021 	add	x1, x1, #0x1a0 // STATIC_STRING@19c91a0 "%s--Async register failed, ret=%d\n"
+  b44050:	aa1703e0 	mov	x0, x23
+  b44054:	9417ea98 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+  b44058:	b0007420 	adrp	x0, 0x19c9000
+  b4405c:	91072000 	add	x0, x0, #0x1c8
+  b44060:	9417d47c 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b44064:	390a027f 	strb	wzr, [x19, #640]
+  b44068:	39664260 	ldrb	w0, [x19, #2448]
+  b4406c:	12001c00 	and	w0, w0, #0xff
+  b44070:	7100041f 	cmp	w0, #0x1
+  b44074:	54000701 	b.ne	0xb44154  // b.any
+  b44078:	91102260 	add	x0, x19, #0x408
+  b4407c:	52807d01 	mov	w1, #0x3e8                 	// #1000
+  b44080:	b27b7bf5 	mov	x21, #0xfffffffe0           	// #68719476704
+  b44084:	f9020275 	str	x21, [x19, #1024]
+  b44088:	f9020660 	str	x0, [x19, #1032]
+  b4408c:	f0ffffe5 	adrp	x5, 0xb43000
+  b44090:	b9049261 	str	w1, [x19, #1168]
+  b44094:	910590a5 	add	x5, x5, #0x164
+  b44098:	f9000b40 	str	x0, [x26, #16]
+  b4409c:	aa1903e1 	mov	x1, x25
+  b440a0:	f9020e65 	str	x5, [x19, #1048]
+  b440a4:	9110c260 	add	x0, x19, #0x430
+  b440a8:	d2800004 	mov	x4, #0x0                   	// #0
+  b440ac:	d2800003 	mov	x3, #0x0                   	// #0
+  b440b0:	52a00402 	mov	w2, #0x200000              	// #2097152
+  b440b4:	97d72078 	bl	0x10c294 // KERNEL_SYMBOL init_timer_key
+  b440b8:	91244266 	add	x6, x19, #0x910
+  b440bc:	90003025 	adrp	x5, 0x1148000
+  b440c0:	9134c0a5 	add	x5, x5, #0xd30
+  b440c4:	f9048675 	str	x21, [x19, #2312]
+  b440c8:	f9048a66 	str	x6, [x19, #2320]
+  b440cc:	d2800003 	mov	x3, #0x0                   	// #0
+  b440d0:	f9048e66 	str	x6, [x19, #2328]
+  b440d4:	d2800004 	mov	x4, #0x0                   	// #0
+  b440d8:	f9049265 	str	x5, [x19, #2336]
+  b440dc:	52a00402 	mov	w2, #0x200000              	// #2097152
+  b440e0:	aa1903e1 	mov	x1, x25
+  b440e4:	9124e260 	add	x0, x19, #0x938
+  b440e8:	97d7206b 	bl	0x10c294 // KERNEL_SYMBOL init_timer_key
+  b440ec:	91242260 	add	x0, x19, #0x908
+  b440f0:	d2800021 	mov	x1, #0x1                   	// #1
+  b440f4:	97fffc00 	bl	0xb430f4 // KERNEL_SYMBOL schedule_delayed_work.isra.0
+  b440f8:	aa1a03e0 	mov	x0, x26
+  b440fc:	d2813881 	mov	x1, #0x9c4                 	// #2500
+  b44100:	97fffbfd 	bl	0xb430f4 // KERNEL_SYMBOL schedule_delayed_work.isra.0
+  b44104:	394d3260 	ldrb	w0, [x19, #844]
+  b44108:	b9449a63 	ldr	w3, [x19, #1176]
+  b4410c:	32000000 	orr	w0, w0, #0x1
+  b44110:	390d3260 	strb	w0, [x19, #844]
+  b44114:	34000e03 	cbz	w3, 0xb442d4
+  b44118:	f9411260 	ldr	x0, [x19, #544]
+  b4411c:	912da282 	add	x2, x20, #0xb68
+  b44120:	b0007421 	adrp	x1, 0x19c9000
+  b44124:	9107a021 	add	x1, x1, #0x1e8 // STATIC_STRING@19c91e8 "%s level trigger rising max96722_lock_det=%d\n"
+  b44128:	91008000 	add	x0, x0, #0x20
+  b4412c:	9417eac8 	bl	0x113ec4c // KERNEL_SYMBOL _dev_info
+  b44130:	b9449a60 	ldr	w0, [x19, #1176]
+  b44134:	d0003002 	adrp	x2, 0x1146000
+  b44138:	f9411264 	ldr	x4, [x19, #544]
+  b4413c:	91281042 	add	x2, x2, #0xa04
+  b44140:	aa1303e5 	mov	x5, x19
+  b44144:	d2840023 	mov	x3, #0x2001                	// #8193
+  b44148:	91001084 	add	x4, x4, #0x4
+  b4414c:	d2800001 	mov	x1, #0x0                   	// #0
+  b44150:	97d67808 	bl	0xe2170 // KERNEL_SYMBOL request_threaded_irq
+  b44154:	910c4301 	add	x1, x24, #0x310
+  b44158:	aa1703e0 	mov	x0, x23
+  b4415c:	97f41ac1 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b44160:	2a0003f5 	mov	w21, w0
+  b44164:	36f80140 	tbz	w0, #31, 0xb4418c
+  b44168:	912da282 	add	x2, x20, #0xb68
+  b4416c:	aa1703e0 	mov	x0, x23
+  b44170:	b0007421 	adrp	x1, 0x19c9000
+  b44174:	91090021 	add	x1, x1, #0x240 // STATIC_STRING@19c9240 "%s: create device file fail\n"
+  b44178:	9417ea4f 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+  b4417c:	a94253f3 	ldp	x19, x20, [sp, #32]
+  b44180:	a9456bf9 	ldp	x25, x26, [sp, #80]
+  b44184:	a94673fb 	ldp	x27, x28, [sp, #96]
+  b44188:	17ffff1b 	b	0xb43df4
+  b4418c:	39664260 	ldrb	w0, [x19, #2448]
+  b44190:	12001c00 	and	w0, w0, #0xff
+  b44194:	7100041f 	cmp	w0, #0x1
+  b44198:	540007e1 	b.ne	0xb44294  // b.any
+  b4419c:	910ec301 	add	x1, x24, #0x3b0
+  b441a0:	aa1703e0 	mov	x0, x23
+  b441a4:	97f41aaf 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b441a8:	2a0003f5 	mov	w21, w0
+  b441ac:	36f80140 	tbz	w0, #31, 0xb441d4
+  b441b0:	912da282 	add	x2, x20, #0xb68
+  b441b4:	aa1703e0 	mov	x0, x23
+  b441b8:	b0007421 	adrp	x1, 0x19c9000
+  b441bc:	91098021 	add	x1, x1, #0x260 // STATIC_STRING@19c9260 "%s: create device file fail dev_attr_max96722_reset \n"
+  b441c0:	9417ea3d 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+  b441c4:	a94253f3 	ldp	x19, x20, [sp, #32]
+  b441c8:	a9456bf9 	ldp	x25, x26, [sp, #80]
+  b441cc:	a94673fb 	ldp	x27, x28, [sp, #96]
+  b441d0:	17ffff09 	b	0xb43df4
+  b441d4:	b0007420 	adrp	x0, 0x19c9000
+  b441d8:	910a6000 	add	x0, x0, #0x298
+  b441dc:	9417d41d 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b441e0:	910cc301 	add	x1, x24, #0x330
+  b441e4:	aa1703e0 	mov	x0, x23
+  b441e8:	97f41a9e 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b441ec:	2a0003f5 	mov	w21, w0
+  b441f0:	37fffbc0 	tbnz	w0, #31, 0xb44168
+  b441f4:	b0007420 	adrp	x0, 0x19c9000
+  b441f8:	910b0000 	add	x0, x0, #0x2c0
+  b441fc:	9417d415 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b44200:	910d4301 	add	x1, x24, #0x350
+  b44204:	aa1703e0 	mov	x0, x23
+  b44208:	97f41a96 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b4420c:	2a0003f5 	mov	w21, w0
+  b44210:	37fffac0 	tbnz	w0, #31, 0xb44168
+  b44214:	b0007420 	adrp	x0, 0x19c9000
+  b44218:	910bc000 	add	x0, x0, #0x2f0
+  b4421c:	9417d40d 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b44220:	910dc301 	add	x1, x24, #0x370
+  b44224:	aa1703e0 	mov	x0, x23
+  b44228:	97f41a8e 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b4422c:	2a0003f5 	mov	w21, w0
+  b44230:	37fff9c0 	tbnz	w0, #31, 0xb44168
+  b44234:	b0007420 	adrp	x0, 0x19c9000
+  b44238:	910c8000 	add	x0, x0, #0x320
+  b4423c:	9417d405 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b44240:	910e4301 	add	x1, x24, #0x390
+  b44244:	aa1703e0 	mov	x0, x23
+  b44248:	97f41a86 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b4424c:	2a0003f5 	mov	w21, w0
+  b44250:	37fff8c0 	tbnz	w0, #31, 0xb44168
+  b44254:	f9411260 	ldr	x0, [x19, #544]
+  b44258:	91030262 	add	x2, x19, #0xc0
+  b4425c:	b0007421 	adrp	x1, 0x19c9000
+  b44260:	910d6021 	add	x1, x1, #0x358 // STATIC_STRING@19c9358 "max96722_mipi is found, name %s\n"
+  b44264:	91008000 	add	x0, x0, #0x20
+  b44268:	9417ea79 	bl	0x113ec4c // KERNEL_SYMBOL _dev_info
+  b4426c:	910f4301 	add	x1, x24, #0x3d0
+  b44270:	aa1703e0 	mov	x0, x23
+  b44274:	97f41a7b 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b44278:	2a0003f5 	mov	w21, w0
+  b4427c:	37f80340 	tbnz	w0, #31, 0xb442e4
+  b44280:	910fc301 	add	x1, x24, #0x3f0
+  b44284:	aa1703e0 	mov	x0, x23
+  b44288:	97f41a76 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b4428c:	2a0003f5 	mov	w21, w0
+  b44290:	37f803c0 	tbnz	w0, #31, 0xb44308
+  b44294:	b0007420 	adrp	x0, 0x19c9000
+  b44298:	910f8000 	add	x0, x0, #0x3e0
+  b4429c:	9417d3ed 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b442a0:	91104301 	add	x1, x24, #0x410
+  b442a4:	aa1703e0 	mov	x0, x23
+  b442a8:	97f41a6e 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+  b442ac:	2a0003f5 	mov	w21, w0
+  b442b0:	37fff5c0 	tbnz	w0, #31, 0xb44168
+  b442b4:	912da281 	add	x1, x20, #0xb68
+  b442b8:	b0007420 	adrp	x0, 0x19c9000
+  b442bc:	91102000 	add	x0, x0, #0x408
+  b442c0:	9417d3e4 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b442c4:	a94253f3 	ldp	x19, x20, [sp, #32]
+  b442c8:	a9456bf9 	ldp	x25, x26, [sp, #80]
+  b442cc:	a94673fb 	ldp	x27, x28, [sp, #96]
+  b442d0:	17fffec9 	b	0xb43df4
+  b442d4:	b0007420 	adrp	x0, 0x19c9000
+  b442d8:	91086000 	add	x0, x0, #0x218
+  b442dc:	9417d3dd 	bl	0x1139250 // KERNEL_SYMBOL printk
+  b442e0:	17ffff9d 	b	0xb44154
+  b442e4:	912da282 	add	x2, x20, #0xb68
+  b442e8:	aa1703e0 	mov	x0, x23
+  b442ec:	b0007421 	adrp	x1, 0x19c9000
+  b442f0:	910e0021 	add	x1, x1, #0x380 // STATIC_STRING@19c9380 "%s: create max96722_test_pattern file fail\n"
+  b442f4:	9417e9f0 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+  b442f8:	a94253f3 	ldp	x19, x20, [sp, #32]
+  b442fc:	a9456bf9 	ldp	x25, x26, [sp, #80]
+  b44300:	a94673fb 	ldp	x27, x28, [sp, #96]
+  b44304:	17fffebc 	b	0xb43df4
+  b44308:	912da282 	add	x2, x20, #0xb68
+  b4430c:	aa1703e0 	mov	x0, x23
+  b44310:	b0007421 	adrp	x1, 0x19c9000
+  b44314:	910ec021 	add	x1, x1, #0x3b0 // STATIC_STRING@19c93b0 "%s: create max96722_gpio_reset file fail\n"
+  b44318:	9417e9e7 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+  b4431c:	a94253f3 	ldp	x19, x20, [sp, #32]
+  b44320:	a9456bf9 	ldp	x25, x26, [sp, #80]
+  b44324:	a94673fb 	ldp	x27, x28, [sp, #96]
+  b44328:	17fffeb3 	b	0xb43df4
+  b4432c:	d503201f 	nop
+

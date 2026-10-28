@@ -1,0 +1,471 @@
+{
+  "types": [
+    {
+      "tag": "DW_TAG_class_type",
+      "name": "EventAdapter<impl_type::ST_DVR_SystemSts>",
+      "offset": 11385796,
+      "decl_file": 58,
+      "decl_line": 34,
+      "type": "",
+      "byte_size": 40,
+      "members": [
+        {
+          "tag": "DW_TAG_member",
+          "name": "mProxyAdapter",
+          "value": null,
+          "location": 0,
+          "type": "ProxyAdapter"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventGroupId",
+          "value": null,
+          "location": 8,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventId",
+          "value": null,
+          "location": 10,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mIsSubscribed",
+          "value": null,
+          "location": 12,
+          "type": "bool"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mMaxSampleCount",
+          "value": null,
+          "location": 16,
+          "type": "uint32_t -> __uint32_t -> unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mProxyEvent",
+          "value": null,
+          "location": 24,
+          "type": "shared_ptr<ara::com::proxy::events::ProxyEvent>"
+        }
+      ]
+    },
+    {
+      "tag": "DW_TAG_class_type",
+      "name": "EventAdapter<impl_type::ST_MMI_DVR_Command>",
+      "offset": 11390296,
+      "decl_file": 58,
+      "decl_line": 34,
+      "type": "",
+      "byte_size": 40,
+      "members": [
+        {
+          "tag": "DW_TAG_member",
+          "name": "mProxyAdapter",
+          "value": null,
+          "location": 0,
+          "type": "ProxyAdapter"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventGroupId",
+          "value": null,
+          "location": 8,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventId",
+          "value": null,
+          "location": 10,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mIsSubscribed",
+          "value": null,
+          "location": 12,
+          "type": "bool"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mMaxSampleCount",
+          "value": null,
+          "location": 16,
+          "type": "uint32_t -> __uint32_t -> unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mProxyEvent",
+          "value": null,
+          "location": 24,
+          "type": "shared_ptr<ara::com::proxy::events::ProxyEvent>"
+        }
+      ]
+    },
+    {
+      "tag": "DW_TAG_structure_type",
+      "name": "ST_DVR_SystemSts",
+      "offset": 11445600,
+      "decl_file": 269,
+      "decl_line": 21,
+      "type": "",
+      "byte_size": 10,
+      "members": [
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_SystemSts",
+          "value": null,
+          "location": 0,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_RecordingCycleSts",
+          "value": null,
+          "location": 1,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_SDcardSts",
+          "value": null,
+          "location": 2,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_SDFormatResult",
+          "value": null,
+          "location": 3,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_HomeResult",
+          "value": null,
+          "location": 4,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_RestoreFactorySettingsResult",
+          "value": null,
+          "location": 5,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_CommandRespList",
+          "value": null,
+          "location": 6,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_CurrentVideo_counts",
+          "value": null,
+          "location": 7,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_CommandResult",
+          "value": null,
+          "location": 8,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "DVR_ControlRequest",
+          "value": null,
+          "location": 9,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        }
+      ]
+    },
+    {
+      "tag": "DW_TAG_structure_type",
+      "name": "ST_MMI_DVR_Command",
+      "offset": 11447662,
+      "decl_file": 279,
+      "decl_line": 21,
+      "type": "",
+      "byte_size": 18,
+      "members": [
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_SetTapeSts",
+          "value": null,
+          "location": 0,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_SetResolutionSts",
+          "value": null,
+          "location": 1,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_SetRecordingCycleSts",
+          "value": null,
+          "location": 2,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_SDFormat",
+          "value": null,
+          "location": 3,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_RestoreFactorySettings",
+          "value": null,
+          "location": 4,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_EnterUpdateMode",
+          "value": null,
+          "location": 5,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_DVR_LVDSModeConfig",
+          "value": null,
+          "location": 6,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_DVRHome",
+          "value": null,
+          "location": 7,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_DVREnter",
+          "value": null,
+          "location": 8,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_BrowseCommand",
+          "value": null,
+          "location": 9,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_ParkingCrashWarningPopup",
+          "value": null,
+          "location": 10,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_CommandList",
+          "value": null,
+          "location": 11,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_CurrentSelected",
+          "value": null,
+          "location": 12,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_DVR_ControlResp",
+          "value": null,
+          "location": 14,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_TBOX_RemoteViewModeResp",
+          "value": null,
+          "location": 15,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_TBOX_TransmissionStsResp",
+          "value": null,
+          "location": 16,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "MMI_ProfileSts",
+          "value": null,
+          "location": 17,
+          "type": "uint8_t -> __uint8_t -> unsigned char"
+        }
+      ]
+    },
+    {
+      "tag": "DW_TAG_class_type",
+      "name": "EventAdapter<impl_type::ST_DVR_SystemSts>",
+      "offset": 13055884,
+      "decl_file": 47,
+      "decl_line": 30,
+      "type": "",
+      "byte_size": 24,
+      "members": [
+        {
+          "tag": "DW_TAG_member",
+          "name": "mSkeletonAdapter",
+          "value": null,
+          "location": 0,
+          "type": "SkeletonAdapter"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventGroupId",
+          "value": null,
+          "location": 8,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventId",
+          "value": null,
+          "location": 10,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mSkeletonEvent",
+          "value": null,
+          "location": 16,
+          "type": "unique_ptr<ara::com::skeleton::events::SkeletonEvent, std::default_delete<ara::com::skeleton::events::SkeletonEvent> >"
+        }
+      ]
+    },
+    {
+      "tag": "DW_TAG_class_type",
+      "name": "EventAdapter<impl_type::ST_MMI_DVR_Command>",
+      "offset": 13058364,
+      "decl_file": 47,
+      "decl_line": 30,
+      "type": "",
+      "byte_size": 24,
+      "members": [
+        {
+          "tag": "DW_TAG_member",
+          "name": "mSkeletonAdapter",
+          "value": null,
+          "location": 0,
+          "type": "SkeletonAdapter"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventGroupId",
+          "value": null,
+          "location": 8,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mEventId",
+          "value": null,
+          "location": 10,
+          "type": "uint16_t -> __uint16_t -> short unsigned int"
+        },
+        {
+          "tag": "DW_TAG_member",
+          "name": "mSkeletonEvent",
+          "value": null,
+          "location": 16,
+          "type": "unique_ptr<ara::com::skeleton::events::SkeletonEvent, std::default_delete<ara::com::skeleton::events::SkeletonEvent> >"
+        }
+      ]
+    }
+  ],
+  "functions": [
+    {
+      "tag": "DW_TAG_subprogram",
+      "name": "HandleEventDVRConfig",
+      "offset": 1446893,
+      "decl_file": 143,
+      "decl_line": 45,
+      "type": "",
+      "low_pc": null,
+      "high_pc": null
+    },
+    {
+      "tag": "DW_TAG_subprogram",
+      "name": "GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::<lambda(uint8_t&)>&>",
+      "offset": 5652505,
+      "decl_file": 35,
+      "decl_line": 264,
+      "type": "Result<long unsigned int, ara::core::ErrorCode>",
+      "low_pc": null,
+      "high_pc": null
+    }
+  ],
+  "variables": [
+    {
+      "tag": "DW_TAG_variable",
+      "name": "gDVRConfigId",
+      "offset": 1435252,
+      "decl_file": 140,
+      "decl_line": 1393,
+      "type": "uint16_t -> __uint16_t -> short unsigned int"
+    },
+    {
+      "tag": "DW_TAG_variable",
+      "name": "gDVRConfigGroupId",
+      "offset": 1435266,
+      "decl_file": 140,
+      "decl_line": 1401,
+      "type": "uint16_t -> __uint16_t -> short unsigned int"
+    },
+    {
+      "tag": "DW_TAG_variable",
+      "name": "gDVR_SystemStsId",
+      "offset": 11047128,
+      "decl_file": 120,
+      "decl_line": 2537,
+      "type": "uint16_t -> __uint16_t -> short unsigned int"
+    },
+    {
+      "tag": "DW_TAG_variable",
+      "name": "gDVR_SystemStsGroupId",
+      "offset": 11047141,
+      "decl_file": 120,
+      "decl_line": 2545,
+      "type": "uint16_t -> __uint16_t -> short unsigned int"
+    },
+    {
+      "tag": "DW_TAG_variable",
+      "name": "gMMI_DVR_CommandId",
+      "offset": 11047378,
+      "decl_file": 120,
+      "decl_line": 2777,
+      "type": "uint16_t -> __uint16_t -> short unsigned int"
+    },
+    {
+      "tag": "DW_TAG_variable",
+      "name": "gMMI_DVR_CommandGroupId",
+      "offset": 11047391,
+      "decl_file": 120,
+      "decl_line": 2785,
+      "type": "uint16_t -> __uint16_t -> short unsigned int"
+    }
+  ]
+}

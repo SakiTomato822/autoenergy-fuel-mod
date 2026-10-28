@@ -1,0 +1,2 @@
+PACKAGE=com.longhorn.dvr
+PACKAGE=com.roadrover.geely.cardvr

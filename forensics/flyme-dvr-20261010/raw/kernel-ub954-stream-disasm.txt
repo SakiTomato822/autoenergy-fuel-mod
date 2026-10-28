@@ -1,0 +1,63 @@
+
+forensics/flyme-dvr-20261010/raw/kernel-max96722-init-pages.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000001149c20 <.data+0x1c20>:
+ 1149c20:	d503233f 	paciasp
+ 1149c24:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+ 1149c28:	2a0103e3 	mov	w3, w1
+ 1149c2c:	910003fd 	mov	x29, sp
+ 1149c30:	a90153f3 	stp	x19, x20, [sp, #16]
+ 1149c34:	aa0003f3 	mov	x19, x0
+ 1149c38:	90002574 	adrp	x20, 0x15f5000
+ 1149c3c:	f90013f5 	str	x21, [sp, #32]
+ 1149c40:	9125e294 	add	x20, x20, #0x978
+ 1149c44:	91064294 	add	x20, x20, #0x190
+ 1149c48:	2a0103f5 	mov	w21, w1
+ 1149c4c:	394a0004 	ldrb	w4, [x0, #640]
+ 1149c50:	b0004401 	adrp	x1, 0x19ca000
+ 1149c54:	f9408000 	ldr	x0, [x0, #256]
+ 1149c58:	aa1403e2 	mov	x2, x20
+ 1149c5c:	91102021 	add	x1, x1, #0x408
+ 1149c60:	97ffd3fb 	bl	0x113ec4c
+ 1149c64:	34000275 	cbz	w21, 0x1149cb0
+ 1149c68:	394a0260 	ldrb	w0, [x19, #640]
+ 1149c6c:	350001a0 	cbnz	w0, 0x1149ca0
+ 1149c70:	aa1303e0 	mov	x0, x19
+ 1149c74:	52800402 	mov	w2, #0x20                  	// #32
+ 1149c78:	52800401 	mov	w1, #0x20                  	// #32
+ 1149c7c:	97e7f666 	bl	0xb47614
+ 1149c80:	f9408260 	ldr	x0, [x19, #256]
+ 1149c84:	aa1403e2 	mov	x2, x20
+ 1149c88:	f00043e1 	adrp	x1, 0x19c8000
+ 1149c8c:	91340021 	add	x1, x1, #0xd00
+ 1149c90:	97ffd3ef 	bl	0x113ec4c
+ 1149c94:	d284e201 	mov	x1, #0x2710                	// #10000
+ 1149c98:	aa0103e0 	mov	x0, x1
+ 1149c9c:	940047c1 	bl	0x115bba0
+ 1149ca0:	394a0260 	ldrb	w0, [x19, #640]
+ 1149ca4:	11000400 	add	w0, w0, #0x1
+ 1149ca8:	390a0260 	strb	w0, [x19, #640]
+ 1149cac:	1400000f 	b	0x1149ce8
+ 1149cb0:	394a0260 	ldrb	w0, [x19, #640]
+ 1149cb4:	51000400 	sub	w0, w0, #0x1
+ 1149cb8:	12001c00 	and	w0, w0, #0xff
+ 1149cbc:	390a0260 	strb	w0, [x19, #640]
+ 1149cc0:	35000140 	cbnz	w0, 0x1149ce8
+ 1149cc4:	aa1303e0 	mov	x0, x19
+ 1149cc8:	52800602 	mov	w2, #0x30                  	// #48
+ 1149ccc:	52800401 	mov	w1, #0x20                  	// #32
+ 1149cd0:	97e7f651 	bl	0xb47614
+ 1149cd4:	f9408260 	ldr	x0, [x19, #256]
+ 1149cd8:	f00043e1 	adrp	x1, 0x19c8000
+ 1149cdc:	aa1403e2 	mov	x2, x20
+ 1149ce0:	9135a021 	add	x1, x1, #0xd68
+ 1149ce4:	97ffd3da 	bl	0x113ec4c
+ 1149ce8:	52800000 	mov	w0, #0x0                   	// #0
+ 1149cec:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 1149cf0:	f94013f5 	ldr	x21, [sp, #32]
+ 1149cf4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+ 1149cf8:	d50323bf 	autiasp
+ 1149cfc:	d65f03c0 	ret

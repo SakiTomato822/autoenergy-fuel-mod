@@ -1,0 +1,7 @@
+extracted /usr/local/bin/cluster-e04/etc/cm_config.json 226918
+extracted /usr/local/bin/cluster-e04/middleware/IVIService 952688
+extracted /usr/local/bin/cluster-e04/middleware/VehicleService 1407384
+extracted /usr/local/bin/cluster-e04/middleware/ConfigService 944568
+extracted /usr/local/bin/cluster-e04/start.sh 1479
+extracted /etc/version 15
+extracted /usr/local/bin/cluster-e04/ufs/version.txt 76

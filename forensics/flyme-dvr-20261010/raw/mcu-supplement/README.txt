@@ -1,0 +1,1 @@
+MCU firmware requested by the vehicle-side Codex. This is an offline analysis input, not a flash instruction. Prior work only searched strings; format, instruction set, load address and DVR handling remain unconfirmed. Compare the vehicle MCU version before claiming applicability. Do not confuse SE1000 R52 code with this external MCU firmware.

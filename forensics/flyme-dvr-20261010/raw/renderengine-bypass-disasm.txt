@@ -1,0 +1,2383 @@
+
+forensics/flyme-dvr-20261010/raw/evsrenderengine:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000001b818 <camera_video_stream_refresh_bypass()>:
+   1b818:	fc1b0fe8 	str	d8, [sp, #-80]!
+   1b81c:	a9017bfd 	stp	x29, x30, [sp, #16]
+   1b820:	a9025ff8 	stp	x24, x23, [sp, #32]
+   1b824:	a90357f6 	stp	x22, x21, [sp, #48]
+   1b828:	a9044ff4 	stp	x20, x19, [sp, #64]
+   1b82c:	910003fd 	mov	x29, sp
+   1b830:	f0000097 	adrp	x23, 2e000 <_DYNAMIC+0x1698>
+   1b834:	b94acae8 	ldr	w8, [x23, #2760]
+   1b838:	52800020 	mov	w0, #0x1                   	// #1
+   1b83c:	11000508 	add	w8, w8, #0x1
+   1b840:	b90acae8 	str	w8, [x23, #2760]
+   1b844:	94003a1f 	bl	2a0c0 <systemTime@plt>
+   1b848:	b0000096 	adrp	x22, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b84c:	f94726d6 	ldr	x22, [x22, #3656]
+   1b850:	aa0003f3 	mov	x19, x0
+   1b854:	f0000098 	adrp	x24, 2e000 <_DYNAMIC+0x1698>
+   1b858:	f94002c8 	ldr	x8, [x22]
+   1b85c:	b40001e8 	cbz	x8, 1b898 <camera_video_stream_refresh_bypass()+0x80>
+   1b860:	f9458715 	ldr	x21, [x24, #2824]
+   1b864:	f9401d09 	ldr	x9, [x8, #56]
+   1b868:	91004114 	add	x20, x8, #0x10
+   1b86c:	aa1403e0 	mov	x0, x20
+   1b870:	d63f0120 	blr	x9
+   1b874:	b4000095 	cbz	x21, 1b884 <camera_video_stream_refresh_bypass()+0x6c>
+   1b878:	f9401aa8 	ldr	x8, [x21, #48]
+   1b87c:	aa1503e0 	mov	x0, x21
+   1b880:	d63f0100 	blr	x8
+   1b884:	f9458708 	ldr	x8, [x24, #2824]
+   1b888:	eb0802bf 	cmp	x21, x8
+   1b88c:	54000040 	b.eq	1b894 <camera_video_stream_refresh_bypass()+0x7c>  // b.none
+   1b890:	9400395c 	bl	29e00 <android::sp_report_race()@plt>
+   1b894:	f9058714 	str	x20, [x24, #2824]
+   1b898:	52800020 	mov	w0, #0x1                   	// #1
+   1b89c:	94003a09 	bl	2a0c0 <systemTime@plt>
+   1b8a0:	f94002c8 	ldr	x8, [x22]
+   1b8a4:	aa0003f4 	mov	x20, x0
+   1b8a8:	b40001e8 	cbz	x8, 1b8e4 <camera_video_stream_refresh_bypass()+0xcc>
+   1b8ac:	f9458716 	ldr	x22, [x24, #2824]
+   1b8b0:	f9401d09 	ldr	x9, [x8, #56]
+   1b8b4:	91004115 	add	x21, x8, #0x10
+   1b8b8:	aa1503e0 	mov	x0, x21
+   1b8bc:	d63f0120 	blr	x9
+   1b8c0:	b4000096 	cbz	x22, 1b8d0 <camera_video_stream_refresh_bypass()+0xb8>
+   1b8c4:	f9401ac8 	ldr	x8, [x22, #48]
+   1b8c8:	aa1603e0 	mov	x0, x22
+   1b8cc:	d63f0100 	blr	x8
+   1b8d0:	f9458708 	ldr	x8, [x24, #2824]
+   1b8d4:	eb0802df 	cmp	x22, x8
+   1b8d8:	54000040 	b.eq	1b8e0 <camera_video_stream_refresh_bypass()+0xc8>  // b.none
+   1b8dc:	94003949 	bl	29e00 <android::sp_report_race()@plt>
+   1b8e0:	f9058715 	str	x21, [x24, #2824]
+   1b8e4:	52800020 	mov	w0, #0x1                   	// #1
+   1b8e8:	940039f6 	bl	2a0c0 <systemTime@plt>
+   1b8ec:	aa0003f5 	mov	x21, x0
+   1b8f0:	52800020 	mov	w0, #0x1                   	// #1
+   1b8f4:	940039f3 	bl	2a0c0 <systemTime@plt>
+   1b8f8:	b94acae8 	ldr	w8, [x23, #2760]
+   1b8fc:	7103211f 	cmp	w8, #0xc8
+   1b900:	5400082b 	b.lt	1ba04 <camera_video_stream_refresh_bypass()+0x1ec>  // b.tstop
+   1b904:	d29ef9f6 	mov	x22, #0xf7cf                	// #63439
+   1b908:	f2bc6a76 	movk	x22, #0xe353, lsl #16
+   1b90c:	f2d374b6 	movk	x22, #0x9ba5, lsl #32
+   1b910:	cb130008 	sub	x8, x0, x19
+   1b914:	f2e41896 	movk	x22, #0x20c4, lsl #48
+   1b918:	cb1402a9 	sub	x9, x21, x20
+   1b91c:	9b567d08 	smulh	x8, x8, x22
+   1b920:	9b567d29 	smulh	x9, x9, x22
+   1b924:	9347fd0a 	asr	x10, x8, #7
+   1b928:	9347fd2b 	asr	x11, x9, #7
+   1b92c:	52800020 	mov	w0, #0x1                   	// #1
+   1b930:	8b48fd53 	add	x19, x10, x8, lsr #63
+   1b934:	8b49fd74 	add	x20, x11, x9, lsr #63
+   1b938:	940039e2 	bl	2a0c0 <systemTime@plt>
+   1b93c:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b940:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1b944:	f9057100 	str	x0, [x8, #2784]
+   1b948:	f9456d28 	ldr	x8, [x9, #2776]
+   1b94c:	bd4acae0 	ldr	s0, [x23, #2760]
+   1b950:	f9056d20 	str	x0, [x9, #2776]
+   1b954:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1b958:	cb080008 	sub	x8, x0, x8
+   1b95c:	9b567d08 	smulh	x8, x8, x22
+   1b960:	9347fd0a 	asr	x10, x8, #7
+   1b964:	8b48fd48 	add	x8, x10, x8, lsr #63
+   1b968:	5e21d800 	scvtf	s0, s0
+   1b96c:	f9057528 	str	x8, [x9, #2792]
+   1b970:	9e220101 	scvtf	s1, x8
+   1b974:	52a88f48 	mov	w8, #0x447a0000            	// #1148846080
+   1b978:	b0ffff95 	adrp	x21, c000 <abitag+0xbd08>
+   1b97c:	b0ffff96 	adrp	x22, c000 <abitag+0xbd08>
+   1b980:	1e211800 	fdiv	s0, s0, s1
+   1b984:	1e270101 	fmov	s1, w8
+   1b988:	911e46b5 	add	x21, x21, #0x791
+   1b98c:	911802d6 	add	x22, x22, #0x600
+   1b990:	1e210800 	fmul	s0, s0, s1
+   1b994:	528000c0 	mov	w0, #0x6                   	// #6
+   1b998:	aa1503e1 	mov	x1, x21
+   1b99c:	aa1603e2 	mov	x2, x22
+   1b9a0:	1e210808 	fmul	s8, s0, s1
+   1b9a4:	940037cb 	bl	298d0 <__android_log_print@plt>
+   1b9a8:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b9ac:	91299442 	add	x2, x2, #0xa65
+   1b9b0:	528000c0 	mov	w0, #0x6                   	// #6
+   1b9b4:	aa1503e1 	mov	x1, x21
+   1b9b8:	940037c6 	bl	298d0 <__android_log_print@plt>
+   1b9bc:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1b9c0:	1e22c100 	fcvt	d0, s8
+   1b9c4:	9131e842 	add	x2, x2, #0xc7a
+   1b9c8:	528000c0 	mov	w0, #0x6                   	// #6
+   1b9cc:	aa1503e1 	mov	x1, x21
+   1b9d0:	aa1303e3 	mov	x3, x19
+   1b9d4:	940037bf 	bl	298d0 <__android_log_print@plt>
+   1b9d8:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1b9dc:	912d9042 	add	x2, x2, #0xb64
+   1b9e0:	528000c0 	mov	w0, #0x6                   	// #6
+   1b9e4:	aa1503e1 	mov	x1, x21
+   1b9e8:	aa1403e3 	mov	x3, x20
+   1b9ec:	940037b9 	bl	298d0 <__android_log_print@plt>
+   1b9f0:	528000c0 	mov	w0, #0x6                   	// #6
+   1b9f4:	aa1503e1 	mov	x1, x21
+   1b9f8:	aa1603e2 	mov	x2, x22
+   1b9fc:	940037b5 	bl	298d0 <__android_log_print@plt>
+   1ba00:	b90acaff 	str	wzr, [x23, #2760]
+   1ba04:	a9444ff4 	ldp	x20, x19, [sp, #64]
+   1ba08:	a94357f6 	ldp	x22, x21, [sp, #48]
+   1ba0c:	a9425ff8 	ldp	x24, x23, [sp, #32]
+   1ba10:	a9417bfd 	ldp	x29, x30, [sp, #16]
+   1ba14:	52800020 	mov	w0, #0x1                   	// #1
+   1ba18:	fc4507e8 	ldr	d8, [sp], #80
+   1ba1c:	d65f03c0 	ret
+
+000000000001ba20 <camera_video_producer_stream_refresh(AvmSdk*, EvsParameters&, int)>:
+   1ba20:	fc1b0fe8 	str	d8, [sp, #-80]!
+   1ba24:	a900fbfd 	stp	x29, x30, [sp, #8]
+   1ba28:	f9000ff9 	str	x25, [sp, #24]
+   1ba2c:	a9025ff8 	stp	x24, x23, [sp, #32]
+   1ba30:	a90357f6 	stp	x22, x21, [sp, #48]
+   1ba34:	a9044ff4 	stp	x20, x19, [sp, #64]
+   1ba38:	910003fd 	mov	x29, sp
+   1ba3c:	f0000099 	adrp	x25, 2e000 <_DYNAMIC+0x1698>
+   1ba40:	b94acf28 	ldr	w8, [x25, #2764]
+   1ba44:	aa0003f8 	mov	x24, x0
+   1ba48:	52800020 	mov	w0, #0x1                   	// #1
+   1ba4c:	2a0203f6 	mov	w22, w2
+   1ba50:	11000508 	add	w8, w8, #0x1
+   1ba54:	aa0103f7 	mov	x23, x1
+   1ba58:	b90acf28 	str	w8, [x25, #2764]
+   1ba5c:	94003999 	bl	2a0c0 <systemTime@plt>
+   1ba60:	aa0003f3 	mov	x19, x0
+   1ba64:	52800020 	mov	w0, #0x1                   	// #1
+   1ba68:	94003996 	bl	2a0c0 <systemTime@plt>
+   1ba6c:	aa0003f4 	mov	x20, x0
+   1ba70:	52800020 	mov	w0, #0x1                   	// #1
+   1ba74:	94003993 	bl	2a0c0 <systemTime@plt>
+   1ba78:	aa0003f5 	mov	x21, x0
+   1ba7c:	aa1803e0 	mov	x0, x24
+   1ba80:	aa1703e1 	mov	x1, x23
+   1ba84:	2a1603e2 	mov	w2, w22
+   1ba88:	97fffe8e 	bl	1b4c0 <camera_video_stream_refresh(AvmSdk*, EvsParameters&, int)>
+   1ba8c:	52800020 	mov	w0, #0x1                   	// #1
+   1ba90:	9400398c 	bl	2a0c0 <systemTime@plt>
+   1ba94:	b94acf28 	ldr	w8, [x25, #2764]
+   1ba98:	7103211f 	cmp	w8, #0xc8
+   1ba9c:	5400090b 	b.lt	1bbbc <camera_video_producer_stream_refresh(AvmSdk*, EvsParameters&, int)+0x19c>  // b.tstop
+   1baa0:	d29ef9f6 	mov	x22, #0xf7cf                	// #63439
+   1baa4:	f2bc6a76 	movk	x22, #0xe353, lsl #16
+   1baa8:	f2d374b6 	movk	x22, #0x9ba5, lsl #32
+   1baac:	cb130008 	sub	x8, x0, x19
+   1bab0:	f2e41896 	movk	x22, #0x20c4, lsl #48
+   1bab4:	cb1402a9 	sub	x9, x21, x20
+   1bab8:	9b567d08 	smulh	x8, x8, x22
+   1babc:	9b567d29 	smulh	x9, x9, x22
+   1bac0:	9347fd0a 	asr	x10, x8, #7
+   1bac4:	9347fd2b 	asr	x11, x9, #7
+   1bac8:	52800020 	mov	w0, #0x1                   	// #1
+   1bacc:	8b48fd53 	add	x19, x10, x8, lsr #63
+   1bad0:	8b49fd74 	add	x20, x11, x9, lsr #63
+   1bad4:	9400397b 	bl	2a0c0 <systemTime@plt>
+   1bad8:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1badc:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1bae0:	f9057d00 	str	x0, [x8, #2808]
+   1bae4:	f9457928 	ldr	x8, [x9, #2800]
+   1bae8:	bd4acf20 	ldr	s0, [x25, #2764]
+   1baec:	f9057920 	str	x0, [x9, #2800]
+   1baf0:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1baf4:	cb080008 	sub	x8, x0, x8
+   1baf8:	9b567d08 	smulh	x8, x8, x22
+   1bafc:	9347fd0a 	asr	x10, x8, #7
+   1bb00:	8b48fd48 	add	x8, x10, x8, lsr #63
+   1bb04:	5e21d800 	scvtf	s0, s0
+   1bb08:	f9058128 	str	x8, [x9, #2816]
+   1bb0c:	9e220101 	scvtf	s1, x8
+   1bb10:	52a88f48 	mov	w8, #0x447a0000            	// #1148846080
+   1bb14:	b0ffff95 	adrp	x21, c000 <abitag+0xbd08>
+   1bb18:	1e211800 	fdiv	s0, s0, s1
+   1bb1c:	1e270101 	fmov	s1, w8
+   1bb20:	911e46b5 	add	x21, x21, #0x791
+   1bb24:	b0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1bb28:	1e210800 	fmul	s0, s0, s1
+   1bb2c:	91180042 	add	x2, x2, #0x600
+   1bb30:	528000c0 	mov	w0, #0x6                   	// #6
+   1bb34:	aa1503e1 	mov	x1, x21
+   1bb38:	1e210808 	fmul	s8, s0, s1
+   1bb3c:	94003765 	bl	298d0 <__android_log_print@plt>
+   1bb40:	b0ffffa2 	adrp	x2, 10000 <abitag+0xfd08>
+   1bb44:	910c8442 	add	x2, x2, #0x321
+   1bb48:	528000c0 	mov	w0, #0x6                   	// #6
+   1bb4c:	aa1503e1 	mov	x1, x21
+   1bb50:	94003760 	bl	298d0 <__android_log_print@plt>
+   1bb54:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1bb58:	1e22c100 	fcvt	d0, s8
+   1bb5c:	9131e842 	add	x2, x2, #0xc7a
+   1bb60:	528000c0 	mov	w0, #0x6                   	// #6
+   1bb64:	aa1503e1 	mov	x1, x21
+   1bb68:	aa1303e3 	mov	x3, x19
+   1bb6c:	94003759 	bl	298d0 <__android_log_print@plt>
+   1bb70:	f0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1bb74:	91196042 	add	x2, x2, #0x658
+   1bb78:	528000c0 	mov	w0, #0x6                   	// #6
+   1bb7c:	aa1503e1 	mov	x1, x21
+   1bb80:	aa1403e3 	mov	x3, x20
+   1bb84:	94003753 	bl	298d0 <__android_log_print@plt>
+   1bb88:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1bb8c:	b94ad503 	ldr	w3, [x8, #2772]
+   1bb90:	b0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1bb94:	912cd842 	add	x2, x2, #0xb36
+   1bb98:	528000c0 	mov	w0, #0x6                   	// #6
+   1bb9c:	aa1503e1 	mov	x1, x21
+   1bba0:	9400374c 	bl	298d0 <__android_log_print@plt>
+   1bba4:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1bba8:	91382042 	add	x2, x2, #0xe08
+   1bbac:	528000c0 	mov	w0, #0x6                   	// #6
+   1bbb0:	aa1503e1 	mov	x1, x21
+   1bbb4:	94003747 	bl	298d0 <__android_log_print@plt>
+   1bbb8:	b90acf3f 	str	wzr, [x25, #2764]
+   1bbbc:	a9444ff4 	ldp	x20, x19, [sp, #64]
+   1bbc0:	a94357f6 	ldp	x22, x21, [sp, #48]
+   1bbc4:	a9425ff8 	ldp	x24, x23, [sp, #32]
+   1bbc8:	f9400ff9 	ldr	x25, [sp, #24]
+   1bbcc:	a940fbfd 	ldp	x29, x30, [sp, #8]
+   1bbd0:	52800020 	mov	w0, #0x1                   	// #1
+   1bbd4:	fc4507e8 	ldr	d8, [sp], #80
+   1bbd8:	d65f03c0 	ret
+
+000000000001bbdc <camera_video_producer_stream_refresh_bypass(int)>:
+   1bbdc:	fc1c0fe8 	str	d8, [sp, #-64]!
+   1bbe0:	a900fbfd 	stp	x29, x30, [sp, #8]
+   1bbe4:	f9000ff7 	str	x23, [sp, #24]
+   1bbe8:	a90257f6 	stp	x22, x21, [sp, #32]
+   1bbec:	a9034ff4 	stp	x20, x19, [sp, #48]
+   1bbf0:	910003fd 	mov	x29, sp
+   1bbf4:	f0000096 	adrp	x22, 2e000 <_DYNAMIC+0x1698>
+   1bbf8:	b94acec8 	ldr	w8, [x22, #2764]
+   1bbfc:	52800020 	mov	w0, #0x1                   	// #1
+   1bc00:	11000508 	add	w8, w8, #0x1
+   1bc04:	b90acec8 	str	w8, [x22, #2764]
+   1bc08:	9400392e 	bl	2a0c0 <systemTime@plt>
+   1bc0c:	aa0003f3 	mov	x19, x0
+   1bc10:	52800020 	mov	w0, #0x1                   	// #1
+   1bc14:	9400392b 	bl	2a0c0 <systemTime@plt>
+   1bc18:	aa0003f4 	mov	x20, x0
+   1bc1c:	52800020 	mov	w0, #0x1                   	// #1
+   1bc20:	94003928 	bl	2a0c0 <systemTime@plt>
+   1bc24:	aa0003f5 	mov	x21, x0
+   1bc28:	52800020 	mov	w0, #0x1                   	// #1
+   1bc2c:	94003925 	bl	2a0c0 <systemTime@plt>
+   1bc30:	b94acec8 	ldr	w8, [x22, #2764]
+   1bc34:	7103211f 	cmp	w8, #0xc8
+   1bc38:	5400082b 	b.lt	1bd3c <camera_video_producer_stream_refresh_bypass(int)+0x160>  // b.tstop
+   1bc3c:	d29ef9f7 	mov	x23, #0xf7cf                	// #63439
+   1bc40:	f2bc6a77 	movk	x23, #0xe353, lsl #16
+   1bc44:	f2d374b7 	movk	x23, #0x9ba5, lsl #32
+   1bc48:	cb130008 	sub	x8, x0, x19
+   1bc4c:	f2e41897 	movk	x23, #0x20c4, lsl #48
+   1bc50:	cb1402a9 	sub	x9, x21, x20
+   1bc54:	9b577d08 	smulh	x8, x8, x23
+   1bc58:	9b577d29 	smulh	x9, x9, x23
+   1bc5c:	9347fd0a 	asr	x10, x8, #7
+   1bc60:	9347fd2b 	asr	x11, x9, #7
+   1bc64:	52800020 	mov	w0, #0x1                   	// #1
+   1bc68:	8b48fd53 	add	x19, x10, x8, lsr #63
+   1bc6c:	8b49fd74 	add	x20, x11, x9, lsr #63
+   1bc70:	94003914 	bl	2a0c0 <systemTime@plt>
+   1bc74:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1bc78:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1bc7c:	f9057d00 	str	x0, [x8, #2808]
+   1bc80:	f9457928 	ldr	x8, [x9, #2800]
+   1bc84:	bd4acec0 	ldr	s0, [x22, #2764]
+   1bc88:	f9057920 	str	x0, [x9, #2800]
+   1bc8c:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1bc90:	cb080008 	sub	x8, x0, x8
+   1bc94:	9b577d08 	smulh	x8, x8, x23
+   1bc98:	9347fd0a 	asr	x10, x8, #7
+   1bc9c:	8b48fd48 	add	x8, x10, x8, lsr #63
+   1bca0:	5e21d800 	scvtf	s0, s0
+   1bca4:	f9058128 	str	x8, [x9, #2816]
+   1bca8:	9e220101 	scvtf	s1, x8
+   1bcac:	52a88f48 	mov	w8, #0x447a0000            	// #1148846080
+   1bcb0:	b0ffff95 	adrp	x21, c000 <abitag+0xbd08>
+   1bcb4:	1e211800 	fdiv	s0, s0, s1
+   1bcb8:	1e270101 	fmov	s1, w8
+   1bcbc:	911e46b5 	add	x21, x21, #0x791
+   1bcc0:	b0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1bcc4:	1e210800 	fmul	s0, s0, s1
+   1bcc8:	91180042 	add	x2, x2, #0x600
+   1bccc:	528000c0 	mov	w0, #0x6                   	// #6
+   1bcd0:	aa1503e1 	mov	x1, x21
+   1bcd4:	1e210808 	fmul	s8, s0, s1
+   1bcd8:	940036fe 	bl	298d0 <__android_log_print@plt>
+   1bcdc:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1bce0:	91250442 	add	x2, x2, #0x941
+   1bce4:	528000c0 	mov	w0, #0x6                   	// #6
+   1bce8:	aa1503e1 	mov	x1, x21
+   1bcec:	940036f9 	bl	298d0 <__android_log_print@plt>
+   1bcf0:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1bcf4:	1e22c100 	fcvt	d0, s8
+   1bcf8:	9131e842 	add	x2, x2, #0xc7a
+   1bcfc:	528000c0 	mov	w0, #0x6                   	// #6
+   1bd00:	aa1503e1 	mov	x1, x21
+   1bd04:	aa1303e3 	mov	x3, x19
+   1bd08:	940036f2 	bl	298d0 <__android_log_print@plt>
+   1bd0c:	f0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1bd10:	91196042 	add	x2, x2, #0x658
+   1bd14:	528000c0 	mov	w0, #0x6                   	// #6
+   1bd18:	aa1503e1 	mov	x1, x21
+   1bd1c:	aa1403e3 	mov	x3, x20
+   1bd20:	940036ec 	bl	298d0 <__android_log_print@plt>
+   1bd24:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1bd28:	91382042 	add	x2, x2, #0xe08
+   1bd2c:	528000c0 	mov	w0, #0x6                   	// #6
+   1bd30:	aa1503e1 	mov	x1, x21
+   1bd34:	940036e7 	bl	298d0 <__android_log_print@plt>
+   1bd38:	b90acedf 	str	wzr, [x22, #2764]
+   1bd3c:	97fffeb7 	bl	1b818 <camera_video_stream_refresh_bypass()>
+   1bd40:	a9434ff4 	ldp	x20, x19, [sp, #48]
+   1bd44:	a94257f6 	ldp	x22, x21, [sp, #32]
+   1bd48:	f9400ff7 	ldr	x23, [sp, #24]
+   1bd4c:	a940fbfd 	ldp	x29, x30, [sp, #8]
+   1bd50:	52800020 	mov	w0, #0x1                   	// #1
+   1bd54:	fc4407e8 	ldr	d8, [sp], #64
+   1bd58:	d65f03c0 	ret
+
+000000000001bd5c <camera_video_producer_stream_deinit()>:
+   1bd5c:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1bd60:	f9458900 	ldr	x0, [x8, #2832]
+   1bd64:	b4000040 	cbz	x0, 1bd6c <camera_video_producer_stream_deinit()+0x10>
+   1bd68:	140038da 	b	2a0d0 <operator delete[](void*)@plt>
+   1bd6c:	d65f03c0 	ret
+
+000000000001bd70 <_GLOBAL__sub_I_engine_render_server_process.cpp>:
+   1bd70:	d10103ff 	sub	sp, sp, #0x40
+   1bd74:	a9017bfd 	stp	x29, x30, [sp, #16]
+   1bd78:	f90013f5 	str	x21, [sp, #32]
+   1bd7c:	a9034ff4 	stp	x20, x19, [sp, #48]
+   1bd80:	910043fd 	add	x29, sp, #0x10
+   1bd84:	d53bd055 	mrs	x21, tpidr_el0
+   1bd88:	f94016a8 	ldr	x8, [x21, #40]
+   1bd8c:	f0000093 	adrp	x19, 2e000 <_DYNAMIC+0x1698>
+   1bd90:	f0000081 	adrp	x1, 2e000 <_DYNAMIC+0x1698>
+   1bd94:	90000000 	adrp	x0, 1b000 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe08>
+   1bd98:	9124a273 	add	x19, x19, #0x928
+   1bd9c:	912c2021 	add	x1, x1, #0xb08
+   1bda0:	910f6000 	add	x0, x0, #0x3d8
+   1bda4:	aa1303e2 	mov	x2, x19
+   1bda8:	f90007e8 	str	x8, [sp, #8]
+   1bdac:	f900003f 	str	xzr, [x1]
+   1bdb0:	94003798 	bl	29c10 <__cxa_atexit@plt>
+   1bdb4:	f0000094 	adrp	x20, 2e000 <_DYNAMIC+0x1698>
+   1bdb8:	912c6294 	add	x20, x20, #0xb18
+   1bdbc:	aa1403e0 	mov	x0, x20
+   1bdc0:	aa1f03e1 	mov	x1, xzr
+   1bdc4:	940038c7 	bl	2a0e0 <pthread_mutex_init@plt>
+   1bdc8:	90000000 	adrp	x0, 1b000 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe08>
+   1bdcc:	910fb000 	add	x0, x0, #0x3ec
+   1bdd0:	aa1403e1 	mov	x1, x20
+   1bdd4:	aa1303e2 	mov	x2, x19
+   1bdd8:	9400378e 	bl	29c10 <__cxa_atexit@plt>
+   1bddc:	910003e0 	mov	x0, sp
+   1bde0:	f90003ff 	str	xzr, [sp]
+   1bde4:	940038c3 	bl	2a0f0 <pthread_condattr_init@plt>
+   1bde8:	910003e0 	mov	x0, sp
+   1bdec:	52800021 	mov	w1, #0x1                   	// #1
+   1bdf0:	940038c4 	bl	2a100 <pthread_condattr_setclock@plt>
+   1bdf4:	f0000094 	adrp	x20, 2e000 <_DYNAMIC+0x1698>
+   1bdf8:	912d0294 	add	x20, x20, #0xb40
+   1bdfc:	910003e1 	mov	x1, sp
+   1be00:	aa1403e0 	mov	x0, x20
+   1be04:	940038c3 	bl	2a110 <pthread_cond_init@plt>
+   1be08:	910003e0 	mov	x0, sp
+   1be0c:	940038c5 	bl	2a120 <pthread_condattr_destroy@plt>
+   1be10:	90000000 	adrp	x0, 1b000 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe08>
+   1be14:	910fc000 	add	x0, x0, #0x3f0
+   1be18:	aa1403e1 	mov	x1, x20
+   1be1c:	aa1303e2 	mov	x2, x19
+   1be20:	9400377c 	bl	29c10 <__cxa_atexit@plt>
+   1be24:	f94016a8 	ldr	x8, [x21, #40]
+   1be28:	f94007e9 	ldr	x9, [sp, #8]
+   1be2c:	eb09011f 	cmp	x8, x9
+   1be30:	540000c1 	b.ne	1be48 <_GLOBAL__sub_I_engine_render_server_process.cpp+0xd8>  // b.any
+   1be34:	a9434ff4 	ldp	x20, x19, [sp, #48]
+   1be38:	f94013f5 	ldr	x21, [sp, #32]
+   1be3c:	a9417bfd 	ldp	x29, x30, [sp, #16]
+   1be40:	910103ff 	add	sp, sp, #0x40
+   1be44:	d65f03c0 	ret
+   1be48:	94003646 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001be4c <map_vir_addr(IMEM_BUF_INFO*)>:
+   1be4c:	d10143ff 	sub	sp, sp, #0x50
+   1be50:	a9027bfd 	stp	x29, x30, [sp, #32]
+   1be54:	a90357f6 	stp	x22, x21, [sp, #48]
+   1be58:	a9044ff4 	stp	x20, x19, [sp, #64]
+   1be5c:	910083fd 	add	x29, sp, #0x20
+   1be60:	29405414 	ldp	w20, w21, [x0]
+   1be64:	aa0003f3 	mov	x19, x0
+   1be68:	93407e94 	sxtw	x20, w20
+   1be6c:	52800062 	mov	w2, #0x3                   	// #3
+   1be70:	52800023 	mov	w3, #0x1                   	// #1
+   1be74:	aa1f03e0 	mov	x0, xzr
+   1be78:	aa1403e1 	mov	x1, x20
+   1be7c:	2a1503e4 	mov	w4, w21
+   1be80:	aa1f03e5 	mov	x5, xzr
+   1be84:	940038ab 	bl	2a130 <mmap@plt>
+   1be88:	b100041f 	cmn	x0, #0x1
+   1be8c:	540000a0 	b.eq	1bea0 <map_vir_addr(IMEM_BUF_INFO*)+0x54>  // b.none
+   1be90:	f9000660 	str	x0, [x19, #8]
+   1be94:	b40002e0 	cbz	x0, 1bef0 <map_vir_addr(IMEM_BUF_INFO*)+0xa4>
+   1be98:	2a1f03e0 	mov	w0, wzr
+   1be9c:	1400001e 	b	1bf14 <map_vir_addr(IMEM_BUF_INFO*)+0xc8>
+   1bea0:	940037a4 	bl	29d30 <__errno@plt>
+   1bea4:	b9400000 	ldr	w0, [x0]
+   1bea8:	940037a6 	bl	29d40 <strerror@plt>
+   1beac:	92800016 	mov	x22, #0xffffffffffffffff    	// #-1
+   1beb0:	b0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1beb4:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1beb8:	911e4421 	add	x1, x1, #0x791
+   1bebc:	9132a442 	add	x2, x2, #0xca9
+   1bec0:	a90083f6 	stp	x22, x0, [sp, #8]
+   1bec4:	528000c0 	mov	w0, #0x6                   	// #6
+   1bec8:	52800066 	mov	w6, #0x3                   	// #3
+   1becc:	52800027 	mov	w7, #0x1                   	// #1
+   1bed0:	2a1f03e3 	mov	w3, wzr
+   1bed4:	aa1f03e4 	mov	x4, xzr
+   1bed8:	aa1403e5 	mov	x5, x20
+   1bedc:	b90003f5 	str	w21, [sp]
+   1bee0:	9400367c 	bl	298d0 <__android_log_print@plt>
+   1bee4:	2a1f03e0 	mov	w0, wzr
+   1bee8:	f9000676 	str	x22, [x19, #8]
+   1beec:	1400000a 	b	1bf14 <map_vir_addr(IMEM_BUF_INFO*)+0xc8>
+   1bef0:	29400e64 	ldp	w4, w3, [x19]
+   1bef4:	b0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1bef8:	f0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1befc:	911e4421 	add	x1, x1, #0x791
+   1bf00:	910a9042 	add	x2, x2, #0x2a4
+   1bf04:	528000c0 	mov	w0, #0x6                   	// #6
+   1bf08:	aa1f03e5 	mov	x5, xzr
+   1bf0c:	94003671 	bl	298d0 <__android_log_print@plt>
+   1bf10:	12800000 	mov	w0, #0xffffffff            	// #-1
+   1bf14:	a9444ff4 	ldp	x20, x19, [sp, #64]
+   1bf18:	a94357f6 	ldp	x22, x21, [sp, #48]
+   1bf1c:	a9427bfd 	ldp	x29, x30, [sp, #32]
+   1bf20:	910143ff 	add	sp, sp, #0x50
+   1bf24:	d65f03c0 	ret
+
+000000000001bf28 <android::hardware::automotive::evs::V1_0::BufferDesc::~BufferDesc()>:
+   1bf28:	91008000 	add	x0, x0, #0x20
+   1bf2c:	1400379d 	b	29da0 <android::hardware::hidl_handle::~hidl_handle()@plt>
+
+000000000001bf30 <expt_texture_to_buff(unsigned int, char*, int, int, unsigned int, bool)>:
+   1bf30:	d10203ff 	sub	sp, sp, #0x80
+   1bf34:	a9027bfd 	stp	x29, x30, [sp, #32]
+   1bf38:	a9036ffc 	stp	x28, x27, [sp, #48]
+   1bf3c:	a90467fa 	stp	x26, x25, [sp, #64]
+   1bf40:	a9055ff8 	stp	x24, x23, [sp, #80]
+   1bf44:	a90657f6 	stp	x22, x21, [sp, #96]
+   1bf48:	a9074ff4 	stp	x20, x19, [sp, #112]
+   1bf4c:	910083fd 	add	x29, sp, #0x20
+   1bf50:	b9000fe4 	str	w4, [sp, #12]
+   1bf54:	d53bd05a 	mrs	x26, tpidr_el0
+   1bf58:	f9401748 	ldr	x8, [x26, #40]
+   1bf5c:	aa0103f6 	mov	x22, x1
+   1bf60:	2a0003f8 	mov	w24, w0
+   1bf64:	910043e1 	add	x1, sp, #0x10
+   1bf68:	52800020 	mov	w0, #0x1                   	// #1
+   1bf6c:	2a0503f3 	mov	w19, w5
+   1bf70:	2a0303f5 	mov	w21, w3
+   1bf74:	2a0203f7 	mov	w23, w2
+   1bf78:	f81f83a8 	stur	x8, [x29, #-8]
+   1bf7c:	b90013ff 	str	wzr, [sp, #16]
+   1bf80:	94003870 	bl	2a140 <glGenFramebuffers@plt>
+   1bf84:	b94013e1 	ldr	w1, [sp, #16]
+   1bf88:	5291a800 	mov	w0, #0x8d40                	// #36160
+   1bf8c:	94003871 	bl	2a150 <glBindFramebuffer@plt>
+   1bf90:	7200027f 	tst	w19, #0x1
+   1bf94:	5281bc3b 	mov	w27, #0xde1                 	// #3553
+   1bf98:	5291acbc 	mov	w28, #0x8d65                	// #36197
+   1bf9c:	1a9b1399 	csel	w25, w28, w27, ne	// ne = any
+   1bfa0:	2a1903e0 	mov	w0, w25
+   1bfa4:	2a1803e1 	mov	w1, w24
+   1bfa8:	9400386e 	bl	2a160 <glBindTexture@plt>
+   1bfac:	5291a800 	mov	w0, #0x8d40                	// #36160
+   1bfb0:	52919c01 	mov	w1, #0x8ce0                	// #36064
+   1bfb4:	2a1903e2 	mov	w2, w25
+   1bfb8:	2a1803e3 	mov	w3, w24
+   1bfbc:	2a1f03e4 	mov	w4, wzr
+   1bfc0:	52919c14 	mov	w20, #0x8ce0                	// #36064
+   1bfc4:	9400386b 	bl	2a170 <glFramebufferTexture2D@plt>
+   1bfc8:	5291a800 	mov	w0, #0x8d40                	// #36160
+   1bfcc:	9400386d 	bl	2a180 <glCheckFramebufferStatus@plt>
+   1bfd0:	52919aa8 	mov	w8, #0x8cd5                	// #36053
+   1bfd4:	6b08001f 	cmp	w0, w8
+   1bfd8:	540003e1 	b.ne	1c054 <expt_texture_to_buff(unsigned int, char*, int, int, unsigned int, bool)+0x124>  // b.any
+   1bfdc:	d10033a1 	sub	x1, x29, #0xc
+   1bfe0:	52800020 	mov	w0, #0x1                   	// #1
+   1bfe4:	b81f43b4 	stur	w20, [x29, #-12]
+   1bfe8:	9400386a 	bl	2a190 <glDrawBuffers@plt>
+   1bfec:	5281a0a0 	mov	w0, #0xd05                 	// #3333
+   1bff0:	52800021 	mov	w1, #0x1                   	// #1
+   1bff4:	9400386b 	bl	2a1a0 <glPixelStorei@plt>
+   1bff8:	b9400fe4 	ldr	w4, [sp, #12]
+   1bffc:	52828025 	mov	w5, #0x1401                	// #5121
+   1c000:	2a1f03e0 	mov	w0, wzr
+   1c004:	2a1f03e1 	mov	w1, wzr
+   1c008:	2a1703e2 	mov	w2, w23
+   1c00c:	2a1503e3 	mov	w3, w21
+   1c010:	aa1603e6 	mov	x6, x22
+   1c014:	94003867 	bl	2a1b0 <glReadPixels@plt>
+   1c018:	7200027f 	tst	w19, #0x1
+   1c01c:	1a9b1380 	csel	w0, w28, w27, ne	// ne = any
+   1c020:	2a1f03e1 	mov	w1, wzr
+   1c024:	9400384f 	bl	2a160 <glBindTexture@plt>
+   1c028:	5281a0a0 	mov	w0, #0xd05                 	// #3333
+   1c02c:	52800081 	mov	w1, #0x4                   	// #4
+   1c030:	9400385c 	bl	2a1a0 <glPixelStorei@plt>
+   1c034:	5291a800 	mov	w0, #0x8d40                	// #36160
+   1c038:	2a1f03e1 	mov	w1, wzr
+   1c03c:	94003845 	bl	2a150 <glBindFramebuffer@plt>
+   1c040:	910043e1 	add	x1, sp, #0x10
+   1c044:	52800020 	mov	w0, #0x1                   	// #1
+   1c048:	9400385e 	bl	2a1c0 <glDeleteFramebuffers@plt>
+   1c04c:	2a1f03e0 	mov	w0, wzr
+   1c050:	1400000a 	b	1c078 <expt_texture_to_buff(unsigned int, char*, int, int, unsigned int, bool)+0x148>
+   1c054:	5291a800 	mov	w0, #0x8d40                	// #36160
+   1c058:	9400384a 	bl	2a180 <glCheckFramebufferStatus@plt>
+   1c05c:	2a0003e2 	mov	w2, w0
+   1c060:	b0ffff80 	adrp	x0, d000 <abitag+0xcd08>
+   1c064:	90ffffa1 	adrp	x1, 10000 <abitag+0xfd08>
+   1c068:	912eb800 	add	x0, x0, #0xbae
+   1c06c:	910e1021 	add	x1, x1, #0x384
+   1c070:	94003700 	bl	29c70 <printf@plt>
+   1c074:	12800000 	mov	w0, #0xffffffff            	// #-1
+   1c078:	f9401748 	ldr	x8, [x26, #40]
+   1c07c:	f85f83a9 	ldur	x9, [x29, #-8]
+   1c080:	eb09011f 	cmp	x8, x9
+   1c084:	54000121 	b.ne	1c0a8 <expt_texture_to_buff(unsigned int, char*, int, int, unsigned int, bool)+0x178>  // b.any
+   1c088:	a9474ff4 	ldp	x20, x19, [sp, #112]
+   1c08c:	a94657f6 	ldp	x22, x21, [sp, #96]
+   1c090:	a9455ff8 	ldp	x24, x23, [sp, #80]
+   1c094:	a94467fa 	ldp	x26, x25, [sp, #64]
+   1c098:	a9436ffc 	ldp	x28, x27, [sp, #48]
+   1c09c:	a9427bfd 	ldp	x29, x30, [sp, #32]
+   1c0a0:	910203ff 	add	sp, sp, #0x80
+   1c0a4:	d65f03c0 	ret
+   1c0a8:	940035ae 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001c0ac <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)>:
+   1c0ac:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+   1c0b0:	a9016ffc 	stp	x28, x27, [sp, #16]
+   1c0b4:	a90267fa 	stp	x26, x25, [sp, #32]
+   1c0b8:	a9035ff8 	stp	x24, x23, [sp, #48]
+   1c0bc:	a90457f6 	stp	x22, x21, [sp, #64]
+   1c0c0:	a9054ff4 	stp	x20, x19, [sp, #80]
+   1c0c4:	910003fd 	mov	x29, sp
+   1c0c8:	d10c03ff 	sub	sp, sp, #0x300
+   1c0cc:	d53bd059 	mrs	x25, tpidr_el0
+   1c0d0:	f9401728 	ldr	x8, [x25, #40]
+   1c0d4:	f81f83a8 	stur	x8, [x29, #-8]
+   1c0d8:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c0dc:	f9474508 	ldr	x8, [x8, #3720]
+   1c0e0:	b9400108 	ldr	w8, [x8]
+   1c0e4:	340001a8 	cbz	w8, 1c118 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x6c>
+   1c0e8:	f9401728 	ldr	x8, [x25, #40]
+   1c0ec:	f85f83a9 	ldur	x9, [x29, #-8]
+   1c0f0:	eb09011f 	cmp	x8, x9
+   1c0f4:	540061c1 	b.ne	1cd2c <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc80>  // b.any
+   1c0f8:	910c03ff 	add	sp, sp, #0x300
+   1c0fc:	a9454ff4 	ldp	x20, x19, [sp, #80]
+   1c100:	a94457f6 	ldp	x22, x21, [sp, #64]
+   1c104:	a9435ff8 	ldp	x24, x23, [sp, #48]
+   1c108:	a94267fa 	ldp	x26, x25, [sp, #32]
+   1c10c:	a9416ffc 	ldp	x28, x27, [sp, #16]
+   1c110:	a8c67bfd 	ldp	x29, x30, [sp], #96
+   1c114:	d65f03c0 	ret
+   1c118:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c11c:	f9474908 	ldr	x8, [x8, #3728]
+   1c120:	39400108 	ldrb	w8, [x8]
+   1c124:	34003bc8 	cbz	w8, 1c89c <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x7f0>
+   1c128:	90000089 	adrp	x9, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c12c:	90000096 	adrp	x22, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c130:	f946f529 	ldr	x9, [x9, #3560]
+   1c134:	f9474ed6 	ldr	x22, [x22, #3736]
+   1c138:	9105c3fa 	add	x26, sp, #0x170
+   1c13c:	6f00e400 	movi	v0.2d, #0x0
+   1c140:	90ffffa8 	adrp	x8, 10000 <abitag+0xfd08>
+   1c144:	ad0b0340 	stp	q0, q0, [x26, #352]
+   1c148:	ad0a0340 	stp	q0, q0, [x26, #320]
+   1c14c:	ad090340 	stp	q0, q0, [x26, #288]
+   1c150:	3d804740 	str	q0, [x26, #272]
+   1c154:	fd44cd00 	ldr	d0, [x8, #2456]
+   1c158:	2940a2cc 	ldp	w12, w8, [x22, #4]
+   1c15c:	b94002cb 	ldr	w11, [x22]
+   1c160:	3dc00041 	ldr	q1, [x2]
+   1c164:	b9400d2a 	ldr	w10, [x9, #12]
+   1c168:	b9400ecd 	ldr	w13, [x22, #12]
+   1c16c:	2a0b0108 	orr	w8, w8, w11
+   1c170:	d10243ab 	sub	x11, x29, #0x90
+   1c174:	3d804341 	str	q1, [x26, #256]
+   1c178:	bd4012c1 	ldr	s1, [x22, #16]
+   1c17c:	fc064160 	stur	d0, [x11, #100]
+   1c180:	fc404120 	ldur	d0, [x9, #4]
+   1c184:	b9400129 	ldr	w9, [x9]
+   1c188:	7100015f 	cmp	w10, #0x0
+   1c18c:	2a0c01aa 	orr	w10, w13, w12
+   1c190:	4e0c1d01 	mov	v1.s[1], w8
+   1c194:	52828008 	mov	w8, #0x1400                	// #5120
+   1c198:	0ea09800 	cmeq	v0.2s, v0.2s, #0
+   1c19c:	2e205800 	mvn	v0.8b, v0.8b
+   1c1a0:	0ea09821 	cmeq	v1.2s, v1.2s, #0
+   1c1a4:	293ba7a8 	stp	w8, w9, [x29, #-36]
+   1c1a8:	1a9f07e8 	cset	w8, ne	// ne = any
+   1c1ac:	7100015f 	cmp	w10, #0x0
+   1c1b0:	0e211c00 	and	v0.8b, v0.8b, v1.8b
+   1c1b4:	0f000421 	movi	v1.2s, #0x1
+   1c1b8:	1a9f17e9 	cset	w9, eq	// eq = none
+   1c1bc:	0a090108 	and	w8, w8, w9
+   1c1c0:	0e211c00 	and	v0.8b, v0.8b, v1.8b
+   1c1c4:	aa0103f3 	mov	x19, x1
+   1c1c8:	fc074160 	stur	d0, [x11, #116]
+   1c1cc:	b81ec3a8 	stur	w8, [x29, #-20]
+   1c1d0:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c1d4:	f9475021 	ldr	x1, [x1, #3744]
+   1c1d8:	aa0003f4 	mov	x20, x0
+   1c1dc:	5280f002 	mov	w2, #0x780                 	// #1920
+   1c1e0:	aa1303e0 	mov	x0, x19
+   1c1e4:	2a0303f5 	mov	w21, w3
+   1c1e8:	97ffe440 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c1ec:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c1f0:	f9475421 	ldr	x1, [x1, #3752]
+   1c1f4:	52807502 	mov	w2, #0x3a8                 	// #936
+   1c1f8:	aa1303e0 	mov	x0, x19
+   1c1fc:	97ffe43b 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c200:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c204:	f9475821 	ldr	x1, [x1, #3760]
+   1c208:	52805c02 	mov	w2, #0x2e0                 	// #736
+   1c20c:	aa1303e0 	mov	x0, x19
+   1c210:	97ffe436 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c214:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c218:	f9475c21 	ldr	x1, [x1, #3768]
+   1c21c:	52800082 	mov	w2, #0x4                   	// #4
+   1c220:	aa1303e0 	mov	x0, x19
+   1c224:	97ffe431 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c228:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c22c:	f9476108 	ldr	x8, [x8, #3776]
+   1c230:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c234:	aa1303e0 	mov	x0, x19
+   1c238:	b9400102 	ldr	w2, [x8]
+   1c23c:	f9467821 	ldr	x1, [x1, #3312]
+   1c240:	97ffe42a 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c244:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c248:	f9476421 	ldr	x1, [x1, #3784]
+   1c24c:	52933348 	mov	w8, #0x999a                	// #39322
+   1c250:	72a7e328 	movk	w8, #0x3f19, lsl #16
+   1c254:	1e270100 	fmov	s0, w8
+   1c258:	aa1303e0 	mov	x0, x19
+   1c25c:	97ffe46a 	bl	15404 <EvsParameters::setFloat(char const*, float)>
+   1c260:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c264:	f9476821 	ldr	x1, [x1, #3792]
+   1c268:	aa1303e0 	mov	x0, x19
+   1c26c:	2a1f03e2 	mov	w2, wzr
+   1c270:	97ffe41e 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c274:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c278:	f9476d08 	ldr	x8, [x8, #3800]
+   1c27c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c280:	aa1303e0 	mov	x0, x19
+   1c284:	b9400102 	ldr	w2, [x8]
+   1c288:	f9468c21 	ldr	x1, [x1, #3352]
+   1c28c:	97ffe417 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c290:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c294:	f9477108 	ldr	x8, [x8, #3808]
+   1c298:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c29c:	aa1303e0 	mov	x0, x19
+   1c2a0:	b9400102 	ldr	w2, [x8]
+   1c2a4:	f9477421 	ldr	x1, [x1, #3816]
+   1c2a8:	97ffe410 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c2ac:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c2b0:	f9477908 	ldr	x8, [x8, #3824]
+   1c2b4:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c2b8:	aa1303e0 	mov	x0, x19
+   1c2bc:	b9400102 	ldr	w2, [x8]
+   1c2c0:	f9470021 	ldr	x1, [x1, #3584]
+   1c2c4:	97ffe409 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c2c8:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c2cc:	f9477d08 	ldr	x8, [x8, #3832]
+   1c2d0:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c2d4:	aa1303e0 	mov	x0, x19
+   1c2d8:	b9400102 	ldr	w2, [x8]
+   1c2dc:	f9478021 	ldr	x1, [x1, #3840]
+   1c2e0:	97ffe402 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c2e4:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c2e8:	f9471508 	ldr	x8, [x8, #3624]
+   1c2ec:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c2f0:	aa1303e0 	mov	x0, x19
+   1c2f4:	b9400102 	ldr	w2, [x8]
+   1c2f8:	f9470c21 	ldr	x1, [x1, #3608]
+   1c2fc:	97ffe3fb 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c300:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c304:	f9471908 	ldr	x8, [x8, #3632]
+   1c308:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c30c:	aa1303e0 	mov	x0, x19
+   1c310:	b9400102 	ldr	w2, [x8]
+   1c314:	f9471021 	ldr	x1, [x1, #3616]
+   1c318:	97ffe3f4 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c31c:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c320:	f9478508 	ldr	x8, [x8, #3848]
+   1c324:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c328:	aa1303e0 	mov	x0, x19
+   1c32c:	b9400102 	ldr	w2, [x8]
+   1c330:	f9478821 	ldr	x1, [x1, #3856]
+   1c334:	97ffe3ed 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c338:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c33c:	f9478d08 	ldr	x8, [x8, #3864]
+   1c340:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c344:	aa1303e0 	mov	x0, x19
+   1c348:	b9400102 	ldr	w2, [x8]
+   1c34c:	f9479021 	ldr	x1, [x1, #3872]
+   1c350:	97ffe3e6 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c354:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c358:	f9468108 	ldr	x8, [x8, #3328]
+   1c35c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c360:	aa1303e0 	mov	x0, x19
+   1c364:	39400102 	ldrb	w2, [x8]
+   1c368:	f9467c21 	ldr	x1, [x1, #3320]
+   1c36c:	97ffe3df 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c370:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c374:	f9479421 	ldr	x1, [x1, #3880]
+   1c378:	528cccc8 	mov	w8, #0x6666                	// #26214
+   1c37c:	72a7f4c8 	movk	w8, #0x3fa6, lsl #16
+   1c380:	1e270100 	fmov	s0, w8
+   1c384:	aa1303e0 	mov	x0, x19
+   1c388:	97ffe41f 	bl	15404 <EvsParameters::setFloat(char const*, float)>
+   1c38c:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c390:	f9479908 	ldr	x8, [x8, #3888]
+   1c394:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c398:	aa1303e0 	mov	x0, x19
+   1c39c:	b9400102 	ldr	w2, [x8]
+   1c3a0:	f9479c21 	ldr	x1, [x1, #3896]
+   1c3a4:	97ffe3d1 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c3a8:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c3ac:	f9467108 	ldr	x8, [x8, #3296]
+   1c3b0:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c3b4:	aa1303e0 	mov	x0, x19
+   1c3b8:	b9400102 	ldr	w2, [x8]
+   1c3bc:	f947a021 	ldr	x1, [x1, #3904]
+   1c3c0:	97ffe3ca 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c3c4:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c3c8:	f947a508 	ldr	x8, [x8, #3912]
+   1c3cc:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c3d0:	aa1303e0 	mov	x0, x19
+   1c3d4:	bd400100 	ldr	s0, [x8]
+   1c3d8:	f9468421 	ldr	x1, [x1, #3336]
+   1c3dc:	97ffe40a 	bl	15404 <EvsParameters::setFloat(char const*, float)>
+   1c3e0:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c3e4:	f947a908 	ldr	x8, [x8, #3920]
+   1c3e8:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c3ec:	aa1303e0 	mov	x0, x19
+   1c3f0:	bd400100 	ldr	s0, [x8]
+   1c3f4:	f9467421 	ldr	x1, [x1, #3304]
+   1c3f8:	97ffe403 	bl	15404 <EvsParameters::setFloat(char const*, float)>
+   1c3fc:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c400:	f947ad08 	ldr	x8, [x8, #3928]
+   1c404:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c408:	aa1303e0 	mov	x0, x19
+   1c40c:	b9400102 	ldr	w2, [x8]
+   1c410:	f9470421 	ldr	x1, [x1, #3592]
+   1c414:	97ffe3b5 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c418:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c41c:	f947b108 	ldr	x8, [x8, #3936]
+   1c420:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c424:	aa1303e0 	mov	x0, x19
+   1c428:	b9400102 	ldr	w2, [x8]
+   1c42c:	f946f821 	ldr	x1, [x1, #3568]
+   1c430:	97ffe3ae 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c434:	90000097 	adrp	x23, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c438:	f947b6f7 	ldr	x23, [x23, #3944]
+   1c43c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c440:	aa1303e0 	mov	x0, x19
+   1c444:	b94002e2 	ldr	w2, [x23]
+   1c448:	f947b821 	ldr	x1, [x1, #3952]
+   1c44c:	97ffe3a7 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c450:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c454:	b94006e2 	ldr	w2, [x23, #4]
+   1c458:	f946d021 	ldr	x1, [x1, #3488]
+   1c45c:	aa1303e0 	mov	x0, x19
+   1c460:	97ffe3a2 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c464:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c468:	b9400ae2 	ldr	w2, [x23, #8]
+   1c46c:	f946d421 	ldr	x1, [x1, #3496]
+   1c470:	aa1303e0 	mov	x0, x19
+   1c474:	97ffe39d 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c478:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c47c:	b9400ee2 	ldr	w2, [x23, #12]
+   1c480:	f947bc21 	ldr	x1, [x1, #3960]
+   1c484:	aa1303e0 	mov	x0, x19
+   1c488:	97ffe398 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c48c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c490:	b94012e2 	ldr	w2, [x23, #16]
+   1c494:	f947c021 	ldr	x1, [x1, #3968]
+   1c498:	aa1303e0 	mov	x0, x19
+   1c49c:	97ffe393 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c4a0:	b94016e8 	ldr	w8, [x23, #20]
+   1c4a4:	b9402ae9 	ldr	w9, [x23, #40]
+   1c4a8:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c4ac:	f947c421 	ldr	x1, [x1, #3976]
+   1c4b0:	aa1303e0 	mov	x0, x19
+   1c4b4:	2a080128 	orr	w8, w9, w8
+   1c4b8:	7100011f 	cmp	w8, #0x0
+   1c4bc:	1a9f07e2 	cset	w2, ne	// ne = any
+   1c4c0:	97ffe38a 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c4c4:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c4c8:	b9401ae2 	ldr	w2, [x23, #24]
+   1c4cc:	f946e421 	ldr	x1, [x1, #3528]
+   1c4d0:	aa1303e0 	mov	x0, x19
+   1c4d4:	97ffe385 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c4d8:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c4dc:	b9401ee2 	ldr	w2, [x23, #28]
+   1c4e0:	f946e821 	ldr	x1, [x1, #3536]
+   1c4e4:	aa1303e0 	mov	x0, x19
+   1c4e8:	97ffe380 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c4ec:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c4f0:	b94022e2 	ldr	w2, [x23, #32]
+   1c4f4:	f946d821 	ldr	x1, [x1, #3504]
+   1c4f8:	aa1303e0 	mov	x0, x19
+   1c4fc:	97ffe37b 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c500:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c504:	b94026e2 	ldr	w2, [x23, #36]
+   1c508:	f946e021 	ldr	x1, [x1, #3520]
+   1c50c:	aa1303e0 	mov	x0, x19
+   1c510:	97ffe376 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c514:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c518:	f947c908 	ldr	x8, [x8, #3984]
+   1c51c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c520:	aa1303e0 	mov	x0, x19
+   1c524:	b9400102 	ldr	w2, [x8]
+   1c528:	f946ec21 	ldr	x1, [x1, #3544]
+   1c52c:	97ffe36f 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c530:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c534:	f947cd08 	ldr	x8, [x8, #3992]
+   1c538:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c53c:	aa1303e0 	mov	x0, x19
+   1c540:	b9400102 	ldr	w2, [x8]
+   1c544:	f946f021 	ldr	x1, [x1, #3552]
+   1c548:	97ffe368 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c54c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c550:	b94002c2 	ldr	w2, [x22]
+   1c554:	f9469421 	ldr	x1, [x1, #3368]
+   1c558:	aa1303e0 	mov	x0, x19
+   1c55c:	97ffe363 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c560:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c564:	b94006c2 	ldr	w2, [x22, #4]
+   1c568:	f9469821 	ldr	x1, [x1, #3376]
+   1c56c:	aa1303e0 	mov	x0, x19
+   1c570:	97ffe35e 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c574:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c578:	b9400ac2 	ldr	w2, [x22, #8]
+   1c57c:	f9469c21 	ldr	x1, [x1, #3384]
+   1c580:	aa1303e0 	mov	x0, x19
+   1c584:	97ffe359 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c588:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c58c:	b9400ec2 	ldr	w2, [x22, #12]
+   1c590:	f946a021 	ldr	x1, [x1, #3392]
+   1c594:	aa1303e0 	mov	x0, x19
+   1c598:	97ffe354 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c59c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c5a0:	b94012c2 	ldr	w2, [x22, #16]
+   1c5a4:	f946a821 	ldr	x1, [x1, #3408]
+   1c5a8:	aa1303e0 	mov	x0, x19
+   1c5ac:	97ffe34f 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c5b0:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c5b4:	f947d108 	ldr	x8, [x8, #4000]
+   1c5b8:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c5bc:	aa1303e0 	mov	x0, x19
+   1c5c0:	b9400102 	ldr	w2, [x8]
+   1c5c4:	f946a421 	ldr	x1, [x1, #3400]
+   1c5c8:	97ffe348 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c5cc:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c5d0:	f947d508 	ldr	x8, [x8, #4008]
+   1c5d4:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c5d8:	aa1303e0 	mov	x0, x19
+   1c5dc:	b9400102 	ldr	w2, [x8]
+   1c5e0:	f946ac21 	ldr	x1, [x1, #3416]
+   1c5e4:	97ffe341 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c5e8:	90000096 	adrp	x22, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c5ec:	f947dad6 	ldr	x22, [x22, #4016]
+   1c5f0:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c5f4:	aa1303e0 	mov	x0, x19
+   1c5f8:	b94002c2 	ldr	w2, [x22]
+   1c5fc:	f946b421 	ldr	x1, [x1, #3432]
+   1c600:	97ffe33a 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c604:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c608:	b94006c2 	ldr	w2, [x22, #4]
+   1c60c:	f946b821 	ldr	x1, [x1, #3440]
+   1c610:	aa1303e0 	mov	x0, x19
+   1c614:	97ffe335 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c618:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c61c:	b9400ac2 	ldr	w2, [x22, #8]
+   1c620:	f946bc21 	ldr	x1, [x1, #3448]
+   1c624:	aa1303e0 	mov	x0, x19
+   1c628:	97ffe330 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c62c:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c630:	b9400ec2 	ldr	w2, [x22, #12]
+   1c634:	f946c021 	ldr	x1, [x1, #3456]
+   1c638:	aa1303e0 	mov	x0, x19
+   1c63c:	97ffe32b 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c640:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c644:	f947dd08 	ldr	x8, [x8, #4024]
+   1c648:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c64c:	aa1303e0 	mov	x0, x19
+   1c650:	b9400102 	ldr	w2, [x8]
+   1c654:	f946c421 	ldr	x1, [x1, #3464]
+   1c658:	97ffe324 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c65c:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c660:	f947e108 	ldr	x8, [x8, #4032]
+   1c664:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c668:	aa1303e0 	mov	x0, x19
+   1c66c:	b9400102 	ldr	w2, [x8]
+   1c670:	f947e421 	ldr	x1, [x1, #4040]
+   1c674:	97ffe31d 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c678:	90000096 	adrp	x22, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c67c:	f946ced6 	ldr	x22, [x22, #3480]
+   1c680:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c684:	aa1303e0 	mov	x0, x19
+   1c688:	b94002c2 	ldr	w2, [x22]
+   1c68c:	f947e821 	ldr	x1, [x1, #4048]
+   1c690:	97ffe316 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c694:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c698:	b94006c2 	ldr	w2, [x22, #4]
+   1c69c:	f947ec21 	ldr	x1, [x1, #4056]
+   1c6a0:	aa1303e0 	mov	x0, x19
+   1c6a4:	97ffe311 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c6a8:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c6ac:	b9400ac2 	ldr	w2, [x22, #8]
+   1c6b0:	f947f021 	ldr	x1, [x1, #4064]
+   1c6b4:	aa1303e0 	mov	x0, x19
+   1c6b8:	97ffe30c 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c6bc:	90000081 	adrp	x1, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c6c0:	b9400ec2 	ldr	w2, [x22, #12]
+   1c6c4:	f947f421 	ldr	x1, [x1, #4072]
+   1c6c8:	aa1303e0 	mov	x0, x19
+   1c6cc:	97ffe307 	bl	152e8 <EvsParameters::set(char const*, int)>
+   1c6d0:	52800020 	mov	w0, #0x1                   	// #1
+   1c6d4:	b9006fff 	str	wzr, [sp, #108]
+   1c6d8:	9400367a 	bl	2a0c0 <systemTime@plt>
+   1c6dc:	90000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c6e0:	f947f908 	ldr	x8, [x8, #4080]
+   1c6e4:	39400108 	ldrb	w8, [x8]
+   1c6e8:	34ffd008 	cbz	w8, 1c0e8 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x3c>
+   1c6ec:	9000009b 	adrp	x27, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1c6f0:	f947ff7b 	ldr	x27, [x27, #4088]
+   1c6f4:	f9400368 	ldr	x8, [x27]
+   1c6f8:	b4ffcf88 	cbz	x8, 1c0e8 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x3c>
+   1c6fc:	b0000088 	adrp	x8, 2d000 <_DYNAMIC+0x698>
+   1c700:	f9400108 	ldr	x8, [x8]
+   1c704:	b9400108 	ldr	w8, [x8]
+   1c708:	35ffcf08 	cbnz	w8, 1c0e8 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x3c>
+   1c70c:	90ffffa0 	adrp	x0, 10000 <abitag+0xfd08>
+   1c710:	910db000 	add	x0, x0, #0x36c
+   1c714:	2a1f03e1 	mov	w1, wzr
+   1c718:	9400347e 	bl	29910 <property_get_int32@plt>
+   1c71c:	7100041f 	cmp	w0, #0x1
+   1c720:	540006e1 	b.ne	1c7fc <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x750>  // b.any
+   1c724:	90ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1c728:	d0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1c72c:	911e4421 	add	x1, x1, #0x791
+   1c730:	910b6842 	add	x2, x2, #0x2da
+   1c734:	52800080 	mov	w0, #0x4                   	// #4
+   1c738:	94003466 	bl	298d0 <__android_log_print@plt>
+   1c73c:	52800808 	mov	w8, #0x40                  	// #64
+   1c740:	6f00e400 	movi	v0.2d, #0x0
+   1c744:	72a00fa8 	movk	w8, #0x7d, lsl #16
+   1c748:	9105c3e0 	add	x0, sp, #0x170
+   1c74c:	3c818340 	stur	q0, [x26, #24]
+   1c750:	3c808340 	stur	q0, [x26, #8]
+   1c754:	b90177f5 	str	w21, [sp, #372]
+   1c758:	b90173e8 	str	w8, [sp, #368]
+   1c75c:	97fffdbc 	bl	1be4c <map_vir_addr(IMEM_BUF_INFO*)>
+   1c760:	36f800e0 	tbz	w0, #31, 1c77c <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x6d0>
+   1c764:	90ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1c768:	f0ffff82 	adrp	x2, f000 <abitag+0xed08>
+   1c76c:	911e4421 	add	x1, x1, #0x791
+   1c770:	91058842 	add	x2, x2, #0x162
+   1c774:	528000c0 	mov	w0, #0x6                   	// #6
+   1c778:	94003456 	bl	298d0 <__android_log_print@plt>
+   1c77c:	f940bfe8 	ldr	x8, [sp, #376]
+   1c780:	f0ffff80 	adrp	x0, f000 <abitag+0xed08>
+   1c784:	f0ffff81 	adrp	x1, f000 <abitag+0xed08>
+   1c788:	91224000 	add	x0, x0, #0x890
+   1c78c:	91010108 	add	x8, x8, #0x40
+   1c790:	912ee421 	add	x1, x1, #0xbb9
+   1c794:	f81803a8 	stur	x8, [x29, #-128]
+   1c798:	94003472 	bl	29960 <property_set@plt>
+   1c79c:	90ffff88 	adrp	x8, c000 <abitag+0xbd08>
+   1c7a0:	913fb908 	add	x8, x8, #0xfee
+   1c7a4:	f9400109 	ldr	x9, [x8]
+   1c7a8:	f8406108 	ldur	x8, [x8, #6]
+   1c7ac:	f85803a1 	ldur	x1, [x29, #-128]
+   1c7b0:	6f00e400 	movi	v0.2d, #0x0
+   1c7b4:	9107c3e0 	add	x0, sp, #0x1f0
+   1c7b8:	52a00fa2 	mov	w2, #0x7d0000              	// #8192000
+   1c7bc:	7904dfff 	strh	wzr, [sp, #622]
+   1c7c0:	3c8ee340 	stur	q0, [x26, #238]
+   1c7c4:	3c8de340 	stur	q0, [x26, #222]
+   1c7c8:	3c8ce340 	stur	q0, [x26, #206]
+   1c7cc:	3c8be340 	stur	q0, [x26, #190]
+   1c7d0:	3c8ae340 	stur	q0, [x26, #174]
+   1c7d4:	3c89e340 	stur	q0, [x26, #158]
+   1c7d8:	3c88e340 	stur	q0, [x26, #142]
+   1c7dc:	f900fbe9 	str	x9, [sp, #496]
+   1c7e0:	f8086348 	stur	x8, [x26, #134]
+   1c7e4:	97ffed36 	bl	17cbc <dumpBuffer(char const*, unsigned char*, unsigned int)>
+   1c7e8:	90ffffa0 	adrp	x0, 10000 <abitag+0xfd08>
+   1c7ec:	b0ffff81 	adrp	x1, d000 <abitag+0xcd08>
+   1c7f0:	910db000 	add	x0, x0, #0x36c
+   1c7f4:	9138c421 	add	x1, x1, #0xe31
+   1c7f8:	9400345a 	bl	29960 <property_set@plt>
+   1c7fc:	90ffffa0 	adrp	x0, 10000 <abitag+0xfd08>
+   1c800:	910db000 	add	x0, x0, #0x36c
+   1c804:	2a1f03e1 	mov	w1, wzr
+   1c808:	94003442 	bl	29910 <property_get_int32@plt>
+   1c80c:	71000416 	subs	w22, w0, #0x1
+   1c810:	54000b4b 	b.lt	1c978 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x8cc>  // b.tstop
+   1c814:	90ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1c818:	d0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1c81c:	2a0003f7 	mov	w23, w0
+   1c820:	911e4421 	add	x1, x1, #0x791
+   1c824:	910b6842 	add	x2, x2, #0x2da
+   1c828:	52800080 	mov	w0, #0x4                   	// #4
+   1c82c:	94003429 	bl	298d0 <__android_log_print@plt>
+   1c830:	90ffffa8 	adrp	x8, 10000 <abitag+0xfd08>
+   1c834:	91032908 	add	x8, x8, #0xca
+   1c838:	f9400109 	ldr	x9, [x8]
+   1c83c:	f8406108 	ldur	x8, [x8, #6]
+   1c840:	5280038a 	mov	w10, #0x1c                  	// #28
+   1c844:	9107c3e0 	add	x0, sp, #0x1f0
+   1c848:	f90103ff 	str	xzr, [sp, #512]
+   1c84c:	3907c3ea 	strb	w10, [sp, #496]
+   1c850:	f8081349 	stur	x9, [x26, #129]
+   1c854:	f8087348 	stur	x8, [x26, #135]
+   1c858:	3907ffff 	strb	wzr, [sp, #511]
+   1c85c:	97ffed6e 	bl	17e14 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)>
+   1c860:	3947c3e8 	ldrb	w8, [sp, #496]
+   1c864:	2a0003f8 	mov	w24, w0
+   1c868:	36000068 	tbz	w8, #0, 1c874 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x7c8>
+   1c86c:	f94103e0 	ldr	x0, [sp, #512]
+   1c870:	940033c0 	bl	29770 <operator delete(void*)@plt>
+   1c874:	340001b8 	cbz	w24, 1c8a8 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x7fc>
+   1c878:	90ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1c87c:	d0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1c880:	90ffffa3 	adrp	x3, 10000 <abitag+0xfd08>
+   1c884:	911e4421 	add	x1, x1, #0x791
+   1c888:	9135a842 	add	x2, x2, #0xd6a
+   1c88c:	91032863 	add	x3, x3, #0xca
+   1c890:	528000c0 	mov	w0, #0x6                   	// #6
+   1c894:	9400340f 	bl	298d0 <__android_log_print@plt>
+   1c898:	14000038 	b	1c978 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x8cc>
+   1c89c:	aa0203e0 	mov	x0, x2
+   1c8a0:	9400019d 	bl	1cf14 <avm_default_render(unsigned int*)>
+   1c8a4:	17fffe11 	b	1c0e8 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x3c>
+   1c8a8:	52800808 	mov	w8, #0x40                  	// #64
+   1c8ac:	6f00e400 	movi	v0.2d, #0x0
+   1c8b0:	72a00fa8 	movk	w8, #0x7d, lsl #16
+   1c8b4:	9105c3e0 	add	x0, sp, #0x170
+   1c8b8:	3c818340 	stur	q0, [x26, #24]
+   1c8bc:	3c808340 	stur	q0, [x26, #8]
+   1c8c0:	b90177f5 	str	w21, [sp, #372]
+   1c8c4:	b90173e8 	str	w8, [sp, #368]
+   1c8c8:	97fffd61 	bl	1be4c <map_vir_addr(IMEM_BUF_INFO*)>
+   1c8cc:	36f800e0 	tbz	w0, #31, 1c8e8 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x83c>
+   1c8d0:	90ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1c8d4:	f0ffff82 	adrp	x2, f000 <abitag+0xed08>
+   1c8d8:	911e4421 	add	x1, x1, #0x791
+   1c8dc:	91058842 	add	x2, x2, #0x162
+   1c8e0:	528000c0 	mov	w0, #0x6                   	// #6
+   1c8e4:	940033fb 	bl	298d0 <__android_log_print@plt>
+   1c8e8:	f940bfe8 	ldr	x8, [sp, #376]
+   1c8ec:	f0ffff80 	adrp	x0, f000 <abitag+0xed08>
+   1c8f0:	f0ffff81 	adrp	x1, f000 <abitag+0xed08>
+   1c8f4:	91224000 	add	x0, x0, #0x890
+   1c8f8:	91010108 	add	x8, x8, #0x40
+   1c8fc:	912ee421 	add	x1, x1, #0xbb9
+   1c900:	f81803a8 	stur	x8, [x29, #-128]
+   1c904:	94003417 	bl	29960 <property_set@plt>
+   1c908:	6f00e400 	movi	v0.2d, #0x0
+   1c90c:	9107c3e0 	add	x0, sp, #0x1f0
+   1c910:	2a1703e3 	mov	w3, w23
+   1c914:	ad070340 	stp	q0, q0, [x26, #224]
+   1c918:	ad060340 	stp	q0, q0, [x26, #192]
+   1c91c:	ad050340 	stp	q0, q0, [x26, #160]
+   1c920:	ad040340 	stp	q0, q0, [x26, #128]
+   1c924:	9400010b 	bl	1cd50 <sprintf(char*, char const* pass_object_size1, ...)>
+   1c928:	f85803a1 	ldur	x1, [x29, #-128]
+   1c92c:	b94173e2 	ldr	w2, [sp, #368]
+   1c930:	9107c3e0 	add	x0, sp, #0x1f0
+   1c934:	97ffece2 	bl	17cbc <dumpBuffer(char const*, unsigned char*, unsigned int)>
+   1c938:	9103c3e8 	add	x8, sp, #0xf0
+   1c93c:	2a1603e0 	mov	w0, w22
+   1c940:	9103c3f7 	add	x23, sp, #0xf0
+   1c944:	9400340f 	bl	29980 <std::__1::to_string(int)@plt>
+   1c948:	3943c3e8 	ldrb	w8, [sp, #240]
+   1c94c:	f94083e9 	ldr	x9, [sp, #256]
+   1c950:	b24002ea 	orr	x10, x23, #0x1
+   1c954:	90ffffa0 	adrp	x0, 10000 <abitag+0xfd08>
+   1c958:	7200011f 	tst	w8, #0x1
+   1c95c:	9a890141 	csel	x1, x10, x9, eq	// eq = none
+   1c960:	910db000 	add	x0, x0, #0x36c
+   1c964:	940033ff 	bl	29960 <property_set@plt>
+   1c968:	3943c3e8 	ldrb	w8, [sp, #240]
+   1c96c:	36000068 	tbz	w8, #0, 1c978 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x8cc>
+   1c970:	f94083e0 	ldr	x0, [sp, #256]
+   1c974:	9400337f 	bl	29770 <operator delete(void*)@plt>
+   1c978:	d0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1c97c:	f945d109 	ldr	x9, [x8, #2976]
+   1c980:	d000008b 	adrp	x11, 2e000 <_DYNAMIC+0x1698>
+   1c984:	f0ffff80 	adrp	x0, f000 <abitag+0xed08>
+   1c988:	d000008a 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1c98c:	9132616b 	add	x11, x11, #0xc98
+   1c990:	91000529 	add	x9, x9, #0x1
+   1c994:	913d1000 	add	x0, x0, #0xf44
+   1c998:	2a1f03e1 	mov	w1, wzr
+   1c99c:	b90c9955 	str	w21, [x10, #3224]
+   1c9a0:	f905d109 	str	x9, [x8, #2976]
+   1c9a4:	f81c83ab 	stur	x11, [x29, #-56]
+   1c9a8:	940033da 	bl	29910 <property_get_int32@plt>
+   1c9ac:	7100041f 	cmp	w0, #0x1
+   1c9b0:	540018a1 	b.ne	1ccc4 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc18>  // b.any
+   1c9b4:	b0ffff88 	adrp	x8, d000 <abitag+0xcd08>
+   1c9b8:	91265508 	add	x8, x8, #0x995
+   1c9bc:	3dc00101 	ldr	q1, [x8]
+   1c9c0:	6f00e400 	movi	v0.2d, #0x0
+   1c9c4:	9107c3e0 	add	x0, sp, #0x1f0
+   1c9c8:	a905ffff 	stp	xzr, xzr, [sp, #88]
+   1c9cc:	ad070340 	stp	q0, q0, [x26, #224]
+   1c9d0:	ad060340 	stp	q0, q0, [x26, #192]
+   1c9d4:	ad050340 	stp	q0, q0, [x26, #160]
+   1c9d8:	ad040341 	stp	q1, q0, [x26, #128]
+   1c9dc:	f9002bff 	str	xzr, [sp, #80]
+   1c9e0:	940035fc 	bl	2a1d0 <strlen@plt>
+   1c9e4:	b100401f 	cmn	x0, #0x10
+   1c9e8:	54001a42 	b.cs	1cd30 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc84>  // b.hs, b.nlast
+   1c9ec:	aa0003f5 	mov	x21, x0
+   1c9f0:	f1005c1f 	cmp	x0, #0x17
+   1c9f4:	540000e2 	b.cs	1ca10 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x964>  // b.hs, b.nlast
+   1c9f8:	910143e9 	add	x9, sp, #0x50
+   1c9fc:	531f7aa8 	lsl	w8, w21, #1
+   1ca00:	b2400136 	orr	x22, x9, #0x1
+   1ca04:	390143e8 	strb	w8, [sp, #80]
+   1ca08:	b5000155 	cbnz	x21, 1ca30 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x984>
+   1ca0c:	1400000d 	b	1ca40 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x994>
+   1ca10:	910042a8 	add	x8, x21, #0x10
+   1ca14:	927ced17 	and	x23, x8, #0xfffffffffffffff0
+   1ca18:	aa1703e0 	mov	x0, x23
+   1ca1c:	9400334d 	bl	29750 <operator new(unsigned long)@plt>
+   1ca20:	b24002e8 	orr	x8, x23, #0x1
+   1ca24:	aa0003f6 	mov	x22, x0
+   1ca28:	a90583f5 	stp	x21, x0, [sp, #88]
+   1ca2c:	f9002be8 	str	x8, [sp, #80]
+   1ca30:	9107c3e1 	add	x1, sp, #0x1f0
+   1ca34:	aa1603e0 	mov	x0, x22
+   1ca38:	aa1503e2 	mov	x2, x21
+   1ca3c:	940035e9 	bl	2a1e0 <memcpy@plt>
+   1ca40:	b0000098 	adrp	x24, 2d000 <_DYNAMIC+0x698>
+   1ca44:	f9400718 	ldr	x24, [x24, #8]
+   1ca48:	910143e0 	add	x0, sp, #0x50
+   1ca4c:	5280a002 	mov	w2, #0x500                 	// #1280
+   1ca50:	52806403 	mov	w3, #0x320                 	// #800
+   1ca54:	b9400301 	ldr	w1, [x24]
+   1ca58:	52800024 	mov	w4, #0x1                   	// #1
+   1ca5c:	52832105 	mov	w5, #0x1908                	// #6408
+   1ca60:	38356adf 	strb	wzr, [x22, x21]
+   1ca64:	940000e6 	bl	1cdfc <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)>
+   1ca68:	394143e8 	ldrb	w8, [sp, #80]
+   1ca6c:	36000068 	tbz	w8, #0, 1ca78 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x9cc>
+   1ca70:	f94033e0 	ldr	x0, [sp, #96]
+   1ca74:	9400333f 	bl	29770 <operator delete(void*)@plt>
+   1ca78:	b0ffff88 	adrp	x8, d000 <abitag+0xcd08>
+   1ca7c:	91348d08 	add	x8, x8, #0xd23
+   1ca80:	3dc00101 	ldr	q1, [x8]
+   1ca84:	6f00e400 	movi	v0.2d, #0x0
+   1ca88:	9105c3e0 	add	x0, sp, #0x170
+   1ca8c:	a9047fff 	stp	xzr, xzr, [sp, #64]
+   1ca90:	ad030340 	stp	q0, q0, [x26, #96]
+   1ca94:	ad020340 	stp	q0, q0, [x26, #64]
+   1ca98:	ad010340 	stp	q0, q0, [x26, #32]
+   1ca9c:	ad000341 	stp	q1, q0, [x26]
+   1caa0:	f9001fff 	str	xzr, [sp, #56]
+   1caa4:	940035cb 	bl	2a1d0 <strlen@plt>
+   1caa8:	b100401f 	cmn	x0, #0x10
+   1caac:	54001462 	b.cs	1cd38 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc8c>  // b.hs, b.nlast
+   1cab0:	aa0003f5 	mov	x21, x0
+   1cab4:	f1005c1f 	cmp	x0, #0x17
+   1cab8:	540000e2 	b.cs	1cad4 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xa28>  // b.hs, b.nlast
+   1cabc:	9100e3e9 	add	x9, sp, #0x38
+   1cac0:	531f7aa8 	lsl	w8, w21, #1
+   1cac4:	b2400136 	orr	x22, x9, #0x1
+   1cac8:	3900e3e8 	strb	w8, [sp, #56]
+   1cacc:	b5000155 	cbnz	x21, 1caf4 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xa48>
+   1cad0:	1400000d 	b	1cb04 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xa58>
+   1cad4:	910042a8 	add	x8, x21, #0x10
+   1cad8:	927ced17 	and	x23, x8, #0xfffffffffffffff0
+   1cadc:	aa1703e0 	mov	x0, x23
+   1cae0:	9400331c 	bl	29750 <operator new(unsigned long)@plt>
+   1cae4:	b24002e8 	orr	x8, x23, #0x1
+   1cae8:	aa0003f6 	mov	x22, x0
+   1caec:	a90403f5 	stp	x21, x0, [sp, #64]
+   1caf0:	f9001fe8 	str	x8, [sp, #56]
+   1caf4:	9105c3e1 	add	x1, sp, #0x170
+   1caf8:	aa1603e0 	mov	x0, x22
+   1cafc:	aa1503e2 	mov	x2, x21
+   1cb00:	940035b8 	bl	2a1e0 <memcpy@plt>
+   1cb04:	b9400701 	ldr	w1, [x24, #4]
+   1cb08:	9100e3e0 	add	x0, sp, #0x38
+   1cb0c:	5280a002 	mov	w2, #0x500                 	// #1280
+   1cb10:	52806403 	mov	w3, #0x320                 	// #800
+   1cb14:	52800024 	mov	w4, #0x1                   	// #1
+   1cb18:	52832105 	mov	w5, #0x1908                	// #6408
+   1cb1c:	9101c3fa 	add	x26, sp, #0x70
+   1cb20:	38356adf 	strb	wzr, [x22, x21]
+   1cb24:	940000b6 	bl	1cdfc <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)>
+   1cb28:	3940e3e8 	ldrb	w8, [sp, #56]
+   1cb2c:	36000068 	tbz	w8, #0, 1cb38 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xa8c>
+   1cb30:	f94027e0 	ldr	x0, [sp, #72]
+   1cb34:	9400330f 	bl	29770 <operator delete(void*)@plt>
+   1cb38:	f0ffff88 	adrp	x8, f000 <abitag+0xed08>
+   1cb3c:	91140508 	add	x8, x8, #0x501
+   1cb40:	3dc00101 	ldr	q1, [x8]
+   1cb44:	6f00e400 	movi	v0.2d, #0x0
+   1cb48:	9103c3e0 	add	x0, sp, #0xf0
+   1cb4c:	a902ffff 	stp	xzr, xzr, [sp, #40]
+   1cb50:	ad070340 	stp	q0, q0, [x26, #224]
+   1cb54:	ad060340 	stp	q0, q0, [x26, #192]
+   1cb58:	ad050340 	stp	q0, q0, [x26, #160]
+   1cb5c:	ad040341 	stp	q1, q0, [x26, #128]
+   1cb60:	f90013ff 	str	xzr, [sp, #32]
+   1cb64:	9400359b 	bl	2a1d0 <strlen@plt>
+   1cb68:	b100401f 	cmn	x0, #0x10
+   1cb6c:	54000ea2 	b.cs	1cd40 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc94>  // b.hs, b.nlast
+   1cb70:	aa0003f5 	mov	x21, x0
+   1cb74:	f1005c1f 	cmp	x0, #0x17
+   1cb78:	540000e2 	b.cs	1cb94 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xae8>  // b.hs, b.nlast
+   1cb7c:	910083e9 	add	x9, sp, #0x20
+   1cb80:	531f7aa8 	lsl	w8, w21, #1
+   1cb84:	b2400136 	orr	x22, x9, #0x1
+   1cb88:	390083e8 	strb	w8, [sp, #32]
+   1cb8c:	b5000155 	cbnz	x21, 1cbb4 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xb08>
+   1cb90:	1400000d 	b	1cbc4 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xb18>
+   1cb94:	910042a8 	add	x8, x21, #0x10
+   1cb98:	927ced17 	and	x23, x8, #0xfffffffffffffff0
+   1cb9c:	aa1703e0 	mov	x0, x23
+   1cba0:	940032ec 	bl	29750 <operator new(unsigned long)@plt>
+   1cba4:	b24002e8 	orr	x8, x23, #0x1
+   1cba8:	aa0003f6 	mov	x22, x0
+   1cbac:	a90283f5 	stp	x21, x0, [sp, #40]
+   1cbb0:	f90013e8 	str	x8, [sp, #32]
+   1cbb4:	9103c3e1 	add	x1, sp, #0xf0
+   1cbb8:	aa1603e0 	mov	x0, x22
+   1cbbc:	aa1503e2 	mov	x2, x21
+   1cbc0:	94003588 	bl	2a1e0 <memcpy@plt>
+   1cbc4:	b9400b01 	ldr	w1, [x24, #8]
+   1cbc8:	910083e0 	add	x0, sp, #0x20
+   1cbcc:	5280a002 	mov	w2, #0x500                 	// #1280
+   1cbd0:	52806403 	mov	w3, #0x320                 	// #800
+   1cbd4:	52800024 	mov	w4, #0x1                   	// #1
+   1cbd8:	52832105 	mov	w5, #0x1908                	// #6408
+   1cbdc:	38356adf 	strb	wzr, [x22, x21]
+   1cbe0:	94000087 	bl	1cdfc <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)>
+   1cbe4:	394083e8 	ldrb	w8, [sp, #32]
+   1cbe8:	36000068 	tbz	w8, #0, 1cbf4 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xb48>
+   1cbec:	f9401be0 	ldr	x0, [sp, #48]
+   1cbf0:	940032e0 	bl	29770 <operator delete(void*)@plt>
+   1cbf4:	f0ffff88 	adrp	x8, f000 <abitag+0xed08>
+   1cbf8:	910ce108 	add	x8, x8, #0x338
+   1cbfc:	3dc00101 	ldr	q1, [x8]
+   1cc00:	6f00e400 	movi	v0.2d, #0x0
+   1cc04:	9101c3e0 	add	x0, sp, #0x70
+   1cc08:	a9017fff 	stp	xzr, xzr, [sp, #16]
+   1cc0c:	ad030340 	stp	q0, q0, [x26, #96]
+   1cc10:	ad020340 	stp	q0, q0, [x26, #64]
+   1cc14:	ad010340 	stp	q0, q0, [x26, #32]
+   1cc18:	ad0383e1 	stp	q1, q0, [sp, #112]
+   1cc1c:	f90007ff 	str	xzr, [sp, #8]
+   1cc20:	9400356c 	bl	2a1d0 <strlen@plt>
+   1cc24:	b100401f 	cmn	x0, #0x10
+   1cc28:	54000902 	b.cs	1cd48 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc9c>  // b.hs, b.nlast
+   1cc2c:	aa0003f5 	mov	x21, x0
+   1cc30:	f1005c1f 	cmp	x0, #0x17
+   1cc34:	540000e2 	b.cs	1cc50 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xba4>  // b.hs, b.nlast
+   1cc38:	910023e9 	add	x9, sp, #0x8
+   1cc3c:	531f7aa8 	lsl	w8, w21, #1
+   1cc40:	b2400136 	orr	x22, x9, #0x1
+   1cc44:	390023e8 	strb	w8, [sp, #8]
+   1cc48:	b5000155 	cbnz	x21, 1cc70 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xbc4>
+   1cc4c:	1400000d 	b	1cc80 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xbd4>
+   1cc50:	910042a8 	add	x8, x21, #0x10
+   1cc54:	927ced17 	and	x23, x8, #0xfffffffffffffff0
+   1cc58:	aa1703e0 	mov	x0, x23
+   1cc5c:	940032bd 	bl	29750 <operator new(unsigned long)@plt>
+   1cc60:	b24002e8 	orr	x8, x23, #0x1
+   1cc64:	aa0003f6 	mov	x22, x0
+   1cc68:	a90103f5 	stp	x21, x0, [sp, #16]
+   1cc6c:	f90007e8 	str	x8, [sp, #8]
+   1cc70:	9101c3e1 	add	x1, sp, #0x70
+   1cc74:	aa1603e0 	mov	x0, x22
+   1cc78:	aa1503e2 	mov	x2, x21
+   1cc7c:	94003559 	bl	2a1e0 <memcpy@plt>
+   1cc80:	b9400f01 	ldr	w1, [x24, #12]
+   1cc84:	910023e0 	add	x0, sp, #0x8
+   1cc88:	5280a002 	mov	w2, #0x500                 	// #1280
+   1cc8c:	52806403 	mov	w3, #0x320                 	// #800
+   1cc90:	52800024 	mov	w4, #0x1                   	// #1
+   1cc94:	52832105 	mov	w5, #0x1908                	// #6408
+   1cc98:	38356adf 	strb	wzr, [x22, x21]
+   1cc9c:	94000058 	bl	1cdfc <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)>
+   1cca0:	394023e8 	ldrb	w8, [sp, #8]
+   1cca4:	36000068 	tbz	w8, #0, 1ccb0 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc04>
+   1cca8:	f9400fe0 	ldr	x0, [sp, #24]
+   1ccac:	940032b1 	bl	29770 <operator delete(void*)@plt>
+   1ccb0:	f0ffff80 	adrp	x0, f000 <abitag+0xed08>
+   1ccb4:	b0ffff81 	adrp	x1, d000 <abitag+0xcd08>
+   1ccb8:	913d1000 	add	x0, x0, #0xf44
+   1ccbc:	9138c421 	add	x1, x1, #0xe31
+   1ccc0:	94003328 	bl	29960 <property_set@plt>
+   1ccc4:	f9400288 	ldr	x8, [x20]
+   1ccc8:	f9400361 	ldr	x1, [x27]
+   1cccc:	d10243a2 	sub	x2, x29, #0x90
+   1ccd0:	9101b3e4 	add	x4, sp, #0x6c
+   1ccd4:	f9400d08 	ldr	x8, [x8, #24]
+   1ccd8:	aa1403e0 	mov	x0, x20
+   1ccdc:	aa1303e3 	mov	x3, x19
+   1cce0:	d63f0100 	blr	x8
+   1cce4:	2a0003f3 	mov	w19, w0
+   1cce8:	52800020 	mov	w0, #0x1                   	// #1
+   1ccec:	940034f5 	bl	2a0c0 <systemTime@plt>
+   1ccf0:	34000113 	cbz	w19, 1cd10 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0xc64>
+   1ccf4:	90ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1ccf8:	b0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1ccfc:	911e4421 	add	x1, x1, #0x791
+   1cd00:	91127042 	add	x2, x2, #0x49c
+   1cd04:	528000c0 	mov	w0, #0x6                   	// #6
+   1cd08:	2a1303e3 	mov	w3, w19
+   1cd0c:	940032f1 	bl	298d0 <__android_log_print@plt>
+   1cd10:	90ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1cd14:	f0ffff82 	adrp	x2, f000 <abitag+0xed08>
+   1cd18:	911e4421 	add	x1, x1, #0x791
+   1cd1c:	91144442 	add	x2, x2, #0x511
+   1cd20:	528000c0 	mov	w0, #0x6                   	// #6
+   1cd24:	940032eb 	bl	298d0 <__android_log_print@plt>
+   1cd28:	17fffcf0 	b	1c0e8 <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)+0x3c>
+   1cd2c:	9400328d 	bl	29760 <__stack_chk_fail@plt>
+   1cd30:	910143e0 	add	x0, sp, #0x50
+   1cd34:	9400352f 	bl	2a1f0 <std::__1::__basic_string_common<true>::__throw_length_error() const@plt>
+   1cd38:	9100e3e0 	add	x0, sp, #0x38
+   1cd3c:	9400352d 	bl	2a1f0 <std::__1::__basic_string_common<true>::__throw_length_error() const@plt>
+   1cd40:	910083e0 	add	x0, sp, #0x20
+   1cd44:	9400352b 	bl	2a1f0 <std::__1::__basic_string_common<true>::__throw_length_error() const@plt>
+   1cd48:	910023e0 	add	x0, sp, #0x8
+   1cd4c:	94003529 	bl	2a1f0 <std::__1::__basic_string_common<true>::__throw_length_error() const@plt>
+
+000000000001cd50 <sprintf(char*, char const* pass_object_size1, ...)>:
+   1cd50:	d10483ff 	sub	sp, sp, #0x120
+   1cd54:	a9107bfd 	stp	x29, x30, [sp, #256]
+   1cd58:	a9114ffc 	stp	x28, x19, [sp, #272]
+   1cd5c:	910403fd 	add	x29, sp, #0x100
+   1cd60:	a93893a3 	stp	x3, x4, [x29, #-120]
+   1cd64:	a9399ba5 	stp	x5, x6, [x29, #-104]
+   1cd68:	f81a83a7 	stur	x7, [x29, #-88]
+   1cd6c:	ad008be1 	stp	q1, q2, [sp, #16]
+   1cd70:	ad0193e3 	stp	q3, q4, [sp, #48]
+   1cd74:	3d8003e0 	str	q0, [sp]
+   1cd78:	ad029be5 	stp	q5, q6, [sp, #80]
+   1cd7c:	3d801fe7 	str	q7, [sp, #112]
+   1cd80:	d53bd053 	mrs	x19, tpidr_el0
+   1cd84:	f9401668 	ldr	x8, [x19, #40]
+   1cd88:	d101e3aa 	sub	x10, x29, #0x78
+   1cd8c:	910003eb 	mov	x11, sp
+   1cd90:	6f00e400 	movi	v0.2d, #0x0
+   1cd94:	f81f83a8 	stur	x8, [x29, #-8]
+   1cd98:	928004e8 	mov	x8, #0xffffffffffffffd8    	// #-40
+   1cd9c:	910083a9 	add	x9, x29, #0x20
+   1cda0:	f2dff008 	movk	x8, #0xff80, lsl #32
+   1cda4:	9100a14a 	add	x10, x10, #0x28
+   1cda8:	9102016b 	add	x11, x11, #0x80
+   1cdac:	ad3e83a0 	stp	q0, q0, [x29, #-48]
+   1cdb0:	a93d2ba9 	stp	x9, x10, [x29, #-48]
+   1cdb4:	a93e23ab 	stp	x11, x8, [x29, #-32]
+   1cdb8:	ad7e87a0 	ldp	q0, q1, [x29, #-48]
+   1cdbc:	b0ffff83 	adrp	x3, d000 <abitag+0xcd08>
+   1cdc0:	91342863 	add	x3, x3, #0xd0a
+   1cdc4:	d10143a4 	sub	x4, x29, #0x50
+   1cdc8:	52801002 	mov	w2, #0x80                  	// #128
+   1cdcc:	2a1f03e1 	mov	w1, wzr
+   1cdd0:	ad3d87a0 	stp	q0, q1, [x29, #-80]
+   1cdd4:	94003293 	bl	29820 <__vsprintf_chk@plt>
+   1cdd8:	f9401668 	ldr	x8, [x19, #40]
+   1cddc:	f85f83a9 	ldur	x9, [x29, #-8]
+   1cde0:	eb09011f 	cmp	x8, x9
+   1cde4:	540000a1 	b.ne	1cdf8 <sprintf(char*, char const* pass_object_size1, ...)+0xa8>  // b.any
+   1cde8:	a9514ffc 	ldp	x28, x19, [sp, #272]
+   1cdec:	a9507bfd 	ldp	x29, x30, [sp, #256]
+   1cdf0:	910483ff 	add	sp, sp, #0x120
+   1cdf4:	d65f03c0 	ret
+   1cdf8:	9400325a 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001cdfc <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)>:
+   1cdfc:	d10203ff 	sub	sp, sp, #0x80
+   1ce00:	a9027bfd 	stp	x29, x30, [sp, #32]
+   1ce04:	f9001bfb 	str	x27, [sp, #48]
+   1ce08:	a90467fa 	stp	x26, x25, [sp, #64]
+   1ce0c:	a9055ff8 	stp	x24, x23, [sp, #80]
+   1ce10:	a90657f6 	stp	x22, x21, [sp, #96]
+   1ce14:	a9074ff4 	stp	x20, x19, [sp, #112]
+   1ce18:	910083fd 	add	x29, sp, #0x20
+   1ce1c:	d53bd05b 	mrs	x27, tpidr_el0
+   1ce20:	f9401768 	ldr	x8, [x27, #40]
+   1ce24:	1b037c49 	mul	w9, w2, w3
+   1ce28:	531e7529 	lsl	w9, w9, #2
+   1ce2c:	93407d34 	sxtw	x20, w9
+   1ce30:	aa0003fa 	mov	x26, x0
+   1ce34:	aa1403e0 	mov	x0, x20
+   1ce38:	2a0503f5 	mov	w21, w5
+   1ce3c:	2a0403f6 	mov	w22, w4
+   1ce40:	2a0303f7 	mov	w23, w3
+   1ce44:	2a0203f8 	mov	w24, w2
+   1ce48:	2a0103f9 	mov	w25, w1
+   1ce4c:	f81f83a8 	stur	x8, [x29, #-8]
+   1ce50:	94003408 	bl	29e70 <operator new[](unsigned long)@plt>
+   1ce54:	aa0003f3 	mov	x19, x0
+   1ce58:	120002c5 	and	w5, w22, #0x1
+   1ce5c:	2a1903e0 	mov	w0, w25
+   1ce60:	aa1303e1 	mov	x1, x19
+   1ce64:	2a1803e2 	mov	w2, w24
+   1ce68:	2a1703e3 	mov	w3, w23
+   1ce6c:	2a1503e4 	mov	w4, w21
+   1ce70:	97fffc30 	bl	1bf30 <expt_texture_to_buff(unsigned int, char*, int, int, unsigned int, bool)>
+   1ce74:	910003e0 	mov	x0, sp
+   1ce78:	aa1a03e1 	mov	x1, x26
+   1ce7c:	910003f5 	mov	x21, sp
+   1ce80:	940034e0 	bl	2a200 <std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::basic_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@plt>
+   1ce84:	394003e8 	ldrb	w8, [sp]
+   1ce88:	f9400be9 	ldr	x9, [sp, #16]
+   1ce8c:	b24002aa 	orr	x10, x21, #0x1
+   1ce90:	b0ffff81 	adrp	x1, d000 <abitag+0xcd08>
+   1ce94:	7200011f 	tst	w8, #0x1
+   1ce98:	9a890140 	csel	x0, x10, x9, eq	// eq = none
+   1ce9c:	910bb421 	add	x1, x1, #0x2ed
+   1cea0:	94003280 	bl	298a0 <fopen@plt>
+   1cea4:	b4000120 	cbz	x0, 1cec8 <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)+0xcc>
+   1cea8:	aa0003f5 	mov	x21, x0
+   1ceac:	52800021 	mov	w1, #0x1                   	// #1
+   1ceb0:	aa1303e0 	mov	x0, x19
+   1ceb4:	aa1403e2 	mov	x2, x20
+   1ceb8:	aa1503e3 	mov	x3, x21
+   1cebc:	940034d5 	bl	2a210 <fwrite_unlocked@plt>
+   1cec0:	aa1503e0 	mov	x0, x21
+   1cec4:	9400327f 	bl	298c0 <fclose@plt>
+   1cec8:	394003e8 	ldrb	w8, [sp]
+   1cecc:	36000068 	tbz	w8, #0, 1ced8 <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)+0xdc>
+   1ced0:	f9400be0 	ldr	x0, [sp, #16]
+   1ced4:	94003227 	bl	29770 <operator delete(void*)@plt>
+   1ced8:	aa1303e0 	mov	x0, x19
+   1cedc:	9400347d 	bl	2a0d0 <operator delete[](void*)@plt>
+   1cee0:	f9401768 	ldr	x8, [x27, #40]
+   1cee4:	f85f83a9 	ldur	x9, [x29, #-8]
+   1cee8:	eb09011f 	cmp	x8, x9
+   1ceec:	54000121 	b.ne	1cf10 <save_texture_to_file(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >, unsigned int, int, int, bool, unsigned int)+0x114>  // b.any
+   1cef0:	a9474ff4 	ldp	x20, x19, [sp, #112]
+   1cef4:	a94657f6 	ldp	x22, x21, [sp, #96]
+   1cef8:	a9455ff8 	ldp	x24, x23, [sp, #80]
+   1cefc:	a94467fa 	ldp	x26, x25, [sp, #64]
+   1cf00:	f9401bfb 	ldr	x27, [sp, #48]
+   1cf04:	a9427bfd 	ldp	x29, x30, [sp, #32]
+   1cf08:	910203ff 	add	sp, sp, #0x80
+   1cf0c:	d65f03c0 	ret
+   1cf10:	94003214 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001cf14 <avm_default_render(unsigned int*)>:
+   1cf14:	d10243ff 	sub	sp, sp, #0x90
+   1cf18:	a9057bfd 	stp	x29, x30, [sp, #80]
+   1cf1c:	a9065ff8 	stp	x24, x23, [sp, #96]
+   1cf20:	a90757f6 	stp	x22, x21, [sp, #112]
+   1cf24:	a9084ff4 	stp	x20, x19, [sp, #128]
+   1cf28:	910143fd 	add	x29, sp, #0x50
+   1cf2c:	d53bd054 	mrs	x20, tpidr_el0
+   1cf30:	f9401688 	ldr	x8, [x20, #40]
+   1cf34:	d0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1cf38:	912ea129 	add	x9, x9, #0xba8
+   1cf3c:	aa0003f3 	mov	x19, x0
+   1cf40:	f81f83a8 	stur	x8, [x29, #-8]
+   1cf44:	29400d22 	ldp	w2, w3, [x9]
+   1cf48:	2a1f03e0 	mov	w0, wzr
+   1cf4c:	2a1f03e1 	mov	w1, wzr
+   1cf50:	940034b4 	bl	2a220 <glViewport@plt>
+   1cf54:	90000095 	adrp	x21, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1cf58:	f947aeb5 	ldr	x21, [x21, #3928]
+   1cf5c:	b94002a8 	ldr	w8, [x21]
+   1cf60:	51002908 	sub	w8, w8, #0xa
+   1cf64:	7100151f 	cmp	w8, #0x5
+   1cf68:	54000063 	b.cc	1cf74 <avm_default_render(unsigned int*)+0x60>  // b.lo, b.ul, b.last
+   1cf6c:	528001c8 	mov	w8, #0xe                   	// #14
+   1cf70:	b90002a8 	str	w8, [x21]
+   1cf74:	b9400261 	ldr	w1, [x19]
+   1cf78:	5291aca0 	mov	w0, #0x8d65                	// #36197
+   1cf7c:	94003479 	bl	2a160 <glBindTexture@plt>
+   1cf80:	b0000096 	adrp	x22, 2d000 <_DYNAMIC+0x698>
+   1cf84:	f9400ad6 	ldr	x22, [x22, #16]
+   1cf88:	b94002c0 	ldr	w0, [x22]
+   1cf8c:	940034a9 	bl	2a230 <glUseProgram@plt>
+   1cf90:	b0000097 	adrp	x23, 2d000 <_DYNAMIC+0x698>
+   1cf94:	f9400ef7 	ldr	x23, [x23, #24]
+   1cf98:	2a1f03e1 	mov	w1, wzr
+   1cf9c:	b94002e0 	ldr	w0, [x23]
+   1cfa0:	940034a8 	bl	2a240 <glUniform1i@plt>
+   1cfa4:	b94002a8 	ldr	w8, [x21]
+   1cfa8:	7100291f 	cmp	w8, #0xa
+   1cfac:	540000c0 	b.eq	1cfc4 <avm_default_render(unsigned int*)+0xb0>  // b.none
+   1cfb0:	7100391f 	cmp	w8, #0xe
+   1cfb4:	540004c1 	b.ne	1d04c <avm_default_render(unsigned int*)+0x138>  // b.any
+   1cfb8:	90ffffa8 	adrp	x8, 10000 <abitag+0xfd08>
+   1cfbc:	912d2108 	add	x8, x8, #0xb48
+   1cfc0:	14000003 	b	1cfcc <avm_default_render(unsigned int*)+0xb8>
+   1cfc4:	90ffffa8 	adrp	x8, 10000 <abitag+0xfd08>
+   1cfc8:	912f2108 	add	x8, x8, #0xbc8
+   1cfcc:	b0000098 	adrp	x24, 2d000 <_DYNAMIC+0x698>
+   1cfd0:	f9401318 	ldr	x24, [x24, #32]
+   1cfd4:	90ffffa9 	adrp	x9, 10000 <abitag+0xfd08>
+   1cfd8:	912e2129 	add	x9, x9, #0xb88
+   1cfdc:	ad400500 	ldp	q0, q1, [x8]
+   1cfe0:	ad400d22 	ldp	q2, q3, [x9]
+   1cfe4:	b9400300 	ldr	w0, [x24]
+   1cfe8:	910083e5 	add	x5, sp, #0x20
+   1cfec:	52800041 	mov	w1, #0x2                   	// #2
+   1cff0:	528280c2 	mov	w2, #0x1406                	// #5126
+   1cff4:	2a1f03e3 	mov	w3, wzr
+   1cff8:	2a1f03e4 	mov	w4, wzr
+   1cffc:	ad0107e0 	stp	q0, q1, [sp, #32]
+   1d000:	ad000fe2 	stp	q2, q3, [sp]
+   1d004:	94003493 	bl	2a250 <glVertexAttribPointer@plt>
+   1d008:	b9400300 	ldr	w0, [x24]
+   1d00c:	94003495 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d010:	90000098 	adrp	x24, 2d000 <_DYNAMIC+0x698>
+   1d014:	f9401718 	ldr	x24, [x24, #40]
+   1d018:	910003e5 	mov	x5, sp
+   1d01c:	52800041 	mov	w1, #0x2                   	// #2
+   1d020:	528280c2 	mov	w2, #0x1406                	// #5126
+   1d024:	b9400300 	ldr	w0, [x24]
+   1d028:	2a1f03e3 	mov	w3, wzr
+   1d02c:	2a1f03e4 	mov	w4, wzr
+   1d030:	94003488 	bl	2a250 <glVertexAttribPointer@plt>
+   1d034:	b9400300 	ldr	w0, [x24]
+   1d038:	9400348a 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d03c:	528000c0 	mov	w0, #0x6                   	// #6
+   1d040:	52800082 	mov	w2, #0x4                   	// #4
+   1d044:	2a1f03e1 	mov	w1, wzr
+   1d048:	9400348a 	bl	2a270 <glDrawArrays@plt>
+   1d04c:	b9400661 	ldr	w1, [x19, #4]
+   1d050:	5291aca0 	mov	w0, #0x8d65                	// #36197
+   1d054:	94003443 	bl	2a160 <glBindTexture@plt>
+   1d058:	b94002c0 	ldr	w0, [x22]
+   1d05c:	94003475 	bl	2a230 <glUseProgram@plt>
+   1d060:	b94002e0 	ldr	w0, [x23]
+   1d064:	2a1f03e1 	mov	w1, wzr
+   1d068:	94003476 	bl	2a240 <glUniform1i@plt>
+   1d06c:	b94002a8 	ldr	w8, [x21]
+   1d070:	71002d1f 	cmp	w8, #0xb
+   1d074:	540000c0 	b.eq	1d08c <avm_default_render(unsigned int*)+0x178>  // b.none
+   1d078:	7100391f 	cmp	w8, #0xe
+   1d07c:	540004c1 	b.ne	1d114 <avm_default_render(unsigned int*)+0x200>  // b.any
+   1d080:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1d084:	912ea108 	add	x8, x8, #0xba8
+   1d088:	14000003 	b	1d094 <avm_default_render(unsigned int*)+0x180>
+   1d08c:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1d090:	912f2108 	add	x8, x8, #0xbc8
+   1d094:	90000098 	adrp	x24, 2d000 <_DYNAMIC+0x698>
+   1d098:	f9401318 	ldr	x24, [x24, #32]
+   1d09c:	f0ffff89 	adrp	x9, 10000 <abitag+0xfd08>
+   1d0a0:	912e2129 	add	x9, x9, #0xb88
+   1d0a4:	ad400500 	ldp	q0, q1, [x8]
+   1d0a8:	ad400d22 	ldp	q2, q3, [x9]
+   1d0ac:	b9400300 	ldr	w0, [x24]
+   1d0b0:	910083e5 	add	x5, sp, #0x20
+   1d0b4:	52800041 	mov	w1, #0x2                   	// #2
+   1d0b8:	528280c2 	mov	w2, #0x1406                	// #5126
+   1d0bc:	2a1f03e3 	mov	w3, wzr
+   1d0c0:	2a1f03e4 	mov	w4, wzr
+   1d0c4:	ad0107e0 	stp	q0, q1, [sp, #32]
+   1d0c8:	ad000fe2 	stp	q2, q3, [sp]
+   1d0cc:	94003461 	bl	2a250 <glVertexAttribPointer@plt>
+   1d0d0:	b9400300 	ldr	w0, [x24]
+   1d0d4:	94003463 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d0d8:	90000098 	adrp	x24, 2d000 <_DYNAMIC+0x698>
+   1d0dc:	f9401718 	ldr	x24, [x24, #40]
+   1d0e0:	910003e5 	mov	x5, sp
+   1d0e4:	52800041 	mov	w1, #0x2                   	// #2
+   1d0e8:	528280c2 	mov	w2, #0x1406                	// #5126
+   1d0ec:	b9400300 	ldr	w0, [x24]
+   1d0f0:	2a1f03e3 	mov	w3, wzr
+   1d0f4:	2a1f03e4 	mov	w4, wzr
+   1d0f8:	94003456 	bl	2a250 <glVertexAttribPointer@plt>
+   1d0fc:	b9400300 	ldr	w0, [x24]
+   1d100:	94003458 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d104:	528000c0 	mov	w0, #0x6                   	// #6
+   1d108:	52800082 	mov	w2, #0x4                   	// #4
+   1d10c:	2a1f03e1 	mov	w1, wzr
+   1d110:	94003458 	bl	2a270 <glDrawArrays@plt>
+   1d114:	b9400a61 	ldr	w1, [x19, #8]
+   1d118:	5291aca0 	mov	w0, #0x8d65                	// #36197
+   1d11c:	94003411 	bl	2a160 <glBindTexture@plt>
+   1d120:	b94002c0 	ldr	w0, [x22]
+   1d124:	94003443 	bl	2a230 <glUseProgram@plt>
+   1d128:	b94002e0 	ldr	w0, [x23]
+   1d12c:	2a1f03e1 	mov	w1, wzr
+   1d130:	94003444 	bl	2a240 <glUniform1i@plt>
+   1d134:	b94002a8 	ldr	w8, [x21]
+   1d138:	7100311f 	cmp	w8, #0xc
+   1d13c:	540000c0 	b.eq	1d154 <avm_default_render(unsigned int*)+0x240>  // b.none
+   1d140:	7100391f 	cmp	w8, #0xe
+   1d144:	540004c1 	b.ne	1d1dc <avm_default_render(unsigned int*)+0x2c8>  // b.any
+   1d148:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1d14c:	912fa108 	add	x8, x8, #0xbe8
+   1d150:	14000003 	b	1d15c <avm_default_render(unsigned int*)+0x248>
+   1d154:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1d158:	912f2108 	add	x8, x8, #0xbc8
+   1d15c:	90000098 	adrp	x24, 2d000 <_DYNAMIC+0x698>
+   1d160:	f9401318 	ldr	x24, [x24, #32]
+   1d164:	f0ffff89 	adrp	x9, 10000 <abitag+0xfd08>
+   1d168:	912e2129 	add	x9, x9, #0xb88
+   1d16c:	ad400500 	ldp	q0, q1, [x8]
+   1d170:	ad400d22 	ldp	q2, q3, [x9]
+   1d174:	b9400300 	ldr	w0, [x24]
+   1d178:	910083e5 	add	x5, sp, #0x20
+   1d17c:	52800041 	mov	w1, #0x2                   	// #2
+   1d180:	528280c2 	mov	w2, #0x1406                	// #5126
+   1d184:	2a1f03e3 	mov	w3, wzr
+   1d188:	2a1f03e4 	mov	w4, wzr
+   1d18c:	ad0107e0 	stp	q0, q1, [sp, #32]
+   1d190:	ad000fe2 	stp	q2, q3, [sp]
+   1d194:	9400342f 	bl	2a250 <glVertexAttribPointer@plt>
+   1d198:	b9400300 	ldr	w0, [x24]
+   1d19c:	94003431 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d1a0:	90000098 	adrp	x24, 2d000 <_DYNAMIC+0x698>
+   1d1a4:	f9401718 	ldr	x24, [x24, #40]
+   1d1a8:	910003e5 	mov	x5, sp
+   1d1ac:	52800041 	mov	w1, #0x2                   	// #2
+   1d1b0:	528280c2 	mov	w2, #0x1406                	// #5126
+   1d1b4:	b9400300 	ldr	w0, [x24]
+   1d1b8:	2a1f03e3 	mov	w3, wzr
+   1d1bc:	2a1f03e4 	mov	w4, wzr
+   1d1c0:	94003424 	bl	2a250 <glVertexAttribPointer@plt>
+   1d1c4:	b9400300 	ldr	w0, [x24]
+   1d1c8:	94003426 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d1cc:	528000c0 	mov	w0, #0x6                   	// #6
+   1d1d0:	52800082 	mov	w2, #0x4                   	// #4
+   1d1d4:	2a1f03e1 	mov	w1, wzr
+   1d1d8:	94003426 	bl	2a270 <glDrawArrays@plt>
+   1d1dc:	b9400e61 	ldr	w1, [x19, #12]
+   1d1e0:	5291aca0 	mov	w0, #0x8d65                	// #36197
+   1d1e4:	940033df 	bl	2a160 <glBindTexture@plt>
+   1d1e8:	b94002c0 	ldr	w0, [x22]
+   1d1ec:	94003411 	bl	2a230 <glUseProgram@plt>
+   1d1f0:	b94002e0 	ldr	w0, [x23]
+   1d1f4:	2a1f03e1 	mov	w1, wzr
+   1d1f8:	94003412 	bl	2a240 <glUniform1i@plt>
+   1d1fc:	b94002a8 	ldr	w8, [x21]
+   1d200:	7100351f 	cmp	w8, #0xd
+   1d204:	540000c0 	b.eq	1d21c <avm_default_render(unsigned int*)+0x308>  // b.none
+   1d208:	7100391f 	cmp	w8, #0xe
+   1d20c:	540004c1 	b.ne	1d2a4 <avm_default_render(unsigned int*)+0x390>  // b.any
+   1d210:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1d214:	912da108 	add	x8, x8, #0xb68
+   1d218:	14000003 	b	1d224 <avm_default_render(unsigned int*)+0x310>
+   1d21c:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1d220:	912f2108 	add	x8, x8, #0xbc8
+   1d224:	90000093 	adrp	x19, 2d000 <_DYNAMIC+0x698>
+   1d228:	f9401273 	ldr	x19, [x19, #32]
+   1d22c:	f0ffff89 	adrp	x9, 10000 <abitag+0xfd08>
+   1d230:	912e2129 	add	x9, x9, #0xb88
+   1d234:	ad400500 	ldp	q0, q1, [x8]
+   1d238:	ad400d22 	ldp	q2, q3, [x9]
+   1d23c:	b9400260 	ldr	w0, [x19]
+   1d240:	910083e5 	add	x5, sp, #0x20
+   1d244:	52800041 	mov	w1, #0x2                   	// #2
+   1d248:	528280c2 	mov	w2, #0x1406                	// #5126
+   1d24c:	2a1f03e3 	mov	w3, wzr
+   1d250:	2a1f03e4 	mov	w4, wzr
+   1d254:	ad0107e0 	stp	q0, q1, [sp, #32]
+   1d258:	ad000fe2 	stp	q2, q3, [sp]
+   1d25c:	940033fd 	bl	2a250 <glVertexAttribPointer@plt>
+   1d260:	b9400260 	ldr	w0, [x19]
+   1d264:	940033ff 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d268:	90000093 	adrp	x19, 2d000 <_DYNAMIC+0x698>
+   1d26c:	f9401673 	ldr	x19, [x19, #40]
+   1d270:	910003e5 	mov	x5, sp
+   1d274:	52800041 	mov	w1, #0x2                   	// #2
+   1d278:	528280c2 	mov	w2, #0x1406                	// #5126
+   1d27c:	b9400260 	ldr	w0, [x19]
+   1d280:	2a1f03e3 	mov	w3, wzr
+   1d284:	2a1f03e4 	mov	w4, wzr
+   1d288:	940033f2 	bl	2a250 <glVertexAttribPointer@plt>
+   1d28c:	b9400260 	ldr	w0, [x19]
+   1d290:	940033f4 	bl	2a260 <glEnableVertexAttribArray@plt>
+   1d294:	528000c0 	mov	w0, #0x6                   	// #6
+   1d298:	52800082 	mov	w2, #0x4                   	// #4
+   1d29c:	2a1f03e1 	mov	w1, wzr
+   1d2a0:	940033f4 	bl	2a270 <glDrawArrays@plt>
+   1d2a4:	f9401688 	ldr	x8, [x20, #40]
+   1d2a8:	f85f83a9 	ldur	x9, [x29, #-8]
+   1d2ac:	eb09011f 	cmp	x8, x9
+   1d2b0:	540000e1 	b.ne	1d2cc <avm_default_render(unsigned int*)+0x3b8>  // b.any
+   1d2b4:	a9484ff4 	ldp	x20, x19, [sp, #128]
+   1d2b8:	a94757f6 	ldp	x22, x21, [sp, #112]
+   1d2bc:	a9465ff8 	ldp	x24, x23, [sp, #96]
+   1d2c0:	a9457bfd 	ldp	x29, x30, [sp, #80]
+   1d2c4:	910243ff 	add	sp, sp, #0x90
+   1d2c8:	d65f03c0 	ret
+   1d2cc:	94003125 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001d2d0 <renderAVMVideoAndLineFBOBuffer(AvmSdk*, EvsParameters&, int)>:
+   1d2d0:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+   1d2d4:	a9015ff8 	stp	x24, x23, [sp, #16]
+   1d2d8:	a90257f6 	stp	x22, x21, [sp, #32]
+   1d2dc:	a9034ff4 	stp	x20, x19, [sp, #48]
+   1d2e0:	910003fd 	mov	x29, sp
+   1d2e4:	aa0003f5 	mov	x21, x0
+   1d2e8:	52800020 	mov	w0, #0x1                   	// #1
+   1d2ec:	2a0203f3 	mov	w19, w2
+   1d2f0:	aa0103f4 	mov	x20, x1
+   1d2f4:	94003373 	bl	2a0c0 <systemTime@plt>
+   1d2f8:	aa0003f6 	mov	x22, x0
+   1d2fc:	52800020 	mov	w0, #0x1                   	// #1
+   1d300:	94003370 	bl	2a0c0 <systemTime@plt>
+   1d304:	aa0003f7 	mov	x23, x0
+   1d308:	52800020 	mov	w0, #0x1                   	// #1
+   1d30c:	9400336d 	bl	2a0c0 <systemTime@plt>
+   1d310:	d29ef9f8 	mov	x24, #0xf7cf                	// #63439
+   1d314:	f2bc6a78 	movk	x24, #0xe353, lsl #16
+   1d318:	f2d374b8 	movk	x24, #0x9ba5, lsl #32
+   1d31c:	cb170008 	sub	x8, x0, x23
+   1d320:	f2e41898 	movk	x24, #0x20c4, lsl #48
+   1d324:	9b587d08 	smulh	x8, x8, x24
+   1d328:	9347fd09 	asr	x9, x8, #7
+   1d32c:	8b48fd28 	add	x8, x9, x8, lsr #63
+   1d330:	b0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1d334:	52800020 	mov	w0, #0x1                   	// #1
+   1d338:	f905c128 	str	x8, [x9, #2944]
+   1d33c:	94003361 	bl	2a0c0 <systemTime@plt>
+   1d340:	90000082 	adrp	x2, 2d000 <_DYNAMIC+0x698>
+   1d344:	f9400442 	ldr	x2, [x2, #8]
+   1d348:	aa0003f7 	mov	x23, x0
+   1d34c:	aa1503e0 	mov	x0, x21
+   1d350:	aa1403e1 	mov	x1, x20
+   1d354:	2a1303e3 	mov	w3, w19
+   1d358:	97fffb55 	bl	1c0ac <renderAvmVideoFBOBuffer_Draw(AvmSdk*, EvsParameters&, unsigned int*, int)>
+   1d35c:	52800020 	mov	w0, #0x1                   	// #1
+   1d360:	94003358 	bl	2a0c0 <systemTime@plt>
+   1d364:	cb170008 	sub	x8, x0, x23
+   1d368:	9b587d08 	smulh	x8, x8, x24
+   1d36c:	9347fd09 	asr	x9, x8, #7
+   1d370:	8b48fd28 	add	x8, x9, x8, lsr #63
+   1d374:	b0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1d378:	52800020 	mov	w0, #0x1                   	// #1
+   1d37c:	f905c528 	str	x8, [x9, #2952]
+   1d380:	94003350 	bl	2a0c0 <systemTime@plt>
+   1d384:	cb160008 	sub	x8, x0, x22
+   1d388:	9b587d08 	smulh	x8, x8, x24
+   1d38c:	a9434ff4 	ldp	x20, x19, [sp, #48]
+   1d390:	a94257f6 	ldp	x22, x21, [sp, #32]
+   1d394:	a9415ff8 	ldp	x24, x23, [sp, #16]
+   1d398:	9347fd09 	asr	x9, x8, #7
+   1d39c:	8b48fd28 	add	x8, x9, x8, lsr #63
+   1d3a0:	b0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1d3a4:	f905bd28 	str	x8, [x9, #2936]
+   1d3a8:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   1d3ac:	d65f03c0 	ret
+
+000000000001d3b0 <_GLOBAL__sub_I_avm_fbo_render.cpp>:
+   1d3b0:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   1d3b4:	f9000bf5 	str	x21, [sp, #16]
+   1d3b8:	a9024ff4 	stp	x20, x19, [sp, #32]
+   1d3bc:	910003fd 	mov	x29, sp
+   1d3c0:	b0000095 	adrp	x21, 2e000 <_DYNAMIC+0x1698>
+   1d3c4:	912ea2b5 	add	x21, x21, #0xba8
+   1d3c8:	910082a0 	add	x0, x21, #0x20
+   1d3cc:	a9007ebf 	stp	xzr, xzr, [x21]
+   1d3d0:	b9001abf 	str	wzr, [x21, #24]
+   1d3d4:	f9000abf 	str	xzr, [x21, #16]
+   1d3d8:	9400326a 	bl	29d80 <android::hardware::hidl_handle::hidl_handle()@plt>
+   1d3dc:	d0fffff4 	adrp	x20, 1b000 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe08>
+   1d3e0:	b0000093 	adrp	x19, 2e000 <_DYNAMIC+0x1698>
+   1d3e4:	913ca294 	add	x20, x20, #0xf28
+   1d3e8:	9124a273 	add	x19, x19, #0x928
+   1d3ec:	aa1403e0 	mov	x0, x20
+   1d3f0:	aa1503e1 	mov	x1, x21
+   1d3f4:	aa1303e2 	mov	x2, x19
+   1d3f8:	94003206 	bl	29c10 <__cxa_atexit@plt>
+   1d3fc:	b0000095 	adrp	x21, 2e000 <_DYNAMIC+0x1698>
+   1d400:	912f62b5 	add	x21, x21, #0xbd8
+   1d404:	910082a0 	add	x0, x21, #0x20
+   1d408:	a900febf 	stp	xzr, xzr, [x21, #8]
+   1d40c:	f90002bf 	str	xzr, [x21]
+   1d410:	b9001abf 	str	wzr, [x21, #24]
+   1d414:	9400325b 	bl	29d80 <android::hardware::hidl_handle::hidl_handle()@plt>
+   1d418:	aa1403e0 	mov	x0, x20
+   1d41c:	aa1503e1 	mov	x1, x21
+   1d420:	aa1303e2 	mov	x2, x19
+   1d424:	940031fb 	bl	29c10 <__cxa_atexit@plt>
+   1d428:	b0000095 	adrp	x21, 2e000 <_DYNAMIC+0x1698>
+   1d42c:	913022b5 	add	x21, x21, #0xc08
+   1d430:	910082a0 	add	x0, x21, #0x20
+   1d434:	a900febf 	stp	xzr, xzr, [x21, #8]
+   1d438:	f90002bf 	str	xzr, [x21]
+   1d43c:	b9001abf 	str	wzr, [x21, #24]
+   1d440:	94003250 	bl	29d80 <android::hardware::hidl_handle::hidl_handle()@plt>
+   1d444:	aa1403e0 	mov	x0, x20
+   1d448:	aa1503e1 	mov	x1, x21
+   1d44c:	aa1303e2 	mov	x2, x19
+   1d450:	940031f0 	bl	29c10 <__cxa_atexit@plt>
+   1d454:	b0000095 	adrp	x21, 2e000 <_DYNAMIC+0x1698>
+   1d458:	9130e2b5 	add	x21, x21, #0xc38
+   1d45c:	910082a0 	add	x0, x21, #0x20
+   1d460:	a900febf 	stp	xzr, xzr, [x21, #8]
+   1d464:	f90002bf 	str	xzr, [x21]
+   1d468:	b9001abf 	str	wzr, [x21, #24]
+   1d46c:	94003245 	bl	29d80 <android::hardware::hidl_handle::hidl_handle()@plt>
+   1d470:	aa1403e0 	mov	x0, x20
+   1d474:	aa1503e1 	mov	x1, x21
+   1d478:	aa1303e2 	mov	x2, x19
+   1d47c:	940031e5 	bl	29c10 <__cxa_atexit@plt>
+   1d480:	b0000095 	adrp	x21, 2e000 <_DYNAMIC+0x1698>
+   1d484:	9131a2b5 	add	x21, x21, #0xc68
+   1d488:	910082a0 	add	x0, x21, #0x20
+   1d48c:	a900febf 	stp	xzr, xzr, [x21, #8]
+   1d490:	f90002bf 	str	xzr, [x21]
+   1d494:	b9001abf 	str	wzr, [x21, #24]
+   1d498:	9400323a 	bl	29d80 <android::hardware::hidl_handle::hidl_handle()@plt>
+   1d49c:	aa1403e0 	mov	x0, x20
+   1d4a0:	aa1503e1 	mov	x1, x21
+   1d4a4:	aa1303e2 	mov	x2, x19
+   1d4a8:	a9424ff4 	ldp	x20, x19, [sp, #32]
+   1d4ac:	f9400bf5 	ldr	x21, [sp, #16]
+   1d4b0:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1d4b4:	140031d7 	b	29c10 <__cxa_atexit@plt>
+
+000000000001d4b8 <buildShaderProgram(char const*, char const*, char const*)>:
+   1d4b8:	d10143ff 	sub	sp, sp, #0x50
+   1d4bc:	a9017bfd 	stp	x29, x30, [sp, #16]
+   1d4c0:	a9025ff8 	stp	x24, x23, [sp, #32]
+   1d4c4:	a90357f6 	stp	x22, x21, [sp, #48]
+   1d4c8:	a9044ff4 	stp	x20, x19, [sp, #64]
+   1d4cc:	910043fd 	add	x29, sp, #0x10
+   1d4d0:	d53bd058 	mrs	x24, tpidr_el0
+   1d4d4:	f9401708 	ldr	x8, [x24, #40]
+   1d4d8:	aa0203f5 	mov	x21, x2
+   1d4dc:	aa0103f6 	mov	x22, x1
+   1d4e0:	aa0003f4 	mov	x20, x0
+   1d4e4:	f90007e8 	str	x8, [sp, #8]
+   1d4e8:	94003366 	bl	2a280 <glCreateProgram@plt>
+   1d4ec:	2a0003f3 	mov	w19, w0
+   1d4f0:	34000760 	cbz	w0, 1d5dc <buildShaderProgram(char const*, char const*, char const*)+0x124>
+   1d4f4:	52916620 	mov	w0, #0x8b31                	// #35633
+   1d4f8:	aa1403e1 	mov	x1, x20
+   1d4fc:	aa1503e2 	mov	x2, x21
+   1d500:	94000055 	bl	1d654 <loadShader(unsigned int, char const*, char const*)>
+   1d504:	34000740 	cbz	w0, 1d5ec <buildShaderProgram(char const*, char const*, char const*)+0x134>
+   1d508:	2a0003f4 	mov	w20, w0
+   1d50c:	52916600 	mov	w0, #0x8b30                	// #35632
+   1d510:	aa1603e1 	mov	x1, x22
+   1d514:	aa1503e2 	mov	x2, x21
+   1d518:	9400004f 	bl	1d654 <loadShader(unsigned int, char const*, char const*)>
+   1d51c:	34000740 	cbz	w0, 1d604 <buildShaderProgram(char const*, char const*, char const*)+0x14c>
+   1d520:	2a0003f5 	mov	w21, w0
+   1d524:	2a1303e0 	mov	w0, w19
+   1d528:	2a1403e1 	mov	w1, w20
+   1d52c:	94003359 	bl	2a290 <glAttachShader@plt>
+   1d530:	2a1303e0 	mov	w0, w19
+   1d534:	2a1503e1 	mov	w1, w21
+   1d538:	94003356 	bl	2a290 <glAttachShader@plt>
+   1d53c:	2a1303e0 	mov	w0, w19
+   1d540:	94003358 	bl	2a2a0 <glLinkProgram@plt>
+   1d544:	910013e2 	add	x2, sp, #0x4
+   1d548:	52917041 	mov	w1, #0x8b82                	// #35714
+   1d54c:	2a1303e0 	mov	w0, w19
+   1d550:	b90007ff 	str	wzr, [sp, #4]
+   1d554:	94003357 	bl	2a2b0 <glGetProgramiv@plt>
+   1d558:	b94007e8 	ldr	w8, [sp, #4]
+   1d55c:	35000648 	cbnz	w8, 1d624 <buildShaderProgram(char const*, char const*, char const*)+0x16c>
+   1d560:	d0ffff80 	adrp	x0, f000 <abitag+0xed08>
+   1d564:	91152800 	add	x0, x0, #0x54a
+   1d568:	940031c6 	bl	29c80 <puts@plt>
+   1d56c:	910003e2 	mov	x2, sp
+   1d570:	52917081 	mov	w1, #0x8b84                	// #35716
+   1d574:	2a1303e0 	mov	w0, w19
+   1d578:	b90003ff 	str	wzr, [sp]
+   1d57c:	9400334d 	bl	2a2b0 <glGetProgramiv@plt>
+   1d580:	b94003f6 	ldr	w22, [sp]
+   1d584:	710006df 	cmp	w22, #0x1
+   1d588:	540001eb 	b.lt	1d5c4 <buildShaderProgram(char const*, char const*, char const*)+0x10c>  // b.tstop
+   1d58c:	aa1603e0 	mov	x0, x22
+   1d590:	94003238 	bl	29e70 <operator new[](unsigned long)@plt>
+   1d594:	aa0003f7 	mov	x23, x0
+   1d598:	2a1303e0 	mov	w0, w19
+   1d59c:	2a1603e1 	mov	w1, w22
+   1d5a0:	aa1f03e2 	mov	x2, xzr
+   1d5a4:	aa1703e3 	mov	x3, x23
+   1d5a8:	94003346 	bl	2a2c0 <glGetProgramInfoLog@plt>
+   1d5ac:	b0ffff80 	adrp	x0, e000 <abitag+0xdd08>
+   1d5b0:	9105f800 	add	x0, x0, #0x17e
+   1d5b4:	aa1703e1 	mov	x1, x23
+   1d5b8:	940031ae 	bl	29c70 <printf@plt>
+   1d5bc:	aa1703e0 	mov	x0, x23
+   1d5c0:	9400306c 	bl	29770 <operator delete(void*)@plt>
+   1d5c4:	2a1303e0 	mov	w0, w19
+   1d5c8:	94003342 	bl	2a2d0 <glDeleteProgram@plt>
+   1d5cc:	2a1403e0 	mov	w0, w20
+   1d5d0:	94003344 	bl	2a2e0 <glDeleteShader@plt>
+   1d5d4:	2a1503e0 	mov	w0, w21
+   1d5d8:	14000011 	b	1d61c <buildShaderProgram(char const*, char const*, char const*)+0x164>
+   1d5dc:	90ffff80 	adrp	x0, d000 <abitag+0xcd08>
+   1d5e0:	913d3c00 	add	x0, x0, #0xf4f
+   1d5e4:	940031a7 	bl	29c80 <puts@plt>
+   1d5e8:	1400000f 	b	1d624 <buildShaderProgram(char const*, char const*, char const*)+0x16c>
+   1d5ec:	d0ffff80 	adrp	x0, f000 <abitag+0xed08>
+   1d5f0:	91158400 	add	x0, x0, #0x561
+   1d5f4:	940031a3 	bl	29c80 <puts@plt>
+   1d5f8:	2a1303e0 	mov	w0, w19
+   1d5fc:	94003335 	bl	2a2d0 <glDeleteProgram@plt>
+   1d600:	14000008 	b	1d620 <buildShaderProgram(char const*, char const*, char const*)+0x168>
+   1d604:	b0ffff80 	adrp	x0, e000 <abitag+0xdd08>
+   1d608:	91203800 	add	x0, x0, #0x80e
+   1d60c:	9400319d 	bl	29c80 <puts@plt>
+   1d610:	2a1303e0 	mov	w0, w19
+   1d614:	9400332f 	bl	2a2d0 <glDeleteProgram@plt>
+   1d618:	2a1403e0 	mov	w0, w20
+   1d61c:	94003331 	bl	2a2e0 <glDeleteShader@plt>
+   1d620:	2a1f03f3 	mov	w19, wzr
+   1d624:	f9401708 	ldr	x8, [x24, #40]
+   1d628:	f94007e9 	ldr	x9, [sp, #8]
+   1d62c:	eb09011f 	cmp	x8, x9
+   1d630:	54000101 	b.ne	1d650 <buildShaderProgram(char const*, char const*, char const*)+0x198>  // b.any
+   1d634:	2a1303e0 	mov	w0, w19
+   1d638:	a9444ff4 	ldp	x20, x19, [sp, #64]
+   1d63c:	a94357f6 	ldp	x22, x21, [sp, #48]
+   1d640:	a9425ff8 	ldp	x24, x23, [sp, #32]
+   1d644:	a9417bfd 	ldp	x29, x30, [sp, #16]
+   1d648:	910143ff 	add	sp, sp, #0x50
+   1d64c:	d65f03c0 	ret
+   1d650:	94003044 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001d654 <loadShader(unsigned int, char const*, char const*)>:
+   1d654:	d10143ff 	sub	sp, sp, #0x50
+   1d658:	a9027bfd 	stp	x29, x30, [sp, #32]
+   1d65c:	a90357f6 	stp	x22, x21, [sp, #48]
+   1d660:	a9044ff4 	stp	x20, x19, [sp, #64]
+   1d664:	910083fd 	add	x29, sp, #0x20
+   1d668:	d53bd056 	mrs	x22, tpidr_el0
+   1d66c:	f94016c8 	ldr	x8, [x22, #40]
+   1d670:	aa0203f4 	mov	x20, x2
+   1d674:	2a0003f5 	mov	w21, w0
+   1d678:	f81f83a8 	stur	x8, [x29, #-8]
+   1d67c:	f9000be1 	str	x1, [sp, #16]
+   1d680:	9400331c 	bl	2a2f0 <glCreateShader@plt>
+   1d684:	2a0003f3 	mov	w19, w0
+   1d688:	34000660 	cbz	w0, 1d754 <loadShader(unsigned int, char const*, char const*)+0x100>
+   1d68c:	910043e2 	add	x2, sp, #0x10
+   1d690:	52800021 	mov	w1, #0x1                   	// #1
+   1d694:	2a1303e0 	mov	w0, w19
+   1d698:	aa1f03e3 	mov	x3, xzr
+   1d69c:	94003319 	bl	2a300 <glShaderSource@plt>
+   1d6a0:	2a1303e0 	mov	w0, w19
+   1d6a4:	9400331b 	bl	2a310 <glCompileShader@plt>
+   1d6a8:	910033e2 	add	x2, sp, #0xc
+   1d6ac:	52917021 	mov	w1, #0x8b81                	// #35713
+   1d6b0:	2a1303e0 	mov	w0, w19
+   1d6b4:	b9000fff 	str	wzr, [sp, #12]
+   1d6b8:	9400331a 	bl	2a320 <glGetShaderiv@plt>
+   1d6bc:	b9400fe8 	ldr	w8, [sp, #12]
+   1d6c0:	350004a8 	cbnz	w8, 1d754 <loadShader(unsigned int, char const*, char const*)+0x100>
+   1d6c4:	90ffff88 	adrp	x8, d000 <abitag+0xcd08>
+   1d6c8:	f0ffff89 	adrp	x9, 10000 <abitag+0xfd08>
+   1d6cc:	5291662a 	mov	w10, #0x8b31                	// #35633
+   1d6d0:	91183908 	add	x8, x8, #0x60e
+   1d6d4:	91036529 	add	x9, x9, #0xd9
+   1d6d8:	6b0a02bf 	cmp	w21, w10
+   1d6dc:	d0ffff80 	adrp	x0, f000 <abitag+0xed08>
+   1d6e0:	9a880121 	csel	x1, x9, x8, eq	// eq = none
+   1d6e4:	9114a000 	add	x0, x0, #0x528
+   1d6e8:	aa1403e2 	mov	x2, x20
+   1d6ec:	94003161 	bl	29c70 <printf@plt>
+   1d6f0:	910023e2 	add	x2, sp, #0x8
+   1d6f4:	52917081 	mov	w1, #0x8b84                	// #35716
+   1d6f8:	2a1303e0 	mov	w0, w19
+   1d6fc:	b9000bff 	str	wzr, [sp, #8]
+   1d700:	94003308 	bl	2a320 <glGetShaderiv@plt>
+   1d704:	b9400bf4 	ldr	w20, [sp, #8]
+   1d708:	7100069f 	cmp	w20, #0x1
+   1d70c:	540001eb 	b.lt	1d748 <loadShader(unsigned int, char const*, char const*)+0xf4>  // b.tstop
+   1d710:	aa1403e0 	mov	x0, x20
+   1d714:	940031d7 	bl	29e70 <operator new[](unsigned long)@plt>
+   1d718:	aa0003f5 	mov	x21, x0
+   1d71c:	2a1303e0 	mov	w0, w19
+   1d720:	2a1403e1 	mov	w1, w20
+   1d724:	aa1f03e2 	mov	x2, xzr
+   1d728:	aa1503e3 	mov	x3, x21
+   1d72c:	94003301 	bl	2a330 <glGetShaderInfoLog@plt>
+   1d730:	f0ffff80 	adrp	x0, 10000 <abitag+0xfd08>
+   1d734:	910e6400 	add	x0, x0, #0x399
+   1d738:	aa1503e1 	mov	x1, x21
+   1d73c:	9400314d 	bl	29c70 <printf@plt>
+   1d740:	aa1503e0 	mov	x0, x21
+   1d744:	9400300b 	bl	29770 <operator delete(void*)@plt>
+   1d748:	2a1303e0 	mov	w0, w19
+   1d74c:	940032e5 	bl	2a2e0 <glDeleteShader@plt>
+   1d750:	2a1f03f3 	mov	w19, wzr
+   1d754:	f94016c8 	ldr	x8, [x22, #40]
+   1d758:	f85f83a9 	ldur	x9, [x29, #-8]
+   1d75c:	eb09011f 	cmp	x8, x9
+   1d760:	540000e1 	b.ne	1d77c <loadShader(unsigned int, char const*, char const*)+0x128>  // b.any
+   1d764:	2a1303e0 	mov	w0, w19
+   1d768:	a9444ff4 	ldp	x20, x19, [sp, #64]
+   1d76c:	a94357f6 	ldp	x22, x21, [sp, #48]
+   1d770:	a9427bfd 	ldp	x29, x30, [sp, #32]
+   1d774:	910143ff 	add	sp, sp, #0x50
+   1d778:	d65f03c0 	ret
+   1d77c:	94002ff9 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001d780 <RenderBaseProducer::RenderBaseProducer()>:
+   1d780:	d0000068 	adrp	x8, 2b000 <__PREINIT_ARRAY__>
+   1d784:	91222108 	add	x8, x8, #0x888
+   1d788:	52800029 	mov	w9, #0x1                   	// #1
+   1d78c:	f9000008 	str	x8, [x0]
+   1d790:	39002009 	strb	w9, [x0, #8]
+   1d794:	2901fc1f 	stp	wzr, wzr, [x0, #12]
+   1d798:	d65f03c0 	ret
+
+000000000001d79c <_GLOBAL__sub_I_RenderBaseProducer.cpp>:
+   1d79c:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   1d7a0:	f9000bf3 	str	x19, [sp, #16]
+   1d7a4:	910003fd 	mov	x29, sp
+   1d7a8:	b0000093 	adrp	x19, 2e000 <_DYNAMIC+0x1698>
+   1d7ac:	9132a273 	add	x19, x19, #0xca8
+   1d7b0:	91008260 	add	x0, x19, #0x20
+   1d7b4:	a9007e7f 	stp	xzr, xzr, [x19]
+   1d7b8:	b9001a7f 	str	wzr, [x19, #24]
+   1d7bc:	f9000a7f 	str	xzr, [x19, #16]
+   1d7c0:	94003170 	bl	29d80 <android::hardware::hidl_handle::hidl_handle()@plt>
+   1d7c4:	aa1303e1 	mov	x1, x19
+   1d7c8:	f9400bf3 	ldr	x19, [sp, #16]
+   1d7cc:	d0ffffe0 	adrp	x0, 1b000 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe08>
+   1d7d0:	b0000082 	adrp	x2, 2e000 <_DYNAMIC+0x1698>
+   1d7d4:	913ca000 	add	x0, x0, #0xf28
+   1d7d8:	9124a042 	add	x2, x2, #0x928
+   1d7dc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   1d7e0:	1400310c 	b	29c10 <__cxa_atexit@plt>
+
+000000000001d7e4 <RenderProducerPipeline::RenderProducerPipeline(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>, AvmSdk*)>:
+   1d7e4:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+   1d7e8:	f9000bf7 	str	x23, [sp, #16]
+   1d7ec:	a90257f6 	stp	x22, x21, [sp, #32]
+   1d7f0:	a9034ff4 	stp	x20, x19, [sp, #48]
+   1d7f4:	910003fd 	mov	x29, sp
+   1d7f8:	aa0203f3 	mov	x19, x2
+   1d7fc:	aa0103f6 	mov	x22, x1
+   1d800:	aa0003f4 	mov	x20, x0
+   1d804:	97ffffdf 	bl	1d780 <RenderBaseProducer::RenderBaseProducer()>
+   1d808:	d0000068 	adrp	x8, 2b000 <__PREINIT_ARRAY__>
+   1d80c:	91234108 	add	x8, x8, #0x8d0
+   1d810:	aa1403f5 	mov	x21, x20
+   1d814:	f900129f 	str	xzr, [x20, #32]
+   1d818:	f9000288 	str	x8, [x20]
+   1d81c:	f8018ebf 	str	xzr, [x21, #24]!
+   1d820:	f94002b7 	ldr	x23, [x21]
+   1d824:	f94002d6 	ldr	x22, [x22]
+   1d828:	b40000d6 	cbz	x22, 1d840 <RenderProducerPipeline::RenderProducerPipeline(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>, AvmSdk*)+0x5c>
+   1d82c:	f94002c8 	ldr	x8, [x22]
+   1d830:	aa1503e1 	mov	x1, x21
+   1d834:	f85e8108 	ldur	x8, [x8, #-24]
+   1d838:	8b0802c0 	add	x0, x22, x8
+   1d83c:	9400311d 	bl	29cb0 <android::RefBase::incStrong(void const*) const@plt>
+   1d840:	b40000d7 	cbz	x23, 1d858 <RenderProducerPipeline::RenderProducerPipeline(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>, AvmSdk*)+0x74>
+   1d844:	f94002e8 	ldr	x8, [x23]
+   1d848:	aa1503e1 	mov	x1, x21
+   1d84c:	f85e8108 	ldur	x8, [x8, #-24]
+   1d850:	8b0802e0 	add	x0, x23, x8
+   1d854:	9400311b 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1d858:	f94002a8 	ldr	x8, [x21]
+   1d85c:	eb0802ff 	cmp	x23, x8
+   1d860:	54000040 	b.eq	1d868 <RenderProducerPipeline::RenderProducerPipeline(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>, AvmSdk*)+0x84>  // b.none
+   1d864:	94003167 	bl	29e00 <android::sp_report_race()@plt>
+   1d868:	f9000e96 	str	x22, [x20, #24]
+   1d86c:	f9001693 	str	x19, [x20, #40]
+   1d870:	a9434ff4 	ldp	x20, x19, [sp, #48]
+   1d874:	a94257f6 	ldp	x22, x21, [sp, #32]
+   1d878:	f9400bf7 	ldr	x23, [sp, #16]
+   1d87c:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   1d880:	d65f03c0 	ret
+
+000000000001d884 <RenderProducerPipeline::activate()>:
+   1d884:	d100c3ff 	sub	sp, sp, #0x30
+   1d888:	a9017bfd 	stp	x29, x30, [sp, #16]
+   1d88c:	a9024ff4 	stp	x20, x19, [sp, #32]
+   1d890:	910043fd 	add	x29, sp, #0x10
+   1d894:	d53bd054 	mrs	x20, tpidr_el0
+   1d898:	f9401688 	ldr	x8, [x20, #40]
+   1d89c:	aa0003f3 	mov	x19, x0
+   1d8a0:	f90007e8 	str	x8, [sp, #8]
+   1d8a4:	f9400c08 	ldr	x8, [x0, #24]
+   1d8a8:	f90003e8 	str	x8, [sp]
+   1d8ac:	b40000c8 	cbz	x8, 1d8c4 <RenderProducerPipeline::activate()+0x40>
+   1d8b0:	f9400109 	ldr	x9, [x8]
+   1d8b4:	910003e1 	mov	x1, sp
+   1d8b8:	f85e8129 	ldur	x9, [x9, #-24]
+   1d8bc:	8b090100 	add	x0, x8, x9
+   1d8c0:	940030fc 	bl	29cb0 <android::RefBase::incStrong(void const*) const@plt>
+   1d8c4:	90000088 	adrp	x8, 2d000 <_DYNAMIC+0x698>
+   1d8c8:	f9401908 	ldr	x8, [x8, #48]
+   1d8cc:	f9401662 	ldr	x2, [x19, #40]
+   1d8d0:	910003e0 	mov	x0, sp
+   1d8d4:	f9400101 	ldr	x1, [x8]
+   1d8d8:	9400057f 	bl	1eed4 <createVideoTextureProducer(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>, void*, AvmSdk*)>
+   1d8dc:	f9401268 	ldr	x8, [x19, #32]
+   1d8e0:	f9001260 	str	x0, [x19, #32]
+   1d8e4:	b40000a8 	cbz	x8, 1d8f8 <RenderProducerPipeline::activate()+0x74>
+   1d8e8:	f9400109 	ldr	x9, [x8]
+   1d8ec:	aa0803e0 	mov	x0, x8
+   1d8f0:	f9400529 	ldr	x9, [x9, #8]
+   1d8f4:	d63f0120 	blr	x9
+   1d8f8:	f94003e8 	ldr	x8, [sp]
+   1d8fc:	b40000c8 	cbz	x8, 1d914 <RenderProducerPipeline::activate()+0x90>
+   1d900:	f9400109 	ldr	x9, [x8]
+   1d904:	910003e1 	mov	x1, sp
+   1d908:	f85e8129 	ldur	x9, [x9, #-24]
+   1d90c:	8b090100 	add	x0, x8, x9
+   1d910:	940030ec 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1d914:	f9401268 	ldr	x8, [x19, #32]
+   1d918:	f9401689 	ldr	x9, [x20, #40]
+   1d91c:	f94007ea 	ldr	x10, [sp, #8]
+   1d920:	f100011f 	cmp	x8, #0x0
+   1d924:	1a9f07e0 	cset	w0, ne	// ne = any
+   1d928:	eb0a013f 	cmp	x9, x10
+   1d92c:	540000a1 	b.ne	1d940 <RenderProducerPipeline::activate()+0xbc>  // b.any
+   1d930:	a9424ff4 	ldp	x20, x19, [sp, #32]
+   1d934:	a9417bfd 	ldp	x29, x30, [sp, #16]
+   1d938:	9100c3ff 	add	sp, sp, #0x30
+   1d93c:	d65f03c0 	ret
+   1d940:	94002f88 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001d944 <RenderProducerPipeline::deactivate()>:
+   1d944:	aa0003e8 	mov	x8, x0
+   1d948:	f9401000 	ldr	x0, [x0, #32]
+   1d94c:	f900111f 	str	xzr, [x8, #32]
+   1d950:	b4000080 	cbz	x0, 1d960 <RenderProducerPipeline::deactivate()+0x1c>
+   1d954:	f9400008 	ldr	x8, [x0]
+   1d958:	f9400501 	ldr	x1, [x8, #8]
+   1d95c:	d61f0020 	br	x1
+   1d960:	d65f03c0 	ret
+
+000000000001d964 <RenderProducerPipeline::drawFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)>:
+   1d964:	52800020 	mov	w0, #0x1                   	// #1
+   1d968:	d65f03c0 	ret
+
+000000000001d96c <RenderProducerPipeline::~RenderProducerPipeline()>:
+   1d96c:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   1d970:	f9000bf3 	str	x19, [sp, #16]
+   1d974:	910003fd 	mov	x29, sp
+   1d978:	aa0003f3 	mov	x19, x0
+   1d97c:	f9401000 	ldr	x0, [x0, #32]
+   1d980:	d0000068 	adrp	x8, 2b000 <__PREINIT_ARRAY__>
+   1d984:	91234108 	add	x8, x8, #0x8d0
+   1d988:	f9000268 	str	x8, [x19]
+   1d98c:	f900127f 	str	xzr, [x19, #32]
+   1d990:	b4000080 	cbz	x0, 1d9a0 <RenderProducerPipeline::~RenderProducerPipeline()+0x34>
+   1d994:	f9400008 	ldr	x8, [x0]
+   1d998:	f9400508 	ldr	x8, [x8, #8]
+   1d99c:	d63f0100 	blr	x8
+   1d9a0:	f8418e68 	ldr	x8, [x19, #24]!
+   1d9a4:	b4000108 	cbz	x8, 1d9c4 <RenderProducerPipeline::~RenderProducerPipeline()+0x58>
+   1d9a8:	f9400109 	ldr	x9, [x8]
+   1d9ac:	aa1303e1 	mov	x1, x19
+   1d9b0:	f9400bf3 	ldr	x19, [sp, #16]
+   1d9b4:	f85e8129 	ldur	x9, [x9, #-24]
+   1d9b8:	8b090100 	add	x0, x8, x9
+   1d9bc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   1d9c0:	140030c0 	b	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1d9c4:	f9400bf3 	ldr	x19, [sp, #16]
+   1d9c8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   1d9cc:	d65f03c0 	ret
+
+000000000001d9d0 <RenderProducerPipeline::~RenderProducerPipeline()>:
+   1d9d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   1d9d4:	f9000bf3 	str	x19, [sp, #16]
+   1d9d8:	910003fd 	mov	x29, sp
+   1d9dc:	aa0003f3 	mov	x19, x0
+   1d9e0:	f9401000 	ldr	x0, [x0, #32]
+   1d9e4:	d0000068 	adrp	x8, 2b000 <__PREINIT_ARRAY__>
+   1d9e8:	91234108 	add	x8, x8, #0x8d0
+   1d9ec:	f9000268 	str	x8, [x19]
+   1d9f0:	f900127f 	str	xzr, [x19, #32]
+   1d9f4:	b4000080 	cbz	x0, 1da04 <RenderProducerPipeline::~RenderProducerPipeline()+0x34>
+   1d9f8:	f9400008 	ldr	x8, [x0]
+   1d9fc:	f9400508 	ldr	x8, [x8, #8]
+   1da00:	d63f0100 	blr	x8
+   1da04:	aa1303e1 	mov	x1, x19
+   1da08:	f8418c28 	ldr	x8, [x1, #24]!
+   1da0c:	b40000a8 	cbz	x8, 1da20 <RenderProducerPipeline::~RenderProducerPipeline()+0x50>
+   1da10:	f9400109 	ldr	x9, [x8]
+   1da14:	f85e8129 	ldur	x9, [x9, #-24]
+   1da18:	8b090100 	add	x0, x8, x9
+   1da1c:	940030a9 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1da20:	aa1303e0 	mov	x0, x19
+   1da24:	f9400bf3 	ldr	x19, [sp, #16]
+   1da28:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   1da2c:	14002f51 	b	29770 <operator delete(void*)@plt>
+
+000000000001da30 <createEvsRwDirector()>:
+   1da30:	d10103ff 	sub	sp, sp, #0x40
+   1da34:	a9027bfd 	stp	x29, x30, [sp, #32]
+   1da38:	a9034ff4 	stp	x20, x19, [sp, #48]
+   1da3c:	910083fd 	add	x29, sp, #0x20
+   1da40:	d53bd054 	mrs	x20, tpidr_el0
+   1da44:	f9401688 	ldr	x8, [x20, #40]
+   1da48:	52800800 	mov	w0, #0x40                  	// #64
+   1da4c:	f81f83a8 	stur	x8, [x29, #-8]
+   1da50:	94002f40 	bl	29750 <operator new(unsigned long)@plt>
+   1da54:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1da58:	3dc27d00 	ldr	q0, [x8, #2544]
+   1da5c:	90ffff88 	adrp	x8, d000 <abitag+0xcd08>
+   1da60:	9112fd08 	add	x8, x8, #0x4bf
+   1da64:	ad408502 	ldp	q2, q1, [x8, #16]
+   1da68:	f842e109 	ldur	x9, [x8, #46]
+   1da6c:	3d8003e0 	str	q0, [sp]
+   1da70:	3dc00100 	ldr	q0, [x8]
+   1da74:	f9000be0 	str	x0, [sp, #16]
+   1da78:	f802e009 	stur	x9, [x0, #46]
+   1da7c:	ad008402 	stp	q2, q1, [x0, #16]
+   1da80:	3d800000 	str	q0, [x0]
+   1da84:	3900d81f 	strb	wzr, [x0, #54]
+   1da88:	910003e0 	mov	x0, sp
+   1da8c:	97ffe8e2 	bl	17e14 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)>
+   1da90:	394003e8 	ldrb	w8, [sp]
+   1da94:	2a0003f3 	mov	w19, w0
+   1da98:	36000068 	tbz	w8, #0, 1daa4 <createEvsRwDirector()+0x74>
+   1da9c:	f9400be0 	ldr	x0, [sp, #16]
+   1daa0:	94002f34 	bl	29770 <operator delete(void*)@plt>
+   1daa4:	34000113 	cbz	w19, 1dac4 <createEvsRwDirector()+0x94>
+   1daa8:	f0ffff61 	adrp	x1, c000 <abitag+0xbd08>
+   1daac:	90ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1dab0:	911e4421 	add	x1, x1, #0x791
+   1dab4:	9134cc42 	add	x2, x2, #0xd33
+   1dab8:	52800080 	mov	w0, #0x4                   	// #4
+   1dabc:	2a1303e3 	mov	w3, w19
+   1dac0:	94002f84 	bl	298d0 <__android_log_print@plt>
+   1dac4:	52800800 	mov	w0, #0x40                  	// #64
+   1dac8:	94002f22 	bl	29750 <operator new(unsigned long)@plt>
+   1dacc:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1dad0:	3dc28100 	ldr	q0, [x8, #2560]
+   1dad4:	d0ffff88 	adrp	x8, f000 <abitag+0xed08>
+   1dad8:	910d2108 	add	x8, x8, #0x348
+   1dadc:	ad408502 	ldp	q2, q1, [x8, #16]
+   1dae0:	f842f109 	ldur	x9, [x8, #47]
+   1dae4:	3d8003e0 	str	q0, [sp]
+   1dae8:	3dc00100 	ldr	q0, [x8]
+   1daec:	f9000be0 	str	x0, [sp, #16]
+   1daf0:	f802f009 	stur	x9, [x0, #47]
+   1daf4:	ad008402 	stp	q2, q1, [x0, #16]
+   1daf8:	3d800000 	str	q0, [x0]
+   1dafc:	3900dc1f 	strb	wzr, [x0, #55]
+   1db00:	910003e0 	mov	x0, sp
+   1db04:	97ffe8c4 	bl	17e14 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)>
+   1db08:	394003e8 	ldrb	w8, [sp]
+   1db0c:	2a0003f3 	mov	w19, w0
+   1db10:	36000068 	tbz	w8, #0, 1db1c <createEvsRwDirector()+0xec>
+   1db14:	f9400be0 	ldr	x0, [sp, #16]
+   1db18:	94002f16 	bl	29770 <operator delete(void*)@plt>
+   1db1c:	34000113 	cbz	w19, 1db3c <createEvsRwDirector()+0x10c>
+   1db20:	f0ffff61 	adrp	x1, c000 <abitag+0xbd08>
+   1db24:	90ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1db28:	911e4421 	add	x1, x1, #0x791
+   1db2c:	9134cc42 	add	x2, x2, #0xd33
+   1db30:	52800080 	mov	w0, #0x4                   	// #4
+   1db34:	2a1303e3 	mov	w3, w19
+   1db38:	94002f66 	bl	298d0 <__android_log_print@plt>
+   1db3c:	52800800 	mov	w0, #0x40                  	// #64
+   1db40:	94002f04 	bl	29750 <operator new(unsigned long)@plt>
+   1db44:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1db48:	3dc27900 	ldr	q0, [x8, #2528]
+   1db4c:	d0ffff88 	adrp	x8, f000 <abitag+0xed08>
+   1db50:	9105ed08 	add	x8, x8, #0x17b
+   1db54:	ad408502 	ldp	q2, q1, [x8, #16]
+   1db58:	f9401909 	ldr	x9, [x8, #48]
+   1db5c:	3d8003e0 	str	q0, [sp]
+   1db60:	3dc00100 	ldr	q0, [x8]
+   1db64:	f9000be0 	str	x0, [sp, #16]
+   1db68:	f9001809 	str	x9, [x0, #48]
+   1db6c:	ad008402 	stp	q2, q1, [x0, #16]
+   1db70:	3d800000 	str	q0, [x0]
+   1db74:	3900e01f 	strb	wzr, [x0, #56]
+   1db78:	910003e0 	mov	x0, sp
+   1db7c:	97ffe8a6 	bl	17e14 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)>
+   1db80:	394003e8 	ldrb	w8, [sp]
+   1db84:	2a0003f3 	mov	w19, w0
+   1db88:	36000068 	tbz	w8, #0, 1db94 <createEvsRwDirector()+0x164>
+   1db8c:	f9400be0 	ldr	x0, [sp, #16]
+   1db90:	94002ef8 	bl	29770 <operator delete(void*)@plt>
+   1db94:	34000113 	cbz	w19, 1dbb4 <createEvsRwDirector()+0x184>
+   1db98:	f0ffff61 	adrp	x1, c000 <abitag+0xbd08>
+   1db9c:	90ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1dba0:	911e4421 	add	x1, x1, #0x791
+   1dba4:	9134cc42 	add	x2, x2, #0xd33
+   1dba8:	52800080 	mov	w0, #0x4                   	// #4
+   1dbac:	2a1303e3 	mov	w3, w19
+   1dbb0:	94002f48 	bl	298d0 <__android_log_print@plt>
+   1dbb4:	52800800 	mov	w0, #0x40                  	// #64
+   1dbb8:	94002ee6 	bl	29750 <operator new(unsigned long)@plt>
+   1dbbc:	f0ffff88 	adrp	x8, 10000 <abitag+0xfd08>
+   1dbc0:	3dc27500 	ldr	q0, [x8, #2512]
+   1dbc4:	f0ffff68 	adrp	x8, c000 <abitag+0xbd08>
+   1dbc8:	91191908 	add	x8, x8, #0x646
+   1dbcc:	ad408503 	ldp	q3, q1, [x8, #16]
+   1dbd0:	3cc2b102 	ldur	q2, [x8, #43]
+   1dbd4:	3d8003e0 	str	q0, [sp]
+   1dbd8:	3dc00100 	ldr	q0, [x8]
+   1dbdc:	f9000be0 	str	x0, [sp, #16]
+   1dbe0:	3c82b002 	stur	q2, [x0, #43]
+   1dbe4:	ad008403 	stp	q3, q1, [x0, #16]
+   1dbe8:	3d800000 	str	q0, [x0]
+   1dbec:	3900ec1f 	strb	wzr, [x0, #59]
+   1dbf0:	910003e0 	mov	x0, sp
+   1dbf4:	97ffe888 	bl	17e14 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)>
+   1dbf8:	394003e8 	ldrb	w8, [sp]
+   1dbfc:	2a0003f3 	mov	w19, w0
+   1dc00:	36000068 	tbz	w8, #0, 1dc0c <createEvsRwDirector()+0x1dc>
+   1dc04:	f9400be0 	ldr	x0, [sp, #16]
+   1dc08:	94002eda 	bl	29770 <operator delete(void*)@plt>
+   1dc0c:	34000113 	cbz	w19, 1dc2c <createEvsRwDirector()+0x1fc>
+   1dc10:	f0ffff61 	adrp	x1, c000 <abitag+0xbd08>
+   1dc14:	90ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1dc18:	911e4421 	add	x1, x1, #0x791
+   1dc1c:	9134cc42 	add	x2, x2, #0xd33
+   1dc20:	52800080 	mov	w0, #0x4                   	// #4
+   1dc24:	2a1303e3 	mov	w3, w19
+   1dc28:	94002f2a 	bl	298d0 <__android_log_print@plt>
+   1dc2c:	90ffff80 	adrp	x0, d000 <abitag+0xcd08>
+   1dc30:	91269400 	add	x0, x0, #0x9a5
+   1dc34:	94002fef 	bl	29bf0 <system@plt>
+   1dc38:	f0ffff61 	adrp	x1, c000 <abitag+0xbd08>
+   1dc3c:	90ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1dc40:	2a0003e3 	mov	w3, w0
+   1dc44:	911e4421 	add	x1, x1, #0x791
+   1dc48:	910bc442 	add	x2, x2, #0x2f1
+   1dc4c:	52800080 	mov	w0, #0x4                   	// #4
+   1dc50:	94002f20 	bl	298d0 <__android_log_print@plt>
+   1dc54:	f9401688 	ldr	x8, [x20, #40]
+   1dc58:	f85f83a9 	ldur	x9, [x29, #-8]
+   1dc5c:	eb09011f 	cmp	x8, x9
+   1dc60:	540000a1 	b.ne	1dc74 <createEvsRwDirector()+0x244>  // b.any
+   1dc64:	a9434ff4 	ldp	x20, x19, [sp, #48]
+   1dc68:	a9427bfd 	ldp	x29, x30, [sp, #32]
+   1dc6c:	910103ff 	add	sp, sp, #0x40
+   1dc70:	d65f03c0 	ret
+   1dc74:	94002ebb 	bl	29760 <__stack_chk_fail@plt>

@@ -1,0 +1,105 @@
+Sun Oct 11 20:42:43 CST 2026
+total 0
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 avm_a -> /dev/block/sda11
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 avm_b -> /dev/block/sda12
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 bdraw -> /dev/block/sda16
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl22_a -> /dev/block/sdc2
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl22_b -> /dev/block/sdc3
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl31_a -> /dev/block/sdc4
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl31_b -> /dev/block/sdc5
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 bl31c_a -> /dev/block/sdc18
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 bl31c_b -> /dev/block/sdc19
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl32_a -> /dev/block/sdc6
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl32_b -> /dev/block/sdc7
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl33_a -> /dev/block/sdc8
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 bl33_b -> /dev/block/sdc9
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 boot_a -> /dev/block/sda2
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 boot_b -> /dev/block/sda3
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 config_ddr_a -> /dev/block/sdf1
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 config_ddr_b -> /dev/block/sdf2
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_dtb_a -> /dev/block/sdd5
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_dtb_b -> /dev/block/sdd6
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_kernel_a -> /dev/block/sdd1
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_kernel_b -> /dev/block/sdd2
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_local_cfg -> /dev/block/sdd9
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_metadata -> /dev/block/sdd7
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_metadata_bak -> /dev/block/sdd8
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_rootfs_a -> /dev/block/sdd3
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 cp_rootfs_b -> /dev/block/sdd4
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 cp_user_cfg -> /dev/block/sdd10
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 cp_usrdata -> /dev/block/sdd11
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 dsp_a -> /dev/block/sdc14
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 dsp_b -> /dev/block/sdc15
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 dtb_a -> /dev/block/sda4
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 dtb_b -> /dev/block/sda5
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 env -> /dev/block/sdc1
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 fw_ddr_a -> /dev/block/sdf5
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 fw_ddr_b -> /dev/block/sdf6
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 fw_metadata -> /dev/block/sdc16
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 fw_metadata_bak -> /dev/block/sdc17
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 kdump -> /dev/block/sda17
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 lcfg -> /dev/block/sda13
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 m4_a -> /dev/block/sdc12
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 m4_b -> /dev/block/sdc13
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 metadata -> /dev/block/sda6
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 misc -> /dev/block/sda1
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 ota_data -> /dev/block/sda10
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 persist -> /dev/block/sda15
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 pki -> /dev/block/sda14
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 r52_a -> /dev/block/sdc10
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 r52_b -> /dev/block/sdc11
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sda -> /dev/block/sda
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sdb -> /dev/block/sdb
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sdc -> /dev/block/sdc
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sdd -> /dev/block/sdd
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sde -> /dev/block/sde
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sdf -> /dev/block/sdf
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sdg -> /dev/block/sdg
+lrwxrwxrwx 1 root root 14 1970-01-01 08:00 sdh -> /dev/block/sdh
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 seq_ddr_a -> /dev/block/sdf7
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 seq_ddr_b -> /dev/block/sdf8
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 super -> /dev/block/sda9
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 trained_ddr_a -> /dev/block/sdf3
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 trained_ddr_b -> /dev/block/sdf4
+lrwxrwxrwx 1 root root 16 1970-01-01 08:00 userdata -> /dev/block/sda18
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 vbmeta_a -> /dev/block/sda7
+lrwxrwxrwx 1 root root 15 1970-01-01 08:00 vbmeta_b -> /dev/block/sda8
+none /dev/cpuctl cgroup rw,nosuid,nodev,noexec,relatime,cpu 0 0
+none /acct cgroup rw,nosuid,nodev,noexec,relatime,cpuacct 0 0
+none /dev/cpuset cgroup rw,nosuid,nodev,noexec,relatime,cpuset,noprefix,release_agent=/sbin/cpuset_release_agent 0 0
+/data/local/ipc:
+total 6
+drwxrwxrwx 2 system system 3452 2026-10-11 20:13 .
+drwxr-x--x 5 root   root   3452 1970-01-01 08:00 ..
+srwxrwxrwx 1 system system    0 2026-10-11 20:13 audio_up
+
+/mnt:
+total 12
+drwxr-xr-x 16 root   system            340 1970-01-01 08:00 .
+drwxr-xr-x 29 root   root             4096 2009-01-01 08:00 ..
+drwxr-x---  3 root   media_rw           60 1970-01-01 08:00 androidwritable
+drwx--x--x  2 root   root               40 1970-01-01 08:00 appfuse
+drwxr-xr-x  2 root   system             40 1970-01-01 08:00 asec
+drwxrwx--x  2 system system             40 1970-01-01 08:00 expand
+drwxr-x---  3 root   media_rw           60 1970-01-01 08:00 installer
+drwxr-x---  2 root   external_storage   40 1970-01-01 08:00 media_rw
+drwxr-xr-x  2 root   system             40 1970-01-01 08:00 obb
+drwx------  3 root   root               60 1970-01-01 08:00 pass_through
+drwxr-xr-x  2 root   root               40 1970-01-01 08:00 product
+drwx------  6 root   root              120 1970-01-01 08:00 runtime
+drwxr-xr-x  3 root   root             4096 2026-06-02 20:39 scratch
+lrwxrwxrwx  1 root   root               21 1970-01-01 08:00 sdcard -> /storage/self/primary
+drwx------  3 root   root               60 1970-01-01 08:00 secure
+drwxr-x---  3 root   media_rw           60 1970-01-01 08:00 user
+drwxr-xr-x  2 root   root               40 1970-01-01 08:00 vendor
+acpi
+cp
+cpio
+cpu_cost.sh
+cpu_stress.sh
+cpulimit
+scp
+tcpdump
+acpi
+cp
+cpio

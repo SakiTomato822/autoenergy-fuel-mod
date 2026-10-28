@@ -1,0 +1,144 @@
+
+raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000001da5c0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x772ec>:
+  1da5c0:	d101c3ff 	sub	sp, sp, #0x70
+  1da5c4:	a9027bfd 	stp	x29, x30, [sp, #32]
+  1da5c8:	f9001bf9 	str	x25, [sp, #48]
+  1da5cc:	a9045ff8 	stp	x24, x23, [sp, #64]
+  1da5d0:	a90557f6 	stp	x22, x21, [sp, #80]
+  1da5d4:	a9064ff4 	stp	x20, x19, [sp, #96]
+  1da5d8:	910083fd 	add	x29, sp, #0x20
+  1da5dc:	d53bd057 	mrs	x23, tpidr_el0
+  1da5e0:	aa0803f3 	mov	x19, x8
+  1da5e4:	f94016e8 	ldr	x8, [x23, #40]
+  1da5e8:	aa0003f4 	mov	x20, x0
+  1da5ec:	91004015 	add	x21, x0, #0x10
+  1da5f0:	f81f83a8 	stur	x8, [x29, #-8]
+  1da5f4:	a941a408 	ldp	x8, x9, [x0, #24]
+  1da5f8:	eb09011f 	cmp	x8, x9
+  1da5fc:	540000e0 	b.eq	1da618 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77344>  // b.none
+  1da600:	3940a289 	ldrb	w9, [x20, #40]
+  1da604:	39000109 	strb	w9, [x8]
+  1da608:	f9400e88 	ldr	x8, [x20, #24]
+  1da60c:	91000508 	add	x8, x8, #0x1
+  1da610:	f9000e88 	str	x8, [x20, #24]
+  1da614:	14000005 	b	1da628 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77354>
+  1da618:	9100a281 	add	x1, x20, #0x28
+  1da61c:	aa1503e0 	mov	x0, x21
+  1da620:	97fd7dde 	bl	139d98 <std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<< <char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@@Base+0x7875c>
+  1da624:	f9400e88 	ldr	x8, [x20, #24]
+  1da628:	f9401289 	ldr	x9, [x20, #32]
+  1da62c:	9100a696 	add	x22, x20, #0x29
+  1da630:	eb09011f 	cmp	x8, x9
+  1da634:	54000a60 	b.eq	1da780 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x774ac>  // b.none
+  1da638:	3940a689 	ldrb	w9, [x20, #41]
+  1da63c:	39000109 	strb	w9, [x8]
+  1da640:	f9400e88 	ldr	x8, [x20, #24]
+  1da644:	91000508 	add	x8, x8, #0x1
+  1da648:	f9000e88 	str	x8, [x20, #24]
+  1da64c:	394002c8 	ldrb	w8, [x22]
+  1da650:	34000a28 	cbz	w8, 1da794 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x774c0>
+  1da654:	f9401a88 	ldr	x8, [x20, #48]
+  1da658:	aa1f03f6 	mov	x22, xzr
+  1da65c:	aa1f03f8 	mov	x24, xzr
+  1da660:	aa1f03f9 	mov	x25, xzr
+  1da664:	14000015 	b	1da6b8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x773e4>
+  1da668:	910033e1 	add	x1, sp, #0xc
+  1da66c:	aa1503e0 	mov	x0, x21
+  1da670:	97fd7dca 	bl	139d98 <std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<< <char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@@Base+0x7875c>
+  1da674:	f9400e81 	ldr	x1, [x20, #24]
+  1da678:	f9401a88 	ldr	x8, [x20, #48]
+  1da67c:	aa1503e0 	mov	x0, x21
+  1da680:	8b160108 	add	x8, x8, x22
+  1da684:	a9410d02 	ldp	x2, x3, [x8, #16]
+  1da688:	97febdd8 	bl	189de8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x26b14>
+  1da68c:	f9401a88 	ldr	x8, [x20, #48]
+  1da690:	3940a689 	ldrb	w9, [x20, #41]
+  1da694:	91000718 	add	x24, x24, #0x1
+  1da698:	8b16010a 	add	x10, x8, x22
+  1da69c:	3940214a 	ldrb	w10, [x10, #8]
+  1da6a0:	eb09031f 	cmp	x24, x9
+  1da6a4:	9100a2d6 	add	x22, x22, #0x28
+  1da6a8:	8b0a0329 	add	x9, x25, x10
+  1da6ac:	91000d29 	add	x9, x9, #0x3
+  1da6b0:	93407d39 	sxtw	x25, w9
+  1da6b4:	540005e2 	b.cs	1da770 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x7749c>  // b.hs, b.nlast
+  1da6b8:	8b160108 	add	x8, x8, x22
+  1da6bc:	39402108 	ldrb	w8, [x8, #8]
+  1da6c0:	11000908 	add	w8, w8, #0x2
+  1da6c4:	381f43a8 	sturb	w8, [x29, #-12]
+  1da6c8:	a941aa89 	ldp	x9, x10, [x20, #24]
+  1da6cc:	eb0a013f 	cmp	x9, x10
+  1da6d0:	540000c2 	b.cs	1da6e8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77414>  // b.hs, b.nlast
+  1da6d4:	39000128 	strb	w8, [x9]
+  1da6d8:	f9400e88 	ldr	x8, [x20, #24]
+  1da6dc:	91000508 	add	x8, x8, #0x1
+  1da6e0:	f9000e88 	str	x8, [x20, #24]
+  1da6e4:	14000005 	b	1da6f8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77424>
+  1da6e8:	d10033a1 	sub	x1, x29, #0xc
+  1da6ec:	aa1503e0 	mov	x0, x21
+  1da6f0:	97fd7daa 	bl	139d98 <std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<< <char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@@Base+0x7875c>
+  1da6f4:	f9400e88 	ldr	x8, [x20, #24]
+  1da6f8:	390043ff 	strb	wzr, [sp, #16]
+  1da6fc:	f9401a89 	ldr	x9, [x20, #48]
+  1da700:	8b16012a 	add	x10, x9, x22
+  1da704:	79401549 	ldrh	w9, [x10, #10]
+  1da708:	390033ff 	strb	wzr, [sp, #12]
+  1da70c:	53087d29 	lsr	w9, w9, #8
+  1da710:	390043e9 	strb	w9, [sp, #16]
+  1da714:	3940294a 	ldrb	w10, [x10, #10]
+  1da718:	390033ea 	strb	w10, [sp, #12]
+  1da71c:	f940128a 	ldr	x10, [x20, #32]
+  1da720:	eb0a011f 	cmp	x8, x10
+  1da724:	540000c0 	b.eq	1da73c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77468>  // b.none
+  1da728:	39000109 	strb	w9, [x8]
+  1da72c:	f9400e88 	ldr	x8, [x20, #24]
+  1da730:	91000508 	add	x8, x8, #0x1
+  1da734:	f9000e88 	str	x8, [x20, #24]
+  1da738:	14000005 	b	1da74c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77478>
+  1da73c:	910043e1 	add	x1, sp, #0x10
+  1da740:	aa1503e0 	mov	x0, x21
+  1da744:	97fd7d95 	bl	139d98 <std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<< <char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@@Base+0x7875c>
+  1da748:	f9400e88 	ldr	x8, [x20, #24]
+  1da74c:	f9401289 	ldr	x9, [x20, #32]
+  1da750:	eb09011f 	cmp	x8, x9
+  1da754:	54fff8a0 	b.eq	1da668 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77394>  // b.none
+  1da758:	394033e9 	ldrb	w9, [sp, #12]
+  1da75c:	39000109 	strb	w9, [x8]
+  1da760:	f9400e88 	ldr	x8, [x20, #24]
+  1da764:	91000501 	add	x1, x8, #0x1
+  1da768:	f9000e81 	str	x1, [x20, #24]
+  1da76c:	17ffffc3 	b	1da678 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x773a4>
+  1da770:	d3607d28 	lsl	x8, x9, #32
+  1da774:	d360fd08 	lsr	x8, x8, #32
+  1da778:	11000908 	add	w8, w8, #0x2
+  1da77c:	14000007 	b	1da798 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x774c4>
+  1da780:	aa1503e0 	mov	x0, x21
+  1da784:	aa1603e1 	mov	x1, x22
+  1da788:	97fd7d84 	bl	139d98 <std::__1::basic_ostream<char, std::__1::char_traits<char> >& std::__1::operator<< <char, std::__1::char_traits<char>, std::__1::allocator<char> >(std::__1::basic_ostream<char, std::__1::char_traits<char> >&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@@Base+0x7875c>
+  1da78c:	394002c8 	ldrb	w8, [x22]
+  1da790:	35fff628 	cbnz	w8, 1da654 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77380>
+  1da794:	52800048 	mov	w8, #0x2                   	// #2
+  1da798:	52800500 	mov	w0, #0x28                  	// #40
+  1da79c:	39002288 	strb	w8, [x20, #8]
+  1da7a0:	940ebb44 	bl	5894b0 <operator new(unsigned long)@plt>
+  1da7a4:	aa1403e1 	mov	x1, x20
+  1da7a8:	aa0003f5 	mov	x21, x0
+  1da7ac:	9400000e 	bl	1da7e4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x77510>
+  1da7b0:	f9000275 	str	x21, [x19]
+  1da7b4:	f94016e8 	ldr	x8, [x23, #40]
+  1da7b8:	f85f83a9 	ldur	x9, [x29, #-8]
+  1da7bc:	eb09011f 	cmp	x8, x9
+  1da7c0:	54000101 	b.ne	1da7e0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x7750c>  // b.any
+  1da7c4:	a9464ff4 	ldp	x20, x19, [sp, #96]
+  1da7c8:	a94557f6 	ldp	x22, x21, [sp, #80]
+  1da7cc:	a9445ff8 	ldp	x24, x23, [sp, #64]
+  1da7d0:	f9401bf9 	ldr	x25, [sp, #48]
+  1da7d4:	a9427bfd 	ldp	x29, x30, [sp, #32]
+  1da7d8:	9101c3ff 	add	sp, sp, #0x70
+  1da7dc:	d65f03c0 	ret
+  1da7e0:	940ebb2c 	bl	589490 <__stack_chk_fail@plt>

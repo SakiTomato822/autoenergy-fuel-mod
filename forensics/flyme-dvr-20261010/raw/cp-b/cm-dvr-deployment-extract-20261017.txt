@@ -1,0 +1,11 @@
+/IpcServiceInterfaceDeployment/0/EventDeployments/98 {"ShortName":"DVR_SystemStsDeployment","Event":"/ServiceInterface/VehicleService/Events/DVR_SystemSts","EventId":32921}
+/IpcServiceInterfaceDeployment/0/EventDeployments/108 {"ShortName":"MMI_DVR_CommandDeployment","Event":"/ServiceInterface/VehicleService/Events/MMI_DVR_Command","EventId":33033}
+/IpcServiceInterfaceDeployment/3/EventDeployments/55 {"ShortName":"DVRConfigDeployment","Event":"/ServiceInterface/MixtureService/Events/DVRConfig","EventId":32854}
+/IpcServiceInterfaceDeployment/6/EventDeployments/8 {"ShortName":"ProjectionScreenRespDeployment","Event":"/ServiceInterface/IVIService/Events/ProjectionScreenResp","EventId":32777}
+/IpcServiceInterfaceDeployment/6/MethodDeployments/3 {"ShortName":"ProjectionScreenDeployment","Method":"/ServiceInterface/IVIService/Methods/ProjectionScreen","MethodId":4}
+/IpcServiceInterfaceDeployment/7/EventDeployments/15 {"ShortName":"ProjectionScreenRespDeployment","Event":"/ServiceInterface/DFSService/Events/ProjectionScreenResp","EventId":32790}
+/IpcServiceInterfaceDeployment/7/MethodDeployments/2 {"ShortName":"ProjectionScreenDeployment","Method":"/ServiceInterface/DFSService/Methods/ProjectionScreen","MethodId":3}
+/IpcServiceInterfaceDeployment/0/EventGroups {"ShortName":"EventDefaultGroup","EventGroupId":1,"Events":["/IpcServiceInterfaceDeployment/VehicleServiceDeployment/EventDeployments/DVR_SystemStsDeployment","/IpcServiceInterfaceDeployment/VehicleServiceDeployment/EventDeployments/MMI_DVR_CommandDeployment"]}
+/IpcServiceInterfaceDeployment/3/EventGroups {"ShortName":"EventDefaultGroup","EventGroupId":1,"Events":["/IpcServiceInterfaceDeployment/MixtureServiceDeployment/EventDeployments/DVRConfigDeployment"]}
+/IpcServiceInterfaceDeployment/6/EventGroups {"ShortName":"EventDefaultGroup","EventGroupId":1,"Events":["/IpcServiceInterfaceDeployment/IVIServiceDeployment/EventDeployments/ProjectionScreenRespDeployment"]}
+/IpcServiceInterfaceDeployment/7/EventGroups {"ShortName":"EventDefaultGroup","EventGroupId":1,"Events":["/IpcServiceInterfaceDeployment/DFSServiceDeployment/EventDeployments/ProjectionScreenRespDeployment"]}

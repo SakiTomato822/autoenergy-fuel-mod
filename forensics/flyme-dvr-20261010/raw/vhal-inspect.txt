@@ -1,0 +1,104 @@
+SECTIONS [
+  [ '', '0x0', '0x0' ],
+  [ '.interp', '0x2e0', '0x15' ],
+  [ '.note.android.ident', '0x2f8', '0x18' ],
+  [ '.note.gnu.build-id', '0x310', '0x20' ],
+  [ '.dynsym', '0x330', '0x2640' ],
+  [ '.gnu.version', '0x2970', '0x330' ],
+  [ '.gnu.version_r', '0x2ca0', '0x80' ],
+  [ '.gnu.hash', '0x2d20', '0x18c' ],
+  [ '.dynstr', '0x2eac', '0x4f1d' ],
+  [ '.rela.dyn', '0x7dd0', '0x384' ],
+  [ '.relr.dyn', '0x8158', '0x100' ],
+  [ '.rela.plt', '0x8258', '0x1b78' ],
+  [ '.rodata', '0x9dd0', '0x224f0' ],
+  [ '.eh_frame_hdr', '0x2c2c0', '0x270c' ],
+  [ '.eh_frame', '0x2e9d0', '0xb51c' ],
+  [ '.text', '0x3a000', '0x54f400' ],
+  [ '.plt', '0x589400', '0x1270' ],
+  [ '.tdata', '0x58b000', '0x0' ],
+  [ '.preinit_array', '0x58b000', '0x10' ],
+  [ '.init_array', '0x58b010', '0x140' ],
+  [ '.fini_array', '0x58b150', '0x10' ],
+  [ '.data.rel.ro', '0x58b160', '0x2bb8' ],
+  [ '.dynamic', '0x58dd18', '0x290' ],
+  [ '.got', '0x58dfa8', '0x9a8' ],
+  [ '.got.plt', '0x58e950', '0x940' ],
+  [ '.data', '0x590290', '0xb0' ],
+  [ '.bss', '0x590340', '0x75dcf8' ],
+  [ '.shstrtab', '0x0', '0x120' ],
+  [ '.gnu_debugdata', '0x0', '0x5cf4' ]
+]
+SYMBOLS []
+TARGETS [
+  { text: 'INFO_ID_MMI_DVRENTER', addr: 57830 },
+  { text: 'DVR_RestoreFactorySettingsResult', addr: 59461 },
+  { text: 'DVR_RecordingCycleSts', addr: 59494 },
+  { text: 'DVR_SystemSts', addr: 63477 },
+  { text: 'DVR_SDcardSts', addr: 70074 },
+  { text: 'INFO_ID_DVR_CURRENTVIDEO_COUNTS', addr: 75023 },
+  { text: 'INFO_ID_DVR_RECORDING_CYCLESTS', addr: 78278 },
+  { text: 'INFO_ID_DVR_SDCARDSTS', addr: 82426 },
+  { text: 'INFO_ID_DVR_RESTORE_FACTORY_SETTINGS', addr: 85746 },
+  { text: 'INFO_ID_DVR_CONTROL', addr: 85783 },
+  { text: 'INFO_ID_DVR_SYSTEMSTS', addr: 90525 },
+  { text: 'INFO_ID_DVR_COMMANDRESPLIST', addr: 93705 },
+  { text: 'DVR_CurrentVideo_counts', addr: 102358 },
+  { text: 'MMI_DVR_ControlResp', addr: 102631 },
+  { text: 'INFO_ID_MMI_DVR_LVDS_MODE_CONFIG', addr: 103716 },
+  { text: 'DVR_SDFormatResult', addr: 105928 },
+  { text: 'INFO_ID_DVR_SDFORMATRESULT', addr: 107976 },
+  { text: 'INFO_ID_DVR_HOME', addr: 108003 },
+  { text: 'MMI_DVRHome', addr: 109976 },
+  { text: 'DVR_CommandRespList', addr: 120974 },
+  { text: 'MMI_DVREnter', addr: 121200 },
+  { text: 'INFO_ID_DVR_COMMAND', addr: 123174 },
+  { text: 'DVR_HomeResult', addr: 128420 },
+  { text: 'DVR_CommandResult', addr: 131862 },
+  { text: 'DVR_ControlRequest', addr: 159440 }
+]
+XREF 0x7a32c 0x7a334 { text: 'INFO_ID_DVR_SYSTEMSTS', addr: 90525 } null
+XREF 0x7a404 0x7a40c { text: 'INFO_ID_DVR_RECORDING_CYCLESTS', addr: 78278 } null
+XREF 0x7a4dc 0x7a4e4 { text: 'INFO_ID_DVR_SDCARDSTS', addr: 82426 } null
+XREF 0x7a5b4 0x7a5bc { text: 'INFO_ID_DVR_SDFORMATRESULT', addr: 107976 } null
+XREF 0x7a68c 0x7a694 { text: 'INFO_ID_DVR_HOME', addr: 108003 } null
+XREF 0x7a764 0x7a76c { text: 'INFO_ID_DVR_RESTORE_FACTORY_SETTINGS', addr: 85746 } null
+XREF 0x7a83c 0x7a844 { text: 'INFO_ID_DVR_COMMANDRESPLIST', addr: 93705 } null
+XREF 0x7a914 0x7a91c { text: 'INFO_ID_DVR_CURRENTVIDEO_COUNTS', addr: 75023 } null
+XREF 0x7a9ec 0x7a9f4 { text: 'INFO_ID_DVR_COMMAND', addr: 123174 } null
+XREF 0x7aac4 0x7aacc { text: 'INFO_ID_DVR_CONTROL', addr: 85783 } null
+XREF 0x7ae24 0x7ae2c { text: 'INFO_ID_MMI_DVR_LVDS_MODE_CONFIG', addr: 103716 } null
+XREF 0x7aefc 0x7af04 { text: 'INFO_ID_MMI_DVRENTER', addr: 57830 } null
+XREF 0x2fb4d8 0x2fb4e0 { text: 'DVR_ControlRequest', addr: 159440 } null
+XREF 0x2fb544 0x2fb548 { text: 'DVR_CurrentVideo_counts', addr: 102358 } null
+XREF 0x2fb574 0x2fb578 { text: 'DVR_CommandResult', addr: 131862 } null
+XREF 0x2fb5b0 0x2fb5b4 { text: 'DVR_CommandRespList', addr: 120974 } null
+XREF 0x2fb5f4 0x2fb5f8 { text: 'DVR_HomeResult', addr: 128420 } null
+XREF 0x2fb648 0x2fb650 { text: 'DVR_RestoreFactorySettingsResult', addr: 59461 } null
+XREF 0x2fb674 0x2fb678 { text: 'DVR_SDFormatResult', addr: 105928 } null
+XREF 0x2fb680 0x2fb688 { text: 'DVR_SDcardSts', addr: 70074 } null
+XREF 0x2fb6f4 0x2fb704 { text: 'DVR_SystemSts', addr: 63477 } null
+XREF 0x2fb738 0x2fb73c { text: 'DVR_RecordingCycleSts', addr: 59494 } null
+XREF 0x300dc8 0x300dcc { text: 'MMI_DVR_ControlResp', addr: 102631 } null
+XREF 0x300eb0 0x300eb4 { text: 'MMI_DVRHome', addr: 109976 } null
+XREF 0x300f1c 0x300f20 { text: 'MMI_DVREnter', addr: 121200 } null
+XREF 0x33fac4 0x33fac8 { text: 'DVR_ControlRequest', addr: 159440 } null
+XREF 0x33fbc8 0x33fbd0 { text: 'DVR_CurrentVideo_counts', addr: 102358 } null
+XREF 0x33fcc8 0x33fccc { text: 'DVR_CommandResult', addr: 131862 } null
+XREF 0x33fde0 0x33fde4 { text: 'DVR_CommandRespList', addr: 120974 } null
+XREF 0x33fed8 0x33fee4 { text: 'DVR_HomeResult', addr: 128420 } null
+XREF 0x33ffec 0x33fff0 { text: 'DVR_RestoreFactorySettingsResult', addr: 59461 } null
+XREF 0x3400ec 0x3400f4 { text: 'DVR_SDcardSts', addr: 70074 } null
+XREF 0x340200 0x340204 { text: 'DVR_SDFormatResult', addr: 105928 } null
+XREF 0x3402fc 0x340304 { text: 'DVR_SystemSts', addr: 63477 } null
+XREF 0x340404 0x34040c { text: 'DVR_RecordingCycleSts', addr: 59494 } null
+XREF 0x3404fc 0x340500 { text: 'DVR_ControlRequest', addr: 159440 } null
+XREF 0x340574 0x34057c { text: 'DVR_CurrentVideo_counts', addr: 102358 } null
+XREF 0x3405e8 0x3405ec { text: 'DVR_CommandResult', addr: 131862 } null
+XREF 0x340674 0x340678 { text: 'DVR_CommandRespList', addr: 120974 } null
+XREF 0x3406e0 0x3406ec { text: 'DVR_HomeResult', addr: 128420 } null
+XREF 0x340768 0x34076c { text: 'DVR_RestoreFactorySettingsResult', addr: 59461 } null
+XREF 0x3407dc 0x3407e4 { text: 'DVR_SDcardSts', addr: 70074 } null
+XREF 0x340864 0x340868 { text: 'DVR_SDFormatResult', addr: 105928 } null
+XREF 0x3408d4 0x3408dc { text: 'DVR_SystemSts', addr: 63477 } null
+XREF 0x340950 0x340958 { text: 'DVR_RecordingCycleSts', addr: 59494 } null

@@ -1,0 +1,1 @@
+{"date":"2026-10-12T12:47:09.662Z","slot":"b","source":"/dev/block/by-name/cp_rootfs_b","containerOffset":4096,"blocksRead":884,"bytesRead":3620864,"method":"read-only dd; no mount; flat and inline EROFS only"}

@@ -1,0 +1,11 @@
+Sun Oct 11 21:00:50 CST 2026
+package:/system_ext/app/OneOSOTA/OneOSOTA.apk
+/data/data/com.flyme.auto.update/databases/ota_upgrade_pre.db
+/data/data/com.flyme.auto.update/databases/ota_upgrade_pre.db-journal
+/data/data/com.flyme.auto.update/shared_prefs/ecarx_fota_file.xml
+/data/data/com.flyme.auto.update/shared_prefs/sp_sbc_status.xml
+/data/data/com.flyme.auto.update/shared_prefs/ota_upgrade_result_file_name.xml
+/data/data/com.flyme.auto.update/shared_prefs/ota_mpu_upgrade_check_daily_file_name.xml
+/data/data/com.flyme.auto.update/shared_prefs/ota_upgrade_result_has_full_file_name.xml
+/data/user_de/0/com.flyme.auto.update/code_cache/com.android.opengl.shaders_cache
+/data/user_de/0/com.flyme.auto.update/code_cache/com.android.skia.shaders_cache

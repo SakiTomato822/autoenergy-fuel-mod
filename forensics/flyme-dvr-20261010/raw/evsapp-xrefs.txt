@@ -1,0 +1,177 @@
+SECTIONS [
+  [ '', '0x0', '0x0' ],
+  [ '.interp', '0x2e0', '0x15' ],
+  [ '.note.android.ident', '0x2f8', '0x18' ],
+  [ '.note.gnu.build-id', '0x310', '0x20' ],
+  [ '.dynsym', '0x330', '0x1c80' ],
+  [ '.gnu.version', '0x1fb0', '0x260' ],
+  [ '.gnu.version_r', '0x2210', '0xb0' ],
+  [ '.gnu.hash', '0x22c0', '0x74' ],
+  [ '.dynstr', '0x2334', '0x29a9' ],
+  [ '.rela.dyn', '0x4ce0', '0x73e0' ],
+  [ '.rela.plt', '0xc0c0', '0x15c0' ],
+  [ '.rodata', '0xd680', '0x159d8' ],
+  [ '.eh_frame_hdr', '0x23058', '0xbf4' ],
+  [ '.eh_frame', '0x23c50', '0x34dc' ],
+  [ '.text', '0x28000', '0x30610' ],
+  [ '.plt', '0x58610', '0xea0' ],
+  [ '.tdata', '0x5a000', '0x0' ],
+  [ '.preinit_array', '0x5a000', '0x10' ],
+  [ '.init_array', '0x5a010', '0x68' ],
+  [ '.fini_array', '0x5a078', '0x10' ],
+  [ '.data.rel.ro', '0x5a088', '0x7b40' ],
+  [ '.dynamic', '0x61bc8', '0x320' ],
+  [ '.got', '0x61ee8', '0x128' ],
+  [ '.got.plt', '0x62010', '0x758' ],
+  [ '.data', '0x63768', '0x6c' ],
+  [ '.bss', '0x637d8', '0x1546' ],
+  [ '.comment', '0x0', '0x114' ],
+  [ '.symtab', '0x0', '0x9918' ],
+  [ '.shstrtab', '0x0', '0x12f' ],
+  [ '.strtab', '0x0', '0xb9de' ],
+  [ '.gnu_debuglink', '0x0', '0xc' ]
+]
+SYMBOLS [
+  {
+    name: '_ZN15EvsStateControlC1EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEENS1_INS9_11IEvsDisplayEEEN9Constants10CameraTypeE',
+    value: 291688,
+    size: 924,
+    type: 2
+  },
+  {
+    name: '_ZN15RvcStateControlC1EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEENS1_INS9_11IEvsDisplayEEEN9Constants10CameraTypeE',
+    value: 351612,
+    size: 264,
+    type: 2
+  },
+  {
+    name: '_ZN21EvsStateInsideControlC1EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEENS1_INS9_11IEvsDisplayEEEN9Constants10CameraTypeE',
+    value: 184192,
+    size: 456,
+    type: 2
+  },
+  {
+    name: '_ZN21EvsStateInsideControl20configureEvsPipelineENS_5StateE',
+    value: 201844,
+    size: 576,
+    type: 2
+  },
+  {
+    name: '_ZN21EvsStateInsideControlC2EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEENS1_INS9_11IEvsDisplayEEEN9Constants10CameraTypeE',
+    value: 184192,
+    size: 456,
+    type: 2
+  },
+  {
+    name: '_ZN23RenderAvmInsideViewBX11C1EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEE',
+    value: 225868,
+    size: 2344,
+    type: 2
+  },
+  {
+    name: '_Z18createVideoTextureN7android2spINS_8hardware10automotive3evs4V1_014IEvsEnumeratorEEEPv',
+    value: 213344,
+    size: 184,
+    type: 2
+  },
+  {
+    name: '_ZN8VideoTexC1EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEENS1_INS5_10IEvsCameraEEENS1_I13StreamHandlerEEPv',
+    value: 212828,
+    size: 332,
+    type: 2
+  },
+  {
+    name: '_ZN8VideoTexC2EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEENS1_INS5_10IEvsCameraEEENS1_I13StreamHandlerEEPv',
+    value: 212828,
+    size: 332,
+    type: 2
+  },
+  {
+    name: '_ZN23RenderAvmInsideViewBX11C2EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEE',
+    value: 225868,
+    size: 2344,
+    type: 2
+  },
+  {
+    name: '_ZN15EvsStateControl20configureEvsPipelineENS_5StateE',
+    value: 308200,
+    size: 836,
+    type: 2
+  },
+  {
+    name: '_ZN15EvsStateControlC2EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEENS1_INS9_11IEvsDisplayEEEN9Constants10CameraTypeE',
+    value: 291688,
+    size: 924,
+    type: 2
+  },
+  {
+    name: '_ZN17RenderApaViewBX11C1EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEEi',
+    value: 311808,
+    size: 8048,
+    type: 2
+  },
+  {
+    name: '_ZN17RenderApaViewBX11C2EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEEi',
+    value: 311808,
+    size: 8048,
+    type: 2
+  },
+  {
+    name: '_ZN13RvcRenderViewC1EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEE',
+    value: 340448,
+    size: 940,
+    type: 2
+  },
+  {
+    name: '_ZN13RvcRenderViewC2EN7android2spINS0_8hardware10automotive7vehicle4V2_08IVehicleEEENS1_INS3_3evs4V1_014IEvsEnumeratorEEE',
+    value: 340448,
+    size: 940,
+    type: 2
+  },
+  {
+    name: '_ZN15RvcStateControl20configureEvsPipelineENS_5StateE',
+    value: 358172,
+    size: 544,
+    type: 2
+  }
+]
+TARGETS [
+  { text: 'config input dev %s', addr: 55340 },
+  { text: 'config input dev buffer: %s', addr: 124666 }
+]
+XREF 0x2d3d8 0x2d3f8 { text: 'config input dev buffer: %s', addr: 124666 } {
+  name: '_ZN21EvsStateInsideControl9inputLoopEv',
+  value: 185168,
+  size: 1228,
+  type: 2
+}
+XREF 0x2d544 0x2d558 { text: 'config input dev %s', addr: 55340 } {
+  name: '_ZN21EvsStateInsideControl9inputLoopEv',
+  value: 185168,
+  size: 1228,
+  type: 2
+}
+XREF 0x479a0 0x479c0 { text: 'config input dev buffer: %s', addr: 124666 } {
+  name: '_ZN15EvsStateControl9inputLoopEv',
+  value: 293160,
+  size: 992,
+  type: 2
+}
+XREF 0x47b1c 0x47b30 { text: 'config input dev %s', addr: 55340 } {
+  name: '_ZN15EvsStateControl9inputLoopEv',
+  value: 293160,
+  size: 992,
+  type: 2
+}
+XREF 0x5632c 0x5634c { text: 'config input dev buffer: %s', addr: 124666 } {
+  name: '_ZN15RvcStateControl9inputLoopEv',
+  value: 352940,
+  size: 1024,
+  type: 2
+}
+XREF 0x56498 0x564ac { text: 'config input dev %s', addr: 55340 } {
+  name: '_ZN15RvcStateControl9inputLoopEv',
+  value: 352940,
+  size: 1024,
+  type: 2
+}

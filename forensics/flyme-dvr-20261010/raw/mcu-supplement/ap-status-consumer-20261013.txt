@@ -1,0 +1,1340 @@
+
+raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000001d8eac <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75bd8>:
+  1d8eac:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+  1d8eb0:	a9016ffc 	stp	x28, x27, [sp, #16]
+  1d8eb4:	a90267fa 	stp	x26, x25, [sp, #32]
+  1d8eb8:	a9035ff8 	stp	x24, x23, [sp, #48]
+  1d8ebc:	a90457f6 	stp	x22, x21, [sp, #64]
+  1d8ec0:	a9054ff4 	stp	x20, x19, [sp, #80]
+  1d8ec4:	910003fd 	mov	x29, sp
+  1d8ec8:	d10943ff 	sub	sp, sp, #0x250
+  1d8ecc:	d53bd053 	mrs	x19, tpidr_el0
+  1d8ed0:	f9401668 	ldr	x8, [x19, #40]
+  1d8ed4:	aa0003f4 	mov	x20, x0
+  1d8ed8:	aa0103f5 	mov	x21, x1
+  1d8edc:	910303f8 	add	x24, sp, #0xc0
+  1d8ee0:	f81f03a8 	stur	x8, [x29, #-16]
+  1d8ee4:	f9400020 	ldr	x0, [x1]
+  1d8ee8:	97feda03 	bl	18f6f4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c420>
+  1d8eec:	39400017 	ldrb	w23, [x0]
+  1d8ef0:	f94002a0 	ldr	x0, [x21]
+  1d8ef4:	97feda02 	bl	18f6fc <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c428>
+  1d8ef8:	3940001a 	ldrb	w26, [x0]
+  1d8efc:	f94002a0 	ldr	x0, [x21]
+  1d8f00:	f9001bf5 	str	x21, [sp, #48]
+  1d8f04:	97feda00 	bl	18f704 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c430>
+  1d8f08:	d0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d8f0c:	f941a508 	ldr	x8, [x8, #840]
+  1d8f10:	d0001db9 	adrp	x25, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d8f14:	39400108 	ldrb	w8, [x8]
+  1d8f18:	f9400339 	ldr	x25, [x25]
+  1d8f1c:	f9000bf3 	str	x19, [sp, #16]
+  1d8f20:	34000d88 	cbz	w8, 1d90d0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75dfc>
+  1d8f24:	39400015 	ldrb	w21, [x0]
+  1d8f28:	f0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d8f2c:	90fff262 	adrp	x2, 24000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x39a70>
+  1d8f30:	b0fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d8f34:	9125c421 	add	x1, x1, #0x971
+  1d8f38:	9130b442 	add	x2, x2, #0xc2d
+  1d8f3c:	913eac63 	add	x3, x3, #0xfab
+  1d8f40:	52800060 	mov	w0, #0x3                   	// #3
+  1d8f44:	2a1703e4 	mov	w4, w23
+  1d8f48:	2a1a03e5 	mov	w5, w26
+  1d8f4c:	2a1503e6 	mov	w6, w21
+  1d8f50:	940ec16c 	bl	589500 <__android_log_print@plt>
+  1d8f54:	f9400328 	ldr	x8, [x25]
+  1d8f58:	b4000bc8 	cbz	x8, 1d90d0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75dfc>
+  1d8f5c:	b9400908 	ldr	w8, [x8, #8]
+  1d8f60:	7100151f 	cmp	w8, #0x5
+  1d8f64:	54000b6b 	b.lt	1d90d0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75dfc>  // b.tstop
+  1d8f68:	d0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d8f6c:	f9400508 	ldr	x8, [x8, #8]
+  1d8f70:	528000a9 	mov	w9, #0x5                   	// #5
+  1d8f74:	52801640 	mov	w0, #0xb2                  	// #178
+  1d8f78:	b900dbe9 	str	w9, [sp, #216]
+  1d8f7c:	91004108 	add	x8, x8, #0x10
+  1d8f80:	f90063e8 	str	x8, [sp, #192]
+  1d8f84:	940ec163 	bl	589510 <syscall@plt>
+  1d8f88:	b900dfe0 	str	w0, [sp, #220]
+  1d8f8c:	d0001daa 	adrp	x10, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d8f90:	f9400d4a 	ldr	x10, [x10, #24]
+  1d8f94:	910303e9 	add	x9, sp, #0xc0
+  1d8f98:	52800808 	mov	w8, #0x40                  	// #64
+  1d8f9c:	9100e136 	add	x22, x9, #0x38
+  1d8fa0:	a90e23ff 	stp	xzr, x8, [sp, #224]
+  1d8fa4:	91028120 	add	x0, x9, #0xa0
+  1d8fa8:	91006148 	add	x8, x10, #0x18
+  1d8fac:	91010149 	add	x9, x10, #0x40
+  1d8fb0:	aa1603e1 	mov	x1, x22
+  1d8fb4:	f9007be8 	str	x8, [sp, #240]
+  1d8fb8:	f900b3e9 	str	x9, [sp, #352]
+  1d8fbc:	940ec159 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  1d8fc0:	f900f7ff 	str	xzr, [sp, #488]
+  1d8fc4:	d0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d8fc8:	f9401129 	ldr	x9, [x9, #32]
+  1d8fcc:	12800008 	mov	w8, #0xffffffff            	// #-1
+  1d8fd0:	b901f3e8 	str	w8, [sp, #496]
+  1d8fd4:	aa1603e0 	mov	x0, x22
+  1d8fd8:	91006128 	add	x8, x9, #0x18
+  1d8fdc:	91010129 	add	x9, x9, #0x40
+  1d8fe0:	f9007be8 	str	x8, [sp, #240]
+  1d8fe4:	f900b3e9 	str	x9, [sp, #352]
+  1d8fe8:	940ec152 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  1d8fec:	d0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d8ff0:	f9400908 	ldr	x8, [x8, #16]
+  1d8ff4:	6f00e400 	movi	v0.2d, #0x0
+  1d8ff8:	52800209 	mov	w9, #0x10                  	// #16
+  1d8ffc:	910263e0 	add	x0, sp, #0x98
+  1d9000:	91004108 	add	x8, x8, #0x10
+  1d9004:	f9007fe8 	str	x8, [sp, #248]
+  1d9008:	f0fff268 	adrp	x8, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+  1d900c:	3c878300 	stur	q0, [x24, #120]
+  1d9010:	3c888300 	stur	q0, [x24, #136]
+  1d9014:	b9015be9 	str	w9, [sp, #344]
+  1d9018:	b0fff269 	adrp	x9, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d901c:	9124d908 	add	x8, x8, #0x936
+  1d9020:	910c8929 	add	x9, x9, #0x322
+  1d9024:	aa1f03e1 	mov	x1, xzr
+  1d9028:	a91fa7e8 	stp	x8, x9, [sp, #504]
+  1d902c:	b9020bff 	str	wzr, [sp, #520]
+  1d9030:	ad1083e0 	stp	q0, q0, [sp, #528]
+  1d9034:	3d808fe0 	str	q0, [sp, #560]
+  1d9038:	a909ffff 	stp	xzr, xzr, [sp, #152]
+  1d903c:	940ec141 	bl	589540 <gettimeofday@plt>
+  1d9040:	a949a7e8 	ldp	x8, x9, [sp, #152]
+  1d9044:	d29ef9ea 	mov	x10, #0xf7cf                	// #63439
+  1d9048:	f2bc6a6a 	movk	x10, #0xe353, lsl #16
+  1d904c:	f2d374aa 	movk	x10, #0x9ba5, lsl #32
+  1d9050:	f2e4188a 	movk	x10, #0x20c4, lsl #48
+  1d9054:	f90067e8 	str	x8, [sp, #200]
+  1d9058:	9b4a7d28 	smulh	x8, x9, x10
+  1d905c:	d37ffd09 	lsr	x9, x8, #63
+  1d9060:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9064:	f0fff242 	adrp	x2, 24000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x39a70>
+  1d9068:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d906c:	0b481d28 	add	w8, w9, w8, lsr #7
+  1d9070:	9125c421 	add	x1, x1, #0x971
+  1d9074:	9130b442 	add	x2, x2, #0xc2d
+  1d9078:	913eac63 	add	x3, x3, #0xfab
+  1d907c:	910303e0 	add	x0, sp, #0xc0
+  1d9080:	2a1703e4 	mov	w4, w23
+  1d9084:	2a1a03e5 	mov	w5, w26
+  1d9088:	2a1503e6 	mov	w6, w21
+  1d908c:	7901a3e8 	strh	w8, [sp, #208]
+  1d9090:	97fa0b95 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  1d9094:	f9400333 	ldr	x19, [x25]
+  1d9098:	a9412276 	ldp	x22, x8, [x19, #16]
+  1d909c:	eb0802df 	cmp	x22, x8
+  1d90a0:	54000140 	b.eq	1d90c8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75df4>  // b.none
+  1d90a4:	aa0003f5 	mov	x21, x0
+  1d90a8:	f84086c0 	ldr	x0, [x22], #8
+  1d90ac:	aa1503e1 	mov	x1, x21
+  1d90b0:	f9400008 	ldr	x8, [x0]
+  1d90b4:	f9400908 	ldr	x8, [x8, #16]
+  1d90b8:	d63f0100 	blr	x8
+  1d90bc:	f9400e68 	ldr	x8, [x19, #24]
+  1d90c0:	eb0802df 	cmp	x22, x8
+  1d90c4:	54ffff21 	b.ne	1d90a8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75dd4>  // b.any
+  1d90c8:	910303e0 	add	x0, sp, #0xc0
+  1d90cc:	97fa0bd3 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+  1d90d0:	a909ffff 	stp	xzr, xzr, [sp, #152]
+  1d90d4:	f90057ff 	str	xzr, [sp, #168]
+  1d90d8:	f9401a88 	ldr	x8, [x20, #48]
+  1d90dc:	2a1a03f6 	mov	w22, w26
+  1d90e0:	33181ef6 	bfi	w22, w23, #8, #8
+  1d90e4:	2a1603e1 	mov	w1, w22
+  1d90e8:	f9400500 	ldr	x0, [x8, #8]
+  1d90ec:	f9400008 	ldr	x8, [x0]
+  1d90f0:	f9403109 	ldr	x9, [x8, #96]
+  1d90f4:	910263e8 	add	x8, sp, #0x98
+  1d90f8:	d63f0120 	blr	x9
+  1d90fc:	a949a3e9 	ldp	x9, x8, [sp, #152]
+  1d9100:	eb090108 	subs	x8, x8, x9
+  1d9104:	54000d01 	b.ne	1d92a4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75fd0>  // b.any
+  1d9108:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d910c:	b0fff1e2 	adrp	x2, 16000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x47a70>
+  1d9110:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9114:	9125c421 	add	x1, x1, #0x971
+  1d9118:	911f3042 	add	x2, x2, #0x7cc
+  1d911c:	913eac63 	add	x3, x3, #0xfab
+  1d9120:	528000c0 	mov	w0, #0x6                   	// #6
+  1d9124:	2a1603e4 	mov	w4, w22
+  1d9128:	940ec0f6 	bl	589500 <__android_log_print@plt>
+  1d912c:	f9400328 	ldr	x8, [x25]
+  1d9130:	b4005f08 	cbz	x8, 1d9d10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a3c>
+  1d9134:	b9400908 	ldr	w8, [x8, #8]
+  1d9138:	7100091f 	cmp	w8, #0x2
+  1d913c:	54005eab 	b.lt	1d9d10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a3c>  // b.tstop
+  1d9140:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9144:	f9400508 	ldr	x8, [x8, #8]
+  1d9148:	52800049 	mov	w9, #0x2                   	// #2
+  1d914c:	52801640 	mov	w0, #0xb2                  	// #178
+  1d9150:	b900dbe9 	str	w9, [sp, #216]
+  1d9154:	91004108 	add	x8, x8, #0x10
+  1d9158:	f90063e8 	str	x8, [sp, #192]
+  1d915c:	940ec0ed 	bl	589510 <syscall@plt>
+  1d9160:	b900dfe0 	str	w0, [sp, #220]
+  1d9164:	b0001daa 	adrp	x10, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9168:	f9400d4a 	ldr	x10, [x10, #24]
+  1d916c:	910303e9 	add	x9, sp, #0xc0
+  1d9170:	52800968 	mov	w8, #0x4b                  	// #75
+  1d9174:	9100e133 	add	x19, x9, #0x38
+  1d9178:	a90e23ff 	stp	xzr, x8, [sp, #224]
+  1d917c:	91028120 	add	x0, x9, #0xa0
+  1d9180:	91006148 	add	x8, x10, #0x18
+  1d9184:	91010149 	add	x9, x10, #0x40
+  1d9188:	aa1303e1 	mov	x1, x19
+  1d918c:	f9007be8 	str	x8, [sp, #240]
+  1d9190:	f900b3e9 	str	x9, [sp, #352]
+  1d9194:	940ec0e3 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  1d9198:	f900f7ff 	str	xzr, [sp, #488]
+  1d919c:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d91a0:	f9401129 	ldr	x9, [x9, #32]
+  1d91a4:	12800008 	mov	w8, #0xffffffff            	// #-1
+  1d91a8:	b901f3e8 	str	w8, [sp, #496]
+  1d91ac:	aa1303e0 	mov	x0, x19
+  1d91b0:	91006128 	add	x8, x9, #0x18
+  1d91b4:	91010129 	add	x9, x9, #0x40
+  1d91b8:	f9007be8 	str	x8, [sp, #240]
+  1d91bc:	f900b3e9 	str	x9, [sp, #352]
+  1d91c0:	940ec0dc 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  1d91c4:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d91c8:	f9400908 	ldr	x8, [x8, #16]
+  1d91cc:	6f00e400 	movi	v0.2d, #0x0
+  1d91d0:	f0fff269 	adrp	x9, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+  1d91d4:	9124d929 	add	x9, x9, #0x936
+  1d91d8:	91004108 	add	x8, x8, #0x10
+  1d91dc:	f9007fe8 	str	x8, [sp, #248]
+  1d91e0:	52800208 	mov	w8, #0x10                  	// #16
+  1d91e4:	3c878300 	stur	q0, [x24, #120]
+  1d91e8:	3c888300 	stur	q0, [x24, #136]
+  1d91ec:	b9015be8 	str	w8, [sp, #344]
+  1d91f0:	b0fff268 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d91f4:	910c8908 	add	x8, x8, #0x322
+  1d91f8:	9101e3e0 	add	x0, sp, #0x78
+  1d91fc:	aa1f03e1 	mov	x1, xzr
+  1d9200:	a91fa3e9 	stp	x9, x8, [sp, #504]
+  1d9204:	b9020bff 	str	wzr, [sp, #520]
+  1d9208:	ad1083e0 	stp	q0, q0, [sp, #528]
+  1d920c:	3d808fe0 	str	q0, [sp, #560]
+  1d9210:	a907ffff 	stp	xzr, xzr, [sp, #120]
+  1d9214:	940ec0cb 	bl	589540 <gettimeofday@plt>
+  1d9218:	a947a7e8 	ldp	x8, x9, [sp, #120]
+  1d921c:	d29ef9ea 	mov	x10, #0xf7cf                	// #63439
+  1d9220:	f2bc6a6a 	movk	x10, #0xe353, lsl #16
+  1d9224:	f2d374aa 	movk	x10, #0x9ba5, lsl #32
+  1d9228:	f2e4188a 	movk	x10, #0x20c4, lsl #48
+  1d922c:	f90067e8 	str	x8, [sp, #200]
+  1d9230:	9b4a7d28 	smulh	x8, x9, x10
+  1d9234:	d37ffd09 	lsr	x9, x8, #63
+  1d9238:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d923c:	b0fff1e2 	adrp	x2, 16000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x47a70>
+  1d9240:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9244:	0b481d28 	add	w8, w9, w8, lsr #7
+  1d9248:	9125c421 	add	x1, x1, #0x971
+  1d924c:	911f3042 	add	x2, x2, #0x7cc
+  1d9250:	913eac63 	add	x3, x3, #0xfab
+  1d9254:	910303e0 	add	x0, sp, #0xc0
+  1d9258:	2a1603e4 	mov	w4, w22
+  1d925c:	7901a3e8 	strh	w8, [sp, #208]
+  1d9260:	97fa0b21 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  1d9264:	f9400334 	ldr	x20, [x25]
+  1d9268:	a9412295 	ldp	x21, x8, [x20, #16]
+  1d926c:	eb0802bf 	cmp	x21, x8
+  1d9270:	54000140 	b.eq	1d9298 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75fc4>  // b.none
+  1d9274:	aa0003f3 	mov	x19, x0
+  1d9278:	f84086a0 	ldr	x0, [x21], #8
+  1d927c:	aa1303e1 	mov	x1, x19
+  1d9280:	f9400008 	ldr	x8, [x0]
+  1d9284:	f9400908 	ldr	x8, [x8, #16]
+  1d9288:	d63f0100 	blr	x8
+  1d928c:	f9400e88 	ldr	x8, [x20, #24]
+  1d9290:	eb0802bf 	cmp	x21, x8
+  1d9294:	54ffff21 	b.ne	1d9278 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75fa4>  // b.any
+  1d9298:	910303e0 	add	x0, sp, #0xc0
+  1d929c:	97fa0b5f 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+  1d92a0:	1400029c 	b	1d9d10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a3c>
+  1d92a4:	b0001db7 	adrp	x23, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d92a8:	f941a6f7 	ldr	x23, [x23, #840]
+  1d92ac:	d343fd08 	lsr	x8, x8, #3
+  1d92b0:	7100051f 	cmp	w8, #0x1
+  1d92b4:	540052eb 	b.lt	1d9d10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a3c>  // b.tstop
+  1d92b8:	b0001dab 	adrp	x11, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d92bc:	910303e9 	add	x9, sp, #0xc0
+  1d92c0:	f9404fe8 	ldr	x8, [sp, #152]
+  1d92c4:	f940056b 	ldr	x11, [x11, #8]
+  1d92c8:	b0001dac 	adrp	x12, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d92cc:	f940098c 	ldr	x12, [x12, #16]
+  1d92d0:	9100e12d 	add	x13, x9, #0x38
+  1d92d4:	910183ea 	add	x10, sp, #0x60
+  1d92d8:	f9002fed 	str	x13, [sp, #88]
+  1d92dc:	9102812d 	add	x13, x9, #0xa0
+  1d92e0:	f9002bed 	str	x13, [sp, #80]
+  1d92e4:	9101e12d 	add	x13, x9, #0x78
+  1d92e8:	9105413c 	add	x28, x9, #0x150
+  1d92ec:	91004149 	add	x9, x10, #0x10
+  1d92f0:	f9000fe9 	str	x9, [sp, #24]
+  1d92f4:	91004169 	add	x9, x11, #0x10
+  1d92f8:	aa1f03f3 	mov	x19, xzr
+  1d92fc:	f90007e9 	str	x9, [sp, #8]
+  1d9300:	91004189 	add	x9, x12, #0x10
+  1d9304:	f90027ed 	str	x13, [sp, #72]
+  1d9308:	f90003e9 	str	x9, [sp]
+  1d930c:	b9002bfa 	str	w26, [sp, #40]
+  1d9310:	1400000e 	b	1d9348 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76074>
+  1d9314:	f9400008 	ldr	x8, [x0]
+  1d9318:	f9400508 	ldr	x8, [x8, #8]
+  1d931c:	d63f0100 	blr	x8
+  1d9320:	f94002a8 	ldr	x8, [x21]
+  1d9324:	aa1503e0 	mov	x0, x21
+  1d9328:	f9400508 	ldr	x8, [x8, #8]
+  1d932c:	d63f0100 	blr	x8
+  1d9330:	a949a7e8 	ldp	x8, x9, [sp, #152]
+  1d9334:	91000673 	add	x19, x19, #0x1
+  1d9338:	cb080129 	sub	x9, x9, x8
+  1d933c:	d343fd29 	lsr	x9, x9, #3
+  1d9340:	eb29c27f 	cmp	x19, w9, sxtw
+  1d9344:	54004e6a 	b.ge	1d9d10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a3c>  // b.tcont
+  1d9348:	7100435f 	cmp	w26, #0x10
+  1d934c:	540033c0 	b.eq	1d99c4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x766f0>  // b.none
+  1d9350:	71000b5f 	cmp	w26, #0x2
+  1d9354:	54fffee1 	b.ne	1d9330 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7605c>  // b.any
+  1d9358:	f8737915 	ldr	x21, [x8, x19, lsl #3]
+  1d935c:	52800a00 	mov	w0, #0x50                  	// #80
+  1d9360:	940ec054 	bl	5894b0 <_Znwm@plt>
+  1d9364:	f9401be9 	ldr	x9, [sp, #48]
+  1d9368:	910303e1 	add	x1, sp, #0xc0
+  1d936c:	aa0003f8 	mov	x24, x0
+  1d9370:	f9400128 	ldr	x8, [x9]
+  1d9374:	f900013f 	str	xzr, [x9]
+  1d9378:	f90063e8 	str	x8, [sp, #192]
+  1d937c:	94000553 	bl	1da8c8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x775f4>
+  1d9380:	f94063e0 	ldr	x0, [sp, #192]
+  1d9384:	f90063ff 	str	xzr, [sp, #192]
+  1d9388:	b4000080 	cbz	x0, 1d9398 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x760c4>
+  1d938c:	f9400008 	ldr	x8, [x0]
+  1d9390:	f9400508 	ldr	x8, [x8, #8]
+  1d9394:	d63f0100 	blr	x8
+  1d9398:	f9400308 	ldr	x8, [x24]
+  1d939c:	f9004bff 	str	xzr, [sp, #144]
+  1d93a0:	aa1803e0 	mov	x0, x24
+  1d93a4:	f90013f8 	str	x24, [sp, #32]
+  1d93a8:	f9400909 	ldr	x9, [x8, #16]
+  1d93ac:	910243e8 	add	x8, sp, #0x90
+  1d93b0:	d63f0120 	blr	x9
+  1d93b4:	f9404bf8 	ldr	x24, [sp, #144]
+  1d93b8:	3940a308 	ldrb	w8, [x24, #40]
+  1d93bc:	3940c31a 	ldrb	w26, [x24, #48]
+  1d93c0:	b9002fe8 	str	w8, [sp, #44]
+  1d93c4:	3940ab08 	ldrb	w8, [x24, #42]
+  1d93c8:	b90047e8 	str	w8, [sp, #68]
+  1d93cc:	b9402f08 	ldr	w8, [x24, #44]
+  1d93d0:	b90043e8 	str	w8, [sp, #64]
+  1d93d4:	3940a708 	ldrb	w8, [x24, #41]
+  1d93d8:	a907ffff 	stp	xzr, xzr, [sp, #120]
+  1d93dc:	f90047ff 	str	xzr, [sp, #136]
+  1d93e0:	b9003fe8 	str	w8, [sp, #60]
+  1d93e4:	a943a309 	ldp	x9, x8, [x24, #56]
+  1d93e8:	eb09011b 	subs	x27, x8, x9
+  1d93ec:	54000200 	b.eq	1d942c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76158>  // b.none
+  1d93f0:	b7f84b3b 	tbnz	x27, #63, 1d9d54 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a80>
+  1d93f4:	aa1b03e0 	mov	x0, x27
+  1d93f8:	940ec02e 	bl	5894b0 <_Znwm@plt>
+  1d93fc:	8b1b0008 	add	x8, x0, x27
+  1d9400:	a90783e0 	stp	x0, x0, [sp, #120]
+  1d9404:	f90047e8 	str	x8, [sp, #136]
+  1d9408:	a943a301 	ldp	x1, x8, [x24, #56]
+  1d940c:	cb01011b 	sub	x27, x8, x1
+
+raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000033fa18 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1dc744>:
+  33fa18:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+  33fa1c:	a9016ffc 	stp	x28, x27, [sp, #16]
+  33fa20:	a90267fa 	stp	x26, x25, [sp, #32]
+  33fa24:	a9035ff8 	stp	x24, x23, [sp, #48]
+  33fa28:	a90457f6 	stp	x22, x21, [sp, #64]
+  33fa2c:	a9054ff4 	stp	x20, x19, [sp, #80]
+  33fa30:	910003fd 	mov	x29, sp
+  33fa34:	d106c3ff 	sub	sp, sp, #0x1b0
+  33fa38:	d53bd058 	mrs	x24, tpidr_el0
+  33fa3c:	aa0803f4 	mov	x20, x8
+  33fa40:	f9401708 	ldr	x8, [x24, #40]
+  33fa44:	aa0203e9 	mov	x9, x2
+  33fa48:	2a0103f5 	mov	w21, w1
+  33fa4c:	aa0003f3 	mov	x19, x0
+  33fa50:	92401c62 	and	x2, x3, #0xff
+  33fa54:	910023e0 	add	x0, sp, #0x8
+  33fa58:	52800103 	mov	w3, #0x8                   	// #8
+  33fa5c:	aa0903e1 	mov	x1, x9
+  33fa60:	f81f83a8 	stur	x8, [x29, #-8]
+  33fa64:	f90007ff 	str	xzr, [sp, #8]
+  33fa68:	940929fe 	bl	58a260 <__memcpy_chk@plt>
+  33fa6c:	aa1403f9 	mov	x25, x20
+  33fa70:	f8008f3f 	str	xzr, [x25, #8]!
+  33fa74:	f9000a9f 	str	xzr, [x20, #16]
+  33fa78:	f9000299 	str	x25, [x20]
+  33fa7c:	35000855 	cbnz	w21, 33fb84 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1dc8b0>
+  33fa80:	394f0668 	ldrb	w8, [x19, #961]
+  33fa84:	34000808 	cbz	w8, 33fb84 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1dc8b0>
+  33fa88:	f94007e8 	ldr	x8, [sp, #8]
+  33fa8c:	f272051f 	tst	x8, #0xc000
+  33fa90:	54000781 	b.ne	33fb80 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1dc8ac>  // b.any
+  33fa94:	f9406a69 	ldr	x9, [x19, #208]
+  33fa98:	d34e3d08 	ubfx	x8, x8, #14, #2
+  33fa9c:	f100051f 	cmp	x8, #0x1
+  33faa0:	9270f529 	and	x9, x9, #0xffffffffffff3fff
+  33faa4:	b272012a 	orr	x10, x9, #0x4000
+  33faa8:	f9006a6a 	str	x10, [x19, #208]
+  33faac:	540006a0 	b.eq	33fb80 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1dc8ac>  // b.none
+  33fab0:	aa083929 	orr	x9, x9, x8, lsl #14
+  33fab4:	f9006a69 	str	x9, [x19, #208]
+  33fab8:	52800489 	mov	w9, #0x24                  	// #36
+  33fabc:	a9027fff 	stp	xzr, xzr, [sp, #32]
+  33fac0:	390083e9 	strb	w9, [sp, #32]
+  33fac4:	f0ffe729 	adrp	x9, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  33fac8:	913b4129 	add	x9, x9, #0xed0
+  33facc:	3dc00120 	ldr	q0, [x9]
+  33fad0:	528e8e69 	mov	w9, #0x7473                	// #29811
+  33fad4:	910043e1 	add	x1, sp, #0x10
+  33fad8:	910083e2 	add	x2, sp, #0x20
+  33fadc:	aa1403e0 	mov	x0, x20
+  33fae0:	f9001bff 	str	xzr, [sp, #48]
+  33fae4:	780313e9 	sturh	w9, [sp, #49]
+  33fae8:	3900cfff 	strb	wzr, [sp, #51]
+  33faec:	b9003be8 	str	w8, [sp, #56]
+  33faf0:	3c8213e0 	stur	q0, [sp, #33]
+  33faf4:	f9000bff 	str	xzr, [sp, #16]
+  33faf8:	97ff1e64 	bl	307488 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1a41b4>
+  33fafc:	f9400008 	ldr	x8, [x0]
+  33fb00:	b5000388 	cbnz	x8, 33fb70 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1dc89c>
+  33fb04:	aa0003f6 	mov	x22, x0
+  33fb08:	52800800 	mov	w0, #0x40                  	// #64
+  33fb0c:	94092669 	bl	5894b0 <_Znwm@plt>
+  33fb10:	f9401be8 	ldr	x8, [sp, #48]
+  33fb14:	3dc00be0 	ldr	q0, [sp, #32]
+  33fb18:	a902ffff 	stp	xzr, xzr, [sp, #40]
+  33fb1c:	f90013ff 	str	xzr, [sp, #32]
+  33fb20:	f9001808 	str	x8, [x0, #48]
+  33fb24:	b9403be8 	ldr	w8, [sp, #56]
+
+raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000001d92a4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x75fd0>:
+  1d92a4:	b0001db7 	adrp	x23, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d92a8:	f941a6f7 	ldr	x23, [x23, #840]
+  1d92ac:	d343fd08 	lsr	x8, x8, #3
+  1d92b0:	7100051f 	cmp	w8, #0x1
+  1d92b4:	540052eb 	b.lt	1d9d10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a3c>  // b.tstop
+  1d92b8:	b0001dab 	adrp	x11, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d92bc:	910303e9 	add	x9, sp, #0xc0
+  1d92c0:	f9404fe8 	ldr	x8, [sp, #152]
+  1d92c4:	f940056b 	ldr	x11, [x11, #8]
+  1d92c8:	b0001dac 	adrp	x12, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d92cc:	f940098c 	ldr	x12, [x12, #16]
+  1d92d0:	9100e12d 	add	x13, x9, #0x38
+  1d92d4:	910183ea 	add	x10, sp, #0x60
+  1d92d8:	f9002fed 	str	x13, [sp, #88]
+  1d92dc:	9102812d 	add	x13, x9, #0xa0
+  1d92e0:	f9002bed 	str	x13, [sp, #80]
+  1d92e4:	9101e12d 	add	x13, x9, #0x78
+  1d92e8:	9105413c 	add	x28, x9, #0x150
+  1d92ec:	91004149 	add	x9, x10, #0x10
+  1d92f0:	f9000fe9 	str	x9, [sp, #24]
+  1d92f4:	91004169 	add	x9, x11, #0x10
+  1d92f8:	aa1f03f3 	mov	x19, xzr
+  1d92fc:	f90007e9 	str	x9, [sp, #8]
+  1d9300:	91004189 	add	x9, x12, #0x10
+  1d9304:	f90027ed 	str	x13, [sp, #72]
+  1d9308:	f90003e9 	str	x9, [sp]
+  1d930c:	b9002bfa 	str	w26, [sp, #40]
+  1d9310:	1400000e 	b	1d9348 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76074>
+  1d9314:	f9400008 	ldr	x8, [x0]
+  1d9318:	f9400508 	ldr	x8, [x8, #8]
+  1d931c:	d63f0100 	blr	x8
+  1d9320:	f94002a8 	ldr	x8, [x21]
+  1d9324:	aa1503e0 	mov	x0, x21
+  1d9328:	f9400508 	ldr	x8, [x8, #8]
+  1d932c:	d63f0100 	blr	x8
+  1d9330:	a949a7e8 	ldp	x8, x9, [sp, #152]
+  1d9334:	91000673 	add	x19, x19, #0x1
+  1d9338:	cb080129 	sub	x9, x9, x8
+  1d933c:	d343fd29 	lsr	x9, x9, #3
+  1d9340:	eb29c27f 	cmp	x19, w9, sxtw
+  1d9344:	54004e6a 	b.ge	1d9d10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a3c>  // b.tcont
+  1d9348:	7100435f 	cmp	w26, #0x10
+  1d934c:	540033c0 	b.eq	1d99c4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x766f0>  // b.none
+  1d9350:	71000b5f 	cmp	w26, #0x2
+  1d9354:	54fffee1 	b.ne	1d9330 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7605c>  // b.any
+  1d9358:	f8737915 	ldr	x21, [x8, x19, lsl #3]
+  1d935c:	52800a00 	mov	w0, #0x50                  	// #80
+  1d9360:	940ec054 	bl	5894b0 <_Znwm@plt>
+  1d9364:	f9401be9 	ldr	x9, [sp, #48]
+  1d9368:	910303e1 	add	x1, sp, #0xc0
+  1d936c:	aa0003f8 	mov	x24, x0
+  1d9370:	f9400128 	ldr	x8, [x9]
+  1d9374:	f900013f 	str	xzr, [x9]
+  1d9378:	f90063e8 	str	x8, [sp, #192]
+  1d937c:	94000553 	bl	1da8c8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x775f4>
+  1d9380:	f94063e0 	ldr	x0, [sp, #192]
+  1d9384:	f90063ff 	str	xzr, [sp, #192]
+  1d9388:	b4000080 	cbz	x0, 1d9398 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x760c4>
+  1d938c:	f9400008 	ldr	x8, [x0]
+  1d9390:	f9400508 	ldr	x8, [x8, #8]
+  1d9394:	d63f0100 	blr	x8
+  1d9398:	f9400308 	ldr	x8, [x24]
+  1d939c:	f9004bff 	str	xzr, [sp, #144]
+  1d93a0:	aa1803e0 	mov	x0, x24
+  1d93a4:	f90013f8 	str	x24, [sp, #32]
+  1d93a8:	f9400909 	ldr	x9, [x8, #16]
+  1d93ac:	910243e8 	add	x8, sp, #0x90
+  1d93b0:	d63f0120 	blr	x9
+  1d93b4:	f9404bf8 	ldr	x24, [sp, #144]
+  1d93b8:	3940a308 	ldrb	w8, [x24, #40]
+  1d93bc:	3940c31a 	ldrb	w26, [x24, #48]
+  1d93c0:	b9002fe8 	str	w8, [sp, #44]
+  1d93c4:	3940ab08 	ldrb	w8, [x24, #42]
+  1d93c8:	b90047e8 	str	w8, [sp, #68]
+  1d93cc:	b9402f08 	ldr	w8, [x24, #44]
+  1d93d0:	b90043e8 	str	w8, [sp, #64]
+  1d93d4:	3940a708 	ldrb	w8, [x24, #41]
+  1d93d8:	a907ffff 	stp	xzr, xzr, [sp, #120]
+  1d93dc:	f90047ff 	str	xzr, [sp, #136]
+  1d93e0:	b9003fe8 	str	w8, [sp, #60]
+  1d93e4:	a943a309 	ldp	x9, x8, [x24, #56]
+  1d93e8:	eb09011b 	subs	x27, x8, x9
+  1d93ec:	54000200 	b.eq	1d942c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76158>  // b.none
+  1d93f0:	b7f84b3b 	tbnz	x27, #63, 1d9d54 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a80>
+  1d93f4:	aa1b03e0 	mov	x0, x27
+  1d93f8:	940ec02e 	bl	5894b0 <_Znwm@plt>
+  1d93fc:	8b1b0008 	add	x8, x0, x27
+  1d9400:	a90783e0 	stp	x0, x0, [sp, #120]
+  1d9404:	f90047e8 	str	x8, [sp, #136]
+  1d9408:	a943a301 	ldp	x1, x8, [x24, #56]
+  1d940c:	cb01011b 	sub	x27, x8, x1
+  1d9410:	f100077f 	cmp	x27, #0x1
+  1d9414:	540000cb 	b.lt	1d942c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76158>  // b.tstop
+  1d9418:	aa1b03e2 	mov	x2, x27
+  1d941c:	940ec0e5 	bl	5897b0 <memcpy@plt>
+  1d9420:	f94043e8 	ldr	x8, [sp, #128]
+  1d9424:	8b1b0108 	add	x8, x8, x27
+  1d9428:	f90043e8 	str	x8, [sp, #128]
+  1d942c:	394002e8 	ldrb	w8, [x23]
+  1d9430:	34000da8 	cbz	w8, 1d95e4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76310>
+  1d9434:	b9402ffb 	ldr	w27, [sp, #44]
+  1d9438:	294817e6 	ldp	w6, w5, [sp, #64]
+  1d943c:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9440:	d0fff242 	adrp	x2, 23000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3aa70>
+  1d9444:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9448:	52800080 	mov	w0, #0x4                   	// #4
+  1d944c:	9125c421 	add	x1, x1, #0x971
+  1d9450:	913d4042 	add	x2, x2, #0xf50
+  1d9454:	913eac63 	add	x3, x3, #0xfab
+  1d9458:	2a1b03e4 	mov	w4, w27
+  1d945c:	2a1a03e7 	mov	w7, w26
+  1d9460:	940ec028 	bl	589500 <__android_log_print@plt>
+  1d9464:	f9400328 	ldr	x8, [x25]
+  1d9468:	b4000c08 	cbz	x8, 1d95e8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76314>
+  1d946c:	b9400908 	ldr	w8, [x8, #8]
+  1d9470:	7100111f 	cmp	w8, #0x4
+  1d9474:	54000bab 	b.lt	1d95e8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76314>  // b.tstop
+  1d9478:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d947c:	f9400508 	ldr	x8, [x8, #8]
+  1d9480:	52801640 	mov	w0, #0xb2                  	// #178
+  1d9484:	91004108 	add	x8, x8, #0x10
+  1d9488:	f90063e8 	str	x8, [sp, #192]
+  1d948c:	52800088 	mov	w8, #0x4                   	// #4
+  1d9490:	b900dbe8 	str	w8, [sp, #216]
+  1d9494:	940ec01f 	bl	589510 <syscall@plt>
+  1d9498:	52800ce8 	mov	w8, #0x67                  	// #103
+  1d949c:	b900dfe0 	str	w0, [sp, #220]
+  1d94a0:	a90e23ff 	stp	xzr, x8, [sp, #224]
+  1d94a4:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d94a8:	f9400d29 	ldr	x9, [x9, #24]
+  1d94ac:	a9455fe0 	ldp	x0, x23, [sp, #80]
+  1d94b0:	91006128 	add	x8, x9, #0x18
+  1d94b4:	91010129 	add	x9, x9, #0x40
+  1d94b8:	aa1703e1 	mov	x1, x23
+  1d94bc:	f9007be8 	str	x8, [sp, #240]
+  1d94c0:	f900b3e9 	str	x9, [sp, #352]
+  1d94c4:	940ec017 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  1d94c8:	12800008 	mov	w8, #0xffffffff            	// #-1
+  1d94cc:	f900f7ff 	str	xzr, [sp, #488]
+  1d94d0:	b901f3e8 	str	w8, [sp, #496]
+  1d94d4:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d94d8:	f9401129 	ldr	x9, [x9, #32]
+  1d94dc:	aa1703e0 	mov	x0, x23
+  1d94e0:	91006128 	add	x8, x9, #0x18
+  1d94e4:	91010129 	add	x9, x9, #0x40
+  1d94e8:	f9007be8 	str	x8, [sp, #240]
+  1d94ec:	f900b3e9 	str	x9, [sp, #352]
+  1d94f0:	940ec010 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  1d94f4:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d94f8:	f9400908 	ldr	x8, [x8, #16]
+  1d94fc:	6f00e400 	movi	v0.2d, #0x0
+  1d9500:	910183e0 	add	x0, sp, #0x60
+  1d9504:	aa1f03e1 	mov	x1, xzr
+  1d9508:	91004108 	add	x8, x8, #0x10
+  1d950c:	f9007fe8 	str	x8, [sp, #248]
+  1d9510:	f94027e8 	ldr	x8, [sp, #72]
+  1d9514:	a9067fff 	stp	xzr, xzr, [sp, #96]
+  1d9518:	ad000100 	stp	q0, q0, [x8]
+  1d951c:	52800208 	mov	w8, #0x10                  	// #16
+  1d9520:	b9015be8 	str	w8, [sp, #344]
+  1d9524:	f0fff268 	adrp	x8, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+  1d9528:	9124d908 	add	x8, x8, #0x936
+  1d952c:	f900ffe8 	str	x8, [sp, #504]
+  1d9530:	b0fff268 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d9534:	910c8908 	add	x8, x8, #0x322
+  1d9538:	f90103e8 	str	x8, [sp, #512]
+  1d953c:	b9020bff 	str	wzr, [sp, #520]
+  1d9540:	ad008380 	stp	q0, q0, [x28, #16]
+  1d9544:	3d800380 	str	q0, [x28]
+  1d9548:	940ebffe 	bl	589540 <gettimeofday@plt>
+  1d954c:	a94627e8 	ldp	x8, x9, [sp, #96]
+  1d9550:	294817e6 	ldp	w6, w5, [sp, #64]
+  1d9554:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9558:	d0fff242 	adrp	x2, 23000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3aa70>
+  1d955c:	f90067e8 	str	x8, [sp, #200]
+  1d9560:	d29ef9e8 	mov	x8, #0xf7cf                	// #63439
+  1d9564:	f2bc6a68 	movk	x8, #0xe353, lsl #16
+  1d9568:	f2d374a8 	movk	x8, #0x9ba5, lsl #32
+  1d956c:	f2e41888 	movk	x8, #0x20c4, lsl #48
+  1d9570:	9b487d28 	smulh	x8, x9, x8
+  1d9574:	d37ffd09 	lsr	x9, x8, #63
+  1d9578:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d957c:	0b481d28 	add	w8, w9, w8, lsr #7
+  1d9580:	910303e0 	add	x0, sp, #0xc0
+  1d9584:	9125c421 	add	x1, x1, #0x971
+  1d9588:	913d4042 	add	x2, x2, #0xf50
+  1d958c:	913eac63 	add	x3, x3, #0xfab
+  1d9590:	2a1b03e4 	mov	w4, w27
+  1d9594:	2a1a03e7 	mov	w7, w26
+  1d9598:	7901a3e8 	strh	w8, [sp, #208]
+  1d959c:	97fa0a52 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  1d95a0:	f940033b 	ldr	x27, [x25]
+  1d95a4:	a9412377 	ldp	x23, x8, [x27, #16]
+  1d95a8:	eb0802ff 	cmp	x23, x8
+  1d95ac:	54000140 	b.eq	1d95d4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76300>  // b.none
+  1d95b0:	aa0003f8 	mov	x24, x0
+  1d95b4:	f84086e0 	ldr	x0, [x23], #8
+  1d95b8:	aa1803e1 	mov	x1, x24
+  1d95bc:	f9400008 	ldr	x8, [x0]
+  1d95c0:	f9400908 	ldr	x8, [x8, #16]
+  1d95c4:	d63f0100 	blr	x8
+  1d95c8:	f9400f68 	ldr	x8, [x27, #24]
+  1d95cc:	eb0802ff 	cmp	x23, x8
+  1d95d0:	54ffff21 	b.ne	1d95b4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x762e0>  // b.any
+  1d95d4:	910303e0 	add	x0, sp, #0xc0
+  1d95d8:	97fa0a90 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+  1d95dc:	b0001db7 	adrp	x23, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d95e0:	f941a6f7 	ldr	x23, [x23, #840]
+  1d95e4:	b9402ffb 	ldr	w27, [sp, #44]
+  1d95e8:	a9067fff 	stp	xzr, xzr, [sp, #96]
+  1d95ec:	f9003bff 	str	xzr, [sp, #112]
+  1d95f0:	9403d57a 	bl	2cebd8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x16b904>
+  1d95f4:	294787e2 	ldp	w2, w1, [sp, #60]
+  1d95f8:	b94047e3 	ldr	w3, [sp, #68]
+  1d95fc:	910183e8 	add	x8, sp, #0x60
+  1d9600:	9101e3e5 	add	x5, sp, #0x78
+  1d9604:	2a1b03e4 	mov	w4, w27
+  1d9608:	9403d596 	bl	2cec60 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x16b98c>
+  1d960c:	a9466ffa 	ldp	x26, x27, [sp, #96]
+  1d9610:	14000008 	b	1d9630 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7635c>
+  1d9614:	910303e0 	add	x0, sp, #0xc0
+  1d9618:	97fa0a80 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+  1d961c:	b0001db9 	adrp	x25, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9620:	b0001db7 	adrp	x23, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9624:	f9400339 	ldr	x25, [x25]
+  1d9628:	f941a6f7 	ldr	x23, [x23, #840]
+  1d962c:	9101a35a 	add	x26, x26, #0x68
+  1d9630:	eb1b035f 	cmp	x26, x27
+  1d9634:	540030e0 	b.eq	1d9c50 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7697c>  // b.none
+  1d9638:	f9401a88 	ldr	x8, [x20, #48]
+  1d963c:	aa1a03e1 	mov	x1, x26
+  1d9640:	f9400500 	ldr	x0, [x8, #8]
+  1d9644:	f9400008 	ldr	x8, [x0]
+  1d9648:	f9403508 	ldr	x8, [x8, #104]
+  1d964c:	d63f0100 	blr	x8
+  1d9650:	394002e8 	ldrb	w8, [x23]
+  1d9654:	34000de8 	cbz	w8, 1d9810 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7653c>
+  1d9658:	b94002a4 	ldr	w4, [x21]
+  1d965c:	12000018 	and	w24, w0, #0x1
+  1d9660:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9664:	90fff262 	adrp	x2, 25000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x38a70>
+  1d9668:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d966c:	52800060 	mov	w0, #0x3                   	// #3
+  1d9670:	9125c421 	add	x1, x1, #0x971
+  1d9674:	91316042 	add	x2, x2, #0xc58
+  1d9678:	913eac63 	add	x3, x3, #0xfab
+  1d967c:	2a1603e5 	mov	w5, w22
+  1d9680:	2a1803e6 	mov	w6, w24
+  1d9684:	940ebf9f 	bl	589500 <__android_log_print@plt>
+  1d9688:	f9400328 	ldr	x8, [x25]
+  1d968c:	b4000c28 	cbz	x8, 1d9810 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7653c>
+  1d9690:	b9400908 	ldr	w8, [x8, #8]
+  1d9694:	7100151f 	cmp	w8, #0x5
+  1d9698:	54000bcb 	b.lt	1d9810 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7653c>  // b.tstop
+  1d969c:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d96a0:	f9400508 	ldr	x8, [x8, #8]
+  1d96a4:	52801640 	mov	w0, #0xb2                  	// #178
+  1d96a8:	91004108 	add	x8, x8, #0x10
+  1d96ac:	f90063e8 	str	x8, [sp, #192]
+  1d96b0:	528000a8 	mov	w8, #0x5                   	// #5
+  1d96b4:	b900dbe8 	str	w8, [sp, #216]
+  1d96b8:	940ebf96 	bl	589510 <syscall@plt>
+  1d96bc:	52800e48 	mov	w8, #0x72                  	// #114
+  1d96c0:	b900dfe0 	str	w0, [sp, #220]
+  1d96c4:	a90e23ff 	stp	xzr, x8, [sp, #224]
+  1d96c8:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d96cc:	f9400d29 	ldr	x9, [x9, #24]
+  1d96d0:	a9455fe0 	ldp	x0, x23, [sp, #80]
+  1d96d4:	91006128 	add	x8, x9, #0x18
+  1d96d8:	91010129 	add	x9, x9, #0x40
+  1d96dc:	aa1703e1 	mov	x1, x23
+  1d96e0:	f9007be8 	str	x8, [sp, #240]
+  1d96e4:	f900b3e9 	str	x9, [sp, #352]
+  1d96e8:	940ebf8e 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  1d96ec:	12800008 	mov	w8, #0xffffffff            	// #-1
+  1d96f0:	f900f7ff 	str	xzr, [sp, #488]
+  1d96f4:	b901f3e8 	str	w8, [sp, #496]
+  1d96f8:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d96fc:	f9401129 	ldr	x9, [x9, #32]
+  1d9700:	aa1703e0 	mov	x0, x23
+  1d9704:	91006128 	add	x8, x9, #0x18
+  1d9708:	91010129 	add	x9, x9, #0x40
+  1d970c:	f9007be8 	str	x8, [sp, #240]
+  1d9710:	f900b3e9 	str	x9, [sp, #352]
+  1d9714:	940ebf87 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  1d9718:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d971c:	f9400908 	ldr	x8, [x8, #16]
+  1d9720:	6f00e400 	movi	v0.2d, #0x0
+  1d9724:	9102c3e0 	add	x0, sp, #0xb0
+  1d9728:	aa1f03e1 	mov	x1, xzr
+  1d972c:	91004108 	add	x8, x8, #0x10
+  1d9730:	f9007fe8 	str	x8, [sp, #248]
+  1d9734:	f94027e8 	ldr	x8, [sp, #72]
+  1d9738:	a90b7fff 	stp	xzr, xzr, [sp, #176]
+  1d973c:	ad000100 	stp	q0, q0, [x8]
+  1d9740:	52800208 	mov	w8, #0x10                  	// #16
+  1d9744:	b9015be8 	str	w8, [sp, #344]
+  1d9748:	f0fff268 	adrp	x8, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+  1d974c:	9124d908 	add	x8, x8, #0x936
+  1d9750:	f900ffe8 	str	x8, [sp, #504]
+  1d9754:	b0fff268 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d9758:	910c8908 	add	x8, x8, #0x322
+  1d975c:	f90103e8 	str	x8, [sp, #512]
+  1d9760:	b9020bff 	str	wzr, [sp, #520]
+  1d9764:	ad008380 	stp	q0, q0, [x28, #16]
+  1d9768:	3d800380 	str	q0, [x28]
+  1d976c:	940ebf75 	bl	589540 <gettimeofday@plt>
+  1d9770:	a94b27e8 	ldp	x8, x9, [sp, #176]
+  1d9774:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9778:	90fff262 	adrp	x2, 25000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x38a70>
+  1d977c:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9780:	f90067e8 	str	x8, [sp, #200]
+  1d9784:	d29ef9e8 	mov	x8, #0xf7cf                	// #63439
+  1d9788:	f2bc6a68 	movk	x8, #0xe353, lsl #16
+  1d978c:	f2d374a8 	movk	x8, #0x9ba5, lsl #32
+  1d9790:	f2e41888 	movk	x8, #0x20c4, lsl #48
+  1d9794:	9b487d28 	smulh	x8, x9, x8
+  1d9798:	d37ffd09 	lsr	x9, x8, #63
+  1d979c:	0b481d28 	add	w8, w9, w8, lsr #7
+  1d97a0:	7901a3e8 	strh	w8, [sp, #208]
+  1d97a4:	b94002a4 	ldr	w4, [x21]
+  1d97a8:	910303e0 	add	x0, sp, #0xc0
+  1d97ac:	9125c421 	add	x1, x1, #0x971
+  1d97b0:	91316042 	add	x2, x2, #0xc58
+  1d97b4:	913eac63 	add	x3, x3, #0xfab
+  1d97b8:	2a1603e5 	mov	w5, w22
+  1d97bc:	2a1803e6 	mov	w6, w24
+  1d97c0:	97fa09c9 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  1d97c4:	f9400337 	ldr	x23, [x25]
+  1d97c8:	a94122f9 	ldp	x25, x8, [x23, #16]
+  1d97cc:	eb08033f 	cmp	x25, x8
+  1d97d0:	54000140 	b.eq	1d97f8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76524>  // b.none
+  1d97d4:	aa0003f8 	mov	x24, x0
+  1d97d8:	f8408720 	ldr	x0, [x25], #8
+  1d97dc:	aa1803e1 	mov	x1, x24
+  1d97e0:	f9400008 	ldr	x8, [x0]
+  1d97e4:	f9400908 	ldr	x8, [x8, #16]
+  1d97e8:	d63f0100 	blr	x8
+  1d97ec:	f9400ee8 	ldr	x8, [x23, #24]
+  1d97f0:	eb08033f 	cmp	x25, x8
+  1d97f4:	54ffff21 	b.ne	1d97d8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76504>  // b.any
+  1d97f8:	910303e0 	add	x0, sp, #0xc0
+  1d97fc:	97fa0a07 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+  1d9800:	b0001db9 	adrp	x25, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9804:	b0001db7 	adrp	x23, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9808:	f9400339 	ldr	x25, [x25]
+  1d980c:	f941a6f7 	ldr	x23, [x23, #840]
+  1d9810:	b9401348 	ldr	w8, [x26, #16]
+  1d9814:	7100051f 	cmp	w8, #0x1
+  1d9818:	54fff0a1 	b.ne	1d962c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76358>  // b.any
+  1d981c:	394002e8 	ldrb	w8, [x23]
+  1d9820:	34fff068 	cbz	w8, 1d962c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76358>
+  1d9824:	b94002a4 	ldr	w4, [x21]
+  1d9828:	b9400f46 	ldr	w6, [x26, #12]
+  1d982c:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9830:	b0fff222 	adrp	x2, 1e000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3fa70>
+  1d9834:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9838:	52800060 	mov	w0, #0x3                   	// #3
+  1d983c:	9125c421 	add	x1, x1, #0x971
+  1d9840:	911a4042 	add	x2, x2, #0x690
+  1d9844:	913eac63 	add	x3, x3, #0xfab
+  1d9848:	2a1603e5 	mov	w5, w22
+  1d984c:	940ebf2d 	bl	589500 <__android_log_print@plt>
+  1d9850:	f9400328 	ldr	x8, [x25]
+  1d9854:	b4ffeec8 	cbz	x8, 1d962c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76358>
+  1d9858:	b9400908 	ldr	w8, [x8, #8]
+  1d985c:	7100151f 	cmp	w8, #0x5
+  1d9860:	54ffee6b 	b.lt	1d962c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76358>  // b.tstop
+  1d9864:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9868:	f9400508 	ldr	x8, [x8, #8]
+  1d986c:	52801640 	mov	w0, #0xb2                  	// #178
+  1d9870:	91004108 	add	x8, x8, #0x10
+  1d9874:	f90063e8 	str	x8, [sp, #192]
+  1d9878:	528000a8 	mov	w8, #0x5                   	// #5
+  1d987c:	b900dbe8 	str	w8, [sp, #216]
+  1d9880:	940ebf24 	bl	589510 <syscall@plt>
+  1d9884:	52800f28 	mov	w8, #0x79                  	// #121
+  1d9888:	b900dfe0 	str	w0, [sp, #220]
+  1d988c:	a90e23ff 	stp	xzr, x8, [sp, #224]
+  1d9890:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9894:	f9400d29 	ldr	x9, [x9, #24]
+  1d9898:	a9455fe0 	ldp	x0, x23, [sp, #80]
+  1d989c:	91006128 	add	x8, x9, #0x18
+  1d98a0:	91010129 	add	x9, x9, #0x40
+  1d98a4:	aa1703e1 	mov	x1, x23
+  1d98a8:	f9007be8 	str	x8, [sp, #240]
+  1d98ac:	f900b3e9 	str	x9, [sp, #352]
+  1d98b0:	940ebf1c 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  1d98b4:	12800008 	mov	w8, #0xffffffff            	// #-1
+  1d98b8:	f900f7ff 	str	xzr, [sp, #488]
+  1d98bc:	b901f3e8 	str	w8, [sp, #496]
+  1d98c0:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d98c4:	f9401129 	ldr	x9, [x9, #32]
+  1d98c8:	aa1703e0 	mov	x0, x23
+  1d98cc:	91006128 	add	x8, x9, #0x18
+  1d98d0:	91010129 	add	x9, x9, #0x40
+  1d98d4:	f9007be8 	str	x8, [sp, #240]
+  1d98d8:	f900b3e9 	str	x9, [sp, #352]
+  1d98dc:	940ebf15 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  1d98e0:	b0001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d98e4:	f9400908 	ldr	x8, [x8, #16]
+  1d98e8:	6f00e400 	movi	v0.2d, #0x0
+  1d98ec:	9102c3e0 	add	x0, sp, #0xb0
+  1d98f0:	aa1f03e1 	mov	x1, xzr
+  1d98f4:	91004108 	add	x8, x8, #0x10
+  1d98f8:	f9007fe8 	str	x8, [sp, #248]
+  1d98fc:	f94027e8 	ldr	x8, [sp, #72]
+  1d9900:	a90b7fff 	stp	xzr, xzr, [sp, #176]
+  1d9904:	ad000100 	stp	q0, q0, [x8]
+  1d9908:	52800208 	mov	w8, #0x10                  	// #16
+  1d990c:	b9015be8 	str	w8, [sp, #344]
+  1d9910:	f0fff268 	adrp	x8, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+  1d9914:	9124d908 	add	x8, x8, #0x936
+  1d9918:	f900ffe8 	str	x8, [sp, #504]
+  1d991c:	b0fff268 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d9920:	910c8908 	add	x8, x8, #0x322
+  1d9924:	f90103e8 	str	x8, [sp, #512]
+  1d9928:	b9020bff 	str	wzr, [sp, #520]
+  1d992c:	ad008380 	stp	q0, q0, [x28, #16]
+  1d9930:	3d800380 	str	q0, [x28]
+  1d9934:	940ebf03 	bl	589540 <gettimeofday@plt>
+  1d9938:	a94b27e8 	ldp	x8, x9, [sp, #176]
+  1d993c:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9940:	b0fff222 	adrp	x2, 1e000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3fa70>
+  1d9944:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9948:	f90067e8 	str	x8, [sp, #200]
+  1d994c:	d29ef9e8 	mov	x8, #0xf7cf                	// #63439
+  1d9950:	f2bc6a68 	movk	x8, #0xe353, lsl #16
+  1d9954:	f2d374a8 	movk	x8, #0x9ba5, lsl #32
+  1d9958:	f2e41888 	movk	x8, #0x20c4, lsl #48
+  1d995c:	9b487d28 	smulh	x8, x9, x8
+  1d9960:	d37ffd09 	lsr	x9, x8, #63
+  1d9964:	0b481d28 	add	w8, w9, w8, lsr #7
+  1d9968:	7901a3e8 	strh	w8, [sp, #208]
+  1d996c:	b94002a4 	ldr	w4, [x21]
+  1d9970:	b9400f46 	ldr	w6, [x26, #12]
+  1d9974:	910303e0 	add	x0, sp, #0xc0
+  1d9978:	9125c421 	add	x1, x1, #0x971
+  1d997c:	911a4042 	add	x2, x2, #0x690
+  1d9980:	913eac63 	add	x3, x3, #0xfab
+  1d9984:	2a1603e5 	mov	w5, w22
+  1d9988:	97fa0957 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  1d998c:	f9400337 	ldr	x23, [x25]
+  1d9990:	a94122f9 	ldp	x25, x8, [x23, #16]
+  1d9994:	eb08033f 	cmp	x25, x8
+  1d9998:	54ffe3e0 	b.eq	1d9614 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76340>  // b.none
+  1d999c:	aa0003f8 	mov	x24, x0
+  1d99a0:	f8408720 	ldr	x0, [x25], #8
+  1d99a4:	aa1803e1 	mov	x1, x24
+  1d99a8:	f9400008 	ldr	x8, [x0]
+  1d99ac:	f9400908 	ldr	x8, [x8, #16]
+  1d99b0:	d63f0100 	blr	x8
+  1d99b4:	f9400ee8 	ldr	x8, [x23, #24]
+  1d99b8:	eb08033f 	cmp	x25, x8
+  1d99bc:	54ffff21 	b.ne	1d99a0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x766cc>  // b.any
+  1d99c0:	17ffff15 	b	1d9614 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76340>
+  1d99c4:	52800a00 	mov	w0, #0x50                  	// #80
+  1d99c8:	940ebeba 	bl	5894b0 <_Znwm@plt>
+  1d99cc:	f9401be9 	ldr	x9, [sp, #48]
+  1d99d0:	910303e1 	add	x1, sp, #0xc0
+  1d99d4:	aa0003f5 	mov	x21, x0
+  1d99d8:	f9400128 	ldr	x8, [x9]
+  1d99dc:	f900013f 	str	xzr, [x9]
+  1d99e0:	f90063e8 	str	x8, [sp, #192]
+  1d99e4:	940003b9 	bl	1da8c8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x775f4>
+  1d99e8:	f94063e0 	ldr	x0, [sp, #192]
+  1d99ec:	f90063ff 	str	xzr, [sp, #192]
+  1d99f0:	b4000080 	cbz	x0, 1d9a00 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7672c>
+  1d99f4:	f9400008 	ldr	x8, [x0]
+  1d99f8:	f9400508 	ldr	x8, [x8, #8]
+  1d99fc:	d63f0100 	blr	x8
+  1d9a00:	f94002a8 	ldr	x8, [x21]
+  1d9a04:	f9005bff 	str	xzr, [sp, #176]
+  1d9a08:	aa1503e0 	mov	x0, x21
+  1d9a0c:	f9400909 	ldr	x9, [x8, #16]
+  1d9a10:	9102c3e8 	add	x8, sp, #0xb0
+  1d9a14:	d63f0120 	blr	x9
+  1d9a18:	f9405bfa 	ldr	x26, [sp, #176]
+  1d9a1c:	3940a348 	ldrb	w8, [x26, #40]
+  1d9a20:	b9402f5b 	ldr	w27, [x26, #44]
+  1d9a24:	b9003fe8 	str	w8, [sp, #60]
+  1d9a28:	3940ab48 	ldrb	w8, [x26, #42]
+  1d9a2c:	b90047e8 	str	w8, [sp, #68]
+  1d9a30:	3940a748 	ldrb	w8, [x26, #41]
+  1d9a34:	b90043e8 	str	w8, [sp, #64]
+  1d9a38:	3940c348 	ldrb	w8, [x26, #48]
+  1d9a3c:	a907ffff 	stp	xzr, xzr, [sp, #120]
+  1d9a40:	f90047ff 	str	xzr, [sp, #136]
+  1d9a44:	b9002fe8 	str	w8, [sp, #44]
+  1d9a48:	a943a349 	ldp	x9, x8, [x26, #56]
+  1d9a4c:	eb090118 	subs	x24, x8, x9
+  1d9a50:	54000200 	b.eq	1d9a90 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x767bc>  // b.none
+  1d9a54:	b7f81818 	tbnz	x24, #63, 1d9d54 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a80>
+  1d9a58:	aa1803e0 	mov	x0, x24
+  1d9a5c:	940ebe95 	bl	5894b0 <_Znwm@plt>
+  1d9a60:	8b180008 	add	x8, x0, x24
+  1d9a64:	a90783e0 	stp	x0, x0, [sp, #120]
+  1d9a68:	f90047e8 	str	x8, [sp, #136]
+  1d9a6c:	a943a341 	ldp	x1, x8, [x26, #56]
+  1d9a70:	cb010118 	sub	x24, x8, x1
+  1d9a74:	f100071f 	cmp	x24, #0x1
+  1d9a78:	540000cb 	b.lt	1d9a90 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x767bc>  // b.tstop
+  1d9a7c:	aa1803e2 	mov	x2, x24
+  1d9a80:	940ebf4c 	bl	5897b0 <memcpy@plt>
+  1d9a84:	f94043e8 	ldr	x8, [sp, #128]
+  1d9a88:	8b180108 	add	x8, x8, x24
+  1d9a8c:	f90043e8 	str	x8, [sp, #128]
+  1d9a90:	394002e8 	ldrb	w8, [x23]
+  1d9a94:	34001068 	cbz	w8, 1d9ca0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x769cc>
+  1d9a98:	b94047f8 	ldr	w24, [sp, #68]
+  1d9a9c:	b9403fe4 	ldr	w4, [sp, #60]
+  1d9aa0:	b9402fe7 	ldr	w7, [sp, #44]
+  1d9aa4:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9aa8:	b0fff262 	adrp	x2, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d9aac:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9ab0:	52800080 	mov	w0, #0x4                   	// #4
+  1d9ab4:	9125c421 	add	x1, x1, #0x971
+  1d9ab8:	91331442 	add	x2, x2, #0xcc5
+  1d9abc:	913eac63 	add	x3, x3, #0xfab
+  1d9ac0:	2a1803e5 	mov	w5, w24
+  1d9ac4:	2a1b03e6 	mov	w6, w27
+  1d9ac8:	940ebe8e 	bl	589500 <__android_log_print@plt>
+  1d9acc:	f9400328 	ldr	x8, [x25]
+  1d9ad0:	b9402bfa 	ldr	w26, [sp, #40]
+  1d9ad4:	b4000ea8 	cbz	x8, 1d9ca8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x769d4>
+  1d9ad8:	b9400908 	ldr	w8, [x8, #8]
+  1d9adc:	7100111f 	cmp	w8, #0x4
+  1d9ae0:	54000e4b 	b.lt	1d9ca8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x769d4>  // b.tstop
+  1d9ae4:	f94007e8 	ldr	x8, [sp, #8]
+  1d9ae8:	52801640 	mov	w0, #0xb2                  	// #178
+  1d9aec:	f90063e8 	str	x8, [sp, #192]
+  1d9af0:	52800088 	mov	w8, #0x4                   	// #4
+  1d9af4:	b900dbe8 	str	w8, [sp, #216]
+  1d9af8:	940ebe86 	bl	589510 <syscall@plt>
+  1d9afc:	528012c8 	mov	w8, #0x96                  	// #150
+  1d9b00:	b900dfe0 	str	w0, [sp, #220]
+  1d9b04:	a90e23ff 	stp	xzr, x8, [sp, #224]
+  1d9b08:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9b0c:	f9400d29 	ldr	x9, [x9, #24]
+  1d9b10:	a9455fe0 	ldp	x0, x23, [sp, #80]
+  1d9b14:	91006128 	add	x8, x9, #0x18
+  1d9b18:	91010129 	add	x9, x9, #0x40
+  1d9b1c:	aa1703e1 	mov	x1, x23
+  1d9b20:	f9007be8 	str	x8, [sp, #240]
+  1d9b24:	f900b3e9 	str	x9, [sp, #352]
+  1d9b28:	940ebe7e 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  1d9b2c:	12800008 	mov	w8, #0xffffffff            	// #-1
+  1d9b30:	f900f7ff 	str	xzr, [sp, #488]
+  1d9b34:	b901f3e8 	str	w8, [sp, #496]
+  1d9b38:	b0001da9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9b3c:	f9401129 	ldr	x9, [x9, #32]
+  1d9b40:	aa1703e0 	mov	x0, x23
+  1d9b44:	91006128 	add	x8, x9, #0x18
+  1d9b48:	91010129 	add	x9, x9, #0x40
+  1d9b4c:	f9007be8 	str	x8, [sp, #240]
+  1d9b50:	f900b3e9 	str	x9, [sp, #352]
+  1d9b54:	940ebe77 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  1d9b58:	f94003e8 	ldr	x8, [sp]
+  1d9b5c:	6f00e400 	movi	v0.2d, #0x0
+  1d9b60:	910183e0 	add	x0, sp, #0x60
+  1d9b64:	aa1f03e1 	mov	x1, xzr
+  1d9b68:	f9007fe8 	str	x8, [sp, #248]
+  1d9b6c:	f94027e8 	ldr	x8, [sp, #72]
+  1d9b70:	a9067fff 	stp	xzr, xzr, [sp, #96]
+  1d9b74:	ad000100 	stp	q0, q0, [x8]
+  1d9b78:	52800208 	mov	w8, #0x10                  	// #16
+  1d9b7c:	b9015be8 	str	w8, [sp, #344]
+  1d9b80:	f0fff268 	adrp	x8, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+  1d9b84:	9124d908 	add	x8, x8, #0x936
+  1d9b88:	f900ffe8 	str	x8, [sp, #504]
+  1d9b8c:	b0fff268 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d9b90:	910c8908 	add	x8, x8, #0x322
+  1d9b94:	f90103e8 	str	x8, [sp, #512]
+  1d9b98:	b9020bff 	str	wzr, [sp, #520]
+  1d9b9c:	ad008380 	stp	q0, q0, [x28, #16]
+  1d9ba0:	3d800380 	str	q0, [x28]
+  1d9ba4:	940ebe67 	bl	589540 <gettimeofday@plt>
+  1d9ba8:	a94627e8 	ldp	x8, x9, [sp, #96]
+  1d9bac:	b9403fe4 	ldr	w4, [sp, #60]
+  1d9bb0:	b9402fe7 	ldr	w7, [sp, #44]
+  1d9bb4:	d0fff261 	adrp	x1, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  1d9bb8:	f90067e8 	str	x8, [sp, #200]
+  1d9bbc:	d29ef9e8 	mov	x8, #0xf7cf                	// #63439
+  1d9bc0:	f2bc6a68 	movk	x8, #0xe353, lsl #16
+  1d9bc4:	f2d374a8 	movk	x8, #0x9ba5, lsl #32
+  1d9bc8:	f2e41888 	movk	x8, #0x20c4, lsl #48
+  1d9bcc:	9b487d28 	smulh	x8, x9, x8
+  1d9bd0:	d37ffd09 	lsr	x9, x8, #63
+  1d9bd4:	b0fff262 	adrp	x2, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  1d9bd8:	90fff243 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  1d9bdc:	0b481d28 	add	w8, w9, w8, lsr #7
+  1d9be0:	910303e0 	add	x0, sp, #0xc0
+  1d9be4:	9125c421 	add	x1, x1, #0x971
+  1d9be8:	91331442 	add	x2, x2, #0xcc5
+  1d9bec:	913eac63 	add	x3, x3, #0xfab
+  1d9bf0:	2a1803e5 	mov	w5, w24
+  1d9bf4:	2a1b03e6 	mov	w6, w27
+  1d9bf8:	7901a3e8 	strh	w8, [sp, #208]
+  1d9bfc:	97fa08ba 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  1d9c00:	f9400337 	ldr	x23, [x25]
+  1d9c04:	a94122f9 	ldp	x25, x8, [x23, #16]
+  1d9c08:	eb08033f 	cmp	x25, x8
+  1d9c0c:	54000140 	b.eq	1d9c34 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76960>  // b.none
+  1d9c10:	aa0003f8 	mov	x24, x0
+  1d9c14:	f8408720 	ldr	x0, [x25], #8
+  1d9c18:	aa1803e1 	mov	x1, x24
+  1d9c1c:	f9400008 	ldr	x8, [x0]
+  1d9c20:	f9400908 	ldr	x8, [x8, #16]
+  1d9c24:	d63f0100 	blr	x8
+  1d9c28:	f9400ee8 	ldr	x8, [x23, #24]
+  1d9c2c:	eb08033f 	cmp	x25, x8
+  1d9c30:	54ffff21 	b.ne	1d9c14 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76940>  // b.any
+  1d9c34:	910303e0 	add	x0, sp, #0xc0
+  1d9c38:	97fa08f8 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+  1d9c3c:	b0001db9 	adrp	x25, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9c40:	b0001db7 	adrp	x23, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1d9c44:	f9400339 	ldr	x25, [x25]
+  1d9c48:	f941a6f7 	ldr	x23, [x23, #840]
+  1d9c4c:	14000016 	b	1d9ca4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x769d0>
+  1d9c50:	f9403fe2 	ldr	x2, [sp, #120]
+  1d9c54:	29480fe0 	ldp	w0, w3, [sp, #64]
+  1d9c58:	b9403fe4 	ldr	w4, [sp, #60]
+  1d9c5c:	2a1603e1 	mov	w1, w22
+  1d9c60:	97fff8e1 	bl	1d7fe4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x74d10>
+  1d9c64:	f94033f5 	ldr	x21, [sp, #96]
+  1d9c68:	b9402bfa 	ldr	w26, [sp, #40]
+  1d9c6c:	f9400ffb 	ldr	x27, [sp, #24]
+  1d9c70:	b40003f5 	cbz	x21, 1d9cec <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a18>
+  1d9c74:	f94037f8 	ldr	x24, [sp, #104]
+  1d9c78:	eb15031f 	cmp	x24, x21
+  1d9c7c:	54000320 	b.eq	1d9ce0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a0c>  // b.none
+  1d9c80:	d101a318 	sub	x24, x24, #0x68
+  1d9c84:	aa1b03e0 	mov	x0, x27
+  1d9c88:	aa1803e1 	mov	x1, x24
+  1d9c8c:	97fc51b2 	bl	ee354 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2cd18>
+  1d9c90:	eb1802bf 	cmp	x21, x24
+  1d9c94:	54ffff61 	b.ne	1d9c80 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x769ac>  // b.any
+  1d9c98:	f94033e0 	ldr	x0, [sp, #96]
+  1d9c9c:	14000012 	b	1d9ce4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a10>
+  1d9ca0:	b9402bfa 	ldr	w26, [sp, #40]
+  1d9ca4:	b94047f8 	ldr	w24, [sp, #68]
+  1d9ca8:	b94043e4 	ldr	w4, [sp, #64]
+  1d9cac:	f9403fe2 	ldr	x2, [sp, #120]
+  1d9cb0:	2a1b03e0 	mov	w0, w27
+  1d9cb4:	2a1603e1 	mov	w1, w22
+  1d9cb8:	2a1803e3 	mov	w3, w24
+  1d9cbc:	97fff8ca 	bl	1d7fe4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x74d10>
+  1d9cc0:	f9403fe0 	ldr	x0, [sp, #120]
+  1d9cc4:	b4000060 	cbz	x0, 1d9cd0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x769fc>
+  1d9cc8:	f90043e0 	str	x0, [sp, #128]
+  1d9ccc:	940ebe31 	bl	589590 <_ZdlPv@plt>
+  1d9cd0:	f9405be0 	ldr	x0, [sp, #176]
+  1d9cd4:	f9005bff 	str	xzr, [sp, #176]
+  1d9cd8:	b5ffb1e0 	cbnz	x0, 1d9314 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76040>
+  1d9cdc:	17fffd91 	b	1d9320 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7604c>
+  1d9ce0:	aa1503e0 	mov	x0, x21
+  1d9ce4:	f90037f5 	str	x21, [sp, #104]
+  1d9ce8:	940ebe2a 	bl	589590 <_ZdlPv@plt>
+  1d9cec:	f9403fe0 	ldr	x0, [sp, #120]
+  1d9cf0:	b4000060 	cbz	x0, 1d9cfc <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a28>
+  1d9cf4:	f90043e0 	str	x0, [sp, #128]
+  1d9cf8:	940ebe26 	bl	589590 <_ZdlPv@plt>
+  1d9cfc:	f9404be0 	ldr	x0, [sp, #144]
+  1d9d00:	f94013f5 	ldr	x21, [sp, #32]
+  1d9d04:	f9004bff 	str	xzr, [sp, #144]
+  1d9d08:	b5ffb060 	cbnz	x0, 1d9314 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76040>
+  1d9d0c:	17fffd85 	b	1d9320 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7604c>
+  1d9d10:	f9404fe0 	ldr	x0, [sp, #152]
+  1d9d14:	b4000060 	cbz	x0, 1d9d20 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a4c>
+  1d9d18:	f90053e0 	str	x0, [sp, #160]
+  1d9d1c:	940ebe1d 	bl	589590 <_ZdlPv@plt>
+  1d9d20:	f9400be8 	ldr	x8, [sp, #16]
+  1d9d24:	f9401508 	ldr	x8, [x8, #40]
+  1d9d28:	f85f03a9 	ldur	x9, [x29, #-16]
+  1d9d2c:	eb09011f 	cmp	x8, x9
+  1d9d30:	54000161 	b.ne	1d9d5c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x76a88>  // b.any
+  1d9d34:	910943ff 	add	sp, sp, #0x250
+  1d9d38:	a9454ff4 	ldp	x20, x19, [sp, #80]
+  1d9d3c:	a94457f6 	ldp	x22, x21, [sp, #64]
+  1d9d40:	a9435ff8 	ldp	x24, x23, [sp, #48]
+  1d9d44:	a94267fa 	ldp	x26, x25, [sp, #32]
+  1d9d48:	a9416ffc 	ldp	x28, x27, [sp, #16]
+  1d9d4c:	a8c67bfd 	ldp	x29, x30, [sp], #96
+  1d9d50:	d65f03c0 	ret
+  1d9d54:	9101e3e0 	add	x0, sp, #0x78
+  1d9d58:	940ebed6 	bl	5898b0 <_ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv@plt>
+  1d9d5c:	940ebdcd 	bl	589490 <__stack_chk_fail@plt>
+
+raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000001da8c8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x775f4>:
+  1da8c8:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+  1da8cc:	a90157f6 	stp	x22, x21, [sp, #16]
+  1da8d0:	a9024ff4 	stp	x20, x19, [sp, #32]
+  1da8d4:	910003fd 	mov	x29, sp
+  1da8d8:	7900101f 	strh	wzr, [x0, #8]
+  1da8dc:	a901fc1f 	stp	xzr, xzr, [x0, #24]
+  1da8e0:	90001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1da8e4:	f941b908 	ldr	x8, [x8, #880]
+  1da8e8:	aa0003f5 	mov	x21, x0
+  1da8ec:	aa0003f4 	mov	x20, x0
+  1da8f0:	f8010ebf 	str	xzr, [x21, #16]!
+  1da8f4:	91004108 	add	x8, x8, #0x10
+  1da8f8:	f9000008 	str	x8, [x0]
+  1da8fc:	f8038e9f 	str	xzr, [x20, #56]!
+  1da900:	a9047c1f 	stp	xzr, xzr, [x0, #64]
+  1da904:	aa0003f3 	mov	x19, x0
+  1da908:	f9400020 	ldr	x0, [x1]
+  1da90c:	aa0103f6 	mov	x22, x1
+  1da910:	97fed37d 	bl	18f704 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c430>
+  1da914:	39400008 	ldrb	w8, [x0]
+  1da918:	39002268 	strb	w8, [x19, #8]
+  1da91c:	f94002c0 	ldr	x0, [x22]
+  1da920:	97fed37b 	bl	18f70c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c438>
+  1da924:	39400008 	ldrb	w8, [x0]
+  1da928:	39002668 	strb	w8, [x19, #9]
+  1da92c:	f94002c0 	ldr	x0, [x22]
+  1da930:	97fed379 	bl	18f714 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c440>
+  1da934:	eb0002bf 	cmp	x21, x0
+  1da938:	54000080 	b.eq	1da948 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x77674>  // b.none
+  1da93c:	a9400801 	ldp	x1, x2, [x0]
+  1da940:	aa1503e0 	mov	x0, x21
+  1da944:	97fd7e09 	bl	13a168 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x78b2c>
+  1da948:	a9410e68 	ldp	x8, x3, [x19, #16]
+  1da94c:	f9402261 	ldr	x1, [x19, #64]
+  1da950:	aa1403e0 	mov	x0, x20
+  1da954:	39400109 	ldrb	w9, [x8]
+  1da958:	91001902 	add	x2, x8, #0x6
+  1da95c:	12190129 	and	w9, w9, #0x80
+  1da960:	3900a269 	strb	w9, [x19, #40]
+  1da964:	39400109 	ldrb	w9, [x8]
+  1da968:	12000129 	and	w9, w9, #0x1
+  1da96c:	3900aa69 	strb	w9, [x19, #42]
+  1da970:	39400109 	ldrb	w9, [x8]
+  1da974:	121a0129 	and	w9, w9, #0x40
+  1da978:	3900a669 	strb	w9, [x19, #41]
+  1da97c:	b8401109 	ldur	w9, [x8, #1]
+  1da980:	5ac00929 	rev	w9, w9
+  1da984:	b9002e69 	str	w9, [x19, #44]
+  1da988:	39401509 	ldrb	w9, [x8, #5]
+  1da98c:	3900c269 	strb	w9, [x19, #48]
+  1da990:	a9424ff4 	ldp	x20, x19, [sp, #32]
+  1da994:	a94157f6 	ldp	x22, x21, [sp, #16]
+  1da998:	a8c37bfd 	ldp	x29, x30, [sp], #48
+  1da99c:	17febd13 	b	189de8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x26b14>
+  1da9a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  1da9a4:	f9000bf3 	str	x19, [sp, #16]
+  1da9a8:	910003fd 	mov	x29, sp
+  1da9ac:	90001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1da9b0:	aa0003f3 	mov	x19, x0
+  1da9b4:	f9401c00 	ldr	x0, [x0, #56]
+  1da9b8:	f941b908 	ldr	x8, [x8, #880]
+  1da9bc:	91004108 	add	x8, x8, #0x10
+  1da9c0:	f9000268 	str	x8, [x19]
+  1da9c4:	b4000060 	cbz	x0, 1da9d0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x776fc>
+  1da9c8:	f9002260 	str	x0, [x19, #64]
+  1da9cc:	940ebaf1 	bl	589590 <_ZdlPv@plt>
+  1da9d0:	90001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1da9d4:	f9400a60 	ldr	x0, [x19, #16]
+  1da9d8:	f9414108 	ldr	x8, [x8, #640]
+  1da9dc:	91004108 	add	x8, x8, #0x10
+  1da9e0:	f9000268 	str	x8, [x19]
+  1da9e4:	b40000a0 	cbz	x0, 1da9f8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x77724>
+  1da9e8:	f9000e60 	str	x0, [x19, #24]
+  1da9ec:	f9400bf3 	ldr	x19, [sp, #16]
+  1da9f0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  1da9f4:	140ebae7 	b	589590 <_ZdlPv@plt>
+  1da9f8:	f9400bf3 	ldr	x19, [sp, #16]
+  1da9fc:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  1daa00:	d65f03c0 	ret
+  1daa04:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  1daa08:	f9000bf3 	str	x19, [sp, #16]
+  1daa0c:	910003fd 	mov	x29, sp
+  1daa10:	90001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1daa14:	aa0003f3 	mov	x19, x0
+  1daa18:	f9401c00 	ldr	x0, [x0, #56]
+  1daa1c:	f941b908 	ldr	x8, [x8, #880]
+  1daa20:	91004108 	add	x8, x8, #0x10
+  1daa24:	f9000268 	str	x8, [x19]
+  1daa28:	b4000060 	cbz	x0, 1daa34 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x77760>
+  1daa2c:	f9002260 	str	x0, [x19, #64]
+  1daa30:	940ebad8 	bl	589590 <_ZdlPv@plt>
+  1daa34:	90001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1daa38:	f9400a60 	ldr	x0, [x19, #16]
+  1daa3c:	f9414108 	ldr	x8, [x8, #640]
+  1daa40:	91004108 	add	x8, x8, #0x10
+  1daa44:	f9000268 	str	x8, [x19]
+  1daa48:	b4000060 	cbz	x0, 1daa54 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x77780>
+  1daa4c:	f9000e60 	str	x0, [x19, #24]
+  1daa50:	940ebad0 	bl	589590 <_ZdlPv@plt>
+  1daa54:	aa1303e0 	mov	x0, x19
+  1daa58:	f9400bf3 	ldr	x19, [sp, #16]
+  1daa5c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  1daa60:	140ebacc 	b	589590 <_ZdlPv@plt>
+  1daa64:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+  1daa68:	f9000bf5 	str	x21, [sp, #16]
+  1daa6c:	a9024ff4 	stp	x20, x19, [sp, #32]
+  1daa70:	910003fd 	mov	x29, sp
+  1daa74:	aa0003f3 	mov	x19, x0
+  1daa78:	52800a00 	mov	w0, #0x50                  	// #80
+  1daa7c:	aa0803f4 	mov	x20, x8
+  1daa80:	940eba8c 	bl	5894b0 <_Znwm@plt>
+  1daa84:	aa1303e1 	mov	x1, x19
+  1daa88:	aa0003f5 	mov	x21, x0
+  1daa8c:	94000006 	bl	1daaa4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x777d0>
+  1daa90:	f9000295 	str	x21, [x20]
+  1daa94:	a9424ff4 	ldp	x20, x19, [sp, #32]
+  1daa98:	f9400bf5 	ldr	x21, [sp, #16]
+  1daa9c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+  1daaa0:	d65f03c0 	ret
+  1daaa4:	d101c3ff 	sub	sp, sp, #0x70
+  1daaa8:	a9027bfd 	stp	x29, x30, [sp, #32]
+  1daaac:	a90367fa 	stp	x26, x25, [sp, #48]
+  1daab0:	a9045ff8 	stp	x24, x23, [sp, #64]
+  1daab4:	a90557f6 	stp	x22, x21, [sp, #80]
+  1daab8:	a9064ff4 	stp	x20, x19, [sp, #96]
+  1daabc:	910083fd 	add	x29, sp, #0x20
+  1daac0:	d53bd059 	mrs	x25, tpidr_el0
+  1daac4:	f9401728 	ldr	x8, [x25, #40]
+  1daac8:	aa0103f4 	mov	x20, x1
+  1daacc:	aa0003f3 	mov	x19, x0
+  1daad0:	f81f83a8 	stur	x8, [x29, #-8]
+  1daad4:	39402035 	ldrb	w21, [x1, #8]
+  1daad8:	39402436 	ldrb	w22, [x1, #9]
+  1daadc:	a9007fff 	stp	xzr, xzr, [sp]
+  1daae0:	f9000bff 	str	xzr, [sp, #16]
+  1daae4:	a9412038 	ldp	x24, x8, [x1, #16]
+  1daae8:	eb180117 	subs	x23, x8, x24
+  1daaec:	54000160 	b.eq	1dab18 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x77844>  // b.none
+  1daaf0:	b7f80897 	tbnz	x23, #63, 1dac00 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x7792c>
+  1daaf4:	aa1703e0 	mov	x0, x23
+  1daaf8:	940eba6e 	bl	5894b0 <_Znwm@plt>
+  1daafc:	8b17001a 	add	x26, x0, x23
+  1dab00:	aa1803e1 	mov	x1, x24
+  1dab04:	aa1703e2 	mov	x2, x23
+  1dab08:	f90003e0 	str	x0, [sp]
+  1dab0c:	f9000bfa 	str	x26, [sp, #16]
+  1dab10:	940ebb28 	bl	5897b0 <memcpy@plt>
+  1dab14:	f90007fa 	str	x26, [sp, #8]
+  1dab18:	910003e5 	mov	x5, sp
+  1dab1c:	52800261 	mov	w1, #0x13                  	// #19
+  1dab20:	52800042 	mov	w2, #0x2                   	// #2
+  1dab24:	aa1303e0 	mov	x0, x19
+  1dab28:	2a1503e3 	mov	w3, w21
+  1dab2c:	2a1603e4 	mov	w4, w22
+  1dab30:	97fed2c8 	bl	18f650 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c37c>
+  1dab34:	f94003e0 	ldr	x0, [sp]
+  1dab38:	b4000060 	cbz	x0, 1dab44 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x77870>
+  1dab3c:	f90007e0 	str	x0, [sp, #8]
+  1dab40:	940eba94 	bl	589590 <_ZdlPv@plt>
+  1dab44:	90001da8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  1dab48:	f941bd08 	ldr	x8, [x8, #888]
+  1dab4c:	aa1303e0 	mov	x0, x19
+  1dab50:	91004108 	add	x8, x8, #0x10
+  1dab54:	f9000268 	str	x8, [x19]
+  1dab58:	3940a288 	ldrb	w8, [x20, #40]
+  1dab5c:	3900a268 	strb	w8, [x19, #40]
+  1dab60:	3940a688 	ldrb	w8, [x20, #41]
+  1dab64:	3900a668 	strb	w8, [x19, #41]
+  1dab68:	3940aa88 	ldrb	w8, [x20, #42]
+  1dab6c:	3900aa68 	strb	w8, [x19, #42]
+  1dab70:	b9402e88 	ldr	w8, [x20, #44]
+  1dab74:	b9002e68 	str	w8, [x19, #44]
+  1dab78:	3940c288 	ldrb	w8, [x20, #48]
+  1dab7c:	f8038c1f 	str	xzr, [x0, #56]!
+  1dab80:	a900fc1f 	stp	xzr, xzr, [x0, #8]
+  1dab84:	381f8008 	sturb	w8, [x0, #-8]
+  1dab88:	a943a289 	ldp	x9, x8, [x20, #56]
+  1dab8c:	eb090115 	subs	x21, x8, x9
+  1dab90:	54000200 	b.eq	1dabd0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x778fc>  // b.none
+  1dab94:	b7f80395 	tbnz	x21, #63, 1dac04 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x77930>
+  1dab98:	aa1503e0 	mov	x0, x21
+  1dab9c:	940eba45 	bl	5894b0 <_Znwm@plt>
+  1daba0:	8b150008 	add	x8, x0, x21
+  1daba4:	a9038260 	stp	x0, x0, [x19, #56]
+  1daba8:	f9002668 	str	x8, [x19, #72]
+  1dabac:	a943a281 	ldp	x1, x8, [x20, #56]
+  1dabb0:	cb010114 	sub	x20, x8, x1
+  1dabb4:	f100069f 	cmp	x20, #0x1
+  1dabb8:	540000cb 	b.lt	1dabd0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x778fc>  // b.tstop
+  1dabbc:	aa1403e2 	mov	x2, x20
+  1dabc0:	940ebafc 	bl	5897b0 <memcpy@plt>
+  1dabc4:	f9402268 	ldr	x8, [x19, #64]
+
+raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000002cec60 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x16b98c>:
+  2cec60:	340000e4 	cbz	w4, 2cec7c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x16b9a8>
+  2cec64:	7102009f 	cmp	w4, #0x80
+  2cec68:	54000101 	b.ne	2cec88 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x16b9b4>  // b.any
+  2cec6c:	f9400400 	ldr	x0, [x0, #8]
+  2cec70:	2a0303e2 	mov	w2, w3
+  2cec74:	aa0503e3 	mov	x3, x5
+  2cec78:	14008dc7 	b	2f2394 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x18f0c0>
+  2cec7c:	f9400400 	ldr	x0, [x0, #8]
+  2cec80:	aa0503e4 	mov	x4, x5
+  2cec84:	140087dc 	b	2f0bf4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x18d920>
+  2cec88:	a9007d1f 	stp	xzr, xzr, [x8]
+  2cec8c:	f900091f 	str	xzr, [x8, #16]
+  2cec90:	d65f03c0 	ret

@@ -1,0 +1,65 @@
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/IVIService ===
+MMI_DVR_Command: 
+DVR_SystemSts: 
+DVRConfig: 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/VehicleService ===
+MMI_DVR_Command: 
+DVR_SystemSts: 
+DVRConfig: 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/ConfigService ===
+MMI_DVR_Command: 
+DVR_SystemSts: 
+DVRConfig: 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/MixtureService ===
+MMI_DVR_Command: XREF 0x55620 target 0x150160 XREF 0x57f30 target 0x150160 
+DVR_SystemSts: XREF 0x55490 target 0x1500a8 XREF 0x57d00 target 0x1500a8 
+DVRConfig: XREF 0x5a604 target 0x150ca8 XREF 0x5c158 target 0x150ca8 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/DFSService ===
+MMI_DVR_Command: XREF 0x9ae34 target 0x16b348 XREF 0x9dc38 target 0x16b348 
+DVR_SystemSts: XREF 0x9ac44 target 0x16b290 XREF 0x9d9dc target 0x16b290 
+DVRConfig: XREF 0xa03f8 target 0x16be90 XREF 0xa215c target 0x16be90 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/ChimeService ===
+MMI_DVR_Command: XREF 0x2aa7c target 0x188eb0 XREF 0x2e40c target 0x188eb0 
+DVR_SystemSts: XREF 0x2a824 target 0x188df8 XREF 0x2e114 target 0x188df8 
+DVRConfig: XREF 0x31980 target 0x1899f8 XREF 0x3403c target 0x1899f8 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/GaugeService ===
+MMI_DVR_Command: 
+DVR_SystemSts: 
+DVRConfig: 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/Samples ===
+MMI_DVR_Command: XREF 0x31c30 target 0x171388 XREF 0x34540 target 0x171388 
+DVR_SystemSts: XREF 0x31aa0 target 0x1712d0 XREF 0x34310 target 0x1712d0 
+DVRConfig: XREF 0x36c14 target 0x171ed0 XREF 0x38768 target 0x171ed0 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/TcServer ===
+MMI_DVR_Command: XREF 0x5bf20 target 0x11a320 XREF 0x5f8b0 target 0x11a320 
+DVR_SystemSts: XREF 0x5bcd8 target 0x11a268 XREF 0x5f5b8 target 0x11a268 
+DVRConfig: XREF 0x62e34 target 0x11ae68 XREF 0x654f0 target 0x11ae68 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/TelltaleService ===
+MMI_DVR_Command: XREF 0x7bec0 target 0x15a100 XREF 0x7f4e4 target 0x15a100 
+DVR_SystemSts: XREF 0x7bc88 target 0x15a048 XREF 0x7f220 target 0x15a048 
+DVRConfig: XREF 0x829a4 target 0x15ac48 XREF 0x84fe0 target 0x15ac48 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/WarnServer ===
+MMI_DVR_Command: XREF 0x2db24 target 0x1692e0 XREF 0x31484 target 0x1692e0 
+DVR_SystemSts: XREF 0x2d8cc target 0x169228 XREF 0x3118c target 0x169228 
+DVRConfig: XREF 0x349d8 target 0x169e28 XREF 0x37084 target 0x169e28 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/sendmsg ===
+MMI_DVR_Command: 
+DVR_SystemSts: 
+DVRConfig: 
+HandleEventDVRConfig: 
+=== raw/cp-b/files/usr/local/bin/cluster-e04/middleware/sendmsgEx ===
+MMI_DVR_Command: XREF 0x20bd4 target 0x11cf00 XREF 0x24594 target 0x11cf00 
+DVR_SystemSts: XREF 0x2097c target 0x11ce48 XREF 0x2429c target 0x11ce48 
+DVRConfig: XREF 0x27b48 target 0x11da48 XREF 0x2a204 target 0x11da48 
+HandleEventDVRConfig: 

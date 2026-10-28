@@ -1,0 +1,73 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00435d7e <.data+0x15d7e>:
+  435d7e:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+  435d80:	4b1d      	ldr	r3, [pc, #116]	@ (0x435df8)
+  435d82:	4604      	mov	r4, r0
+  435d84:	5c1a      	ldrb	r2, [r3, r0]
+  435d86:	5c9e      	ldrb	r6, [r3, r2]
+  435d88:	4b1c      	ldr	r3, [pc, #112]	@ (0x435dfc)
+  435d8a:	eb03 05c0 	add.w	r5, r3, r0, lsl #3
+  435d8e:	88aa      	ldrh	r2, [r5, #4]
+  435d90:	2a08      	cmp	r2, #8
+  435d92:	d82c      	bhi.n	0x435dee
+  435d94:	4a1a      	ldr	r2, [pc, #104]	@ (0x435e00)
+  435d96:	5c11      	ldrb	r1, [r2, r0]
+  435d98:	b119      	cbz	r1, 0x435da2
+  435d9a:	481a      	ldr	r0, [pc, #104]	@ (0x435e04)
+  435d9c:	5501      	strb	r1, [r0, r4]
+  435d9e:	2100      	movs	r1, #0
+  435da0:	5511      	strb	r1, [r2, r4]
+  435da2:	4a19      	ldr	r2, [pc, #100]	@ (0x435e08)
+  435da4:	5d12      	ldrb	r2, [r2, r4]
+  435da6:	2a01      	cmp	r2, #1
+  435da8:	d106      	bne.n	0x435db8
+  435daa:	f853 7034 	ldr.w	r7, [r3, r4, lsl #3]
+  435dae:	212f      	movs	r1, #47	@ 0x2f
+  435db0:	4638      	mov	r0, r7
+  435db2:	f004 f906 	bl	0x439fc2
+  435db6:	71f8      	strb	r0, [r7, #7]
+  435db8:	4629      	mov	r1, r5
+  435dba:	4630      	mov	r0, r6
+  435dbc:	f7fe fcc2 	bl	0x434744
+  435dc0:	b928      	cbnz	r0, 0x435dce
+  435dc2:	4b12      	ldr	r3, [pc, #72]	@ (0x435e0c)
+  435dc4:	f853 3024 	ldr.w	r3, [r3, r4, lsl #2]
+  435dc8:	b10b      	cbz	r3, 0x435dce
+  435dca:	b2e0      	uxtb	r0, r4
+  435dcc:	4798      	blx	r3
+  435dce:	4b10      	ldr	r3, [pc, #64]	@ (0x435e10)
+  435dd0:	2105      	movs	r1, #5
+  435dd2:	5d1a      	ldrb	r2, [r3, r4]
+  435dd4:	f002 027f 	and.w	r2, r2, #127	@ 0x7f
+  435dd8:	551a      	strb	r2, [r3, r4]
+  435dda:	eb03 0344 	add.w	r3, r3, r4, lsl #1
+  435dde:	4a0d      	ldr	r2, [pc, #52]	@ (0x435e14)
+  435de0:	f832 2014 	ldrh.w	r2, [r2, r4, lsl #1]
+  435de4:	fbb2 f2f1 	udiv	r2, r2, r1
+  435de8:	f8a3 2044 	strh.w	r2, [r3, #68]	@ 0x44
+  435dec:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+  435dee:	4629      	mov	r1, r5
+  435df0:	4630      	mov	r0, r6
+  435df2:	f7fe fca7 	bl	0x434744
+  435df6:	e7ea      	b.n	0x435dce
+  435df8:	90bc      	str	r0, [sp, #752]	@ 0x2f0
+  435dfa:	0048      	lsls	r0, r1, #1
+  435dfc:	ae6c      	add	r6, sp, #432	@ 0x1b0
+  435dfe:	2040      	movs	r0, #64	@ 0x40
+  435e00:	a5d2      	add	r5, pc, #840	@ (adr r5, 0x43614c)
+  435e02:	2041      	movs	r0, #65	@ 0x41
+  435e04:	a668      	add	r6, pc, #416	@ (adr r6, 0x435fa8)
+  435e06:	2041      	movs	r0, #65	@ 0x41
+  435e08:	a682      	add	r6, pc, #520	@ (adr r6, 0x436014)
+  435e0a:	2040      	movs	r0, #64	@ 0x40
+  435e0c:	b77c      			@ <UNDEFINED> instruction: 0xb77c
+  435e0e:	0048      	lsls	r0, r1, #1
+  435e10:	81e8      	strh	r0, [r5, #14]
+  435e12:	2041      	movs	r0, #65	@ 0x41
+  435e14:	b994      	cbnz	r4, 0x435e3c
+  435e16:	0048      	lsls	r0, r1, #1

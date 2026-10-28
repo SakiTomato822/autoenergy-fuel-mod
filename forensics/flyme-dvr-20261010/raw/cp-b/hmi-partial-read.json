@@ -1,0 +1,327 @@
+{
+  "source": "/usr/local/bin/cluster-e04/weston/weston-simple-egl",
+  "slot": "b",
+  "fileSize": 64569216,
+  "sections": [
+    {
+      "ni": 0,
+      "type": 0,
+      "off": 0,
+      "size": 0,
+      "addr": 0,
+      "name": ""
+    },
+    {
+      "ni": 27,
+      "type": 1,
+      "off": 680,
+      "size": 27,
+      "addr": 680,
+      "name": ".interp"
+    },
+    {
+      "ni": 35,
+      "type": 7,
+      "off": 712,
+      "size": 32,
+      "addr": 712,
+      "name": ".note.gnu.property"
+    },
+    {
+      "ni": 54,
+      "type": 7,
+      "off": 744,
+      "size": 36,
+      "addr": 744,
+      "name": ".note.gnu.build-id"
+    },
+    {
+      "ni": 73,
+      "type": 7,
+      "off": 780,
+      "size": 32,
+      "addr": 780,
+      "name": ".note.ABI-tag"
+    },
+    {
+      "ni": 87,
+      "type": 1879048182,
+      "off": 816,
+      "size": 476,
+      "addr": 816,
+      "name": ".gnu.hash"
+    },
+    {
+      "ni": 97,
+      "type": 11,
+      "off": 1296,
+      "size": 12504,
+      "addr": 1296,
+      "name": ".dynsym"
+    },
+    {
+      "ni": 105,
+      "type": 3,
+      "off": 13800,
+      "size": 17820,
+      "addr": 13800,
+      "name": ".dynstr"
+    },
+    {
+      "ni": 113,
+      "type": 1879048191,
+      "off": 31620,
+      "size": 1042,
+      "addr": 31620,
+      "name": ".gnu.version"
+    },
+    {
+      "ni": 126,
+      "type": 1879048190,
+      "off": 32664,
+      "size": 448,
+      "addr": 32664,
+      "name": ".gnu.version_r"
+    },
+    {
+      "ni": 141,
+      "type": 4,
+      "off": 33112,
+      "size": 1185480,
+      "addr": 33112,
+      "name": ".rela.dyn"
+    },
+    {
+      "ni": 151,
+      "type": 4,
+      "off": 1218592,
+      "size": 9840,
+      "addr": 1218592,
+      "name": ".rela.plt"
+    },
+    {
+      "ni": 161,
+      "type": 1,
+      "off": 1228432,
+      "size": 28,
+      "addr": 1228432,
+      "name": ".init"
+    },
+    {
+      "ni": 156,
+      "type": 1,
+      "off": 1228464,
+      "size": 6592,
+      "addr": 1228464,
+      "name": ".plt"
+    },
+    {
+      "ni": 167,
+      "type": 1,
+      "off": 1235072,
+      "size": 1776356,
+      "addr": 1235072,
+      "name": ".text"
+    },
+    {
+      "ni": 173,
+      "type": 1,
+      "off": 3011428,
+      "size": 24,
+      "addr": 3011428,
+      "name": ".fini"
+    },
+    {
+      "ni": 179,
+      "type": 1,
+      "off": 3011456,
+      "size": 13550701,
+      "addr": 3011456,
+      "name": ".rodata"
+    },
+    {
+      "ni": 187,
+      "type": 1,
+      "off": 16562160,
+      "size": 30812,
+      "addr": 16562160,
+      "name": ".eh_frame_hdr"
+    },
+    {
+      "ni": 201,
+      "type": 1,
+      "off": 16592976,
+      "size": 194160,
+      "addr": 16592976,
+      "name": ".eh_frame"
+    },
+    {
+      "ni": 211,
+      "type": 1,
+      "off": 16787136,
+      "size": 89686,
+      "addr": 16787136,
+      "name": ".gcc_except_table"
+    },
+    {
+      "ni": 229,
+      "type": 14,
+      "off": 16878632,
+      "size": 288,
+      "addr": 16944168,
+      "name": ".init_array"
+    },
+    {
+      "ni": 241,
+      "type": 15,
+      "off": 16878920,
+      "size": 8,
+      "addr": 16944456,
+      "name": ".fini_array"
+    },
+    {
+      "ni": 253,
+      "type": 1,
+      "off": 16878928,
+      "size": 763648,
+      "addr": 16944464,
+      "name": ".data.rel.ro"
+    },
+    {
+      "ni": 266,
+      "type": 6,
+      "off": 17642576,
+      "size": 720,
+      "addr": 17708112,
+      "name": ".dynamic"
+    },
+    {
+      "ni": 275,
+      "type": 1,
+      "off": 17643296,
+      "size": 2248,
+      "addr": 17708832,
+      "name": ".got"
+    },
+    {
+      "ni": 280,
+      "type": 1,
+      "off": 17645544,
+      "size": 3304,
+      "addr": 17711080,
+      "name": ".got.plt"
+    },
+    {
+      "ni": 289,
+      "type": 1,
+      "off": 17648848,
+      "size": 52808,
+      "addr": 17714384,
+      "name": ".data"
+    },
+    {
+      "ni": 295,
+      "type": 8,
+      "off": 17701656,
+      "size": 745200,
+      "addr": 17767192,
+      "name": ".bss"
+    },
+    {
+      "ni": 300,
+      "type": 1,
+      "off": 17701656,
+      "size": 18,
+      "addr": 0,
+      "name": ".comment"
+    },
+    {
+      "ni": 309,
+      "type": 1,
+      "off": 17701680,
+      "size": 54016,
+      "addr": 0,
+      "name": ".debug_aranges"
+    },
+    {
+      "ni": 324,
+      "type": 1,
+      "off": 17755696,
+      "size": 22071279,
+      "addr": 0,
+      "name": ".debug_info"
+    },
+    {
+      "ni": 336,
+      "type": 1,
+      "off": 39826975,
+      "size": 287445,
+      "addr": 0,
+      "name": ".debug_abbrev"
+    },
+    {
+      "ni": 350,
+      "type": 1,
+      "off": 40114420,
+      "size": 3076856,
+      "addr": 0,
+      "name": ".debug_line"
+    },
+    {
+      "ni": 362,
+      "type": 1,
+      "off": 43191276,
+      "size": 12366937,
+      "addr": 0,
+      "name": ".debug_str"
+    },
+    {
+      "ni": 373,
+      "type": 1,
+      "off": 55558213,
+      "size": 21769,
+      "addr": 0,
+      "name": ".debug_line_str"
+    },
+    {
+      "ni": 389,
+      "type": 1,
+      "off": 55579982,
+      "size": 6138187,
+      "addr": 0,
+      "name": ".debug_loclists"
+    },
+    {
+      "ni": 405,
+      "type": 1,
+      "off": 61718169,
+      "size": 1035430,
+      "addr": 0,
+      "name": ".debug_rnglists"
+    },
+    {
+      "ni": 1,
+      "type": 2,
+      "off": 62753600,
+      "size": 576792,
+      "addr": 0,
+      "name": ".symtab"
+    },
+    {
+      "ni": 9,
+      "type": 3,
+      "off": 63330392,
+      "size": 1235836,
+      "addr": 0,
+      "name": ".strtab"
+    },
+    {
+      "ni": 17,
+      "type": 3,
+      "off": 64566228,
+      "size": 421,
+      "addr": 0,
+      "name": ".shstrtab"
+    }
+  ]
+}

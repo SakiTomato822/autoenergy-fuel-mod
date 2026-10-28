@@ -1,0 +1,86 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00452e36 <.data+0x32e36>:
+  452e36:	e92d 4ff7 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  452e3a:	2600      	movs	r6, #0
+  452e3c:	482b      	ldr	r0, [pc, #172]	@ (0x452eec)
+  452e3e:	f88d 6007 	strb.w	r6, [sp, #7]
+  452e42:	f7da f875 	bl	0x42cf30
+  452e46:	4607      	mov	r7, r0
+  452e48:	2800      	cmp	r0, #0
+  452e4a:	d04c      	beq.n	0x452ee6
+  452e4c:	4c27      	ldr	r4, [pc, #156]	@ (0x452eec)
+  452e4e:	f104 0910 	add.w	r9, r4, #16
+  452e52:	f104 0816 	add.w	r8, r4, #22
+  452e56:	2201      	movs	r2, #1
+  452e58:	f10d 0107 	add.w	r1, sp, #7
+  452e5c:	4823      	ldr	r0, [pc, #140]	@ (0x452eec)
+  452e5e:	f7da f8a2 	bl	0x42cfa6
+  452e62:	4a23      	ldr	r2, [pc, #140]	@ (0x452ef0)
+  452e64:	464b      	mov	r3, r9
+  452e66:	f89d 0007 	ldrb.w	r0, [sp, #7]
+  452e6a:	1c91      	adds	r1, r2, #2
+  452e6c:	f7f5 ff90 	bl	0x448d90
+  452e70:	2801      	cmp	r0, #1
+  452e72:	4605      	mov	r5, r0
+  452e74:	d127      	bne.n	0x452ec6
+  452e76:	46aa      	mov	sl, r5
+  452e78:	f8df b080 	ldr.w	fp, [pc, #128]	@ 0x452efc
+  452e7c:	7da1      	ldrb	r1, [r4, #22]
+  452e7e:	481d      	ldr	r0, [pc, #116]	@ (0x452ef4)
+  452e80:	f7d6 fab6 	bl	0x4293f0
+  452e84:	8aa3      	ldrh	r3, [r4, #20]
+  452e86:	3b01      	subs	r3, #1
+  452e88:	459a      	cmp	sl, r3
+  452e8a:	db11      	blt.n	0x452eb0
+  452e8c:	4423      	add	r3, r4
+  452e8e:	481a      	ldr	r0, [pc, #104]	@ (0x452ef8)
+  452e90:	7d99      	ldrb	r1, [r3, #22]
+  452e92:	f7d6 faad 	bl	0x4293f0
+  452e96:	8aa2      	ldrh	r2, [r4, #20]
+  452e98:	4641      	mov	r1, r8
+  452e9a:	2000      	movs	r0, #0
+  452e9c:	f7ff ff4a 	bl	0x452d34
+  452ea0:	8aa2      	ldrh	r2, [r4, #20]
+  452ea2:	2100      	movs	r1, #0
+  452ea4:	4640      	mov	r0, r8
+  452ea6:	f009 ff6f 	bl	0x45cd88
+  452eaa:	2300      	movs	r3, #0
+  452eac:	82a3      	strh	r3, [r4, #20]
+  452eae:	e00d      	b.n	0x452ecc
+  452eb0:	eb04 030a 	add.w	r3, r4, sl
+  452eb4:	f10a 0a01 	add.w	sl, sl, #1
+  452eb8:	4658      	mov	r0, fp
+  452eba:	7d99      	ldrb	r1, [r3, #22]
+  452ebc:	fa5f fa8a 	uxtb.w	sl, sl
+  452ec0:	f7d6 fa96 	bl	0x4293f0
+  452ec4:	e7de      	b.n	0x452e84
+  452ec6:	1e83      	subs	r3, r0, #2
+  452ec8:	2b01      	cmp	r3, #1
+  452eca:	d9e9      	bls.n	0x452ea0
+  452ecc:	3601      	adds	r6, #1
+  452ece:	42b7      	cmp	r7, r6
+  452ed0:	d1c1      	bne.n	0x452e56
+  452ed2:	b2e8      	uxtb	r0, r5
+  452ed4:	2801      	cmp	r0, #1
+  452ed6:	d106      	bne.n	0x452ee6
+  452ed8:	f7da fe7a 	bl	0x42dbd0
+  452edc:	b003      	add	sp, #12
+  452ede:	e8bd 4ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  452ee2:	f7d2 bb44 	b.w	0x42556e
+  452ee6:	b003      	add	sp, #12
+  452ee8:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+  452eec:	23c8      	movs	r3, #200	@ 0xc8
+  452eee:	2042      	movs	r0, #66	@ 0x42
+  452ef0:	23dc      	movs	r3, #220	@ 0xdc
+  452ef2:	2042      	movs	r0, #66	@ 0x42
+  452ef4:	3ebe      	subs	r6, #190	@ 0xbe
+  452ef6:	0049      	lsls	r1, r1, #1
+  452ef8:	3ecd      	subs	r6, #205	@ 0xcd
+  452efa:	0049      	lsls	r1, r1, #1
+  452efc:	3ec7      	subs	r6, #199	@ 0xc7
+  452efe:	0049      	lsls	r1, r1, #1

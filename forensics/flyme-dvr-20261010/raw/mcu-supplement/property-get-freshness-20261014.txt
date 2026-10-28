@@ -1,0 +1,704 @@
+
+raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000000e9f94 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28958>:
+   e9f94:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+   e9f98:	a9016ffc 	stp	x28, x27, [sp, #16]
+   e9f9c:	a90267fa 	stp	x26, x25, [sp, #32]
+   e9fa0:	a9035ff8 	stp	x24, x23, [sp, #48]
+   e9fa4:	a90457f6 	stp	x22, x21, [sp, #64]
+   e9fa8:	a9054ff4 	stp	x20, x19, [sp, #80]
+   e9fac:	910003fd 	mov	x29, sp
+   e9fb0:	d10743ff 	sub	sp, sp, #0x1d0
+   e9fb4:	d53bd059 	mrs	x25, tpidr_el0
+   e9fb8:	aa0803f3 	mov	x19, x8
+   e9fbc:	f9401728 	ldr	x8, [x25, #40]
+   e9fc0:	aa0003f5 	mov	x21, x0
+   e9fc4:	5281a049 	mov	w9, #0xd02                 	// #3330
+   e9fc8:	72a23c09 	movk	w9, #0x11e0, lsl #16
+   e9fcc:	f81f83a8 	stur	x8, [x29, #-8]
+   e9fd0:	b9400c37 	ldr	w23, [x1, #12]
+   e9fd4:	f9403800 	ldr	x0, [x0, #112]
+   e9fd8:	aa0203f4 	mov	x20, x2
+   e9fdc:	6f00e400 	movi	v0.2d, #0x0
+   e9fe0:	6b0902ff 	cmp	w23, w9
+   e9fe4:	ad010260 	stp	q0, q0, [x19, #32]
+   e9fe8:	ad000260 	stp	q0, q0, [x19]
+   e9fec:	540003c0 	b.eq	ea064 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28a28>  // b.none
+   e9ff0:	5281a028 	mov	w8, #0xd01                 	// #3329
+   e9ff4:	72a23c08 	movk	w8, #0x11e0, lsl #16
+   e9ff8:	aa0103f6 	mov	x22, x1
+   e9ffc:	6b0802ff 	cmp	w23, w8
+   ea000:	54000621 	b.ne	ea0c4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28a88>  // b.any
+   ea004:	910103e8 	add	x8, sp, #0x40
+   ea008:	910103f7 	add	x23, sp, #0x40
+   ea00c:	940013a6 	bl	eeea4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2d868>
+   ea010:	910103e1 	add	x1, sp, #0x40
+   ea014:	aa1303e0 	mov	x0, x19
+   ea018:	94000298 	bl	eaa78 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2943c>
+   ea01c:	f94023e8 	ldr	x8, [sp, #64]
+   ea020:	f90023ff 	str	xzr, [sp, #64]
+   ea024:	b4000108 	cbz	x8, ea044 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28a08>
+   ea028:	f9403be0 	ldr	x0, [sp, #112]
+   ea02c:	f9000fe8 	str	x8, [sp, #24]
+   ea030:	b40051e0 	cbz	x0, eaa6c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29430>
+   ea034:	f9400008 	ldr	x8, [x0]
+   ea038:	910063e1 	add	x1, sp, #0x18
+   ea03c:	f9401908 	ldr	x8, [x8, #48]
+   ea040:	d63f0100 	blr	x8
+   ea044:	f9403be0 	ldr	x0, [sp, #112]
+   ea048:	910042e8 	add	x8, x23, #0x10
+   ea04c:	eb00011f 	cmp	x8, x0
+   ea050:	54001fa0 	b.eq	ea444 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28e08>  // b.none
+   ea054:	b4001fe0 	cbz	x0, ea450 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28e14>
+   ea058:	f9400008 	ldr	x8, [x0]
+   ea05c:	f9401508 	ldr	x8, [x8, #40]
+   ea060:	140000fb 	b	ea44c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28e10>
+   ea064:	910103e8 	add	x8, sp, #0x40
+   ea068:	910103f6 	add	x22, sp, #0x40
+   ea06c:	9400138e 	bl	eeea4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2d868>
+   ea070:	910103e1 	add	x1, sp, #0x40
+   ea074:	aa1303e0 	mov	x0, x19
+   ea078:	94000280 	bl	eaa78 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2943c>
+   ea07c:	f94023e8 	ldr	x8, [sp, #64]
+   ea080:	f90023ff 	str	xzr, [sp, #64]
+   ea084:	b4000108 	cbz	x8, ea0a4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28a68>
+   ea088:	f9403be0 	ldr	x0, [sp, #112]
+   ea08c:	f9000fe8 	str	x8, [sp, #24]
+   ea090:	b4004ee0 	cbz	x0, eaa6c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29430>
+   ea094:	f9400008 	ldr	x8, [x0]
+   ea098:	910063e1 	add	x1, sp, #0x18
+   ea09c:	f9401908 	ldr	x8, [x8, #48]
+   ea0a0:	d63f0100 	blr	x8
+   ea0a4:	f9403be0 	ldr	x0, [sp, #112]
+   ea0a8:	910042c8 	add	x8, x22, #0x10
+   ea0ac:	eb00011f 	cmp	x8, x0
+   ea0b0:	54001dc0 	b.eq	ea468 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28e2c>  // b.none
+   ea0b4:	b4001e00 	cbz	x0, ea474 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28e38>
+   ea0b8:	f9400008 	ldr	x8, [x0]
+   ea0bc:	f9401508 	ldr	x8, [x8, #40]
+   ea0c0:	140000ec 	b	ea470 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28e34>
+   ea0c4:	f940dea0 	ldr	x0, [x21, #440]
+   ea0c8:	b40017e0 	cbz	x0, ea3c4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28d88>
+   ea0cc:	2a1703e1 	mov	w1, w23
+   ea0d0:	97ff5e25 	bl	c1964 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x328>
+   ea0d4:	36001780 	tbz	w0, #0, ea3c4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28d88>
+   ea0d8:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea0dc:	f0fff962 	adrp	x2, 19000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x44a70>
+   ea0e0:	91160421 	add	x1, x1, #0x581
+   ea0e4:	91270442 	add	x2, x2, #0x9c1
+   ea0e8:	52800080 	mov	w0, #0x4                   	// #4
+   ea0ec:	2a1703e3 	mov	w3, w23
+   ea0f0:	94127d04 	bl	589500 <__android_log_print@plt>
+   ea0f4:	9000253a 	adrp	x26, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea0f8:	f940035a 	ldr	x26, [x26]
+   ea0fc:	f9400348 	ldr	x8, [x26]
+   ea100:	b4000b68 	cbz	x8, ea26c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28c30>
+   ea104:	b9400908 	ldr	w8, [x8, #8]
+   ea108:	7100111f 	cmp	w8, #0x4
+   ea10c:	54000b0b 	b.lt	ea26c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28c30>  // b.tstop
+   ea110:	90002528 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea114:	f9400508 	ldr	x8, [x8, #8]
+   ea118:	52800089 	mov	w9, #0x4                   	// #4
+   ea11c:	52801640 	mov	w0, #0xb2                  	// #178
+   ea120:	910103fb 	add	x27, sp, #0x40
+   ea124:	91004108 	add	x8, x8, #0x10
+   ea128:	f90023e8 	str	x8, [sp, #64]
+   ea12c:	b9005be9 	str	w9, [sp, #88]
+   ea130:	94127cf8 	bl	589510 <syscall@plt>
+   ea134:	b9005fe0 	str	w0, [sp, #92]
+   ea138:	9000252a 	adrp	x10, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea13c:	f9400d4a 	ldr	x10, [x10, #24]
+   ea140:	910103e9 	add	x9, sp, #0x40
+   ea144:	52801708 	mov	w8, #0xb8                  	// #184
+   ea148:	9100e138 	add	x24, x9, #0x38
+   ea14c:	a90623ff 	stp	xzr, x8, [sp, #96]
+   ea150:	91028120 	add	x0, x9, #0xa0
+   ea154:	91006148 	add	x8, x10, #0x18
+   ea158:	91010149 	add	x9, x10, #0x40
+   ea15c:	aa1803e1 	mov	x1, x24
+   ea160:	f9003be8 	str	x8, [sp, #112]
+   ea164:	f90073e9 	str	x9, [sp, #224]
+   ea168:	94127cee 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+   ea16c:	f900b7ff 	str	xzr, [sp, #360]
+   ea170:	90002529 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea174:	f9401129 	ldr	x9, [x9, #32]
+   ea178:	12800008 	mov	w8, #0xffffffff            	// #-1
+   ea17c:	b90173e8 	str	w8, [sp, #368]
+   ea180:	aa1803e0 	mov	x0, x24
+   ea184:	91006128 	add	x8, x9, #0x18
+   ea188:	91010129 	add	x9, x9, #0x40
+   ea18c:	f9003be8 	str	x8, [sp, #112]
+   ea190:	f90073e9 	str	x9, [sp, #224]
+   ea194:	94127ce7 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+   ea198:	90002528 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea19c:	f9400908 	ldr	x8, [x8, #16]
+   ea1a0:	6f00e400 	movi	v0.2d, #0x0
+   ea1a4:	b0fff929 	adrp	x9, f000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ea70>
+   ea1a8:	91101929 	add	x9, x9, #0x406
+   ea1ac:	91004108 	add	x8, x8, #0x10
+   ea1b0:	f9003fe8 	str	x8, [sp, #120]
+   ea1b4:	52800208 	mov	w8, #0x10                  	// #16
+   ea1b8:	3c878360 	stur	q0, [x27, #120]
+   ea1bc:	3c888360 	stur	q0, [x27, #136]
+   ea1c0:	b900dbe8 	str	w8, [sp, #216]
+   ea1c4:	90fff9e8 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea1c8:	910c8908 	add	x8, x8, #0x322
+   ea1cc:	910063e0 	add	x0, sp, #0x18
+   ea1d0:	aa1f03e1 	mov	x1, xzr
+   ea1d4:	a917a3e9 	stp	x9, x8, [sp, #376]
+   ea1d8:	b9018bff 	str	wzr, [sp, #392]
+   ea1dc:	ad0c83e0 	stp	q0, q0, [sp, #400]
+   ea1e0:	3d806fe0 	str	q0, [sp, #432]
+   ea1e4:	a901ffff 	stp	xzr, xzr, [sp, #24]
+   ea1e8:	94127cd6 	bl	589540 <gettimeofday@plt>
+   ea1ec:	a941a7e8 	ldp	x8, x9, [sp, #24]
+   ea1f0:	d29ef9ea 	mov	x10, #0xf7cf                	// #63439
+   ea1f4:	f2bc6a6a 	movk	x10, #0xe353, lsl #16
+   ea1f8:	f2d374aa 	movk	x10, #0x9ba5, lsl #32
+   ea1fc:	f2e4188a 	movk	x10, #0x20c4, lsl #48
+   ea200:	f90027e8 	str	x8, [sp, #72]
+   ea204:	9b4a7d28 	smulh	x8, x9, x10
+   ea208:	d37ffd09 	lsr	x9, x8, #63
+   ea20c:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea210:	f0fff962 	adrp	x2, 19000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x44a70>
+   ea214:	0b481d28 	add	w8, w9, w8, lsr #7
+   ea218:	91160421 	add	x1, x1, #0x581
+   ea21c:	91270442 	add	x2, x2, #0x9c1
+   ea220:	910103e0 	add	x0, sp, #0x40
+   ea224:	2a1703e3 	mov	w3, w23
+   ea228:	7900a3e8 	strh	w8, [sp, #80]
+   ea22c:	97fdc72e 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+   ea230:	f9400358 	ldr	x24, [x26]
+   ea234:	a941231b 	ldp	x27, x8, [x24, #16]
+   ea238:	eb08037f 	cmp	x27, x8
+   ea23c:	54000140 	b.eq	ea264 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28c28>  // b.none
+   ea240:	aa0003f7 	mov	x23, x0
+   ea244:	f8408760 	ldr	x0, [x27], #8
+   ea248:	aa1703e1 	mov	x1, x23
+   ea24c:	f9400008 	ldr	x8, [x0]
+   ea250:	f9400908 	ldr	x8, [x8, #16]
+   ea254:	d63f0100 	blr	x8
+   ea258:	f9400f08 	ldr	x8, [x24, #24]
+   ea25c:	eb08037f 	cmp	x27, x8
+   ea260:	54ffff21 	b.ne	ea244 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28c08>  // b.any
+   ea264:	910103e0 	add	x0, sp, #0x40
+   ea268:	97fdc76c 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+   ea26c:	f940dea0 	ldr	x0, [x21, #440]
+   ea270:	910063e8 	add	x8, sp, #0x18
+   ea274:	aa1603e1 	mov	x1, x22
+   ea278:	97ff6bcb 	bl	c51a4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x3b68>
+   ea27c:	b9403be8 	ldr	w8, [sp, #56]
+   ea280:	340029e8 	cbz	w8, ea7bc <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29180>
+   ea284:	7100051f 	cmp	w8, #0x1
+   ea288:	54003f41 	b.ne	eaa70 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29434>  // b.any
+   ea28c:	910103e0 	add	x0, sp, #0x40
+   ea290:	910063e1 	add	x1, sp, #0x18
+   ea294:	910103f5 	add	x21, sp, #0x40
+   ea298:	94127e16 	bl	589af0 <_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_@plt>
+   ea29c:	394103e8 	ldrb	w8, [sp, #64]
+   ea2a0:	f9402be9 	ldr	x9, [sp, #80]
+   ea2a4:	b24002aa 	orr	x10, x21, #0x1
+   ea2a8:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea2ac:	7200011f 	tst	w8, #0x1
+   ea2b0:	d0fff922 	adrp	x2, 10000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4da70>
+   ea2b4:	9a890143 	csel	x3, x10, x9, eq	// eq = none
+   ea2b8:	91160421 	add	x1, x1, #0x581
+   ea2bc:	913a1842 	add	x2, x2, #0xe86
+   ea2c0:	528000c0 	mov	w0, #0x6                   	// #6
+   ea2c4:	94127c8f 	bl	589500 <__android_log_print@plt>
+   ea2c8:	394103e8 	ldrb	w8, [sp, #64]
+   ea2cc:	36000068 	tbz	w8, #0, ea2d8 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28c9c>
+   ea2d0:	f9402be0 	ldr	x0, [sp, #80]
+   ea2d4:	94127caf 	bl	589590 <_ZdlPv@plt>
+   ea2d8:	f9400348 	ldr	x8, [x26]
+   ea2dc:	b4000668 	cbz	x8, ea3a8 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28d6c>
+   ea2e0:	b9400908 	ldr	w8, [x8, #8]
+   ea2e4:	7100091f 	cmp	w8, #0x2
+   ea2e8:	5400060b 	b.lt	ea3a8 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28d6c>  // b.tstop
+   ea2ec:	b0fff922 	adrp	x2, f000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ea70>
+   ea2f0:	90fff9e4 	adrp	x4, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea2f4:	91101842 	add	x2, x2, #0x406
+   ea2f8:	910c8884 	add	x4, x4, #0x322
+   ea2fc:	910103e0 	add	x0, sp, #0x40
+   ea300:	52800041 	mov	w1, #0x2                   	// #2
+   ea304:	52801763 	mov	w3, #0xbb                  	// #187
+   ea308:	aa1f03e5 	mov	x5, xzr
+   ea30c:	2a1f03e6 	mov	w6, wzr
+   ea310:	97fde5e6 	bl	63aa8 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x8c4>
+   ea314:	b9403be8 	ldr	w8, [sp, #56]
+   ea318:	7100051f 	cmp	w8, #0x1
+   ea31c:	54003aa1 	b.ne	eaa70 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29434>  // b.any
+   ea320:	910003e0 	mov	x0, sp
+   ea324:	910063e1 	add	x1, sp, #0x18
+   ea328:	910003f5 	mov	x21, sp
+   ea32c:	94127df1 	bl	589af0 <_ZNSt3__112basic_stringIcNS_11char_traitsIcEENS_9allocatorIcEEEC1ERKS5_@plt>
+   ea330:	394003e8 	ldrb	w8, [sp]
+   ea334:	f9400be9 	ldr	x9, [sp, #16]
+   ea338:	b24002aa 	orr	x10, x21, #0x1
+   ea33c:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea340:	7200011f 	tst	w8, #0x1
+   ea344:	d0fff922 	adrp	x2, 10000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4da70>
+   ea348:	9a890143 	csel	x3, x10, x9, eq	// eq = none
+   ea34c:	91160421 	add	x1, x1, #0x581
+   ea350:	913a1842 	add	x2, x2, #0xe86
+   ea354:	910103e0 	add	x0, sp, #0x40
+   ea358:	97fdc6e3 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+   ea35c:	f9400356 	ldr	x22, [x26]
+   ea360:	a94122d7 	ldp	x23, x8, [x22, #16]
+   ea364:	eb0802ff 	cmp	x23, x8
+   ea368:	54000140 	b.eq	ea390 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28d54>  // b.none
+   ea36c:	aa0003f5 	mov	x21, x0
+   ea370:	f84086e0 	ldr	x0, [x23], #8
+   ea374:	aa1503e1 	mov	x1, x21
+   ea378:	f9400008 	ldr	x8, [x0]
+   ea37c:	f9400908 	ldr	x8, [x8, #16]
+   ea380:	d63f0100 	blr	x8
+   ea384:	f9400ec8 	ldr	x8, [x22, #24]
+   ea388:	eb0802ff 	cmp	x23, x8
+   ea38c:	54ffff21 	b.ne	ea370 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28d34>  // b.any
+   ea390:	394003e8 	ldrb	w8, [sp]
+   ea394:	36000068 	tbz	w8, #0, ea3a0 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28d64>
+   ea398:	f9400be0 	ldr	x0, [sp, #16]
+   ea39c:	94127c7d 	bl	589590 <_ZdlPv@plt>
+   ea3a0:	910103e0 	add	x0, sp, #0x40
+   ea3a4:	97fdc71d 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+   ea3a8:	b9403be8 	ldr	w8, [sp, #56]
+   ea3ac:	7100051f 	cmp	w8, #0x1
+   ea3b0:	54003601 	b.ne	eaa70 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29434>  // b.any
+   ea3b4:	b94033e8 	ldr	w8, [sp, #48]
+   ea3b8:	52800029 	mov	w9, #0x1                   	// #1
+   ea3bc:	b9000288 	str	w8, [x20]
+   ea3c0:	14000193 	b	eaa0c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293d0>
+   ea3c4:	f90003ff 	str	xzr, [sp]
+   ea3c8:	f94056a0 	ldr	x0, [x21, #168]
+   ea3cc:	910003e8 	mov	x8, sp
+   ea3d0:	aa1603e1 	mov	x1, x22
+   ea3d4:	940019c8 	bl	f0af4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2f4b8>
+   ea3d8:	f94003e1 	ldr	x1, [sp]
+   ea3dc:	b4000561 	cbz	x1, ea488 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28e4c>
+   ea3e0:	f9403aa0 	ldr	x0, [x21, #112]
+   ea3e4:	910103e8 	add	x8, sp, #0x40
+   ea3e8:	910103f8 	add	x24, sp, #0x40
+   ea3ec:	940011e5 	bl	eeb80 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2d544>
+   ea3f0:	910103e1 	add	x1, sp, #0x40
+   ea3f4:	aa1303e0 	mov	x0, x19
+   ea3f8:	940001a0 	bl	eaa78 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2943c>
+   ea3fc:	f94023e8 	ldr	x8, [sp, #64]
+   ea400:	f90023ff 	str	xzr, [sp, #64]
+   ea404:	b4000108 	cbz	x8, ea424 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28de8>
+   ea408:	f9403be0 	ldr	x0, [sp, #112]
+   ea40c:	f9000fe8 	str	x8, [sp, #24]
+   ea410:	b40032e0 	cbz	x0, eaa6c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29430>
+   ea414:	f9400008 	ldr	x8, [x0]
+   ea418:	910063e1 	add	x1, sp, #0x18
+   ea41c:	f9401908 	ldr	x8, [x8, #48]
+   ea420:	d63f0100 	blr	x8
+   ea424:	f9403be0 	ldr	x0, [sp, #112]
+   ea428:	91004308 	add	x8, x24, #0x10
+   ea42c:	eb00011f 	cmp	x8, x0
+   ea430:	54000960 	b.eq	ea55c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28f20>  // b.none
+   ea434:	b40009a0 	cbz	x0, ea568 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28f2c>
+   ea438:	f9400008 	ldr	x8, [x0]
+   ea43c:	f9401508 	ldr	x8, [x8, #40]
+   ea440:	14000049 	b	ea564 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28f28>
+   ea444:	f9400008 	ldr	x8, [x0]
+   ea448:	f9401108 	ldr	x8, [x8, #32]
+   ea44c:	d63f0100 	blr	x8
+   ea450:	f9400262 	ldr	x2, [x19]
+   ea454:	aa1503e0 	mov	x0, x21
+   ea458:	aa1603e1 	mov	x1, x22
+   ea45c:	940001ca 	bl	eab84 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29548>
+   ea460:	b9000280 	str	w0, [x20]
+   ea464:	14000170 	b	eaa24 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293e8>
+   ea468:	f9400008 	ldr	x8, [x0]
+   ea46c:	f9401108 	ldr	x8, [x8, #32]
+   ea470:	d63f0100 	blr	x8
+   ea474:	f9400261 	ldr	x1, [x19]
+   ea478:	aa1503e0 	mov	x0, x21
+   ea47c:	9400034c 	bl	eb1ac <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29b70>
+   ea480:	b900029f 	str	wzr, [x20]
+   ea484:	14000168 	b	eaa24 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293e8>
+   ea488:	12080ee8 	and	w8, w23, #0xf000000
+   ea48c:	52a10009 	mov	w9, #0x8000000             	// #134217728
+   ea490:	6b09011f 	cmp	w8, w9
+   ea494:	54001901 	b.ne	ea7b4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29178>  // b.any
+   ea498:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea49c:	90fff9e2 	adrp	x2, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea4a0:	f0fff923 	adrp	x3, 11000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ca70>
+   ea4a4:	91160421 	add	x1, x1, #0x581
+   ea4a8:	912cd442 	add	x2, x2, #0xb35
+   ea4ac:	912f2c63 	add	x3, x3, #0xbcb
+   ea4b0:	52800060 	mov	w0, #0x3                   	// #3
+   ea4b4:	2a1703e4 	mov	w4, w23
+   ea4b8:	94127c12 	bl	589500 <__android_log_print@plt>
+   ea4bc:	90002538 	adrp	x24, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea4c0:	f9400318 	ldr	x24, [x24]
+   ea4c4:	f9400308 	ldr	x8, [x24]
+   ea4c8:	b40014c8 	cbz	x8, ea760 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29124>
+   ea4cc:	b9400908 	ldr	w8, [x8, #8]
+   ea4d0:	7100151f 	cmp	w8, #0x5
+   ea4d4:	5400146b 	b.lt	ea760 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29124>  // b.tstop
+   ea4d8:	b0fff922 	adrp	x2, f000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ea70>
+   ea4dc:	90fff9e4 	adrp	x4, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea4e0:	91101842 	add	x2, x2, #0x406
+   ea4e4:	910c8884 	add	x4, x4, #0x322
+   ea4e8:	910103e0 	add	x0, sp, #0x40
+   ea4ec:	528000a1 	mov	w1, #0x5                   	// #5
+   ea4f0:	52802023 	mov	w3, #0x101                 	// #257
+   ea4f4:	aa1f03e5 	mov	x5, xzr
+   ea4f8:	2a1f03e6 	mov	w6, wzr
+   ea4fc:	97fde56b 	bl	63aa8 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x8c4>
+   ea500:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea504:	90fff9e2 	adrp	x2, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea508:	f0fff923 	adrp	x3, 11000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ca70>
+   ea50c:	91160421 	add	x1, x1, #0x581
+   ea510:	912cd442 	add	x2, x2, #0xb35
+   ea514:	912f2c63 	add	x3, x3, #0xbcb
+   ea518:	910103e0 	add	x0, sp, #0x40
+   ea51c:	2a1703e4 	mov	w4, w23
+   ea520:	97fdc671 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+   ea524:	f9400318 	ldr	x24, [x24]
+   ea528:	a941231a 	ldp	x26, x8, [x24, #16]
+   ea52c:	eb08035f 	cmp	x26, x8
+   ea530:	54001140 	b.eq	ea758 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2911c>  // b.none
+   ea534:	aa0003f7 	mov	x23, x0
+   ea538:	f8408740 	ldr	x0, [x26], #8
+   ea53c:	aa1703e1 	mov	x1, x23
+   ea540:	f9400008 	ldr	x8, [x0]
+   ea544:	f9400908 	ldr	x8, [x8, #16]
+   ea548:	d63f0100 	blr	x8
+   ea54c:	f9400f08 	ldr	x8, [x24, #24]
+   ea550:	eb08035f 	cmp	x26, x8
+   ea554:	54ffff21 	b.ne	ea538 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28efc>  // b.any
+   ea558:	14000080 	b	ea758 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2911c>
+   ea55c:	f9400008 	ldr	x8, [x0]
+   ea560:	f9401108 	ldr	x8, [x8, #32]
+   ea564:	d63f0100 	blr	x8
+   ea568:	f94003e8 	ldr	x8, [sp]
+   ea56c:	b9405109 	ldr	w9, [x8, #80]
+   ea570:	340008c9 	cbz	w9, ea688 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2904c>
+   ea574:	f9400108 	ldr	x8, [x8]
+   ea578:	b4000888 	cbz	x8, ea688 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2904c>
+   ea57c:	12080ee8 	and	w8, w23, #0xf000000
+   ea580:	52a10009 	mov	w9, #0x8000000             	// #134217728
+   ea584:	6b09011f 	cmp	w8, w9
+   ea588:	54001001 	b.ne	ea788 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2914c>  // b.any
+   ea58c:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea590:	d0fff9e2 	adrp	x2, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+   ea594:	f0fff923 	adrp	x3, 11000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ca70>
+   ea598:	91160421 	add	x1, x1, #0x581
+   ea59c:	91189042 	add	x2, x2, #0x624
+   ea5a0:	912f2c63 	add	x3, x3, #0xbcb
+   ea5a4:	52800060 	mov	w0, #0x3                   	// #3
+   ea5a8:	2a1703e4 	mov	w4, w23
+   ea5ac:	94127bd5 	bl	589500 <__android_log_print@plt>
+   ea5b0:	90002538 	adrp	x24, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea5b4:	f9400318 	ldr	x24, [x24]
+   ea5b8:	f9400308 	ldr	x8, [x24]
+   ea5bc:	b40004c8 	cbz	x8, ea654 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29018>
+   ea5c0:	b9400908 	ldr	w8, [x8, #8]
+   ea5c4:	7100151f 	cmp	w8, #0x5
+   ea5c8:	5400046b 	b.lt	ea654 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29018>  // b.tstop
+   ea5cc:	b0fff922 	adrp	x2, f000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ea70>
+   ea5d0:	90fff9e4 	adrp	x4, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea5d4:	91101842 	add	x2, x2, #0x406
+   ea5d8:	910c8884 	add	x4, x4, #0x322
+   ea5dc:	910103e0 	add	x0, sp, #0x40
+   ea5e0:	528000a1 	mov	w1, #0x5                   	// #5
+   ea5e4:	52801d23 	mov	w3, #0xe9                  	// #233
+   ea5e8:	aa1f03e5 	mov	x5, xzr
+   ea5ec:	2a1f03e6 	mov	w6, wzr
+   ea5f0:	97fde52e 	bl	63aa8 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x8c4>
+   ea5f4:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea5f8:	d0fff9e2 	adrp	x2, 28000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x35a70>
+   ea5fc:	f0fff923 	adrp	x3, 11000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ca70>
+   ea600:	91160421 	add	x1, x1, #0x581
+   ea604:	91189042 	add	x2, x2, #0x624
+   ea608:	912f2c63 	add	x3, x3, #0xbcb
+   ea60c:	910103e0 	add	x0, sp, #0x40
+   ea610:	2a1703e4 	mov	w4, w23
+   ea614:	97fdc634 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+   ea618:	f940031a 	ldr	x26, [x24]
+   ea61c:	a941235b 	ldp	x27, x8, [x26, #16]
+   ea620:	eb08037f 	cmp	x27, x8
+   ea624:	54000140 	b.eq	ea64c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29010>  // b.none
+   ea628:	aa0003f8 	mov	x24, x0
+   ea62c:	f8408760 	ldr	x0, [x27], #8
+   ea630:	aa1803e1 	mov	x1, x24
+   ea634:	f9400008 	ldr	x8, [x0]
+   ea638:	f9400908 	ldr	x8, [x8, #16]
+   ea63c:	d63f0100 	blr	x8
+   ea640:	f9400f48 	ldr	x8, [x26, #24]
+   ea644:	eb08037f 	cmp	x27, x8
+   ea648:	54ffff21 	b.ne	ea62c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x28ff0>  // b.any
+   ea64c:	910103e0 	add	x0, sp, #0x40
+   ea650:	97fdc672 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+   ea654:	529fff88 	mov	w8, #0xfffc                	// #65532
+   ea658:	72baf1e8 	movk	w8, #0xd78f, lsl #16
+   ea65c:	0b0802e8 	add	w8, w23, w8
+   ea660:	7100191f 	cmp	w8, #0x6
+   ea664:	54000928 	b.hi	ea788 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2914c>  // b.pmore
+   ea668:	52800029 	mov	w9, #0x1                   	// #1
+   ea66c:	1ac82128 	lsl	w8, w9, w8
+   ea670:	52800e29 	mov	w9, #0x71                  	// #113
+   ea674:	6a09011f 	tst	w8, w9
+   ea678:	54000880 	b.eq	ea788 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2914c>  // b.none
+   ea67c:	aa1503e0 	mov	x0, x21
+   ea680:	9400034f 	bl	eb3bc <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29d80>
+   ea684:	1400003f 	b	ea780 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29144>
+   ea688:	12080ee8 	and	w8, w23, #0xf000000
+   ea68c:	52a10009 	mov	w9, #0x8000000             	// #134217728
+   ea690:	6b09011f 	cmp	w8, w9
+   ea694:	540007a1 	b.ne	ea788 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2914c>  // b.any
+   ea698:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea69c:	b0fff942 	adrp	x2, 13000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4aa70>
+   ea6a0:	f0fff923 	adrp	x3, 11000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ca70>
+   ea6a4:	91160421 	add	x1, x1, #0x581
+   ea6a8:	91156442 	add	x2, x2, #0x559
+   ea6ac:	912f2c63 	add	x3, x3, #0xbcb
+   ea6b0:	52800060 	mov	w0, #0x3                   	// #3
+   ea6b4:	2a1703e4 	mov	w4, w23
+   ea6b8:	94127b92 	bl	589500 <__android_log_print@plt>
+   ea6bc:	90002538 	adrp	x24, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+   ea6c0:	f9400318 	ldr	x24, [x24]
+   ea6c4:	f9400308 	ldr	x8, [x24]
+   ea6c8:	b40004c8 	cbz	x8, ea760 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29124>
+   ea6cc:	b9400908 	ldr	w8, [x8, #8]
+   ea6d0:	7100151f 	cmp	w8, #0x5
+   ea6d4:	5400046b 	b.lt	ea760 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29124>  // b.tstop
+   ea6d8:	b0fff922 	adrp	x2, f000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ea70>
+   ea6dc:	90fff9e4 	adrp	x4, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea6e0:	91101842 	add	x2, x2, #0x406
+   ea6e4:	910c8884 	add	x4, x4, #0x322
+   ea6e8:	910103e0 	add	x0, sp, #0x40
+   ea6ec:	528000a1 	mov	w1, #0x5                   	// #5
+   ea6f0:	52801c43 	mov	w3, #0xe2                  	// #226
+   ea6f4:	aa1f03e5 	mov	x5, xzr
+   ea6f8:	2a1f03e6 	mov	w6, wzr
+   ea6fc:	97fde4eb 	bl	63aa8 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x8c4>
+   ea700:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea704:	b0fff942 	adrp	x2, 13000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4aa70>
+   ea708:	f0fff923 	adrp	x3, 11000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ca70>
+   ea70c:	91160421 	add	x1, x1, #0x581
+   ea710:	91156442 	add	x2, x2, #0x559
+   ea714:	912f2c63 	add	x3, x3, #0xbcb
+   ea718:	910103e0 	add	x0, sp, #0x40
+   ea71c:	2a1703e4 	mov	w4, w23
+   ea720:	97fdc5f1 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+   ea724:	f9400318 	ldr	x24, [x24]
+   ea728:	a941231a 	ldp	x26, x8, [x24, #16]
+   ea72c:	eb08035f 	cmp	x26, x8
+   ea730:	54000140 	b.eq	ea758 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2911c>  // b.none
+   ea734:	aa0003f7 	mov	x23, x0
+   ea738:	f8408740 	ldr	x0, [x26], #8
+   ea73c:	aa1703e1 	mov	x1, x23
+   ea740:	f9400008 	ldr	x8, [x0]
+   ea744:	f9400908 	ldr	x8, [x8, #16]
+   ea748:	d63f0100 	blr	x8
+   ea74c:	f9400f08 	ldr	x8, [x24, #24]
+   ea750:	eb08035f 	cmp	x26, x8
+   ea754:	54ffff21 	b.ne	ea738 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x290fc>  // b.any
+   ea758:	910103e0 	add	x0, sp, #0x40
+   ea75c:	97fdc62f 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+   ea760:	9101e2b7 	add	x23, x21, #0x78
+   ea764:	aa1703e0 	mov	x0, x23
+   ea768:	94127c7e 	bl	589960 <_ZNSt3__15mutex4lockEv@plt>
+   ea76c:	f94052b5 	ldr	x21, [x21, #160]
+   ea770:	b4001835 	cbz	x21, eaa74 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29438>
+   ea774:	aa1703e0 	mov	x0, x23
+   ea778:	94127c7e 	bl	589970 <_ZNSt3__15mutex6unlockEv@plt>
+   ea77c:	aa1503e0 	mov	x0, x21
+   ea780:	aa1603e1 	mov	x1, x22
+   ea784:	94013668 	bl	138124 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x76ae8>
+   ea788:	f94003e1 	ldr	x1, [sp]
+   ea78c:	f9400268 	ldr	x8, [x19]
+   ea790:	f100011f 	cmp	x8, #0x0
+   ea794:	1a9f17e8 	cset	w8, eq	// eq = none
+   ea798:	531f7908 	lsl	w8, w8, #1
+   ea79c:	b9000288 	str	w8, [x20]
+   ea7a0:	f90003ff 	str	xzr, [sp]
+   ea7a4:	b4001401 	cbz	x1, eaa24 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293e8>
+   ea7a8:	910003e0 	mov	x0, sp
+   ea7ac:	97fe0c37 	bl	6d888 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0xa6a4>
+   ea7b0:	1400009d 	b	eaa24 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293e8>
+   ea7b4:	aa1f03e1 	mov	x1, xzr
+   ea7b8:	17fffff5 	b	ea78c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29150>
+   ea7bc:	f9400ff6 	ldr	x22, [sp, #24]
+   ea7c0:	b4000bf6 	cbz	x22, ea93c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29300>
+   ea7c4:	910103e8 	add	x8, sp, #0x40
+   ea7c8:	aa1603e0 	mov	x0, x22
+   ea7cc:	910103f7 	add	x23, sp, #0x40
+   ea7d0:	97fdf565 	bl	67d64 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x4b80>
+   ea7d4:	394103e8 	ldrb	w8, [sp, #64]
+   ea7d8:	f9402be9 	ldr	x9, [sp, #80]
+   ea7dc:	b24002ea 	orr	x10, x23, #0x1
+   ea7e0:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea7e4:	7200011f 	tst	w8, #0x1
+   ea7e8:	f0fff9e2 	adrp	x2, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea7ec:	9a890143 	csel	x3, x10, x9, eq	// eq = none
+   ea7f0:	91160421 	add	x1, x1, #0x581
+   ea7f4:	91166042 	add	x2, x2, #0x598
+   ea7f8:	52800080 	mov	w0, #0x4                   	// #4
+   ea7fc:	94127b41 	bl	589500 <__android_log_print@plt>
+   ea800:	394103e8 	ldrb	w8, [sp, #64]
+   ea804:	36000068 	tbz	w8, #0, ea810 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x291d4>
+   ea808:	f9402be0 	ldr	x0, [sp, #80]
+   ea80c:	94127b61 	bl	589590 <_ZdlPv@plt>
+   ea810:	f9400348 	ldr	x8, [x26]
+   ea814:	b4000608 	cbz	x8, ea8d4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29298>
+   ea818:	b9400908 	ldr	w8, [x8, #8]
+   ea81c:	7100111f 	cmp	w8, #0x4
+   ea820:	540005ab 	b.lt	ea8d4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29298>  // b.tstop
+   ea824:	b0fff922 	adrp	x2, f000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ea70>
+   ea828:	90fff9e4 	adrp	x4, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea82c:	91101842 	add	x2, x2, #0x406
+   ea830:	910c8884 	add	x4, x4, #0x322
+   ea834:	910103e0 	add	x0, sp, #0x40
+   ea838:	52800081 	mov	w1, #0x4                   	// #4
+   ea83c:	52801803 	mov	w3, #0xc0                  	// #192
+   ea840:	aa1f03e5 	mov	x5, xzr
+   ea844:	2a1f03e6 	mov	w6, wzr
+   ea848:	97fde498 	bl	63aa8 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x8c4>
+   ea84c:	910003e8 	mov	x8, sp
+   ea850:	aa1603e0 	mov	x0, x22
+   ea854:	910003f7 	mov	x23, sp
+   ea858:	97fdf543 	bl	67d64 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x4b80>
+   ea85c:	394003e8 	ldrb	w8, [sp]
+   ea860:	f9400be9 	ldr	x9, [sp, #16]
+   ea864:	b24002ea 	orr	x10, x23, #0x1
+   ea868:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea86c:	7200011f 	tst	w8, #0x1
+   ea870:	f0fff9e2 	adrp	x2, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea874:	9a890143 	csel	x3, x10, x9, eq	// eq = none
+   ea878:	91160421 	add	x1, x1, #0x581
+   ea87c:	91166042 	add	x2, x2, #0x598
+   ea880:	910103e0 	add	x0, sp, #0x40
+   ea884:	97fdc598 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+   ea888:	f9400358 	ldr	x24, [x26]
+   ea88c:	a941231a 	ldp	x26, x8, [x24, #16]
+   ea890:	eb08035f 	cmp	x26, x8
+   ea894:	54000140 	b.eq	ea8bc <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29280>  // b.none
+   ea898:	aa0003f7 	mov	x23, x0
+   ea89c:	f8408740 	ldr	x0, [x26], #8
+   ea8a0:	aa1703e1 	mov	x1, x23
+   ea8a4:	f9400008 	ldr	x8, [x0]
+   ea8a8:	f9400908 	ldr	x8, [x8, #16]
+   ea8ac:	d63f0100 	blr	x8
+   ea8b0:	f9400f08 	ldr	x8, [x24, #24]
+   ea8b4:	eb08035f 	cmp	x26, x8
+   ea8b8:	54ffff21 	b.ne	ea89c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29260>  // b.any
+   ea8bc:	394003e8 	ldrb	w8, [sp]
+   ea8c0:	36000068 	tbz	w8, #0, ea8cc <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29290>
+   ea8c4:	f9400be0 	ldr	x0, [sp, #16]
+   ea8c8:	94127b32 	bl	589590 <_ZdlPv@plt>
+   ea8cc:	910103e0 	add	x0, sp, #0x40
+   ea8d0:	97fdc5d2 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+   ea8d4:	f9403aa0 	ldr	x0, [x21, #112]
+   ea8d8:	910103e8 	add	x8, sp, #0x40
+   ea8dc:	aa1603e1 	mov	x1, x22
+   ea8e0:	910103f5 	add	x21, sp, #0x40
+   ea8e4:	940010a7 	bl	eeb80 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2d544>
+   ea8e8:	910103e1 	add	x1, sp, #0x40
+   ea8ec:	aa1303e0 	mov	x0, x19
+   ea8f0:	94000062 	bl	eaa78 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2943c>
+   ea8f4:	f94023e8 	ldr	x8, [sp, #64]
+   ea8f8:	f90023ff 	str	xzr, [sp, #64]
+   ea8fc:	b4000108 	cbz	x8, ea91c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x292e0>
+   ea900:	f9403be0 	ldr	x0, [sp, #112]
+   ea904:	f90003e8 	str	x8, [sp]
+   ea908:	b4000b20 	cbz	x0, eaa6c <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29430>
+   ea90c:	f9400008 	ldr	x8, [x0]
+   ea910:	910003e1 	mov	x1, sp
+   ea914:	f9401908 	ldr	x8, [x8, #48]
+   ea918:	d63f0100 	blr	x8
+   ea91c:	f9403be0 	ldr	x0, [sp, #112]
+   ea920:	910042a8 	add	x8, x21, #0x10
+   ea924:	eb00011f 	cmp	x8, x0
+   ea928:	54000620 	b.eq	ea9ec <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293b0>  // b.none
+   ea92c:	b4000660 	cbz	x0, ea9f8 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293bc>
+   ea930:	f9400008 	ldr	x8, [x0]
+   ea934:	f9401508 	ldr	x8, [x8, #40]
+   ea938:	1400002f 	b	ea9f4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293b8>
+   ea93c:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea940:	d0fff982 	adrp	x2, 1c000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x41a70>
+   ea944:	91160421 	add	x1, x1, #0x581
+   ea948:	911c1442 	add	x2, x2, #0x705
+   ea94c:	528000c0 	mov	w0, #0x6                   	// #6
+   ea950:	94127aec 	bl	589500 <__android_log_print@plt>
+   ea954:	f9400348 	ldr	x8, [x26]
+   ea958:	b4000468 	cbz	x8, ea9e4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293a8>
+   ea95c:	b9400908 	ldr	w8, [x8, #8]
+   ea960:	7100091f 	cmp	w8, #0x2
+   ea964:	5400040b 	b.lt	ea9e4 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293a8>  // b.tstop
+   ea968:	b0fff922 	adrp	x2, f000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ea70>
+   ea96c:	90fff9e4 	adrp	x4, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+   ea970:	91101842 	add	x2, x2, #0x406
+   ea974:	910c8884 	add	x4, x4, #0x322
+   ea978:	910103e0 	add	x0, sp, #0x40
+   ea97c:	52800041 	mov	w1, #0x2                   	// #2
+   ea980:	52801883 	mov	w3, #0xc4                  	// #196
+   ea984:	aa1f03e5 	mov	x5, xzr
+   ea988:	2a1f03e6 	mov	w6, wzr
+   ea98c:	97fde447 	bl	63aa8 <_ZNSt3__113__tree_removeIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0x8c4>
+   ea990:	f0fff9e1 	adrp	x1, 29000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x34a70>
+   ea994:	d0fff982 	adrp	x2, 1c000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x41a70>
+   ea998:	91160421 	add	x1, x1, #0x581
+   ea99c:	911c1442 	add	x2, x2, #0x705
+   ea9a0:	910103e0 	add	x0, sp, #0x40
+   ea9a4:	97fdc550 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+   ea9a8:	f9400356 	ldr	x22, [x26]
+   ea9ac:	a94122d7 	ldp	x23, x8, [x22, #16]
+   ea9b0:	eb0802ff 	cmp	x23, x8
+   ea9b4:	54000140 	b.eq	ea9dc <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293a0>  // b.none
+   ea9b8:	aa0003f5 	mov	x21, x0
+   ea9bc:	f84086e0 	ldr	x0, [x23], #8
+   ea9c0:	aa1503e1 	mov	x1, x21
+   ea9c4:	f9400008 	ldr	x8, [x0]
+   ea9c8:	f9400908 	ldr	x8, [x8, #16]
+   ea9cc:	d63f0100 	blr	x8
+   ea9d0:	f9400ec8 	ldr	x8, [x22, #24]
+   ea9d4:	eb0802ff 	cmp	x23, x8
+   ea9d8:	54ffff21 	b.ne	ea9bc <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x29380>  // b.any
+   ea9dc:	910103e0 	add	x0, sp, #0x40
+   ea9e0:	97fdc58e 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+   ea9e4:	528000a8 	mov	w8, #0x5                   	// #5
+   ea9e8:	14000005 	b	ea9fc <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293c0>
+   ea9ec:	f9400008 	ldr	x8, [x0]
+   ea9f0:	f9401108 	ldr	x8, [x8, #32]
+   ea9f4:	d63f0100 	blr	x8
+   ea9f8:	2a1f03e8 	mov	w8, wzr
+   ea9fc:	b9403be9 	ldr	w9, [sp, #56]
+   eaa00:	b9000288 	str	w8, [x20]
+   eaa04:	3100053f 	cmn	w9, #0x1
+   eaa08:	540000e0 	b.eq	eaa24 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293e8>  // b.none
+   eaa0c:	b0002508 	adrp	x8, 58b000 <_ZN7android4base9ReadFullyENS0_11borrowed_fdEPvm@plt+0x9a0>
+   eaa10:	913d6108 	add	x8, x8, #0xf58
+   eaa14:	f8695908 	ldr	x8, [x8, w9, uxtw #3]
+   eaa18:	910103e0 	add	x0, sp, #0x40
+   eaa1c:	910063e1 	add	x1, sp, #0x18
+   eaa20:	d63f0100 	blr	x8
+   eaa24:	f9400268 	ldr	x8, [x19]
+   eaa28:	b4000088 	cbz	x8, eaa38 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x293fc>
+   eaa2c:	94127c29 	bl	589ad0 <_ZN7android19elapsedRealtimeNanoEv@plt>
+   eaa30:	f9400268 	ldr	x8, [x19]
+   eaa34:	f9000100 	str	x0, [x8]
+   eaa38:	f9401728 	ldr	x8, [x25, #40]
+   eaa3c:	f85f83a9 	ldur	x9, [x29, #-8]
+   eaa40:	eb09011f 	cmp	x8, x9
+   eaa44:	54000121 	b.ne	eaa68 <_ZNSt3__1lsIcNS_11char_traitsIcEENS_9allocatorIcEEEERNS_13basic_ostreamIT_T0_EES9_RKNS_12basic_stringIS6_S7_T1_EE@@Base+0x2942c>  // b.any
+   eaa48:	910743ff 	add	sp, sp, #0x1d0
+   eaa4c:	a9454ff4 	ldp	x20, x19, [sp, #80]
+   eaa50:	a94457f6 	ldp	x22, x21, [sp, #64]
+   eaa54:	a9435ff8 	ldp	x24, x23, [sp, #48]
+   eaa58:	a94267fa 	ldp	x26, x25, [sp, #32]
+   eaa5c:	a9416ffc 	ldp	x28, x27, [sp, #16]
+   eaa60:	a8c67bfd 	ldp	x29, x30, [sp], #96
+   eaa64:	d65f03c0 	ret
+   eaa68:	94127a8a 	bl	589490 <__stack_chk_fail@plt>
+   eaa6c:	97fdd665 	bl	60400 <_ZNSt3__127__tree_balance_after_insertIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0xa6c>
+   eaa70:	97fdd664 	bl	60400 <_ZNSt3__127__tree_balance_after_insertIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base+0xa6c>
+   eaa74:	94127b93 	bl	5898c0 <abort@plt>

@@ -1,0 +1,43 @@
+  435a7e:	2041      	movs	r0, #65	@ 0x41
+  435a80:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  435a84:	4b41      	ldr	r3, [pc, #260]	@ (0x435b8c)
+  435a86:	b087      	sub	sp, #28
+  435a88:	4841      	ldr	r0, [pc, #260]	@ (0x435b90)
+  435a8a:	f04f 0805 	mov.w	r8, #5
+  435a8e:	9300      	str	r3, [sp, #0]
+  435a90:	4b40      	ldr	r3, [pc, #256]	@ (0x435b94)
+  435a92:	4d41      	ldr	r5, [pc, #260]	@ (0x435b98)
+  435a94:	f203 120d 	addw	r2, r3, #269	@ 0x10d
+
+  435d80:	4b1d      	ldr	r3, [pc, #116]	@ (0x435df8)
+  435d82:	4604      	mov	r4, r0
+  435d84:	5c1a      	ldrb	r2, [r3, r0]
+  435d86:	5c9e      	ldrb	r6, [r3, r2]
+  435d88:	4b1c      	ldr	r3, [pc, #112]	@ (0x435dfc)
+  435d8a:	eb03 05c0 	add.w	r5, r3, r0, lsl #3
+  435d8e:	88aa      	ldrh	r2, [r5, #4]
+  435d90:	2a08      	cmp	r2, #8
+  435d92:	d82c      	bhi.n	0x435dee
+  435d94:	4a1a      	ldr	r2, [pc, #104]	@ (0x435e00)
+
+  43660c:	dea0      	udf	#160	@ 0xa0
+  43660e:	0048      	lsls	r0, r1, #1
+  436610:	a904      	add	r1, sp, #16
+  436612:	2040      	movs	r0, #64	@ 0x40
+  436614:	4a14      	ldr	r2, [pc, #80]	@ (0x436668)
+  436616:	4b15      	ldr	r3, [pc, #84]	@ (0x43666c)
+  436618:	b570      	push	{r4, r5, r6, lr}
+  43661a:	f852 6030 	ldr.w	r6, [r2, r0, lsl #3]
+  43661e:	eb02 02c0 	add.w	r2, r2, r0, lsl #3
+  436622:	eb03 05c0 	add.w	r5, r3, r0, lsl #3
+
+  44a29e:	7b52      	ldrb	r2, [r2, #13]
+  44a2a0:	712b      	strb	r3, [r5, #4]
+  44a2a2:	2310      	movs	r3, #16
+  44a2a4:	72e9      	strb	r1, [r5, #11]
+  44a2a6:	4912      	ldr	r1, [pc, #72]	@ (0x44a2f0)
+  44a2a8:	716b      	strb	r3, [r5, #5]
+  44a2aa:	2300      	movs	r3, #0
+  44a2ac:	732a      	strb	r2, [r5, #12]
+  44a2ae:	eb01 02c4 	add.w	r2, r1, r4, lsl #3
+  44a2b2:	71eb      	strb	r3, [r5, #7]

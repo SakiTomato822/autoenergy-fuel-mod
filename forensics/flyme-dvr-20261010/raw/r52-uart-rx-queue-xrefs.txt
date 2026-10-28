@@ -1,0 +1,13 @@
+TARGETS [ { addr: 847769920, text: 'explicit address, not string' } ]
+MOVW_MOVT 0x328192d4 0x328192d8 possible_start 0x328192ac { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32819358 0x3281935c possible_start 0x32819308 { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821808 0x3282180c possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x3282182c 0x32821830 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821874 0x32821878 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821894 0x32821898 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x328218fc 0x32821900 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821918 0x3282191c possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821bac 0x32821bb0 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821bd0 0x32821bd4 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821c40 0x32821c44 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }
+MOVW_MOVT 0x32821c54 0x32821c58 possible_start 0x328216cc { addr: 847769920, text: 'explicit address, not string' }

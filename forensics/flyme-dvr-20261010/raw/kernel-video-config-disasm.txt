@@ -1,0 +1,114 @@
+
+forensics/flyme-dvr-20261010/raw/kernel-video-config-pages.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000b42de4 <.data+0xde4>:
+  b42de4:	d503233f 	paciasp
+  b42de8:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!
+  b42dec:	910003fd 	mov	x29, sp
+  b42df0:	a90363f7 	stp	x23, x24, [sp, #48]
+  b42df4:	12001c17 	and	w23, w0, #0xff
+  b42df8:	b0005580 	adrp	x0, 0x15f3000
+  b42dfc:	913a6018 	add	x24, x0, #0xe98
+  b42e00:	b0007420 	adrp	x0, 0x19c7000
+  b42e04:	a90153f3 	stp	x19, x20, [sp, #16]
+  b42e08:	9000e1d3 	adrp	x19, 0x277a000
+  b42e0c:	d280e2f4 	mov	x20, #0x717                 	// #1815
+  b42e10:	912b4273 	add	x19, x19, #0xad0
+  b42e14:	a9025bf5 	stp	x21, x22, [sp, #32]
+  b42e18:	d281e2f5 	mov	x21, #0xf17                 	// #3863
+  b42e1c:	91396016 	add	x22, x0, #0xe58
+  b42e20:	f2e00d15 	movk	x21, #0x68, lsl #48
+  b42e24:	f2e00d14 	movk	x20, #0x68, lsl #48
+  b42e28:	a9046bf9 	stp	x25, x26, [sp, #64]
+  b42e2c:	52800019 	mov	w25, #0x0                   	// #0
+  b42e30:	39400262 	ldrb	w2, [x19]
+  b42e34:	d2801001 	mov	x1, #0x80                  	// #128
+  b42e38:	d2b3f400 	mov	x0, #0x9fa00000            	// #2678063104
+  b42e3c:	7100005f 	cmp	w2, #0x0
+  b42e40:	9a9412a2 	csel	x2, x21, x20, ne	// ne = any
+  b42e44:	97d3eeb3 	bl	0x3e910
+  b42e48:	39400c1a 	ldrb	w26, [x0, #3]
+  b42e4c:	51000740 	sub	w0, w26, #0x1
+  b42e50:	12001c00 	and	w0, w0, #0xff
+  b42e54:	7103f41f 	cmp	w0, #0xfd
+  b42e58:	54000169 	b.ls	0xb42e84  // b.plast
+  b42e5c:	2a1903e3 	mov	w3, w25
+  b42e60:	2a1a03e2 	mov	w2, w26
+  b42e64:	91012301 	add	x1, x24, #0x48
+  b42e68:	aa1603e0 	mov	x0, x22
+  b42e6c:	9417d8f9 	bl	0x1139250
+  b42e70:	11000739 	add	w25, w25, #0x1
+  b42e74:	52800c80 	mov	w0, #0x64                  	// #100
+  b42e78:	97d72802 	bl	0x10ce80
+  b42e7c:	71000f3f 	cmp	w25, #0x3
+  b42e80:	54fffd81 	b.ne	0xb42e30  // b.any
+  b42e84:	71000aff 	cmp	w23, #0x2
+  b42e88:	528000c3 	mov	w3, #0x6                   	// #6
+  b42e8c:	52800080 	mov	w0, #0x4                   	// #4
+  b42e90:	0a030341 	and	w1, w26, w3
+  b42e94:	1a830000 	csel	w0, w0, w3, eq	// eq = none
+  b42e98:	2a1a03e2 	mov	w2, w26
+  b42e9c:	6b00003f 	cmp	w1, w0
+  b42ea0:	2a1703e3 	mov	w3, w23
+  b42ea4:	91012301 	add	x1, x24, #0x48
+  b42ea8:	54000181 	b.ne	0xb42ed8  // b.any
+  b42eac:	b0007420 	adrp	x0, 0x19c7000
+  b42eb0:	913a4000 	add	x0, x0, #0xe90
+  b42eb4:	9417d8e7 	bl	0x1139250
+  b42eb8:	52800020 	mov	w0, #0x1                   	// #1
+  b42ebc:	a94153f3 	ldp	x19, x20, [sp, #16]
+  b42ec0:	a9425bf5 	ldp	x21, x22, [sp, #32]
+  b42ec4:	a94363f7 	ldp	x23, x24, [sp, #48]
+  b42ec8:	a9446bf9 	ldp	x25, x26, [sp, #64]
+  b42ecc:	a8c57bfd 	ldp	x29, x30, [sp], #80
+  b42ed0:	d50323bf 	autiasp
+  b42ed4:	d65f03c0 	ret
+  b42ed8:	b0007420 	adrp	x0, 0x19c7000
+  b42edc:	913b6000 	add	x0, x0, #0xed8
+  b42ee0:	9417d8dc 	bl	0x1139250
+  b42ee4:	52800000 	mov	w0, #0x0                   	// #0
+  b42ee8:	17fffff5 	b	0xb42ebc
+  b42eec:	d503201f 	nop
+  b42ef0:	d503233f 	paciasp
+  b42ef4:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+  b42ef8:	910003fd 	mov	x29, sp
+  b42efc:	f9000bf3 	str	x19, [sp, #16]
+  b42f00:	aa0203f3 	mov	x19, x2
+  b42f04:	f9404c00 	ldr	x0, [x0, #152]
+  b42f08:	39522001 	ldrb	w1, [x0, #1160]
+  b42f0c:	72001c3f 	tst	w1, #0xff
+  b42f10:	54000241 	b.ne	0xb42f58  // b.any
+  b42f14:	b9499801 	ldr	w1, [x0, #2456]
+  b42f18:	52800022 	mov	w2, #0x1                   	// #1
+  b42f1c:	7100103f 	cmp	w1, #0x4
+  b42f20:	540000a0 	b.eq	0xb42f34  // b.none
+  b42f24:	b9499c00 	ldr	w0, [x0, #2460]
+  b42f28:	7100101f 	cmp	w0, #0x4
+  b42f2c:	1a9f07e2 	cset	w2, ne	// ne = any
+  b42f30:	11000842 	add	w2, w2, #0x2
+  b42f34:	b0007601 	adrp	x1, 0x1a03000
+  b42f38:	aa1303e0 	mov	x0, x19
+  b42f3c:	913ba021 	add	x1, x1, #0xee8
+  b42f40:	97eb365d 	bl	0x6108b4
+  b42f44:	d2800060 	mov	x0, #0x3                   	// #3
+  b42f48:	f9400bf3 	ldr	x19, [sp, #16]
+  b42f4c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+  b42f50:	d50323bf 	autiasp
+  b42f54:	d65f03c0 	ret
+  b42f58:	b0005581 	adrp	x1, 0x15f3000
+  b42f5c:	913a6021 	add	x1, x1, #0xe98
+  b42f60:	9101a021 	add	x1, x1, #0x68
+  b42f64:	b0007420 	adrp	x0, 0x19c7000
+  b42f68:	913c6000 	add	x0, x0, #0xf18
+  b42f6c:	9417d8b9 	bl	0x1139250
+  b42f70:	aa1303e0 	mov	x0, x19
+  b42f74:	b0007601 	adrp	x1, 0x1a03000
+  b42f78:	52800002 	mov	w2, #0x0                   	// #0
+  b42f7c:	913ba021 	add	x1, x1, #0xee8
+  b42f80:	97eb364d 	bl	0x6108b4
+  b42f84:	17fffff0 	b	0xb42f44
+  b42f88:	d503201f 	nop
+  b42f8c:	d503201f 	nop

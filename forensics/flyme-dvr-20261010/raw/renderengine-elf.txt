@@ -1,0 +1,126 @@
+SECTIONS [
+  [ '', '0x0', '0x0' ],
+  [ '.interp', '0x2e0', '0x15' ],
+  [ '.note.android.ident', '0x2f8', '0x18' ],
+  [ '.note.gnu.build-id', '0x310', '0x20' ],
+  [ '.dynsym', '0x330', '0x3078' ],
+  [ '.gnu.version', '0x33a8', '0x40a' ],
+  [ '.gnu.version_r', '0x37b4', '0x80' ],
+  [ '.gnu.hash', '0x3838', '0x638' ],
+  [ '.dynstr', '0x3e70', '0x372d' ],
+  [ '.rela.dyn', '0x75a0', '0x3810' ],
+  [ '.rela.plt', '0xadb0', '0x1770' ],
+  [ '.rodata', '0xc520', '0x4856' ],
+  [ '.eh_frame_hdr', '0x10d78', '0xa2c' ],
+  [ '.eh_frame', '0x117a8', '0x29a4' ],
+  [ '.text', '0x15000', '0x146f8' ],
+  [ '.plt', '0x29700', '0xfc0' ],
+  [ '.tdata', '0x2b000', '0x0' ],
+  [ '.preinit_array', '0x2b000', '0x10' ],
+  [ '.init_array', '0x2b010', '0x38' ],
+  [ '.fini_array', '0x2b048', '0x18' ],
+  [ '.data.rel.ro', '0x2b060', '0x1908' ],
+  [ '.dynamic', '0x2c968', '0x360' ],
+  [ '.got', '0x2ccc8', '0x408' ],
+  [ '.got.plt', '0x2d0d0', '0x7e8' ],
+  [ '.data', '0x2e8b8', '0x6c' ],
+  [ '.bss', '0x2e928', '0x630' ],
+  [ '.comment', '0x0', '0x114' ],
+  [ '.symtab', '0x0', '0x9bb8' ],
+  [ '.shstrtab', '0x0', '0x12f' ],
+  [ '.strtab', '0x0', '0x740a' ],
+  [ '.gnu_debuglink', '0x0', '0x14' ]
+]
+SYMBOLS [
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator10getServiceERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEb',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN15ApaCameraModuleC1EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEE',
+    value: 98224,
+    size: 556,
+    type: 2
+  },
+  {
+    name: '_ZN15AvmCameraModuleC1EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEE',
+    value: 102932,
+    size: 236,
+    type: 2
+  },
+  {
+    name: '_ZN15RvcCameraModuleC1EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEE',
+    value: 103900,
+    size: 200,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator10getServiceERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEb',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN15ApaCameraModule10openCameraEv',
+    value: 100320,
+    size: 812,
+    type: 2
+  },
+  {
+    name: '_ZN15ApaCameraModuleC2EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEE',
+    value: 98224,
+    size: 556,
+    type: 2
+  },
+  {
+    name: '_ZN15AvmCameraModule20configureEvsPipelineEv',
+    value: 103544,
+    size: 356,
+    type: 2
+  },
+  {
+    name: '_ZN15AvmCameraModuleC2EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEE',
+    value: 102932,
+    size: 236,
+    type: 2
+  },
+  {
+    name: '_ZN22RenderProducerPipelineC1EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEEP6AvmSdk',
+    value: 120804,
+    size: 160,
+    type: 2
+  },
+  {
+    name: '_ZN15RvcCameraModuleC2EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEE',
+    value: 103900,
+    size: 200,
+    type: 2
+  },
+  {
+    name: '_Z26createVideoTextureProducerN7android2spINS_8hardware10automotive3evs4V1_014IEvsEnumeratorEEEPvP6AvmSdk',
+    value: 126676,
+    size: 820,
+    type: 2
+  },
+  {
+    name: '_ZN22RenderProducerPipelineC2EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEEP6AvmSdk',
+    value: 120804,
+    size: 160,
+    type: 2
+  },
+  {
+    name: '_ZN16VideoTexProducerC1EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEENS1_INS5_10IEvsCameraEEENS1_I13StreamHandlerEEPvP6AvmSdk',
+    value: 121976,
+    size: 900,
+    type: 2
+  },
+  {
+    name: '_ZN16VideoTexProducerC2EN7android2spINS0_8hardware10automotive3evs4V1_014IEvsEnumeratorEEENS1_INS5_10IEvsCameraEEENS1_I13StreamHandlerEEPvP6AvmSdk',
+    value: 121976,
+    size: 900,
+    type: 2
+  }
+]
+TARGETS []

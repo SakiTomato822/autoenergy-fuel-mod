@@ -1,0 +1,19 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0045bc3c <.data+0x3bc3c>:
+  45bc3c:	2901      	cmp	r1, #1
+  45bc3e:	d004      	beq.n	0x45bc4a
+  45bc40:	2902      	cmp	r1, #2
+  45bc42:	d007      	beq.n	0x45bc54
+  45bc44:	b941      	cbnz	r1, 0x45bc58
+  45bc46:	f7fe be05 	b.w	0x45a854
+  45bc4a:	b128      	cbz	r0, 0x45bc58
+  45bc4c:	6883      	ldr	r3, [r0, #8]
+  45bc4e:	b11b      	cbz	r3, 0x45bc58
+  45bc50:	f7fe be4a 	b.w	0x45a8e8
+  45bc54:	f7ff b863 	b.w	0x45ad1e
+  45bc58:	4770      	bx	lr

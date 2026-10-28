@@ -1,0 +1,822 @@
+[
+  {
+    "i": 157,
+    "s": "\tmAppWidgetHost.isListening: "
+  },
+  {
+    "i": 2049,
+    "s": ", recommendAppList = "
+  },
+  {
+    "i": 3096,
+    "s": "All apps list: size="
+  },
+  {
+    "i": 3101,
+    "s": "AllAppsList"
+  },
+  {
+    "i": 3106,
+    "s": "AlphabeticalAppsList"
+  },
+  {
+    "i": 3161,
+    "s": "AppFilter"
+  },
+  {
+    "i": 3162,
+    "s": "AppFilter carplay config not match, add to filter list"
+  },
+  {
+    "i": 3166,
+    "s": "AppList action:"
+  },
+  {
+    "i": 3167,
+    "s": "AppListActivity"
+  },
+  {
+    "i": 3168,
+    "s": "AppListActivity not found, skip UI notification"
+  },
+  {
+    "i": 3169,
+    "s": "AppListContainerView"
+  },
+  {
+    "i": 3170,
+    "s": "AppListInputConsumer"
+  },
+  {
+    "i": 3171,
+    "s": "AppListInputConsumer.DOWN"
+  },
+  {
+    "i": 3172,
+    "s": "AppListInputConsumer.UP"
+  },
+  {
+    "i": 3173,
+    "s": "AppListItemAnimator"
+  },
+  {
+    "i": 3174,
+    "s": "AppListTransition"
+  },
+  {
+    "i": 3911,
+    "s": "Close app list panel"
+  },
+  {
+    "i": 6824,
+    "s": "Landroid/app/ActivityOptions$OnAnimationFinishedListener;"
+  },
+  {
+    "i": 6825,
+    "s": "Landroid/app/ActivityOptions$OnAnimationStartedListener;"
+  },
+  {
+    "i": 6840,
+    "s": "Landroid/app/DatePickerDialog$OnDateSetListener;"
+  },
+  {
+    "i": 6850,
+    "s": "Landroid/app/ITaskStackListener;"
+  },
+  {
+    "i": 6868,
+    "s": "Landroid/app/SharedElementCallback$OnSharedElementsReadyListener;"
+  },
+  {
+    "i": 6871,
+    "s": "Landroid/app/TaskStackListener;"
+  },
+  {
+    "i": 6875,
+    "s": "Landroid/app/WallpaperManager$OnColorsChangedListener;"
+  },
+  {
+    "i": 7413,
+    "s": "Landroid/view/View$OnApplyWindowInsetsListener;"
+  },
+  {
+    "i": 7625,
+    "s": "Landroidx/appcompat/app/AlertController$RecycleListView;"
+  },
+  {
+    "i": 7634,
+    "s": "Landroidx/appcompat/app/AppCompatDelegateImpl$ListMenuDecorView;"
+  },
+  {
+    "i": 7683,
+    "s": "Landroidx/appcompat/view/menu/ListMenuItemView;"
+  },
+  {
+    "i": 7775,
+    "s": "Landroidx/appcompat/widget/DropDownListView$a;"
+  },
+  {
+    "i": 7776,
+    "s": "Landroidx/appcompat/widget/DropDownListView$b;"
+  },
+  {
+    "i": 7777,
+    "s": "Landroidx/appcompat/widget/DropDownListView$c;"
+  },
+  {
+    "i": 7778,
+    "s": "Landroidx/appcompat/widget/DropDownListView$d;"
+  },
+  {
+    "i": 7779,
+    "s": "Landroidx/appcompat/widget/DropDownListView;"
+  },
+  {
+    "i": 7784,
+    "s": "Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView$a;"
+  },
+  {
+    "i": 7785,
+    "s": "Landroidx/appcompat/widget/MenuPopupWindow$MenuDropDownListView;"
+  },
+  {
+    "i": 7927,
+    "s": "Landroidx/car/app/IOnRequestPermissionsListener$Default;"
+  },
+  {
+    "i": 7928,
+    "s": "Landroidx/car/app/IOnRequestPermissionsListener$Stub$Proxy;"
+  },
+  {
+    "i": 7929,
+    "s": "Landroidx/car/app/IOnRequestPermissionsListener$Stub;"
+  },
+  {
+    "i": 7930,
+    "s": "Landroidx/car/app/IOnRequestPermissionsListener;"
+  },
+  {
+    "i": 8016,
+    "s": "Landroidx/car/app/model/IOnCheckedChangeListener$Default;"
+  },
+  {
+    "i": 8017,
+    "s": "Landroidx/car/app/model/IOnCheckedChangeListener$Stub$Proxy;"
+  },
+  {
+    "i": 8018,
+    "s": "Landroidx/car/app/model/IOnCheckedChangeListener$Stub;"
+  },
+  {
+    "i": 8019,
+    "s": "Landroidx/car/app/model/IOnCheckedChangeListener;"
+  },
+  {
+    "i": 8020,
+    "s": "Landroidx/car/app/model/IOnClickListener$Default;"
+  },
+  {
+    "i": 8021,
+    "s": "Landroidx/car/app/model/IOnClickListener$Stub$Proxy;"
+  },
+  {
+    "i": 8022,
+    "s": "Landroidx/car/app/model/IOnClickListener$Stub;"
+  },
+  {
+    "i": 8023,
+    "s": "Landroidx/car/app/model/IOnClickListener;"
+  },
+  {
+    "i": 8024,
+    "s": "Landroidx/car/app/model/IOnContentRefreshListener$Default;"
+  },
+  {
+    "i": 8025,
+    "s": "Landroidx/car/app/model/IOnContentRefreshListener$Stub$Proxy;"
+  },
+  {
+    "i": 8026,
+    "s": "Landroidx/car/app/model/IOnContentRefreshListener$Stub;"
+  },
+  {
+    "i": 8027,
+    "s": "Landroidx/car/app/model/IOnContentRefreshListener;"
+  },
+  {
+    "i": 8028,
+    "s": "Landroidx/car/app/model/IOnItemVisibilityChangedListener$Default;"
+  },
+  {
+    "i": 8029,
+    "s": "Landroidx/car/app/model/IOnItemVisibilityChangedListener$Stub$Proxy;"
+  },
+  {
+    "i": 8030,
+    "s": "Landroidx/car/app/model/IOnItemVisibilityChangedListener$Stub;"
+  },
+  {
+    "i": 8031,
+    "s": "Landroidx/car/app/model/IOnItemVisibilityChangedListener;"
+  },
+  {
+    "i": 8032,
+    "s": "Landroidx/car/app/model/IOnSelectedListener$Default;"
+  },
+  {
+    "i": 8033,
+    "s": "Landroidx/car/app/model/IOnSelectedListener$Stub$Proxy;"
+  },
+  {
+    "i": 8034,
+    "s": "Landroidx/car/app/model/IOnSelectedListener$Stub;"
+  },
+  {
+    "i": 8035,
+    "s": "Landroidx/car/app/model/IOnSelectedListener;"
+  },
+  {
+    "i": 8042,
+    "s": "Landroidx/car/app/model/ItemList$a;"
+  },
+  {
+    "i": 8043,
+    "s": "Landroidx/car/app/model/ItemList$b;"
+  },
+  {
+    "i": 8044,
+    "s": "Landroidx/car/app/model/ItemList;"
+  },
+  {
+    "i": 8045,
+    "s": "Landroidx/car/app/model/ListTemplate;"
+  },
+  {
+    "i": 8050,
+    "s": "Landroidx/car/app/model/OnCheckedChangeDelegateImpl$OnCheckedChangeListenerStub;"
+  },
+  {
+    "i": 8052,
+    "s": "Landroidx/car/app/model/OnClickDelegateImpl$OnClickListenerStub;"
+  },
+  {
+    "i": 8054,
+    "s": "Landroidx/car/app/model/OnContentRefreshDelegateImpl$OnContentRefreshListenerStub;"
+  },
+  {
+    "i": 8056,
+    "s": "Landroidx/car/app/model/OnItemVisibilityChangedDelegateImpl$OnItemVisibilityChangedListenerStub;"
+  },
+  {
+    "i": 8058,
+    "s": "Landroidx/car/app/model/OnSelectedDelegateImpl$OnSelectedListenerStub;"
+  },
+  {
+    "i": 8062,
+    "s": "Landroidx/car/app/model/ParkedOnlyOnClickListener;"
+  },
+  {
+    "i": 8064,
+    "s": "Landroidx/car/app/model/PlaceListMapTemplate;"
+  },
+  {
+    "i": 8071,
+    "s": "Landroidx/car/app/model/SectionedItemList;"
+  },
+  {
+    "i": 8117,
+    "s": "Landroidx/car/app/navigation/model/IPanModeListener$Default;"
+  },
+  {
+    "i": 8118,
+    "s": "Landroidx/car/app/navigation/model/IPanModeListener$Stub$Proxy;"
+  },
+  {
+    "i": 8119,
+    "s": "Landroidx/car/app/navigation/model/IPanModeListener$Stub;"
+  },
+  {
+    "i": 8120,
+    "s": "Landroidx/car/app/navigation/model/IPanModeListener;"
+  },
+  {
+    "i": 8129,
+    "s": "Landroidx/car/app/navigation/model/PanModeDelegateImpl$PanModeListenerStub;"
+  },
+  {
+    "i": 8131,
+    "s": "Landroidx/car/app/navigation/model/PlaceListNavigationTemplate;"
+  },
+  {
+    "i": 9402,
+    "s": "Lcom/android/car/ui/recyclerview/CarUiListItemAdapterAdapterV1$ViewHolderWrapper;"
+  },
+  {
+    "i": 10541,
+    "s": "Lcom/flyme/auto/launcher/applist/AppContentProvider$a;"
+  },
+  {
+    "i": 10542,
+    "s": "Lcom/flyme/auto/launcher/applist/AppContentProvider$b;"
+  },
+  {
+    "i": 10543,
+    "s": "Lcom/flyme/auto/launcher/applist/AppContentProvider$c;"
+  },
+  {
+    "i": 10544,
+    "s": "Lcom/flyme/auto/launcher/applist/AppContentProvider$d;"
+  },
+  {
+    "i": 10545,
+    "s": "Lcom/flyme/auto/launcher/applist/AppContentProvider;"
+  },
+  {
+    "i": 10546,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListActivity$a;"
+  },
+  {
+    "i": 10547,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListActivity$b;"
+  },
+  {
+    "i": 10548,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListActivity$c;"
+  },
+  {
+    "i": 10549,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListActivity$d;"
+  },
+  {
+    "i": 10550,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListActivity;"
+  },
+  {
+    "i": 10551,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$a;"
+  },
+  {
+    "i": 10552,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$b;"
+  },
+  {
+    "i": 10553,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$c;"
+  },
+  {
+    "i": 10554,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$c<"
+  },
+  {
+    "i": 10555,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$d;"
+  },
+  {
+    "i": 10556,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$e;"
+  },
+  {
+    "i": 10557,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$f;"
+  },
+  {
+    "i": 10558,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView$g;"
+  },
+  {
+    "i": 10559,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView;"
+  },
+  {
+    "i": 10560,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListContainerView<"
+  },
+  {
+    "i": 10561,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListDragLayer;"
+  },
+  {
+    "i": 10562,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListPageIndicator$a;"
+  },
+  {
+    "i": 10563,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListPageIndicator$b;"
+  },
+  {
+    "i": 10564,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListPageIndicator;"
+  },
+  {
+    "i": 10565,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListPagedView$a;"
+  },
+  {
+    "i": 10566,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListPagedView;"
+  },
+  {
+    "i": 10567,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListPanelCloser$a;"
+  },
+  {
+    "i": 10568,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListPanelCloser;"
+  },
+  {
+    "i": 10569,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListRecyclerView$a;"
+  },
+  {
+    "i": 10570,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListRecyclerView;"
+  },
+  {
+    "i": 10571,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListRootView$a;"
+  },
+  {
+    "i": 10572,
+    "s": "Lcom/flyme/auto/launcher/applist/AppListRootView;"
+  },
+  {
+    "i": 10573,
+    "s": "Lcom/flyme/auto/launcher/applist/RoundImageView;"
+  },
+  {
+    "i": 10574,
+    "s": "Lcom/flyme/auto/launcher/applist/a;"
+  },
+  {
+    "i": 10575,
+    "s": "Lcom/flyme/auto/launcher/applist/b;"
+  },
+  {
+    "i": 10576,
+    "s": "Lcom/flyme/auto/launcher/applist/gc/GCContainerView;"
+  },
+  {
+    "i": 10577,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/MiniAppContainerView$a;"
+  },
+  {
+    "i": 10578,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/MiniAppContainerView$b;"
+  },
+  {
+    "i": 10579,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/MiniAppContainerView;"
+  },
+  {
+    "i": 10580,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/a$a;"
+  },
+  {
+    "i": 10581,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/a$b;"
+  },
+  {
+    "i": 10582,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/a$c;"
+  },
+  {
+    "i": 10583,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/a$d;"
+  },
+  {
+    "i": 10584,
+    "s": "Lcom/flyme/auto/launcher/applist/miniapp/a;"
+  },
+  {
+    "i": 13307,
+    "s": "Lflyme/view/WindowManagerExt$AppEventListener;"
+  },
+  {
+    "i": 17435,
+    "s": "MSG_TYPE_APP_LIST: parse launcher data error: "
+  },
+  {
+    "i": 17437,
+    "s": "MSG_TYPE_RECOMMEND_APP_LIST: parse launcher data error: "
+  },
+  {
+    "i": 17438,
+    "s": "MSG_TYPE_RELOAD_ALL_APP_LIST: current do not connect."
+  },
+  {
+    "i": 17439,
+    "s": "MSG_TYPE_RELOAD_ALL_APP_LIST: parse launcher data error: "
+  },
+  {
+    "i": 17440,
+    "s": "MSG_TYPE_RELOAD_ALL_APP_LIST: skip reload"
+  },
+  {
+    "i": 17511,
+    "s": "MiniWindowObserver closeAppListPanel got to offscreen"
+  },
+  {
+    "i": 17512,
+    "s": "MiniWindowObserver closeAppListPanel touchTracking = "
+  },
+  {
+    "i": 17513,
+    "s": "MiniWindowObserver closeAppListPanel window="
+  },
+  {
+    "i": 22733,
+    "s": "add app list order : "
+  },
+  {
+    "i": 22766,
+    "s": "addAppStateListener"
+  },
+  {
+    "i": 22950,
+    "s": "allAppList"
+  },
+  {
+    "i": 23202,
+    "s": "androidx.appcompat.view.menu.ListMenuItemView"
+  },
+  {
+    "i": 23213,
+    "s": "androidx.car.app.IOnRequestPermissionsListener"
+  },
+  {
+    "i": 23216,
+    "s": "androidx.car.app.action.EXTRA_ON_REQUEST_PERMISSIONS_RESULT_LISTENER_KEY"
+  },
+  {
+    "i": 23226,
+    "s": "androidx.car.app.model.IOnCheckedChangeListener"
+  },
+  {
+    "i": 23227,
+    "s": "androidx.car.app.model.IOnClickListener"
+  },
+  {
+    "i": 23228,
+    "s": "androidx.car.app.model.IOnContentRefreshListener"
+  },
+  {
+    "i": 23229,
+    "s": "androidx.car.app.model.IOnItemVisibilityChangedListener"
+  },
+  {
+    "i": 23230,
+    "s": "androidx.car.app.model.IOnSelectedListener"
+  },
+  {
+    "i": 23234,
+    "s": "androidx.car.app.navigation.model.IPanModeListener"
+  },
+  {
+    "i": 23309,
+    "s": "app list error"
+  },
+  {
+    "i": 23326,
+    "s": "appList"
+  },
+  {
+    "i": 23327,
+    "s": "appListActivity"
+  },
+  {
+    "i": 23328,
+    "s": "appListProgress"
+  },
+  {
+    "i": 23368,
+    "s": "app_list_blur_alpha"
+  },
+  {
+    "i": 23409,
+    "s": "applist_app_info"
+  },
+  {
+    "i": 23410,
+    "s": "applist_app_start"
+  },
+  {
+    "i": 23411,
+    "s": "applist_app_uninstall"
+  },
+  {
+    "i": 23416,
+    "s": "applyChangesFromList"
+  },
+  {
+    "i": 24571,
+    "s": "com.flyme.auto.launcher.applist.AppListActivity"
+  },
+  {
+    "i": 24855,
+    "s": "composeAppListCloseExitAnim"
+  },
+  {
+    "i": 24856,
+    "s": "composeAppListCloseExitAnim: target = "
+  },
+  {
+    "i": 24857,
+    "s": "composeAppListCloseExitWindowAnim"
+  },
+  {
+    "i": 24858,
+    "s": "composeAppListInstantCloseExitAnim"
+  },
+  {
+    "i": 24859,
+    "s": "composeAppListInstantCloseExitAnim: target = "
+  },
+  {
+    "i": 24860,
+    "s": "composeAppListInstantCloseExitWindowAnim"
+  },
+  {
+    "i": 24861,
+    "s": "composeAppListOpenEnterAnim"
+  },
+  {
+    "i": 24862,
+    "s": "composeAppListOpenEnterAnim: target = "
+  },
+  {
+    "i": 24863,
+    "s": "composeAppListOpenEnterWindowAnim"
+  },
+  {
+    "i": 25535,
+    "s": "delete app list order : "
+  },
+  {
+    "i": 25848,
+    "s": "dock_applist_click"
+  },
+  {
+    "i": 26477,
+    "s": "flyme_app_list_close_exit_window_anim"
+  },
+  {
+    "i": 26478,
+    "s": "flyme_app_list_open_enter_window_anim"
+  },
+  {
+    "i": 26686,
+    "s": "gesture_app_list"
+  },
+  {
+    "i": 26763,
+    "s": "getActivityLaunchOptionsForAppList"
+  },
+  {
+    "i": 26862,
+    "s": "getAppInfoList"
+  },
+  {
+    "i": 26864,
+    "s": "getAppInfoOrBuilderList"
+  },
+  {
+    "i": 27095,
+    "s": "getCarMostRecentAppList recentTaskSize="
+  },
+  {
+    "i": 28828,
+    "s": "getRecentAppInfoList defaultRecentAppList="
+  },
+  {
+    "i": 28829,
+    "s": "getRecentAppInfoList finalList="
+  },
+  {
+    "i": 28830,
+    "s": "getRecentAppInfoList lastRecentAppList="
+  },
+  {
+    "i": 28831,
+    "s": "getRecentAppInfoList mostRecentAppList="
+  },
+  {
+    "i": 28837,
+    "s": "getRecommendAppInfoList"
+  },
+  {
+    "i": 28839,
+    "s": "getRecommendAppInfoOrBuilderList"
+  },
+  {
+    "i": 30779,
+    "s": "isIntentTaskUnderlyingAppList: intent can not resolved."
+  },
+  {
+    "i": 30780,
+    "s": "isIntentTaskUnderlyingAppList: no underlying task."
+  },
+  {
+    "i": 30781,
+    "s": "isIntentTaskUnderlyingAppList: result = ["
+  },
+  {
+    "i": 31754,
+    "s": "lastRecentAppListString"
+  },
+  {
+    "i": 31760,
+    "s": "last_recent_app_list"
+  },
+  {
+    "i": 31771,
+    "s": "launcher.app_list.current_page"
+  },
+  {
+    "i": 32082,
+    "s": "mAppListAppLaunchRunner"
+  },
+  {
+    "i": 32086,
+    "s": "mAppStateList"
+  },
+  {
+    "i": 33111,
+    "s": "mTaskBackToAppListRunner"
+  },
+  {
+    "i": 33113,
+    "s": "mTaskCloseToAppListRunner"
+  },
+  {
+    "i": 33115,
+    "s": "mTaskOpenFromAppListRunner"
+  },
+  {
+    "i": 33117,
+    "s": "mTaskToFrontFromAppListRunner"
+  },
+  {
+    "i": 33193,
+    "s": "mTranslucentCloseAppListRunner"
+  },
+  {
+    "i": 34490,
+    "s": "onLauncherFlowDataReceive allAppList size = "
+  },
+  {
+    "i": 34669,
+    "s": "onRecommendAppListUpdate"
+  },
+  {
+    "i": 35810,
+    "s": "recentAppExcludeList"
+  },
+  {
+    "i": 35823,
+    "s": "recommend app list error"
+  },
+  {
+    "i": 35825,
+    "s": "recommendAppList"
+  },
+  {
+    "i": 35881,
+    "s": "registerAppEventsListener"
+  },
+  {
+    "i": 35882,
+    "s": "registerAppListRemoteAnimations"
+  },
+  {
+    "i": 36045,
+    "s": "reloadAllAppList"
+  },
+  {
+    "i": 36349,
+    "s": "reset app list order : "
+  },
+  {
+    "i": 36365,
+    "s": "resetNeedShowingParkingLimitTipsFlag: mRememberAppList is null "
+  },
+  {
+    "i": 36622,
+    "s": "save to last recent application list"
+  },
+  {
+    "i": 38242,
+    "s": "setOnApplyWindowInsetsListener"
+  },
+  {
+    "i": 39446,
+    "s": "startAppListTouchTracking"
+  },
+  {
+    "i": 39515,
+    "s": "startTouchTrackingForAppList: "
+  },
+  {
+    "i": 40239,
+    "s": "unRegisterAppEventsListener"
+  }
+]

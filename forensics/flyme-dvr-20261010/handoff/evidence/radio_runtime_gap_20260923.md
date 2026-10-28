@@ -1,0 +1,11 @@
+# Flyme 2.5 radio: static support versus live registration
+
+Date: 2026-09-23. Offline recheck of extracted OTA and the existing 2026-09-22 live probe; no new car command.
+
+The earlier `hardware_radio_client_findings_20260922.md` establishes a vendor Broadcast Radio HAL and TEF6686 implementation but predates the live test. In that live test, Android listed a Google/mock AM/FM module, a 103.7 MHz tune returned API-level success but logged `tef6686_radio: Tune: ioctl error -1`, and `/dev/cdev_6686` was absent (`live_radio_dvr_probe_20260922.md:31-39`). The API success is therefore not evidence of reception or even a working device handle.
+
+Static OTA evidence narrows the gap. `kernel_symbols.txt:51155-51171,119756,124371` includes `tef6686_probe`, `cdev_tef6686_ioctl`, and a built-in initcall for the TEF6686 driver. `config_evidence/fdt_scan.json` records OTA `partitions/dtb.img` variants 0 and 1 with `/i2c@E9C20000/tef6686@64`, `compatible="nxp,tef6686"`, `reg=100 (0x64)`, and `status="okay"`; parent I2C controller status is also `okay`. The same node is present in prior pulled dtb_a/b variants. Thus "no TEF6686 kernel driver in the OTA" is incorrect. What is unproven is whether the running car booted this exact DTB, whether the driver probe ran/succeeded, whether the chip at I2C 0x64 was powered/responding, and whether the actual car has the tuner hardware and audio route.
+
+Next read-only live checks, possible through the existing phone-to-car ADB route: capture `/proc/device-tree/i2c@E9C20000/tef6686@64` status/compatible; list `/sys/bus/i2c/devices/*-0064`, `/sys/bus/i2c/drivers/*tef*`, and `/dev/cdev_6686`; capture kernel boot/probe log lines containing `tef6686`, `i2c`, or tuner power. Compare these to identify whether the failure is device-tree selection, driver probe, I2C/power/hardware, or later HAL open. Do not create a device node manually or send radio ioctls as a substitute for successful kernel registration.
+
+Practical consequence: a third-party radio UI cannot restore terrestrial FM by itself. The existing prototype's `RadioManager` path can be revisited after the tuner registers and tune/audio are proven. Internet radio remains independent of this hardware path.

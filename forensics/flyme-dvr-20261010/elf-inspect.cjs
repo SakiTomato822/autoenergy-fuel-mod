@@ -1,0 +1,20 @@
+const fs=require('fs'), b=fs.readFileSync(process.argv[2]);
+if(b.toString('hex',0,4)!=='7f454c46'||b[4]!==2||b[5]!==1)throw Error('Expected ELF64 LE');
+const u64=o=>Number(b.readBigUInt64LE(o)), z=o=>b.toString('utf8',o,b.indexOf(0,o));
+const sh=u64(40),sz=b.readUInt16LE(58),n=b.readUInt16LE(60);
+const ss=Array.from({length:n},(_,i)=>{let o=sh+i*sz;return {ni:b.readUInt32LE(o),type:b.readUInt32LE(o+4),flags:u64(o+8),addr:u64(o+16),off:u64(o+24),size:u64(o+32),link:b.readUInt32LE(o+40),entry:u64(o+56)};});
+const sn=ss[b.readUInt16LE(62)];for(const s of ss)s.name=z(sn.off+s.ni);
+if(process.env.EXTRACT_DEBUG){const s=ss.find(s=>s.name==='.gnu_debugdata');if(s)fs.writeFileSync(process.env.EXTRACT_DEBUG,b.subarray(s.off,s.off+s.size));}
+const sy=[];for(const s of ss.filter(s=>s.type===2||s.type===11))for(let o=s.off;o<s.off+s.size;o+=s.entry)sy.push({name:z(ss[s.link].off+b.readUInt32LE(o)),value:u64(o+8),size:u64(o+16),type:b[o+4]&15});
+if(process.env.DEBUG_ELF){const d=fs.readFileSync(process.env.DEBUG_ELF),q=Number(d.readBigUInt64LE(40)),e=d.readUInt16LE(58),ns=d.readUInt16LE(60),ds=Array.from({length:ns},(_,i)=>{const o=q+i*e;return {type:d.readUInt32LE(o+4),off:Number(d.readBigUInt64LE(o+24)),size:Number(d.readBigUInt64LE(o+32)),link:d.readUInt32LE(o+40),entry:Number(d.readBigUInt64LE(o+56))};});for(const s of ds.filter(s=>s.type===2))for(let o=s.off;o<s.off+s.size;o+=s.entry){const no=ds[s.link].off+d.readUInt32LE(o);sy.push({name:d.toString('utf8',no,d.indexOf(0,no)),value:Number(d.readBigUInt64LE(o+8)),size:Number(d.readBigUInt64LE(o+16)),type:d[o+4]&15});}}
+const funcs=sy.filter(s=>s.type===2&&s.value&&s.size).sort((a,b)=>a.value-b.value);
+if(process.env.SYMBOL_JSON)fs.writeFileSync(process.env.SYMBOL_JSON,JSON.stringify(sy));
+const hex=n=>'0x'+n.toString(16),sign=(v,w)=>v>=2**(w-1)?v-2**w:v;
+const owner=a=>funcs.find(s=>a>=s.value&&a<s.value+s.size);
+if(process.env.CALL_TARGET){const target=Number(process.env.CALL_TARGET);for(const s of ss.filter(s=>(s.flags&4)&&s.type===1))for(let o=s.off;o<s.off+s.size;o+=4){const x=b.readUInt32LE(o),pc=s.addr+o-s.off;if(((x&0x7c000000)>>>0)===0x14000000&&pc+sign(x&0x3ffffff,26)*4===target)console.log('CALLER',hex(pc),owner(pc));}}
+const targets=[];for(const m of b.toString('latin1').matchAll(/[ -~]{5,}/g))if(/\/dev\/video(6|12)cif|config input dev|DVR|LVDS/i.test(m[0])){const s=ss.find(s=>m.index>=s.off&&m.index<s.off+s.size);if(s)targets.push({text:m[0],addr:s.addr+m.index-s.off});}
+console.log('SECTIONS',ss.map(s=>[s.name,hex(s.addr),hex(s.size)]));
+console.log('SYMBOLS',sy.filter(s=>/getCameraList|EvsEnumerator|EvsCamera.*C[12]E|openCamera|configureEvsPipeline|ConfigManager|DVR/i.test(s.name)&&!/^_ZNK?St|^_ZNK?7android2sp/.test(s.name)));
+console.log('TARGETS',targets);
+for(const s of ss.filter(s=>(s.flags&4)&&s.type===1))for(let o=s.off;o<s.off+s.size;o+=4){const ins=b.readUInt32LE(o),pc=s.addr+o-s.off;if(((ins&0x9f000000)>>>0)!==0x90000000)continue;const reg=ins&31,page=Math.floor(pc/4096)*4096+sign(((ins>>>5)&0x7ffff)*4+((ins>>>29)&3),21)*4096;for(let j=1;j<=8&&o+j*4<s.off+s.size;j++){const x=b.readUInt32LE(o+j*4);if(((x&0x7f000000)>>>0)===0x11000000&&((x>>>5)&31)===reg){const dest=page+((x>>>10)&4095)*((x&(1<<22))?4096:1),t=targets.find(t=>t.addr===dest);if(t)console.log('XREF',hex(pc),hex(pc+j*4),t,owner(pc)||null);}}}
+if(process.argv[3]){const start=Number(process.argv[3]),end=start+Number(process.argv[4]||256);for(let pc=start;pc<end;pc+=4){const s=ss.find(s=>pc>=s.addr&&pc<s.addr+s.size);if(!s)break;const x=b.readUInt32LE(s.off+pc-s.addr);let d='';if(((x&0x7c000000)>>>0)===0x14000000){const a=pc+sign(x&0x3ffffff,26)*4;d=((x>>>31)?'bl ':'b ')+hex(a)+' '+(sy.find(s=>s.value===a)?.name||'');}if(((x&0x9f000000)>>>0)===0x90000000)d='adrp x'+(x&31)+', '+hex(Math.floor(pc/4096)*4096+sign(((x>>>5)&0x7ffff)*4+((x>>>29)&3),21)*4096);if(((x&0x7f000000)>>>0)===0x11000000)d='add '+(x>>>31?'x':'w')+(x&31)+', r'+((x>>>5)&31)+', '+hex(((x>>>10)&4095)*((x&(1<<22))?4096:1));console.log(hex(pc),x.toString(16).padStart(8,'0'),d);}}

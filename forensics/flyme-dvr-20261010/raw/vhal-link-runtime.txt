@@ -1,0 +1,9 @@
+Sun Oct 11 20:53:46 CST 2026
+vehicle_network 352      1 11158616 20920 do_epoll_wait       0 S android.hardware.automotive.vehicle@2.0-service
+lrwx------ 1 root root 64 2026-10-11 20:53 0 -> /dev/null
+lrwx------ 1 root root 64 2026-10-11 20:53 1 -> /dev/null
+lrwx------ 1 root root 64 2026-10-11 20:53 15 -> /dev/binderfs/hwbinder
+lrwx------ 1 root root 64 2026-10-11 20:53 2 -> /dev/null
+lrwx------ 1 root root 64 2026-10-11 20:53 4 -> /dev/binderfs/binder
+lrwx------ 1 root root 64 2026-10-11 20:53 5 -> /dev/binderfs/hwbinder
+lrwx------ 1 root root 64 2026-10-11 20:53 7 -> /dev/mali0

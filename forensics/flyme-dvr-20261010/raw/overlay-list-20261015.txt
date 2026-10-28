@@ -1,0 +1,74 @@
+android
+[ ] com.android.internal.display.cutout.emulation.corner
+[ ] com.android.internal.display.cutout.emulation.double
+[ ] com.android.theme.color.amethyst
+[ ] com.android.theme.icon.pebble
+[ ] com.android.internal.systemui.navbar.gestural_wide_back
+[ ] com.android.theme.color.sand
+[ ] com.android.theme.icon.vessel
+[ ] com.android.theme.color.cinnamon
+[ ] com.android.theme.icon.taperedrect
+[ ] com.android.theme.icon_pack.rounded.android
+[ ] com.android.theme.color.tangerine
+[ ] com.android.theme.color.aquamarine
+[ ] com.android.internal.display.cutout.emulation.hole
+[ ] com.android.internal.display.cutout.emulation.tall
+[ ] com.android.theme.color.black
+[ ] com.android.theme.color.green
+[ ] com.android.theme.color.ocean
+[ ] com.android.theme.color.space
+[ ] com.android.internal.systemui.navbar.threebutton
+[ ] com.android.internal.systemui.navbar.gestural_extra_wide_back
+[ ] com.android.theme.icon.teardrop
+[ ] com.android.theme.icon_pack.sam.android
+[ ] com.android.theme.font.notoserifsource
+[ ] com.android.theme.icon_pack.filled.android
+[ ] com.android.internal.display.cutout.emulation.waterfall
+[ ] com.android.theme.icon_pack.kai.android
+[ ] com.android.theme.icon.squircle
+[ ] com.android.theme.icon_pack.victor.android
+[ ] com.android.theme.color.palette
+[ ] com.android.theme.color.carbon
+[x] com.android.internal.systemui.navbar.gestural
+[ ] com.android.theme.color.orchid
+[ ] com.android.theme.color.purple
+[ ] com.android.theme.icon.roundedrect
+[ ] com.android.internal.systemui.navbar.gestural_narrow_back
+[ ] com.android.theme.icon_pack.circular.android
+
+com.android.launcher3
+--- com.android.theme.icon_pack.rounded.launcher
+--- com.android.theme.icon_pack.filled.launcher
+--- com.android.theme.icon_pack.circular.launcher
+
+com.google.android.apps.nexuslauncher
+--- com.android.theme.icon_pack.victor.launcher
+--- com.android.theme.icon_pack.kai.launcher
+--- com.android.theme.icon_pack.sam.launcher
+
+com.android.settings
+--- com.android.theme.icon_pack.victor.settings
+--- com.android.theme.icon_pack.kai.settings
+--- com.android.theme.icon_pack.sam.settings
+--- com.android.theme.icon_pack.filled.settings
+--- com.android.theme.icon_pack.circular.settings
+--- com.android.theme.icon_pack.rounded.settings
+
+com.android.wallpaper
+--- com.android.theme.icon_pack.rounded.themepicker
+
+com.google.android.apps.wallpaper
+--- com.android.theme.icon_pack.circular.themepicker
+--- com.android.theme.icon_pack.kai.themepicker
+--- com.android.theme.icon_pack.filled.themepicker
+--- com.android.theme.icon_pack.victor.themepicker
+--- com.android.theme.icon_pack.sam.themepicker
+
+com.android.systemui
+[ ] com.android.theme.icon_pack.rounded.systemui
+[ ] com.android.theme.icon_pack.victor.systemui
+[ ] com.android.theme.icon_pack.kai.systemui
+[ ] com.android.theme.icon_pack.sam.systemui
+[ ] com.android.theme.icon_pack.filled.systemui
+[ ] com.android.theme.icon_pack.circular.systemui
+

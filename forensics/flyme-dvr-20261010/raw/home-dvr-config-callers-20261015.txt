@@ -1,0 +1,108 @@
+
+METHOD Lx6/c;->c code=5052764 regs=9 ins=1
+   0 001a 69cc "getCarConfig 224 value: "
+   2 011c 274d 
+   4 021a 69d0 "getCarConfig fail, mCarPropertyManager is null"
+   6 031a 69ce "getCarConfig data.length: "
+   8 041a 69cf "getCarConfig exception: "
+  10 0512 const/4 v5 0
+  11 8654 616c Lx6/c;->a:Landroid/car/hardware/property/CarPropertyManager;
+  13 0639 0007 if target 20
+  15 1071 c640 0002 Lra/m;->I
+  18 0029 0087 
+  20 8254 616d Lx6/c;->b:Lcom/ecarx/xui/adaptapi/car/IWrapper;
+  22 0239 000d if target 35
+  24 021a 10e9 "DeviceVinHelper"
+  26 061a 7435 "getWrappedPropertyId: mWrapper is NULL!"
+  28 2071 0f94 0062 Landroid/util/Log;->e
+  31 0212 const/4 v2 0
+  32 0b28 
+  33 080d 
+  34 4128 
+  35 2612 const/4 v6 2
+  36 0714 5500 2030 const 540038400 / 0x20305500
+  39 3072 5ade 0762 Lcom/ecarx/xui/adaptapi/car/IWrapper;->getWrappedPropertyId
+  42 020c 
+  43 0239 0003 if target 46
+  45 6c28 
+  46 8854 616c Lx6/c;->a:Landroid/car/hardware/property/CarPropertyManager;
+  48 1072 5add 0002 Lcom/ecarx/xui/adaptapi/car/IWrapper$IPropertyId;->getPropertyId
+  51 020a 
+  52 406e 07f8 5218 Landroid/car/hardware/property/CarPropertyManager;->getProperty
+  55 080c 
+  56 0839 0008 if target 64
+  58 081a 69cd "getCarConfig CARCONFIG_LESS_THAN_1000 fail, carPropertyValue is null"
+  60 1071 c640 0008 Lra/m;->I
+  63 3328 
+  64 106e 07f7 0008 Landroid/car/hardware/CarPropertyValue;->getValue
+  67 080c 
+  68 081f 274d 
+  70 8121 
+  71 0213 03e8 const/16 1000
+  73 2132 0013 if target 92
+  75 0122 1bd6 
+  77 2070 ad0a 0031 Ljava/lang/StringBuilder;-><init>
+  80 8821 
+  81 206e ad0f 0081 Ljava/lang/StringBuilder;->append
+  84 106e ad22 0001 Ljava/lang/StringBuilder;->toString
+  87 080c 
+  88 1071 c640 0008 Lra/m;->I
+  91 3e28 
+  92 0113 00e0 const/16 224
+  94 0848 0108 
+  96 88d5 00ff 
+  98 1128 
+  99 0122 1bd6 
+ 101 2070 ad0a 0041 Ljava/lang/StringBuilder;-><init>
+ 104 206e ad13 0081 Ljava/lang/StringBuilder;->append
+ 107 106e ad22 0001 Ljava/lang/StringBuilder;->toString
+ 110 080c 
+ 111 1071 c640 0008 Lra/m;->I
+ 114 5801 
+ 115 0122 1bd6 
+ 117 2070 ad0a 0001 Ljava/lang/StringBuilder;-><init>
+ 120 206e ad0f 0081 Ljava/lang/StringBuilder;->append
+ 123 106e ad22 0001 Ljava/lang/StringBuilder;->toString
+ 126 000c 
+ 127 1071 c640 0000 Lra/m;->I
+ 130 1828 
+ 131 080d 
+ 132 0022 1bd6 
+ 134 011a 69d1 "getCarConfig fail, return 0, e : "
+ 136 2070 ad0a 0010 Ljava/lang/StringBuilder;-><init>
+ 139 106e ad52 0008 Ljava/lang/Throwable;->getMessage
+ 142 080c 
+ 143 206e ad14 0080 Ljava/lang/StringBuilder;->append
+ 146 106e ad22 0000 Ljava/lang/StringBuilder;->toString
+ 149 080c 
+ 150 1071 c665 0008 Lra/m;->v
+ 153 5801 
+ 154 0022 1bd6 
+ 156 011a 7782 "isCarplayConfig: cc224 = "
+ 158 2070 ad0a 0010 Ljava/lang/StringBuilder;-><init>
+ 161 206e ad0f 0080 Ljava/lang/StringBuilder;->append
+ 164 106e ad22 0000 Ljava/lang/StringBuilder;->toString
+ 167 000c 
+ 168 1071 c663 0000 Lra/m;->t
+ 171 1012 const/4 v0 1
+ 172 0833 0003 if target 175
+ 174 0501 
+ 175 050f 
+
+METHOD Landroidx/car/app/CarAppBinder;->onConfigurationChangedInternal code=1583524 regs=5 ins=3
+   0 0071 28cb 0000 Landroidx/car/app/utils/j;->a
+   3 3212 const/4 v2 3
+   4 001a 0ee7 "CarApp"
+   6 2071 0f99 0020 Landroid/util/Log;->isLoggable
+   9 020a 
+  10 0238 0013 if target 29
+  12 0222 1bd6 
+  14 011a 8595 "onCarConfigurationChanged configuration: "
+  16 2070 ad0a 0012 Ljava/lang/StringBuilder;-><init>
+  19 206e ad13 0042 Ljava/lang/StringBuilder;->append
+  22 106e ad22 0002 Ljava/lang/StringBuilder;->toString
+  25 020c 
+  26 2071 0f92 0020 Landroid/util/Log;->d
+  29 106e acaf 0003 Ljava/lang/Object;->getClass
+  32 0212 const/4 v2 0
+  33 0227 

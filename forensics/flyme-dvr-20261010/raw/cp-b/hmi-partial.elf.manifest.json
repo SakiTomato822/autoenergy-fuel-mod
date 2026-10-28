@@ -1,0 +1,1 @@
+{"source":"/usr/local/bin/cluster-e04/weston/weston-simple-egl","slot":"b","partial":true,"sections":[".text",".rodata",".symtab",".strtab",".dynsym",".dynstr",".plt",".got",".data",".rela.dyn",".rela.plt",".dynamic",".eh_frame_hdr",".shstrtab"],"bytesRead":18481152,"omittedSectionHeadersCleared":true}

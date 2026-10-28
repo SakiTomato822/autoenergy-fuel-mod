@@ -1,0 +1,25 @@
+Sun Oct 11 20:47:29 CST 2026
+[net.tcp.default_init_rwnd]: [60]
+[persist.adb.tcp.port]: [5555]
+[sys.sysctl.tcp_def_init_rwnd]: [60]
+androidboot.slot_suffix=_b
+/sys/class/remoteproc:
+total 0
+
+/sys/firmware/devicetree/base:
+total 0
+-r--r--r--  1 root root  4 2026-10-11 20:47 #address-cells
+-r--r--r--  1 root root  4 2026-10-11 20:47 #size-cells
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 aipu@0x0E4800000
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 aliases
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 ap2cp
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 apb-pclk
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 arm-pmu
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 aud_ctrl@5C3F0000
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 audio_share_shmem
+drwxr-xr-x 21 root root  0 2026-10-11 20:47 camera
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 cc11_dp
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 cc11_dp_2
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 cc11_dsi
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 cc11_dsi_2
+drwxr-xr-x  2 root root  0 2026-10-11 20:47 chosen

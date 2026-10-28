@@ -1,0 +1,112 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0046f14e <.data+0x4f14e>:
+  46f14e:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+  46f152:	4604      	mov	r4, r0
+  46f154:	1e08      	subs	r0, r1, #0
+  46f156:	4698      	mov	r8, r3
+  46f158:	f89d 6020 	ldrb.w	r6, [sp, #32]
+  46f15c:	bf18      	it	ne
+  46f15e:	2001      	movne	r0, #1
+  46f160:	f7b6 fafc 	bl	0x42575c
+  46f164:	f04f 6300 	mov.w	r3, #134217728	@ 0x8000000
+  46f168:	6023      	str	r3, [r4, #0]
+  46f16a:	2300      	movs	r3, #0
+  46f16c:	6063      	str	r3, [r4, #4]
+  46f16e:	7a08      	ldrb	r0, [r1, #8]
+  46f170:	2840      	cmp	r0, #64	@ 0x40
+  46f172:	bf97      	itett	ls
+  46f174:	4b37      	ldrls	r3, [pc, #220]	@ (0x46f254)
+  46f176:	25ff      	movhi	r5, #255	@ 0xff
+  46f178:	181b      	addls	r3, r3, r0
+  46f17a:	79dd      	ldrbls	r5, [r3, #7]
+  46f17c:	f1b8 0f00 	cmp.w	r8, #0
+  46f180:	d13a      	bne.n	0x46f1f8
+  46f182:	6848      	ldr	r0, [r1, #4]
+  46f184:	2801      	cmp	r0, #1
+  46f186:	d141      	bne.n	0x46f20c
+  46f188:	6863      	ldr	r3, [r4, #4]
+  46f18a:	f022 4260 	bic.w	r2, r2, #3758096384	@ 0xe0000000
+  46f18e:	f44f 00c0 	mov.w	r0, #6291456	@ 0x600000
+  46f192:	f003 4360 	and.w	r3, r3, #3758096384	@ 0xe0000000
+  46f196:	6063      	str	r3, [r4, #4]
+  46f198:	6863      	ldr	r3, [r4, #4]
+  46f19a:	431a      	orrs	r2, r3
+  46f19c:	6062      	str	r2, [r4, #4]
+  46f19e:	680a      	ldr	r2, [r1, #0]
+  46f1a0:	2a0f      	cmp	r2, #15
+  46f1a2:	d054      	beq.n	0x46f24e
+  46f1a4:	042b      	lsls	r3, r5, #16
+  46f1a6:	2a1c      	cmp	r2, #28
+  46f1a8:	f403 2370 	and.w	r3, r3, #983040	@ 0xf0000
+  46f1ac:	ea40 0003 	orr.w	r0, r0, r3
+  46f1b0:	d13c      	bne.n	0x46f22c
+  46f1b2:	f440 1080 	orr.w	r0, r0, #1048576	@ 0x100000
+  46f1b6:	e03b      	b.n	0x46f230
+  46f1b8:	0887      	lsrs	r7, r0, #2
+  46f1ba:	f020 0303 	bic.w	r3, r0, #3
+  46f1be:	3004      	adds	r0, #4
+  46f1c0:	f858 7027 	ldr.w	r7, [r8, r7, lsl #2]
+  46f1c4:	3308      	adds	r3, #8
+  46f1c6:	ba3f      	rev	r7, r7
+  46f1c8:	50e7      	str	r7, [r4, r3]
+  46f1ca:	688b      	ldr	r3, [r1, #8]
+  46f1cc:	f023 0303 	bic.w	r3, r3, #3
+  46f1d0:	4283      	cmp	r3, r0
+  46f1d2:	d8f1      	bhi.n	0x46f1b8
+  46f1d4:	f104 0908 	add.w	r9, r4, #8
+  46f1d8:	688f      	ldr	r7, [r1, #8]
+  46f1da:	4287      	cmp	r7, r0
+  46f1dc:	d80e      	bhi.n	0x46f1fc
+  46f1de:	4628      	mov	r0, r5
+  46f1e0:	f7ff fc29 	bl	0x46ea36
+  46f1e4:	42b8      	cmp	r0, r7
+  46f1e6:	d9cc      	bls.n	0x46f182
+  46f1e8:	f087 0303 	eor.w	r3, r7, #3
+  46f1ec:	f891 c00d 	ldrb.w	ip, [r1, #13]
+  46f1f0:	3701      	adds	r7, #1
+  46f1f2:	f809 c003 	strb.w	ip, [r9, r3]
+  46f1f6:	e7f5      	b.n	0x46f1e4
+  46f1f8:	2000      	movs	r0, #0
+  46f1fa:	e7e6      	b.n	0x46f1ca
+  46f1fc:	f080 0303 	eor.w	r3, r0, #3
+  46f200:	f818 7000 	ldrb.w	r7, [r8, r0]
+  46f204:	3001      	adds	r0, #1
+  46f206:	f809 7003 	strb.w	r7, [r9, r3]
+  46f20a:	e7e5      	b.n	0x46f1d8
+  46f20c:	b960      	cbnz	r0, 0x46f228
+  46f20e:	6863      	ldr	r3, [r4, #4]
+  46f210:	f023 53ff 	bic.w	r3, r3, #534773760	@ 0x1fe00000
+  46f214:	f423 13e0 	bic.w	r3, r3, #1835008	@ 0x1c0000
+  46f218:	6063      	str	r3, [r4, #4]
+  46f21a:	4b0f      	ldr	r3, [pc, #60]	@ (0x46f258)
+  46f21c:	6867      	ldr	r7, [r4, #4]
+  46f21e:	ea03 4282 	and.w	r2, r3, r2, lsl #18
+  46f222:	433a      	orrs	r2, r7
+  46f224:	6062      	str	r2, [r4, #4]
+  46f226:	e7ba      	b.n	0x46f19e
+  46f228:	2000      	movs	r0, #0
+  46f22a:	e7b8      	b.n	0x46f19e
+  46f22c:	2e00      	cmp	r6, #0
+  46f22e:	d1c0      	bne.n	0x46f1b2
+  46f230:	0613      	lsls	r3, r2, #24
+  46f232:	7b0a      	ldrb	r2, [r1, #12]
+  46f234:	f003 6370 	and.w	r3, r3, #251658240	@ 0xf000000
+  46f238:	4303      	orrs	r3, r0
+  46f23a:	b11a      	cbz	r2, 0x46f244
+  46f23c:	f423 1380 	bic.w	r3, r3, #1048576	@ 0x100000
+  46f240:	f043 4300 	orr.w	r3, r3, #2147483648	@ 0x80000000
+  46f244:	7b8a      	ldrb	r2, [r1, #14]
+  46f246:	b10a      	cbz	r2, 0x46f24c
+  46f248:	f043 4380 	orr.w	r3, r3, #1073741824	@ 0x40000000
+  46f24c:	6023      	str	r3, [r4, #0]
+  46f24e:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+  46f252:	bf00      	nop
+  46f254:	2afc      	cmp	r2, #252	@ 0xfc
+  46f256:	0048      	lsls	r0, r1, #1
+  46f258:	0000      	movs	r0, r0
+  46f25a:	1ffc      	subs	r4, r7, #7

@@ -1,0 +1,11 @@
+{
+  "source": "VHAL0x28700370",
+  "length": 40,
+  "allZero": false,
+  "allFF": false,
+  "byteIndex23": 64,
+  "dvrBits3to5": 0,
+  "systemPropLength": 80,
+  "systemPropHex": true,
+  "status": "AVAILABLE"
+}

@@ -1,0 +1,2 @@
+Wed Oct 14 12:42:46 CST 2026
+{.timestamp = 657852951823, .areaId = 0, .prop = 695206099, .status = AVAILABLE, .value = {.int32Values = [0]{}, .floatValues = [0]{}, .int64Values = [0]{}, .bytes = [4]{0, 0, 0, 0}, .stringValue = ""}}

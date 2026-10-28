@@ -1,0 +1,94 @@
+Sun Oct 11 20:30:57 CST 2026
+33	carrier_config: [com.android.internal.telephony.ICarrierConfigLoader]
+47	device_config: []
+160	system_config: [android.os.ISystemConfig]
+root              8      2       0      0 rescuer_thread      0 I [mm_percpu_wq]
+root             16      2       0      0 smpboot_thread_fn   0 S [cpuhp/0]
+root             17      2       0      0 smpboot_thread_fn   0 S [cpuhp/1]
+root             23      2       0      0 smpboot_thread_fn   0 S [cpuhp/2]
+root             29      2       0      0 smpboot_thread_fn   0 S [cpuhp/3]
+root             35      2       0      0 smpboot_thread_fn   0 S [cpuhp/4]
+root             41      2       0      0 smpboot_thread_fn   0 S [cpuhp/5]
+root             51      2       0      0 worker_thread       0 I [kworker/3:1-mm_percpu_wq]
+root            137      2       0      0 kthread_worker_fn   0 S [card0-crtc0]
+root            198      2       0      0 share_txpos_deal_callback 0 S [DummyCard0_play]
+root            199      2       0      0 share_rxpos_deal_callback 0 S [DummyCard0_capt]
+root            200      2       0      0 share_txpos_deal_callback 0 S [DummyCard1_play]
+root            201      2       0      0 share_rxpos_deal_callback 0 D [DummyCard1_capt]
+root            234      2       0      0 issue_discard_thread 0 S [f2fs_discard-25]
+system          253      1 10826808  7972 do_epoll_wait       0 S carwatchdogd
+root            301      2       0      0 issue_discard_thread 0 S [f2fs_discard-25]
+root            319      2       0      0 issue_discard_thread 0 S [f2fs_discard-8:]
+system          506      1 10828008  4772 sigsuspend          0 S ecarx_log_processor
+root            538      1 10775524  4708 binder_thread_read  0 S android.hardware.csdupdate@1.0-service
+root            557      1 10811956  5188 binder_thread_read  0 S ecarx_update_engine
+root            565      1 10782248  7416 do_epoll_wait       0 S update_engine
+system         1143    340 15641264 185588 do_epoll_wait      0 S com.android.car
+system         1436    340 13744968 109792 do_epoll_wait      0 S ecarx.os.ota
+system         1650    340 13730604 111960 do_epoll_wait      0 S com.ecarx.sdk.openapi:GAS
+u0_a66         1662    340 14297736 125788 do_epoll_wait      0 S ecarx.naviservice
+u0_a88         1693    340 14219916 136464 do_epoll_wait      0 S ecarx.xsf.mediacenter
+system         1703    340 14197584 173128 do_epoll_wait      0 S com.ecarx.sdk.openapi
+nobody         1746      1 10790956  3380 binder_thread_read  0 S com.android.car.procfsinspector
+system         2257    340 13846028 128432 do_epoll_wait      0 S com.flyme.auto.update
+system         2303    340 13897700 126680 do_epoll_wait      0 S ecarx.automotive.openapi
+system         2323    340 13729280 110356 do_epoll_wait      0 S com.ecarx.logger
+system         2452    340 13803892 118892 do_epoll_wait      0 S com.audio.MicphoneService
+system         2775    340 13738512 128012 do_epoll_wait      0 S com.ecarx.eas.otaservice:ota
+system         2859    340 13915072 146776 do_epoll_wait      0 S com.ecarx.outcarmedia
+system         2895    340 14210860 173924 do_epoll_wait      0 S com.ecarx.parking
+system         3384    340 13871400 128360 do_epoll_wait      0 S ts.carplay.devicemanager
+u0_a120        3506    340 13706452 113044 do_epoll_wait      0 S com.ts.carplaypermission
+system         3725    340 13819432 122272 do_epoll_wait      0 S com.ecarx.eas.carservice:provider
+system         4299    340 13812672 130216 do_epoll_wait      0 S com.ecarx.deviceinfo.service
+system         4370    340 14631772 131520 do_epoll_wait      0 S com.ts.carplay.app
+system         4997    340 13907476 119104 do_epoll_wait      0 S com.ts.car.dcm.dccontroller
+system         5233    340 13786316 119788 do_epoll_wait      0 S com.flyme.auto.carenergyadapter
+system         6106    340 15429516 179052 do_epoll_wait      0 S com.ts.carplay
+acpi
+cp
+cpio
+cpu_cost.sh
+cpu_stress.sh
+cpulimit
+device_config
+ecarx_update_engine
+ifconfig
+linkerconfig
+scp
+tcpdump
+update_engine
+update_engine_client
+update_verifier
+acpi
+cp
+cpio
+ifconfig
+kdump_config.sh
+package:/system/app/ECarXOtaApp/ECarXOtaApp.apk=ecarx.os.otaapp
+package:/system_ext/overlay/ConfigOverlayAutoLauncher.apk=com.flyme.auto.overlay.config.launcher
+package:/system/app/SystemUpdater/SystemUpdater.apk=com.android.car.systemupdater
+package:/data/app/~~snAHr1fUCDxH78Sku4ZQIQ==/com.appconfig.injector-r0OVntqNQz0tEie1vC3N4A==/base.apk=com.appconfig.injector
+package:/system/priv-app/CarService/CarService.apk=com.android.car
+package:/system/app/SOTAService/SOTAService.apk=com.ecarx.eas.otaservice
+package:/product/app/PhotoTable/PhotoTable.apk=com.android.dreams.phototable
+package:/system/priv-app/ECarXOtaService/ECarXOtaService.apk=ecarx.os.ota
+package:/system_ext/app/OneOSOTA/OneOSOTA.apk=com.flyme.auto.update
+package:/system/priv-app/NetworkPermissionConfig/NetworkPermissionConfig.apk=com.android.networkstack.permissionconfig
+package:/system/app/GeelyXSFCarService/GeelyXSFCarService.apk=com.ecarx.eas.carservice
+/system/etc/sysconfig/framework-sysconfig.xml
+/system/etc/compatconfig/framework-platform-compat-config.xml
+/system/etc/compatconfig/libcore-platform-compat-config.xml
+/system/etc/compatconfig/documents-ui-compat-config.xml
+/system/etc/compatconfig/services-platform-compat-config.xml
+/system/etc/init/ecarx_update_engine.rc
+/system/etc/init/update_verifier.rc
+/system/etc/init/update_engine.rc
+/vendor/etc/usb_audio_policy_configuration.xml
+/vendor/etc/a2dp_audio_policy_configuration.xml
+/vendor/etc/audio_policy_configuration.xml
+/vendor/etc/car_audio_configuration.xml
+/vendor/etc/init/android.hardware.csdupdate@1.0-service.rc
+/vendor/etc/bgms_config.xml
+/vendor/etc/audio_config.xml
+/vendor/etc/r_submix_audio_policy_configuration.xml

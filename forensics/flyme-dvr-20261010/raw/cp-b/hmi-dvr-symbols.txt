@@ -1,0 +1,4 @@
+00000000001f3fd4 T ClusterServiceHandler::HandleEventDVRConfig()
+000000000025c1f0 t ara::com::proxy::events::EventAdapter<impl_type::ST_DVR_SystemSts>::UnsetReceiveHandler()
+000000000025d070 t ara::com::proxy::events::EventAdapter<impl_type::ST_MMI_DVR_Command>::UnsetReceiveHandler()
+00000000001f3d70 t ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]

@@ -1,0 +1,29 @@
+Sun Oct 11 22:34:07 CST 2026
+lrwxrwxrwx 1 root root 0 2026-10-11 22:34 /sys/bus/i2c/devices/7-003d -> ../../../devices/platform/e95c0000.i2c/i2c-7/7-003d
+lrwxrwxrwx 1 root root 0 2026-10-11 22:34 /sys/bus/i2c/devices/7-003d/driver -> ../../../../../bus/i2c/drivers/ub954_mipi
+lrwxrwxrwx 1 root root 0 2026-10-11 22:34 /sys/bus/i2c/devices/7-003d/of_node -> ../../../../../firmware/devicetree/base/i2c@E95C0000/ub954_mipi@3d
+ub954_mipi
+of:Nub954_mipiT(null)Cds90ub,ub954_mipi
+ls: /sys/bus/i2c/devices/9-006b: No such file or directory
+ls: /sys/bus/i2c/devices/9-006b/driver: No such file or directory
+ls: /sys/bus/i2c/devices/9-006b/of_node: No such file or directory
+/sys/class/video4linux/v4l-subdev0
+se_cif.12
+/sys/devices/platform/camera
+/sys/firmware/devicetree/base/camera
+/sys/class/video4linux/v4l-subdev1
+dw-csi.4
+/sys/devices/platform/camera
+/sys/firmware/devicetree/base/camera
+/sys/class/video4linux/v4l-subdev2
+ub954_mipi 7-003d
+/sys/devices/platform/e95c0000.i2c/i2c-7/7-003d
+/sys/firmware/devicetree/base/i2c@E95C0000/ub954_mipi@3d
+/sys/class/video4linux/video0vicam
+se-vicam
+/sys/devices/platform/screenshare_vicam
+/sys/firmware/devicetree/base/screenshare_vicam
+/sys/class/video4linux/video12cif
+se_cif.12.capture
+/sys/devices/platform/camera
+/sys/firmware/devicetree/base/camera

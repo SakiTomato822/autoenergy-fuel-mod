@@ -1,0 +1,26 @@
+Sat Oct 10 20:50:38 CST 2026
+-rw------- 1 u0_a120 u0_a120 1361 2026-05-24 08:20 /sdcard/Download/collect_dvr_impl_images.sh
+-rw------- 1 u0_a120 u0_a120 7698 2026-05-24 00:26 /sdcard/Download/collect_dvr_openapi_probe.sh
+-rw------- 1 u0_a120 u0_a120 4992 2026-05-21 23:56 /sdcard/Download/collect_kernel_avm_probe.sh
+-rw------- 1 u0_a120 u0_a120 6248 2026-05-16 01:08 /sdcard/Download/collect_runtime_avm.sh
+-rw------- 1 u0_a120 u0_a120   49 2026-05-24 18:10 /sdcard/Download/dvr_impl_images_latest.txt
+-rw------- 1 u0_a120 u0_a120   50 2026-05-22 18:57 /sdcard/Download/kernel_avm_probe_latest.txt
+-rw------- 1 u0_a120 u0_a120 2322 2026-05-20 19:13 /sdcard/Download/probe_avm_dump_props.sh
+
+/system/etc/automotive:
+total 8
+drwxr-xr-x 3 root root 4096 2009-01-01 08:00 evs_engine
+drwxr-xr-x 7 root root 4096 2009-01-01 08:00 evsapp
+
+/vendor/firmware:
+total 68
+-rw-r--r-- 1 root root     36 2009-01-01 08:00 rtl8821cs_config
+-rw-r--r-- 1 root root  58048 2009-01-01 08:00 rtl8821cs_fw
+drwxr-xr-x 7 root shell  4096 2009-01-01 08:00 vrres
+service evsapp /system/bin/evsapp
+    class core
+    user root
+    group root system
+	seclabel u:r:evsapp:s0
+    onrestart restart evsrenderengine/vendor/etc/vintf/manifest/manifest_android.hardware.automotive.evs@1.0-service.xml
+/system/etc/automotive/evs_engine/Assets/models/models.bin

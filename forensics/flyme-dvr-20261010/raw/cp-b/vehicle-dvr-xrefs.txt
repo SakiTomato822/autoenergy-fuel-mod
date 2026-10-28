@@ -1,0 +1,43 @@
+SECTIONS [
+  [ '', '0x0', '0x0' ],
+  [ '.interp', '0x2a8', '0x1b' ],
+  [ '.note.gnu.property', '0x2c8', '0x20' ],
+  [ '.note.gnu.build-id', '0x2e8', '0x24' ],
+  [ '.note.ABI-tag', '0x30c', '0x20' ],
+  [ '.gnu.hash', '0x330', '0x32c' ],
+  [ '.dynsym', '0x660', '0x1ec0' ],
+  [ '.dynstr', '0x2520', '0x3be9' ],
+  [ '.gnu.version', '0x610a', '0x290' ],
+  [ '.gnu.version_r', '0x63a0', '0x180' ],
+  [ '.rela.dyn', '0x6520', '0x6de0' ],
+  [ '.rela.plt', '0xd300', '0x1578' ],
+  [ '.init', '0xe878', '0x1c' ],
+  [ '.plt', '0xe8a0', '0xe70' ],
+  [ '.text', '0xf740', '0x10cc30' ],
+  [ '.fini', '0x11c370', '0x18' ],
+  [ '.rodata', '0x11c388', '0xee76' ],
+  [ '.eh_frame_hdr', '0x12b200', '0x412c' ],
+  [ '.eh_frame', '0x12f330', '0x15c90' ],
+  [ '.gcc_except_table', '0x144fc0', '0xe8bb' ],
+  [ '.init_array', '0x163e10', '0xd0' ],
+  [ '.fini_array', '0x163ee0', '0x8' ],
+  [ '.data.rel.ro', '0x163ee8', '0x2650' ],
+  [ '.dynamic', '0x166538', '0x290' ],
+  [ '.got', '0x1667c8', '0x838' ],
+  [ '.data', '0x167000', '0x128' ],
+  [ '.bss', '0x167128', '0x6228' ],
+  [ '.comment', '0x0', '0x12' ],
+  [ '.shstrtab', '0x0', '0x11c' ]
+]
+SYMBOLS []
+TARGETS [
+  { text: 'DVR_SystemSts', addr: 1185480 },
+  { text: 'MMI_DVR_Command', addr: 1185664 },
+  { text: 'DVRConfig', addr: 1188552 }
+]
+XREF 0x89c14 0x89c18 { text: 'DVR_SystemSts', addr: 1185480 } null
+XREF 0x89dbc 0x89dc0 { text: 'MMI_DVR_Command', addr: 1185664 } null
+XREF 0x8c7b8 0x8c7bc { text: 'DVR_SystemSts', addr: 1185480 } null
+XREF 0x8ca40 0x8ca44 { text: 'MMI_DVR_Command', addr: 1185664 } null
+XREF 0x8f868 0x8f86c { text: 'DVRConfig', addr: 1188552 } null
+XREF 0x91a58 0x91a5c { text: 'DVRConfig', addr: 1188552 } null

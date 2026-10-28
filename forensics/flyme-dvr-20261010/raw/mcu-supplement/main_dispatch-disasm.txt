@@ -1,0 +1,46 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00448ee4 <.data+0x28ee4>:
+  448ee4:	b510      	push	{r4, lr}
+  448ee6:	78c1      	ldrb	r1, [r0, #3]
+  448ee8:	4604      	mov	r4, r0
+  448eea:	2902      	cmp	r1, #2
+  448eec:	d91c      	bls.n	0x448f28
+  448eee:	7903      	ldrb	r3, [r0, #4]
+  448ef0:	2bf0      	cmp	r3, #240	@ 0xf0
+  448ef2:	d104      	bne.n	0x448efe
+  448ef4:	2114      	movs	r1, #20
+  448ef6:	7101      	strb	r1, [r0, #4]
+  448ef8:	480c      	ldr	r0, [pc, #48]	@ (0x448f2c)
+  448efa:	f7e0 fa79 	bl	0x4293f0
+  448efe:	7921      	ldrb	r1, [r4, #4]
+  448f00:	1e4a      	subs	r2, r1, #1
+  448f02:	b2d3      	uxtb	r3, r2
+  448f04:	2b1f      	cmp	r3, #31
+  448f06:	d80a      	bhi.n	0x448f1e
+  448f08:	4b09      	ldr	r3, [pc, #36]	@ (0x448f30)
+  448f0a:	eb03 03c2 	add.w	r3, r3, r2, lsl #3
+  448f0e:	685b      	ldr	r3, [r3, #4]
+  448f10:	b10b      	cbz	r3, 0x448f16
+  448f12:	4620      	mov	r0, r4
+  448f14:	4798      	blx	r3
+  448f16:	23ff      	movs	r3, #255	@ 0xff
+  448f18:	7123      	strb	r3, [r4, #4]
+  448f1a:	7163      	strb	r3, [r4, #5]
+  448f1c:	bd10      	pop	{r4, pc}
+  448f1e:	4805      	ldr	r0, [pc, #20]	@ (0x448f34)
+  448f20:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+  448f24:	f7e0 ba64 	b.w	0x4293f0
+  448f28:	4803      	ldr	r0, [pc, #12]	@ (0x448f38)
+  448f2a:	e7f9      	b.n	0x448f20
+  448f2c:	2bcd      	cmp	r3, #205	@ 0xcd
+  448f2e:	0049      	lsls	r1, r1, #1
+  448f30:	f1f8 0048 			@ <UNDEFINED> instruction: 0xf1f80048
+  448f34:	2bdf      	cmp	r3, #223	@ 0xdf
+  448f36:	0049      	lsls	r1, r1, #1
+  448f38:	2bf8      	cmp	r3, #248	@ 0xf8
+  448f3a:	0049      	lsls	r1, r1, #1

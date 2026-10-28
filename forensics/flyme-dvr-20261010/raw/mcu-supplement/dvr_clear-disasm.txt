@@ -1,0 +1,34 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0043a6b0 <.data+0x1a6b0>:
+  43a6b0:	4b0d      	ldr	r3, [pc, #52]	@ (0x43a6e8)
+  43a6b2:	4418      	add	r0, r3
+  43a6b4:	f890 30d8 	ldrb.w	r3, [r0, #216]	@ 0xd8
+  43a6b8:	2b01      	cmp	r3, #1
+  43a6ba:	d903      	bls.n	0x43a6c4
+  43a6bc:	3b01      	subs	r3, #1
+  43a6be:	f880 30d8 	strb.w	r3, [r0, #216]	@ 0xd8
+  43a6c2:	4770      	bx	lr
+  43a6c4:	d10e      	bne.n	0x43a6e4
+  43a6c6:	4b09      	ldr	r3, [pc, #36]	@ (0x43a6ec)
+  43a6c8:	2100      	movs	r1, #0
+  43a6ca:	785a      	ldrb	r2, [r3, #1]
+  43a6cc:	7019      	strb	r1, [r3, #0]
+  43a6ce:	f002 0202 	and.w	r2, r2, #2
+  43a6d2:	705a      	strb	r2, [r3, #1]
+  43a6d4:	789a      	ldrb	r2, [r3, #2]
+  43a6d6:	f002 0206 	and.w	r2, r2, #6
+  43a6da:	709a      	strb	r2, [r3, #2]
+  43a6dc:	791a      	ldrb	r2, [r3, #4]
+  43a6de:	f361 0201 	bfi	r2, r1, #0, #2
+  43a6e2:	711a      	strb	r2, [r3, #4]
+  43a6e4:	4770      	bx	lr
+  43a6e6:	bf00      	nop
+  43a6e8:	a590      	add	r5, pc, #576	@ (adr r5, 0x43a92c)
+  43a6ea:	2041      	movs	r0, #65	@ 0x41
+  43a6ec:	04d7      	lsls	r7, r2, #19
+  43a6ee:	2040      	movs	r0, #64	@ 0x40

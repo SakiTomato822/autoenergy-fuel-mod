@@ -1,0 +1,140 @@
+
+METHOD Lecarx/upgrade/ota/helper/OTAZipHelper;->copyMcuZipByMpuZip code=652552 regs=13 ins=2
+   0 0022 08dd 
+   2 1070 35b9 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a 2d79 "copyMcuZipByMpuZip filePath:"
+   7 206e 35c3 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e 35c3 00b0 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 011a 002d " name:"
+  17 206e 35c3 0010 Ljava/lang/StringBuilder;->append
+  20 000c 
+  21 206e 35c3 00c0 Ljava/lang/StringBuilder;->append
+  24 000c 
+  25 106e 35c7 0000 Ljava/lang/StringBuilder;->toString
+  28 000c 
+  29 1071 022f 0000 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+  32 001a 0000 ""
+  34 1071 0121 000b Landroid/text/TextUtils;->isEmpty
+  37 010a 
+  38 0212 const/4 v2 0
+  39 0139 00e2 if target 265
+  41 1071 0121 000c Landroid/text/TextUtils;->isEmpty
+  44 010a 
+  45 0138 0004 if target 49
+  47 0029 00da 
+  49 0122 08a5 
+  51 2070 34ef 00b1 Ljava/io/File;-><init>
+  54 0112 const/4 v1 0
+  55 0322 0959 
+  57 2070 3768 00b3 Ljava/util/zip/ZipFile;-><init>
+  60 0b22 08dd 
+  62 1070 35b9 000b Ljava/lang/StringBuilder;-><init>
+  65 041a 0239 "/private"
+  67 206e 35c3 004b Ljava/lang/StringBuilder;->append
+  70 0b0c 
+  71 0462 5b83 Ljava/io/File;->separator:Ljava/lang/String;
+  73 206e 35c3 004b Ljava/lang/StringBuilder;->append
+  76 0b0c 
+  77 041a 4993 "mcu_update.zip"
+  79 206e 35c3 004b Ljava/lang/StringBuilder;->append
+  82 0b0c 
+  83 106e 35c7 000b Ljava/lang/StringBuilder;->toString
+  86 0b0c 
+  87 0422 08dd 
+  89 1070 35b9 0004 Ljava/lang/StringBuilder;-><init>
+  92 051a 4e19 "path="
+  94 206e 35c3 0054 Ljava/lang/StringBuilder;->append
+  97 040c 
+  98 206e 35c3 00b4 Ljava/lang/StringBuilder;->append
+ 101 040c 
+ 102 106e 35c7 0004 Ljava/lang/StringBuilder;->toString
+ 105 040c 
+ 106 1071 022f 0004 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+ 109 0422 08a5 
+ 111 2070 34ef 00b4 Ljava/io/File;-><init>
+ 114 106e 34f4 0004 Ljava/io/File;->exists
+ 117 050a 
+ 118 0538 0006 if target 124
+ 120 106e 34f3 0004 Ljava/io/File;->delete
+ 123 1228 
+ 124 106e 34fb 0004 Ljava/io/File;->getParentFile
+ 127 050c 
+ 128 106e 34f4 0005 Ljava/io/File;->exists
+ 131 050a 
+ 132 0539 0009 if target 141
+ 134 106e 34fb 0004 Ljava/io/File;->getParentFile
+ 137 040c 
+ 138 106e 3504 0004 Ljava/io/File;->mkdirs
+ 141 0422 08a8 
+ 143 2070 350e 00b4 Ljava/io/FileOutputStream;-><init>
+ 146 106e 376a 0003 Ljava/util/zip/ZipFile;->entries
+ 149 050c 
+ 150 1072 368c 0005 Ljava/util/Enumeration;->hasMoreElements
+ 153 060a 
+ 154 0638 0026 if target 192
+ 156 1072 368d 0005 Ljava/util/Enumeration;->nextElement
+ 159 060c 
+ 160 061f 0958 
+ 162 106e 3766 0006 Ljava/util/zip/ZipEntry;->getName
+ 165 070c 
+ 166 206e 359e 00c7 Ljava/lang/String;->equals
+ 169 070a 
+ 170 0738 ffec if target 150
+ 172 106e 3767 0006 Ljava/util/zip/ZipEntry;->getSize
+ 175 070b 
+ 176 0916 0000 const/16 0
+ 178 0c31 0907 
+ 180 0c3d 000c if target 192
+ 182 206e 376c 0063 Ljava/util/zip/ZipFile;->getInputStream
+ 185 0c0c 
+ 186 2071 0ab9 004c Lecarx/xdownload/util/IOUtil;->copy
+ 189 1c12 const/4 v12 1
+ 190 b007 
+ 191 c101 
+ 192 106e 3510 0004 Ljava/io/FileOutputStream;->flush
+ 195 106e 350f 0004 Ljava/io/FileOutputStream;->close
+ 198 106e 3769 0003 Ljava/util/zip/ZipFile;->close
+ 201 2528 
+ 202 0b0d 
+ 203 106e 3516 000b Ljava/io/IOException;->printStackTrace
+ 206 2028 
+ 207 0b0d 
+ 208 0e28 
+ 209 0b0d 
+ 210 2407 
+ 211 2028 
+ 212 0b0d 
+ 213 2407 
+ 214 0828 
+ 215 0b0d 
+ 216 2307 
+ 217 3407 
+ 218 1928 
+ 219 0b0d 
+ 220 2307 
+ 221 3407 
+ 222 106e 3558 000b Ljava/lang/Exception;->printStackTrace
+ 225 0438 0008 if target 233
+ 227 106e 3510 0004 Ljava/io/FileOutputStream;->flush
+ 230 106e 350f 0004 Ljava/io/FileOutputStream;->close
+ 233 0338 0008 if target 241
+ 235 106e 3769 0003 Ljava/util/zip/ZipFile;->close
+ 238 0138 0003 if target 241
+ 240 0207 
+ 241 0211 
+ 242 0b0d 
+ 243 0438 000b if target 254
+ 245 106e 3510 0004 Ljava/io/FileOutputStream;->flush
+ 248 106e 350f 0004 Ljava/io/FileOutputStream;->close
+ 251 0328 
+ 252 0c0d 
+ 253 0828 
+ 254 0339 0003 if target 257
+ 256 0211 
+ 257 106e 3769 0003 Ljava/util/zip/ZipFile;->close
+ 260 0428 
+ 261 106e 3516 000c Ljava/io/IOException;->printStackTrace
+ 264 0b27 
+ 265 0211 

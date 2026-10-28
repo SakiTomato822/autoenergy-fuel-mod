@@ -1,0 +1,1070 @@
+
+forensics/flyme-dvr-20261010/raw/libtouchcontrol.so:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000002000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x14>:
+    2000:	b0000000 	adrp	x0, 3000 <__cxa_atexit@plt+0xa0>
+    2004:	91000000 	add	x0, x0, #0x0
+    2008:	1400037a 	b	2df0 <__cxa_finalize@plt>
+    200c:	d65f03c0 	ret
+    2010:	17ffffff 	b	200c <android::RpmsgConnector::RpmsgConnector()@@Base-0x8>
+
+0000000000002014 <android::RpmsgConnector::RpmsgConnector()@@Base>:
+    2014:	b0000008 	adrp	x8, 3000 <__cxa_atexit@plt+0xa0>
+    2018:	f9412908 	ldr	x8, [x8, #592]
+    201c:	a9017c1f 	stp	xzr, xzr, [x0, #16]
+    2020:	91004108 	add	x8, x8, #0x10
+    2024:	a9007c08 	stp	x8, xzr, [x0]
+    2028:	d65f03c0 	ret
+
+000000000000202c <android::RpmsgConnector::updateEptInfo(android::RpmsgEndpointInfo const*)@@Base>:
+    202c:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    2030:	a9014ff4 	stp	x20, x19, [sp, #16]
+    2034:	910003fd 	mov	x29, sp
+    2038:	aa0003f4 	mov	x20, x0
+    203c:	9100a000 	add	x0, x0, #0x28
+    2040:	52800402 	mov	w2, #0x20                  	// #32
+    2044:	aa0103f3 	mov	x19, x1
+    2048:	9400036e 	bl	2e00 <__strcpy_chk@plt>
+    204c:	b9402268 	ldr	w8, [x19, #32]
+    2050:	b9004a88 	str	w8, [x20, #72]
+    2054:	b9402668 	ldr	w8, [x19, #36]
+    2058:	b9004e88 	str	w8, [x20, #76]
+    205c:	a9414ff4 	ldp	x20, x19, [sp, #16]
+    2060:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    2064:	d65f03c0 	ret
+
+0000000000002068 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base>:
+    2068:	d10203ff 	sub	sp, sp, #0x80
+    206c:	a9057bfd 	stp	x29, x30, [sp, #80]
+    2070:	a90657f6 	stp	x22, x21, [sp, #96]
+    2074:	a9074ff4 	stp	x20, x19, [sp, #112]
+    2078:	910143fd 	add	x29, sp, #0x50
+    207c:	d53bd056 	mrs	x22, tpidr_el0
+    2080:	f94016c8 	ldr	x8, [x22, #40]
+    2084:	6f00e400 	movi	v0.2d, #0x0
+    2088:	aa0103f5 	mov	x21, x1
+    208c:	aa0003f3 	mov	x19, x0
+    2090:	f81f83a8 	stur	x8, [x29, #-8]
+    2094:	ad0103e0 	stp	q0, q0, [sp, #32]
+    2098:	ad0003e0 	stp	q0, q0, [sp]
+    209c:	39400028 	ldrb	w8, [x1]
+    20a0:	f9400829 	ldr	x9, [x1, #16]
+    20a4:	aa0203f4 	mov	x20, x2
+    20a8:	7200011f 	tst	w8, #0x1
+    20ac:	9a811520 	csinc	x0, x9, x1, ne	// ne = any
+    20b0:	52800041 	mov	w1, #0x2                   	// #2
+    20b4:	94000357 	bl	2e10 <__open_2@plt>
+    20b8:	b9002260 	str	w0, [x19, #32]
+    20bc:	37f80440 	tbnz	w0, #31, 2144 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0xdc>
+    20c0:	29441684 	ldp	w4, w5, [x20, #32]
+    20c4:	910003e0 	mov	x0, sp
+    20c8:	aa1403e3 	mov	x3, x20
+    20cc:	9400003e 	bl	21c4 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0x15c>
+    20d0:	910003e0 	mov	x0, sp
+    20d4:	2a1f03e1 	mov	w1, wzr
+    20d8:	94000352 	bl	2e20 <access@plt>
+    20dc:	340000c0 	cbz	w0, 20f4 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0x8c>
+    20e0:	b9402260 	ldr	w0, [x19, #32]
+    20e4:	5296a021 	mov	w1, #0xb501                	// #46337
+    20e8:	72a80501 	movk	w1, #0x4028, lsl #16
+    20ec:	aa1403e2 	mov	x2, x20
+    20f0:	94000350 	bl	2e30 <ioctl@plt>
+    20f4:	5284e200 	mov	w0, #0x2710                	// #10000
+    20f8:	94000352 	bl	2e40 <usleep@plt>
+    20fc:	910003e0 	mov	x0, sp
+    2100:	52800041 	mov	w1, #0x2                   	// #2
+    2104:	94000343 	bl	2e10 <__open_2@plt>
+    2108:	b9002660 	str	w0, [x19, #36]
+    210c:	37f80340 	tbnz	w0, #31, 2174 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0x10c>
+    2110:	91002260 	add	x0, x19, #0x8
+    2114:	aa1503e1 	mov	x1, x21
+    2118:	9400034e 	bl	2e50 <std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::operator=(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@plt>
+    211c:	9100a260 	add	x0, x19, #0x28
+    2120:	52800402 	mov	w2, #0x20                  	// #32
+    2124:	aa1403e1 	mov	x1, x20
+    2128:	94000336 	bl	2e00 <__strcpy_chk@plt>
+    212c:	b9402288 	ldr	w8, [x20, #32]
+    2130:	b9402660 	ldr	w0, [x19, #36]
+    2134:	b9004a68 	str	w8, [x19, #72]
+    2138:	b9402688 	ldr	w8, [x20, #36]
+    213c:	b9004e68 	str	w8, [x19, #76]
+    2140:	14000017 	b	219c <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0x134>
+    2144:	394002a8 	ldrb	w8, [x21]
+    2148:	f9400aa9 	ldr	x9, [x21, #16]
+    214c:	910006aa 	add	x10, x21, #0x1
+    2150:	d0ffffe1 	adrp	x1, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    2154:	7200011f 	tst	w8, #0x1
+    2158:	d0ffffe2 	adrp	x2, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    215c:	9a890143 	csel	x3, x10, x9, eq	// eq = none
+    2160:	913edc21 	add	x1, x1, #0xfb7
+    2164:	913d3042 	add	x2, x2, #0xf4c
+    2168:	528000c0 	mov	w0, #0x6                   	// #6
+    216c:	9400033d 	bl	2e60 <__android_log_print@plt>
+    2170:	1400000a 	b	2198 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0x130>
+    2174:	9400033f 	bl	2e70 <close@plt>
+    2178:	b9402664 	ldr	w4, [x19, #36]
+    217c:	d0ffffe1 	adrp	x1, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    2180:	d0ffffe2 	adrp	x2, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    2184:	913edc21 	add	x1, x1, #0xfb7
+    2188:	913c9442 	add	x2, x2, #0xf25
+    218c:	910003e3 	mov	x3, sp
+    2190:	528000c0 	mov	w0, #0x6                   	// #6
+    2194:	94000333 	bl	2e60 <__android_log_print@plt>
+    2198:	12800180 	mov	w0, #0xfffffff3            	// #-13
+    219c:	f94016c8 	ldr	x8, [x22, #40]
+    21a0:	f85f83a9 	ldur	x9, [x29, #-8]
+    21a4:	eb09011f 	cmp	x8, x9
+    21a8:	540000c1 	b.ne	21c0 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0x158>  // b.any
+    21ac:	a9474ff4 	ldp	x20, x19, [sp, #112]
+    21b0:	a94657f6 	ldp	x22, x21, [sp, #96]
+    21b4:	a9457bfd 	ldp	x29, x30, [sp, #80]
+    21b8:	910203ff 	add	sp, sp, #0x80
+    21bc:	d65f03c0 	ret
+    21c0:	94000330 	bl	2e80 <__stack_chk_fail@plt>
+    21c4:	d10483ff 	sub	sp, sp, #0x120
+    21c8:	a9107bfd 	stp	x29, x30, [sp, #256]
+    21cc:	a9114ffc 	stp	x28, x19, [sp, #272]
+    21d0:	910403fd 	add	x29, sp, #0x100
+    21d4:	a93893a3 	stp	x3, x4, [x29, #-120]
+    21d8:	a9399ba5 	stp	x5, x6, [x29, #-104]
+    21dc:	f81a83a7 	stur	x7, [x29, #-88]
+    21e0:	ad008be1 	stp	q1, q2, [sp, #16]
+    21e4:	ad0193e3 	stp	q3, q4, [sp, #48]
+    21e8:	3d8003e0 	str	q0, [sp]
+    21ec:	ad029be5 	stp	q5, q6, [sp, #80]
+    21f0:	3d801fe7 	str	q7, [sp, #112]
+    21f4:	d53bd053 	mrs	x19, tpidr_el0
+    21f8:	f9401668 	ldr	x8, [x19, #40]
+    21fc:	d101e3aa 	sub	x10, x29, #0x78
+    2200:	910003eb 	mov	x11, sp
+    2204:	6f00e400 	movi	v0.2d, #0x0
+    2208:	f81f83a8 	stur	x8, [x29, #-8]
+    220c:	928004e8 	mov	x8, #0xffffffffffffffd8    	// #-40
+    2210:	910083a9 	add	x9, x29, #0x20
+    2214:	f2dff008 	movk	x8, #0xff80, lsl #32
+    2218:	9100a14a 	add	x10, x10, #0x28
+    221c:	9102016b 	add	x11, x11, #0x80
+    2220:	ad3e83a0 	stp	q0, q0, [x29, #-48]
+    2224:	a93d2ba9 	stp	x9, x10, [x29, #-48]
+    2228:	a93e23ab 	stp	x11, x8, [x29, #-32]
+    222c:	ad7e87a0 	ldp	q0, q1, [x29, #-48]
+    2230:	d0ffffe3 	adrp	x3, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    2234:	913ea463 	add	x3, x3, #0xfa9
+    2238:	d10143a4 	sub	x4, x29, #0x50
+    223c:	52800802 	mov	w2, #0x40                  	// #64
+    2240:	2a1f03e1 	mov	w1, wzr
+    2244:	ad3d87a0 	stp	q0, q1, [x29, #-80]
+    2248:	94000312 	bl	2e90 <__vsprintf_chk@plt>
+    224c:	f9401668 	ldr	x8, [x19, #40]
+    2250:	f85f83a9 	ldur	x9, [x29, #-8]
+    2254:	eb09011f 	cmp	x8, x9
+    2258:	540000a1 	b.ne	226c <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@@Base+0x204>  // b.any
+    225c:	a9514ffc 	ldp	x28, x19, [sp, #272]
+    2260:	a9507bfd 	ldp	x29, x30, [sp, #256]
+    2264:	910483ff 	add	sp, sp, #0x120
+    2268:	d65f03c0 	ret
+    226c:	94000305 	bl	2e80 <__stack_chk_fail@plt>
+
+0000000000002270 <android::RpmsgConnector::stop()@@Base>:
+    2270:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    2274:	f9000bf3 	str	x19, [sp, #16]
+    2278:	910003fd 	mov	x29, sp
+    227c:	aa0003f3 	mov	x19, x0
+    2280:	b9402400 	ldr	w0, [x0, #36]
+    2284:	7100041f 	cmp	w0, #0x1
+    2288:	540000cb 	b.lt	22a0 <android::RpmsgConnector::stop()@@Base+0x30>  // b.tstop
+    228c:	5296a041 	mov	w1, #0xb502                	// #46338
+    2290:	aa1f03e2 	mov	x2, xzr
+    2294:	940002e7 	bl	2e30 <ioctl@plt>
+    2298:	b9402660 	ldr	w0, [x19, #36]
+    229c:	940002f5 	bl	2e70 <close@plt>
+    22a0:	b9402260 	ldr	w0, [x19, #32]
+    22a4:	7100041f 	cmp	w0, #0x1
+    22a8:	5400004b 	b.lt	22b0 <android::RpmsgConnector::stop()@@Base+0x40>  // b.tstop
+    22ac:	940002f1 	bl	2e70 <close@plt>
+    22b0:	f9400bf3 	ldr	x19, [sp, #16]
+    22b4:	2a1f03e0 	mov	w0, wzr
+    22b8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    22bc:	d65f03c0 	ret
+
+00000000000022c0 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base>:
+    22c0:	d102c3ff 	sub	sp, sp, #0xb0
+    22c4:	a9087bfd 	stp	x29, x30, [sp, #128]
+    22c8:	a90957f6 	stp	x22, x21, [sp, #144]
+    22cc:	a90a4ff4 	stp	x20, x19, [sp, #160]
+    22d0:	910203fd 	add	x29, sp, #0x80
+    22d4:	d53bd056 	mrs	x22, tpidr_el0
+    22d8:	f94016c8 	ldr	x8, [x22, #40]
+    22dc:	6f00e400 	movi	v0.2d, #0x0
+    22e0:	aa0203f3 	mov	x19, x2
+    22e4:	aa0003f4 	mov	x20, x0
+    22e8:	f81f83a8 	stur	x8, [x29, #-8]
+    22ec:	3c8683e0 	stur	q0, [sp, #104]
+    22f0:	3c8583e0 	stur	q0, [sp, #88]
+    22f4:	3c8483e0 	stur	q0, [sp, #72]
+    22f8:	3c8383e0 	stur	q0, [sp, #56]
+    22fc:	3c8283e0 	stur	q0, [sp, #40]
+    2300:	3c8183e0 	stur	q0, [sp, #24]
+    2304:	3c8083e0 	stur	q0, [sp, #8]
+    2308:	f9402408 	ldr	x8, [x0, #72]
+    230c:	52800d03 	mov	w3, #0x68                  	// #104
+    2310:	79001bf3 	strh	w19, [sp, #12]
+    2314:	f90003e8 	str	x8, [sp]
+    2318:	910003e8 	mov	x8, sp
+    231c:	91004115 	add	x21, x8, #0x10
+    2320:	aa1503e0 	mov	x0, x21
+    2324:	940002df 	bl	2ea0 <__memcpy_chk@plt>
+    2328:	38336abf 	strb	wzr, [x21, x19]
+    232c:	b9402680 	ldr	w0, [x20, #36]
+    2330:	11004673 	add	w19, w19, #0x11
+    2334:	93407e62 	sxtw	x2, w19
+    2338:	910003e1 	mov	x1, sp
+    233c:	52800f03 	mov	w3, #0x78                  	// #120
+    2340:	940002dc 	bl	2eb0 <__write_chk@plt>
+    2344:	aa0003e3 	mov	x3, x0
+    2348:	37f80063 	tbnz	w3, #31, 2354 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x94>
+    234c:	6b03027f 	cmp	w19, w3
+    2350:	54000100 	b.eq	2370 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0xb0>  // b.none
+    2354:	d0ffffe1 	adrp	x1, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    2358:	d0ffffe2 	adrp	x2, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    235c:	913edc21 	add	x1, x1, #0xfb7
+    2360:	913b8042 	add	x2, x2, #0xee0
+    2364:	528000c0 	mov	w0, #0x6                   	// #6
+    2368:	940002be 	bl	2e60 <__android_log_print@plt>
+    236c:	12800193 	mov	w19, #0xfffffff3            	// #-13
+    2370:	f94016c8 	ldr	x8, [x22, #40]
+    2374:	f85f83a9 	ldur	x9, [x29, #-8]
+    2378:	eb09011f 	cmp	x8, x9
+    237c:	540000e1 	b.ne	2398 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0xd8>  // b.any
+    2380:	2a1303e0 	mov	w0, w19
+    2384:	a94a4ff4 	ldp	x20, x19, [sp, #160]
+    2388:	a94957f6 	ldp	x22, x21, [sp, #144]
+    238c:	a9487bfd 	ldp	x29, x30, [sp, #128]
+    2390:	9102c3ff 	add	sp, sp, #0xb0
+    2394:	d65f03c0 	ret
+    2398:	940002ba 	bl	2e80 <__stack_chk_fail@plt>
+    239c:	b0000009 	adrp	x9, 3000 <__cxa_atexit@plt+0xa0>
+    23a0:	39402008 	ldrb	w8, [x0, #8]
+    23a4:	f9412929 	ldr	x9, [x9, #592]
+    23a8:	91004129 	add	x9, x9, #0x10
+    23ac:	f9000009 	str	x9, [x0]
+    23b0:	37000048 	tbnz	w8, #0, 23b8 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0xf8>
+    23b4:	d65f03c0 	ret
+    23b8:	f9400c00 	ldr	x0, [x0, #24]
+    23bc:	140002c1 	b	2ec0 <operator delete(void*)@plt>
+    23c0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    23c4:	f9000bf3 	str	x19, [sp, #16]
+    23c8:	910003fd 	mov	x29, sp
+    23cc:	b0000009 	adrp	x9, 3000 <__cxa_atexit@plt+0xa0>
+    23d0:	39402008 	ldrb	w8, [x0, #8]
+    23d4:	f9412929 	ldr	x9, [x9, #592]
+    23d8:	aa0003f3 	mov	x19, x0
+    23dc:	91004129 	add	x9, x9, #0x10
+    23e0:	f9000009 	str	x9, [x0]
+    23e4:	36000068 	tbz	w8, #0, 23f0 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x130>
+    23e8:	f9400e60 	ldr	x0, [x19, #24]
+    23ec:	940002b5 	bl	2ec0 <operator delete(void*)@plt>
+    23f0:	aa1303e0 	mov	x0, x19
+    23f4:	f9400bf3 	ldr	x19, [sp, #16]
+    23f8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    23fc:	140002b1 	b	2ec0 <operator delete(void*)@plt>
+    2400:	d10183ff 	sub	sp, sp, #0x60
+    2404:	a9027bfd 	stp	x29, x30, [sp, #32]
+    2408:	a9035ff8 	stp	x24, x23, [sp, #48]
+    240c:	a90457f6 	stp	x22, x21, [sp, #64]
+    2410:	a9054ff4 	stp	x20, x19, [sp, #80]
+    2414:	910083fd 	add	x29, sp, #0x20
+    2418:	d53bd057 	mrs	x23, tpidr_el0
+    241c:	f94016e8 	ldr	x8, [x23, #40]
+    2420:	aa0003f5 	mov	x21, x0
+    2424:	f81f83a8 	stur	x8, [x29, #-8]
+    2428:	f8008ebf 	str	xzr, [x21, #8]!
+    242c:	f900081f 	str	xzr, [x0, #16]
+    2430:	f9000015 	str	x21, [x0]
+    2434:	b40004c2 	cbz	x2, 24cc <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x20c>
+    2438:	aa0103f3 	mov	x19, x1
+    243c:	aa0003f4 	mov	x20, x0
+    2440:	d37df058 	lsl	x24, x2, #3
+    2444:	1400000b 	b	2470 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x1b0>
+    2448:	f9000288 	str	x8, [x20]
+    244c:	f94002c1 	ldr	x1, [x22]
+    2450:	f9400680 	ldr	x0, [x20, #8]
+    2454:	9400029f 	bl	2ed0 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@plt>
+    2458:	f9400a88 	ldr	x8, [x20, #16]
+    245c:	91000508 	add	x8, x8, #0x1
+    2460:	f9000a88 	str	x8, [x20, #16]
+    2464:	f1002318 	subs	x24, x24, #0x8
+    2468:	91002273 	add	x19, x19, #0x8
+    246c:	54000300 	b.eq	24cc <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x20c>  // b.none
+    2470:	910043e2 	add	x2, sp, #0x10
+    2474:	910023e3 	add	x3, sp, #0x8
+    2478:	aa1403e0 	mov	x0, x20
+    247c:	aa1503e1 	mov	x1, x21
+    2480:	aa1303e4 	mov	x4, x19
+    2484:	a900ffff 	stp	xzr, xzr, [sp, #8]
+    2488:	94000296 	bl	2ee0 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@plt>
+    248c:	f9400008 	ldr	x8, [x0]
+    2490:	b5fffea8 	cbnz	x8, 2464 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x1a4>
+    2494:	aa0003f6 	mov	x22, x0
+    2498:	52800500 	mov	w0, #0x28                  	// #40
+    249c:	94000295 	bl	2ef0 <operator new(unsigned long)@plt>
+    24a0:	f9400268 	ldr	x8, [x19]
+    24a4:	f9400be9 	ldr	x9, [sp, #16]
+    24a8:	a9007c1f 	stp	xzr, xzr, [x0]
+    24ac:	f801c008 	stur	x8, [x0, #28]
+    24b0:	f9000809 	str	x9, [x0, #16]
+    24b4:	f90002c0 	str	x0, [x22]
+    24b8:	f9400288 	ldr	x8, [x20]
+    24bc:	f9400108 	ldr	x8, [x8]
+    24c0:	b5fffc48 	cbnz	x8, 2448 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x188>
+    24c4:	aa0003e1 	mov	x1, x0
+    24c8:	17ffffe2 	b	2450 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x190>
+    24cc:	f94016e8 	ldr	x8, [x23, #40]
+    24d0:	f85f83a9 	ldur	x9, [x29, #-8]
+    24d4:	eb09011f 	cmp	x8, x9
+    24d8:	540000e1 	b.ne	24f4 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x234>  // b.any
+    24dc:	a9454ff4 	ldp	x20, x19, [sp, #80]
+    24e0:	a94457f6 	ldp	x22, x21, [sp, #64]
+    24e4:	a9435ff8 	ldp	x24, x23, [sp, #48]
+    24e8:	a9427bfd 	ldp	x29, x30, [sp, #32]
+    24ec:	910183ff 	add	sp, sp, #0x60
+    24f0:	d65f03c0 	ret
+    24f4:	94000263 	bl	2e80 <__stack_chk_fail@plt>
+    24f8:	f9400401 	ldr	x1, [x0, #8]
+    24fc:	14000281 	b	2f00 <std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::destroy(std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*)@plt>
+
+0000000000002500 <android::SeTouchCtrl::SeTouchCtrl()@@Base>:
+    2500:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    2504:	f9000bf3 	str	x19, [sp, #16]
+    2508:	910003fd 	mov	x29, sp
+    250c:	b0000008 	adrp	x8, 3000 <__cxa_atexit@plt+0xa0>
+    2510:	f9412d08 	ldr	x8, [x8, #600]
+    2514:	aa0003f3 	mov	x19, x0
+    2518:	91004108 	add	x8, x8, #0x10
+    251c:	f9000008 	str	x8, [x0]
+    2520:	52801400 	mov	w0, #0xa0                  	// #160
+    2524:	94000273 	bl	2ef0 <operator new(unsigned long)@plt>
+    2528:	91028008 	add	x8, x0, #0xa0
+    252c:	a9008260 	stp	x0, x0, [x19, #8]
+    2530:	f9000e68 	str	x8, [x19, #24]
+    2534:	94000277 	bl	2f10 <android::RpmsgConnector::RpmsgConnector()@plt>
+    2538:	f9400a68 	ldr	x8, [x19, #16]
+    253c:	91014100 	add	x0, x8, #0x50
+    2540:	f9000a60 	str	x0, [x19, #16]
+    2544:	94000273 	bl	2f10 <android::RpmsgConnector::RpmsgConnector()@plt>
+    2548:	f9400a68 	ldr	x8, [x19, #16]
+    254c:	91014108 	add	x8, x8, #0x50
+    2550:	f9000a68 	str	x8, [x19, #16]
+    2554:	f9400bf3 	ldr	x19, [sp, #16]
+    2558:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    255c:	d65f03c0 	ret
+
+0000000000002560 <android::SeTouchCtrl::init()@@Base>:
+    2560:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    2564:	f9000bf3 	str	x19, [sp, #16]
+    2568:	910003fd 	mov	x29, sp
+    256c:	f0ffffe1 	adrp	x1, 1000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x1014>
+    2570:	d0ffffe2 	adrp	x2, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    2574:	aa0003f3 	mov	x19, x0
+    2578:	91006021 	add	x1, x1, #0x18
+    257c:	913fc042 	add	x2, x2, #0xff0
+    2580:	52800040 	mov	w0, #0x2                   	// #2
+    2584:	94000237 	bl	2e60 <__android_log_print@plt>
+    2588:	aa1303e0 	mov	x0, x19
+    258c:	2a1f03e1 	mov	w1, wzr
+    2590:	94000264 	bl	2f20 <android::SeTouchCtrl::initRpmsgConnector(int)@plt>
+    2594:	52800021 	mov	w1, #0x1                   	// #1
+    2598:	aa1303e0 	mov	x0, x19
+    259c:	94000261 	bl	2f20 <android::SeTouchCtrl::initRpmsgConnector(int)@plt>
+    25a0:	f9400bf3 	ldr	x19, [sp, #16]
+    25a4:	2a1f03e0 	mov	w0, wzr
+    25a8:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    25ac:	d65f03c0 	ret
+
+00000000000025b0 <android::SeTouchCtrl::initRpmsgConnector(int)@@Base>:
+    25b0:	d101c3ff 	sub	sp, sp, #0x70
+    25b4:	a9037bfd 	stp	x29, x30, [sp, #48]
+    25b8:	f90023f7 	str	x23, [sp, #64]
+    25bc:	a90557f6 	stp	x22, x21, [sp, #80]
+    25c0:	a9064ff4 	stp	x20, x19, [sp, #96]
+    25c4:	9100c3fd 	add	x29, sp, #0x30
+    25c8:	d53bd057 	mrs	x23, tpidr_el0
+    25cc:	f94016e8 	ldr	x8, [x23, #40]
+    25d0:	2a0103f4 	mov	w20, w1
+    25d4:	f0ffffe1 	adrp	x1, 1000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x1014>
+    25d8:	d0ffffe2 	adrp	x2, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    25dc:	aa0003f3 	mov	x19, x0
+    25e0:	91006021 	add	x1, x1, #0x18
+    25e4:	913f1842 	add	x2, x2, #0xfc6
+    25e8:	52800040 	mov	w0, #0x2                   	// #2
+    25ec:	2a1403e3 	mov	w3, w20
+    25f0:	f81f83a8 	stur	x8, [x29, #-8]
+    25f4:	9400021b 	bl	2e60 <__android_log_print@plt>
+    25f8:	5280044a 	mov	w10, #0x22                  	// #34
+    25fc:	f9400668 	ldr	x8, [x19, #8]
+    2600:	a9017fff 	stp	xzr, xzr, [sp, #16]
+    2604:	390043ea 	strb	w10, [sp, #16]
+    2608:	d0ffffea 	adrp	x10, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    260c:	913dc54a 	add	x10, x10, #0xf71
+    2610:	3dc00140 	ldr	q0, [x10]
+    2614:	52800d6a 	mov	w10, #0x6b                  	// #107
+    2618:	52800a09 	mov	w9, #0x50                  	// #80
+    261c:	f90013ff 	str	xzr, [sp, #32]
+    2620:	780213ea 	sturh	w10, [sp, #33]
+    2624:	d000000a 	adrp	x10, 4000 <vtable for android::SeTouchCtrl@@Base+0xfd8>
+    2628:	910ce14a 	add	x10, x10, #0x338
+    262c:	9b292280 	smaddl	x0, w20, w9, x8
+    2630:	52800508 	mov	w8, #0x28                  	// #40
+    2634:	9b282a95 	smaddl	x21, w20, w8, x10
+    2638:	910043e1 	add	x1, sp, #0x10
+    263c:	aa1503e2 	mov	x2, x21
+    2640:	3d8003e0 	str	q0, [sp]
+    2644:	3c8113e0 	stur	q0, [sp, #17]
+    2648:	9400023a 	bl	2f30 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@plt>
+    264c:	394043e8 	ldrb	w8, [sp, #16]
+    2650:	2a0003f6 	mov	w22, w0
+    2654:	36000068 	tbz	w8, #0, 2660 <android::SeTouchCtrl::initRpmsgConnector(int)@@Base+0xb0>
+    2658:	f94013e0 	ldr	x0, [sp, #32]
+    265c:	94000219 	bl	2ec0 <operator delete(void*)@plt>
+    2660:	36f80396 	tbz	w22, #31, 26d0 <android::SeTouchCtrl::initRpmsgConnector(int)@@Base+0x120>
+    2664:	f0ffffe1 	adrp	x1, 1000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x1014>
+    2668:	d0ffffe2 	adrp	x2, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    266c:	91006021 	add	x1, x1, #0x18
+    2670:	913e0c42 	add	x2, x2, #0xf83
+    2674:	528000c0 	mov	w0, #0x6                   	// #6
+    2678:	93407e94 	sxtw	x20, w20
+    267c:	940001f9 	bl	2e60 <__android_log_print@plt>
+    2680:	f9400668 	ldr	x8, [x19, #8]
+    2684:	3dc003e0 	ldr	q0, [sp]
+    2688:	52800a09 	mov	w9, #0x50                  	// #80
+    268c:	5280044a 	mov	w10, #0x22                  	// #34
+    2690:	52800d6b 	mov	w11, #0x6b                  	// #107
+    2694:	9b092280 	madd	x0, x20, x9, x8
+    2698:	910043e1 	add	x1, sp, #0x10
+    269c:	aa1503e2 	mov	x2, x21
+    26a0:	a9017fff 	stp	xzr, xzr, [sp, #16]
+    26a4:	f90013ff 	str	xzr, [sp, #32]
+    26a8:	3c8113e0 	stur	q0, [sp, #17]
+    26ac:	390043ea 	strb	w10, [sp, #16]
+    26b0:	780213eb 	sturh	w11, [sp, #33]
+    26b4:	9400021f 	bl	2f30 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@plt>
+    26b8:	394043e8 	ldrb	w8, [sp, #16]
+    26bc:	2a0003f3 	mov	w19, w0
+    26c0:	36000068 	tbz	w8, #0, 26cc <android::SeTouchCtrl::initRpmsgConnector(int)@@Base+0x11c>
+    26c4:	f94013e0 	ldr	x0, [sp, #32]
+    26c8:	940001fe 	bl	2ec0 <operator delete(void*)@plt>
+    26cc:	37f801b3 	tbnz	w19, #31, 2700 <android::SeTouchCtrl::initRpmsgConnector(int)@@Base+0x150>
+    26d0:	2a1f03f3 	mov	w19, wzr
+    26d4:	f94016e8 	ldr	x8, [x23, #40]
+    26d8:	f85f83a9 	ldur	x9, [x29, #-8]
+    26dc:	eb09011f 	cmp	x8, x9
+    26e0:	540001e1 	b.ne	271c <android::SeTouchCtrl::initRpmsgConnector(int)@@Base+0x16c>  // b.any
+    26e4:	2a1303e0 	mov	w0, w19
+    26e8:	a9464ff4 	ldp	x20, x19, [sp, #96]
+    26ec:	a94557f6 	ldp	x22, x21, [sp, #80]
+    26f0:	f94023f7 	ldr	x23, [sp, #64]
+    26f4:	a9437bfd 	ldp	x29, x30, [sp, #48]
+    26f8:	9101c3ff 	add	sp, sp, #0x70
+    26fc:	d65f03c0 	ret
+    2700:	f0ffffe1 	adrp	x1, 1000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x1014>
+    2704:	d0ffffe2 	adrp	x2, 0 <android::RpmsgConnector::RpmsgConnector()@@Base-0x2014>
+    2708:	91006021 	add	x1, x1, #0x18
+    270c:	913c1842 	add	x2, x2, #0xf06
+    2710:	528000c0 	mov	w0, #0x6                   	// #6
+    2714:	940001d3 	bl	2e60 <__android_log_print@plt>
+    2718:	17ffffef 	b	26d4 <android::SeTouchCtrl::initRpmsgConnector(int)@@Base+0x124>
+    271c:	940001d9 	bl	2e80 <__stack_chk_fail@plt>
+
+0000000000002720 <android::SeTouchCtrl::deinit()@@Base>:
+    2720:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    2724:	f9000bf3 	str	x19, [sp, #16]
+    2728:	910003fd 	mov	x29, sp
+    272c:	aa0003f3 	mov	x19, x0
+    2730:	f9400400 	ldr	x0, [x0, #8]
+    2734:	94000203 	bl	2f40 <android::RpmsgConnector::stop()@plt>
+    2738:	f9400668 	ldr	x8, [x19, #8]
+    273c:	91014100 	add	x0, x8, #0x50
+    2740:	94000200 	bl	2f40 <android::RpmsgConnector::stop()@plt>
+    2744:	f9400bf3 	ldr	x19, [sp, #16]
+    2748:	2a1f03e0 	mov	w0, wzr
+    274c:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    2750:	d65f03c0 	ret
+
+0000000000002754 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base>:
+    2754:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!
+    2758:	f9000bf9 	str	x25, [sp, #16]
+    275c:	a9025ff8 	stp	x24, x23, [sp, #32]
+    2760:	a90357f6 	stp	x22, x21, [sp, #48]
+    2764:	a9044ff4 	stp	x20, x19, [sp, #64]
+    2768:	910003fd 	mov	x29, sp
+    276c:	37f80302 	tbnz	w2, #31, 27cc <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x78>
+    2770:	d0000017 	adrp	x23, 4000 <vtable for android::SeTouchCtrl@@Base+0xfd8>
+    2774:	910e42f7 	add	x23, x23, #0x390
+    2778:	f94002f9 	ldr	x25, [x23]
+    277c:	2a0203f5 	mov	w21, w2
+    2780:	aa0103f3 	mov	x19, x1
+    2784:	aa0003f4 	mov	x20, x0
+    2788:	b4000279 	cbz	x25, 27d4 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x80>
+    278c:	d0000018 	adrp	x24, 4000 <vtable for android::SeTouchCtrl@@Base+0xfd8>
+    2790:	910e4318 	add	x24, x24, #0x390
+    2794:	b9401f28 	ldr	w8, [x25, #28]
+    2798:	6b15011f 	cmp	w8, w21
+    279c:	540000cd 	b.le	27b4 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x60>
+    27a0:	f9400328 	ldr	x8, [x25]
+    27a4:	b40003c8 	cbz	x8, 281c <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0xc8>
+    27a8:	aa1903f8 	mov	x24, x25
+    27ac:	aa0803f9 	mov	x25, x8
+    27b0:	17fffff9 	b	2794 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x40>
+    27b4:	5400014a 	b.ge	27dc <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x88>  // b.tcont
+    27b8:	aa1903f8 	mov	x24, x25
+    27bc:	f8408f08 	ldr	x8, [x24, #8]!
+    27c0:	b40000e8 	cbz	x8, 27dc <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x88>
+    27c4:	aa0803f9 	mov	x25, x8
+    27c8:	17fffff3 	b	2794 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x40>
+    27cc:	12800013 	mov	w19, #0xffffffff            	// #-1
+    27d0:	1400002e 	b	2888 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x134>
+    27d4:	aa1703f9 	mov	x25, x23
+    27d8:	aa1703f8 	mov	x24, x23
+    27dc:	f9400316 	ldr	x22, [x24]
+    27e0:	b5000336 	cbnz	x22, 2844 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0xf0>
+    27e4:	52800500 	mov	w0, #0x28                  	// #40
+    27e8:	940001c2 	bl	2ef0 <operator new(unsigned long)@plt>
+    27ec:	2903fc15 	stp	w21, wzr, [x0, #28]
+    27f0:	a9007c1f 	stp	xzr, xzr, [x0]
+    27f4:	f9000819 	str	x25, [x0, #16]
+    27f8:	f9000300 	str	x0, [x24]
+    27fc:	d0000008 	adrp	x8, 4000 <vtable for android::SeTouchCtrl@@Base+0xfd8>
+    2800:	f941c509 	ldr	x9, [x8, #904]
+    2804:	aa0003f6 	mov	x22, x0
+    2808:	f9400129 	ldr	x9, [x9]
+    280c:	b4000109 	cbz	x9, 282c <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0xd8>
+    2810:	f901c509 	str	x9, [x8, #904]
+    2814:	f9400301 	ldr	x1, [x24]
+    2818:	14000006 	b	2830 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0xdc>
+    281c:	aa1903f8 	mov	x24, x25
+    2820:	f9400316 	ldr	x22, [x24]
+    2824:	b5000116 	cbnz	x22, 2844 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0xf0>
+    2828:	17ffffef 	b	27e4 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x90>
+    282c:	aa1603e1 	mov	x1, x22
+    2830:	f94002e0 	ldr	x0, [x23]
+    2834:	940001a7 	bl	2ed0 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@plt>
+    2838:	f94006e8 	ldr	x8, [x23, #8]
+    283c:	91000508 	add	x8, x8, #0x1
+    2840:	f90006e8 	str	x8, [x23, #8]
+    2844:	b98022c8 	ldrsw	x8, [x22, #32]
+    2848:	f9400689 	ldr	x9, [x20, #8]
+    284c:	52800a0a 	mov	w10, #0x50                  	// #80
+    2850:	52800902 	mov	w2, #0x48                  	// #72
+    2854:	aa1303e1 	mov	x1, x19
+    2858:	9b0a2500 	madd	x0, x8, x10, x9
+    285c:	940001bd 	bl	2f50 <android::RpmsgConnector::blockSend(void const*, unsigned long)@plt>
+    2860:	37f80060 	tbnz	w0, #31, 286c <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x118>
+    2864:	2a1f03f3 	mov	w19, wzr
+    2868:	14000008 	b	2888 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x134>
+    286c:	f0ffffe1 	adrp	x1, 1000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x1014>
+    2870:	f0ffffe2 	adrp	x2, 1000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x1014>
+    2874:	2a0003f3 	mov	w19, w0
+    2878:	91006021 	add	x1, x1, #0x18
+    287c:	91001842 	add	x2, x2, #0x6
+    2880:	528000c0 	mov	w0, #0x6                   	// #6
+    2884:	94000177 	bl	2e60 <__android_log_print@plt>
+    2888:	2a1303e0 	mov	w0, w19
+    288c:	a9444ff4 	ldp	x20, x19, [sp, #64]
+    2890:	a94357f6 	ldp	x22, x21, [sp, #48]
+    2894:	a9425ff8 	ldp	x24, x23, [sp, #32]
+    2898:	f9400bf9 	ldr	x25, [sp, #16]
+    289c:	a8c57bfd 	ldp	x29, x30, [sp], #80
+    28a0:	d65f03c0 	ret
+    28a4:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+    28a8:	f9000bf5 	str	x21, [sp, #16]
+    28ac:	a9024ff4 	stp	x20, x19, [sp, #32]
+    28b0:	910003fd 	mov	x29, sp
+    28b4:	b0000008 	adrp	x8, 3000 <__cxa_atexit@plt+0xa0>
+    28b8:	f9400415 	ldr	x21, [x0, #8]
+    28bc:	f9412d08 	ldr	x8, [x8, #600]
+    28c0:	91004108 	add	x8, x8, #0x10
+    28c4:	f9000008 	str	x8, [x0]
+    28c8:	b40001b5 	cbz	x21, 28fc <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x1a8>
+    28cc:	f9400814 	ldr	x20, [x0, #16]
+    28d0:	aa0003f3 	mov	x19, x0
+    28d4:	eb15029f 	cmp	x20, x21
+    28d8:	540001a0 	b.eq	290c <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x1b8>  // b.none
+    28dc:	f85b0e88 	ldr	x8, [x20, #-80]!
+    28e0:	f9400108 	ldr	x8, [x8]
+    28e4:	aa1403e0 	mov	x0, x20
+    28e8:	d63f0100 	blr	x8
+    28ec:	eb1402bf 	cmp	x21, x20
+    28f0:	54ffff61 	b.ne	28dc <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x188>  // b.any
+    28f4:	f9400660 	ldr	x0, [x19, #8]
+    28f8:	14000006 	b	2910 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x1bc>
+    28fc:	a9424ff4 	ldp	x20, x19, [sp, #32]
+    2900:	f9400bf5 	ldr	x21, [sp, #16]
+    2904:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    2908:	d65f03c0 	ret
+    290c:	aa1503e0 	mov	x0, x21
+    2910:	f9000a75 	str	x21, [x19, #16]
+    2914:	a9424ff4 	ldp	x20, x19, [sp, #32]
+    2918:	f9400bf5 	ldr	x21, [sp, #16]
+    291c:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    2920:	14000168 	b	2ec0 <operator delete(void*)@plt>
+    2924:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+    2928:	f9000bf5 	str	x21, [sp, #16]
+    292c:	a9024ff4 	stp	x20, x19, [sp, #32]
+    2930:	910003fd 	mov	x29, sp
+    2934:	b0000008 	adrp	x8, 3000 <__cxa_atexit@plt+0xa0>
+    2938:	f9400415 	ldr	x21, [x0, #8]
+    293c:	f9412d08 	ldr	x8, [x8, #600]
+    2940:	aa0003f3 	mov	x19, x0
+    2944:	91004108 	add	x8, x8, #0x10
+    2948:	f9000008 	str	x8, [x0]
+    294c:	b40001f5 	cbz	x21, 2988 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x234>
+    2950:	f9400a74 	ldr	x20, [x19, #16]
+    2954:	eb15029f 	cmp	x20, x21
+    2958:	54000120 	b.eq	297c <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x228>  // b.none
+    295c:	f85b0e88 	ldr	x8, [x20, #-80]!
+    2960:	f9400108 	ldr	x8, [x8]
+    2964:	aa1403e0 	mov	x0, x20
+    2968:	d63f0100 	blr	x8
+    296c:	eb1402bf 	cmp	x21, x20
+    2970:	54ffff61 	b.ne	295c <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x208>  // b.any
+    2974:	f9400660 	ldr	x0, [x19, #8]
+    2978:	14000002 	b	2980 <android::SeTouchCtrl::postBack(android::touchInfo*, int)@@Base+0x22c>
+    297c:	aa1503e0 	mov	x0, x21
+    2980:	f9000a75 	str	x21, [x19, #16]
+    2984:	9400014f 	bl	2ec0 <operator delete(void*)@plt>
+    2988:	aa1303e0 	mov	x0, x19
+    298c:	a9424ff4 	ldp	x20, x19, [sp, #32]
+    2990:	f9400bf5 	ldr	x21, [sp, #16]
+    2994:	a8c37bfd 	ldp	x29, x30, [sp], #48
+    2998:	1400014a 	b	2ec0 <operator delete(void*)@plt>
+
+000000000000299c <std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::destroy(std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*)@@Base>:
+    299c:	b40001e1 	cbz	x1, 29d8 <std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::destroy(std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*)@@Base+0x3c>
+    29a0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+    29a4:	a9014ff4 	stp	x20, x19, [sp, #16]
+    29a8:	910003fd 	mov	x29, sp
+    29ac:	aa0103f3 	mov	x19, x1
+    29b0:	f9400021 	ldr	x1, [x1]
+    29b4:	aa0003f4 	mov	x20, x0
+    29b8:	94000152 	bl	2f00 <std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::destroy(std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*)@plt>
+    29bc:	f9400661 	ldr	x1, [x19, #8]
+    29c0:	aa1403e0 	mov	x0, x20
+    29c4:	9400014f 	bl	2f00 <std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::destroy(std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*)@plt>
+    29c8:	aa1303e0 	mov	x0, x19
+    29cc:	a9414ff4 	ldp	x20, x19, [sp, #16]
+    29d0:	a8c27bfd 	ldp	x29, x30, [sp], #32
+    29d4:	1400013b 	b	2ec0 <operator delete(void*)@plt>
+    29d8:	d65f03c0 	ret
+
+00000000000029dc <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base>:
+    29dc:	91002008 	add	x8, x0, #0x8
+    29e0:	eb01011f 	cmp	x8, x1
+    29e4:	540000a0 	b.eq	29f8 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x1c>  // b.none
+    29e8:	b9400089 	ldr	w9, [x4]
+    29ec:	b9401c2a 	ldr	w10, [x1, #28]
+    29f0:	6b0a013f 	cmp	w9, w10
+    29f4:	5400018a 	b.ge	2a24 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x48>  // b.tcont
+    29f8:	f9400009 	ldr	x9, [x0]
+    29fc:	f940002a 	ldr	x10, [x1]
+    2a00:	aa0103eb 	mov	x11, x1
+    2a04:	eb01013f 	cmp	x9, x1
+    2a08:	54000340 	b.eq	2a70 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x94>  // b.none
+    2a0c:	b40001ea 	cbz	x10, 2a48 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x6c>
+    2a10:	aa0a03e9 	mov	x9, x10
+    2a14:	aa0903eb 	mov	x11, x9
+    2a18:	f9400529 	ldr	x9, [x9, #8]
+    2a1c:	b5ffffc9 	cbnz	x9, 2a14 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x38>
+    2a20:	14000010 	b	2a60 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x84>
+    2a24:	6b09015f 	cmp	w10, w9
+    2a28:	540005aa 	b.ge	2adc <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x100>  // b.tcont
+    2a2c:	aa0103e3 	mov	x3, x1
+    2a30:	f8408c6b 	ldr	x11, [x3, #8]!
+    2a34:	b40005cb 	cbz	x11, 2aec <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x110>
+    2a38:	aa0b03ea 	mov	x10, x11
+    2a3c:	f940016b 	ldr	x11, [x11]
+    2a40:	b5ffffcb 	cbnz	x11, 2a38 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x5c>
+    2a44:	14000035 	b	2b18 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x13c>
+    2a48:	aa0103eb 	mov	x11, x1
+    2a4c:	aa0b03e9 	mov	x9, x11
+    2a50:	f940096b 	ldr	x11, [x11, #16]
+    2a54:	f940016c 	ldr	x12, [x11]
+    2a58:	eb09019f 	cmp	x12, x9
+    2a5c:	54ffff80 	b.eq	2a4c <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x70>  // b.none
+    2a60:	b9401d6c 	ldr	w12, [x11, #28]
+    2a64:	b9400089 	ldr	w9, [x4]
+    2a68:	6b09019f 	cmp	w12, w9
+    2a6c:	540000aa 	b.ge	2a80 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xa4>  // b.tcont
+    2a70:	b400030a 	cbz	x10, 2ad0 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xf4>
+    2a74:	91002160 	add	x0, x11, #0x8
+    2a78:	f900004b 	str	x11, [x2]
+    2a7c:	d65f03c0 	ret
+    2a80:	f940010a 	ldr	x10, [x8]
+    2a84:	b400082a 	cbz	x10, 2b88 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x1ac>
+    2a88:	91002003 	add	x3, x0, #0x8
+    2a8c:	14000002 	b	2a94 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xb8>
+    2a90:	aa0803ea 	mov	x10, x8
+    2a94:	b9401d48 	ldr	w8, [x10, #28]
+    2a98:	6b08013f 	cmp	w9, w8
+    2a9c:	540000aa 	b.ge	2ab0 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xd4>  // b.tcont
+    2aa0:	f9400148 	ldr	x8, [x10]
+    2aa4:	b4000488 	cbz	x8, 2b34 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x158>
+    2aa8:	aa0a03e3 	mov	x3, x10
+    2aac:	17fffff9 	b	2a90 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xb4>
+    2ab0:	6b09011f 	cmp	w8, w9
+    2ab4:	5400008a 	b.ge	2ac4 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xe8>  // b.tcont
+    2ab8:	aa0a03e3 	mov	x3, x10
+    2abc:	f8408c68 	ldr	x8, [x3, #8]!
+    2ac0:	b5fffe88 	cbnz	x8, 2a90 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xb4>
+    2ac4:	aa0303e0 	mov	x0, x3
+    2ac8:	f900004a 	str	x10, [x2]
+    2acc:	d65f03c0 	ret
+    2ad0:	aa0103e0 	mov	x0, x1
+    2ad4:	f9000041 	str	x1, [x2]
+    2ad8:	d65f03c0 	ret
+    2adc:	aa0303e0 	mov	x0, x3
+    2ae0:	f9000041 	str	x1, [x2]
+    2ae4:	f9000061 	str	x1, [x3]
+    2ae8:	d65f03c0 	ret
+    2aec:	aa0103eb 	mov	x11, x1
+    2af0:	f8410d6a 	ldr	x10, [x11, #16]!
+    2af4:	f940014c 	ldr	x12, [x10]
+    2af8:	eb01019f 	cmp	x12, x1
+    2afc:	540000e0 	b.eq	2b18 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x13c>  // b.none
+    2b00:	f940016c 	ldr	x12, [x11]
+    2b04:	aa0c03eb 	mov	x11, x12
+    2b08:	f8410d6a 	ldr	x10, [x11, #16]!
+    2b0c:	f940014d 	ldr	x13, [x10]
+    2b10:	eb0c01bf 	cmp	x13, x12
+    2b14:	54ffff61 	b.ne	2b00 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x124>  // b.any
+    2b18:	eb08015f 	cmp	x10, x8
+    2b1c:	54000080 	b.eq	2b2c <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x150>  // b.none
+    2b20:	b9401d4b 	ldr	w11, [x10, #28]
+    2b24:	6b0b013f 	cmp	w9, w11
+    2b28:	540000ca 	b.ge	2b40 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x164>  // b.tcont
+    2b2c:	f9400428 	ldr	x8, [x1, #8]
+    2b30:	b4000328 	cbz	x8, 2b94 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x1b8>
+    2b34:	aa0a03e0 	mov	x0, x10
+    2b38:	f900004a 	str	x10, [x2]
+    2b3c:	d65f03c0 	ret
+    2b40:	f940010a 	ldr	x10, [x8]
+    2b44:	b400022a 	cbz	x10, 2b88 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x1ac>
+    2b48:	91002003 	add	x3, x0, #0x8
+    2b4c:	14000002 	b	2b54 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x178>
+    2b50:	aa0803ea 	mov	x10, x8
+    2b54:	b9401d48 	ldr	w8, [x10, #28]
+    2b58:	6b08013f 	cmp	w9, w8
+    2b5c:	540000aa 	b.ge	2b70 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x194>  // b.tcont
+    2b60:	f9400148 	ldr	x8, [x10]
+    2b64:	b4fffe88 	cbz	x8, 2b34 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x158>
+    2b68:	aa0a03e3 	mov	x3, x10
+    2b6c:	17fffff9 	b	2b50 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x174>
+    2b70:	6b09011f 	cmp	w8, w9
+    2b74:	54fffa8a 	b.ge	2ac4 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xe8>  // b.tcont
+    2b78:	aa0a03e3 	mov	x3, x10
+    2b7c:	f8408c68 	ldr	x8, [x3, #8]!
+    2b80:	b5fffe88 	cbnz	x8, 2b50 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0x174>
+    2b84:	17ffffd0 	b	2ac4 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@@Base+0xe8>
+    2b88:	aa0803e0 	mov	x0, x8
+    2b8c:	f9000048 	str	x8, [x2]
+    2b90:	d65f03c0 	ret
+    2b94:	aa0303e0 	mov	x0, x3
+    2b98:	f9000041 	str	x1, [x2]
+    2b9c:	d65f03c0 	ret
+
+0000000000002ba0 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base>:
+    2ba0:	eb00003f 	cmp	x1, x0
+    2ba4:	1a9f17e8 	cset	w8, eq	// eq = none
+    2ba8:	39006028 	strb	w8, [x1, #24]
+    2bac:	54000580 	b.eq	2c5c <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0xbc>  // b.none
+    2bb0:	5280002a 	mov	w10, #0x1                   	// #1
+    2bb4:	14000008 	b	2bd4 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x34>
+    2bb8:	eb00011f 	cmp	x8, x0
+    2bbc:	3900612a 	strb	w10, [x9, #24]
+    2bc0:	1a9f17e9 	cset	w9, eq	// eq = none
+    2bc4:	aa0803e1 	mov	x1, x8
+    2bc8:	39006109 	strb	w9, [x8, #24]
+    2bcc:	3900016a 	strb	w10, [x11]
+    2bd0:	54000460 	b.eq	2c5c <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0xbc>  // b.none
+    2bd4:	f9400829 	ldr	x9, [x1, #16]
+    2bd8:	39406128 	ldrb	w8, [x9, #24]
+    2bdc:	35000408 	cbnz	w8, 2c5c <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0xbc>
+    2be0:	f9400928 	ldr	x8, [x9, #16]
+    2be4:	f940010b 	ldr	x11, [x8]
+    2be8:	eb09017f 	cmp	x11, x9
+    2bec:	540000a0 	b.eq	2c00 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x60>  // b.none
+    2bf0:	b400038b 	cbz	x11, 2c60 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0xc0>
+    2bf4:	38418d6c 	ldrb	w12, [x11, #24]!
+    2bf8:	34fffe0c 	cbz	w12, 2bb8 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x18>
+    2bfc:	14000019 	b	2c60 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0xc0>
+    2c00:	f940050b 	ldr	x11, [x8, #8]
+    2c04:	b400006b 	cbz	x11, 2c10 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x70>
+    2c08:	38418d6c 	ldrb	w12, [x11, #24]!
+    2c0c:	34fffd6c 	cbz	w12, 2bb8 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x18>
+    2c10:	f940012a 	ldr	x10, [x9]
+    2c14:	eb01015f 	cmp	x10, x1
+    2c18:	540006e0 	b.eq	2cf4 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x154>  // b.none
+    2c1c:	f940052a 	ldr	x10, [x9, #8]
+    2c20:	f940014b 	ldr	x11, [x10]
+    2c24:	f900052b 	str	x11, [x9, #8]
+    2c28:	b400006b 	cbz	x11, 2c34 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x94>
+    2c2c:	f9000969 	str	x9, [x11, #16]
+    2c30:	f9400928 	ldr	x8, [x9, #16]
+    2c34:	f9000948 	str	x8, [x10, #16]
+    2c38:	f9400928 	ldr	x8, [x9, #16]
+    2c3c:	f940010b 	ldr	x11, [x8]
+    2c40:	eb09017f 	cmp	x11, x9
+    2c44:	1a9f07eb 	cset	w11, ne	// ne = any
+    2c48:	f82b590a 	str	x10, [x8, w11, uxtw #3]
+    2c4c:	f9000149 	str	x9, [x10]
+    2c50:	f900092a 	str	x10, [x9, #16]
+    2c54:	f9400948 	ldr	x8, [x10, #16]
+    2c58:	14000028 	b	2cf8 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x158>
+    2c5c:	d65f03c0 	ret
+    2c60:	f940012a 	ldr	x10, [x9]
+    2c64:	eb01015f 	cmp	x10, x1
+    2c68:	54000060 	b.eq	2c74 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0xd4>  // b.none
+    2c6c:	aa0903e1 	mov	x1, x9
+    2c70:	1400000f 	b	2cac <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x10c>
+    2c74:	f940042a 	ldr	x10, [x1, #8]
+    2c78:	f900012a 	str	x10, [x9]
+    2c7c:	b400006a 	cbz	x10, 2c88 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0xe8>
+    2c80:	f9000949 	str	x9, [x10, #16]
+    2c84:	f9400928 	ldr	x8, [x9, #16]
+    2c88:	f9000828 	str	x8, [x1, #16]
+    2c8c:	f9400928 	ldr	x8, [x9, #16]
+    2c90:	f940010a 	ldr	x10, [x8]
+    2c94:	eb09015f 	cmp	x10, x9
+    2c98:	1a9f07ea 	cset	w10, ne	// ne = any
+    2c9c:	f82a5901 	str	x1, [x8, w10, uxtw #3]
+    2ca0:	f9000429 	str	x9, [x1, #8]
+    2ca4:	f9000921 	str	x1, [x9, #16]
+    2ca8:	f9400828 	ldr	x8, [x1, #16]
+    2cac:	52800029 	mov	w9, #0x1                   	// #1
+    2cb0:	39006029 	strb	w9, [x1, #24]
+    2cb4:	f9400509 	ldr	x9, [x8, #8]
+    2cb8:	3900611f 	strb	wzr, [x8, #24]
+    2cbc:	f940012a 	ldr	x10, [x9]
+    2cc0:	f900050a 	str	x10, [x8, #8]
+    2cc4:	b400004a 	cbz	x10, 2ccc <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x12c>
+    2cc8:	f9000948 	str	x8, [x10, #16]
+    2ccc:	f940090a 	ldr	x10, [x8, #16]
+    2cd0:	f900092a 	str	x10, [x9, #16]
+    2cd4:	f940090a 	ldr	x10, [x8, #16]
+    2cd8:	f940014b 	ldr	x11, [x10]
+    2cdc:	eb08017f 	cmp	x11, x8
+    2ce0:	1a9f07eb 	cset	w11, ne	// ne = any
+    2ce4:	f82b5949 	str	x9, [x10, w11, uxtw #3]
+    2ce8:	f9000128 	str	x8, [x9]
+    2cec:	f9000909 	str	x9, [x8, #16]
+    2cf0:	d65f03c0 	ret
+    2cf4:	aa0903ea 	mov	x10, x9
+    2cf8:	52800029 	mov	w9, #0x1                   	// #1
+    2cfc:	39006149 	strb	w9, [x10, #24]
+    2d00:	f9400109 	ldr	x9, [x8]
+    2d04:	3900611f 	strb	wzr, [x8, #24]
+    2d08:	f940052a 	ldr	x10, [x9, #8]
+    2d0c:	f900010a 	str	x10, [x8]
+    2d10:	b400004a 	cbz	x10, 2d18 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x178>
+    2d14:	f9000948 	str	x8, [x10, #16]
+    2d18:	f940090a 	ldr	x10, [x8, #16]
+    2d1c:	f900092a 	str	x10, [x9, #16]
+    2d20:	f940090a 	ldr	x10, [x8, #16]
+    2d24:	f940014b 	ldr	x11, [x10]
+    2d28:	eb08017f 	cmp	x11, x8
+    2d2c:	1a9f07eb 	cset	w11, ne	// ne = any
+    2d30:	f82b5949 	str	x9, [x10, w11, uxtw #3]
+    2d34:	f9000528 	str	x8, [x9, #8]
+    2d38:	f9000909 	str	x9, [x8, #16]
+    2d3c:	d65f03c0 	ret
+    2d40:	d10183ff 	sub	sp, sp, #0x60
+    2d44:	a9047bfd 	stp	x29, x30, [sp, #64]
+    2d48:	a9054ff4 	stp	x20, x19, [sp, #80]
+    2d4c:	910103fd 	add	x29, sp, #0x40
+    2d50:	f0ffffe8 	adrp	x8, 1000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x1014>
+    2d54:	d53bd054 	mrs	x20, tpidr_el0
+    2d58:	91009108 	add	x8, x8, #0x24
+    2d5c:	f9401689 	ldr	x9, [x20, #40]
+    2d60:	ad400500 	ldp	q0, q1, [x8]
+    2d64:	d0000013 	adrp	x19, 4000 <vtable for android::SeTouchCtrl@@Base+0xfd8>
+    2d68:	910e2273 	add	x19, x19, #0x388
+    2d6c:	910043e1 	add	x1, sp, #0x10
+    2d70:	910023e3 	add	x3, sp, #0x8
+    2d74:	52800082 	mov	w2, #0x4                   	// #4
+    2d78:	aa1303e0 	mov	x0, x19
+    2d7c:	f81f83a9 	stur	x9, [x29, #-8]
+    2d80:	ad0087e0 	stp	q0, q1, [sp, #16]
+    2d84:	97fffd9f 	bl	2400 <android::RpmsgConnector::blockSend(void const*, unsigned long)@@Base+0x140>
+    2d88:	90000000 	adrp	x0, 2000 <android::RpmsgConnector::RpmsgConnector()@@Base-0x14>
+    2d8c:	b0000002 	adrp	x2, 3000 <__cxa_atexit@plt+0xa0>
+    2d90:	9113e000 	add	x0, x0, #0x4f8
+    2d94:	91000042 	add	x2, x2, #0x0
+    2d98:	aa1303e1 	mov	x1, x19
+    2d9c:	94000071 	bl	2f60 <__cxa_atexit@plt>
+    2da0:	f9401688 	ldr	x8, [x20, #40]
+    2da4:	f85f83a9 	ldur	x9, [x29, #-8]
+    2da8:	eb09011f 	cmp	x8, x9
+    2dac:	540000a1 	b.ne	2dc0 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base+0x220>  // b.any
+    2db0:	a9454ff4 	ldp	x20, x19, [sp, #80]
+    2db4:	a9447bfd 	ldp	x29, x30, [sp, #64]
+    2db8:	910183ff 	add	sp, sp, #0x60
+    2dbc:	d65f03c0 	ret
+    2dc0:	94000030 	bl	2e80 <__stack_chk_fail@plt>
+
+Disassembly of section .plt:
+
+0000000000002dd0 <__cxa_finalize@plt-0x20>:
+    2dd0:	a9bf7bf0 	stp	x16, x30, [sp, #-16]!
+    2dd4:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2dd8:	f9413a11 	ldr	x17, [x16, #624]
+    2ddc:	9109c210 	add	x16, x16, #0x270
+    2de0:	d61f0220 	br	x17
+    2de4:	d503201f 	nop
+    2de8:	d503201f 	nop
+    2dec:	d503201f 	nop
+
+0000000000002df0 <__cxa_finalize@plt>:
+    2df0:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2df4:	f9413e11 	ldr	x17, [x16, #632]
+    2df8:	9109e210 	add	x16, x16, #0x278
+    2dfc:	d61f0220 	br	x17
+
+0000000000002e00 <__strcpy_chk@plt>:
+    2e00:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e04:	f9414211 	ldr	x17, [x16, #640]
+    2e08:	910a0210 	add	x16, x16, #0x280
+    2e0c:	d61f0220 	br	x17
+
+0000000000002e10 <__open_2@plt>:
+    2e10:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e14:	f9414611 	ldr	x17, [x16, #648]
+    2e18:	910a2210 	add	x16, x16, #0x288
+    2e1c:	d61f0220 	br	x17
+
+0000000000002e20 <access@plt>:
+    2e20:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e24:	f9414a11 	ldr	x17, [x16, #656]
+    2e28:	910a4210 	add	x16, x16, #0x290
+    2e2c:	d61f0220 	br	x17
+
+0000000000002e30 <ioctl@plt>:
+    2e30:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e34:	f9414e11 	ldr	x17, [x16, #664]
+    2e38:	910a6210 	add	x16, x16, #0x298
+    2e3c:	d61f0220 	br	x17
+
+0000000000002e40 <usleep@plt>:
+    2e40:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e44:	f9415211 	ldr	x17, [x16, #672]
+    2e48:	910a8210 	add	x16, x16, #0x2a0
+    2e4c:	d61f0220 	br	x17
+
+0000000000002e50 <std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::operator=(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@plt>:
+    2e50:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e54:	f9415611 	ldr	x17, [x16, #680]
+    2e58:	910aa210 	add	x16, x16, #0x2a8
+    2e5c:	d61f0220 	br	x17
+
+0000000000002e60 <__android_log_print@plt>:
+    2e60:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e64:	f9415a11 	ldr	x17, [x16, #688]
+    2e68:	910ac210 	add	x16, x16, #0x2b0
+    2e6c:	d61f0220 	br	x17
+
+0000000000002e70 <close@plt>:
+    2e70:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e74:	f9415e11 	ldr	x17, [x16, #696]
+    2e78:	910ae210 	add	x16, x16, #0x2b8
+    2e7c:	d61f0220 	br	x17
+
+0000000000002e80 <__stack_chk_fail@plt>:
+    2e80:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e84:	f9416211 	ldr	x17, [x16, #704]
+    2e88:	910b0210 	add	x16, x16, #0x2c0
+    2e8c:	d61f0220 	br	x17
+
+0000000000002e90 <__vsprintf_chk@plt>:
+    2e90:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2e94:	f9416611 	ldr	x17, [x16, #712]
+    2e98:	910b2210 	add	x16, x16, #0x2c8
+    2e9c:	d61f0220 	br	x17
+
+0000000000002ea0 <__memcpy_chk@plt>:
+    2ea0:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2ea4:	f9416a11 	ldr	x17, [x16, #720]
+    2ea8:	910b4210 	add	x16, x16, #0x2d0
+    2eac:	d61f0220 	br	x17
+
+0000000000002eb0 <__write_chk@plt>:
+    2eb0:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2eb4:	f9416e11 	ldr	x17, [x16, #728]
+    2eb8:	910b6210 	add	x16, x16, #0x2d8
+    2ebc:	d61f0220 	br	x17
+
+0000000000002ec0 <operator delete(void*)@plt>:
+    2ec0:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2ec4:	f9417211 	ldr	x17, [x16, #736]
+    2ec8:	910b8210 	add	x16, x16, #0x2e0
+    2ecc:	d61f0220 	br	x17
+
+0000000000002ed0 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@plt>:
+    2ed0:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2ed4:	f9417611 	ldr	x17, [x16, #744]
+    2ed8:	910ba210 	add	x16, x16, #0x2e8
+    2edc:	d61f0220 	br	x17
+
+0000000000002ee0 <std::__1::__tree_node_base<void*>*& std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::__find_equal<int>(std::__1::__tree_const_iterator<std::__1::__value_type<int, int>, std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*, long>, std::__1::__tree_end_node<std::__1::__tree_node_base<void*>*>*&, std::__1::__tree_node_base<void*>*&, int const&)@plt>:
+    2ee0:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2ee4:	f9417a11 	ldr	x17, [x16, #752]
+    2ee8:	910bc210 	add	x16, x16, #0x2f0
+    2eec:	d61f0220 	br	x17
+
+0000000000002ef0 <operator new(unsigned long)@plt>:
+    2ef0:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2ef4:	f9417e11 	ldr	x17, [x16, #760]
+    2ef8:	910be210 	add	x16, x16, #0x2f8
+    2efc:	d61f0220 	br	x17
+
+0000000000002f00 <std::__1::__tree<std::__1::__value_type<int, int>, std::__1::__map_value_compare<int, std::__1::__value_type<int, int>, std::__1::less<int>, true>, std::__1::allocator<std::__1::__value_type<int, int> > >::destroy(std::__1::__tree_node<std::__1::__value_type<int, int>, void*>*)@plt>:
+    2f00:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2f04:	f9418211 	ldr	x17, [x16, #768]
+    2f08:	910c0210 	add	x16, x16, #0x300
+    2f0c:	d61f0220 	br	x17
+
+0000000000002f10 <android::RpmsgConnector::RpmsgConnector()@plt>:
+    2f10:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2f14:	f9418611 	ldr	x17, [x16, #776]
+    2f18:	910c2210 	add	x16, x16, #0x308
+    2f1c:	d61f0220 	br	x17
+
+0000000000002f20 <android::SeTouchCtrl::initRpmsgConnector(int)@plt>:
+    2f20:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2f24:	f9418a11 	ldr	x17, [x16, #784]
+    2f28:	910c4210 	add	x16, x16, #0x310
+    2f2c:	d61f0220 	br	x17
+
+0000000000002f30 <android::RpmsgConnector::start(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, android::RpmsgEndpointInfo const*)@plt>:
+    2f30:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2f34:	f9418e11 	ldr	x17, [x16, #792]
+    2f38:	910c6210 	add	x16, x16, #0x318
+    2f3c:	d61f0220 	br	x17
+
+0000000000002f40 <android::RpmsgConnector::stop()@plt>:
+    2f40:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2f44:	f9419211 	ldr	x17, [x16, #800]
+    2f48:	910c8210 	add	x16, x16, #0x320
+    2f4c:	d61f0220 	br	x17
+
+0000000000002f50 <android::RpmsgConnector::blockSend(void const*, unsigned long)@plt>:
+    2f50:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2f54:	f9419611 	ldr	x17, [x16, #808]
+    2f58:	910ca210 	add	x16, x16, #0x328
+    2f5c:	d61f0220 	br	x17
+
+0000000000002f60 <__cxa_atexit@plt>:
+    2f60:	b0000010 	adrp	x16, 3000 <__cxa_atexit@plt+0xa0>
+    2f64:	f9419a11 	ldr	x17, [x16, #816]
+    2f68:	910cc210 	add	x16, x16, #0x330
+    2f6c:	d61f0220 	br	x17

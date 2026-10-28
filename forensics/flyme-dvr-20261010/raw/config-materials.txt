@@ -1,0 +1,101 @@
+Sun Oct 11 20:32:01 CST 2026
+android.car.jar
+android.hardware.csdupdate-V1.0-java.jar
+boot-android.car.vdex
+car-frameworks-service.jar
+android.hardware.configstore-utils.so
+android.hardware.configstore@1.0.so
+android.hardware.configstore@1.1.so
+carwatchdog_aidl_interface-V2-cpp.so
+libCarPlayPlatformMedia.so
+libcar-framework-service-jni.so
+libcarpowermanager.so
+libdiskconfig.so
+libecarx_engine.so
+libeffectsconfig.so
+libiPod_CarPlay.so
+server_configurable_flags.so
+ts-carplay-adapter.jar
+carwatchdog_aidl_interface-V2-ndk_platform.so
+libbccArm_bifrost.so
+libeffectsconfig.so
+libiPod_CarPlay.so
+lrw-r--r--  1 root   root    11 2009-01-01 08:00 /cache -> /data/cache
+
+/data/local:
+total 20
+drwxr-x--x  5 root   root   3452 1970-01-01 08:00 .
+drwxrwx--x 50 system system 4096 2026-10-11 20:13 ..
+drwxrwxrwx  2 system system 3452 2026-10-11 20:13 ipc
+drwxrwx--x  7 shell  shell  3452 2026-10-11 20:30 tmp
+drwxrwxrwx  2 shell  shell  3452 1970-01-01 08:00 traces
+
+/data/misc/update_engine:
+total 9
+drwx------  3 root   root 3452 1970-01-01 08:00 .
+drwxrwx--t 56 system misc 3452 1970-01-01 08:00 ..
+drwx------  2 root   root 3452 2026-08-03 19:06 prefs
+
+/data/ota:
+total 11
+drwxrwx--x  2 root   root   3452 1970-01-01 08:00 .
+drwxrwx--x 50 system system 4096 2026-10-11 20:13 ..
+
+/data/ota_package:
+total 19
+drwxrwx---  3 system cache  4096 2026-08-04 18:40 .
+drwxrwx--x 50 system system 4096 2026-10-11 20:13 ..
+-rw-r--r--  1 root   root     16 2025-09-19 21:16 mytest.txt
+drwx------  2 system system 3488 2026-08-04 18:40 sota
+
+/data/vendor:
+total 46
+drwxrwx--x 12 root   root   3452 1970-01-01 08:00 .
+drwxrwx--x 50 system system 4096 2026-10-11 20:13 ..
+drwxrwx--x  2 root   root   3452 1970-01-01 08:00 hardware
+drwx------  2 root   root   3452 1970-01-01 08:00 iap
+drwxr-xr-x  3 root   root   4096 1970-01-01 08:00 kdump
+drwxrwx---  2 root   system 3452 1970-01-01 08:00 sensor
+drwxrwx---  2 root   system 3452 1970-01-01 08:00 ss
+drwxrwxr-x  2 system system 3452 1970-01-01 08:00 test_openssl
+drwxrwx--x  3 root   root   3452 1970-01-01 08:00 tombstones
+drwxrwx--x  3 gps    root   3452 1970-01-01 08:00 unicore
+drwxrwxrwx  2 system system 3452 2026-10-11 20:25 vehicle
+drwxrwx--x  4 wifi   wifi   3452 1970-01-01 08:00 wifi
+
+/mnt/vendor:
+total 0
+drwxr-xr-x  2 root root    40 1970-01-01 08:00 .
+drwxr-xr-x 16 root system 340 1970-01-01 08:00 ..
+ab1019bdd000-ab1019be1000 r--p 00000000 fc:07 93                         /vendor/bin/hw/android.hardware.csdupdate@1.0-service
+ab1019be1000-ab1019be5000 r-xp 00004000 fc:07 93                         /vendor/bin/hw/android.hardware.csdupdate@1.0-service
+ab1019be5000-ab1019be6000 r--p 00008000 fc:07 93                         /vendor/bin/hw/android.hardware.csdupdate@1.0-service
+ab1019be6000-ab1019be7000 rw-p 00008000 fc:07 93                         /vendor/bin/hw/android.hardware.csdupdate@1.0-service
+f61ad55c8000-f61ad55d7000 r--p 00000000 fc:06 931                        /apex/com.android.vndk.v30/lib64/android.hardware.csdupdate@1.0.so
+f61ad55d7000-f61ad55e8000 r-xp 0000f000 fc:06 931                        /apex/com.android.vndk.v30/lib64/android.hardware.csdupdate@1.0.so
+f61ad55e8000-f61ad55eb000 r--p 00020000 fc:06 931                        /apex/com.android.vndk.v30/lib64/android.hardware.csdupdate@1.0.so
+f61ad55eb000-f61ad55ec000 rw-p 00022000 fc:06 931                        /apex/com.android.vndk.v30/lib64/android.hardware.csdupdate@1.0.so
+acc41f315000-acc41f319000 r--p 00000000 fc:06 2048                       /system/bin/ecarx_update_engine
+acc41f319000-acc41f31f000 r-xp 00004000 fc:06 2048                       /system/bin/ecarx_update_engine
+acc41f31f000-acc41f321000 r--p 0000a000 fc:06 2048                       /system/bin/ecarx_update_engine
+acc41f321000-acc41f322000 rw-p 0000b000 fc:06 2048                       /system/bin/ecarx_update_engine
+e684b78c4000-e684b78cf000 r--p 00000000 fc:06 5132                       /system/lib64/android.hardware.boot@1.0.so
+e684b78cf000-e684b78dc000 r-xp 0000b000 fc:06 5132                       /system/lib64/android.hardware.boot@1.0.so
+e684b78dc000-e684b78de000 r--p 00018000 fc:06 5132                       /system/lib64/android.hardware.boot@1.0.so
+e684b78de000-e684b78df000 rw-p 00019000 fc:06 5132                       /system/lib64/android.hardware.boot@1.0.so
+e684b7c4e000-e684b7c4f000 r--p 00000000 fc:06 5410                       /system/lib64/libhardware.so
+e684b7c4f000-e684b7c50000 r-xp 00001000 fc:06 5410                       /system/lib64/libhardware.so
+e684b7c50000-e684b7c51000 r--p 00002000 fc:06 5410                       /system/lib64/libhardware.so
+package:/system/priv-app/GeelyXSFDeviceService/GeelyXSFDeviceService.apk=com.ecarx.deviceinfo.service
+package:/product/overlay/IconPackVictorSettings/IconPackVictorSettingsOverlay.apk=com.android.theme.icon_pack.victor.settings
+package:/product/overlay/IconPackKaiSettings/IconPackKaiSettingsOverlay.apk=com.android.theme.icon_pack.kai.settings
+package:/product/overlay/IconPackSamSettings/IconPackSamSettingsOverlay.apk=com.android.theme.icon_pack.sam.settings
+package:/product/priv-app/SettingsIntelligence/SettingsIntelligence.apk=com.android.settings.intelligence
+package:/system/priv-app/CarSettings/CarSettings.apk=com.android.car.settings
+package:/system/app/GeelyAutoPredictiveEnergy/GeelyAutoPredictiveEnergy.apk=com.flyme.auto.carenergyadapter
+package:/system/priv-app/SettingsProvider/SettingsProvider.apk=com.android.providers.settings
+package:/system/app/GeelyAutoConnectivitySettings/GeelyAutoConnectivitySettings.apk=com.flyme.auto.connectivitysettings
+package:/product/overlay/IconPackFilledSettings/IconPackFilledSettingsOverlay.apk=com.android.theme.icon_pack.filled.settings
+package:/product/overlay/IconPackCircularSettings/IconPackCircularSettingsOverlay.apk=com.android.theme.icon_pack.circular.settings
+package:/system/app/GeelyAutoSettings/GeelyAutoSettings.apk=com.flyme.auto.settings
+package:/product/overlay/IconPackRoundedSettings/IconPackRoundedSettingsOverlay.apk=com.android.theme.icon_pack.rounded.settings

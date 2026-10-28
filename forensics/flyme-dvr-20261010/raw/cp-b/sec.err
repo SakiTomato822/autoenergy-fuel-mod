@@ -1,0 +1,16 @@
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+/data/data/com.termux/files/home/forensics/flyme-dvr-20261010/erofs-section-extract.cjs:8
+for(const name of process.argv.slice(2)){const s=sec.find(x=>x.name===name);if(!s)throw Error('missing '+name+' available='+sec.map(x=>x.name).join(','));const fd=fs.openSync(path.join(out,name.replace(/^\./,'')), 'w');let p=0;while(p<s.size){const z=Math.min(1024*1024,s.size-p);fs.writeSync(fd,read(s.off+p,z));p+=z;}fs.closeSync(fd);console.log(name,s.size);}fs.writeFileSync(path.join(out,'read-meta.json'),JSON.stringify({source:ent.path,fileSize:ent.size,sections:process.argv.slice(2),blocks:reads},null,2));
+                                                                                  ^
+
+Error: missing .debug_info available=,,__abi_tag,g,fn,rviceHandler.cpp,pp,4core6ResultIvNS0_9ErrorCodeEEaSEOS3_.isra.0,sultIvNS0_9ErrorCodeEEaSEOS3_.isra.0,0_9ErrorCodeEEaSEOS3_.isra.0,EaSEOS3_.isra.0,,xx1112basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_.constprop.0,c_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_.constprop.0,2basic_stringIcSt11char_traitsIcESaIcEEC2EPKcRKS3_.constprop.0,ngIcSt11char_traitsIcESaIcEEC2EPKcRKS3_.constprop.0,11char_traitsIcESaIcEEC2EPKcRKS3_.constprop.0,_traitsIcESaIcEEC2EPKcRKS3_.constprop.0,cESaIcEEC2EPKcRKS3_.constprop.0,RKS3_.constprop.0,tprop.0,areUtils7KSysloglsEh.isra.0,sloglsEh.isra.0,a.0,ore6ResultIvNS0_9ErrorCodeEE9FromErrorIJNS_3com7ComErrcEEEENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,tIvNS0_9ErrorCodeEE9FromErrorIJNS_3com7ComErrcEEEENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,0_9ErrorCodeEE9FromErrorIJNS_3com7ComErrcEEEENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,odeEE9FromErrorIJNS_3com7ComErrcEEEENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,FromErrorIJNS_3com7ComErrcEEEENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,rrorIJNS_3com7ComErrcEEEENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,3com7ComErrcEEEENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,ENSt9enable_ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,ifIXsrSt16is_constructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,onstructibleIS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,IS2_JDpT_EE5valueES3_E4typeEDpOS9_.isra.0,5valueES3_E4typeEDpOS9_.isra.0,EDpOS9_.isra.0,ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE12_M_constructIPcEEvT_S7_St20forward_iterator_tag.isra.0,start.os,
+    at Object.<anonymous> (/data/data/com.termux/files/home/forensics/flyme-dvr-20261010/erofs-section-extract.cjs:8:89)
+    at Module._compile (node:internal/modules/cjs/loader:1871:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:2002:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v24.18.0

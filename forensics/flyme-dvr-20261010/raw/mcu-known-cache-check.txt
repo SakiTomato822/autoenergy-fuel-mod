@@ -1,0 +1,15 @@
+Sun Oct 11 21:02:45 CST 2026
+ls: /data/ota_package/ab_update: No such file or directory
+/data/ota:
+total 11
+drwxrwx--x  2 root   root   3452 1970-01-01 08:00 .
+drwxrwx--x 50 system system 4096 2026-10-11 20:13 ..
+
+/data/ota_package:
+total 19
+drwxrwx---  3 system cache  4096 2026-08-04 18:40 .
+drwxrwx--x 50 system system 4096 2026-10-11 20:13 ..
+-rw-r--r--  1 root   root     16 2025-09-19 21:16 mytest.txt
+drwx------  2 system system 3488 2026-08-04 18:40 sota
+ls: /data/ota_package/ab_update.zip: No such file or directory
+ls: /private/mcu_update.zip: No such file or directory

@@ -1,0 +1,2096 @@
+
+METHOD Lecarx/upgrade/ota/helper/OTAZipHelper;->copyMcuZipByMpuZip code=652552 regs=13 ins=2
+   0 0022 08dd 
+   2 1070 35b9 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a 2d79 "copyMcuZipByMpuZip filePath:"
+   7 206e 35c3 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e 35c3 00b0 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 011a 002d " name:"
+  17 206e 35c3 0010 Ljava/lang/StringBuilder;->append
+  20 000c 
+  21 206e 35c3 00c0 Ljava/lang/StringBuilder;->append
+  24 000c 
+  25 106e 35c7 0000 Ljava/lang/StringBuilder;->toString
+  28 000c 
+  29 1071 022f 0000 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+  32 001a 0000 ""
+  34 1071 0121 000b Landroid/text/TextUtils;->isEmpty
+  37 010a 
+  38 0212 const/4 v2 0
+  39 0139 00e2 if target 265
+  41 1071 0121 000c Landroid/text/TextUtils;->isEmpty
+  44 010a 
+  45 0138 0004 if target 49
+  47 0029 00da 
+  49 0122 08a5 
+  51 2070 34ef 00b1 Ljava/io/File;-><init>
+  54 0112 const/4 v1 0
+  55 0322 0959 
+  57 2070 3768 00b3 Ljava/util/zip/ZipFile;-><init>
+  60 0b22 08dd 
+  62 1070 35b9 000b Ljava/lang/StringBuilder;-><init>
+  65 041a 0239 "/private"
+  67 206e 35c3 004b Ljava/lang/StringBuilder;->append
+  70 0b0c 
+  71 0462 5b83 Ljava/io/File;->separator:Ljava/lang/String;
+  73 206e 35c3 004b Ljava/lang/StringBuilder;->append
+  76 0b0c 
+  77 041a 4993 "mcu_update.zip"
+  79 206e 35c3 004b Ljava/lang/StringBuilder;->append
+  82 0b0c 
+  83 106e 35c7 000b Ljava/lang/StringBuilder;->toString
+  86 0b0c 
+  87 0422 08dd 
+  89 1070 35b9 0004 Ljava/lang/StringBuilder;-><init>
+  92 051a 4e19 "path="
+  94 206e 35c3 0054 Ljava/lang/StringBuilder;->append
+  97 040c 
+  98 206e 35c3 00b4 Ljava/lang/StringBuilder;->append
+ 101 040c 
+ 102 106e 35c7 0004 Ljava/lang/StringBuilder;->toString
+ 105 040c 
+ 106 1071 022f 0004 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+ 109 0422 08a5 
+ 111 2070 34ef 00b4 Ljava/io/File;-><init>
+ 114 106e 34f4 0004 Ljava/io/File;->exists
+ 117 050a 
+ 118 0538 0006 if target 124
+ 120 106e 34f3 0004 Ljava/io/File;->delete
+ 123 1228 
+ 124 106e 34fb 0004 Ljava/io/File;->getParentFile
+ 127 050c 
+ 128 106e 34f4 0005 Ljava/io/File;->exists
+ 131 050a 
+ 132 0539 0009 if target 141
+ 134 106e 34fb 0004 Ljava/io/File;->getParentFile
+ 137 040c 
+ 138 106e 3504 0004 Ljava/io/File;->mkdirs
+ 141 0422 08a8 
+ 143 2070 350e 00b4 Ljava/io/FileOutputStream;-><init>
+ 146 106e 376a 0003 Ljava/util/zip/ZipFile;->entries
+ 149 050c 
+ 150 1072 368c 0005 Ljava/util/Enumeration;->hasMoreElements
+ 153 060a 
+ 154 0638 0026 if target 192
+ 156 1072 368d 0005 Ljava/util/Enumeration;->nextElement
+ 159 060c 
+ 160 061f 0958 
+ 162 106e 3766 0006 Ljava/util/zip/ZipEntry;->getName
+ 165 070c 
+ 166 206e 359e 00c7 Ljava/lang/String;->equals
+ 169 070a 
+ 170 0738 ffec if target 150
+ 172 106e 3767 0006 Ljava/util/zip/ZipEntry;->getSize
+ 175 070b 
+ 176 0916 0000 const/16 0
+ 178 0c31 0907 
+ 180 0c3d 000c if target 192
+ 182 206e 376c 0063 Ljava/util/zip/ZipFile;->getInputStream
+ 185 0c0c 
+ 186 2071 0ab9 004c Lecarx/xdownload/util/IOUtil;->copy
+ 189 1c12 const/4 v12 1
+ 190 b007 
+ 191 c101 
+ 192 106e 3510 0004 Ljava/io/FileOutputStream;->flush
+ 195 106e 350f 0004 Ljava/io/FileOutputStream;->close
+ 198 106e 3769 0003 Ljava/util/zip/ZipFile;->close
+ 201 2528 
+ 202 0b0d 
+ 203 106e 3516 000b Ljava/io/IOException;->printStackTrace
+ 206 2028 
+ 207 0b0d 
+ 208 0e28 
+ 209 0b0d 
+ 210 2407 
+ 211 2028 
+ 212 0b0d 
+ 213 2407 
+ 214 0828 
+ 215 0b0d 
+ 216 2307 
+ 217 3407 
+ 218 1928 
+ 219 0b0d 
+ 220 2307 
+ 221 3407 
+ 222 106e 3558 000b Ljava/lang/Exception;->printStackTrace
+ 225 0438 0008 if target 233
+ 227 106e 3510 0004 Ljava/io/FileOutputStream;->flush
+ 230 106e 350f 0004 Ljava/io/FileOutputStream;->close
+ 233 0338 0008 if target 241
+ 235 106e 3769 0003 Ljava/util/zip/ZipFile;->close
+ 238 0138 0003 if target 241
+ 240 0207 
+ 241 0211 
+ 242 0b0d 
+ 243 0438 000b if target 254
+ 245 106e 3510 0004 Ljava/io/FileOutputStream;->flush
+ 248 106e 350f 0004 Ljava/io/FileOutputStream;->close
+ 251 0328 
+ 252 0c0d 
+ 253 0828 
+ 254 0339 0003 if target 257
+ 256 0211 
+ 257 106e 3769 0003 Ljava/util/zip/ZipFile;->close
+ 260 0428 
+ 261 106e 3516 000c Ljava/io/IOException;->printStackTrace
+ 264 0b27 
+ 265 0211 
+
+METHOD Lnet/lingala/zip4j/ZipFile;->extractAll code=1265316 regs=3 ins=2
+   0 0022 09a1 
+   2 1070 3a25 0000 Lnet/lingala/zip4j/model/UnzipParameters;-><init>
+   5 306e 378e 0021 Lnet/lingala/zip4j/ZipFile;->extractAll
+   8 000e 
+
+METHOD Lnet/lingala/zip4j/ZipFile;->extractFile code=1265524 regs=5 ins=3
+   0 0022 09a1 
+   2 1070 3a25 0000 Lnet/lingala/zip4j/model/UnzipParameters;-><init>
+   5 0112 const/4 v1 0
+   6 506e 3791 1432 Lnet/lingala/zip4j/ZipFile;->extractFile
+   9 000e 
+
+METHOD Lnet/lingala/zip4j/ZipFile;->extractFile code=1265560 regs=5 ins=4
+   0 0022 09a1 
+   2 1070 3a25 0000 Lnet/lingala/zip4j/model/UnzipParameters;-><init>
+   5 506e 3791 4321 Lnet/lingala/zip4j/ZipFile;->extractFile
+   8 000e 
+
+METHOD Lnet/lingala/zip4j/ZipFile;->extractFile code=1265596 regs=9 ins=5
+   0 1071 3c0b 0005 Lnet/lingala/zip4j/util/Zip4jUtil;->isStringNotNullAndNotEmpty
+   3 000a 
+   4 0038 0034 if target 56
+   6 1071 3c0b 0006 Lnet/lingala/zip4j/util/Zip4jUtil;->isStringNotNullAndNotEmpty
+   9 000a 
+  10 0038 0026 if target 48
+  12 0839 0007 if target 19
+  14 0822 09a1 
+  16 1070 3a25 0008 Lnet/lingala/zip4j/model/UnzipParameters;-><init>
+  19 1070 37a8 0004 Lnet/lingala/zip4j/ZipFile;->readZipInfo
+  22 0022 09c5 
+  24 4154 5bb4 Lnet/lingala/zip4j/ZipFile;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+  26 4254 5bae Lnet/lingala/zip4j/ZipFile;->password:[C
+  28 1070 3787 0004 Lnet/lingala/zip4j/ZipFile;->buildAsyncParameters
+  31 030c 
+  32 5370 3b6d 8210 Lnet/lingala/zip4j/tasks/ExtractFileTask;-><init>
+  35 0822 09c4 
+  37 1070 3788 0004 Lnet/lingala/zip4j/ZipFile;->buildConfig
+  40 010c 
+  41 5170 3b69 7568 Lnet/lingala/zip4j/tasks/ExtractFileTask$ExtractFileTaskParameters;-><init>
+  44 206e 3b72 0080 Lnet/lingala/zip4j/tasks/ExtractFileTask;->execute
+  47 000e 
+  48 0522 0973 
+  50 061a 2f16 "destination path is empty or null, cannot extract file"
+  52 2070 3819 0065 Lnet/lingala/zip4j/exception/ZipException;-><init>
+  55 0527 
+  56 0522 0973 
+  58 061a 408e "file to extract is null or empty, cannot extract file"
+  60 2070 3819 0065 Lnet/lingala/zip4j/exception/ZipException;-><init>
+  63 0527 
+
+METHOD Lnet/lingala/zip4j/ZipFile;->extractFile code=1265768 regs=5 ins=3
+   0 0022 09a1 
+   2 1070 3a25 0000 Lnet/lingala/zip4j/model/UnzipParameters;-><init>
+   5 0112 const/4 v1 0
+   6 506e 3795 1432 Lnet/lingala/zip4j/ZipFile;->extractFile
+   9 000e 
+
+METHOD Lnet/lingala/zip4j/ZipFile;->extractFile code=1265804 regs=5 ins=4
+   0 0022 09a1 
+   2 1070 3a25 0000 Lnet/lingala/zip4j/model/UnzipParameters;-><init>
+   5 506e 3795 4321 Lnet/lingala/zip4j/ZipFile;->extractFile
+   8 000e 
+
+METHOD Lnet/lingala/zip4j/ZipFile;->getInputStream code=1263308 regs=4 ins=2
+   0 0338 001d if target 29
+   2 1070 37a8 0002 Lnet/lingala/zip4j/ZipFile;->readZipInfo
+   5 2054 5bb4 Lnet/lingala/zip4j/ZipFile;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+   7 0038 000e if target 21
+   9 2154 5bae Lnet/lingala/zip4j/ZipFile;->password:[C
+  11 3071 3c00 0130 Lnet/lingala/zip4j/util/UnzipUtil;->createZipInputStream
+  14 030c 
+  15 2054 5bad Lnet/lingala/zip4j/ZipFile;->openInputStreams:Ljava/util/List;
+  17 2072 3699 0030 Ljava/util/List;->add
+  20 0311 
+  21 0322 0973 
+  23 001a 6f75 "zip model is null, cannot get inputstream"
+  25 2070 3819 0003 Lnet/lingala/zip4j/exception/ZipException;-><init>
+  28 0327 
+  29 0322 0973 
+  31 001a 0a2f "FileHeader is null, cannot get InputStream"
+  33 2070 3819 0003 Lnet/lingala/zip4j/exception/ZipException;-><init>
+  36 0327 
+
+METHOD Lnet/lingala/zip4j/headers/FileHeaderFactory;->generateFileHeader code=1277624 regs=9 ins=6
+   0 0022 099f 
+   2 1070 39c2 0000 Lnet/lingala/zip4j/model/FileHeader;-><init>
+   5 0162 5bef Lnet/lingala/zip4j/headers/HeaderSignature;->CENTRAL_DIRECTORY:Lnet/lingala/zip4j/headers/HeaderSignature;
+   7 206e 39f5 0010 Lnet/lingala/zip4j/model/FileHeader;->setSignature
+  10 2071 3c11 0084 Lnet/lingala/zip4j/util/ZipVersionUtils;->determineVersionMadeBy
+  13 080a 
+  14 206e 39f7 0080 Lnet/lingala/zip4j/model/FileHeader;->setVersionMadeBy
+  17 1071 3c12 0004 Lnet/lingala/zip4j/util/ZipVersionUtils;->determineVersionNeededToExtract
+  20 080c 
+  21 106e 3869 0008 Lnet/lingala/zip4j/headers/VersionNeededToExtract;->getCode
+  24 080a 
+  25 206e 39f8 0080 Lnet/lingala/zip4j/model/FileHeader;->setVersionNeededToExtract
+  28 106e 3a8c 0004 Lnet/lingala/zip4j/model/ZipParameters;->isEncryptFiles
+  31 080a 
+  32 0838 0020 if target 64
+  34 106e 3a83 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEncryptionMethod
+  37 080c 
+  38 0162 5cee Lnet/lingala/zip4j/model/enums/EncryptionMethod;->AES:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+  40 1833 0018 if target 64
+  42 0862 5ce9 Lnet/lingala/zip4j/model/enums/CompressionMethod;->AES_INTERNAL_ONLY:Lnet/lingala/zip4j/model/enums/CompressionMethod;
+  44 206e 39e2 0080 Lnet/lingala/zip4j/model/FileHeader;->setCompressionMethod
+  47 2070 3821 0043 Lnet/lingala/zip4j/headers/FileHeaderFactory;->generateAESExtraDataRecord
+  50 080c 
+  51 206e 39e0 0080 Lnet/lingala/zip4j/model/FileHeader;->setAesExtraDataRecord
+  54 106e 39cd 0000 Lnet/lingala/zip4j/model/FileHeader;->getExtraFieldLength
+  57 080a 
+  58 08d8 0b08 
+  60 206e 39eb 0080 Lnet/lingala/zip4j/model/FileHeader;->setExtraFieldLength
+  63 0828 
+  64 106e 3a81 0004 Lnet/lingala/zip4j/model/ZipParameters;->getCompressionMethod
+  67 080c 
+  68 206e 39e2 0080 Lnet/lingala/zip4j/model/FileHeader;->setCompressionMethod
+  71 106e 3a8c 0004 Lnet/lingala/zip4j/model/ZipParameters;->isEncryptFiles
+  74 080a 
+  75 0838 0024 if target 111
+  77 106e 3a83 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEncryptionMethod
+  80 080c 
+  81 0838 0016 if target 103
+  83 106e 3a83 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEncryptionMethod
+  86 080c 
+  87 0162 5cef Lnet/lingala/zip4j/model/enums/EncryptionMethod;->NONE:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+  89 1832 000e if target 103
+  91 1812 const/4 v8 1
+  92 206e 39e7 0080 Lnet/lingala/zip4j/model/FileHeader;->setEncrypted
+  95 106e 3a83 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEncryptionMethod
+  98 080c 
+  99 206e 39e8 0080 Lnet/lingala/zip4j/model/FileHeader;->setEncryptionMethod
+ 102 0928 
+ 103 0422 0973 
+ 105 051a 09a9 "Encryption method has to be set when encryptFiles flag is set in zip parameters"
+ 107 2070 3819 0054 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 110 0427 
+ 111 106e 3a88 0004 Lnet/lingala/zip4j/model/ZipParameters;->getFileNameInZip
+ 114 080c 
+ 115 2070 3825 0083 Lnet/lingala/zip4j/headers/FileHeaderFactory;->validateAndGetFileName
+ 118 080c 
+ 119 206e 39ee 0080 Lnet/lingala/zip4j/model/FileHeader;->setFileName
+ 122 3070 381f 0783 Lnet/lingala/zip4j/headers/FileHeaderFactory;->determineFileNameLength
+ 125 010a 
+ 126 206e 39ef 0010 Lnet/lingala/zip4j/model/FileHeader;->setFileNameLength
+ 129 0538 0003 if target 132
+ 131 0228 
+ 132 0612 const/4 v6 0
+ 133 206e 39e6 0060 Lnet/lingala/zip4j/model/FileHeader;->setDiskNumberStart
+ 136 106e 3a89 0004 Lnet/lingala/zip4j/model/ZipParameters;->getLastModifiedFileTime
+ 139 050b 
+ 140 2071 3c09 0065 Lnet/lingala/zip4j/util/Zip4jUtil;->epochToExtendedDosTime
+ 143 050b 
+ 144 306e 39f3 0650 Lnet/lingala/zip4j/model/FileHeader;->setLastModifiedTime
+ 147 1071 3bdf 0008 Lnet/lingala/zip4j/util/FileUtils;->isZipEntryDirectory
+ 150 050a 
+ 151 206e 39e5 0050 Lnet/lingala/zip4j/model/FileHeader;->setDirectory
+ 154 1071 3bcd 0005 Lnet/lingala/zip4j/util/FileUtils;->getDefaultFileAttributes
+ 157 050c 
+ 158 206e 39e9 0050 Lnet/lingala/zip4j/model/FileHeader;->setExternalFileAttributes
+ 161 106e 3a92 0004 Lnet/lingala/zip4j/model/ZipParameters;->isWriteExtendedLocalFileHeader
+ 164 050a 
+ 165 0538 0012 if target 183
+ 167 106e 3a85 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEntrySize
+ 170 050b 
+ 171 0116 ffff const/16 -1
+ 173 0531 0105 
+ 175 0539 0008 if target 183
+ 177 0516 0000 const/16 0
+ 179 306e 39f6 0650 Lnet/lingala/zip4j/model/FileHeader;->setUncompressedSize
+ 182 0828 
+ 183 106e 3a85 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEntrySize
+ 186 050b 
+ 187 306e 39f6 0650 Lnet/lingala/zip4j/model/FileHeader;->setUncompressedSize
+ 190 106e 3a8c 0004 Lnet/lingala/zip4j/model/ZipParameters;->isEncryptFiles
+ 193 050a 
+ 194 0538 0011 if target 211
+ 196 106e 3a83 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEncryptionMethod
+ 199 050c 
+ 200 0662 5cf0 Lnet/lingala/zip4j/model/enums/EncryptionMethod;->ZIP_STANDARD:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+ 202 6533 0009 if target 211
+ 204 106e 3a84 0004 Lnet/lingala/zip4j/model/ZipParameters;->getEntryCRC
+ 207 050b 
+ 208 306e 39e3 0650 Lnet/lingala/zip4j/model/FileHeader;->setCrc
+ 211 106e 39de 0000 Lnet/lingala/zip4j/model/FileHeader;->isEncrypted
+ 214 050a 
+ 215 4070 3820 7453 Lnet/lingala/zip4j/headers/FileHeaderFactory;->determineGeneralPurposeBitFlag
+ 218 050c 
+ 219 206e 39f1 0050 Lnet/lingala/zip4j/model/FileHeader;->setGeneralPurposeFlag
+ 222 106e 3a92 0004 Lnet/lingala/zip4j/model/ZipParameters;->isWriteExtendedLocalFileHeader
+ 225 050a 
+ 226 206e 39e4 0050 Lnet/lingala/zip4j/model/FileHeader;->setDataDescriptorExists
+ 229 106e 3a87 0004 Lnet/lingala/zip4j/model/ZipParameters;->getFileComment
+ 232 040c 
+ 233 206e 39ec 0040 Lnet/lingala/zip4j/model/FileHeader;->setFileComment
+ 236 0011 
+
+METHOD Lnet/lingala/zip4j/headers/FileHeaderFactory;->generateLocalFileHeader code=1278116 regs=5 ins=2
+   0 0022 09a0 
+   2 1070 39fb 0000 Lnet/lingala/zip4j/model/LocalFileHeader;-><init>
+   5 0162 5bf3 Lnet/lingala/zip4j/headers/HeaderSignature;->LOCAL_FILE_HEADER:Lnet/lingala/zip4j/headers/HeaderSignature;
+   7 206e 3a20 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setSignature
+  10 106e 39d9 0004 Lnet/lingala/zip4j/model/FileHeader;->getVersionNeededToExtract
+  13 010a 
+  14 206e 3a22 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setVersionNeededToExtract
+  17 106e 39c7 0004 Lnet/lingala/zip4j/model/FileHeader;->getCompressionMethod
+  20 010c 
+  21 206e 3a11 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressionMethod
+  24 106e 39d4 0004 Lnet/lingala/zip4j/model/FileHeader;->getLastModifiedTime
+  27 010b 
+  28 306e 3a1e 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setLastModifiedTime
+  31 106e 39d7 0004 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+  34 010b 
+  35 306e 3a21 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setUncompressedSize
+  38 106e 39d1 0004 Lnet/lingala/zip4j/model/FileHeader;->getFileNameLength
+  41 010a 
+  42 206e 3a1b 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setFileNameLength
+  45 106e 39d0 0004 Lnet/lingala/zip4j/model/FileHeader;->getFileName
+  48 010c 
+  49 206e 3a1a 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setFileName
+  52 106e 39de 0004 Lnet/lingala/zip4j/model/FileHeader;->isEncrypted
+  55 010a 
+  56 206e 3a15 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setEncrypted
+  59 106e 39ca 0004 Lnet/lingala/zip4j/model/FileHeader;->getEncryptionMethod
+  62 010c 
+  63 206e 3a16 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setEncryptionMethod
+  66 106e 39c5 0004 Lnet/lingala/zip4j/model/FileHeader;->getAesExtraDataRecord
+  69 010c 
+  70 206e 3a0f 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setAesExtraDataRecord
+  73 106e 39c8 0004 Lnet/lingala/zip4j/model/FileHeader;->getCrc
+  76 010b 
+  77 306e 3a12 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setCrc
+  80 106e 39c6 0004 Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+  83 010b 
+  84 306e 3a10 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressedSize
+  87 106e 39d2 0004 Lnet/lingala/zip4j/model/FileHeader;->getGeneralPurposeFlag
+  90 010c 
+  91 106e 3d46 0001 [B->clone
+  94 010c 
+  95 011f 0a3a 
+  97 206e 3a1d 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setGeneralPurposeFlag
+ 100 106e 39dc 0004 Lnet/lingala/zip4j/model/FileHeader;->isDataDescriptorExists
+ 103 010a 
+ 104 206e 3a13 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setDataDescriptorExists
+ 107 106e 39cd 0004 Lnet/lingala/zip4j/model/FileHeader;->getExtraFieldLength
+ 110 040a 
+ 111 206e 3a19 0040 Lnet/lingala/zip4j/model/LocalFileHeader;->setExtraFieldLength
+ 114 0011 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderReader;->readCentralDirectory code=1279488 regs=25 ins=4
+   0 0008 0015 
+   2 0108 0016 
+   4 0208 0017 
+   6 0308 0018 
+   8 0422 0999 
+  10 1070 3995 0004 Lnet/lingala/zip4j/model/CentralDirectory;-><init>
+  13 0522 090f 
+  15 1070 3648 0005 Ljava/util/ArrayList;-><init>
+  18 0654 5beb Lnet/lingala/zip4j/headers/HeaderReader;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+  20 1071 384a 0006 Lnet/lingala/zip4j/headers/HeaderUtil;->getOffsetStartOfCentralDirectory
+  23 060b 
+  24 0854 5beb Lnet/lingala/zip4j/headers/HeaderReader;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+  26 2070 3827 0080 Lnet/lingala/zip4j/headers/HeaderReader;->getNumberOfEntriesInCentralDirectory
+  29 080b 
+  30 306e 3532 0761 Ljava/io/RandomAccessFile;->seek
+  33 2612 const/4 v6 2
+  34 6723 0a3a 
+  36 4a12 const/4 v10 4
+  37 ab23 0a3a 
+  39 0c12 const/4 v12 0
+  40 cd01 
+  41 de81 
+  42 0e31 080e 
+  44 0e3b 0154 if target 384
+  46 0e22 099f 
+  48 1070 39c2 000e Lnet/lingala/zip4j/model/FileHeader;-><init>
+  51 206e 3beb 0012 Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+  54 0f0a 
+  55 1108 000b 
+  57 fa81 
+  58 0f62 5bef Lnet/lingala/zip4j/headers/HeaderSignature;->CENTRAL_DIRECTORY:Lnet/lingala/zip4j/headers/HeaderSignature;
+  60 106e 3841 000f Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  63 120b 
+  64 0a31 120a 
+  66 1b12 const/4 v11 1
+  67 0a39 011a if target 349
+  69 0a62 5bef Lnet/lingala/zip4j/headers/HeaderSignature;->CENTRAL_DIRECTORY:Lnet/lingala/zip4j/headers/HeaderSignature;
+  71 206e 39f5 00ae Lnet/lingala/zip4j/model/FileHeader;->setSignature
+  74 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+  77 0a0a 
+  78 206e 39f7 00ae Lnet/lingala/zip4j/model/FileHeader;->setVersionMadeBy
+  81 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+  84 0a0a 
+  85 206e 39f8 00ae Lnet/lingala/zip4j/model/FileHeader;->setVersionNeededToExtract
+  88 6a23 0a3a 
+  90 206e 3530 00a1 Ljava/io/RandomAccessFile;->readFully
+  93 0f48 0c0a 
+  95 2071 3bbc 00cf Lnet/lingala/zip4j/util/BitUtils;->isBitSet
+  98 0f0a 
+  99 206e 39e7 00fe Lnet/lingala/zip4j/model/FileHeader;->setEncrypted
+ 102 0f48 0c0a 
+ 104 3612 const/4 v6 3
+ 105 2071 3bbc 006f Lnet/lingala/zip4j/util/BitUtils;->isBitSet
+ 108 0f0a 
+ 109 206e 39e4 00fe Lnet/lingala/zip4j/model/FileHeader;->setDataDescriptorExists
+ 112 0b48 0b0a 
+ 114 2071 3bbc 006b Lnet/lingala/zip4j/util/BitUtils;->isBitSet
+ 117 060a 
+ 118 206e 39f0 006e Lnet/lingala/zip4j/model/FileHeader;->setFileNameUTF8Encoded
+ 121 106e 3d46 000a [B->clone
+ 124 060c 
+ 125 061f 0a3a 
+ 127 206e 39f1 006e Lnet/lingala/zip4j/model/FileHeader;->setGeneralPurposeFlag
+ 130 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 133 060a 
+ 134 1071 3ac2 0006 Lnet/lingala/zip4j/model/enums/CompressionMethod;->getCompressionMethodFromCode
+ 137 060c 
+ 138 206e 39e2 006e Lnet/lingala/zip4j/model/FileHeader;->setCompressionMethod
+ 141 206e 3beb 0012 Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+ 144 060a 
+ 145 6a81 
+ 146 306e 39f3 0bae Lnet/lingala/zip4j/model/FileHeader;->setLastModifiedTime
+ 149 0608 0011 
+ 151 206e 3530 0061 Ljava/io/RandomAccessFile;->readFully
+ 154 306e 3bf2 0c62 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 157 0a0b 
+ 158 306e 39e3 0bae Lnet/lingala/zip4j/model/FileHeader;->setCrc
+ 161 1002 000d 
+ 163 4a12 const/4 v10 4
+ 164 306e 3bf1 0a12 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 167 0c0b 
+ 168 306e 39e1 0dce Lnet/lingala/zip4j/model/FileHeader;->setCompressedSize
+ 171 306e 3bf1 0a12 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 174 0b0b 
+ 175 306e 39f6 0cbe Lnet/lingala/zip4j/model/FileHeader;->setUncompressedSize
+ 178 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 181 0b0a 
+ 182 206e 39ef 00be Lnet/lingala/zip4j/model/FileHeader;->setFileNameLength
+ 185 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 188 0c0a 
+ 189 206e 39eb 00ce Lnet/lingala/zip4j/model/FileHeader;->setExtraFieldLength
+ 192 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 195 0c0a 
+ 196 206e 39ed 00ce Lnet/lingala/zip4j/model/FileHeader;->setFileCommentLength
+ 199 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 202 0d0a 
+ 203 206e 39e6 00de Lnet/lingala/zip4j/model/FileHeader;->setDiskNumberStart
+ 206 206e 3530 0071 Ljava/io/RandomAccessFile;->readFully
+ 209 106e 3d46 0007 [B->clone
+ 212 0d0c 
+ 213 0d1f 0a3a 
+ 215 206e 39f2 00de Lnet/lingala/zip4j/model/FileHeader;->setInternalFileAttributes
+ 218 206e 3530 0061 Ljava/io/RandomAccessFile;->readFully
+ 221 106e 3d46 0006 [B->clone
+ 224 0d0c 
+ 225 0d1f 0a3a 
+ 227 206e 39e9 00de Lnet/lingala/zip4j/model/FileHeader;->setExternalFileAttributes
+ 230 206e 3530 0061 Ljava/io/RandomAccessFile;->readFully
+ 233 1305 0008 
+ 235 0d12 const/4 v13 0
+ 236 7907 
+ 237 306e 3bf2 0d62 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 240 070b 
+ 241 306e 39f4 087e Lnet/lingala/zip4j/model/FileHeader;->setOffsetLocalHeader
+ 244 0b3d 0061 if target 341
+ 246 b723 0a3a 
+ 248 206e 3530 0071 Ljava/io/RandomAccessFile;->readFully
+ 251 106e 39df 000e Lnet/lingala/zip4j/model/FileHeader;->isFileNameUTF8Encoded
+ 254 080a 
+ 255 3071 3845 0387 Lnet/lingala/zip4j/headers/HeaderUtil;->decodeStringWithCharset
+ 258 070c 
+ 259 206e 39ee 007e Lnet/lingala/zip4j/model/FileHeader;->setFileName
+ 262 106e 39cb 000e Lnet/lingala/zip4j/model/FileHeader;->getExternalFileAttributes
+ 265 070c 
+ 266 106e 39d0 000e Lnet/lingala/zip4j/model/FileHeader;->getFileName
+ 269 080c 
+ 270 306e 3828 0870 Lnet/lingala/zip4j/headers/HeaderReader;->isDirectory
+ 273 070a 
+ 274 206e 39e5 007e Lnet/lingala/zip4j/model/FileHeader;->setDirectory
+ 277 3070 3835 0e10 Lnet/lingala/zip4j/headers/HeaderReader;->readExtraDataRecords
+ 280 3070 383a 02e0 Lnet/lingala/zip4j/headers/HeaderReader;->readZip64ExtendedInfo
+ 283 3070 382d 02e0 Lnet/lingala/zip4j/headers/HeaderReader;->readAesExtraDataRecord
+ 286 0c3d 0012 if target 304
+ 288 c723 0a3a 
+ 290 206e 3530 0071 Ljava/io/RandomAccessFile;->readFully
+ 293 106e 39df 000e Lnet/lingala/zip4j/model/FileHeader;->isFileNameUTF8Encoded
+ 296 080a 
+ 297 3071 3845 0387 Lnet/lingala/zip4j/headers/HeaderUtil;->decodeStringWithCharset
+ 300 070c 
+ 301 206e 39ec 007e Lnet/lingala/zip4j/model/FileHeader;->setFileComment
+ 304 106e 39de 000e Lnet/lingala/zip4j/model/FileHeader;->isEncrypted
+ 307 070a 
+ 308 0738 0013 if target 327
+ 310 106e 39c5 000e Lnet/lingala/zip4j/model/FileHeader;->getAesExtraDataRecord
+ 313 070c 
+ 314 0738 0008 if target 322
+ 316 0762 5cee Lnet/lingala/zip4j/model/enums/EncryptionMethod;->AES:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+ 318 206e 39e8 007e Lnet/lingala/zip4j/model/FileHeader;->setEncryptionMethod
+ 321 0628 
+ 322 0762 5cf0 Lnet/lingala/zip4j/model/enums/EncryptionMethod;->ZIP_STANDARD:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+ 324 206e 39e8 007e Lnet/lingala/zip4j/model/FileHeader;->setEncryptionMethod
+ 327 2072 3699 00e5 Ljava/util/List;->add
+ 330 07d8 0110 
+ 332 6b07 
+ 333 dc01 
+ 334 2612 const/4 v6 2
+ 335 7d01 
+ 336 9707 
+ 337 0805 0013 
+ 339 0029 fed6 
+ 341 0122 0973 
+ 343 021a 0c9e "Invalid entry name in file header"
+ 345 2070 3819 0021 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 348 0127 
+ 349 1002 000d 
+ 351 0122 0973 
+ 353 0222 08dd 
+ 355 1070 35b9 0002 Ljava/lang/StringBuilder;-><init>
+ 358 031a 09cc "Expected central directory entry not found (#"
+ 360 206e 35c3 0032 Ljava/lang/StringBuilder;->append
+ 363 020c 
+ 364 0dd8 0110 
+ 366 206e 35bf 00d2 Ljava/lang/StringBuilder;->append
+ 369 020c 
+ 370 031a 00c5 ")"
+ 372 206e 35c3 0032 Ljava/lang/StringBuilder;->append
+ 375 020c 
+ 376 106e 35c7 0002 Ljava/lang/StringBuilder;->toString
+ 379 020c 
+ 380 2070 3819 0021 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 383 0127 
+ 384 206e 3999 0054 Lnet/lingala/zip4j/model/CentralDirectory;->setFileHeaders
+ 387 0322 099b 
+ 389 1070 39a2 0003 Lnet/lingala/zip4j/model/DigitalSignature;-><init>
+ 392 206e 3beb 0012 Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+ 395 050a 
+ 396 5581 
+ 397 0762 5bf0 Lnet/lingala/zip4j/headers/HeaderSignature;->DIGITAL_SIGNATURE:Lnet/lingala/zip4j/headers/HeaderSignature;
+ 399 106e 3841 0007 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+ 402 070b 
+ 403 0531 0705 
+ 405 0539 0025 if target 442
+ 407 0562 5bf0 Lnet/lingala/zip4j/headers/HeaderSignature;->DIGITAL_SIGNATURE:Lnet/lingala/zip4j/headers/HeaderSignature;
+ 409 206e 39a5 0053 Lnet/lingala/zip4j/model/DigitalSignature;->setSignature
+ 412 206e 3bf4 0012 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 415 020a 
+ 416 206e 39a7 0023 Lnet/lingala/zip4j/model/DigitalSignature;->setSizeOfData
+ 419 106e 39a4 0003 Lnet/lingala/zip4j/model/DigitalSignature;->getSizeOfData
+ 422 020a 
+ 423 023d 0013 if target 442
+ 425 106e 39a4 0003 Lnet/lingala/zip4j/model/DigitalSignature;->getSizeOfData
+ 428 020a 
+ 429 2223 0a3a 
+ 431 206e 3530 0021 Ljava/io/RandomAccessFile;->readFully
+ 434 0122 08db 
+ 436 2070 3595 0021 Ljava/lang/String;-><init>
+ 439 206e 39a6 0013 Lnet/lingala/zip4j/model/DigitalSignature;->setSignatureData
+ 442 0411 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderReader;->readZip64ExtendedInfo code=1281880 regs=16 ins=10
+   0 1072 36a1 0007 Ljava/util/List;->iterator
+   3 070c 
+   4 1072 3693 0007 Ljava/util/Iterator;->hasNext
+   7 000a 
+   8 0112 const/4 v1 0
+   9 0038 007b if target 132
+  11 1072 3694 0007 Ljava/util/Iterator;->next
+  14 000c 
+  15 001f 099e 
+  17 0039 0003 if target 20
+  19 f128 
+  20 0262 5bf8 Lnet/lingala/zip4j/headers/HeaderSignature;->ZIP64_EXTRA_FIELD_SIGNATURE:Lnet/lingala/zip4j/headers/HeaderSignature;
+  22 106e 3841 0002 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  25 020b 
+  26 106e 39bd 0000 Lnet/lingala/zip4j/model/ExtraDataRecord;->getHeader
+  29 040b 
+  30 0231 0402 
+  32 0239 ffe4 if target 4
+  34 0722 09a5 
+  36 1070 3a4b 0007 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;-><init>
+  39 106e 39bc 0000 Lnet/lingala/zip4j/model/ExtraDataRecord;->getData
+  42 020c 
+  43 106e 39be 0000 Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData
+  46 030a 
+  47 033c 0003 if target 50
+  49 0111 
+  50 0112 const/4 v1 0
+  51 106e 39be 0000 Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData
+  54 030a 
+  55 0418 ffff ffff 0000 0000 
+  60 033d 000f if target 75
+  62 0931 0409 
+  64 0939 000b if target 75
+  66 306e 3bf2 0128 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+  69 090b 
+  70 306e 3a55 0a97 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setUncompressedSize
+  73 0113 0008 const/16 8
+  75 106e 39be 0000 Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData
+  78 090a 
+  79 9135 000f if target 94
+  81 0931 040b 
+  83 0939 000b if target 94
+  85 306e 3bf2 0128 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+  88 090b 
+  89 306e 3a51 0a97 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setCompressedSize
+  92 01d8 0801 
+  94 106e 39be 0000 Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData
+  97 090a 
+  98 9135 000f if target 113
+ 100 0931 040d 
+ 102 0939 000b if target 113
+ 104 306e 3bf2 0128 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 107 090b 
+ 108 306e 3a53 0a97 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setOffsetLocalHeader
+ 111 01d8 0801 
+ 113 106e 39be 0000 Lnet/lingala/zip4j/model/ExtraDataRecord;->getSizeOfData
+ 116 090a 
+ 117 9135 000e if target 131
+ 119 0914 ffff 0000 const 65535 / 0xffff
+ 122 9f33 0009 if target 131
+ 124 306e 3bed 0128 Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+ 127 080a 
+ 128 206e 3a52 0087 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setDiskNumberStart
+ 131 0711 
+ 132 0111 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderReader;->readZip64ExtendedInfo code=1282768 regs=14 ins=3
+   0 106e 39cc 000c Lnet/lingala/zip4j/model/FileHeader;->getExtraDataRecords
+   3 000c 
+   4 0038 006a if target 110
+   6 106e 39cc 000c Lnet/lingala/zip4j/model/FileHeader;->getExtraDataRecords
+   9 000c 
+  10 1072 36a4 0000 Ljava/util/List;->size
+  13 000a 
+  14 003c 0003 if target 17
+  16 5e28 
+  17 106e 39cc 000c Lnet/lingala/zip4j/model/FileHeader;->getExtraDataRecords
+  20 020c 
+  21 106e 39d7 000c Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+  24 040b 
+  25 106e 39c6 000c Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+  28 060b 
+  29 106e 39d5 000c Lnet/lingala/zip4j/model/FileHeader;->getOffsetLocalHeader
+  32 080b 
+  33 106e 39c9 000c Lnet/lingala/zip4j/model/FileHeader;->getDiskNumberStart
+  36 0a0a 
+  37 b107 
+  38 d307 
+  39 0a76 3839 0001 Lnet/lingala/zip4j/headers/HeaderReader;->readZip64ExtendedInfo
+  42 0d0c 
+  43 0d39 0003 if target 46
+  45 000e 
+  46 206e 39f9 00dc Lnet/lingala/zip4j/model/FileHeader;->setZip64ExtendedInfo
+  49 106e 3a50 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUncompressedSize
+  52 000b 
+  53 0216 ffff const/16 -1
+  55 0031 0200 
+  57 0038 0009 if target 66
+  59 106e 3a50 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUncompressedSize
+  62 000b 
+  63 306e 39f6 010c Lnet/lingala/zip4j/model/FileHeader;->setUncompressedSize
+  66 106e 3a4c 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getCompressedSize
+  69 000b 
+  70 0031 0200 
+  72 0038 0009 if target 81
+  74 106e 3a4c 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getCompressedSize
+  77 000b 
+  78 306e 39e1 010c Lnet/lingala/zip4j/model/FileHeader;->setCompressedSize
+  81 106e 3a4e 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getOffsetLocalHeader
+  84 000b 
+  85 0031 0200 
+  87 0038 0009 if target 96
+  89 106e 3a4e 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getOffsetLocalHeader
+  92 000b 
+  93 306e 39f4 010c Lnet/lingala/zip4j/model/FileHeader;->setOffsetLocalHeader
+  96 106e 3a4d 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getDiskNumberStart
+  99 000a 
+ 100 f112 const/4 v1 -1
+ 101 1032 0009 if target 110
+ 103 106e 3a4d 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getDiskNumberStart
+ 106 0d0a 
+ 107 206e 39e6 00dc Lnet/lingala/zip4j/model/FileHeader;->setDiskNumberStart
+ 110 000e 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderReader;->readZip64ExtendedInfo code=1283008 regs=14 ins=3
+   0 0c38 004f if target 79
+   2 106e 3a01 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getExtraDataRecords
+   5 000c 
+   6 0038 0048 if target 78
+   8 106e 3a01 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getExtraDataRecords
+  11 000c 
+  12 1072 36a4 0000 Ljava/util/List;->size
+  15 000a 
+  16 003c 0003 if target 19
+  18 3c28 
+  19 106e 3a01 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getExtraDataRecords
+  22 020c 
+  23 106e 3a09 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+  26 040b 
+  27 106e 39fd 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressedSize
+  30 060b 
+  31 0816 0000 const/16 0
+  33 0a12 const/4 v10 0
+  34 b107 
+  35 d307 
+  36 0a76 3839 0001 Lnet/lingala/zip4j/headers/HeaderReader;->readZip64ExtendedInfo
+  39 0d0c 
+  40 0d39 0003 if target 43
+  42 000e 
+  43 206e 3a24 00dc Lnet/lingala/zip4j/model/LocalFileHeader;->setZip64ExtendedInfo
+  46 106e 3a50 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUncompressedSize
+  49 000b 
+  50 0216 ffff const/16 -1
+  52 0031 0200 
+  54 0038 0009 if target 63
+  56 106e 3a50 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUncompressedSize
+  59 000b 
+  60 306e 3a21 010c Lnet/lingala/zip4j/model/LocalFileHeader;->setUncompressedSize
+  63 106e 3a4c 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getCompressedSize
+  66 000b 
+  67 0031 0200 
+  69 0038 0009 if target 78
+  71 106e 3a4c 000d Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getCompressedSize
+  74 000b 
+  75 306e 3a10 010c Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressedSize
+  78 000e 
+  79 0c22 0973 
+  81 0d1a 4088 "file header is null in reading Zip64 Extended Info"
+  83 2070 3819 00dc Lnet/lingala/zip4j/exception/ZipException;-><init>
+  86 0c27 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderReader;->readDataDescriptor code=1280392 regs=11 ins=3
+   0 0022 099a 
+   2 1070 399a 0000 Lnet/lingala/zip4j/model/DataDescriptor;-><init>
+   5 4112 const/4 v1 4
+   6 1123 0a3a 
+   8 2071 3c0d 0019 Lnet/lingala/zip4j/util/Zip4jUtil;->readFully
+  11 8254 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  13 0312 const/4 v3 0
+  14 306e 3bf2 0312 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+  17 040b 
+  18 0262 5bf2 Lnet/lingala/zip4j/headers/HeaderSignature;->EXTRA_DATA_RECORD:Lnet/lingala/zip4j/headers/HeaderSignature;
+  20 106e 3841 0002 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  23 060b 
+  24 0231 0604 
+  26 0239 0014 if target 46
+  28 0262 5bf2 Lnet/lingala/zip4j/headers/HeaderSignature;->EXTRA_DATA_RECORD:Lnet/lingala/zip4j/headers/HeaderSignature;
+  30 206e 39a0 0020 Lnet/lingala/zip4j/model/DataDescriptor;->setSignature
+  33 2071 3c0d 0019 Lnet/lingala/zip4j/util/Zip4jUtil;->readFully
+  36 8254 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  38 306e 3bf2 0312 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+  41 010b 
+  42 306e 399f 0210 Lnet/lingala/zip4j/model/DataDescriptor;->setCrc
+  45 0428 
+  46 306e 399f 0540 Lnet/lingala/zip4j/model/DataDescriptor;->setCrc
+  49 0a38 0015 if target 70
+  51 8a54 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  53 206e 3bee 009a Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+  56 010b 
+  57 306e 399e 0210 Lnet/lingala/zip4j/model/DataDescriptor;->setCompressedSize
+  60 8a54 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  62 206e 3bee 009a Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+  65 090b 
+  66 306e 39a1 0a90 Lnet/lingala/zip4j/model/DataDescriptor;->setUncompressedSize
+  69 1528 
+  70 8a54 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  72 206e 3bea 009a Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+  75 0a0a 
+  76 a181 
+  77 306e 399e 0210 Lnet/lingala/zip4j/model/DataDescriptor;->setCompressedSize
+  80 8a54 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  82 206e 3bea 009a Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+  85 090a 
+  86 9981 
+  87 306e 39a1 0a90 Lnet/lingala/zip4j/model/DataDescriptor;->setUncompressedSize
+  90 0011 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderReader;->readLocalFileHeader code=1280812 regs=11 ins=3
+   0 0022 09a0 
+   2 1070 39fb 0000 Lnet/lingala/zip4j/model/LocalFileHeader;-><init>
+   5 4112 const/4 v1 4
+   6 1223 0a3a 
+   8 8354 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  10 206e 3bea 0093 Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+  13 030a 
+  14 3481 
+  15 0662 5bf5 Lnet/lingala/zip4j/headers/HeaderSignature;->TEMPORARY_SPANNING_MARKER:Lnet/lingala/zip4j/headers/HeaderSignature;
+  17 106e 3841 0006 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  20 060b 
+  21 0431 0604 
+  23 0439 0008 if target 31
+  25 8354 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  27 206e 3bea 0093 Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+  30 030a 
+  31 3381 
+  32 0562 5bf3 Lnet/lingala/zip4j/headers/HeaderSignature;->LOCAL_FILE_HEADER:Lnet/lingala/zip4j/headers/HeaderSignature;
+  34 106e 3841 0005 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  37 050b 
+  38 0331 0503 
+  40 0338 0004 if target 44
+  42 0912 const/4 v9 0
+  43 0911 
+  44 0362 5bf3 Lnet/lingala/zip4j/headers/HeaderSignature;->LOCAL_FILE_HEADER:Lnet/lingala/zip4j/headers/HeaderSignature;
+  46 206e 3a20 0030 Lnet/lingala/zip4j/model/LocalFileHeader;->setSignature
+  49 8354 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  51 206e 3bf3 0093 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+  54 030a 
+  55 206e 3a22 0030 Lnet/lingala/zip4j/model/LocalFileHeader;->setVersionNeededToExtract
+  58 2312 const/4 v3 2
+  59 3423 0a3a 
+  61 2071 3c0d 0049 Lnet/lingala/zip4j/util/Zip4jUtil;->readFully
+  64 050a 
+  65 3533 00d4 if target 277
+  67 0312 const/4 v3 0
+  68 0548 0304 
+  70 2071 3bbc 0035 Lnet/lingala/zip4j/util/BitUtils;->isBitSet
+  73 050a 
+  74 206e 3a15 0050 Lnet/lingala/zip4j/model/LocalFileHeader;->setEncrypted
+  77 0548 0304 
+  79 3612 const/4 v6 3
+  80 2071 3bbc 0065 Lnet/lingala/zip4j/util/BitUtils;->isBitSet
+  83 050a 
+  84 206e 3a13 0050 Lnet/lingala/zip4j/model/LocalFileHeader;->setDataDescriptorExists
+  87 1512 const/4 v5 1
+  88 0748 0504 
+  90 2071 3bbc 0067 Lnet/lingala/zip4j/util/BitUtils;->isBitSet
+  93 060a 
+  94 206e 3a1c 0060 Lnet/lingala/zip4j/model/LocalFileHeader;->setFileNameUTF8Encoded
+  97 106e 3d46 0004 [B->clone
+ 100 040c 
+ 101 041f 0a3a 
+ 103 206e 3a1d 0040 Lnet/lingala/zip4j/model/LocalFileHeader;->setGeneralPurposeFlag
+ 106 8454 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 108 206e 3bf3 0094 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 111 040a 
+ 112 1071 3ac2 0004 Lnet/lingala/zip4j/model/enums/CompressionMethod;->getCompressionMethodFromCode
+ 115 040c 
+ 116 206e 3a11 0040 Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressionMethod
+ 119 8454 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 121 206e 3bea 0094 Lnet/lingala/zip4j/util/RawIO;->readIntLittleEndian
+ 124 040a 
+ 125 4681 
+ 126 306e 3a1e 0760 Lnet/lingala/zip4j/model/LocalFileHeader;->setLastModifiedTime
+ 129 2071 3c0d 0029 Lnet/lingala/zip4j/util/Zip4jUtil;->readFully
+ 132 8454 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 134 306e 3bf2 0324 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 137 060b 
+ 138 306e 3a12 0760 Lnet/lingala/zip4j/model/LocalFileHeader;->setCrc
+ 141 8254 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 143 306e 3bef 0192 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 146 060b 
+ 147 306e 3a10 0760 Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressedSize
+ 150 8254 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 152 306e 3bef 0192 Lnet/lingala/zip4j/util/RawIO;->readLongLittleEndian
+ 155 010b 
+ 156 306e 3a21 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setUncompressedSize
+ 159 8154 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 161 206e 3bf3 0091 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 164 010a 
+ 165 206e 3a1b 0010 Lnet/lingala/zip4j/model/LocalFileHeader;->setFileNameLength
+ 168 8254 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 170 206e 3bf3 0092 Lnet/lingala/zip4j/util/RawIO;->readShortLittleEndian
+ 173 020a 
+ 174 206e 3a19 0020 Lnet/lingala/zip4j/model/LocalFileHeader;->setExtraFieldLength
+ 177 013d 005c if target 269
+ 179 1123 0a3a 
+ 181 2071 3c0d 0019 Lnet/lingala/zip4j/util/Zip4jUtil;->readFully
+ 184 106e 3a0d 0000 Lnet/lingala/zip4j/model/LocalFileHeader;->isFileNameUTF8Encoded
+ 187 020a 
+ 188 3071 3845 0a21 Lnet/lingala/zip4j/headers/HeaderUtil;->decodeStringWithCharset
+ 191 0a0c 
+ 192 206e 3a1a 00a0 Lnet/lingala/zip4j/model/LocalFileHeader;->setFileName
+ 195 011a 0231 "/"
+ 197 206e 359d 001a Ljava/lang/String;->endsWith
+ 200 010a 
+ 201 0139 000c if target 213
+ 203 011a 27e6 "\\"
+ 205 206e 359d 001a Ljava/lang/String;->endsWith
+ 208 0a0a 
+ 209 0a38 0003 if target 212
+ 211 0228 
+ 212 3501 
+ 213 206e 3a14 0050 Lnet/lingala/zip4j/model/LocalFileHeader;->setDirectory
+ 216 3070 3834 0098 Lnet/lingala/zip4j/headers/HeaderReader;->readExtraDataRecords
+ 219 8954 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 221 3070 383b 0908 Lnet/lingala/zip4j/headers/HeaderReader;->readZip64ExtendedInfo
+ 224 8954 5bea Lnet/lingala/zip4j/headers/HeaderReader;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 226 3070 382d 0908 Lnet/lingala/zip4j/headers/HeaderReader;->readAesExtraDataRecord
+ 229 106e 3a0c 0000 Lnet/lingala/zip4j/model/LocalFileHeader;->isEncrypted
+ 232 090a 
+ 233 0938 0023 if target 268
+ 235 106e 3a00 0000 Lnet/lingala/zip4j/model/LocalFileHeader;->getEncryptionMethod
+ 238 090c 
+ 239 0a62 5cee Lnet/lingala/zip4j/model/enums/EncryptionMethod;->AES:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+ 241 a933 0003 if target 244
+ 243 1928 
+ 244 106e 3a05 0000 Lnet/lingala/zip4j/model/LocalFileHeader;->getGeneralPurposeFlag
+ 247 090c 
+ 248 0948 0309 
+ 250 6a12 const/4 v10 6
+ 251 2071 3bbc 00a9 Lnet/lingala/zip4j/util/BitUtils;->isBitSet
+ 254 090a 
+ 255 0938 0008 if target 263
+ 257 0962 5cf1 Lnet/lingala/zip4j/model/enums/EncryptionMethod;->ZIP_STANDARD_VARIANT_STRONG:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+ 259 206e 3a16 0090 Lnet/lingala/zip4j/model/LocalFileHeader;->setEncryptionMethod
+ 262 0628 
+ 263 0962 5cf0 Lnet/lingala/zip4j/model/enums/EncryptionMethod;->ZIP_STANDARD:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+ 265 206e 3a16 0090 Lnet/lingala/zip4j/model/LocalFileHeader;->setEncryptionMethod
+ 268 0011 
+ 269 0922 0973 
+ 271 0a1a 0c9f "Invalid entry name in local file header"
+ 273 2070 3819 00a9 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 276 0927 
+ 277 0922 0973 
+ 279 0a1a 08c6 "Could not read enough bytes for generalPurposeFlags"
+ 281 2070 3819 00a9 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 284 0927 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderUtil;->getTotalUncompressedSizeOfAllFileHeaders code=1284120 regs=8 ins=1
+   0 1072 36a1 0007 Ljava/util/List;->iterator
+   3 070c 
+   4 0016 0000 const/16 0
+   6 0204 
+   7 1072 3693 0007 Ljava/util/Iterator;->hasNext
+  10 040a 
+  11 0438 0029 if target 52
+  13 1072 3694 0007 Ljava/util/Iterator;->next
+  16 040c 
+  17 041f 099f 
+  19 106e 39da 0004 Lnet/lingala/zip4j/model/FileHeader;->getZip64ExtendedInfo
+  22 050c 
+  23 0538 0017 if target 46
+  25 106e 39da 0004 Lnet/lingala/zip4j/model/FileHeader;->getZip64ExtendedInfo
+  28 050c 
+  29 106e 3a50 0005 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUncompressedSize
+  32 050b 
+  33 0531 0005 
+  35 053d 000b if target 46
+  37 106e 39da 0004 Lnet/lingala/zip4j/model/FileHeader;->getZip64ExtendedInfo
+  40 040c 
+  41 106e 3a50 0004 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUncompressedSize
+  44 040b 
+  45 0528 
+  46 106e 39d7 0004 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+  49 040b 
+  50 42bb 
+  51 d428 
+  52 0210 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderWriter;->isZip64Entry code=1284796 regs=6 ins=2
+   0 106e 39c6 0005 Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+   3 000b 
+   4 0218 ffff ffff 0000 0000 
+   9 0031 0200 
+  11 003b 001e if target 41
+  13 106e 39d7 0005 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+  16 000b 
+  17 0031 0200 
+  19 003b 0016 if target 41
+  21 106e 39d5 0005 Lnet/lingala/zip4j/model/FileHeader;->getOffsetLocalHeader
+  24 000b 
+  25 0031 0200 
+  27 003b 000e if target 41
+  29 106e 39c9 0005 Lnet/lingala/zip4j/model/FileHeader;->getDiskNumberStart
+  32 050a 
+  33 0014 ffff 0000 const 65535 / 0xffff
+  36 0534 0003 if target 39
+  38 0328 
+  39 0512 const/4 v5 0
+  40 0228 
+  41 1512 const/4 v5 1
+  42 050f 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderWriter;->updateFileSizesInLocalFileHeader code=1286696 regs=10 ins=3
+   0 106e 39d7 0009 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+   3 000b 
+   4 0218 ffff ffff 0000 0000 
+   9 0031 0200 
+  11 4112 const/4 v1 4
+  12 0412 const/4 v4 0
+  13 003a 0054 if target 97
+  15 7054 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  17 7554 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  19 536e 3bfa 2450 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  22 7054 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  24 406e 3934 1408 Lnet/lingala/zip4j/io/outputstream/SplitOutputStream;->write
+  27 7054 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  29 406e 3934 1408 Lnet/lingala/zip4j/io/outputstream/SplitOutputStream;->write
+  32 106e 39d1 0009 Lnet/lingala/zip4j/model/FileHeader;->getFileNameLength
+  35 000a 
+  36 10b0 
+  37 00d8 0200 
+  39 00d8 0200 
+  41 206e 3930 0008 Lnet/lingala/zip4j/io/outputstream/SplitOutputStream;->skipBytes
+  44 010a 
+  45 0133 0015 if target 66
+  47 7054 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  49 106e 39d7 0009 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+  52 010b 
+  53 406e 3bf9 2180 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  56 7054 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  58 106e 39c6 0009 Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+  61 010b 
+  62 406e 3bf9 2180 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  65 4028 
+  66 0822 0973 
+  68 0922 08dd 
+  70 1070 35b9 0009 Ljava/lang/StringBuilder;-><init>
+  73 011a 2462 "Unable to skip "
+  75 206e 35c3 0019 Ljava/lang/StringBuilder;->append
+  78 090c 
+  79 206e 35bf 0009 Ljava/lang/StringBuilder;->append
+  82 090c 
+  83 001a 0016 " bytes to update LFH"
+  85 206e 35c3 0009 Ljava/lang/StringBuilder;->append
+  88 090c 
+  89 106e 35c7 0009 Ljava/lang/StringBuilder;->toString
+  92 090c 
+  93 2070 3819 0098 Lnet/lingala/zip4j/exception/ZipException;-><init>
+  96 0827 
+  97 7054 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  99 7254 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 101 106e 39c6 0009 Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+ 104 050b 
+ 105 566e 3bfa 5420 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 108 7054 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 110 406e 3934 1408 Lnet/lingala/zip4j/io/outputstream/SplitOutputStream;->write
+ 113 7054 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 115 7254 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 117 106e 39d7 0009 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+ 120 050b 
+ 121 566e 3bfa 5420 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 124 7954 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 126 406e 3934 1498 Lnet/lingala/zip4j/io/outputstream/SplitOutputStream;->write
+ 129 000e 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderWriter;->writeFileHeader code=1288160 regs=22 ins=6
+   0 0108 0010 
+   2 0008 0011 
+   4 0208 0012 
+   6 0308 0013 
+   8 0408 0014 
+  10 0508 0015 
+  12 0238 01a0 if target 428
+  14 2612 const/4 v6 2
+  15 6723 0a3a 
+  17 0812 const/4 v8 0
+  18 084f 0807 
+  20 1912 const/4 v9 1
+  21 084f 0907 
+  23 2070 3855 0021 Lnet/lingala/zip4j/headers/HeaderWriter;->isZip64Entry
+  26 0a0a 
+  27 0174 39d6 0012 Lnet/lingala/zip4j/model/FileHeader;->getSignature
+  30 0b0c 
+  31 106e 3841 000b Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  34 0b0b 
+  35 bb84 
+  36 306e 3bf7 0b34 Lnet/lingala/zip4j/util/RawIO;->writeIntLittleEndian
+  39 0174 39d8 0012 Lnet/lingala/zip4j/model/FileHeader;->getVersionMadeBy
+  42 0b0a 
+  43 306e 3bfb 0b34 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+  46 0174 39d9 0012 Lnet/lingala/zip4j/model/FileHeader;->getVersionNeededToExtract
+  49 0b0a 
+  50 306e 3bfb 0b34 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+  53 0174 39d2 0012 Lnet/lingala/zip4j/model/FileHeader;->getGeneralPurposeFlag
+  56 0b0c 
+  57 206e 34eb 00b3 Ljava/io/ByteArrayOutputStream;->write
+  60 0174 39c7 0012 Lnet/lingala/zip4j/model/FileHeader;->getCompressionMethod
+  63 0b0c 
+  64 106e 3ac1 000b Lnet/lingala/zip4j/model/enums/CompressionMethod;->getCode
+  67 0b0a 
+  68 306e 3bfb 0b34 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+  71 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  73 0174 39d4 0012 Lnet/lingala/zip4j/model/FileHeader;->getLastModifiedTime
+  76 0c0b 
+  77 5d6e 3bfa c8b4 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  80 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  82 4c12 const/4 v12 4
+  83 406e 34ec c8b3 Ljava/io/ByteArrayOutputStream;->write
+  86 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  88 0174 39c8 0012 Lnet/lingala/zip4j/model/FileHeader;->getCrc
+  91 0d0b 
+  92 5e6e 3bfa d8b4 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  95 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  97 406e 34ec c8b3 Ljava/io/ByteArrayOutputStream;->write
+ 100 0d18 ffff ffff 0000 0000 
+ 105 0a38 0016 if target 127
+ 107 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 109 5e6e 3bfa d8b4 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 112 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 114 406e 34ec c8b3 Ljava/io/ByteArrayOutputStream;->write
+ 117 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 119 406e 34ec c8b3 Ljava/io/ByteArrayOutputStream;->write
+ 122 206e 3a75 0090 Lnet/lingala/zip4j/model/ZipModel;->setZip64Format
+ 125 7f07 
+ 126 1e28 
+ 127 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 129 7f07 
+ 130 0174 39c6 0012 Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+ 133 060b 
+ 134 576e 3bfa 68b4 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 137 1654 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 139 406e 34ec c863 Ljava/io/ByteArrayOutputStream;->write
+ 142 1654 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 144 0174 39d7 0012 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+ 147 0d0b 
+ 148 5e6e 3bfa d864 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 151 1654 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 153 406e 34ec c863 Ljava/io/ByteArrayOutputStream;->write
+ 156 8623 0a3a 
+ 158 0174 39d0 0012 Lnet/lingala/zip4j/model/FileHeader;->getFileName
+ 161 070c 
+ 162 1071 3c0b 0007 Lnet/lingala/zip4j/util/Zip4jUtil;->isStringNotNullAndNotEmpty
+ 165 070a 
+ 166 0738 000a if target 176
+ 168 0174 39d0 0012 Lnet/lingala/zip4j/model/FileHeader;->getFileName
+ 171 060c 
+ 172 2071 3846 0056 Lnet/lingala/zip4j/headers/HeaderUtil;->getBytesFromString
+ 175 060c 
+ 176 6721 
+ 177 306e 3bfb 0734 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 180 c723 0a3a 
+ 182 0a38 0012 if target 200
+ 184 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 186 0d18 ffff ffff 0000 0000 
+ 191 5e6e 3bfa d8b4 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 194 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 196 5c71 35c8 878b Ljava/lang/System;->arraycopy
+ 199 0f28 
+ 200 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 202 0174 39d5 0012 Lnet/lingala/zip4j/model/FileHeader;->getOffsetLocalHeader
+ 205 0d0b 
+ 206 5e6e 3bfa d8b4 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 209 1b54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 211 5c71 35c8 878b Ljava/lang/System;->arraycopy
+ 214 3070 384e 0a21 Lnet/lingala/zip4j/headers/HeaderWriter;->calculateExtraDataRecordsSize
+ 217 0b0a 
+ 218 306e 3bfb 0b34 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 221 0174 39ce 0012 Lnet/lingala/zip4j/model/FileHeader;->getFileComment
+ 224 0b0c 
+ 225 8c23 0a3a 
+ 227 1071 3c0b 000b Lnet/lingala/zip4j/util/Zip4jUtil;->isStringNotNullAndNotEmpty
+ 230 0d0a 
+ 231 0d38 0006 if target 237
+ 233 2071 3846 005b Lnet/lingala/zip4j/headers/HeaderUtil;->getBytesFromString
+ 236 0c0c 
+ 237 cb21 
+ 238 306e 3bfb 0b34 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 241 0a38 0011 if target 258
+ 243 1b54 5bfd Lnet/lingala/zip4j/headers/HeaderWriter;->intBuff:[B
+ 245 0d14 ffff 0000 const 65535 / 0xffff
+ 248 406e 3bf8 d8b4 Lnet/lingala/zip4j/util/RawIO;->writeIntLittleEndian
+ 251 1b54 5bfd Lnet/lingala/zip4j/headers/HeaderWriter;->intBuff:[B
+ 253 2d12 const/4 v13 2
+ 254 406e 34ec d8b3 Ljava/io/ByteArrayOutputStream;->write
+ 257 0828 
+ 258 0174 39c9 0012 Lnet/lingala/zip4j/model/FileHeader;->getDiskNumberStart
+ 261 0b0a 
+ 262 306e 3bfb 0b34 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 265 fb07 
+ 266 206e 34eb 00b3 Ljava/io/ByteArrayOutputStream;->write
+ 269 0174 39cb 0012 Lnet/lingala/zip4j/model/FileHeader;->getExternalFileAttributes
+ 272 0b0c 
+ 273 206e 34eb 00b3 Ljava/io/ByteArrayOutputStream;->write
+ 276 206e 34eb 0073 Ljava/io/ByteArrayOutputStream;->write
+ 279 6721 
+ 280 073d 0005 if target 285
+ 282 206e 34eb 0063 Ljava/io/ByteArrayOutputStream;->write
+ 285 0a38 0030 if target 333
+ 287 206e 3a75 0090 Lnet/lingala/zip4j/model/ZipModel;->setZip64Format
+ 290 0062 5bf8 Lnet/lingala/zip4j/headers/HeaderSignature;->ZIP64_EXTRA_FIELD_SIGNATURE:Lnet/lingala/zip4j/headers/HeaderSignature;
+ 292 106e 3841 0000 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+ 295 060b 
+ 296 6084 
+ 297 306e 3bfb 0034 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 300 0013 001c const/16 28
+ 302 306e 3bfb 0034 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 305 0174 39d7 0012 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+ 308 060b 
+ 309 406e 3bf9 7634 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 312 0174 39c6 0012 Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+ 315 060b 
+ 316 406e 3bf9 7634 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 319 0174 39d5 0012 Lnet/lingala/zip4j/model/FileHeader;->getOffsetLocalHeader
+ 322 060b 
+ 323 406e 3bf9 7634 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 326 0174 39c9 0012 Lnet/lingala/zip4j/model/FileHeader;->getDiskNumberStart
+ 329 000a 
+ 330 306e 3bf7 0034 Lnet/lingala/zip4j/util/RawIO;->writeIntLittleEndian
+ 333 0174 39c5 0012 Lnet/lingala/zip4j/model/FileHeader;->getAesExtraDataRecord
+ 336 000c 
+ 337 0038 004a if target 411
+ 339 0174 39c5 0012 Lnet/lingala/zip4j/model/FileHeader;->getAesExtraDataRecord
+ 342 000c 
+ 343 106e 3961 0000 Lnet/lingala/zip4j/model/AESExtraDataRecord;->getSignature
+ 346 060c 
+ 347 106e 3841 0006 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+ 350 060b 
+ 351 6684 
+ 352 306e 3bfb 0634 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 355 106e 3960 0000 Lnet/lingala/zip4j/model/AESExtraDataRecord;->getDataSize
+ 358 060a 
+ 359 306e 3bfb 0634 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 362 106e 395e 0000 Lnet/lingala/zip4j/model/AESExtraDataRecord;->getAesVersion
+ 365 060c 
+ 366 106e 3ab5 0006 Lnet/lingala/zip4j/model/enums/AesVersion;->getVersionNumber
+ 369 060a 
+ 370 306e 3bfb 0634 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 373 106e 3962 0000 Lnet/lingala/zip4j/model/AESExtraDataRecord;->getVendorID
+ 376 060c 
+ 377 2071 3846 0056 Lnet/lingala/zip4j/headers/HeaderUtil;->getBytesFromString
+ 380 050c 
+ 381 206e 34eb 0053 Ljava/io/ByteArrayOutputStream;->write
+ 384 9523 0a3a 
+ 386 106e 395d 0000 Lnet/lingala/zip4j/model/AESExtraDataRecord;->getAesKeyStrength
+ 389 060c 
+ 390 106e 3aad 0006 Lnet/lingala/zip4j/model/enums/AesKeyStrength;->getRawCode
+ 393 060a 
+ 394 668d 
+ 395 064f 0805 
+ 397 206e 34eb 0053 Ljava/io/ByteArrayOutputStream;->write
+ 400 106e 395f 0000 Lnet/lingala/zip4j/model/AESExtraDataRecord;->getCompressionMethod
+ 403 000c 
+ 404 106e 3ac1 0000 Lnet/lingala/zip4j/model/enums/CompressionMethod;->getCode
+ 407 000a 
+ 408 306e 3bfb 0034 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 411 3070 385e 0321 Lnet/lingala/zip4j/headers/HeaderWriter;->writeRemainingExtraDataRecordsIfPresent
+ 414 c021 
+ 415 003d 0005 if target 420
+ 417 206e 34eb 00c3 Ljava/io/ByteArrayOutputStream;->write
+ 420 000e 
+ 421 000d 
+ 422 0222 0973 
+ 424 2070 3818 0002 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 427 0227 
+ 428 0022 0973 
+ 430 021a 45b8 "input parameters is null, cannot write local file header"
+ 432 2070 3819 0020 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 435 0027 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderWriter;->writeExtendedLocalHeader code=1287868 regs=11 ins=3
+   0 0938 0075 if target 117
+   2 0a38 0073 if target 117
+   4 0022 08a2 
+   6 1070 34e4 0000 Ljava/io/ByteArrayOutputStream;-><init>
+   9 8154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  11 0262 5bf2 Lnet/lingala/zip4j/headers/HeaderSignature;->EXTRA_DATA_RECORD:Lnet/lingala/zip4j/headers/HeaderSignature;
+  13 106e 3841 0002 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  16 020b 
+  17 2284 
+  18 306e 3bf7 0201 Lnet/lingala/zip4j/util/RawIO;->writeIntLittleEndian
+  21 8154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  23 8254 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  25 106e 39ff 0009 Lnet/lingala/zip4j/model/LocalFileHeader;->getCrc
+  28 030b 
+  29 0512 const/4 v5 0
+  30 546e 3bfa 3521 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  33 8154 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  35 4212 const/4 v2 4
+  36 406e 34ec 2510 Ljava/io/ByteArrayOutputStream;->write
+  39 106e 3a0e 0009 Lnet/lingala/zip4j/model/LocalFileHeader;->isWriteCompressedSizeInZip64ExtraRecord
+  42 010a 
+  43 0138 0015 if target 64
+  45 8154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  47 106e 39fd 0009 Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressedSize
+  50 020b 
+  51 406e 3bf9 3201 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  54 8154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  56 106e 3a09 0009 Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+  59 020b 
+  60 406e 3bf9 3201 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  63 2128 
+  64 8154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  66 8354 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  68 106e 39fd 0009 Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressedSize
+  71 060b 
+  72 576e 3bfa 6531 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  75 8154 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  77 406e 34ec 2510 Ljava/io/ByteArrayOutputStream;->write
+  80 8154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  82 8354 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  84 106e 3a09 0009 Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+  87 060b 
+  88 576e 3bfa 6531 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  91 8954 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  93 406e 34ec 2590 Ljava/io/ByteArrayOutputStream;->write
+  96 106e 34ea 0000 Ljava/io/ByteArrayOutputStream;->toByteArray
+  99 090c 
+ 100 206e 3521 009a Ljava/io/OutputStream;->write
+ 103 106e 34e6 0000 Ljava/io/ByteArrayOutputStream;->close
+ 106 000e 
+ 107 090d 
+ 108 106e 34e6 0000 Ljava/io/ByteArrayOutputStream;->close
+ 111 0528 
+ 112 0a0d 
+ 113 206e 35df 00a9 Ljava/lang/Throwable;->addSuppressed
+ 116 0927 
+ 117 0922 0973 
+ 119 0a1a 45b7 "input parameters is null, cannot write extended local header"
+ 121 2070 3819 00a9 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 124 0927 
+
+METHOD Lnet/lingala/zip4j/headers/HeaderWriter;->writeLocalFileHeader code=1289064 regs=15 ins=5
+   0 0022 08a2 
+   2 1070 34e4 0000 Ljava/io/ByteArrayOutputStream;-><init>
+   5 a154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+   7 106e 3a08 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getSignature
+  10 020c 
+  11 106e 3841 0002 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+  14 020b 
+  15 2284 
+  16 306e 3bf7 0201 Lnet/lingala/zip4j/util/RawIO;->writeIntLittleEndian
+  19 a154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  21 106e 3a0a 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getVersionNeededToExtract
+  24 020a 
+  25 306e 3bfb 0201 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+  28 106e 3a05 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getGeneralPurposeFlag
+  31 010c 
+  32 206e 34eb 0010 Ljava/io/ByteArrayOutputStream;->write
+  35 a154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  37 106e 39fe 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressionMethod
+  40 020c 
+  41 106e 3ac1 0002 Lnet/lingala/zip4j/model/enums/CompressionMethod;->getCode
+  44 020a 
+  45 306e 3bfb 0201 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+  48 a154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  50 a254 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  52 106e 3a06 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getLastModifiedTime
+  55 030b 
+  56 0512 const/4 v5 0
+  57 546e 3bfa 3521 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  60 a154 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  62 4212 const/4 v2 4
+  63 406e 34ec 2510 Ljava/io/ByteArrayOutputStream;->write
+  66 a154 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  68 a354 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  70 106e 39ff 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getCrc
+  73 060b 
+  74 576e 3bfa 6531 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+  77 a154 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+  79 406e 34ec 2510 Ljava/io/ByteArrayOutputStream;->write
+  82 106e 39fd 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressedSize
+  85 030b 
+  86 0618 ffff ffff 0000 0000 
+  91 0131 0603 
+  93 1312 const/4 v3 1
+  94 013b 000d if target 107
+  96 106e 3a09 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+  99 080b 
+ 100 0131 0608 
+ 102 013a 0003 if target 105
+ 104 0328 
+ 105 5101 
+ 106 0228 
+ 107 3101 
+ 108 0138 001a if target 134
+ 110 a454 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 112 a854 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 114 576e 3bfa 6584 Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 117 a454 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 119 406e 34ec 2540 Ljava/io/ByteArrayOutputStream;->write
+ 122 a454 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 124 406e 34ec 2540 Ljava/io/ByteArrayOutputStream;->write
+ 127 206e 3a75 003b Lnet/lingala/zip4j/model/ZipModel;->setZip64Format
+ 130 206e 3a23 003c Lnet/lingala/zip4j/model/LocalFileHeader;->setWriteCompressedSizeInZip64ExtraRecord
+ 133 2428 
+ 134 ab54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 136 a454 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 138 106e 39fd 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressedSize
+ 141 060b 
+ 142 576e 3bfa 654b Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 145 ab54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 147 406e 34ec 25b0 Ljava/io/ByteArrayOutputStream;->write
+ 150 ab54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 152 a454 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 154 106e 3a09 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+ 157 060b 
+ 158 576e 3bfa 654b Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 161 ab54 5bfe Lnet/lingala/zip4j/headers/HeaderWriter;->longBuff:[B
+ 163 406e 34ec 25b0 Ljava/io/ByteArrayOutputStream;->write
+ 166 206e 3a23 005c Lnet/lingala/zip4j/model/LocalFileHeader;->setWriteCompressedSizeInZip64ExtraRecord
+ 169 5b23 0a3a 
+ 171 106e 3a04 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getFileName
+ 174 020c 
+ 175 1071 3c0b 0002 Lnet/lingala/zip4j/util/Zip4jUtil;->isStringNotNullAndNotEmpty
+ 178 020a 
+ 179 0238 000a if target 189
+ 181 106e 3a04 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getFileName
+ 184 0b0c 
+ 185 2071 3846 00eb Lnet/lingala/zip4j/headers/HeaderUtil;->getBytesFromString
+ 188 0b0c 
+ 189 a254 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 191 b421 
+ 192 306e 3bfb 0402 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 195 0138 0005 if target 200
+ 197 0213 0014 const/16 20
+ 199 0228 
+ 200 5201 
+ 201 106e 39fc 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getAesExtraDataRecord
+ 204 040c 
+ 205 0438 0004 if target 209
+ 207 02d8 0b02 
+ 209 a454 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 211 306e 3bfb 0204 Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 214 b221 
+ 215 023d 0005 if target 220
+ 217 206e 34eb 00b0 Ljava/io/ByteArrayOutputStream;->write
+ 220 0138 0027 if target 259
+ 222 ab54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 224 0162 5bf8 Lnet/lingala/zip4j/headers/HeaderSignature;->ZIP64_EXTRA_FIELD_SIGNATURE:Lnet/lingala/zip4j/headers/HeaderSignature;
+ 226 106e 3841 0001 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+ 229 010b 
+ 230 1184 
+ 231 306e 3bfb 010b Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 234 ab54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 236 0113 0010 const/16 16
+ 238 306e 3bfb 010b Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 241 ab54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 243 106e 3a09 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+ 246 010b 
+ 247 406e 3bf9 210b Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 250 ab54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 252 106e 39fd 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressedSize
+ 255 010b 
+ 256 406e 3bf9 210b Lnet/lingala/zip4j/util/RawIO;->writeLongLittleEndian
+ 259 106e 39fc 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getAesExtraDataRecord
+ 262 0b0c 
+ 263 0b38 0052 if target 345
+ 265 106e 39fc 000c Lnet/lingala/zip4j/model/LocalFileHeader;->getAesExtraDataRecord
+ 268 0b0c 
+ 269 ac54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 271 106e 3961 000b Lnet/lingala/zip4j/model/AESExtraDataRecord;->getSignature
+ 274 010c 
+ 275 106e 3841 0001 Lnet/lingala/zip4j/headers/HeaderSignature;->getValue
+ 278 010b 
+ 279 1184 
+ 280 306e 3bfb 010c Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 283 ac54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 285 106e 3960 000b Lnet/lingala/zip4j/model/AESExtraDataRecord;->getDataSize
+ 288 010a 
+ 289 306e 3bfb 010c Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 292 ac54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 294 106e 395e 000b Lnet/lingala/zip4j/model/AESExtraDataRecord;->getAesVersion
+ 297 010c 
+ 298 106e 3ab5 0001 Lnet/lingala/zip4j/model/enums/AesVersion;->getVersionNumber
+ 301 010a 
+ 302 306e 3bfb 010c Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 305 106e 3962 000b Lnet/lingala/zip4j/model/AESExtraDataRecord;->getVendorID
+ 308 0c0c 
+ 309 2071 3846 00ec Lnet/lingala/zip4j/headers/HeaderUtil;->getBytesFromString
+ 312 0c0c 
+ 313 206e 34eb 00c0 Ljava/io/ByteArrayOutputStream;->write
+ 316 3c23 0a3a 
+ 318 106e 395d 000b Lnet/lingala/zip4j/model/AESExtraDataRecord;->getAesKeyStrength
+ 321 0e0c 
+ 322 106e 3aad 000e Lnet/lingala/zip4j/model/enums/AesKeyStrength;->getRawCode
+ 325 0e0a 
+ 326 ee8d 
+ 327 0e4f 050c 
+ 329 206e 34eb 00c0 Ljava/io/ByteArrayOutputStream;->write
+ 332 ac54 5bff Lnet/lingala/zip4j/headers/HeaderWriter;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+ 334 106e 395f 000b Lnet/lingala/zip4j/model/AESExtraDataRecord;->getCompressionMethod
+ 337 0b0c 
+ 338 106e 3ac1 000b Lnet/lingala/zip4j/model/enums/CompressionMethod;->getCode
+ 341 0b0a 
+ 342 306e 3bfb 0b0c Lnet/lingala/zip4j/util/RawIO;->writeShortLittleEndian
+ 345 106e 34ea 0000 Ljava/io/ByteArrayOutputStream;->toByteArray
+ 348 0b0c 
+ 349 206e 3521 00bd Ljava/io/OutputStream;->write
+ 352 106e 34e6 0000 Ljava/io/ByteArrayOutputStream;->close
+ 355 000e 
+ 356 0b0d 
+ 357 106e 34e6 0000 Ljava/io/ByteArrayOutputStream;->close
+ 360 0528 
+ 361 0c0d 
+ 362 206e 35df 00cb Ljava/lang/Throwable;->addSuppressed
+ 365 0b27 
+
+METHOD Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->getCompressedSize code=1295512 regs=6 ins=2
+   0 1071 3c0a 0005 Lnet/lingala/zip4j/util/Zip4jUtil;->getCompressionMethod
+   3 000c 
+   4 0162 5ceb Lnet/lingala/zip4j/model/enums/CompressionMethod;->STORE:Lnet/lingala/zip4j/model/enums/CompressionMethod;
+   6 206e 3ac0 0010 Lnet/lingala/zip4j/model/enums/CompressionMethod;->equals
+   9 000a 
+  10 0038 0007 if target 17
+  12 106e 3a09 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+  15 000b 
+  16 0010 
+  17 106e 3a0b 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->isDataDescriptorExists
+  20 000a 
+  21 0038 0009 if target 30
+  23 4055 5c2b Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->canSkipExtendedLocalFileHeader:Z
+  25 0039 0005 if target 30
+  27 0016 ffff const/16 -1
+  29 0010 
+  30 106e 39fd 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressedSize
+  33 000b 
+  34 2070 38d2 0054 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->getEncryptionHeaderSize
+  37 050a 
+  38 5281 
+  39 20bc 
+  40 0010 
+
+METHOD Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->readExtendedLocalFileHeaderIfPresent code=1296812 regs=5 ins=1
+   0 4054 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+   2 106e 3a0b 0000 Lnet/lingala/zip4j/model/LocalFileHeader;->isDataDescriptorExists
+   5 000a 
+   6 0038 0034 if target 58
+   8 4055 5c2b Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->canSkipExtendedLocalFileHeader:Z
+  10 0038 0003 if target 13
+  12 2e28 
+  13 4054 5c30 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->headerReader:Lnet/lingala/zip4j/headers/HeaderReader;
+  15 4154 5c31 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->inputStream:Ljava/io/PushbackInputStream;
+  17 4254 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  19 106e 3a01 0002 Lnet/lingala/zip4j/model/LocalFileHeader;->getExtraDataRecords
+  22 020c 
+  23 2070 38cd 0024 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->checkIfZip64ExtraDataRecordPresentInLFH
+  26 020a 
+  27 306e 3830 0210 Lnet/lingala/zip4j/headers/HeaderReader;->readDataDescriptor
+  30 000c 
+  31 4154 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  33 106e 399b 0000 Lnet/lingala/zip4j/model/DataDescriptor;->getCompressedSize
+  36 020b 
+  37 306e 3a10 0321 Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressedSize
+  40 4154 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  42 106e 399d 0000 Lnet/lingala/zip4j/model/DataDescriptor;->getUncompressedSize
+  45 020b 
+  46 306e 3a21 0321 Lnet/lingala/zip4j/model/LocalFileHeader;->setUncompressedSize
+  49 4154 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  51 106e 399c 0000 Lnet/lingala/zip4j/model/DataDescriptor;->getCrc
+  54 020b 
+  55 306e 3a12 0321 Lnet/lingala/zip4j/model/LocalFileHeader;->setCrc
+  58 000e 
+
+METHOD Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->verifyLocalFileHeader code=1297268 regs=6 ins=2
+   0 106e 3a04 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->getFileName
+   3 000c 
+   4 2070 38d9 0004 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->isEntryDirectory
+   7 000a 
+   8 0039 0038 if target 64
+  10 106e 39fe 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->getCompressionMethod
+  13 000c 
+  14 0162 5ceb Lnet/lingala/zip4j/model/enums/CompressionMethod;->STORE:Lnet/lingala/zip4j/model/enums/CompressionMethod;
+  16 1033 0030 if target 64
+  18 106e 3a09 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->getUncompressedSize
+  21 000b 
+  22 0216 0000 const/16 0
+  24 0031 0200 
+  26 003a 0003 if target 29
+  28 2428 
+  29 0022 08aa 
+  31 0122 08dd 
+  33 1070 35b9 0001 Ljava/lang/StringBuilder;-><init>
+  36 021a 0ca1 "Invalid local file header for: "
+  38 206e 35c3 0021 Ljava/lang/StringBuilder;->append
+  41 010c 
+  42 106e 3a04 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->getFileName
+  45 050c 
+  46 206e 35c3 0051 Ljava/lang/StringBuilder;->append
+  49 050c 
+  50 011a 022b ". Uncompressed size has to be set for entry of compression type store which is not a directory"
+  52 206e 35c3 0015 Ljava/lang/StringBuilder;->append
+  55 050c 
+  56 106e 35c7 0005 Ljava/lang/StringBuilder;->toString
+  59 050c 
+  60 2070 3511 0050 Ljava/io/IOException;-><init>
+  63 0027 
+  64 000e 
+
+METHOD Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->getNextEntry code=1295996 regs=6 ins=3
+   0 3054 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+   2 0038 0007 if target 9
+   4 0538 0005 if target 9
+   6 1070 38de 0003 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->readUntilEndOfEntry
+   9 3554 5c30 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->headerReader:Lnet/lingala/zip4j/headers/HeaderReader;
+  11 3054 5c31 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->inputStream:Ljava/io/PushbackInputStream;
+  13 3154 5c36 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->zip4jConfig:Lnet/lingala/zip4j/model/Zip4jConfig;
+  15 106e 3a2a 0001 Lnet/lingala/zip4j/model/Zip4jConfig;->getCharset
+  18 010c 
+  19 306e 3836 0105 Lnet/lingala/zip4j/headers/HeaderReader;->readLocalFileHeader
+  22 050c 
+  23 355b 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  25 0539 0004 if target 29
+  27 0412 const/4 v4 0
+  28 0411 
+  29 106e 3a0c 0005 Lnet/lingala/zip4j/model/LocalFileHeader;->isEncrypted
+  32 050a 
+  33 0538 0011 if target 50
+  35 3554 5c33 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->password:[C
+  37 0539 000d if target 50
+  39 3554 5c34 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->passwordCallback:Lnet/lingala/zip4j/util/PasswordCallback;
+  41 0538 0009 if target 50
+  43 1072 3be7 0005 Lnet/lingala/zip4j/util/PasswordCallback;->getPassword
+  46 050c 
+  47 206e 38e0 0053 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->setPassword
+  50 3554 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  52 2070 38e2 0053 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->verifyLocalFileHeader
+  55 3554 5c2c Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->crc32:Ljava/util/zip/CRC32;
+  57 106e 3755 0005 Ljava/util/zip/CRC32;->reset
+  60 0512 const/4 v5 0
+  61 0438 002a if target 103
+  63 3054 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  65 106e 39c8 0004 Lnet/lingala/zip4j/model/FileHeader;->getCrc
+  68 010b 
+  69 306e 3a12 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setCrc
+  72 3054 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  74 106e 39c6 0004 Lnet/lingala/zip4j/model/FileHeader;->getCompressedSize
+  77 010b 
+  78 306e 3a10 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressedSize
+  81 3054 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  83 106e 39d7 0004 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+  86 010b 
+  87 306e 3a21 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setUncompressedSize
+  90 3054 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  92 106e 39dd 0004 Lnet/lingala/zip4j/model/FileHeader;->isDirectory
+  95 040a 
+  96 206e 3a14 0040 Lnet/lingala/zip4j/model/LocalFileHeader;->setDirectory
+  99 1412 const/4 v4 1
+ 100 345c 5c2b Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->canSkipExtendedLocalFileHeader:Z
+ 102 0328 
+ 103 355c 5c2b Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->canSkipExtendedLocalFileHeader:Z
+ 105 3454 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+ 107 2070 38d7 0043 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->initializeEntryInputStream
+ 110 040c 
+ 111 345b 5c2d Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->decompressedInputStream:Lnet/lingala/zip4j/io/inputstream/DecompressedInputStream;
+ 113 355c 5c2f Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->entryEOFReached:Z
+ 115 3454 5c32 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+ 117 0411 
+
+METHOD Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;-><init> code=1302812 regs=7 ins=5
+   0 1070 351e 0002 Ljava/io/OutputStream;-><init>
+   3 0022 0974 
+   5 1070 381e 0000 Lnet/lingala/zip4j/headers/FileHeaderFactory;-><init>
+   8 205b 5c54 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->fileHeaderFactory:Lnet/lingala/zip4j/headers/FileHeaderFactory;
+  10 0022 0978 
+  12 1070 384c 0000 Lnet/lingala/zip4j/headers/HeaderWriter;-><init>
+  15 205b 5c55 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->headerWriter:Lnet/lingala/zip4j/headers/HeaderWriter;
+  17 0022 0954 
+  19 1070 3753 0000 Ljava/util/zip/CRC32;-><init>
+  22 205b 5c51 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->crc32:Ljava/util/zip/CRC32;
+  24 0022 09d4 
+  26 1070 3be8 0000 Lnet/lingala/zip4j/util/RawIO;-><init>
+  29 205b 5c58 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->rawIO:Lnet/lingala/zip4j/util/RawIO;
+  31 0016 0000 const/16 0
+  33 205a 5c5a Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->uncompressedSizeForThisEntry:J
+  35 1012 const/4 v0 1
+  36 205c 5c52 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->entryClosed:Z
+  38 106e 3a29 0005 Lnet/lingala/zip4j/model/Zip4jConfig;->getBufferSize
+  41 000a 
+  42 0113 0200 const/16 512
+  44 1034 001a if target 70
+  46 0022 098c 
+  48 2070 390b 0030 Lnet/lingala/zip4j/io/outputstream/CountingOutputStream;-><init>
+  51 205b 5c50 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->countingOutputStream:Lnet/lingala/zip4j/io/outputstream/CountingOutputStream;
+  53 245b 5c57 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->password:[C
+  55 255b 5c5b Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->zip4jConfig:Lnet/lingala/zip4j/model/Zip4jConfig;
+  57 3070 394a 0062 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->initializeZipModel
+  60 030c 
+  61 235b 5c5c Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+  63 0312 const/4 v3 0
+  64 235c 5c59 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->streamClosed:Z
+  66 1070 3953 0002 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->writeSplitZipHeaderIfApplicable
+  69 000e 
+  70 0322 08c6 
+  72 041a 05db "Buffer size cannot be less than 512 bytes"
+  74 2070 355b 0043 Ljava/lang/IllegalArgumentException;-><init>
+  77 0327 
+
+METHOD Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->reset code=1303364 regs=3 ins=1
+   0 0016 0000 const/16 0
+   2 205a 5c5a Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->uncompressedSizeForThisEntry:J
+   4 2054 5c51 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->crc32:Ljava/util/zip/CRC32;
+   6 106e 3755 0000 Ljava/util/zip/CRC32;->reset
+   9 2054 5c4f Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->compressedOutputStream:Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;
+  11 106e 3905 0000 Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;->close
+  14 000e 
+
+METHOD Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->verifyZipParameters code=1303456 regs=6 ins=2
+   0 106e 3a88 0005 Lnet/lingala/zip4j/model/ZipParameters;->getFileNameInZip
+   3 000c 
+   4 1071 3c0c 0000 Lnet/lingala/zip4j/util/Zip4jUtil;->isStringNullOrEmpty
+   7 000a 
+   8 0039 002e if target 54
+  10 106e 3a81 0005 Lnet/lingala/zip4j/model/ZipParameters;->getCompressionMethod
+  13 000c 
+  14 0162 5ceb Lnet/lingala/zip4j/model/enums/CompressionMethod;->STORE:Lnet/lingala/zip4j/model/enums/CompressionMethod;
+  16 1033 0025 if target 53
+  18 106e 3a85 0005 Lnet/lingala/zip4j/model/ZipParameters;->getEntrySize
+  21 000b 
+  22 0216 0000 const/16 0
+  24 0031 0200 
+  26 003b 001b if target 53
+  28 106e 3a88 0005 Lnet/lingala/zip4j/model/ZipParameters;->getFileNameInZip
+  31 000c 
+  32 1071 3bdf 0000 Lnet/lingala/zip4j/util/FileUtils;->isZipEntryDirectory
+  35 000a 
+  36 0039 0011 if target 53
+  38 106e 3a92 0005 Lnet/lingala/zip4j/model/ZipParameters;->isWriteExtendedLocalFileHeader
+  41 050a 
+  42 0539 0003 if target 45
+  44 0928 
+  45 0522 08c6 
+  47 001a 55ce "uncompressed size should be set for zip entries of compression type store"
+  49 2070 355b 0005 Ljava/lang/IllegalArgumentException;-><init>
+  52 0527 
+  53 000e 
+  54 0522 08c6 
+  56 001a 409b "fileNameInZip is null or empty"
+  58 2070 355b 0005 Ljava/lang/IllegalArgumentException;-><init>
+  61 0527 
+
+METHOD Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->closeEntry code=1302272 regs=4 ins=1
+   0 3054 5c4f Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->compressedOutputStream:Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;
+   2 106e 3906 0000 Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;->closeEntry
+   5 3054 5c4f Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->compressedOutputStream:Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;
+   7 106e 3907 0000 Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;->getCompressedSize
+  10 000b 
+  11 3254 5c53 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->fileHeader:Lnet/lingala/zip4j/model/FileHeader;
+  13 306e 39e1 0102 Lnet/lingala/zip4j/model/FileHeader;->setCompressedSize
+  16 3254 5c56 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  18 306e 3a10 0102 Lnet/lingala/zip4j/model/LocalFileHeader;->setCompressedSize
+  21 3054 5c53 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->fileHeader:Lnet/lingala/zip4j/model/FileHeader;
+  23 3153 5c5a Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->uncompressedSizeForThisEntry:J
+  25 306e 39f6 0210 Lnet/lingala/zip4j/model/FileHeader;->setUncompressedSize
+  28 3054 5c56 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  30 3153 5c5a Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->uncompressedSizeForThisEntry:J
+  32 306e 3a21 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setUncompressedSize
+  35 3054 5c53 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->fileHeader:Lnet/lingala/zip4j/model/FileHeader;
+  37 2070 3952 0003 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->writeCrc
+  40 000a 
+  41 0038 0018 if target 65
+  43 3054 5c53 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->fileHeader:Lnet/lingala/zip4j/model/FileHeader;
+  45 3154 5c51 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->crc32:Ljava/util/zip/CRC32;
+  47 106e 3754 0001 Ljava/util/zip/CRC32;->getValue
+  50 010b 
+  51 306e 39e3 0210 Lnet/lingala/zip4j/model/FileHeader;->setCrc
+  54 3054 5c56 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  56 3154 5c51 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->crc32:Ljava/util/zip/CRC32;
+  58 106e 3754 0001 Ljava/util/zip/CRC32;->getValue
+  61 010b 
+  62 306e 3a12 0210 Lnet/lingala/zip4j/model/LocalFileHeader;->setCrc
+  65 3054 5c5c Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+  67 106e 3a60 0000 Lnet/lingala/zip4j/model/ZipModel;->getLocalFileHeaders
+  70 000c 
+  71 3154 5c56 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  73 2072 3699 0010 Ljava/util/List;->add
+  76 3054 5c5c Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+  78 106e 3a5c 0000 Lnet/lingala/zip4j/model/ZipModel;->getCentralDirectory
+  81 000c 
+  82 106e 3997 0000 Lnet/lingala/zip4j/model/CentralDirectory;->getFileHeaders
+  85 000c 
+  86 3154 5c53 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->fileHeader:Lnet/lingala/zip4j/model/FileHeader;
+  88 2072 3699 0010 Ljava/util/List;->add
+  91 3054 5c56 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+  93 106e 3a0b 0000 Lnet/lingala/zip4j/model/LocalFileHeader;->isDataDescriptorExists
+  96 000a 
+  97 0038 000b if target 108
+  99 3054 5c55 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->headerWriter:Lnet/lingala/zip4j/headers/HeaderWriter;
+ 101 3154 5c56 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->localFileHeader:Lnet/lingala/zip4j/model/LocalFileHeader;
+ 103 3254 5c50 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->countingOutputStream:Lnet/lingala/zip4j/io/outputstream/CountingOutputStream;
+ 105 306e 385b 0210 Lnet/lingala/zip4j/headers/HeaderWriter;->writeExtendedLocalHeader
+ 108 1070 394c 0003 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->reset
+ 111 1012 const/4 v0 1
+ 112 305c 5c52 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->entryClosed:Z
+ 114 3054 5c53 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->fileHeader:Lnet/lingala/zip4j/model/FileHeader;
+ 116 0011 
+
+METHOD Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->write code=1303624 regs=6 ins=4
+   0 1070 3945 0002 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->ensureStreamOpen
+   3 2054 5c51 Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->crc32:Ljava/util/zip/CRC32;
+   5 406e 3756 5430 Ljava/util/zip/CRC32;->update
+   8 2054 5c4f Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->compressedOutputStream:Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;
+  10 406e 390a 5430 Lnet/lingala/zip4j/io/outputstream/CompressedOutputStream;->write
+  13 2353 5c5a Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->uncompressedSizeForThisEntry:J
+  15 5081 
+  16 03bb 
+  17 235a 5c5a Lnet/lingala/zip4j/io/outputstream/ZipOutputStream;->uncompressedSizeForThisEntry:J
+  19 000e 
+
+METHOD Lnet/lingala/zip4j/model/UnzipParameters;-><init> code=1307364 regs=2 ins=1
+   0 1070 3583 0001 Ljava/lang/Object;-><init>
+   3 1012 const/4 v0 1
+   4 105c 5c92 Lnet/lingala/zip4j/model/UnzipParameters;->extractSymbolicLinks:Z
+   6 000e 
+
+METHOD Lnet/lingala/zip4j/model/UnzipParameters;->isExtractSymbolicLinks code=1307340 regs=2 ins=1
+   0 1055 5c92 Lnet/lingala/zip4j/model/UnzipParameters;->extractSymbolicLinks:Z
+   2 000f 
+
+METHOD Lnet/lingala/zip4j/model/UnzipParameters;->setExtractSymbolicLinks code=1307396 regs=2 ins=2
+   0 015c 5c92 Lnet/lingala/zip4j/model/UnzipParameters;->extractSymbolicLinks:Z
+   2 000e 
+
+METHOD Lnet/lingala/zip4j/util/UnzipUtil;->createZipInputStream code=1334864 regs=4 ins=3
+   0 1071 3bff 0001 Lnet/lingala/zip4j/util/UnzipUtil;->createSplitInputStream
+   3 010c 
+   4 206e 38b8 0021 Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;->prepareExtractionForFileHeader
+   7 0022 0986 
+   9 3070 38c7 0310 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;-><init>
+  12 0312 const/4 v3 0
+  13 306e 38d4 0320 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->getNextEntry
+  16 020c 
+  17 0238 0003 if target 20
+  19 0011 
+  20 0222 0973 
+  22 031a 08c2 "Could not locate local file header for corresponding file header"
+  24 2070 3819 0032 Lnet/lingala/zip4j/exception/ZipException;-><init>
+  27 0227 
+  28 020d 
+  29 0328 
+  30 020d 
+  31 0112 const/4 v1 0
+  32 0138 0005 if target 37
+  34 106e 38b7 0001 Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;->close
+  37 0227 
+
+METHOD Lnet/lingala/zip4j/model/AbstractFileHeader;-><init> code=1304892 regs=3 ins=1
+   0 1070 3a56 0002 Lnet/lingala/zip4j/model/ZipHeader;-><init>
+   3 0016 0000 const/16 0
+   5 205a 5c65 Lnet/lingala/zip4j/model/AbstractFileHeader;->crc:J
+   7 205a 5c63 Lnet/lingala/zip4j/model/AbstractFileHeader;->compressedSize:J
+   9 205a 5c71 Lnet/lingala/zip4j/model/AbstractFileHeader;->uncompressedSize:J
+  11 0062 5cef Lnet/lingala/zip4j/model/enums/EncryptionMethod;->NONE:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+  13 205b 5c67 Lnet/lingala/zip4j/model/AbstractFileHeader;->encryptionMethod:Lnet/lingala/zip4j/model/enums/EncryptionMethod;
+  15 000e 
+
+METHOD Lnet/lingala/zip4j/model/AbstractFileHeader;->getUncompressedSize code=1304772 regs=3 ins=1
+   0 2053 5c71 Lnet/lingala/zip4j/model/AbstractFileHeader;->uncompressedSize:J
+   2 0010 
+
+METHOD Lnet/lingala/zip4j/model/AbstractFileHeader;->setUncompressedSize code=1305300 regs=3 ins=3
+   0 015a 5c71 Lnet/lingala/zip4j/model/AbstractFileHeader;->uncompressedSize:J
+   2 000e 
+
+METHOD Lnet/lingala/zip4j/model/DataDescriptor;->getUncompressedSize code=1305688 regs=3 ins=1
+   0 2053 5c7a Lnet/lingala/zip4j/model/DataDescriptor;->uncompressedSize:J
+   2 0010 
+
+METHOD Lnet/lingala/zip4j/model/DataDescriptor;->setUncompressedSize code=1305784 regs=3 ins=3
+   0 015a 5c7a Lnet/lingala/zip4j/model/DataDescriptor;->uncompressedSize:J
+   2 000e 
+
+METHOD Lnet/lingala/zip4j/model/Zip64ExtendedInfo;-><init> code=1308328 regs=3 ins=1
+   0 1070 3a56 0002 Lnet/lingala/zip4j/model/ZipHeader;-><init>
+   3 0016 ffff const/16 -1
+   5 205a 5ca3 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->compressedSize:J
+   7 205a 5ca7 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->uncompressedSize:J
+   9 205a 5ca5 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->offsetLocalHeader:J
+  11 f012 const/4 v0 -1
+  12 2059 5ca4 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->diskNumberStart:I
+  14 000e 
+
+METHOD Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->getUncompressedSize code=1308304 regs=3 ins=1
+   0 2053 5ca7 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->uncompressedSize:J
+   2 0010 
+
+METHOD Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->setUncompressedSize code=1308472 regs=3 ins=3
+   0 015a 5ca7 Lnet/lingala/zip4j/model/Zip64ExtendedInfo;->uncompressedSize:J
+   2 000e 
+
+METHOD Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;-><init> code=1316684 regs=4 ins=4
+   0 2070 3b51 0030 Lnet/lingala/zip4j/tasks/AsyncZipTask;-><init>
+   3 015b 5d15 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->zipModel:Lnet/lingala/zip4j/model/ZipModel;
+   5 025b 5d14 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->unzipParameters:Lnet/lingala/zip4j/model/UnzipParameters;
+   7 000e 
+
+METHOD Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->readCompleteEntry code=1316448 regs=6 ins=4
+   0 106e 39d7 0004 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+   3 000b 
+   4 0484 
+   5 4023 0a3a 
+   7 206e 38db 0003 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->read
+  10 030a 
+  11 4333 0007 if target 18
+  13 4381 
+  14 306e 3af4 0435 Lnet/lingala/zip4j/progress/ProgressMonitor;->updateWorkCompleted
+  17 0011 
+  18 0322 0973 
+  20 041a 08c4 "Could not read complete entry"
+  22 2070 3819 0043 Lnet/lingala/zip4j/exception/ZipException;-><init>
+  25 0327 
+
+METHOD Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->extractFile code=1317364 regs=9 ins=7
+   0 2070 3b0f 0042 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->isSymbolicLink
+   3 000a 
+   4 0038 000b if target 15
+   6 2154 5d14 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->unzipParameters:Lnet/lingala/zip4j/model/UnzipParameters;
+   8 106e 3a26 0001 Lnet/lingala/zip4j/model/UnzipParameters;->isExtractSymbolicLinks
+  11 010a 
+  12 0139 0003 if target 15
+  14 000e 
+  15 0162 5d51 Lnet/lingala/zip4j/util/InternalZipConstants;->FILE_SEPARATOR:Ljava/lang/String;
+  17 206e 359d 0015 Ljava/lang/String;->endsWith
+  20 010a 
+  21 0139 0015 if target 42
+  23 0122 08dd 
+  25 1070 35b9 0001 Ljava/lang/StringBuilder;-><init>
+  28 206e 35c3 0051 Ljava/lang/StringBuilder;->append
+  31 050c 
+  32 0162 5d51 Lnet/lingala/zip4j/util/InternalZipConstants;->FILE_SEPARATOR:Ljava/lang/String;
+  34 206e 35c3 0015 Ljava/lang/StringBuilder;->append
+  37 050c 
+  38 106e 35c7 0005 Ljava/lang/StringBuilder;->toString
+  41 050c 
+  42 4070 3b0a 6542 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->determineOutputFile
+  45 060c 
+  46 106e 34f5 0006 Ljava/io/File;->getAbsolutePath
+  49 010c 
+  50 206e 3aee 0017 Lnet/lingala/zip4j/progress/ProgressMonitor;->setFileName
+  53 4070 3b07 4562 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->assertCanonicalPathsAreSame
+  56 3070 3b13 0432 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->verifyNextEntry
+  59 106e 39dd 0004 Lnet/lingala/zip4j/model/FileHeader;->isDirectory
+  62 050a 
+  63 0538 0028 if target 103
+  65 106e 34f4 0006 Ljava/io/File;->exists
+  68 030a 
+  69 0339 002e if target 115
+  71 106e 3504 0006 Ljava/io/File;->mkdirs
+  74 030a 
+  75 0338 0003 if target 78
+  77 2628 
+  78 0322 0973 
+  80 0422 08dd 
+  82 1070 35b9 0004 Ljava/lang/StringBuilder;-><init>
+  85 051a 08ad "Could not create directory: "
+  87 206e 35c3 0054 Ljava/lang/StringBuilder;->append
+  90 040c 
+  91 206e 35c2 0064 Ljava/lang/StringBuilder;->append
+  94 040c 
+  95 106e 35c7 0004 Ljava/lang/StringBuilder;->toString
+  98 040c 
+  99 2070 3819 0043 Lnet/lingala/zip4j/exception/ZipException;-><init>
+ 102 0327 
+ 103 0038 0006 if target 109
+ 105 5770 3b09 6432 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->createSymLink
+ 108 0728 
+ 109 2070 3b08 0062 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->checkOutputDirectoryStructure
+ 112 5870 3b11 7632 Lnet/lingala/zip4j/tasks/AbstractExtractFileTask;->unzipFile
+ 115 0039 0005 if target 120
+ 117 2071 3bfe 0064 Lnet/lingala/zip4j/util/UnzipUtil;->applyFileAttributes
+ 120 000e 
+
+METHOD Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->prepareZipInputStream code=1321452 regs=5 ins=2
+   0 106e 3b66 0003 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->getZipModel
+   3 000c 
+   4 1071 3bff 0000 Lnet/lingala/zip4j/util/UnzipUtil;->createSplitInputStream
+   7 000c 
+   8 305b 5d2c Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+  10 106e 3b66 0003 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->getZipModel
+  13 000c 
+  14 2070 3b65 0003 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->getFirstFileHeader
+  17 000c 
+  18 0038 0007 if target 25
+  20 3154 5d2c Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+  22 206e 38b8 0001 Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;->prepareExtractionForFileHeader
+  25 0022 0986 
+  27 3154 5d2c Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+  29 3254 5d2b Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->password:[C
+  31 4070 38c9 4210 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;-><init>
+  34 0011 
+
+METHOD Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->calculateTotalWork code=1321400 regs=4 ins=2
+   0 106e 3b66 0002 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->getZipModel
+   3 030c 
+   4 106e 3a5c 0003 Lnet/lingala/zip4j/model/ZipModel;->getCentralDirectory
+   7 030c 
+   8 106e 3997 0003 Lnet/lingala/zip4j/model/CentralDirectory;->getFileHeaders
+  11 030c 
+  12 1071 384b 0003 Lnet/lingala/zip4j/headers/HeaderUtil;->getTotalUncompressedSizeOfAllFileHeaders
+  15 000b 
+  16 0010 
+
+METHOD Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->executeTask code=1321712 regs=12 ins=3
+   0 a054 5d2a Lnet/lingala/zip4j/tasks/ExtractAllFilesTask$ExtractAllFilesTaskParameters;->zip4jConfig:Lnet/lingala/zip4j/model/Zip4jConfig;
+   2 2070 3b67 0009 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->prepareZipInputStream
+   5 000c 
+   6 106e 3b66 0009 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->getZipModel
+   9 010c 
+  10 106e 3a5c 0001 Lnet/lingala/zip4j/model/ZipModel;->getCentralDirectory
+  13 010c 
+  14 106e 3997 0001 Lnet/lingala/zip4j/model/CentralDirectory;->getFileHeaders
+  17 010c 
+  18 1072 36a1 0001 Ljava/util/List;->iterator
+  21 080c 
+  22 1072 3693 0008 Ljava/util/Iterator;->hasNext
+  25 010a 
+  26 0138 0039 if target 83
+  28 1072 3694 0008 Ljava/util/Iterator;->next
+  31 010c 
+  32 1307 
+  33 031f 099f 
+  35 106e 39d0 0003 Lnet/lingala/zip4j/model/FileHeader;->getFileName
+  38 010c 
+  39 021a 27ef "__MACOSX"
+  41 206e 35ab 0021 Ljava/lang/String;->startsWith
+  44 010a 
+  45 0138 000a if target 55
+  47 106e 39d7 0003 Lnet/lingala/zip4j/model/FileHeader;->getUncompressedSize
+  50 010b 
+  51 306e 3af4 021b Lnet/lingala/zip4j/progress/ProgressMonitor;->updateWorkCompleted
+  54 e028 
+  55 9154 5d2c Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+  57 206e 38b8 0031 Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;->prepareExtractionForFileHeader
+  60 a154 5d2a Lnet/lingala/zip4j/tasks/ExtractAllFilesTask$ExtractAllFilesTaskParameters;->zip4jConfig:Lnet/lingala/zip4j/model/Zip4jConfig;
+  62 106e 3a29 0001 Lnet/lingala/zip4j/model/Zip4jConfig;->getBufferSize
+  65 010a 
+  66 1723 0a3a 
+  68 1071 3b5d 000a Lnet/lingala/zip4j/tasks/ExtractAllFilesTask$ExtractAllFilesTaskParameters;->access$000
+  71 040c 
+  72 0512 const/4 v5 0
+  73 9107 
+  74 0207 
+  75 b607 
+  76 0774 3b64 0001 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->extractFile
+  79 106e 3b68 0009 Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->verifyIfTaskIsCancelled
+  82 c428 
+  83 0038 0005 if target 88
+  85 106e 38ce 0000 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->close
+  88 9a54 5d2c Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+  90 0a38 0005 if target 95
+  92 106e 38b7 000a Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;->close
+  95 000e 
+  96 0a0d 
+  97 0038 000a if target 107
+  99 106e 38ce 0000 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;->close
+ 102 0528 
+ 103 0b0d 
+ 104 206e 35df 00ba Ljava/lang/Throwable;->addSuppressed
+ 107 0a27 
+ 108 0a0d 
+ 109 9b54 5d2c Lnet/lingala/zip4j/tasks/ExtractAllFilesTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+ 111 0b38 0005 if target 116
+ 113 106e 38b7 000b Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;->close
+ 116 0a27 
+
+METHOD Lnet/lingala/zip4j/tasks/ExtractFileTask;->createZipInputStream code=1322472 regs=5 ins=2
+   0 106e 3b77 0003 Lnet/lingala/zip4j/tasks/ExtractFileTask;->getZipModel
+   3 000c 
+   4 1071 3bff 0000 Lnet/lingala/zip4j/util/UnzipUtil;->createSplitInputStream
+   7 000c 
+   8 305b 5d32 Lnet/lingala/zip4j/tasks/ExtractFileTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+  10 0022 0986 
+  12 3154 5d32 Lnet/lingala/zip4j/tasks/ExtractFileTask;->splitInputStream:Lnet/lingala/zip4j/io/inputstream/SplitFileInputStream;
+  14 3254 5d31 Lnet/lingala/zip4j/tasks/ExtractFileTask;->password:[C
+  16 4070 38c9 4210 Lnet/lingala/zip4j/io/inputstream/ZipInputStream;-><init>
+  19 0011 
+
+METHOD Lnet/lingala/zip4j/tasks/ExtractFileTask;->calculateTotalWork code=1322428 regs=4 ins=2
+   0 1071 3b6a 0003 Lnet/lingala/zip4j/tasks/ExtractFileTask$ExtractFileTaskParameters;->access$000
+   3 030c 
+   4 2070 3b76 0032 Lnet/lingala/zip4j/tasks/ExtractFileTask;->getFileHeadersToExtract
+   7 030c 
+   8 1071 384b 0003 Lnet/lingala/zip4j/headers/HeaderUtil;->getTotalUncompressedSizeOfAllFileHeaders
+  11 000b 
+  12 0010 

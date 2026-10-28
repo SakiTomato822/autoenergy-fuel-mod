@@ -1,0 +1,70 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00435fd4 <.data+0x15fd4>:
+  435fd4:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+  435fd8:	4d20      	ldr	r5, [pc, #128]	@ (0x43605c)
+  435fda:	460f      	mov	r7, r1
+  435fdc:	4604      	mov	r4, r0
+  435fde:	f895 1eb7 	ldrb.w	r1, [r5, #3767]	@ 0xeb7
+  435fe2:	2901      	cmp	r1, #1
+  435fe4:	d130      	bne.n	0x436048
+  435fe6:	2600      	movs	r6, #0
+  435fe8:	f8df 8080 	ldr.w	r8, [pc, #128]	@ 0x43606c
+  435fec:	f505 695f 	add.w	r9, r5, #3568	@ 0xdf0
+  435ff0:	f818 3026 	ldrb.w	r3, [r8, r6, lsl #2]
+  435ff4:	b2b0      	uxth	r0, r6
+  435ff6:	42a3      	cmp	r3, r4
+  435ff8:	d104      	bne.n	0x436004
+  435ffa:	f7ff fe2f 	bl	0x435c5c
+  435ffe:	b108      	cbz	r0, 0x436004
+  436000:	f806 1009 	strb.w	r1, [r6, r9]
+  436004:	3601      	adds	r6, #1
+  436006:	2e5d      	cmp	r6, #93	@ 0x5d
+  436008:	d1f2      	bne.n	0x435ff0
+  43600a:	192e      	adds	r6, r5, r4
+  43600c:	2303      	movs	r3, #3
+  43600e:	4620      	mov	r0, r4
+  436010:	f886 3e4d 	strb.w	r3, [r6, #3661]	@ 0xe4d
+  436014:	6839      	ldr	r1, [r7, #0]
+  436016:	f7ff ff87 	bl	0x435f28
+  43601a:	b1b8      	cbz	r0, 0x43604c
+  43601c:	f896 3eb8 	ldrb.w	r3, [r6, #3768]	@ 0xeb8
+  436020:	b933      	cbnz	r3, 0x436030
+  436022:	2201      	movs	r2, #1
+  436024:	2c40      	cmp	r4, #64	@ 0x40
+  436026:	f886 2eb8 	strb.w	r2, [r6, #3768]	@ 0xeb8
+  43602a:	d101      	bne.n	0x436030
+  43602c:	f885 3f22 	strb.w	r3, [r5, #3874]	@ 0xf22
+  436030:	4b0b      	ldr	r3, [pc, #44]	@ (0x436060)
+  436032:	88ba      	ldrh	r2, [r7, #4]
+  436034:	eb03 03c4 	add.w	r3, r3, r4, lsl #3
+  436038:	809a      	strh	r2, [r3, #4]
+  43603a:	4b0a      	ldr	r3, [pc, #40]	@ (0x436064)
+  43603c:	781b      	ldrb	r3, [r3, #0]
+  43603e:	42a3      	cmp	r3, r4
+  436040:	bf02      	ittt	eq
+  436042:	4b09      	ldreq	r3, [pc, #36]	@ (0x436068)
+  436044:	2201      	moveq	r2, #1
+  436046:	701a      	strbeq	r2, [r3, #0]
+  436048:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+  43604c:	2c40      	cmp	r4, #64	@ 0x40
+  43604e:	d1ef      	bne.n	0x436030
+  436050:	f895 3f22 	ldrb.w	r3, [r5, #3874]	@ 0xf22
+  436054:	2b0a      	cmp	r3, #10
+  436056:	d8eb      	bhi.n	0x436030
+  436058:	3301      	adds	r3, #1
+  43605a:	e7e7      	b.n	0x43602c
+  43605c:	81e8      	strh	r0, [r5, #14]
+  43605e:	2041      	movs	r0, #65	@ 0x41
+  436060:	aa78      	add	r2, sp, #480	@ 0x1e0
+  436062:	2040      	movs	r0, #64	@ 0x40
+  436064:	9104      	str	r1, [sp, #16]
+  436066:	0048      	lsls	r0, r1, #1
+  436068:	91c4      	str	r1, [sp, #784]	@ 0x310
+  43606a:	2041      	movs	r0, #65	@ 0x41
+  43606c:	bc9e      	pop	{r1, r2, r3, r4, r7}
+  43606e:	0048      	lsls	r0, r1, #1

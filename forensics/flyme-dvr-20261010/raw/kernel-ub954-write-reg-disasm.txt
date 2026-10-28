@@ -1,0 +1,54 @@
+
+forensics/flyme-dvr-20261010/raw/kernel-ub954-initialize-pages.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000b47614 <.data+0x614>:
+  b47614:	d503233f 	paciasp
+  b47618:	a9b77bfd 	stp	x29, x30, [sp, #-144]!
+  b4761c:	d5384103 	mrs	x3, sp_el0
+  b47620:	910003fd 	mov	x29, sp
+  b47624:	a90573fb 	stp	x27, x28, [sp, #80]
+  b47628:	aa0003fc 	mov	x28, x0
+  b4762c:	a90153f3 	stp	x19, x20, [sp, #16]
+  b47630:	f941139b 	ldr	x27, [x28, #544]
+  b47634:	f942f060 	ldr	x0, [x3, #1504]
+  b47638:	f90047e0 	str	x0, [sp, #136]
+  b4763c:	d2800000 	mov	x0, #0x0                   	// #0
+  b47640:	79400773 	ldrh	w19, [x27, #2]
+  b47644:	12001e60 	and	w0, w19, #0xff
+  b47648:	b90063e0 	str	w0, [sp, #96]
+  b4764c:	b400081c 	cbz	x28, 0xb4774c
+  b47650:	d0005574 	adrp	x20, 0x15f5000
+  b47654:	12001e73 	and	w19, w19, #0xff
+  b47658:	9125e294 	add	x20, x20, #0x978
+  b4765c:	a9025bf5 	stp	x21, x22, [sp, #32]
+  b47660:	d0007415 	adrp	x21, 0x19c9000
+  b47664:	12003c36 	and	w22, w1, #0xffff
+  b47668:	9138e2b5 	add	x21, x21, #0xe38
+  b4766c:	a90363f7 	stp	x23, x24, [sp, #48]
+  b47670:	12001c57 	and	w23, w2, #0xff
+  b47674:	9100a280 	add	x0, x20, #0x28
+  b47678:	a9046bf9 	stp	x25, x26, [sp, #64]
+  b4767c:	91021bf9 	add	x25, sp, #0x86
+  b47680:	52800058 	mov	w24, #0x2                   	// #2
+  b47684:	b90067ff 	str	wzr, [sp, #100]
+  b47688:	f90037e0 	str	x0, [sp, #104]
+  b4768c:	f9405f64 	ldr	x4, [x27, #184]
+  b47690:	9112a09a 	add	x26, x4, #0x4a8
+  b47694:	aa1a03e0 	mov	x0, x26
+  b47698:	94184ae6 	bl	0x115a230
+  b4769c:	7900e3f3 	strh	w19, [sp, #112]
+  b476a0:	9101c3e1 	add	x1, sp, #0x70
+  b476a4:	39021bf6 	strb	w22, [sp, #134]
+  b476a8:	52800022 	mov	w2, #0x1                   	// #1
+  b476ac:	39021ff7 	strb	w23, [sp, #135]
+  b476b0:	f9400f60 	ldr	x0, [x27, #24]
+  b476b4:	79400363 	ldrh	w3, [x27]
+  b476b8:	7900e7e3 	strh	w3, [sp, #114]
+  b476bc:	7900ebf8 	strh	w24, [sp, #116]
+  b476c0:	f9003ff9 	str	x25, [sp, #120]
+  b476c4:	97fe7b98 	bl	0xae6524
+  b476c8:	2a0003fb 	mov	w27, w0
+  b476cc:	aa1a03e0 	mov	x0, x26

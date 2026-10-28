@@ -1,0 +1,153 @@
+Sat Oct 10 20:51:24 CST 2026
+{
+  "car" : {
+    "width"  : 76.7,
+    "wheelBase" : 117.9,
+    "frontExtent" : 44.7,
+    "rearExtent" : 40
+  },
+  "display" : {
+    "frontRange" : 100,
+    "rearRange" : 100
+  },
+  "graphic" : {
+    "frontPixel" : 23,
+    "rearPixel" : 223
+  },
+  "cameras" : [
+    {
+      "cameraId" : "/dev/video0",
+      "function" : "reverse,park",
+      "x" : 0.0,
+      "y" : -40.0,
+      "z" : 48,
+      "yaw" : 180,
+      "pitch" : -30,
+      "hfov" : 125,
+      "vfov" :103 
+    },
+    {
+      "cameraId" : "mxc_isi.1.capture",
+      "function" : "front,park",
+      "x" : 0.0,
+      "y" : 100.0,
+      "z" : 48,
+      "yaw" : 0,
+      "pitch" : -10,
+      "hfov" : 70,
+      "vfov" : 43
+    },
+    {
+      "cameraId" : "mxc_isi.2.capture",
+      "function" : "right,park",
+      "x" : 36.0,
+      "y" : 60.0,
+      "z" : 32,
+      "yaw" : -90,
+      "pitch" : -30,
+      "hfov" : 60,
+      "vfov" : 42
+    }
+  ]
+}
+{
+  "car" : {
+    "width"  : 76.7,
+    "wheelBase" : 117.9,
+    "frontExtent" : 44.7,
+    "rearExtent" : 40
+  },
+  "display" : {
+    "frontRange" : 100,
+    "rearRange" : 100
+  },
+  "graphic" : {
+    "frontPixel" : 23,
+    "rearPixel" : 223
+  },
+  "cameras" : [
+    {
+      "cameraId" : "/dev/video0",
+      "function" : "reverse,park",
+      "x" : 0.0,
+      "y" : -40.0,
+      "z" : 48,
+      "yaw" : 180,
+      "pitch" : -30,
+      "hfov" : 125,
+      "vfov" :103 
+    },
+    {
+      "cameraId" : "mxc_isi.1.capture",
+      "function" : "front,park",
+      "x" : 0.0,
+      "y" : 100.0,
+      "z" : 48,
+      "yaw" : 0,
+      "pitch" : -10,
+      "hfov" : 70,
+      "vfov" : 43
+    },
+    {
+      "cameraId" : "mxc_isi.2.capture",
+      "function" : "right,park",
+      "x" : 36.0,
+      "y" : 60.0,
+      "z" : 32,
+      "yaw" : -90,
+      "pitch" : -30,
+      "hfov" : 60,
+      "vfov" : 42
+    }
+  ]
+}
+total 0
+-rw-r--r-- 1 root root 4096 2026-10-10 20:51 analog_test_pattern
+lrwxrwxrwx 1 root root    0 2026-10-10 20:51 driver -> ../../../../../bus/i2c/drivers/ub954_mipi
+-r--r--r-- 1 root root 4096 1970-01-01 08:00 lock_status
+-r--r--r-- 1 root root 4096 2026-10-10 20:51 modalias
+-r--r--r-- 1 root root 4096 2026-10-10 20:51 name
+lrwxrwxrwx 1 root root    0 2026-10-10 20:51 of_node -> ../../../../../firmware/devicetree/base/i2c@E95C0000/ub954_mipi@3d
+drwxr-xr-x 2 root root    0 2026-10-10 20:51 power
+-rw-rw-rw- 1 root root 4096 1970-01-01 08:00 reinit_des
+lrwxrwxrwx 1 root root    0 2026-10-10 20:51 subsystem -> ../../../../../bus/i2c
+lrwxrwxrwx 1 root root    0 2026-10-10 20:51 supplier:gpio:gpiochip1 -> ../../../../virtual/devlink/gpio:gpiochip1--i2c:7-003d
+-rw-r--r-- 1 root root 4096 2026-10-10 20:51 uevent
+drwxr-xr-x 3 root root    0 2026-10-10 20:51 video4linux
+0x1
+[EVS_RENDERENGINE]: [343]
+[VIDEO_REQUEST_AVM]: [0]
+[VIDEO_REQUEST_AVM_PROCESS]: [0]
+[evs_app.camera_check]: [0]
+[evs_app.steering_linkage]: [0]
+[evs_disable_touch]: [0]
+[evsapp.shield_touch]: [0]
+[init.svc.evsapp]: [running]
+[init.svc.evsrenderengine]: [running]
+[init.svc.vendor.evs-hal-mock]: [running]
+[init.svc_debug_pid.evsapp]: [401]
+[init.svc_debug_pid.evsrenderengine]: [343]
+[init.svc_debug_pid.vendor.evs-hal-mock]: [346]
+[persist.avm.apa_day_night_mode]: [2]
+[persist.avm.calibration]: [4]
+[persist.sys.avm]: [1]
+[persist.sys.avm.current_status]: [3]
+[persist.sys.avm.screen]: [1]
+[persist.sys.avm.version]: [C_202212160924]
+[ro.boottime.evsapp]: [2671130623]
+[ro.boottime.evsrenderengine]: [2512445012]
+[ro.boottime.vendor.evs-hal-mock]: [2518708479]
+[system.avm.state]: [3]
+01-01 08:24:06.450     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:07.064     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:07.453     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:08.075     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:08.456     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:09.078     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:09.460     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:10.081     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:10.463     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:11.088     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:11.466     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:12.092     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01
+01-01 08:24:12.127     0     0 I ub954_mipi 7-003d: lock_status_show ub954 lock_status = 0x01

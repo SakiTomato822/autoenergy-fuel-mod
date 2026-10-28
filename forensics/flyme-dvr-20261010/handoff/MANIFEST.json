@@ -1,0 +1,47 @@
+[
+  {
+    "file": "evidence/dvr_interface_reverse_20260923.md",
+    "bytes": 4785,
+    "sha256": "ac6bc09d68b0e0166ccc77e9ddd875f92807bacc77cd5e3ff67121bf05580e1a"
+  },
+  {
+    "file": "evidence/dvr_luna_xhigh_followup_20260923.md",
+    "bytes": 5828,
+    "sha256": "c169cf05179a6d8e80330420bb2a9c32e6549a00932557d08e1639fb235e1b2e"
+  },
+  {
+    "file": "evidence/dvr_history_reconciliation_20260923.md",
+    "bytes": 3432,
+    "sha256": "4779c431a37ac351b7813544d46fd20e27160addfba8ca4384dad712acd294e0"
+  },
+  {
+    "file": "evidence/dvr_compat_primary_review_20260923.md",
+    "bytes": 2282,
+    "sha256": "8a4a9fca107727753872b32a18683d9cef7dd15ff0f7c8239b54c4406a5b1278"
+  },
+  {
+    "file": "evidence/dvr_enter_primary_trace_20260923.md",
+    "bytes": 5411,
+    "sha256": "c09f008ad299614121d737091b49da24e4f1cbda3c6b44d2b07acb0584375b40"
+  },
+  {
+    "file": "evidence/radio_runtime_gap_20260923.md",
+    "bytes": 2215,
+    "sha256": "4bd6384e98f6d37b12a099d3424a7279509a606a6c71d4e9783d8437262d647a"
+  },
+  {
+    "file": "evidence/cluster_dvr_dwarf.json",
+    "bytes": 13376,
+    "sha256": "731967a3fbfb38046cf4e23cd0556a7d6fea2a9a58c2ce95b1cb7d478a51b3ed"
+  },
+  {
+    "file": "evidence/vhal_evs_diff/vhal_send_tables_reconstructed.json",
+    "bytes": 232112,
+    "sha256": "79208d263c9986eeea704c96355342cacd1851aec5e324db267dda5a67edb918"
+  },
+  {
+    "file": "evidence/vhal_evs_diff/vhal_send_path_diff.json",
+    "bytes": 1003410,
+    "sha256": "ad248e79f93948eb600091003017ef9b025297566728557272532a94d0e56c8e"
+  }
+]

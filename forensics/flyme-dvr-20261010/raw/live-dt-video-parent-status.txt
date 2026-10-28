@@ -1,0 +1,9 @@
+Sun Oct 11 22:44:19 CST 2026
+/proc/device-tree/i2c@E95E0000/status
+   d   i   s   a   b   l   e   d  \0
+/proc/device-tree/i2c@E95E0000/max96722_mipi@6b/status
+   o   k   a   y  \0
+/proc/device-tree/i2c@E95C0000/status
+   o   k   a   y  \0
+_b
+Linux version 5.10.110-SE-SDK1.7+-ab1-userdebug (admin@68b63284e368) (aarch64-none-linux-gnu-gcc (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 10.3.1 20210621, GNU ld (GNU Toolchain for the A-profile Architecture 10.3-2021.07 (arm-10.29)) 2.36.1.20210621) #1 SMP PREEMPT Mon Jun 22 19:11:00 CST 2026

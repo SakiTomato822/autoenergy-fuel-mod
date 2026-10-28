@@ -1,0 +1,23 @@
+Sun Oct 11 20:54:04 CST 2026
+lrwxrwxrwx 1 vehicle_network system 0 2026-10-11 20:54 /proc/352/exe -> /vendor/bin/hw/android.hardware.automotive.vehicle@2.0-service
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 0 -> /dev/null
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 1 -> /dev/null
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 10 -> /dev/binderfs/hwbinder
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 13 -> /dev/binderfs/binder
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 16 -> /dev/rpmsg_ctrl2_ap_r5.99.99
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 17 -> /dev/rpmsg_ctrl2_ap_r5.100.100
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 2 -> /dev/null
+lrwx------ 1 vehicle_network system 64 2026-10-11 20:54 5 -> /dev/input/event1
+DHUBX11G0622CSJ
+4096
+4096
+crw-rw-rw- 1 system system 253,   0 1970-01-01 08:00 /dev/rpmsg_ctrl0
+crw-rw-rw- 1 system system 253,   1 1970-01-01 08:00 /dev/rpmsg_ctrl1
+crw-rw-rw- 1 system system 253,   2 1970-01-01 08:00 /dev/rpmsg_ctrl2
+crw-rw-rw- 1 system system 253,   8 1970-01-01 08:00 /dev/rpmsg_ctrl2_ap_r5.100.100
+crw-rw-rw- 1 system system 253,   6 1970-01-01 08:00 /dev/rpmsg_ctrl2_ap_r5.99.99
+crw-rw-rw- 1 system system 253,   3 1970-01-01 08:00 /dev/rpmsg_ctrl3
+crw-rw-rw- 1 system system 253,   4 1970-01-01 08:00 /dev/rpmsg_ctrl4
+crw-rw-rw- 1 system system 253,   5 1970-01-01 08:00 /dev/rpmsg_ctrl5
+crw-rw-rw- 1 system system 253,   7 1970-01-01 08:00 /dev/rpmsg_ep.0.2592.2593
+crw-rw-rw- 1 system system 253,   9 2026-10-11 20:13 /dev/rpmsg_time_sync.3600.3600

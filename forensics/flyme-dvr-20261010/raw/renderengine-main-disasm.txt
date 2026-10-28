@@ -1,0 +1,625 @@
+
+forensics/flyme-dvr-20261010/raw/evsrenderengine:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000017628 <main>:
+   17628:	d102c3ff 	sub	sp, sp, #0xb0
+   1762c:	a9057bfd 	stp	x29, x30, [sp, #80]
+   17630:	a9066ffc 	stp	x28, x27, [sp, #96]
+   17634:	a90767fa 	stp	x26, x25, [sp, #112]
+   17638:	a9085ff8 	stp	x24, x23, [sp, #128]
+   1763c:	a90957f6 	stp	x22, x21, [sp, #144]
+   17640:	a90a4ff4 	stp	x20, x19, [sp, #160]
+   17644:	910143fd 	add	x29, sp, #0x50
+   17648:	d53bd058 	mrs	x24, tpidr_el0
+   1764c:	f9401708 	ldr	x8, [x24, #40]
+   17650:	aa0103f3 	mov	x19, x1
+   17654:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17658:	d0ffffa2 	adrp	x2, d000 <abitag+0xcd08>
+   1765c:	b0ffffc3 	adrp	x3, 10000 <abitag+0xfd08>
+   17660:	2a0003f4 	mov	w20, w0
+   17664:	911e4421 	add	x1, x1, #0x791
+   17668:	910fb842 	add	x2, x2, #0x3ee
+   1766c:	9129a063 	add	x3, x3, #0xa68
+   17670:	52800080 	mov	w0, #0x4                   	// #4
+   17674:	f81f83a8 	stur	x8, [x29, #-8]
+   17678:	94004896 	bl	298d0 <__android_log_print@plt>
+   1767c:	94000180 	bl	17c7c <register_backtrace_handler()>
+   17680:	b0ffffc0 	adrp	x0, 10000 <abitag+0xfd08>
+   17684:	9129d400 	add	x0, x0, #0xa75
+   17688:	52800c61 	mov	w1, #0x63                  	// #99
+   1768c:	940048a1 	bl	29910 <property_get_int32@plt>
+   17690:	71018c1f 	cmp	w0, #0x63
+   17694:	540001e1 	b.ne	176d0 <main+0xa8>  // b.any
+   17698:	b0ffffd6 	adrp	x22, 10000 <abitag+0xfd08>
+   1769c:	52800037 	mov	w23, #0x1                   	// #1
+   176a0:	9129d6d6 	add	x22, x22, #0xa75
+   176a4:	5290d400 	mov	w0, #0x86a0                	// #34464
+   176a8:	72a00020 	movk	w0, #0x1, lsl #16
+   176ac:	110006f7 	add	w23, w23, #0x1
+   176b0:	94004894 	bl	29900 <usleep@plt>
+   176b4:	52800c61 	mov	w1, #0x63                  	// #99
+   176b8:	aa1603e0 	mov	x0, x22
+   176bc:	94004895 	bl	29910 <property_get_int32@plt>
+   176c0:	71018c1f 	cmp	w0, #0x63
+   176c4:	54ffff00 	b.eq	176a4 <main+0x7c>  // b.none
+   176c8:	2a0003f5 	mov	w21, w0
+   176cc:	14000003 	b	176d8 <main+0xb0>
+   176d0:	2a0003f5 	mov	w21, w0
+   176d4:	52800037 	mov	w23, #0x1                   	// #1
+   176d8:	52800c88 	mov	w8, #0x64                  	// #100
+   176dc:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   176e0:	f0ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   176e4:	1b087ee4 	mul	w4, w23, w8
+   176e8:	911e4421 	add	x1, x1, #0x791
+   176ec:	91141442 	add	x2, x2, #0x505
+   176f0:	52800060 	mov	w0, #0x3                   	// #3
+   176f4:	2a1503e3 	mov	w3, w21
+   176f8:	94004876 	bl	298d0 <__android_log_print@plt>
+   176fc:	51002ea8 	sub	w8, w21, #0xb
+   17700:	7100091f 	cmp	w8, #0x2
+   17704:	54000083 	b.cc	17714 <main+0xec>  // b.lo, b.ul, b.last
+   17708:	340000b5 	cbz	w21, 1771c <main+0xf4>
+   1770c:	710006bf 	cmp	w21, #0x1
+   17710:	540000a1 	b.ne	17724 <main+0xfc>  // b.any
+   17714:	2a1f03e3 	mov	w3, wzr
+   17718:	14000004 	b	17728 <main+0x100>
+   1771c:	52800043 	mov	w3, #0x2                   	// #2
+   17720:	14000002 	b	17728 <main+0x100>
+   17724:	52800023 	mov	w3, #0x1                   	// #1
+   17728:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   1772c:	d0ffffa2 	adrp	x2, d000 <abitag+0xcd08>
+   17730:	f00000b7 	adrp	x23, 2e000 <_DYNAMIC+0x1698>
+   17734:	911e4421 	add	x1, x1, #0x791
+   17738:	91230c42 	add	x2, x2, #0x8c3
+   1773c:	52800080 	mov	w0, #0x4                   	// #4
+   17740:	b9099ee3 	str	w3, [x23, #2460]
+   17744:	94004863 	bl	298d0 <__android_log_print@plt>
+   17748:	b9499ee8 	ldr	w8, [x23, #2460]
+   1774c:	7100091f 	cmp	w8, #0x2
+   17750:	54000140 	b.eq	17778 <main+0x150>  // b.none
+   17754:	7100051f 	cmp	w8, #0x1
+   17758:	540002a1 	b.ne	177ac <main+0x184>  // b.any
+   1775c:	f00000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   17760:	5280f003 	mov	w3, #0x780                 	// #1920
+   17764:	f00000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   17768:	52807004 	mov	w4, #0x380                 	// #896
+   1776c:	f00000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   17770:	52800065 	mov	w5, #0x3                   	// #3
+   17774:	14000014 	b	177c4 <main+0x19c>
+   17778:	b00000ab 	adrp	x11, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1777c:	f947216b 	ldr	x11, [x11, #3648]
+   17780:	f00000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   17784:	5280a003 	mov	w3, #0x500                 	// #1280
+   17788:	f00000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1778c:	52807804 	mov	w4, #0x3c0                 	// #960
+   17790:	f00000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   17794:	52800045 	mov	w5, #0x2                   	// #2
+   17798:	b909a103 	str	w3, [x8, #2464]
+   1779c:	b909a524 	str	w4, [x9, #2468]
+   177a0:	b908c545 	str	w5, [x10, #2244]
+   177a4:	3900017f 	strb	wzr, [x11]
+   177a8:	1400000a 	b	177d0 <main+0x1a8>
+   177ac:	f00000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   177b0:	52828003 	mov	w3, #0x1400                	// #5120
+   177b4:	f00000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   177b8:	52806404 	mov	w4, #0x320                 	// #800
+   177bc:	f00000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   177c0:	52800045 	mov	w5, #0x2                   	// #2
+   177c4:	b909a103 	str	w3, [x8, #2464]
+   177c8:	b909a524 	str	w4, [x9, #2468]
+   177cc:	b908c545 	str	w5, [x10, #2244]
+   177d0:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   177d4:	f0ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   177d8:	911e4421 	add	x1, x1, #0x791
+   177dc:	9107a842 	add	x2, x2, #0x1ea
+   177e0:	52800080 	mov	w0, #0x4                   	// #4
+   177e4:	9400483b 	bl	298d0 <__android_log_print@plt>
+   177e8:	9400490e 	bl	29c20 <getpid@plt>
+   177ec:	2a0003f5 	mov	w21, w0
+   177f0:	52800020 	mov	w0, #0x1                   	// #1
+   177f4:	9400490f 	bl	29c30 <sched_get_priority_max@plt>
+   177f8:	b81f03a0 	stur	w0, [x29, #-16]
+   177fc:	d10043a2 	sub	x2, x29, #0x10
+   17800:	52800021 	mov	w1, #0x1                   	// #1
+   17804:	2a1503e0 	mov	w0, w21
+   17808:	9400490e 	bl	29c40 <sched_setscheduler@plt>
+   1780c:	94004911 	bl	29c50 <pthread_self@plt>
+   17810:	d10043a2 	sub	x2, x29, #0x10
+   17814:	52800021 	mov	w1, #0x1                   	// #1
+   17818:	94004912 	bl	29c60 <pthread_setschedparam@plt>
+   1781c:	9100a3e8 	add	x8, sp, #0x28
+   17820:	2a1503e0 	mov	w0, w21
+   17824:	9100a3f6 	add	x22, sp, #0x28
+   17828:	94004856 	bl	29980 <std::__1::to_string(int)@plt>
+   1782c:	3940a3e8 	ldrb	w8, [sp, #40]
+   17830:	f9401fe9 	ldr	x9, [sp, #56]
+   17834:	b24002ca 	orr	x10, x22, #0x1
+   17838:	b0ffffc0 	adrp	x0, 10000 <abitag+0xfd08>
+   1783c:	7200011f 	tst	w8, #0x1
+   17840:	9a890141 	csel	x1, x10, x9, eq	// eq = none
+   17844:	9100d400 	add	x0, x0, #0x35
+   17848:	94004846 	bl	29960 <property_set@plt>
+   1784c:	3940a3e8 	ldrb	w8, [sp, #40]
+   17850:	36000068 	tbz	w8, #0, 1785c <main+0x234>
+   17854:	f9401fe0 	ldr	x0, [sp, #56]
+   17858:	940047c6 	bl	29770 <operator delete(void*)@plt>
+   1785c:	940009bd 	bl	19f50 <evs_render_engine_main()>
+   17860:	71000a9f 	cmp	w20, #0x2
+   17864:	5400060b 	b.lt	17924 <main+0x2fc>  // b.tstop
+   17868:	90ffffda 	adrp	x26, f000 <abitag+0xed08>
+   1786c:	2a1403e8 	mov	w8, w20
+   17870:	9110d75a 	add	x26, x26, #0x435
+   17874:	90ffffd4 	adrp	x20, f000 <abitag+0xed08>
+   17878:	d0ffffb5 	adrp	x21, d000 <abitag+0xcd08>
+   1787c:	f0ffffb6 	adrp	x22, e000 <abitag+0xdd08>
+   17880:	b0ffffb7 	adrp	x23, c000 <abitag+0xbd08>
+   17884:	f90003f8 	str	x24, [sp]
+   17888:	2a1f03fb 	mov	w27, wzr
+   1788c:	9100227c 	add	x28, x19, #0x8
+   17890:	91283a94 	add	x20, x20, #0xa0e
+   17894:	912baeb5 	add	x21, x21, #0xaeb
+   17898:	91035ad6 	add	x22, x22, #0xd6
+   1789c:	911fe2f7 	add	x23, x23, #0x7f8
+   178a0:	d1000518 	sub	x24, x8, #0x1
+   178a4:	aa1a03f3 	mov	x19, x26
+   178a8:	14000005 	b	178bc <main+0x294>
+   178ac:	aa1a03f3 	mov	x19, x26
+   178b0:	f1000718 	subs	x24, x24, #0x1
+   178b4:	9100239c 	add	x28, x28, #0x8
+   178b8:	540003c0 	b.eq	17930 <main+0x308>  // b.none
+   178bc:	f9400399 	ldr	x25, [x28]
+   178c0:	aa1403e1 	mov	x1, x20
+   178c4:	aa1903e0 	mov	x0, x25
+   178c8:	940047f2 	bl	29890 <strcmp@plt>
+   178cc:	34ffff20 	cbz	w0, 178b0 <main+0x288>
+   178d0:	aa1903e0 	mov	x0, x25
+   178d4:	aa1503e1 	mov	x1, x21
+   178d8:	940047ee 	bl	29890 <strcmp@plt>
+   178dc:	34fffe80 	cbz	w0, 178ac <main+0x284>
+   178e0:	aa1903e0 	mov	x0, x25
+   178e4:	aa1603e1 	mov	x1, x22
+   178e8:	940047ea 	bl	29890 <strcmp@plt>
+   178ec:	34000160 	cbz	w0, 17918 <main+0x2f0>
+   178f0:	aa1903e0 	mov	x0, x25
+   178f4:	aa1703e1 	mov	x1, x23
+   178f8:	940047e6 	bl	29890 <strcmp@plt>
+   178fc:	340000a0 	cbz	w0, 17910 <main+0x2e8>
+   17900:	90ffffc0 	adrp	x0, f000 <abitag+0xed08>
+   17904:	91187c00 	add	x0, x0, #0x61f
+   17908:	aa1903e1 	mov	x1, x25
+   1790c:	940048d9 	bl	29c70 <printf@plt>
+   17910:	5280003b 	mov	w27, #0x1                   	// #1
+   17914:	17ffffe7 	b	178b0 <main+0x288>
+   17918:	d0ffffb3 	adrp	x19, d000 <abitag+0xcd08>
+   1791c:	91319673 	add	x19, x19, #0xc65
+   17920:	17ffffe4 	b	178b0 <main+0x288>
+   17924:	90ffffd3 	adrp	x19, f000 <abitag+0xed08>
+   17928:	9110d673 	add	x19, x19, #0x435
+   1792c:	14000010 	b	1796c <main+0x344>
+   17930:	f94003f8 	ldr	x24, [sp]
+   17934:	f00000b7 	adrp	x23, 2e000 <_DYNAMIC+0x1698>
+   17938:	360001bb 	tbz	w27, #0, 1796c <main+0x344>
+   1793c:	d0ffffa0 	adrp	x0, d000 <abitag+0xcd08>
+   17940:	9139e800 	add	x0, x0, #0xe7a
+   17944:	940048cf 	bl	29c80 <puts@plt>
+   17948:	b0ffffa0 	adrp	x0, c000 <abitag+0xbd08>
+   1794c:	913b6000 	add	x0, x0, #0xed8
+   17950:	940048cc 	bl	29c80 <puts@plt>
+   17954:	b0ffffc0 	adrp	x0, 10000 <abitag+0xfd08>
+   17958:	910a6400 	add	x0, x0, #0x299
+   1795c:	940048c9 	bl	29c80 <puts@plt>
+   17960:	f0ffffa0 	adrp	x0, e000 <abitag+0xdd08>
+   17964:	91037400 	add	x0, x0, #0xdd
+   17968:	940048c6 	bl	29c80 <puts@plt>
+   1796c:	52800020 	mov	w0, #0x1                   	// #1
+   17970:	2a1f03e1 	mov	w1, wzr
+   17974:	940048c7 	bl	29c90 <android::hardware::configureRpcThreadpool(unsigned long, bool)@plt>
+   17978:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   1797c:	b0ffffa2 	adrp	x2, c000 <abitag+0xbd08>
+   17980:	911e4421 	add	x1, x1, #0x791
+   17984:	912c7442 	add	x2, x2, #0xb1d
+   17988:	52800080 	mov	w0, #0x4                   	// #4
+   1798c:	940047d1 	bl	298d0 <__android_log_print@plt>
+   17990:	528001c8 	mov	w8, #0xe                   	// #14
+   17994:	528cac89 	mov	w9, #0x6564                	// #25956
+   17998:	528eac2a 	mov	w10, #0x7561                	// #30049
+   1799c:	a9027fff 	stp	xzr, xzr, [sp, #32]
+   179a0:	72ac2cc9 	movk	w9, #0x6166, lsl #16
+   179a4:	72ae8d8a 	movk	w10, #0x746c, lsl #16
+   179a8:	3900a3e8 	strb	w8, [sp, #40]
+   179ac:	910083e8 	add	x8, sp, #0x20
+   179b0:	9100a3e0 	add	x0, sp, #0x28
+   179b4:	2a1f03e1 	mov	w1, wzr
+   179b8:	a9037fff 	stp	xzr, xzr, [sp, #48]
+   179bc:	b80293e9 	stur	w9, [sp, #41]
+   179c0:	b9002fea 	str	w10, [sp, #44]
+   179c4:	940048b7 	bl	29ca0 <android::hardware::automotive::evs::V1_0::IEvsEnumerator::getService(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, bool)@plt>
+   179c8:	3940a3e8 	ldrb	w8, [sp, #40]
+   179cc:	36000068 	tbz	w8, #0, 179d8 <main+0x3b0>
+   179d0:	f9401fe0 	ldr	x0, [sp, #56]
+   179d4:	94004767 	bl	29770 <operator delete(void*)@plt>
+   179d8:	f94013f4 	ldr	x20, [sp, #32]
+   179dc:	b40002f4 	cbz	x20, 17a38 <main+0x410>
+   179e0:	b9499ee8 	ldr	w8, [x23, #2460]
+   179e4:	7100051f 	cmp	w8, #0x1
+   179e8:	540003c0 	b.eq	17a60 <main+0x438>  // b.none
+   179ec:	7100091f 	cmp	w8, #0x2
+   179f0:	540005a1 	b.ne	17aa4 <main+0x47c>  // b.any
+   179f4:	52800200 	mov	w0, #0x10                  	// #16
+   179f8:	94004756 	bl	29750 <operator new(unsigned long)@plt>
+   179fc:	f9000ff4 	str	x20, [sp, #24]
+   17a00:	f9400288 	ldr	x8, [x20]
+   17a04:	aa0003f3 	mov	x19, x0
+   17a08:	910063e1 	add	x1, sp, #0x18
+   17a0c:	f85e8108 	ldur	x8, [x8, #-24]
+   17a10:	8b080280 	add	x0, x20, x8
+   17a14:	940048a7 	bl	29cb0 <android::RefBase::incStrong(void const*) const@plt>
+   17a18:	910063e1 	add	x1, sp, #0x18
+   17a1c:	aa1303e0 	mov	x0, x19
+   17a20:	940006ef 	bl	195dc <RvcCameraModule::RvcCameraModule(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>)>
+   17a24:	f9400fe8 	ldr	x8, [sp, #24]
+   17a28:	b4000648 	cbz	x8, 17af0 <main+0x4c8>
+   17a2c:	f9400109 	ldr	x9, [x8]
+   17a30:	910063e1 	add	x1, sp, #0x18
+   17a34:	1400002c 	b	17ae4 <main+0x4bc>
+   17a38:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17a3c:	90ffffc2 	adrp	x2, f000 <abitag+0xed08>
+   17a40:	911e4421 	add	x1, x1, #0x791
+   17a44:	91285442 	add	x2, x2, #0xa15
+   17a48:	528000c0 	mov	w0, #0x6                   	// #6
+   17a4c:	aa1303e3 	mov	x3, x19
+   17a50:	940047a0 	bl	298d0 <__android_log_print@plt>
+   17a54:	f94013e8 	ldr	x8, [sp, #32]
+   17a58:	b5000708 	cbnz	x8, 17b38 <main+0x510>
+   17a5c:	1400003c 	b	17b4c <main+0x524>
+   17a60:	52801400 	mov	w0, #0xa0                  	// #160
+   17a64:	9400473b 	bl	29750 <operator new(unsigned long)@plt>
+   17a68:	f9000bf4 	str	x20, [sp, #16]
+   17a6c:	f9400288 	ldr	x8, [x20]
+   17a70:	aa0003f3 	mov	x19, x0
+   17a74:	910043e1 	add	x1, sp, #0x10
+   17a78:	f85e8108 	ldur	x8, [x8, #-24]
+   17a7c:	8b080280 	add	x0, x20, x8
+   17a80:	9400488c 	bl	29cb0 <android::RefBase::incStrong(void const*) const@plt>
+   17a84:	910043e1 	add	x1, sp, #0x10
+   17a88:	aa1303e0 	mov	x0, x19
+   17a8c:	94000149 	bl	17fb0 <ApaCameraModule::ApaCameraModule(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>)>
+   17a90:	f9400be8 	ldr	x8, [sp, #16]
+   17a94:	b40002e8 	cbz	x8, 17af0 <main+0x4c8>
+   17a98:	f9400109 	ldr	x9, [x8]
+   17a9c:	910043e1 	add	x1, sp, #0x10
+   17aa0:	14000011 	b	17ae4 <main+0x4bc>
+   17aa4:	52800500 	mov	w0, #0x28                  	// #40
+   17aa8:	9400472a 	bl	29750 <operator new(unsigned long)@plt>
+   17aac:	f90007f4 	str	x20, [sp, #8]
+   17ab0:	f9400288 	ldr	x8, [x20]
+   17ab4:	aa0003f3 	mov	x19, x0
+   17ab8:	910023e1 	add	x1, sp, #0x8
+   17abc:	f85e8108 	ldur	x8, [x8, #-24]
+   17ac0:	8b080280 	add	x0, x20, x8
+   17ac4:	9400487b 	bl	29cb0 <android::RefBase::incStrong(void const*) const@plt>
+   17ac8:	910023e1 	add	x1, sp, #0x8
+   17acc:	aa1303e0 	mov	x0, x19
+   17ad0:	940005d1 	bl	19214 <AvmCameraModule::AvmCameraModule(android::sp<android::hardware::automotive::evs::V1_0::IEvsEnumerator>)>
+   17ad4:	f94007e8 	ldr	x8, [sp, #8]
+   17ad8:	b40000c8 	cbz	x8, 17af0 <main+0x4c8>
+   17adc:	f9400109 	ldr	x9, [x8]
+   17ae0:	910023e1 	add	x1, sp, #0x8
+   17ae4:	f85e8129 	ldur	x9, [x9, #-24]
+   17ae8:	8b090100 	add	x0, x8, x9
+   17aec:	94004875 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   17af0:	f9400268 	ldr	x8, [x19]
+   17af4:	aa1303e0 	mov	x0, x19
+   17af8:	f9400908 	ldr	x8, [x8, #16]
+   17afc:	d63f0100 	blr	x8
+   17b00:	350000c0 	cbnz	w0, 17b18 <main+0x4f0>
+   17b04:	f9400268 	ldr	x8, [x19]
+   17b08:	aa1303e0 	mov	x0, x19
+   17b0c:	f9400d08 	ldr	x8, [x8, #24]
+   17b10:	d63f0100 	blr	x8
+   17b14:	34000360 	cbz	w0, 17b80 <main+0x558>
+   17b18:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17b1c:	90ffffc2 	adrp	x2, f000 <abitag+0xed08>
+   17b20:	911e4421 	add	x1, x1, #0x791
+   17b24:	91193042 	add	x2, x2, #0x64c
+   17b28:	528000c0 	mov	w0, #0x6                   	// #6
+   17b2c:	94004769 	bl	298d0 <__android_log_print@plt>
+   17b30:	f94013e8 	ldr	x8, [sp, #32]
+   17b34:	b40000c8 	cbz	x8, 17b4c <main+0x524>
+   17b38:	f9400109 	ldr	x9, [x8]
+   17b3c:	910083e1 	add	x1, sp, #0x20
+   17b40:	f85e8129 	ldur	x9, [x9, #-24]
+   17b44:	8b090100 	add	x0, x8, x9
+   17b48:	9400485e 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   17b4c:	f9401708 	ldr	x8, [x24, #40]
+   17b50:	f85f83a9 	ldur	x9, [x29, #-8]
+   17b54:	eb09011f 	cmp	x8, x9
+   17b58:	54000281 	b.ne	17ba8 <main+0x580>  // b.any
+   17b5c:	a94a4ff4 	ldp	x20, x19, [sp, #160]
+   17b60:	a94957f6 	ldp	x22, x21, [sp, #144]
+   17b64:	a9485ff8 	ldp	x24, x23, [sp, #128]
+   17b68:	a94767fa 	ldp	x26, x25, [sp, #112]
+   17b6c:	a9466ffc 	ldp	x28, x27, [sp, #96]
+   17b70:	a9457bfd 	ldp	x29, x30, [sp, #80]
+   17b74:	52800020 	mov	w0, #0x1                   	// #1
+   17b78:	9102c3ff 	add	sp, sp, #0xb0
+   17b7c:	d65f03c0 	ret
+   17b80:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17b84:	d0ffffa2 	adrp	x2, d000 <abitag+0xcd08>
+   17b88:	911e4421 	add	x1, x1, #0x791
+   17b8c:	91102842 	add	x2, x2, #0x40a
+   17b90:	52800080 	mov	w0, #0x4                   	// #4
+   17b94:	9400474f 	bl	298d0 <__android_log_print@plt>
+   17b98:	52942400 	mov	w0, #0xa120                	// #41248
+   17b9c:	72a000e0 	movk	w0, #0x7, lsl #16
+   17ba0:	94004758 	bl	29900 <usleep@plt>
+   17ba4:	17fffffd 	b	17b98 <main+0x570>
+   17ba8:	940046ee 	bl	29760 <__stack_chk_fail@plt>
+
+0000000000017bac <signal_handler_backtrace(int)>:
+   17bac:	d10183ff 	sub	sp, sp, #0x60
+   17bb0:	a9037bfd 	stp	x29, x30, [sp, #48]
+   17bb4:	f90023f5 	str	x21, [sp, #64]
+   17bb8:	a9054ff4 	stp	x20, x19, [sp, #80]
+   17bbc:	9100c3fd 	add	x29, sp, #0x30
+   17bc0:	d53bd055 	mrs	x21, tpidr_el0
+   17bc4:	f94016a8 	ldr	x8, [x21, #40]
+   17bc8:	b0ffffb4 	adrp	x20, c000 <abitag+0xbd08>
+   17bcc:	2a0003f3 	mov	w19, w0
+   17bd0:	911e4694 	add	x20, x20, #0x791
+   17bd4:	d0ffffa2 	adrp	x2, d000 <abitag+0xcd08>
+   17bd8:	91053c42 	add	x2, x2, #0x14f
+   17bdc:	528000c0 	mov	w0, #0x6                   	// #6
+   17be0:	aa1403e1 	mov	x1, x20
+   17be4:	2a1303e3 	mov	w3, w19
+   17be8:	f81f83a8 	stur	x8, [x29, #-8]
+   17bec:	94004739 	bl	298d0 <__android_log_print@plt>
+   17bf0:	90ffffc2 	adrp	x2, f000 <abitag+0xed08>
+   17bf4:	9119d042 	add	x2, x2, #0x674
+   17bf8:	528000c0 	mov	w0, #0x6                   	// #6
+   17bfc:	aa1403e1 	mov	x1, x20
+   17c00:	94004734 	bl	298d0 <__android_log_print@plt>
+   17c04:	90ffffc1 	adrp	x1, f000 <abitag+0xed08>
+   17c08:	6f00e400 	movi	v0.2d, #0x0
+   17c0c:	9128f421 	add	x1, x1, #0xa3d
+   17c10:	910003e0 	mov	x0, sp
+   17c14:	52800022 	mov	w2, #0x1                   	// #1
+   17c18:	f90013ff 	str	xzr, [sp, #32]
+   17c1c:	ad0003e0 	stp	q0, q0, [sp]
+   17c20:	9400482c 	bl	29cd0 <android::CallStack::CallStack(char const*, int)@plt>
+   17c24:	910003e0 	mov	x0, sp
+   17c28:	9400482e 	bl	29ce0 <android::CallStack::~CallStack()@plt>
+   17c2c:	d0ffffa2 	adrp	x2, d000 <abitag+0xcd08>
+   17c30:	91234042 	add	x2, x2, #0x8d0
+   17c34:	528000c0 	mov	w0, #0x6                   	// #6
+   17c38:	aa1403e1 	mov	x1, x20
+   17c3c:	94004725 	bl	298d0 <__android_log_print@plt>
+   17c40:	2a1303e0 	mov	w0, w19
+   17c44:	aa1f03e1 	mov	x1, xzr
+   17c48:	9400482a 	bl	29cf0 <signal@plt>
+   17c4c:	2a1303e0 	mov	w0, w19
+   17c50:	9400482c 	bl	29d00 <raise@plt>
+   17c54:	f94016a8 	ldr	x8, [x21, #40]
+   17c58:	f85f83a9 	ldur	x9, [x29, #-8]
+   17c5c:	eb09011f 	cmp	x8, x9
+   17c60:	540000c1 	b.ne	17c78 <signal_handler_backtrace(int)+0xcc>  // b.any
+   17c64:	a9454ff4 	ldp	x20, x19, [sp, #80]
+   17c68:	f94023f5 	ldr	x21, [sp, #64]
+   17c6c:	a9437bfd 	ldp	x29, x30, [sp, #48]
+   17c70:	910183ff 	add	sp, sp, #0x60
+   17c74:	d65f03c0 	ret
+   17c78:	940046ba 	bl	29760 <__stack_chk_fail@plt>
+
+0000000000017c7c <register_backtrace_handler()>:
+   17c7c:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   17c80:	f9000bf3 	str	x19, [sp, #16]
+   17c84:	910003fd 	mov	x29, sp
+   17c88:	90000013 	adrp	x19, 17000 <ThunderSoftAvmSdk::drawFrame(void*, _CameraFrame const&, EvsParameters const&, void*)+0xeac>
+   17c8c:	912eb273 	add	x19, x19, #0xbac
+   17c90:	52800160 	mov	w0, #0xb                   	// #11
+   17c94:	aa1303e1 	mov	x1, x19
+   17c98:	94004816 	bl	29cf0 <signal@plt>
+   17c9c:	528000c0 	mov	w0, #0x6                   	// #6
+   17ca0:	aa1303e1 	mov	x1, x19
+   17ca4:	94004813 	bl	29cf0 <signal@plt>
+   17ca8:	aa1303e1 	mov	x1, x19
+   17cac:	f9400bf3 	ldr	x19, [sp, #16]
+   17cb0:	528001a0 	mov	w0, #0xd                   	// #13
+   17cb4:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   17cb8:	1400480e 	b	29cf0 <signal@plt>
+
+0000000000017cbc <dumpBuffer(char const*, unsigned char*, unsigned int)>:
+   17cbc:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+   17cc0:	a9015ff8 	stp	x24, x23, [sp, #16]
+   17cc4:	a90257f6 	stp	x22, x21, [sp, #32]
+   17cc8:	a9034ff4 	stp	x20, x19, [sp, #48]
+   17ccc:	910003fd 	mov	x29, sp
+   17cd0:	2a0203f4 	mov	w20, w2
+   17cd4:	aa0103f6 	mov	x22, x1
+   17cd8:	aa0003f3 	mov	x19, x0
+   17cdc:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17ce0:	90ffffc2 	adrp	x2, f000 <abitag+0xed08>
+   17ce4:	911e4421 	add	x1, x1, #0x791
+   17ce8:	91033442 	add	x2, x2, #0xcd
+   17cec:	52800080 	mov	w0, #0x4                   	// #4
+   17cf0:	aa1303e3 	mov	x3, x19
+   17cf4:	940046f7 	bl	298d0 <__android_log_print@plt>
+   17cf8:	52804841 	mov	w1, #0x242                 	// #578
+   17cfc:	52803802 	mov	w2, #0x1c0                 	// #448
+   17d00:	aa1303e0 	mov	x0, x19
+   17d04:	94004803 	bl	29d10 <open@plt>
+   17d08:	37f80300 	tbnz	w0, #31, 17d68 <dumpBuffer(char const*, unsigned char*, unsigned int)+0xac>
+   17d0c:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17d10:	d0ffffa2 	adrp	x2, d000 <abitag+0xcd08>
+   17d14:	2a0003f5 	mov	w21, w0
+   17d18:	911e4421 	add	x1, x1, #0x791
+   17d1c:	911b7c42 	add	x2, x2, #0x6df
+   17d20:	52800080 	mov	w0, #0x4                   	// #4
+   17d24:	2a1403e3 	mov	w3, w20
+   17d28:	aa1303e4 	mov	x4, x19
+   17d2c:	940046e9 	bl	298d0 <__android_log_print@plt>
+   17d30:	34000374 	cbz	w20, 17d9c <dumpBuffer(char const*, unsigned char*, unsigned int)+0xe0>
+   17d34:	2a1f03f8 	mov	w24, wzr
+   17d38:	2a1f03f7 	mov	w23, wzr
+   17d3c:	8b3842c1 	add	x1, x22, w24, uxtw
+   17d40:	4b180282 	sub	w2, w20, w24
+   17d44:	92800003 	mov	x3, #0xffffffffffffffff    	// #-1
+   17d48:	2a1503e0 	mov	w0, w21
+   17d4c:	940047f5 	bl	29d20 <__write_chk@plt>
+   17d50:	37f802a0 	tbnz	w0, #31, 17da4 <dumpBuffer(char const*, unsigned char*, unsigned int)+0xe8>
+   17d54:	0b000318 	add	w24, w24, w0
+   17d58:	6b14031f 	cmp	w24, w20
+   17d5c:	110006f7 	add	w23, w23, #0x1
+   17d60:	54fffee3 	b.cc	17d3c <dumpBuffer(char const*, unsigned char*, unsigned int)+0x80>  // b.lo, b.ul, b.last
+   17d64:	1400001b 	b	17dd0 <dumpBuffer(char const*, unsigned char*, unsigned int)+0x114>
+   17d68:	940047f2 	bl	29d30 <__errno@plt>
+   17d6c:	b9400000 	ldr	w0, [x0]
+   17d70:	940047f4 	bl	29d40 <strerror@plt>
+   17d74:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17d78:	b0ffffa2 	adrp	x2, c000 <abitag+0xbd08>
+   17d7c:	aa0003e4 	mov	x4, x0
+   17d80:	911e4421 	add	x1, x1, #0x791
+   17d84:	9116a842 	add	x2, x2, #0x5aa
+   17d88:	528000c0 	mov	w0, #0x6                   	// #6
+   17d8c:	aa1303e3 	mov	x3, x19
+   17d90:	940046d0 	bl	298d0 <__android_log_print@plt>
+   17d94:	2a1f03e0 	mov	w0, wzr
+   17d98:	1400001a 	b	17e00 <dumpBuffer(char const*, unsigned char*, unsigned int)+0x144>
+   17d9c:	2a1f03f7 	mov	w23, wzr
+   17da0:	1400000c 	b	17dd0 <dumpBuffer(char const*, unsigned char*, unsigned int)+0x114>
+   17da4:	940047e3 	bl	29d30 <__errno@plt>
+   17da8:	b9400000 	ldr	w0, [x0]
+   17dac:	940047e5 	bl	29d40 <strerror@plt>
+   17db0:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17db4:	f0ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   17db8:	aa0003e4 	mov	x4, x0
+   17dbc:	911e4421 	add	x1, x1, #0x791
+   17dc0:	913d7842 	add	x2, x2, #0xf5e
+   17dc4:	528000c0 	mov	w0, #0x6                   	// #6
+   17dc8:	aa1303e3 	mov	x3, x19
+   17dcc:	940046c1 	bl	298d0 <__android_log_print@plt>
+   17dd0:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17dd4:	b0ffffc2 	adrp	x2, 10000 <abitag+0xfd08>
+   17dd8:	911e4421 	add	x1, x1, #0x791
+   17ddc:	91011842 	add	x2, x2, #0x46
+   17de0:	52800080 	mov	w0, #0x4                   	// #4
+   17de4:	2a1403e3 	mov	w3, w20
+   17de8:	aa1303e4 	mov	x4, x19
+   17dec:	2a1703e5 	mov	w5, w23
+   17df0:	940046b8 	bl	298d0 <__android_log_print@plt>
+   17df4:	2a1503e0 	mov	w0, w21
+   17df8:	940047d6 	bl	29d50 <close@plt>
+   17dfc:	52800020 	mov	w0, #0x1                   	// #1
+   17e00:	a9434ff4 	ldp	x20, x19, [sp, #48]
+   17e04:	a94257f6 	ldp	x22, x21, [sp, #32]
+   17e08:	a9415ff8 	ldp	x24, x23, [sp, #16]
+   17e0c:	a8c47bfd 	ldp	x29, x30, [sp], #64
+   17e10:	d65f03c0 	ret
+
+0000000000017e14 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)>:
+   17e14:	d10583ff 	sub	sp, sp, #0x160
+   17e18:	a9117bfd 	stp	x29, x30, [sp, #272]
+   17e1c:	a91267fc 	stp	x28, x25, [sp, #288]
+   17e20:	a9135ff8 	stp	x24, x23, [sp, #304]
+   17e24:	a91457f6 	stp	x22, x21, [sp, #320]
+   17e28:	a9154ff4 	stp	x20, x19, [sp, #336]
+   17e2c:	910443fd 	add	x29, sp, #0x110
+   17e30:	d53bd055 	mrs	x21, tpidr_el0
+   17e34:	f94016a8 	ldr	x8, [x21, #40]
+   17e38:	aa0003f3 	mov	x19, x0
+   17e3c:	f81f83a8 	stur	x8, [x29, #-8]
+   17e40:	39400008 	ldrb	w8, [x0]
+   17e44:	37000088 	tbnz	w8, #0, 17e54 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x40>
+   17e48:	53017d14 	lsr	w20, w8, #1
+   17e4c:	91000660 	add	x0, x19, #0x1
+   17e50:	14000007 	b	17e6c <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x58>
+   17e54:	b9400a74 	ldr	w20, [x19, #8]
+   17e58:	7104029f 	cmp	w20, #0x100
+   17e5c:	54000069 	b.ls	17e68 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x54>  // b.plast
+   17e60:	12800014 	mov	w20, #0xffffffff            	// #-1
+   17e64:	14000046 	b	17f7c <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x168>
+   17e68:	f9400a60 	ldr	x0, [x19, #16]
+   17e6c:	2a1f03e1 	mov	w1, wzr
+   17e70:	940047bc 	bl	29d60 <access@plt>
+   17e74:	39400268 	ldrb	w8, [x19]
+   17e78:	f9400a69 	ldr	x9, [x19, #16]
+   17e7c:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17e80:	911e4421 	add	x1, x1, #0x791
+   17e84:	7200011f 	tst	w8, #0x1
+   17e88:	9a931523 	csinc	x3, x9, x19, ne	// ne = any
+   17e8c:	340006e0 	cbz	w0, 17f68 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x154>
+   17e90:	d0ffffa2 	adrp	x2, d000 <abitag+0xcd08>
+   17e94:	91064c42 	add	x2, x2, #0x193
+   17e98:	52800080 	mov	w0, #0x4                   	// #4
+   17e9c:	9400468d 	bl	298d0 <__android_log_print@plt>
+   17ea0:	6f00e400 	movi	v0.2d, #0x0
+   17ea4:	ad0703e0 	stp	q0, q0, [sp, #224]
+   17ea8:	ad0603e0 	stp	q0, q0, [sp, #192]
+   17eac:	ad0503e0 	stp	q0, q0, [sp, #160]
+   17eb0:	ad0403e0 	stp	q0, q0, [sp, #128]
+   17eb4:	ad0303e0 	stp	q0, q0, [sp, #96]
+   17eb8:	ad0203e0 	stp	q0, q0, [sp, #64]
+   17ebc:	ad0103e0 	stp	q0, q0, [sp, #32]
+   17ec0:	ad0003e0 	stp	q0, q0, [sp]
+   17ec4:	340005d4 	cbz	w20, 17f7c <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x168>
+   17ec8:	aa1f03f6 	mov	x22, xzr
+   17ecc:	91000677 	add	x23, x19, #0x1
+   17ed0:	2a1403f8 	mov	w24, w20
+   17ed4:	910003f9 	mov	x25, sp
+   17ed8:	14000004 	b	17ee8 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xd4>
+   17edc:	910006d6 	add	x22, x22, #0x1
+   17ee0:	eb16031f 	cmp	x24, x22
+   17ee4:	540004a0 	b.eq	17f78 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x164>  // b.none
+   17ee8:	39400268 	ldrb	w8, [x19]
+   17eec:	f9400a69 	ldr	x9, [x19, #16]
+   17ef0:	7200011f 	tst	w8, #0x1
+   17ef4:	9a8902e8 	csel	x8, x23, x9, eq	// eq = none
+   17ef8:	38766908 	ldrb	w8, [x8, x22]
+   17efc:	7101711f 	cmp	w8, #0x5c
+   17f00:	38366b28 	strb	w8, [x25, x22]
+   17f04:	54000060 	b.eq	17f10 <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xfc>  // b.none
+   17f08:	7100bd1f 	cmp	w8, #0x2f
+   17f0c:	54fffe81 	b.ne	17edc <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xc8>  // b.any
+   17f10:	910003e0 	mov	x0, sp
+   17f14:	2a1f03e1 	mov	w1, wzr
+   17f18:	94004792 	bl	29d60 <access@plt>
+   17f1c:	34fffe00 	cbz	w0, 17edc <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xc8>
+   17f20:	910003e0 	mov	x0, sp
+   17f24:	52803fa1 	mov	w1, #0x1fd                 	// #509
+   17f28:	94004792 	bl	29d70 <mkdir@plt>
+   17f2c:	34fffd80 	cbz	w0, 17edc <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xc8>
+   17f30:	2a0003f4 	mov	w20, w0
+   17f34:	9400477f 	bl	29d30 <__errno@plt>
+   17f38:	b9400013 	ldr	w19, [x0]
+   17f3c:	2a1303e0 	mov	w0, w19
+   17f40:	94004780 	bl	29d40 <strerror@plt>
+   17f44:	b0ffffa1 	adrp	x1, c000 <abitag+0xbd08>
+   17f48:	90ffffc2 	adrp	x2, f000 <abitag+0xed08>
+   17f4c:	aa0003e4 	mov	x4, x0
+   17f50:	911e4421 	add	x1, x1, #0x791
+   17f54:	911fcc42 	add	x2, x2, #0x7f3
+   17f58:	528000c0 	mov	w0, #0x6                   	// #6
+   17f5c:	2a1303e3 	mov	w3, w19
+   17f60:	9400465c 	bl	298d0 <__android_log_print@plt>
+   17f64:	14000006 	b	17f7c <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x168>
+   17f68:	b0ffffa2 	adrp	x2, c000 <abitag+0xbd08>
+   17f6c:	91172442 	add	x2, x2, #0x5c9
+   17f70:	52800080 	mov	w0, #0x4                   	// #4
+   17f74:	94004657 	bl	298d0 <__android_log_print@plt>
+   17f78:	2a1f03f4 	mov	w20, wzr
+   17f7c:	f94016a8 	ldr	x8, [x21, #40]
+   17f80:	f85f83a9 	ldur	x9, [x29, #-8]
+   17f84:	eb09011f 	cmp	x8, x9
+   17f88:	54000121 	b.ne	17fac <createDirectory(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x198>  // b.any
+   17f8c:	2a1403e0 	mov	w0, w20
+   17f90:	a9554ff4 	ldp	x20, x19, [sp, #336]
+   17f94:	a95457f6 	ldp	x22, x21, [sp, #320]
+   17f98:	a9535ff8 	ldp	x24, x23, [sp, #304]
+   17f9c:	a95267fc 	ldp	x28, x25, [sp, #288]
+   17fa0:	a9517bfd 	ldp	x29, x30, [sp, #272]
+   17fa4:	910583ff 	add	sp, sp, #0x160
+   17fa8:	d65f03c0 	ret
+   17fac:	940045ed 	bl	29760 <__stack_chk_fail@plt>

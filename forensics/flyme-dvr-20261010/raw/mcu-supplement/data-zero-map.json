@@ -1,0 +1,27 @@
+{
+  "table": "0x49990c",
+  "init": "0x463848",
+  "rows": [
+    {
+      "start": "0x20440000",
+      "end": "0x20440000",
+      "len": 0,
+      "covers2B1": false,
+      "coversStatus": false
+    },
+    {
+      "start": "0x20430e60",
+      "end": "0x20432d48",
+      "len": 7912,
+      "covers2B1": false,
+      "coversStatus": false
+    },
+    {
+      "start": "0x2040ca50",
+      "end": "0x204250a0",
+      "len": 99920,
+      "covers2B1": false,
+      "coversStatus": false
+    }
+  ]
+}

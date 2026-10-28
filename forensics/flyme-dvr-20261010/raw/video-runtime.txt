@@ -1,0 +1,1217 @@
+Sat Oct 10 20:50:51 CST 2026
+/proc/343/fd:
+total 0
+lrwx------ 1 root root 64 2026-10-10 20:50 0 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 1 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 10 -> anon_inode:[eventfd]
+lr-x------ 1 root root 64 2026-10-10 20:50 11 -> anon_inode:malitl_343_0xb400f46307459c08
+lr-x------ 1 root root 64 2026-10-10 20:50 12 -> anon_inode:malitl_343_0xb400f46307466de8
+lrwx------ 1 root root 64 2026-10-10 20:50 13 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 14 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 15 -> /dev/binderfs/hwbinder
+l-wx------ 1 root root 64 2026-10-10 20:50 16 -> /sys/kernel/debug/tracing/trace_marker
+lrwx------ 1 root root 64 2026-10-10 20:50 18 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 19 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 2 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 20 -> /memfd:gralloc_shared_memory (deleted)
+lrwx------ 1 root root 64 2026-10-10 20:50 24 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 25 -> /memfd:gralloc_shared_memory (deleted)
+lrwx------ 1 root root 64 2026-10-10 20:50 3 -> socket:[21570]
+lrwx------ 1 root root 64 2026-10-10 20:50 4 -> /dev/binderfs/binder
+lrwx------ 1 root root 64 2026-10-10 20:50 5 -> /dev/binderfs/hwbinder
+l-wx------ 1 root root 64 2026-10-10 20:50 6 -> /sys/kernel/debug/tracing/trace_marker
+lrwx------ 1 root root 64 2026-10-10 20:50 7 -> /dev/mali0
+lrwx------ 1 root root 64 2026-10-10 20:50 8 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 2026-10-10 20:50 9 -> anon_inode:[eventfd]
+
+/proc/346/fd:
+total 0
+lrwx------ 1 root root 64 2026-10-10 20:50 0 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 1 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 10 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 11 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 12 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 13 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 2 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 3 -> /dev/binderfs/hwbinder
+l-wx------ 1 root root 64 2026-10-10 20:50 4 -> /sys/kernel/debug/tracing/trace_marker
+lrwx------ 1 root root 64 2026-10-10 20:50 5 -> socket:[767]
+lrwx------ 1 root root 64 2026-10-10 20:50 6 -> /dev/video12cif
+lrwx------ 1 root root 64 2026-10-10 20:50 8 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 9 -> /dmabuf:
+
+/proc/401/fd:
+total 0
+lrwx------ 1 root root 64 2026-10-10 20:50 0 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 1 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 10 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 2026-10-10 20:50 11 -> anon_inode:[eventpoll]
+lrwx------ 1 root root 64 2026-10-10 20:50 12 -> /dev/mali0
+lrwx------ 1 root root 64 2026-10-10 20:50 13 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 14 -> /memfd:gralloc_shared_memory (deleted)
+lrwx------ 1 root root 64 2026-10-10 20:50 15 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 2026-10-10 20:50 16 -> anon_inode:[eventfd]
+lrwx------ 1 root root 64 2026-10-10 20:50 17 -> anon_inode:[eventfd]
+lr-x------ 1 root root 64 2026-10-10 20:50 18 -> anon_inode:malitl_401_0xb400f0ed44a7bc18
+lr-x------ 1 root root 64 2026-10-10 20:50 19 -> anon_inode:malitl_401_0xb400f0ed44a85dc8
+lrwx------ 1 root root 64 2026-10-10 20:50 2 -> /dev/null
+lrwx------ 1 root root 64 2026-10-10 20:50 22 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 23 -> /memfd:gralloc_shared_memory (deleted)
+lrwx------ 1 root root 64 2026-10-10 20:50 26 -> /dev/binderfs/hwbinder
+l-wx------ 1 root root 64 2026-10-10 20:50 27 -> /sys/kernel/debug/tracing/trace_marker
+lrwx------ 1 root root 64 2026-10-10 20:50 28 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 29 -> /memfd:gralloc_shared_memory (deleted)
+lrwx------ 1 root root 64 2026-10-10 20:50 3 -> socket:[22623]
+lrwx------ 1 root root 64 2026-10-10 20:50 32 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 33 -> /memfd:gralloc_shared_memory (deleted)
+lrwx------ 1 root root 64 2026-10-10 20:50 34 -> /dmabuf:
+lrwx------ 1 root root 64 2026-10-10 20:50 35 -> /memfd:gralloc_shared_memory (deleted)
+lrwx------ 1 root root 64 2026-10-10 20:50 4 -> /dev/binderfs/hwbinder
+l-wx------ 1 root root 64 2026-10-10 20:50 5 -> /sys/kernel/debug/tracing/trace_marker
+lrwx------ 1 root root 64 2026-10-10 20:50 6 -> /dev/binderfs/binder
+lrwx------ 1 root root 64 2026-10-10 20:50 7 -> /dev/input/event2
+lrwx------ 1 root root 64 2026-10-10 20:50 8 -> /dev/input/event2
+lr-x------ 1 root root 64 2026-10-10 20:50 9 -> /dev/ion
+c9ce27204000-c9ce27213000 r--p 00000000 fc:07 86                         /vendor/bin/hw/android.hardware.automotive.evs@1.0-service
+c9ce27213000-c9ce2722b000 r-xp 0000f000 fc:07 86                         /vendor/bin/hw/android.hardware.automotive.evs@1.0-service
+c9ce2722b000-c9ce2722d000 r--p 00027000 fc:07 86                         /vendor/bin/hw/android.hardware.automotive.evs@1.0-service
+c9ce2722d000-c9ce2722e000 rw-p 00028000 fc:07 86                         /vendor/bin/hw/android.hardware.automotive.evs@1.0-service
+ffac8a6a7000-ffac8b3b2000 ---p 00000000 00:00 0 
+ffac8b3b2000-ffac8b3b4000 rw-p 00000000 00:00 0 
+ffac8b3b4000-ffac8b6a7000 ---p 00000000 00:00 0 
+ffac8b6a7000-ffac8b6a8000 ---p 00000000 00:00 0 
+ffac8b6a8000-ffac8b7a4000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:5054]
+ffac8b7a4000-ffac8b7a5000 ---p 00000000 00:00 0 
+ffac8b7a5000-ffac8bbe4000 ---p 00000000 00:00 0 
+ffac8bbe4000-ffac8bbe6000 rw-p 00000000 00:00 0 
+ffac8bbe6000-ffac8c7a5000 ---p 00000000 00:00 0 
+ffac8c7a5000-ffac8c7a6000 ---p 00000000 00:00 0 
+ffac8c7a6000-ffac8c8a2000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:5048]
+ffac8c8a2000-ffac8c8a3000 ---p 00000000 00:00 0 
+ffac8c8a3000-ffac8cfd0000 ---p 00000000 00:00 0 
+ffac8cfd0000-ffac8cfd2000 rw-p 00000000 00:00 0 
+ffac8cfd2000-ffac8e26a000 ---p 00000000 00:00 0 
+ffac8e26a000-ffac8e26c000 rw-p 00000000 00:00 0 
+ffac8e26c000-ffac8e8a3000 ---p 00000000 00:00 0 
+ffac8e8a3000-ffac8e8a4000 ---p 00000000 00:00 0 
+ffac8e8a4000-ffac8e9a0000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:5046]
+ffac8e9a0000-ffac8e9a2000 ---p 00000000 00:00 0 
+ffac8e9a2000-ffac8ea9e000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:5045]
+ffac8ea9e000-ffac8ea9f000 ---p 00000000 00:00 0 
+ffac8ea9f000-ffac8f848000 ---p 00000000 00:00 0 
+ffac8f848000-ffac8f84a000 rw-p 00000000 00:00 0 
+ffac8f84a000-ffac8fa9f000 ---p 00000000 00:00 0 
+ffac8fa9f000-ffac8faa0000 ---p 00000000 00:00 0 
+ffac8faa0000-ffac8fb9c000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:362]
+ffac8fb9c000-ffac8fb9d000 ---p 00000000 00:00 0 
+ffac8fb9d000-ffac906fe000 ---p 00000000 00:00 0 
+ffac906fe000-ffac90700000 rw-p 00000000 00:00 0 
+ffac90700000-ffac90b9d000 ---p 00000000 00:00 0 
+ffac90b9d000-ffac90b9e000 ---p 00000000 00:00 0 
+ffac90b9e000-ffac90c9a000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:361]
+ffac90c9a000-ffac90c9b000 ---p 00000000 00:00 0 
+ffac90c9b000-ffac90d99000 r--p 00000000 00:2f 5                          /dev/binderfs/hwbinder
+ffac90d99000-ffacf5c0a000 ---p 00000000 00:00 0                          [anon:cfi shadow]
+ffacf5c0a000-ffacf5c0b000 r--p 00000000 00:00 0                          [anon:cfi shadow]
+ffacf5c0b000-ffad10b12000 ---p 00000000 00:00 0                          [anon:cfi shadow]
+ffad10b12000-ffad10b13000 r--p 00000000 00:00 0                          [anon:cfi shadow]
+ffad10b13000-ffad10d99000 ---p 00000000 00:00 0                          [anon:cfi shadow]
+ffad10d99000-ffad10da0000 ---p 00000000 00:00 0 
+ffad10da0000-ffad10de0000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad10de0000-ffad20da7000 ---p 00000000 00:00 0 
+ffad20da7000-ffad20de7000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad20de7000-ffad30da0000 ---p 00000000 00:00 0 
+ffad30da0000-ffad30de0000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad30de0000-ffad40da3000 ---p 00000000 00:00 0 
+ffad40da3000-ffad40de3000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad40de3000-ffad50d9c000 ---p 00000000 00:00 0 
+ffad50d9c000-ffad50ddc000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad50ddc000-ffad60da6000 ---p 00000000 00:00 0 
+ffad60da6000-ffad60de6000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad60de6000-ffad70da6000 ---p 00000000 00:00 0 
+ffad70da6000-ffad70de6000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad70de6000-ffad80da2000 ---p 00000000 00:00 0 
+ffad80da2000-ffad80de2000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad80de2000-ffad90d9c000 ---p 00000000 00:00 0 
+ffad90d9c000-ffad90ddc000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffad90ddc000-ffada0da1000 ---p 00000000 00:00 0 
+ffada0da1000-ffada0de1000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffada0de1000-ffadc0da7000 ---p 00000000 00:00 0 
+ffadc0da7000-ffadc0de7000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffadc0de7000-ffadd0d9c000 ---p 00000000 00:00 0 
+ffadd0d9c000-ffadd0ddc000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffadd0ddc000-ffade0d9f000 ---p 00000000 00:00 0 
+ffade0d9f000-ffade0ddf000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffade0ddf000-ffadf0da1000 ---p 00000000 00:00 0 
+ffadf0da1000-ffadf0de1000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffadf0de1000-ffae10da6000 ---p 00000000 00:00 0 
+ffae10da6000-ffae10de6000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffae10de6000-ffae30da6000 ---p 00000000 00:00 0 
+ffae30da6000-ffae30de6000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffae30de6000-ffae50d9a000 ---p 00000000 00:00 0 
+ffae50d9a000-ffae50dda000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffae50dda000-ffae60da8000 ---p 00000000 00:00 0 
+ffae60da8000-ffae60de8000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffae60de8000-ffae70da8000 ---p 00000000 00:00 0 
+ffae70da8000-ffae70de8000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+ffae70de8000-ffaf20d99000 ---p 00000000 00:00 0 
+ffaf20d99000-ffaf20dfd000 rw-p 00000000 00:00 0                          [anon:linker_alloc]
+ffaf20dfd000-ffaf20dfe000 r--p 00000000 fc:06 953                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.0.so
+ffaf20dfe000-ffaf20dff000 r-xp 00001000 fc:06 953                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.0.so
+ffaf20dff000-ffaf20e00000 r--p 00002000 fc:06 953                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.0.so
+ffaf20e38000-ffaf20e3a000 r--p 00000000 fc:06 5337                       /system/lib64/libcgrouprc.so
+ffaf20e3a000-ffaf20e3b000 r-xp 00002000 fc:06 5337                       /system/lib64/libcgrouprc.so
+ffaf20e3b000-ffaf20e3c000 r--p 00003000 fc:06 5337                       /system/lib64/libcgrouprc.so
+ffaf20e3c000-ffaf20e3d000 rw-p 00003000 fc:06 5337                       /system/lib64/libcgrouprc.so
+ffaf20e65000-ffaf20e66000 r--p 00000000 fc:06 1105                       /apex/com.android.vndk.v30/lib64/libhardware.so
+ffaf20e66000-ffaf20e67000 r-xp 00001000 fc:06 1105                       /apex/com.android.vndk.v30/lib64/libhardware.so
+ffaf20e67000-ffaf20e68000 r--p 00002000 fc:06 1105                       /apex/com.android.vndk.v30/lib64/libhardware.so
+ffaf20e81000-ffaf20e90000 r--p 00000000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+ffaf20e90000-ffaf20ebc000 r-xp 0000f000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+ffaf20ebc000-ffaf20ebd000 r--p 0003b000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+ffaf20ebd000-ffaf20ebe000 rw-p 0003b000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+ffaf20ef3000-ffaf20ef4000 r--p 00000000 fc:06 954                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.1.so
+ffaf20ef4000-ffaf20ef5000 r-xp 00001000 fc:06 954                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.1.so
+ffaf20ef5000-ffaf20ef6000 r--p 00002000 fc:06 954                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.1.so
+ffaf20f1c000-ffaf20f23000 r--p 00000000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+ffaf20f23000-ffaf20f2b000 r-xp 00007000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+ffaf20f2b000-ffaf20f2d000 r--p 0000f000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+ffaf20f2d000-ffaf20f2e000 rw-p 00010000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+ffaf20f41000-ffaf20f58000 r--p 00000000 fc:06 5520                       /system/lib64/libprocessgroup.so
+ffaf20f58000-ffaf20f7d000 r-xp 00017000 fc:06 5520                       /system/lib64/libprocessgroup.so
+ffaf20f7d000-ffaf20f7f000 r--p 0003c000 fc:06 5520                       /system/lib64/libprocessgroup.so
+ffaf20f7f000-ffaf20f80000 rw-p 0003d000 fc:06 5520                       /system/lib64/libprocessgroup.so
+ffaf20fb5000-ffaf20fce000 r--p 00000000 fc:06 888                        /apex/com.android.vndk.v30/lib64/android.hardware.automotive.evs@1.0.so
+ffaf20fce000-ffaf20ff1000 r-xp 00019000 fc:06 888                        /apex/com.android.vndk.v30/lib64/android.hardware.automotive.evs@1.0.so
+ffaf20ff1000-ffaf20ff6000 r--p 0003c000 fc:06 888                        /apex/com.android.vndk.v30/lib64/android.hardware.automotive.evs@1.0.so
+ffaf20ff6000-ffaf20ff7000 rw-p 00040000 fc:06 888                        /apex/com.android.vndk.v30/lib64/android.hardware.automotive.evs@1.0.so
+ffaf2100c000-ffaf2100d000 r--p 00000000 fc:06 5576                       /system/lib64/libsync.so
+ffaf2100d000-ffaf2100e000 r-xp 00001000 fc:06 5576                       /system/lib64/libsync.so
+ffaf2100e000-ffaf2100f000 r--p 00002000 fc:06 5576                       /system/lib64/libsync.so
+ffaf2100f000-ffaf21010000 rw-p 00002000 fc:06 5576                       /system/lib64/libsync.so
+ffaf21045000-ffaf21054000 r--p 00000000 fc:06 5591                       /system/lib64/libutils.so
+ffaf21054000-ffaf21061000 r-xp 0000f000 fc:06 5591                       /system/lib64/libutils.so
+ffaf21061000-ffaf21062000 r--p 0001c000 fc:06 5591                       /system/lib64/libutils.so
+ffaf21062000-ffaf21063000 rw-p 0001c000 fc:06 5591                       /system/lib64/libutils.so
+ffaf21085000-ffaf210cb000 r--p 00000000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+ffaf210cb000-ffaf21131000 r-xp 00046000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+ffaf21131000-ffaf2113c000 r--p 000ac000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+ffaf2113c000-ffaf2113d000 rw-p 000b6000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+ffaf2113d000-ffaf2113e000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf21158000-ffaf21164000 r--p 00000000 fc:06 961                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.1.so
+ffaf21164000-ffaf2116f000 r-xp 0000c000 fc:06 961                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.1.so
+ffaf2116f000-ffaf21171000 r--p 00017000 fc:06 961                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.1.so
+ffaf21171000-ffaf21172000 rw-p 00018000 fc:06 961                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.1.so
+ffaf21182000-ffaf21191000 r--p 00000000 fc:06 5304                       /system/lib64/libbase.so
+ffaf21191000-ffaf211bd000 r-xp 0000f000 fc:06 5304                       /system/lib64/libbase.so
+ffaf211bd000-ffaf211be000 r--p 0003b000 fc:06 5304                       /system/lib64/libbase.so
+ffaf211be000-ffaf211bf000 rw-p 0003b000 fc:06 5304                       /system/lib64/libbase.so
+ffaf211c2000-ffaf2120d000 r--p 00000000 fc:06 5327                       /system/lib64/libc++.so
+ffaf2120d000-ffaf21266000 r-xp 0004b000 fc:06 5327                       /system/lib64/libc++.so
+ffaf21266000-ffaf2126d000 r--p 000a4000 fc:06 5327                       /system/lib64/libc++.so
+ffaf2126d000-ffaf2126e000 rw-p 000aa000 fc:06 5327                       /system/lib64/libc++.so
+ffaf2126e000-ffaf21271000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf2128a000-ffaf21299000 r--p 00000000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+ffaf21299000-ffaf212ab000 r-xp 0000f000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+ffaf212ab000-ffaf212ae000 r--p 00021000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+ffaf212ae000-ffaf212af000 rw-p 00023000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+ffaf212e1000-ffaf212e3000 r--p 00000000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+ffaf212e3000-ffaf212e5000 r-xp 00002000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+ffaf212e5000-ffaf212e6000 r--p 00004000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+ffaf212e6000-ffaf212e7000 rw-p 00004000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+ffaf2130c000-ffaf21355000 r--p 00000000 fc:06 5308                       /system/lib64/libbinder.so
+ffaf21355000-ffaf21399000 r-xp 00049000 fc:06 5308                       /system/lib64/libbinder.so
+ffaf21399000-ffaf213ac000 r--p 0008d000 fc:06 5308                       /system/lib64/libbinder.so
+ffaf213ac000-ffaf213ad000 rw-p 0009f000 fc:06 5308                       /system/lib64/libbinder.so
+ffaf213ad000-ffaf213ae000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf213c3000-ffaf213d4000 r--p 00000000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+ffaf213d4000-ffaf213f8000 r-xp 00011000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+ffaf213f8000-ffaf213f9000 r--p 00035000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+ffaf213f9000-ffaf213fa000 rw-p 00035000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+ffaf2141a000-ffaf21425000 r--p 00000000 fc:06 960                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.0.so
+ffaf21425000-ffaf21430000 r-xp 0000b000 fc:06 960                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.0.so
+ffaf21430000-ffaf21432000 r--p 00016000 fc:06 960                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.0.so
+ffaf21432000-ffaf21433000 rw-p 00017000 fc:06 960                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@2.0.so
+ffaf21444000-ffaf21445000 r--p 00000000 fc:06 521                        /apex/com.android.runtime/lib64/bionic/libdl.so
+ffaf21445000-ffaf21446000 r-xp 00001000 fc:06 521                        /apex/com.android.runtime/lib64/bionic/libdl.so
+ffaf21446000-ffaf21447000 r--p 00002000 fc:06 521                        /apex/com.android.runtime/lib64/bionic/libdl.so
+ffaf21447000-ffaf21448000 ---p 00000000 00:00 0 
+ffaf21448000-ffaf21449000 r--p 00000000 00:00 0                          [anon:.bss]
+ffaf21484000-ffaf21485000 r--p 00000000 fc:06 522                        /apex/com.android.runtime/lib64/bionic/libdl_android.so
+ffaf21485000-ffaf21486000 r-xp 00001000 fc:06 522                        /apex/com.android.runtime/lib64/bionic/libdl_android.so
+ffaf21486000-ffaf21487000 r--p 00002000 fc:06 522                        /apex/com.android.runtime/lib64/bionic/libdl_android.so
+ffaf214cd000-ffaf214ce000 r--p 00000000 fc:06 955                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.2.so
+ffaf214ce000-ffaf214cf000 r-xp 00001000 fc:06 955                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.2.so
+ffaf214cf000-ffaf214d0000 r--p 00002000 fc:06 955                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.2.so
+ffaf21510000-ffaf21518000 r--p 00000000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+ffaf21518000-ffaf21520000 r-xp 00008000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+ffaf21520000-ffaf21521000 r--p 00010000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+ffaf21521000-ffaf21522000 rw-p 00010000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+ffaf2156f000-ffaf21593000 r--p 00000000 fc:06 1143                       /apex/com.android.vndk.v30/lib64/libui.so
+ffaf21593000-ffaf215b3000 r-xp 00024000 fc:06 1143                       /apex/com.android.vndk.v30/lib64/libui.so
+ffaf215b3000-ffaf215b6000 r--p 00044000 fc:06 1143                       /apex/com.android.vndk.v30/lib64/libui.so
+ffaf215b6000-ffaf215b7000 rw-p 00046000 fc:06 1143                       /apex/com.android.vndk.v30/lib64/libui.so
+ffaf215b7000-ffaf215b8000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf215ca000-ffaf21615000 r--p 00000000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+ffaf21615000-ffaf2166e000 r-xp 0004b000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+ffaf2166e000-ffaf21675000 r--p 000a4000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+ffaf21675000-ffaf21676000 rw-p 000aa000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+ffaf21676000-ffaf21679000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf2168e000-ffaf21698000 r--p 00000000 fc:06 948                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@3.0.so
+ffaf21698000-ffaf216a1000 r-xp 0000a000 fc:06 948                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@3.0.so
+ffaf216a1000-ffaf216a3000 r--p 00013000 fc:06 948                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@3.0.so
+ffaf216a3000-ffaf216a4000 rw-p 00014000 fc:06 948                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@3.0.so
+ffaf216cf000-ffaf216db000 r--p 00000000 fc:06 962                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@3.0.so
+ffaf216db000-ffaf216e8000 r-xp 0000c000 fc:06 962                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@3.0.so
+ffaf216e8000-ffaf216ea000 r--p 00019000 fc:06 962                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@3.0.so
+ffaf216ea000-ffaf216eb000 rw-p 0001a000 fc:06 962                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@3.0.so
+ffaf21729000-ffaf21730000 r--p 00000000 fc:06 5356                       /system/lib64/libcutils.so
+ffaf21730000-ffaf21738000 r-xp 00007000 fc:06 5356                       /system/lib64/libcutils.so
+ffaf21738000-ffaf2173a000 r--p 0000f000 fc:06 5356                       /system/lib64/libcutils.so
+ffaf2173a000-ffaf2173b000 rw-p 00010000 fc:06 5356                       /system/lib64/libcutils.so
+ffaf21753000-ffaf21754000 r--p 00000000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+ffaf21754000-ffaf21755000 r-xp 00001000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+ffaf21755000-ffaf21756000 r--p 00002000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+ffaf21756000-ffaf21757000 rw-p 00002000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+ffaf2178c000-ffaf2178d000 r--p 00000000 fc:06 5600                       /system/lib64/libvndksupport.so
+ffaf2178d000-ffaf2178e000 r-xp 00001000 fc:06 5600                       /system/lib64/libvndksupport.so
+ffaf2178e000-ffaf2178f000 r--p 00002000 fc:06 5600                       /system/lib64/libvndksupport.so
+ffaf2178f000-ffaf21790000 rw-p 00002000 fc:06 5600                       /system/lib64/libvndksupport.so
+ffaf217c0000-ffaf217d7000 r--p 00000000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+ffaf217d7000-ffaf217fc000 r-xp 00017000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+ffaf217fc000-ffaf217fe000 r--p 0003c000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+ffaf217fe000-ffaf217ff000 rw-p 0003d000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+ffaf2180b000-ffaf21815000 r--p 00000000 fc:06 949                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@4.0.so
+ffaf21815000-ffaf2181d000 r-xp 0000a000 fc:06 949                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@4.0.so
+ffaf2181d000-ffaf2181f000 r--p 00012000 fc:06 949                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@4.0.so
+ffaf2181f000-ffaf21820000 rw-p 00013000 fc:06 949                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@4.0.so
+ffaf2184f000-ffaf21854000 r--p 00000000 fc:06 5459                       /system/lib64/liblog.so
+ffaf21854000-ffaf2185f000 r-xp 00005000 fc:06 5459                       /system/lib64/liblog.so
+ffaf2185f000-ffaf21860000 r--p 00010000 fc:06 5459                       /system/lib64/liblog.so
+ffaf21860000-ffaf21861000 rw-p 00010000 fc:06 5459                       /system/lib64/liblog.so
+ffaf21882000-ffaf21883000 r--p 00000000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+ffaf21883000-ffaf21884000 r-xp 00001000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+ffaf21884000-ffaf21885000 r--p 00002000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+ffaf21885000-ffaf21886000 rw-p 00002000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+ffaf218d4000-ffaf2190f000 r--p 00000000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+ffaf2190f000-ffaf2198a000 r-xp 0003b000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+ffaf2198a000-ffaf2198e000 r--p 000b6000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+ffaf2198e000-ffaf21991000 rw-p 000b9000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+ffaf21991000-ffaf21994000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf21994000-ffaf21995000 r--p 00000000 00:00 0                          [anon:.bss]
+ffaf21995000-ffaf219b2000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf219ee000-ffaf21a2b000 r--p 00000000 fc:06 1078                       /apex/com.android.vndk.v30/lib64/libbinder.so
+ffaf21a2b000-ffaf21a65000 r-xp 0003d000 fc:06 1078                       /apex/com.android.vndk.v30/lib64/libbinder.so
+ffaf21a65000-ffaf21a72000 r--p 00077000 fc:06 1078                       /apex/com.android.vndk.v30/lib64/libbinder.so
+ffaf21a72000-ffaf21a73000 rw-p 00083000 fc:06 1078                       /apex/com.android.vndk.v30/lib64/libbinder.so
+ffaf21a73000-ffaf21a74000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf21aa1000-ffaf21aab000 r--p 00000000 fc:06 947                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@2.0.so
+ffaf21aab000-ffaf21ab4000 r-xp 0000a000 fc:06 947                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@2.0.so
+ffaf21ab4000-ffaf21ab6000 r--p 00013000 fc:06 947                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@2.0.so
+ffaf21ab6000-ffaf21ab7000 rw-p 00014000 fc:06 947                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.allocator@2.0.so
+ffaf21add000-ffaf21ae5000 r--p 00000000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+ffaf21ae5000-ffaf21aee000 r-xp 00008000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+ffaf21aee000-ffaf21aef000 r--p 00011000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+ffaf21aef000-ffaf21af0000 rw-p 00011000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+ffaf21b15000-ffaf21b24000 r--p 00000000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+ffaf21b24000-ffaf21b31000 r-xp 0000f000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+ffaf21b31000-ffaf21b32000 r--p 0001c000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+ffaf21b32000-ffaf21b33000 rw-p 0001c000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+ffaf21b6a000-ffaf21b6b000 r--p 00000000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+ffaf21b6b000-ffaf21b6c000 r-xp 00001000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+ffaf21b6c000-ffaf21b6d000 r--p 00002000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+ffaf21b6d000-ffaf21b6e000 rw-p 00002000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+ffaf21bd2000-ffaf21bd5000 r--p 00000000 fc:06 5500                       /system/lib64/libnetd_client.so
+ffaf21bd5000-ffaf21bd9000 r-xp 00003000 fc:06 5500                       /system/lib64/libnetd_client.so
+ffaf21bd9000-ffaf21bda000 r--p 00007000 fc:06 5500                       /system/lib64/libnetd_client.so
+ffaf21bda000-ffaf21bdb000 rw-p 00007000 fc:06 5500                       /system/lib64/libnetd_client.so
+ffaf21c17000-ffaf21c18000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21c47000-ffaf21c67000 r--s 00000000 00:19 207                        /dev/__properties__/u:object_r:vendor_default_prop:s0
+ffaf21c67000-ffaf21c68000 ---p 00000000 00:00 0 
+ffaf21c68000-ffaf21c70000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+ffaf21c70000-ffaf21c90000 r--s 00000000 00:19 152                        /dev/__properties__/u:object_r:logd_prop:s0
+ffaf21c90000-ffaf21c91000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21c91000-ffaf21c92000 ---p 00000000 00:00 0 
+ffaf21c92000-ffaf21c9a000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+ffaf21c9a000-ffaf21c9b000 ---p 00000000 00:00 0 
+ffaf21c9b000-ffaf21ca3000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+ffaf21ca3000-ffaf21ca4000 ---p 00000000 00:00 0 
+ffaf21ca4000-ffaf21cac000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+ffaf21cac000-ffaf21cad000 ---p 00000000 00:00 0 
+ffaf21cad000-ffaf21cb5000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+ffaf21cb5000-ffaf21cb6000 ---p 00000000 00:00 0 
+ffaf21cb6000-ffaf21cbe000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+ffaf21cbe000-ffaf21cde000 r--s 00000000 00:19 121                        /dev/__properties__/u:object_r:exported_default_prop:s0
+ffaf21cde000-ffaf21cfe000 r--s 00000000 00:19 142                        /dev/__properties__/u:object_r:heapprofd_prop:s0
+ffaf21cfe000-ffaf21d1e000 r--s 00000000 00:19 109                        /dev/__properties__/u:object_r:exported2_default_prop:s0
+ffaf21d1e000-ffaf21d3e000 r--s 00000000 00:19 87                         /dev/__properties__/u:object_r:debug_prop:s0
+ffaf21d3e000-ffaf21d5e000 r--s 00000000 00:19 230                        /dev/__properties__/properties_serial
+ffaf21d5e000-ffaf21d6a000 r--s 00000000 00:19 46                         /dev/__properties__/property_info
+ffaf21d6e000-ffaf21d8e000 r--s 00000000 00:19 143                        /dev/__properties__/u:object_r:hwservicemanager_prop:s0
+ffaf21d8e000-ffaf21dae000 r--s 00000000 00:19 151                        /dev/__properties__/u:object_r:log_tag_prop:s0
+ffaf21dae000-ffaf21dce000 r--s 00000000 00:19 216                        /dev/__properties__/u:object_r:vendor_socket_hook_prop:s0
+ffaf21dce000-ffaf21e32000 r--p 00000000 00:00 0                          [anon:linker_alloc]
+ffaf21e32000-ffaf21e34000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21e36000-ffaf21e3a000 r--p 00000000 00:00 0                          [anon:atexit handlers]
+ffaf21e3a000-ffaf21e3b000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21e3b000-ffaf21e9f000 r--p 00000000 00:00 0                          [anon:linker_alloc]
+ffaf21e9f000-ffaf21ebf000 r--s 00000000 00:19 225                        /dev/__properties__/u:object_r:vndk_prop:s0
+ffaf21ebf000-ffaf21ec1000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21ec3000-ffaf21ec8000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21ecc000-ffaf21ecd000 ---p 00000000 00:00 0 
+ffaf21ecd000-ffaf21ed1000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:main]
+ffaf21ed1000-ffaf21ed2000 ---p 00000000 00:00 0 
+ffaf21ed2000-ffaf21ed3000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21ed4000-ffaf21ed8000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21ed8000-ffaf21edb000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_lob]
+ffaf21edb000-ffaf21edd000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21edd000-ffaf21ede000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_lob]
+ffaf21ede000-ffaf21ee1000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21ee1000-ffaf21f45000 r--p 00000000 00:00 0                          [anon:linker_alloc]
+ffaf21f45000-ffaf21f46000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf21f46000-ffaf21f66000 r--s 00000000 00:19 87                         /dev/__properties__/u:object_r:debug_prop:s0
+ffaf21f66000-ffaf21f86000 r--s 00000000 00:19 109                        /dev/__properties__/u:object_r:exported2_default_prop:s0
+ffaf21f86000-ffaf21f87000 ---p 00000000 00:00 0 
+ffaf21f87000-ffaf21f8f000 rw-p 00000000 00:00 0 
+ffaf21f8f000-ffaf21f90000 ---p 00000000 00:00 0 
+ffaf21f90000-ffaf21fb0000 r--s 00000000 00:19 230                        /dev/__properties__/properties_serial
+ffaf21fb0000-ffaf21fb2000 rw-p 00000000 00:00 0                          [anon:System property context nodes]
+ffaf21fb2000-ffaf21fbe000 r--s 00000000 00:19 46                         /dev/__properties__/property_info
+ffaf21fbe000-ffaf22022000 r--p 00000000 00:00 0                          [anon:linker_alloc]
+ffaf22022000-ffaf22024000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+ffaf22024000-ffaf22025000 r--p 00000000 00:00 0                          [anon:atexit handlers]
+ffaf22025000-ffaf2267c000 ---p 00000000 00:00 0 
+ffaf2267c000-ffaf2267e000 rw-p 00000000 00:00 0 
+ffaf2267e000-ffaf23025000 ---p 00000000 00:00 0 
+ffaf23025000-ffaf23026000 ---p 00000000 00:00 0 
+ffaf23026000-ffaf2302e000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+ffaf2302e000-ffaf2302f000 rw-p 00000000 00:00 0                          [anon:arc4random data]
+ffaf2302f000-ffaf23031000 rw-p 00000000 00:00 0                          [anon:System property context nodes]
+ffaf23031000-ffaf23032000 rw-p 00000000 00:00 0                          [anon:arc4random data]
+ffaf23032000-ffaf23034000 r--p 00000000 00:00 0                          [vvar]
+ffaf23034000-ffaf23035000 r-xp 00000000 00:00 0                          [vdso]
+ffaf23035000-ffaf23066000 r--p 00000000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+ffaf23066000-ffaf2311a000 r-xp 00031000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+ffaf2311a000-ffaf23121000 r--p 000e5000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+ffaf23121000-ffaf23123000 rw-p 000eb000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+ffaf23123000-ffaf23127000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffaf23127000-ffaf23128000 r--p 00000000 00:00 0                          [anon:.bss]
+ffaf23128000-ffaf2312e000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffffda574000-ffffda595000 rw-p 00000000 00:00 0                          [stack]
+bada12248000-bada12270000 r--p 00000000 fc:06 2054                       /system/bin/evsapp
+bada12270000-bada122a2000 r-xp 00028000 fc:06 2054                       /system/bin/evsapp
+bada122a2000-bada122ab000 r--p 0005a000 fc:06 2054                       /system/bin/evsapp
+bada122ab000-bada122ac000 rw-p 00062000 fc:06 2054                       /system/bin/evsapp
+bada122ac000-bada122ad000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ebde200000-f0ebde9e9000 rw-s f0ebde200000 00:19 315                    /dev/mali0
+f0ebdfb82000-f0ebe036b000 rw-s 00000000 00:09 56063                      /dmabuf:
+f0ebe036b000-f0ebe0b3a000 ---p 00000000 00:00 0 
+f0ebe0b3a000-f0ebe0b3c000 rw-p 00000000 00:00 0 
+f0ebe0b3c000-f0ebe136b000 ---p 00000000 00:00 0 
+f0ebe136b000-f0ebe136c000 ---p 00000000 00:00 0 
+f0ebe136c000-f0ebe1468000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:594]
+f0ebe1468000-f0ebe1469000 ---p 00000000 00:00 0 
+f0ebe1469000-f0ebe1e06000 ---p 00000000 00:00 0 
+f0ebe1e06000-f0ebe1e08000 rw-p 00000000 00:00 0 
+f0ebe1e08000-f0ebe2469000 ---p 00000000 00:00 0 
+f0ebe2469000-f0ebe246a000 ---p 00000000 00:00 0 
+f0ebe246a000-f0ebe2566000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:591]
+f0ebe2566000-f0ebe2567000 ---p 00000000 00:00 0 
+f0ebe2595000-f0ebe2d7e000 rw-s 00000000 00:09 56061                      /dmabuf:
+f0ebe2d7e000-f0ebe2e7c000 r--p 00000000 00:2f 5                          /dev/binderfs/hwbinder
+f0ebe2e7c000-f0ebe3665000 rw-s 00000000 00:09 56058                      /dmabuf:
+f0ebe3665000-f0ebe3666000 ---p 00000000 00:00 0 
+f0ebe3666000-f0ebe3706000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ebe3706000-f0ebe3707000 ---p 00000000 00:00 0 
+f0ebe3707000-f0ebe3aa8000 ---p 00000000 00:00 0 
+f0ebe3aa8000-f0ebe3aaa000 rw-p 00000000 00:00 0 
+f0ebe3aaa000-f0ebe5440000 ---p 00000000 00:00 0 
+f0ebe5440000-f0ebe5442000 rw-p 00000000 00:00 0 
+f0ebe5442000-f0ebe5707000 ---p 00000000 00:00 0 
+f0ebe5707000-f0ebe5708000 ---p 00000000 00:00 0 
+f0ebe5708000-f0ebe5804000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:589]
+f0ebe5804000-f0ebe5805000 ---p 00000000 00:00 0 
+f0ebe5805000-f0ebe67a2000 ---p 00000000 00:00 0 
+f0ebe67a2000-f0ebe67a4000 rw-p 00000000 00:00 0 
+f0ebe67a4000-f0ebe6805000 ---p 00000000 00:00 0 
+f0ebe6805000-f0ebe6806000 ---p 00000000 00:00 0 
+f0ebe6806000-f0ebe6902000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:588]
+f0ebe6902000-f0ebe6903000 ---p 00000000 00:00 0 
+f0ebe6903000-f0ebe6c7a000 ---p 00000000 00:00 0 
+f0ebe6c7a000-f0ebe6c7c000 rw-p 00000000 00:00 0 
+f0ebe6c7c000-f0ebe7903000 ---p 00000000 00:00 0 
+f0ebe7903000-f0ebe7904000 ---p 00000000 00:00 0 
+f0ebe7904000-f0ebe7a00000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:587]
+f0ebe7a00000-f0ebe7a01000 ---p 00000000 00:00 0 
+f0ebe7a01000-f0ebe7c10000 ---p 00000000 00:00 0 
+f0ebe7c10000-f0ebe7c12000 rw-p 00000000 00:00 0 
+f0ebe7c12000-f0ebe8a01000 ---p 00000000 00:00 0 
+f0ebe8a01000-f0ebe8a02000 ---p 00000000 00:00 0 
+f0ebe8a02000-f0ebe8afe000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:586]
+f0ebe8afe000-f0ebe8aff000 ---p 00000000 00:00 0 
+f0ebe8aff000-f0ebe9012000 ---p 00000000 00:00 0 
+f0ebe9012000-f0ebe9014000 rw-p 00000000 00:00 0 
+f0ebe9014000-f0ebe9aff000 ---p 00000000 00:00 0 
+f0ebe9aff000-f0ebe9b00000 ---p 00000000 00:00 0 
+f0ebe9b00000-f0ebe9bfc000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:585]
+f0ebe9bfc000-f0ebe9bfd000 ---p 00000000 00:00 0 
+f0ebe9bfd000-f0ebe9e5e000 ---p 00000000 00:00 0 
+f0ebe9e5e000-f0ebe9e60000 rw-p 00000000 00:00 0 
+f0ebe9e60000-f0ebeabfd000 ---p 00000000 00:00 0 
+f0ebeabfd000-f0ebeabfe000 ---p 00000000 00:00 0 
+f0ebeabfe000-f0ebeacfa000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:584]
+f0ebeacfa000-f0ebeacfc000 ---p 00000000 00:00 0 
+f0ebeacfc000-f0ebeadf8000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:583]
+f0ebeadf8000-f0ebeadf9000 ---p 00000000 00:00 0 
+f0ebeadf9000-f0ebeaf3c000 ---p 00000000 00:00 0 
+f0ebeaf3c000-f0ebeaf3e000 rw-p 00000000 00:00 0 
+f0ebeaf3e000-f0ebebdf9000 ---p 00000000 00:00 0 
+f0ebebdf9000-f0ebebdfa000 ---p 00000000 00:00 0 
+f0ebebdfa000-f0ebebef6000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:582]
+f0ebebef6000-f0ebebef8000 ---p 00000000 00:00 0 
+f0ebebef8000-f0ebebf90000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ebebf90000-f0ebebf91000 ---p 00000000 00:00 0 
+f0ebebf91000-f0ebec703000 r--p 00000000 fc:07 1150                       /vendor/lib64/egl/libGLES_mali.so
+f0ebec703000-f0ebee3ac000 r-xp 00772000 fc:07 1150                       /vendor/lib64/egl/libGLES_mali.so
+f0ebee3ac000-f0ebee575000 r--p 0241b000 fc:07 1150                       /vendor/lib64/egl/libGLES_mali.so
+f0ebee575000-f0ebee5d5000 rw-p 025e3000 fc:07 1150                       /vendor/lib64/egl/libGLES_mali.so
+f0ebee5d5000-f0ebee618000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ebee658000-f0ebee65f000 r--p 00000000 fc:06 1151                       /apex/com.android.vndk.v30/lib64/libz.so
+f0ebee65f000-f0ebee66d000 r-xp 00007000 fc:06 1151                       /apex/com.android.vndk.v30/lib64/libz.so
+f0ebee66d000-f0ebee66e000 r--p 00015000 fc:06 1151                       /apex/com.android.vndk.v30/lib64/libz.so
+f0ebee66e000-f0ebee66f000 rw-p 00015000 fc:06 1151                       /apex/com.android.vndk.v30/lib64/libz.so
+f0ebee6f1000-f0ebef09a000 ---p 00000000 00:00 0 
+f0ebef09a000-f0ebef09c000 rw-p 00000000 00:00 0 
+f0ebef09c000-f0ebf05ca000 ---p 00000000 00:00 0 
+f0ebf05ca000-f0ebf05cc000 rw-p 00000000 00:00 0 
+f0ebf05cc000-f0ebf06f1000 ---p 00000000 00:00 0 
+f0ebf06f1000-f0ebf06f2000 ---p 00000000 00:00 0 
+f0ebf06f2000-f0ebf07ee000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:564]
+f0ebf07ee000-f0ebf07f0000 ---p 00000000 00:00 0 
+f0ebf07f0000-f0ebf08ec000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:563]
+f0ebf08ec000-f0ebf08ed000 ---p 00000000 00:00 0 
+f0ebf08ed000-f0ebf10d6000 rw-s 00000000 00:09 24787                      /dmabuf:
+f0ebf10d6000-f0ebf10d7000 r--p 00000000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+f0ebf10d7000-f0ebf10d8000 r-xp 00001000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+f0ebf10d8000-f0ebf10d9000 r--p 00002000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+f0ebf10d9000-f0ebf10da000 rw-p 00002000 fc:06 923                        /apex/com.android.vndk.v30/lib64/android.hardware.common-V1-ndk_platform.so
+f0ebf1102000-f0ebf1111000 r--p 00000000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+f0ebf1111000-f0ebf1123000 r-xp 0000f000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+f0ebf1123000-f0ebf1126000 r--p 00021000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+f0ebf1126000-f0ebf1127000 rw-p 00023000 fc:06 963                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.mapper@4.0.so
+f0ebf1155000-f0ebf1164000 r--p 00000000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+f0ebf1164000-f0ebf1171000 r-xp 0000f000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+f0ebf1171000-f0ebf1172000 r--p 0001c000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+f0ebf1172000-f0ebf1173000 rw-p 0001c000 fc:06 1146                       /apex/com.android.vndk.v30/lib64/libutils.so
+f0ebf1199000-f0ebf11a1000 r--p 00000000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+f0ebf11a1000-f0ebf11aa000 r-xp 00008000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+f0ebf11aa000-f0ebf11ab000 r--p 00011000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+f0ebf11ab000-f0ebf11ac000 rw-p 00011000 fc:06 1103                       /apex/com.android.vndk.v30/lib64/libgralloctypes.so
+f0ebf11c1000-f0ebf11d8000 r--p 00000000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+f0ebf11d8000-f0ebf11fd000 r-xp 00017000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+f0ebf11fd000-f0ebf11ff000 r--p 0003c000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+f0ebf11ff000-f0ebf1200000 rw-p 0003d000 fc:06 1128                       /apex/com.android.vndk.v30/lib64/libprocessgroup.so
+f0ebf1210000-f0ebf125b000 r--p 00000000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+f0ebf125b000-f0ebf12b4000 r-xp 0004b000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+f0ebf12b4000-f0ebf12bb000 r--p 000a4000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+f0ebf12bb000-f0ebf12bc000 rw-p 000aa000 fc:06 1081                       /apex/com.android.vndk.v30/lib64/libc++.so
+f0ebf12bc000-f0ebf12bf000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ebf12c7000-f0ebf12ce000 r--p 00000000 fc:07 1196                       /vendor/lib64/libdrm.so
+f0ebf12ce000-f0ebf12da000 r-xp 00007000 fc:07 1196                       /vendor/lib64/libdrm.so
+f0ebf12da000-f0ebf12db000 r--p 00013000 fc:07 1196                       /vendor/lib64/libdrm.so
+f0ebf12db000-f0ebf12dc000 rw-p 00013000 fc:07 1196                       /vendor/lib64/libdrm.so
+f0ebf130d000-f0ebf130e000 r--p 00000000 fc:06 1105                       /apex/com.android.vndk.v30/lib64/libhardware.so
+f0ebf130e000-f0ebf130f000 r-xp 00001000 fc:06 1105                       /apex/com.android.vndk.v30/lib64/libhardware.so
+f0ebf130f000-f0ebf1310000 r--p 00002000 fc:06 1105                       /apex/com.android.vndk.v30/lib64/libhardware.so
+f0ebf136b000-f0ebf1372000 r--p 00000000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+f0ebf1372000-f0ebf137a000 r-xp 00007000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+f0ebf137a000-f0ebf137c000 r--p 0000f000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+f0ebf137c000-f0ebf137d000 rw-p 00010000 fc:06 1093                       /apex/com.android.vndk.v30/lib64/libcutils.so
+f0ebf13ae000-f0ebf13af000 r--p 00000000 fc:06 953                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.0.so
+f0ebf13af000-f0ebf13b0000 r-xp 00001000 fc:06 953                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.0.so
+f0ebf13b0000-f0ebf13b1000 r--p 00002000 fc:06 953                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.0.so
+f0ebf13f4000-f0ebf13f5000 r--p 00000000 fc:06 955                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.2.so
+f0ebf13f5000-f0ebf13f6000 r-xp 00001000 fc:06 955                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.2.so
+f0ebf13f6000-f0ebf13f7000 r--p 00002000 fc:06 955                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.2.so
+f0ebf141f000-f0ebf1420000 r--p 00000000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+f0ebf1420000-f0ebf1421000 r-xp 00001000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+f0ebf1421000-f0ebf1422000 r--p 00002000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+f0ebf1422000-f0ebf1423000 rw-p 00002000 fc:06 1110                       /apex/com.android.vndk.v30/lib64/libion.so
+f0ebf1479000-f0ebf147b000 r--p 00000000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ebf147b000-f0ebf147d000 r-xp 00002000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ebf147d000-f0ebf147e000 r--p 00004000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ebf147e000-f0ebf147f000 rw-p 00004000 fc:06 952                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ebf148e000-f0ebf149b000 r--p 00000000 fc:07 1159                       /vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-arm.so
+f0ebf149b000-f0ebf14af000 r-xp 0000d000 fc:07 1159                       /vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-arm.so
+f0ebf14af000-f0ebf14b0000 r--p 00021000 fc:07 1159                       /vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-arm.so
+f0ebf14b0000-f0ebf14b1000 rw-p 00021000 fc:07 1159                       /vendor/lib64/hw/android.hardware.graphics.mapper@4.0-impl-arm.so
+f0ebf14b1000-f0ebf14b3000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ebf14c1000-f0ebf14d0000 r--p 00000000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+f0ebf14d0000-f0ebf14fc000 r-xp 0000f000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+f0ebf14fc000-f0ebf14fd000 r--p 0003b000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+f0ebf14fd000-f0ebf14fe000 rw-p 0003b000 fc:06 1076                       /apex/com.android.vndk.v30/lib64/libbase.so
+f0ebf1504000-f0ebf154a000 r--p 00000000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+f0ebf154a000-f0ebf15b0000 r-xp 00046000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+f0ebf15b0000-f0ebf15bb000 r--p 000ac000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+f0ebf15bb000-f0ebf15bc000 rw-p 000b6000 fc:06 1108                       /apex/com.android.vndk.v30/lib64/libhidlbase.so
+f0ebf15bc000-f0ebf15bd000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ebf15ca000-f0ebf15cb000 r--p 00000000 fc:06 954                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.1.so
+f0ebf15cb000-f0ebf15cc000 r-xp 00001000 fc:06 954                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.1.so
+f0ebf15cc000-f0ebf15cd000 r--p 00002000 fc:06 954                        /apex/com.android.vndk.v30/lib64/android.hardware.graphics.common@1.1.so
+f0ebf1623000-f0ebf1624000 r--p 00000000 fc:07 1147                       /vendor/lib64/arm.graphics-V1-ndk_platform.so
+f0ebf1624000-f0ebf1625000 r-xp 00001000 fc:07 1147                       /vendor/lib64/arm.graphics-V1-ndk_platform.so
+f0ebf1625000-f0ebf1626000 r--p 00002000 fc:07 1147                       /vendor/lib64/arm.graphics-V1-ndk_platform.so
+f0ebf1671000-f0ebf176f000 r--p 00000000 00:2f 4                          /dev/binderfs/binder
+f0ebf176f000-f0ebf19b2000 ---p 00000000 00:00 0 
+f0ebf19b2000-f0ebf19b4000 rw-p 00000000 00:00 0 
+f0ebf19b4000-f0ebf276f000 ---p 00000000 00:00 0 
+f0ebf276f000-f0ebf2770000 ---p 00000000 00:00 0 
+f0ebf2770000-f0ebf286c000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:484]
+f0ebf286c000-f0ebf286d000 ---p 00000000 00:00 0 
+f0ebf286d000-f0ebf31a4000 ---p 00000000 00:00 0 
+f0ebf31a4000-f0ebf31a6000 rw-p 00000000 00:00 0 
+f0ebf31a6000-f0ebf386d000 ---p 00000000 00:00 0 
+f0ebf386d000-f0ebf386e000 ---p 00000000 00:00 0 
+f0ebf386e000-f0ebf396a000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:483]
+f0ebf396a000-f0ebf396c000 ---p 00000000 00:00 0 
+f0ebf396c000-f0ebf3a68000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:481]
+f0ebf3a68000-f0ebf3a69000 ---p 00000000 00:00 0 
+f0ebf3a69000-f0ebf42c4000 ---p 00000000 00:00 0 
+f0ebf42c4000-f0ebf42c6000 rw-p 00000000 00:00 0 
+f0ebf42c6000-f0ebf4a69000 ---p 00000000 00:00 0 
+f0ebf4a69000-f0ebf4a6c000 ---p 00000000 00:00 0 
+f0ebf4a6c000-f0ebf4aac000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ebf4aac000-f0ec04a71000 ---p 00000000 00:00 0 
+f0ec04a71000-f0ec04ab1000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec04ab1000-f0ec14a75000 ---p 00000000 00:00 0 
+f0ec14a75000-f0ec14ab5000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec14ab5000-f0ec24a79000 ---p 00000000 00:00 0 
+f0ec24a79000-f0ec24ab9000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec24ab9000-f0ec34a71000 ---p 00000000 00:00 0 
+f0ec34a71000-f0ec34ab1000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec34ab1000-f0ec44a6f000 ---p 00000000 00:00 0 
+f0ec44a6f000-f0ec44aaf000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec44aaf000-f0ec54a79000 ---p 00000000 00:00 0 
+f0ec54a79000-f0ec54ab9000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec54ab9000-f0ec64a73000 ---p 00000000 00:00 0 
+f0ec64a73000-f0ec64ab3000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec64ab3000-f0ec74a6f000 ---p 00000000 00:00 0 
+f0ec74a6f000-f0ec74aaf000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec74aaf000-f0ec84a72000 ---p 00000000 00:00 0 
+f0ec84a72000-f0ec84ab2000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec84ab2000-f0ec94a75000 ---p 00000000 00:00 0 
+f0ec94a75000-f0ec94ab5000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ec94ab5000-f0eca4a6c000 ---p 00000000 00:00 0 
+f0eca4a6c000-f0eca4aac000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0eca4aac000-f0ecb4a74000 ---p 00000000 00:00 0 
+f0ecb4a74000-f0ecb4ab4000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ecb4ab4000-f0ecc4a73000 ---p 00000000 00:00 0 
+f0ecc4a73000-f0ecc4ab3000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ecc4ab3000-f0ecd4a71000 ---p 00000000 00:00 0 
+f0ecd4a71000-f0ecd4ab1000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ecd4ab1000-f0ece4a75000 ---p 00000000 00:00 0 
+f0ece4a75000-f0ece4ab5000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ece4ab5000-f0ecf4a6d000 ---p 00000000 00:00 0 
+f0ecf4a6d000-f0ecf4aad000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ecf4aad000-f0ed04a79000 ---p 00000000 00:00 0 
+f0ed04a79000-f0ed04ab9000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed04ab9000-f0ed14a70000 ---p 00000000 00:00 0 
+f0ed14a70000-f0ed14ab0000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed14ab0000-f0ed24a78000 ---p 00000000 00:00 0 
+f0ed24a78000-f0ed24ab8000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed24ab8000-f0ed34a78000 ---p 00000000 00:00 0 
+f0ed34a78000-f0ed34ab8000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed34ab8000-f0ed44a71000 ---p 00000000 00:00 0 
+f0ed44a71000-f0ed44b31000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed44b31000-f0ed54a75000 ---p 00000000 00:00 0 
+f0ed54a75000-f0ed54ab5000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed54ab5000-f0ed64a77000 ---p 00000000 00:00 0 
+f0ed64a77000-f0ed64ab7000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed64ab7000-f0ed74a6e000 ---p 00000000 00:00 0 
+f0ed74a6e000-f0ed74aee000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed74aee000-f0ed84a6d000 ---p 00000000 00:00 0 
+f0ed84a6d000-f0ed84aad000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed84aad000-f0ed94a73000 ---p 00000000 00:00 0 
+f0ed94a73000-f0ed94ab3000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ed94ab3000-f0eda4a78000 ---p 00000000 00:00 0 
+f0eda4a78000-f0eda4ab8000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0eda4ab8000-f0edb4a79000 ---p 00000000 00:00 0 
+f0edb4a79000-f0edb4ab9000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0edb4ab9000-f0edc4a77000 ---p 00000000 00:00 0 
+f0edc4a77000-f0edc4ab7000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0edc4ab7000-f0edd4a76000 ---p 00000000 00:00 0 
+f0edd4a76000-f0edd4ab6000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0edd4ab6000-f0ede4a6f000 ---p 00000000 00:00 0 
+f0ede4a6f000-f0ede4aaf000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0ede4aaf000-f0edf4a71000 ---p 00000000 00:00 0 
+f0edf4a71000-f0edf4b31000 rw-p 00000000 00:00 0                          [anon:scudo:primary]
+f0edf4b31000-f0ee04a69000 ---p 00000000 00:00 0 
+f0ee04a69000-f0ee62139000 ---p 00000000 00:00 0                          [anon:cfi shadow]
+f0ee62139000-f0ee6213a000 r--p 00000000 00:00 0                          [anon:cfi shadow]
+f0ee6213a000-f0ee7d1c8000 ---p 00000000 00:00 0                          [anon:cfi shadow]
+f0ee7d1c8000-f0ee7d1c9000 r--p 00000000 00:00 0                          [anon:cfi shadow]
+f0ee7d1c9000-f0ee7d1dd000 ---p 00000000 00:00 0                          [anon:cfi shadow]
+f0ee7d1dd000-f0ee7d1de000 r--p 00000000 00:00 0                          [anon:cfi shadow]
+f0ee7d1de000-f0ee84a69000 ---p 00000000 00:00 0                          [anon:cfi shadow]
+f0ee84a69000-f0ee84acd000 rw-p 00000000 00:00 0                          [anon:linker_alloc]
+f0ee84acd000-f0ee84ae0000 r--p 00000000 fc:06 5249                       /system/lib64/libGLESv2.so
+f0ee84ae0000-f0ee84ae6000 r-xp 00013000 fc:06 5249                       /system/lib64/libGLESv2.so
+f0ee84ae6000-f0ee84ae7000 r--p 00019000 fc:06 5249                       /system/lib64/libGLESv2.so
+f0ee84b1c000-f0ee84b20000 r--p 00000000 fc:06 5232                       /system/lib64/capture_state_listener-aidl-V1-cpp.so
+f0ee84b20000-f0ee84b23000 r-xp 00004000 fc:06 5232                       /system/lib64/capture_state_listener-aidl-V1-cpp.so
+f0ee84b23000-f0ee84b25000 r--p 00007000 fc:06 5232                       /system/lib64/capture_state_listener-aidl-V1-cpp.so
+f0ee84b25000-f0ee84b26000 rw-p 00008000 fc:06 5232                       /system/lib64/capture_state_listener-aidl-V1-cpp.so
+f0ee84b45000-f0ee84b52000 r--p 00000000 fc:06 5143                       /system/lib64/android.hardware.configstore@1.1.so
+f0ee84b52000-f0ee84b5e000 r-xp 0000d000 fc:06 5143                       /system/lib64/android.hardware.configstore@1.1.so
+f0ee84b5e000-f0ee84b61000 r--p 00019000 fc:06 5143                       /system/lib64/android.hardware.configstore@1.1.so
+f0ee84b61000-f0ee84b62000 rw-p 0001b000 fc:06 5143                       /system/lib64/android.hardware.configstore@1.1.so
+f0ee84b85000-f0ee84b96000 r--p 00000000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+f0ee84b96000-f0ee84bba000 r-xp 00011000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+f0ee84bba000-f0ee84bbb000 r--p 00035000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+f0ee84bbb000-f0ee84bbc000 rw-p 00035000 fc:06 523                        /apex/com.android.runtime/lib64/bionic/libm.so
+f0ee84bc9000-f0ee84bd8000 r--p 00000000 fc:06 5591                       /system/lib64/libutils.so
+f0ee84bd8000-f0ee84be5000 r-xp 0000f000 fc:06 5591                       /system/lib64/libutils.so
+f0ee84be5000-f0ee84be6000 r--p 0001c000 fc:06 5591                       /system/lib64/libutils.so
+f0ee84be6000-f0ee84be7000 rw-p 0001c000 fc:06 5591                       /system/lib64/libutils.so
+f0ee84c38000-f0ee84c3a000 r--p 00000000 fc:06 5554                       /system/lib64/libspeexresampler.so
+f0ee84c3a000-f0ee84c3c000 r-xp 00002000 fc:06 5554                       /system/lib64/libspeexresampler.so
+f0ee84c3c000-f0ee84c3d000 r--p 00004000 fc:06 5554                       /system/lib64/libspeexresampler.so
+f0ee84c56000-f0ee84c64000 r--p 00000000 fc:06 5142                       /system/lib64/android.hardware.configstore@1.0.so
+f0ee84c64000-f0ee84c76000 r-xp 0000e000 fc:06 5142                       /system/lib64/android.hardware.configstore@1.0.so
+f0ee84c76000-f0ee84c79000 r--p 00020000 fc:06 5142                       /system/lib64/android.hardware.configstore@1.0.so
+f0ee84c79000-f0ee84c7a000 rw-p 00022000 fc:06 5142                       /system/lib64/android.hardware.configstore@1.0.so
+f0ee84c8e000-f0ee84d70000 r--p 00000000 fc:06 246                        /apex/com.android.art/lib64/libicui18n.so
+f0ee84d70000-f0ee84ee5000 r-xp 000e2000 fc:06 246                        /apex/com.android.art/lib64/libicui18n.so
+f0ee84ee5000-f0ee84ef8000 r--p 00257000 fc:06 246                        /apex/com.android.art/lib64/libicui18n.so
+f0ee84ef8000-f0ee84ef9000 rw-p 00269000 fc:06 246                        /apex/com.android.art/lib64/libicui18n.so
+f0ee84ef9000-f0ee84efa000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee84f05000-f0ee84f0d000 r--p 00000000 fc:06 5465                       /system/lib64/liblzma.so
+f0ee84f0d000-f0ee84f29000 r-xp 00008000 fc:06 5465                       /system/lib64/liblzma.so
+f0ee84f29000-f0ee84f2a000 r--p 00024000 fc:06 5465                       /system/lib64/liblzma.so
+f0ee84f2a000-f0ee84f2b000 rw-p 00024000 fc:06 5465                       /system/lib64/liblzma.so
+f0ee84f2b000-f0ee84f31000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee84f49000-f0ee84f70000 r--p 00000000 fc:06 5588                       /system/lib64/libunwindstack.so
+f0ee84f70000-f0ee84fb2000 r-xp 00027000 fc:06 5588                       /system/lib64/libunwindstack.so
+f0ee84fb2000-f0ee84fb7000 r--p 00069000 fc:06 5588                       /system/lib64/libunwindstack.so
+f0ee84fb7000-f0ee84fb8000 rw-p 0006d000 fc:06 5588                       /system/lib64/libunwindstack.so
+f0ee84fc1000-f0ee84fd7000 r--p 00000000 fc:06 5163                       /system/lib64/android.hardware.graphics.bufferqueue@1.0.so
+f0ee84fd7000-f0ee84ff8000 r-xp 00016000 fc:06 5163                       /system/lib64/android.hardware.graphics.bufferqueue@1.0.so
+f0ee84ff8000-f0ee84ffc000 r--p 00037000 fc:06 5163                       /system/lib64/android.hardware.graphics.bufferqueue@1.0.so
+f0ee84ffc000-f0ee84ffd000 rw-p 0003a000 fc:06 5163                       /system/lib64/android.hardware.graphics.bufferqueue@1.0.so
+f0ee8500b000-f0ee8500c000 r--p 00000000 fc:06 5600                       /system/lib64/libvndksupport.so
+f0ee8500c000-f0ee8500d000 r-xp 00001000 fc:06 5600                       /system/lib64/libvndksupport.so
+f0ee8500d000-f0ee8500e000 r--p 00002000 fc:06 5600                       /system/lib64/libvndksupport.so
+f0ee8500e000-f0ee8500f000 rw-p 00002000 fc:06 5600                       /system/lib64/libvndksupport.so
+f0ee8504a000-f0ee8505c000 r--p 00000000 fc:06 5127                       /system/lib64/android.hardware.automotive.vehicle@2.0.so
+f0ee8505c000-f0ee85072000 r-xp 00012000 fc:06 5127                       /system/lib64/android.hardware.automotive.vehicle@2.0.so
+f0ee85072000-f0ee85075000 r--p 00028000 fc:06 5127                       /system/lib64/android.hardware.automotive.vehicle@2.0.so
+f0ee85075000-f0ee85076000 rw-p 0002a000 fc:06 5127                       /system/lib64/android.hardware.automotive.vehicle@2.0.so
+f0ee85081000-f0ee85098000 r--p 00000000 fc:06 5520                       /system/lib64/libprocessgroup.so
+f0ee85098000-f0ee850bd000 r-xp 00017000 fc:06 5520                       /system/lib64/libprocessgroup.so
+f0ee850bd000-f0ee850bf000 r--p 0003c000 fc:06 5520                       /system/lib64/libprocessgroup.so
+f0ee850bf000-f0ee850c0000 rw-p 0003d000 fc:06 5520                       /system/lib64/libprocessgroup.so
+f0ee850d1000-f0ee850d3000 r--p 00000000 fc:06 5290                       /system/lib64/libaudiomanager.so
+f0ee850d3000-f0ee850d4000 r-xp 00002000 fc:06 5290                       /system/lib64/libaudiomanager.so
+f0ee850d4000-f0ee850d5000 r--p 00003000 fc:06 5290                       /system/lib64/libaudiomanager.so
+f0ee850d5000-f0ee850d6000 rw-p 00003000 fc:06 5290                       /system/lib64/libaudiomanager.so
+f0ee8510a000-f0ee8511e000 r--p 00000000 fc:06 5164                       /system/lib64/android.hardware.graphics.bufferqueue@2.0.so
+f0ee8511e000-f0ee8513a000 r-xp 00014000 fc:06 5164                       /system/lib64/android.hardware.graphics.bufferqueue@2.0.so
+f0ee8513a000-f0ee8513e000 r--p 00030000 fc:06 5164                       /system/lib64/android.hardware.graphics.bufferqueue@2.0.so
+f0ee8513e000-f0ee8513f000 rw-p 00033000 fc:06 5164                       /system/lib64/android.hardware.graphics.bufferqueue@2.0.so
+f0ee85168000-f0ee85170000 r--p 00000000 fc:06 5406                       /system/lib64/libgralloctypes.so
+f0ee85170000-f0ee85179000 r-xp 00008000 fc:06 5406                       /system/lib64/libgralloctypes.so
+f0ee85179000-f0ee8517a000 r--p 00011000 fc:06 5406                       /system/lib64/libgralloctypes.so
+f0ee8517a000-f0ee8517b000 rw-p 00011000 fc:06 5406                       /system/lib64/libgralloctypes.so
+f0ee85180000-f0ee851bb000 r--p 00000000 fc:06 5280                       /system/lib64/libaudioclient.so
+f0ee851bb000-f0ee85231000 r-xp 0003b000 fc:06 5280                       /system/lib64/libaudioclient.so
+f0ee85231000-f0ee85243000 r--p 000b1000 fc:06 5280                       /system/lib64/libaudioclient.so
+f0ee85243000-f0ee85244000 rw-p 000c2000 fc:06 5280                       /system/lib64/libaudioclient.so
+f0ee85287000-f0ee85292000 r--p 00000000 fc:06 5173                       /system/lib64/android.hardware.graphics.mapper@2.0.so
+f0ee85292000-f0ee8529d000 r-xp 0000b000 fc:06 5173                       /system/lib64/android.hardware.graphics.mapper@2.0.so
+f0ee8529d000-f0ee8529f000 r--p 00016000 fc:06 5173                       /system/lib64/android.hardware.graphics.mapper@2.0.so
+f0ee8529f000-f0ee852a0000 rw-p 00017000 fc:06 5173                       /system/lib64/android.hardware.graphics.mapper@2.0.so
+f0ee852d2000-f0ee852d4000 r--p 00000000 fc:06 5337                       /system/lib64/libcgrouprc.so
+f0ee852d4000-f0ee852d5000 r-xp 00002000 fc:06 5337                       /system/lib64/libcgrouprc.so
+f0ee852d5000-f0ee852d6000 r--p 00003000 fc:06 5337                       /system/lib64/libcgrouprc.so
+f0ee852d6000-f0ee852d7000 rw-p 00003000 fc:06 5337                       /system/lib64/libcgrouprc.so
+f0ee8530d000-f0ee85314000 r--p 00000000 fc:06 5481                       /system/lib64/libmediametrics.so
+f0ee85314000-f0ee8531f000 r-xp 00007000 fc:06 5481                       /system/lib64/libmediametrics.so
+f0ee8531f000-f0ee85321000 r--p 00012000 fc:06 5481                       /system/lib64/libmediametrics.so
+f0ee85321000-f0ee85322000 rw-p 00013000 fc:06 5481                       /system/lib64/libmediametrics.so
+f0ee8534c000-f0ee85356000 r--p 00000000 fc:06 5162                       /system/lib64/android.hardware.graphics.allocator@4.0.so
+f0ee85356000-f0ee8535e000 r-xp 0000a000 fc:06 5162                       /system/lib64/android.hardware.graphics.allocator@4.0.so
+f0ee8535e000-f0ee85360000 r--p 00012000 fc:06 5162                       /system/lib64/android.hardware.graphics.allocator@4.0.so
+f0ee85360000-f0ee85361000 rw-p 00013000 fc:06 5162                       /system/lib64/android.hardware.graphics.allocator@4.0.so
+f0ee8538e000-f0ee8539d000 r--p 00000000 fc:06 5176                       /system/lib64/android.hardware.graphics.mapper@4.0.so
+f0ee8539d000-f0ee853af000 r-xp 0000f000 fc:06 5176                       /system/lib64/android.hardware.graphics.mapper@4.0.so
+f0ee853af000-f0ee853b2000 r--p 00021000 fc:06 5176                       /system/lib64/android.hardware.graphics.mapper@4.0.so
+f0ee853b2000-f0ee853b3000 rw-p 00023000 fc:06 5176                       /system/lib64/android.hardware.graphics.mapper@4.0.so
+f0ee853d2000-f0ee8540d000 r--p 00000000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+f0ee8540d000-f0ee85488000 r-xp 0003b000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+f0ee85488000-f0ee8548c000 r--p 000b6000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+f0ee8548c000-f0ee8548f000 rw-p 000b9000 fc:06 520                        /apex/com.android.runtime/lib64/bionic/libc.so
+f0ee8548f000-f0ee85492000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee85492000-f0ee85493000 r--p 00000000 00:00 0                          [anon:.bss]
+f0ee85493000-f0ee854b0000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee854c4000-f0ee854ca000 r--p 00000000 fc:06 5325                       /system/lib64/libbufferhub.so
+f0ee854ca000-f0ee854d1000 r-xp 00006000 fc:06 5325                       /system/lib64/libbufferhub.so
+f0ee854d1000-f0ee854d2000 r--p 0000d000 fc:06 5325                       /system/lib64/libbufferhub.so
+f0ee854d2000-f0ee854d3000 rw-p 0000d000 fc:06 5325                       /system/lib64/libbufferhub.so
+f0ee8550b000-f0ee8550d000 r--p 00000000 fc:06 5494                       /system/lib64/libnativebridge_lazy.so
+f0ee8550d000-f0ee8550e000 r-xp 00002000 fc:06 5494                       /system/lib64/libnativebridge_lazy.so
+f0ee8550e000-f0ee8550f000 r--p 00003000 fc:06 5494                       /system/lib64/libnativebridge_lazy.so
+f0ee8550f000-f0ee85510000 rw-p 00003000 fc:06 5494                       /system/lib64/libnativebridge_lazy.so
+f0ee8555e000-f0ee85565000 r--p 00000000 fc:06 5537                       /system/lib64/libselinux.so
+f0ee85565000-f0ee85575000 r-xp 00007000 fc:06 5537                       /system/lib64/libselinux.so
+f0ee85575000-f0ee85576000 r--p 00017000 fc:06 5537                       /system/lib64/libselinux.so
+f0ee85576000-f0ee85577000 rw-p 00017000 fc:06 5537                       /system/lib64/libselinux.so
+f0ee85577000-f0ee85579000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee85580000-f0ee85590000 r--p 00000000 fc:06 5485                       /system/lib64/libmediautils.so
+f0ee85590000-f0ee855b1000 r-xp 00010000 fc:06 5485                       /system/lib64/libmediautils.so
+f0ee855b1000-f0ee855b5000 r--p 00031000 fc:06 5485                       /system/lib64/libmediautils.so
+f0ee855b5000-f0ee855b6000 rw-p 00034000 fc:06 5485                       /system/lib64/libmediautils.so
+f0ee855ee000-f0ee855f3000 r--p 00000000 fc:06 5459                       /system/lib64/liblog.so
+f0ee855f3000-f0ee855fe000 r-xp 00005000 fc:06 5459                       /system/lib64/liblog.so
+f0ee855fe000-f0ee855ff000 r--p 00010000 fc:06 5459                       /system/lib64/liblog.so
+f0ee855ff000-f0ee85600000 rw-p 00010000 fc:06 5459                       /system/lib64/liblog.so
+f0ee85613000-f0ee85614000 r--p 00000000 fc:06 5496                       /system/lib64/libnativeloader_lazy.so
+f0ee85614000-f0ee85615000 r-xp 00001000 fc:06 5496                       /system/lib64/libnativeloader_lazy.so
+f0ee85615000-f0ee85616000 r--p 00002000 fc:06 5496                       /system/lib64/libnativeloader_lazy.so
+f0ee85616000-f0ee85617000 rw-p 00002000 fc:06 5496                       /system/lib64/libnativeloader_lazy.so
+f0ee85640000-f0ee85686000 r--p 00000000 fc:06 5418                       /system/lib64/libhidlbase.so
+f0ee85686000-f0ee856ec000 r-xp 00046000 fc:06 5418                       /system/lib64/libhidlbase.so
+f0ee856ec000-f0ee856f7000 r--p 000ac000 fc:06 5418                       /system/lib64/libhidlbase.so
+f0ee856f7000-f0ee856f8000 rw-p 000b6000 fc:06 5418                       /system/lib64/libhidlbase.so
+f0ee856f8000-f0ee856f9000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee85715000-f0ee85739000 r--p 00000000 fc:06 5587                       /system/lib64/libui.so
+f0ee85739000-f0ee85759000 r-xp 00024000 fc:06 5587                       /system/lib64/libui.so
+f0ee85759000-f0ee8575c000 r--p 00044000 fc:06 5587                       /system/lib64/libui.so
+f0ee8575c000-f0ee8575d000 rw-p 00046000 fc:06 5587                       /system/lib64/libui.so
+f0ee8575d000-f0ee8575e000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee85785000-f0ee857ae000 r--p 00000000 fc:06 220                        /apex/com.android.art/lib64/libandroidicu.so
+f0ee857ae000-f0ee857b5000 r-xp 00029000 fc:06 220                        /apex/com.android.art/lib64/libandroidicu.so
+f0ee857b5000-f0ee857b8000 r--p 00030000 fc:06 220                        /apex/com.android.art/lib64/libandroidicu.so
+f0ee857b8000-f0ee857b9000 rw-p 00032000 fc:06 220                        /apex/com.android.art/lib64/libandroidicu.so
+f0ee857c7000-f0ee85871000 r--p 00000000 fc:06 247                        /apex/com.android.art/lib64/libicuuc.so
+f0ee85871000-f0ee85965000 r-xp 000aa000 fc:06 247                        /apex/com.android.art/lib64/libicuuc.so
+f0ee85965000-f0ee85979000 r--p 0019e000 fc:06 247                        /apex/com.android.art/lib64/libicuuc.so
+f0ee85979000-f0ee8597a000 rw-p 001b1000 fc:06 247                        /apex/com.android.art/lib64/libicuuc.so
+f0ee8597a000-f0ee8597c000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee8598a000-f0ee8599c000 r--p 00000000 fc:06 5499                       /system/lib64/libnblog.so
+f0ee8599c000-f0ee859b9000 r-xp 00012000 fc:06 5499                       /system/lib64/libnblog.so
+f0ee859b9000-f0ee859bb000 r--p 0002f000 fc:06 5499                       /system/lib64/libnblog.so
+f0ee859bb000-f0ee859bc000 rw-p 00030000 fc:06 5499                       /system/lib64/libnblog.so
+f0ee859c0000-f0ee859c2000 r--p 00000000 fc:06 5165                       /system/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ee859c2000-f0ee859c4000 r-xp 00002000 fc:06 5165                       /system/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ee859c4000-f0ee859c5000 r--p 00004000 fc:06 5165                       /system/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ee859c5000-f0ee859c6000 rw-p 00004000 fc:06 5165                       /system/lib64/android.hardware.graphics.common-V1-ndk_platform.so
+f0ee85a1d000-f0ee85a1f000 r--p 00000000 fc:06 5291                       /system/lib64/libaudiopolicy.so
+f0ee85a1f000-f0ee85a22000 r-xp 00002000 fc:06 5291                       /system/lib64/libaudiopolicy.so
+f0ee85a22000-f0ee85a23000 r--p 00005000 fc:06 5291                       /system/lib64/libaudiopolicy.so
+f0ee85a43000-f0ee85a53000 r--p 00000000 fc:06 5517                       /system/lib64/libpng.so
+f0ee85a53000-f0ee85a77000 r-xp 00010000 fc:06 5517                       /system/lib64/libpng.so
+f0ee85a77000-f0ee85a78000 r--p 00034000 fc:06 5517                       /system/lib64/libpng.so
+f0ee85aa0000-f0ee85aac000 r--p 00000000 fc:06 5175                       /system/lib64/android.hardware.graphics.mapper@3.0.so
+f0ee85aac000-f0ee85ab9000 r-xp 0000c000 fc:06 5175                       /system/lib64/android.hardware.graphics.mapper@3.0.so
+f0ee85ab9000-f0ee85abb000 r--p 00019000 fc:06 5175                       /system/lib64/android.hardware.graphics.mapper@3.0.so
+f0ee85abb000-f0ee85abc000 rw-p 0001a000 fc:06 5175                       /system/lib64/android.hardware.graphics.mapper@3.0.so
+f0ee85ada000-f0ee85adf000 r--p 00000000 fc:06 5333                       /system/lib64/libcamera_metadata.so
+f0ee85adf000-f0ee85ae4000 r-xp 00005000 fc:06 5333                       /system/lib64/libcamera_metadata.so
+f0ee85ae4000-f0ee85ae5000 r--p 0000a000 fc:06 5333                       /system/lib64/libcamera_metadata.so
+f0ee85ae5000-f0ee85ae7000 rw-p 0000a000 fc:06 5333                       /system/lib64/libcamera_metadata.so
+f0ee85b1f000-f0ee85b21000 r--p 00000000 fc:06 5360                       /system/lib64/libdexfile_support.so
+f0ee85b21000-f0ee85b22000 r-xp 00002000 fc:06 5360                       /system/lib64/libdexfile_support.so
+f0ee85b22000-f0ee85b23000 r--p 00003000 fc:06 5360                       /system/lib64/libdexfile_support.so
+f0ee85b23000-f0ee85b24000 rw-p 00003000 fc:06 5360                       /system/lib64/libdexfile_support.so
+f0ee85b51000-f0ee85b52000 r--p 00000000 fc:06 5141                       /system/lib64/android.hardware.configstore-utils.so
+f0ee85b52000-f0ee85b53000 r-xp 00001000 fc:06 5141                       /system/lib64/android.hardware.configstore-utils.so
+f0ee85b53000-f0ee85b54000 r--p 00002000 fc:06 5141                       /system/lib64/android.hardware.configstore-utils.so
+f0ee85b8d000-f0ee85b93000 r--p 00000000 fc:06 5248                       /system/lib64/libGLESv1_CM.so
+f0ee85b93000-f0ee85b95000 r-xp 00006000 fc:06 5248                       /system/lib64/libGLESv1_CM.so
+f0ee85b95000-f0ee85b96000 r--p 00008000 fc:06 5248                       /system/lib64/libGLESv1_CM.so
+f0ee85bef000-f0ee85bf5000 r--p 00000000 fc:06 5595                       /system/lib64/libvibrator.so
+f0ee85bf5000-f0ee85bf8000 r-xp 00006000 fc:06 5595                       /system/lib64/libvibrator.so
+f0ee85bf8000-f0ee85bfa000 r--p 00009000 fc:06 5595                       /system/lib64/libvibrator.so
+f0ee85bfa000-f0ee85bfb000 rw-p 0000a000 fc:06 5595                       /system/lib64/libvibrator.so
+f0ee85c05000-f0ee85c06000 r--p 00000000 fc:06 521                        /apex/com.android.runtime/lib64/bionic/libdl.so
+f0ee85c06000-f0ee85c07000 r-xp 00001000 fc:06 521                        /apex/com.android.runtime/lib64/bionic/libdl.so
+f0ee85c07000-f0ee85c08000 r--p 00002000 fc:06 521                        /apex/com.android.runtime/lib64/bionic/libdl.so
+f0ee85c08000-f0ee85c09000 ---p 00000000 00:00 0 
+f0ee85c09000-f0ee85c0a000 r--p 00000000 00:00 0                          [anon:.bss]
+f0ee85c4c000-f0ee85c4d000 r--p 00000000 fc:06 5193                       /system/lib64/android.hardware.media@1.0.so
+f0ee85c4d000-f0ee85c4e000 r-xp 00001000 fc:06 5193                       /system/lib64/android.hardware.media@1.0.so
+f0ee85c4e000-f0ee85c4f000 r--p 00002000 fc:06 5193                       /system/lib64/android.hardware.media@1.0.so
+f0ee85c89000-f0ee85cf0000 r--p 00000000 fc:06 5409                       /system/lib64/libgui.so
+f0ee85cf0000-f0ee85d63000 r-xp 00067000 fc:06 5409                       /system/lib64/libgui.so
+f0ee85d63000-f0ee85d7d000 r--p 000da000 fc:06 5409                       /system/lib64/libgui.so
+f0ee85d7d000-f0ee85d7e000 rw-p 000f3000 fc:06 5409                       /system/lib64/libgui.so
+f0ee85d7e000-f0ee85d7f000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee85db5000-f0ee85db6000 r--p 00000000 fc:06 5168                       /system/lib64/android.hardware.graphics.common@1.2.so
+f0ee85db6000-f0ee85db7000 r-xp 00001000 fc:06 5168                       /system/lib64/android.hardware.graphics.common@1.2.so
+f0ee85db7000-f0ee85db8000 r--p 00002000 fc:06 5168                       /system/lib64/android.hardware.graphics.common@1.2.so
+f0ee85dc5000-f0ee85dd0000 r--p 00000000 fc:06 5440                       /system/lib64/libjpeg.so
+f0ee85dd0000-f0ee85e11000 r-xp 0000b000 fc:06 5440                       /system/lib64/libjpeg.so
+f0ee85e11000-f0ee85e12000 r--p 0004c000 fc:06 5440                       /system/lib64/libjpeg.so
+f0ee85e12000-f0ee85e13000 rw-p 0004c000 fc:06 5440                       /system/lib64/libjpeg.so
+f0ee85e53000-f0ee85e5d000 r--p 00000000 fc:06 5161                       /system/lib64/android.hardware.graphics.allocator@3.0.so
+f0ee85e5d000-f0ee85e66000 r-xp 0000a000 fc:06 5161                       /system/lib64/android.hardware.graphics.allocator@3.0.so
+f0ee85e66000-f0ee85e68000 r--p 00013000 fc:06 5161                       /system/lib64/android.hardware.graphics.allocator@3.0.so
+f0ee85e68000-f0ee85e69000 rw-p 00014000 fc:06 5161                       /system/lib64/android.hardware.graphics.allocator@3.0.so
+f0ee85e96000-f0ee85eaf000 r--p 00000000 fc:06 5126                       /system/lib64/android.hardware.automotive.evs@1.0.so
+f0ee85eaf000-f0ee85ed2000 r-xp 00019000 fc:06 5126                       /system/lib64/android.hardware.automotive.evs@1.0.so
+f0ee85ed2000-f0ee85ed7000 r--p 0003c000 fc:06 5126                       /system/lib64/android.hardware.automotive.evs@1.0.so
+f0ee85ed7000-f0ee85ed8000 rw-p 00040000 fc:06 5126                       /system/lib64/android.hardware.automotive.evs@1.0.so
+f0ee85f2f000-f0ee85f36000 r--p 00000000 fc:06 5407                       /system/lib64/libgraphicsenv.so
+f0ee85f36000-f0ee85f3a000 r-xp 00007000 fc:06 5407                       /system/lib64/libgraphicsenv.so
+f0ee85f3a000-f0ee85f3c000 r--p 0000b000 fc:06 5407                       /system/lib64/libgraphicsenv.so
+f0ee85f3c000-f0ee85f3d000 rw-p 0000c000 fc:06 5407                       /system/lib64/libgraphicsenv.so
+f0ee85f49000-f0ee85f62000 r--p 00000000 fc:06 5430                       /system/lib64/libinput.so
+f0ee85f62000-f0ee85f7a000 r-xp 00019000 fc:06 5430                       /system/lib64/libinput.so
+f0ee85f7a000-f0ee85f7f000 r--p 00031000 fc:06 5430                       /system/lib64/libinput.so
+f0ee85f7f000-f0ee85f80000 rw-p 00035000 fc:06 5430                       /system/lib64/libinput.so
+f0ee85f8a000-f0ee85f94000 r--p 00000000 fc:06 5303                       /system/lib64/libbacktrace.so
+f0ee85f94000-f0ee85fad000 r-xp 0000a000 fc:06 5303                       /system/lib64/libbacktrace.so
+f0ee85fad000-f0ee85fb0000 r--p 00023000 fc:06 5303                       /system/lib64/libbacktrace.so
+f0ee85fb0000-f0ee85fb1000 rw-p 00025000 fc:06 5303                       /system/lib64/libbacktrace.so
+f0ee85ff9000-f0ee85ffa000 r--p 00000000 fc:06 5410                       /system/lib64/libhardware.so
+f0ee85ffa000-f0ee85ffb000 r-xp 00001000 fc:06 5410                       /system/lib64/libhardware.so
+f0ee85ffb000-f0ee85ffc000 r--p 00002000 fc:06 5410                       /system/lib64/libhardware.so
+f0ee8600d000-f0ee8601e000 r--p 00000000 fc:06 5473                       /system/lib64/libmedia_omx.so
+f0ee8601e000-f0ee86034000 r-xp 00011000 fc:06 5473                       /system/lib64/libmedia_omx.so
+f0ee86034000-f0ee8603b000 r--p 00027000 fc:06 5473                       /system/lib64/libmedia_omx.so
+f0ee8603b000-f0ee8603c000 rw-p 0002d000 fc:06 5473                       /system/lib64/libmedia_omx.so
+f0ee86053000-f0ee86054000 r--p 00000000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+f0ee86054000-f0ee86055000 r-xp 00001000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+f0ee86055000-f0ee86056000 r--p 00002000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+f0ee86056000-f0ee86057000 rw-p 00002000 fc:06 5274                       /system/lib64/libandroid_runtime_lazy.so
+f0ee8608f000-f0ee8609a000 r--p 00000000 fc:06 5326                       /system/lib64/libbufferhubqueue.so
+f0ee8609a000-f0ee860a9000 r-xp 0000b000 fc:06 5326                       /system/lib64/libbufferhubqueue.so
+f0ee860a9000-f0ee860aa000 r--p 0001a000 fc:06 5326                       /system/lib64/libbufferhubqueue.so
+f0ee860aa000-f0ee860ab000 rw-p 0001a000 fc:06 5326                       /system/lib64/libbufferhubqueue.so
+f0ee860c2000-f0ee8610d000 r--p 00000000 fc:06 5327                       /system/lib64/libc++.so
+f0ee8610d000-f0ee86166000 r-xp 0004b000 fc:06 5327                       /system/lib64/libc++.so
+f0ee86166000-f0ee8616d000 r--p 000a4000 fc:06 5327                       /system/lib64/libc++.so
+f0ee8616d000-f0ee8616e000 rw-p 000aa000 fc:06 5327                       /system/lib64/libc++.so
+f0ee8616e000-f0ee86171000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee86199000-f0ee8619f000 r--p 00000000 fc:06 5469                       /system/lib64/libmedia_codeclist.so
+f0ee8619f000-f0ee861a6000 r-xp 00006000 fc:06 5469                       /system/lib64/libmedia_codeclist.so
+f0ee861a6000-f0ee861a8000 r--p 0000d000 fc:06 5469                       /system/lib64/libmedia_codeclist.so
+f0ee861a8000-f0ee861a9000 rw-p 0000e000 fc:06 5469                       /system/lib64/libmedia_codeclist.so
+f0ee861ce000-f0ee861d8000 r--p 00000000 fc:06 5221                       /system/lib64/android.hidl.token@1.0.so
+f0ee861d8000-f0ee861e2000 r-xp 0000a000 fc:06 5221                       /system/lib64/android.hidl.token@1.0.so
+f0ee861e2000-f0ee861e4000 r--p 00014000 fc:06 5221                       /system/lib64/android.hidl.token@1.0.so
+f0ee861e4000-f0ee861e5000 rw-p 00015000 fc:06 5221                       /system/lib64/android.hidl.token@1.0.so
+f0ee86201000-f0ee8620f000 r--p 00000000 fc:06 5102                       /system/lib64/android.frameworks.bufferhub@1.0.so
+f0ee8620f000-f0ee8621f000 r-xp 0000e000 fc:06 5102                       /system/lib64/android.frameworks.bufferhub@1.0.so
+f0ee8621f000-f0ee86222000 r--p 0001e000 fc:06 5102                       /system/lib64/android.frameworks.bufferhub@1.0.so
+f0ee86222000-f0ee86223000 rw-p 00020000 fc:06 5102                       /system/lib64/android.frameworks.bufferhub@1.0.so
+f0ee86243000-f0ee8624b000 r--p 00000000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+f0ee8624b000-f0ee86253000 r-xp 00008000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+f0ee86253000-f0ee86254000 r--p 00010000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+f0ee86254000-f0ee86255000 rw-p 00010000 fc:06 5309                       /system/lib64/libbinder_ndk.so
+f0ee8628f000-f0ee86290000 r--p 00000000 fc:06 5166                       /system/lib64/android.hardware.graphics.common@1.0.so
+f0ee86290000-f0ee86291000 r-xp 00001000 fc:06 5166                       /system/lib64/android.hardware.graphics.common@1.0.so
+f0ee86291000-f0ee86292000 r--p 00002000 fc:06 5166                       /system/lib64/android.hardware.graphics.common@1.0.so
+f0ee862d8000-f0ee862e6000 r--p 00000000 fc:06 5299                       /system/lib64/libaudioutils.so
+f0ee862e6000-f0ee862f9000 r-xp 0000e000 fc:06 5299                       /system/lib64/libaudioutils.so
+f0ee862f9000-f0ee862fa000 r--p 00021000 fc:06 5299                       /system/lib64/libaudioutils.so
+f0ee86311000-f0ee86319000 r--p 00000000 fc:06 5283                       /system/lib64/libaudiofoundation.so
+f0ee86319000-f0ee86325000 r-xp 00008000 fc:06 5283                       /system/lib64/libaudiofoundation.so
+f0ee86325000-f0ee86327000 r--p 00014000 fc:06 5283                       /system/lib64/libaudiofoundation.so
+f0ee86327000-f0ee86328000 rw-p 00015000 fc:06 5283                       /system/lib64/libaudiofoundation.so
+f0ee86350000-f0ee8635c000 r--p 00000000 fc:06 5174                       /system/lib64/android.hardware.graphics.mapper@2.1.so
+f0ee8635c000-f0ee86367000 r-xp 0000c000 fc:06 5174                       /system/lib64/android.hardware.graphics.mapper@2.1.so
+f0ee86367000-f0ee86369000 r--p 00017000 fc:06 5174                       /system/lib64/android.hardware.graphics.mapper@2.1.so
+f0ee86369000-f0ee8636a000 rw-p 00018000 fc:06 5174                       /system/lib64/android.hardware.graphics.mapper@2.1.so
+f0ee86376000-f0ee86377000 ---p 00000000 00:00 0 
+f0ee86377000-f0ee863b8000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee863b8000-f0ee863b9000 ---p 00000000 00:00 0 
+f0ee863b9000-f0ee863ba000 r--p 00000000 fc:06 5576                       /system/lib64/libsync.so
+f0ee863ba000-f0ee863bb000 r-xp 00001000 fc:06 5576                       /system/lib64/libsync.so
+f0ee863bb000-f0ee863bc000 r--p 00002000 fc:06 5576                       /system/lib64/libsync.so
+f0ee863bc000-f0ee863bd000 rw-p 00002000 fc:06 5576                       /system/lib64/libsync.so
+f0ee863e1000-f0ee863f1000 r--p 00000000 fc:06 5261                       /system/lib64/libSurfaceFlingerProp.so
+f0ee863f1000-f0ee863fb000 r-xp 00010000 fc:06 5261                       /system/lib64/libSurfaceFlingerProp.so
+f0ee863fb000-f0ee863fc000 r--p 0001a000 fc:06 5261                       /system/lib64/libSurfaceFlingerProp.so
+f0ee863fc000-f0ee863fd000 rw-p 0001a000 fc:06 5261                       /system/lib64/libSurfaceFlingerProp.so
+f0ee8641b000-f0ee8641c000 r--p 00000000 fc:06 5573                       /system/lib64/libstdc++.so
+f0ee8641c000-f0ee8641e000 r-xp 00001000 fc:06 5573                       /system/lib64/libstdc++.so
+f0ee8641e000-f0ee8641f000 r--p 00003000 fc:06 5573                       /system/lib64/libstdc++.so
+f0ee86435000-f0ee86436000 ---p 00000000 00:00 0 
+f0ee86436000-f0ee86457000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86457000-f0ee86458000 ---p 00000000 00:00 0 
+f0ee86458000-f0ee86463000 r--p 00000000 fc:06 5470                       /system/lib64/libmedia_helper.so
+f0ee86463000-f0ee8646d000 r-xp 0000b000 fc:06 5470                       /system/lib64/libmedia_helper.so
+f0ee8646d000-f0ee8646f000 r--p 00015000 fc:06 5470                       /system/lib64/libmedia_helper.so
+f0ee8648e000-f0ee864b5000 r--p 00000000 fc:06 5192                       /system/lib64/android.hardware.media.omx@1.0.so
+f0ee864b5000-f0ee864f7000 r-xp 00027000 fc:06 5192                       /system/lib64/android.hardware.media.omx@1.0.so
+f0ee864f7000-f0ee864ff000 r--p 00069000 fc:06 5192                       /system/lib64/android.hardware.media.omx@1.0.so
+f0ee864ff000-f0ee86500000 rw-p 00070000 fc:06 5192                       /system/lib64/android.hardware.media.omx@1.0.so
+f0ee86506000-f0ee86519000 r--p 00000000 fc:06 5245                       /system/lib64/libEGL.so
+f0ee86519000-f0ee86530000 r-xp 00013000 fc:06 5245                       /system/lib64/libEGL.so
+f0ee86530000-f0ee86535000 r--p 0002a000 fc:06 5245                       /system/lib64/libEGL.so
+f0ee86535000-f0ee86536000 rw-p 0002e000 fc:06 5245                       /system/lib64/libEGL.so
+f0ee86536000-f0ee8653e000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee86557000-f0ee86558000 r--p 00000000 fc:06 5509                       /system/lib64/libpackagelistparser.so
+f0ee86558000-f0ee86559000 r-xp 00001000 fc:06 5509                       /system/lib64/libpackagelistparser.so
+f0ee86559000-f0ee8655a000 r--p 00002000 fc:06 5509                       /system/lib64/libpackagelistparser.so
+f0ee86568000-f0ee86588000 r--s 00000000 00:19 185                        /dev/__properties__/u:object_r:system_prop:s0
+f0ee86588000-f0ee865d1000 r--p 00000000 fc:06 5308                       /system/lib64/libbinder.so
+f0ee865d1000-f0ee86615000 r-xp 00049000 fc:06 5308                       /system/lib64/libbinder.so
+f0ee86615000-f0ee86628000 r--p 0008d000 fc:06 5308                       /system/lib64/libbinder.so
+f0ee86628000-f0ee86629000 rw-p 0009f000 fc:06 5308                       /system/lib64/libbinder.so
+f0ee86629000-f0ee8662a000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee86641000-f0ee86642000 ---p 00000000 00:00 0 
+f0ee86642000-f0ee8665d000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee8665d000-f0ee8665e000 ---p 00000000 00:00 0 
+f0ee8665e000-f0ee86668000 r--p 00000000 fc:06 5160                       /system/lib64/android.hardware.graphics.allocator@2.0.so
+f0ee86668000-f0ee86671000 r-xp 0000a000 fc:06 5160                       /system/lib64/android.hardware.graphics.allocator@2.0.so
+f0ee86671000-f0ee86673000 r--p 00013000 fc:06 5160                       /system/lib64/android.hardware.graphics.allocator@2.0.so
+f0ee86673000-f0ee86674000 rw-p 00014000 fc:06 5160                       /system/lib64/android.hardware.graphics.allocator@2.0.so
+f0ee8667b000-f0ee8667c000 ---p 00000000 00:00 0 
+f0ee8667c000-f0ee8668d000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee8668d000-f0ee8668e000 ---p 00000000 00:00 0 
+f0ee8668e000-f0ee86691000 r--p 00000000 fc:06 5592                       /system/lib64/libutilscallstack.so
+f0ee86691000-f0ee86693000 r-xp 00003000 fc:06 5592                       /system/lib64/libutilscallstack.so
+f0ee86693000-f0ee86694000 r--p 00005000 fc:06 5592                       /system/lib64/libutilscallstack.so
+f0ee8669a000-f0ee8669b000 ---p 00000000 00:00 0 
+f0ee8669b000-f0ee866cc000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee866cc000-f0ee866cd000 ---p 00000000 00:00 0 
+f0ee866cd000-f0ee866d4000 r--p 00000000 fc:06 5382                       /system/lib64/libexpat.so
+f0ee866d4000-f0ee866ed000 r-xp 00007000 fc:06 5382                       /system/lib64/libexpat.so
+f0ee866ed000-f0ee866ef000 r--p 00020000 fc:06 5382                       /system/lib64/libexpat.so
+f0ee866f1000-f0ee866f2000 ---p 00000000 00:00 0 
+f0ee866f2000-f0ee8670d000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee8670d000-f0ee8670e000 ---p 00000000 00:00 0 
+f0ee8670e000-f0ee8670f000 r--p 00000000 fc:06 5167                       /system/lib64/android.hardware.graphics.common@1.1.so
+f0ee8670f000-f0ee86710000 r-xp 00001000 fc:06 5167                       /system/lib64/android.hardware.graphics.common@1.1.so
+f0ee86710000-f0ee86711000 r--p 00002000 fc:06 5167                       /system/lib64/android.hardware.graphics.common@1.1.so
+f0ee86720000-f0ee86721000 ---p 00000000 00:00 0 
+f0ee86721000-f0ee86752000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86752000-f0ee86753000 ---p 00000000 00:00 0 
+f0ee86753000-f0ee86785000 r--p 00000000 fc:06 5468                       /system/lib64/libmedia.so
+f0ee86785000-f0ee867d9000 r-xp 00032000 fc:06 5468                       /system/lib64/libmedia.so
+f0ee867d9000-f0ee867ec000 r--p 00086000 fc:06 5468                       /system/lib64/libmedia.so
+f0ee867ec000-f0ee867ed000 rw-p 00098000 fc:06 5468                       /system/lib64/libmedia.so
+f0ee867f1000-f0ee867f2000 ---p 00000000 00:00 0 
+f0ee867f2000-f0ee86823000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86823000-f0ee86824000 ---p 00000000 00:00 0 
+f0ee86824000-f0ee86828000 r--p 00000000 fc:06 5497                       /system/lib64/libnativewindow.so
+f0ee86828000-f0ee8682a000 r-xp 00004000 fc:06 5497                       /system/lib64/libnativewindow.so
+f0ee8682a000-f0ee8682b000 r--p 00006000 fc:06 5497                       /system/lib64/libnativewindow.so
+f0ee86830000-f0ee86876000 ---s f0ee86830000 00:19 315                    /dev/mali0
+f0ee86876000-f0ee86878000 r--p 00000000 fc:06 5220                       /system/lib64/android.hidl.token@1.0-utils.so
+f0ee86878000-f0ee86879000 r-xp 00002000 fc:06 5220                       /system/lib64/android.hidl.token@1.0-utils.so
+f0ee86879000-f0ee8687a000 r--p 00003000 fc:06 5220                       /system/lib64/android.hidl.token@1.0-utils.so
+f0ee8687a000-f0ee8687b000 rw-p 00003000 fc:06 5220                       /system/lib64/android.hidl.token@1.0-utils.so
+f0ee86883000-f0ee86884000 ---p 00000000 00:00 0 
+f0ee86884000-f0ee8689f000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee8689f000-f0ee868a0000 ---p 00000000 00:00 0 
+f0ee868a0000-f0ee868a1000 r--p 00000000 fc:06 5420                       /system/lib64/libhidltransport.so
+f0ee868a1000-f0ee868a2000 r-xp 00001000 fc:06 5420                       /system/lib64/libhidltransport.so
+f0ee868a2000-f0ee868a3000 r--p 00002000 fc:06 5420                       /system/lib64/libhidltransport.so
+f0ee868b3000-f0ee868b4000 ---p 00000000 00:00 0 
+f0ee868b4000-f0ee868cf000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee868cf000-f0ee868d0000 ---p 00000000 00:00 0 
+f0ee868d0000-f0ee868dc000 r-xp 00000000 fc:06 5531                       /system/lib64/librainbow.so
+f0ee868dc000-f0ee868ef000 ---p 00000000 00:00 0 
+f0ee868ef000-f0ee868f0000 r--p 0000f000 fc:06 5531                       /system/lib64/librainbow.so
+f0ee868f0000-f0ee868f1000 rw-p 00010000 fc:06 5531                       /system/lib64/librainbow.so
+f0ee868f1000-f0ee868f2000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee868f5000-f0ee86935000 rw-s f0ee868f5000 00:19 315                    /dev/mali0
+f0ee86935000-f0ee86936000 r--p 00000000 fc:06 5140                       /system/lib64/android.hardware.common-V1-ndk_platform.so
+f0ee86936000-f0ee86937000 r-xp 00001000 fc:06 5140                       /system/lib64/android.hardware.common-V1-ndk_platform.so
+f0ee86937000-f0ee86938000 r--p 00002000 fc:06 5140                       /system/lib64/android.hardware.common-V1-ndk_platform.so
+f0ee86938000-f0ee86939000 rw-p 00002000 fc:06 5140                       /system/lib64/android.hardware.common-V1-ndk_platform.so
+f0ee8694b000-f0ee8695e000 r--p 00000000 fc:06 5565                       /system/lib64/libstagefright_foundation.so
+f0ee8695e000-f0ee8697c000 r-xp 00013000 fc:06 5565                       /system/lib64/libstagefright_foundation.so
+f0ee8697c000-f0ee8697e000 r--p 00031000 fc:06 5565                       /system/lib64/libstagefright_foundation.so
+f0ee8697e000-f0ee8697f000 rw-p 00032000 fc:06 5565                       /system/lib64/libstagefright_foundation.so
+f0ee86991000-f0ee86992000 ---p 00000000 00:00 0 
+f0ee86992000-f0ee869a3000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee869a3000-f0ee869a4000 ---p 00000000 00:00 0 
+f0ee869a4000-f0ee869ab000 r--p 00000000 fc:06 5356                       /system/lib64/libcutils.so
+f0ee869ab000-f0ee869b3000 r-xp 00007000 fc:06 5356                       /system/lib64/libcutils.so
+f0ee869b3000-f0ee869b5000 r--p 0000f000 fc:06 5356                       /system/lib64/libcutils.so
+f0ee869b5000-f0ee869b6000 rw-p 00010000 fc:06 5356                       /system/lib64/libcutils.so
+f0ee869be000-f0ee869bf000 ---p 00000000 00:00 0 
+f0ee869bf000-f0ee869e0000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee869e0000-f0ee869e1000 ---p 00000000 00:00 0 
+f0ee869e1000-f0ee869e8000 r--p 00000000 fc:06 5612                       /system/lib64/libz.so
+f0ee869e8000-f0ee869f6000 r-xp 00007000 fc:06 5612                       /system/lib64/libz.so
+f0ee869f6000-f0ee869f7000 r--p 00015000 fc:06 5612                       /system/lib64/libz.so
+f0ee869f7000-f0ee869f8000 rw-p 00015000 fc:06 5612                       /system/lib64/libz.so
+f0ee869fa000-f0ee869fb000 ---p 00000000 00:00 0 
+f0ee869fb000-f0ee86a03000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86a03000-f0ee86a12000 r--p 00000000 fc:06 5304                       /system/lib64/libbase.so
+f0ee86a12000-f0ee86a3e000 r-xp 0000f000 fc:06 5304                       /system/lib64/libbase.so
+f0ee86a3e000-f0ee86a3f000 r--p 0003b000 fc:06 5304                       /system/lib64/libbase.so
+f0ee86a3f000-f0ee86a40000 rw-p 0003b000 fc:06 5304                       /system/lib64/libbase.so
+f0ee86a45000-f0ee86a6e000 r--p 00000000 fc:06 5332                       /system/lib64/libcamera_client.so
+f0ee86a6e000-f0ee86aaf000 r-xp 00029000 fc:06 5332                       /system/lib64/libcamera_client.so
+f0ee86aaf000-f0ee86abb000 r--p 0006a000 fc:06 5332                       /system/lib64/libcamera_client.so
+f0ee86abb000-f0ee86abd000 rw-p 00075000 fc:06 5332                       /system/lib64/libcamera_client.so
+f0ee86abd000-f0ee86abe000 ---p 00000000 00:00 0 
+f0ee86abe000-f0ee86ac6000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86ac6000-f0ee86ac7000 ---p 00000000 00:00 0 
+f0ee86ac7000-f0ee86ae8000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86ae8000-f0ee86ae9000 ---p 00000000 00:00 0 
+f0ee86ae9000-f0ee86aea000 r--p 00000000 fc:06 522                        /apex/com.android.runtime/lib64/bionic/libdl_android.so
+f0ee86aea000-f0ee86aeb000 r-xp 00001000 fc:06 522                        /apex/com.android.runtime/lib64/bionic/libdl_android.so
+f0ee86aeb000-f0ee86aec000 r--p 00002000 fc:06 522                        /apex/com.android.runtime/lib64/bionic/libdl_android.so
+f0ee86af2000-f0ee86af3000 ---p 00000000 00:00 0 
+f0ee86af3000-f0ee86b04000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86b04000-f0ee86b05000 ---p 00000000 00:00 0 
+f0ee86b05000-f0ee86b16000 r--p 00000000 fc:06 5513                       /system/lib64/libpdx_default_transport.so
+f0ee86b16000-f0ee86b29000 r-xp 00011000 fc:06 5513                       /system/lib64/libpdx_default_transport.so
+f0ee86b29000-f0ee86b2a000 r--p 00024000 fc:06 5513                       /system/lib64/libpdx_default_transport.so
+f0ee86b2a000-f0ee86b2b000 rw-p 00024000 fc:06 5513                       /system/lib64/libpdx_default_transport.so
+f0ee86b2e000-f0ee86b2f000 ---p 00000000 00:00 0 
+f0ee86b2f000-f0ee86b60000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86b60000-f0ee86b61000 ---p 00000000 00:00 0 
+f0ee86b61000-f0ee86b83000 r--p 00000000 fc:06 5511                       /system/lib64/libpcre2.so
+f0ee86b83000-f0ee86baf000 r-xp 00022000 fc:06 5511                       /system/lib64/libpcre2.so
+f0ee86baf000-f0ee86bb0000 r--p 0004e000 fc:06 5511                       /system/lib64/libpcre2.so
+f0ee86bb0000-f0ee86bb1000 rw-p 0004e000 fc:06 5511                       /system/lib64/libpcre2.so
+f0ee86bb1000-f0ee86bb2000 ---p 00000000 00:00 0 
+f0ee86bb2000-f0ee86bc3000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86bc3000-f0ee86bc4000 ---p 00000000 00:00 0 
+f0ee86bc4000-f0ee86be4000 rw-s f0ee86bc4000 00:19 315                    /dev/mali0
+f0ee86be4000-f0ee86be5000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee86bf0000-f0ee86bf1000 ---p 00000000 00:00 0 
+f0ee86bf1000-f0ee86c02000 rw-p 00000000 00:00 0                          [anon:scudo:secondary]
+f0ee86c02000-f0ee86c03000 ---p 00000000 00:00 0 
+f0ee86c03000-f0ee86c04000 ---p 00000000 00:00 0 
+f0ee86c04000-f0ee86c0c000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86c0c000-f0ee86c0d000 ---p 00000000 00:00 0 
+f0ee86c0d000-f0ee86c15000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86c15000-f0ee86c16000 ---p 00000000 00:00 0 
+f0ee86c16000-f0ee86c1e000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86c1e000-f0ee86c1f000 ---p 00000000 00:00 0 
+f0ee86c1f000-f0ee86c27000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86c27000-f0ee86c28000 ---p 00000000 00:00 0 
+f0ee86c28000-f0ee86c30000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86c30000-f0ee86c31000 ---p 00000000 00:00 0 
+f0ee86c31000-f0ee86c39000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86c39000-f0ee86c3a000 ---p 00000000 00:00 0 
+f0ee86c3a000-f0ee86c42000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86c42000-f0ee86c62000 r--s 00000000 00:19 207                        /dev/__properties__/u:object_r:vendor_default_prop:s0
+f0ee86c62000-f0ee86c82000 r--s 00000000 00:19 225                        /dev/__properties__/u:object_r:vndk_prop:s0
+f0ee86c82000-f0ee86c83000 ---p 00000000 00:00 0 
+f0ee86c83000-f0ee86d7f000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:430]
+f0ee86d7f000-f0ee86d80000 ---p 00000000 00:00 0 
+f0ee86d80000-f0ee86d81000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee86d89000-f0ee86d8a000 ---p 00000000 00:00 0 
+f0ee86d8a000-f0ee86d92000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86d92000-f0ee86d93000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee86d97000-f0ee86da7000 r--p 00000000 00:00 0                          [anon:atexit handlers]
+f0ee86da7000-f0ee86ea5000 r--p 00000000 00:2f 5                          /dev/binderfs/hwbinder
+f0ee86ea5000-f0ee86ea6000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee86ea9000-f0ee86eaa000 ---p 00000000 00:00 0 
+f0ee86eaa000-f0ee86eb2000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86eb2000-f0ee86eb3000 ---p 00000000 00:00 0 
+f0ee86eb3000-f0ee86ebb000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86ebb000-f0ee86edb000 r--s 00000000 00:19 115                        /dev/__properties__/u:object_r:exported3_system_prop:s0
+f0ee86edb000-f0ee86edc000 ---p 00000000 00:00 0 
+f0ee86edc000-f0ee86ee4000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86ee4000-f0ee86ee5000 ---p 00000000 00:00 0 
+f0ee86ee5000-f0ee86eed000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86eed000-f0ee86eee000 ---p 00000000 00:00 0 
+f0ee86eee000-f0ee86ef6000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee86ef6000-f0ee86f16000 r--s 00000000 00:19 121                        /dev/__properties__/u:object_r:exported_default_prop:s0
+f0ee86f16000-f0ee86f36000 r--s 00000000 00:19 143                        /dev/__properties__/u:object_r:hwservicemanager_prop:s0
+f0ee86f36000-f0ee86f39000 r--p 00000000 fc:06 5500                       /system/lib64/libnetd_client.so
+f0ee86f39000-f0ee86f3d000 r-xp 00003000 fc:06 5500                       /system/lib64/libnetd_client.so
+f0ee86f3d000-f0ee86f3e000 r--p 00007000 fc:06 5500                       /system/lib64/libnetd_client.so
+f0ee86f3e000-f0ee86f3f000 rw-p 00007000 fc:06 5500                       /system/lib64/libnetd_client.so
+f0ee86f3f000-f0ee86f5f000 r--s 00000000 00:19 152                        /dev/__properties__/u:object_r:logd_prop:s0
+f0ee86f5f000-f0ee86f7f000 r--s 00000000 00:19 151                        /dev/__properties__/u:object_r:log_tag_prop:s0
+f0ee86f7f000-f0ee86f9f000 r--s 00000000 00:19 142                        /dev/__properties__/u:object_r:heapprofd_prop:s0
+f0ee86f9f000-f0ee86fbf000 r--s 00000000 00:19 109                        /dev/__properties__/u:object_r:exported2_default_prop:s0
+f0ee86fbf000-f0ee86fdf000 r--s 00000000 00:19 87                         /dev/__properties__/u:object_r:debug_prop:s0
+f0ee86fdf000-f0ee86fff000 r--s 00000000 00:19 230                        /dev/__properties__/properties_serial
+f0ee86fff000-f0ee8700b000 r--s 00000000 00:19 46                         /dev/__properties__/property_info
+f0ee8700c000-f0ee8700d000 rw-s 00000000 00:01 1440                       /memfd:gralloc_shared_memory (deleted)
+f0ee8700d000-f0ee8700e000 rw-s 00000000 00:01 1441                       /memfd:gralloc_shared_memory (deleted)
+f0ee8700e000-f0ee8700f000 rw-s f0ee8700e000 00:19 315                    /dev/mali0
+f0ee8700f000-f0ee8702f000 r--s 00000000 00:19 89                         /dev/__properties__/u:object_r:default_prop:s0
+f0ee8702f000-f0ee8704f000 r--s 00000000 00:19 62                         /dev/__properties__/u:object_r:bq_config_prop:s0
+f0ee8704f000-f0ee8706f000 r--s 00000000 00:19 216                        /dev/__properties__/u:object_r:vendor_socket_hook_prop:s0
+f0ee8706f000-f0ee87137000 r--p 00000000 00:00 0                          [anon:linker_alloc]
+f0ee87137000-f0ee87157000 r--s 00000000 00:19 225                        /dev/__properties__/u:object_r:vndk_prop:s0
+f0ee87157000-f0ee8715a000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee8715a000-f0ee8715b000 rw-s 00000000 00:01 1448                       /memfd:gralloc_shared_memory (deleted)
+f0ee8715b000-f0ee8715c000 rw-s 00000000 00:01 1440                       /memfd:gralloc_shared_memory (deleted)
+f0ee8715c000-f0ee87160000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee87160000-f0ee87161000 rw-s f0ee87160000 00:19 315                    /dev/mali0
+f0ee87161000-f0ee87163000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee87163000-f0ee87164000 rw-s f0ee87163000 00:19 315                    /dev/mali0
+f0ee87164000-f0ee87165000 -w-s f0ee87164000 00:19 315                    /dev/mali0
+f0ee87165000-f0ee87166000 rw-s f0ee87165000 00:19 315                    /dev/mali0
+f0ee87166000-f0ee87167000 rw-s f0ee87166000 00:19 315                    /dev/mali0
+f0ee87167000-f0ee87168000 rw-s f0ee87167000 00:19 315                    /dev/mali0
+f0ee87168000-f0ee87169000 ---s 00003000 00:19 315                        /dev/mali0
+f0ee87169000-f0ee8716a000 rw-s 00000000 00:01 2                          /memfd:gralloc_shared_memory (deleted)
+f0ee8716a000-f0ee8716b000 ---p 00000000 00:00 0 
+f0ee8716b000-f0ee8716f000 rw-p 00000000 00:00 0                          [anon:stack_and_tls:main]
+f0ee8716f000-f0ee87170000 ---p 00000000 00:00 0 
+f0ee87170000-f0ee87173000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee87173000-f0ee87174000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_lob]
+f0ee87174000-f0ee8717c000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee8717c000-f0ee871e0000 r--p 00000000 00:00 0                          [anon:linker_alloc]
+f0ee871e0000-f0ee87200000 r--s 00000000 00:19 87                         /dev/__properties__/u:object_r:debug_prop:s0
+f0ee87200000-f0ee87220000 r--s 00000000 00:19 109                        /dev/__properties__/u:object_r:exported2_default_prop:s0
+f0ee87220000-f0ee87221000 ---p 00000000 00:00 0 
+f0ee87221000-f0ee87229000 rw-p 00000000 00:00 0 
+f0ee87229000-f0ee8722a000 ---p 00000000 00:00 0 
+f0ee8722a000-f0ee8724a000 r--s 00000000 00:19 230                        /dev/__properties__/properties_serial
+f0ee8724a000-f0ee8724c000 rw-p 00000000 00:00 0                          [anon:System property context nodes]
+f0ee8724c000-f0ee87258000 r--s 00000000 00:19 46                         /dev/__properties__/property_info
+f0ee87258000-f0ee872bc000 r--p 00000000 00:00 0                          [anon:linker_alloc]
+f0ee872bc000-f0ee872be000 rw-p 00000000 00:00 0                          [anon:bionic_alloc_small_objects]
+f0ee872be000-f0ee872bf000 r--p 00000000 00:00 0                          [anon:atexit handlers]
+f0ee872bf000-f0ee87d0c000 ---p 00000000 00:00 0 
+f0ee87d0c000-f0ee87d0e000 rw-p 00000000 00:00 0 
+f0ee87d0e000-f0ee882bf000 ---p 00000000 00:00 0 
+f0ee882bf000-f0ee882c0000 ---p 00000000 00:00 0 
+f0ee882c0000-f0ee882c8000 rw-p 00000000 00:00 0                          [anon:thread signal stack]
+f0ee882c8000-f0ee882c9000 rw-p 00000000 00:00 0                          [anon:arc4random data]
+f0ee882c9000-f0ee882cb000 rw-p 00000000 00:00 0                          [anon:System property context nodes]
+f0ee882cb000-f0ee882cc000 rw-p 00000000 00:00 0                          [anon:arc4random data]
+f0ee882cc000-f0ee882ce000 r--p 00000000 00:00 0                          [vvar]
+f0ee882ce000-f0ee882cf000 r-xp 00000000 00:00 0                          [vdso]
+f0ee882cf000-f0ee88300000 r--p 00000000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+f0ee88300000-f0ee883b4000 r-xp 00031000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+f0ee883b4000-f0ee883bb000 r--p 000e5000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+f0ee883bb000-f0ee883bd000 rw-p 000eb000 fc:06 501                        /apex/com.android.runtime/bin/linker64
+f0ee883bd000-f0ee883c1000 rw-p 00000000 00:00 0                          [anon:.bss]
+f0ee883c1000-f0ee883c2000 r--p 00000000 00:00 0                          [anon:.bss]
+f0ee883c2000-f0ee883c8000 rw-p 00000000 00:00 0                          [anon:.bss]
+ffffc632b000-ffffc634c000 rw-p 00000000 00:00 0                          [stack]
+/system/etc/automotive/evsapp/default/config.json
+/system/etc/automotive/evsapp/bicv_bx11_apa/config.json
+/system/etc/automotive/evs_engine/Assets/aerial/trajectoryLineFile.json
+/system/etc/automotive/evs_engine/Assets/colorConfig.json
+/system/etc/automotive/evs_engine/Assets/animationFile.json
+/system/etc/automotive/evs_engine/Assets/radarWallConfig.json
+/system/etc/automotive/evs_engine/Assets/sceneFile.json
+/system/etc/automotive/evs_engine/Assets/carBoundingBox.json
+/system/etc/automotive/evs_engine/Assets/other/trajectoryLineFile.json
+/vendor/etc/thermal_info_siengine_config.json
+/vendor/etc/permissions/android.hardware.camera.xml
+total 0
+lrwxrwxrwx 1 root root 0 2026-10-10 20:50 v4l-subdev0 -> ../../devices/platform/camera/video4linux/v4l-subdev0
+lrwxrwxrwx 1 root root 0 2026-10-10 20:50 v4l-subdev1 -> ../../devices/platform/camera/video4linux/v4l-subdev1
+lrwxrwxrwx 1 root root 0 2026-10-10 20:50 v4l-subdev2 -> ../../devices/platform/e95c0000.i2c/i2c-7/7-003d/video4linux/v4l-subdev2
+lrwxrwxrwx 1 root root 0 2026-10-10 20:50 video0vicam -> ../../devices/platform/screenshare_vicam/video4linux/video0vicam
+lrwxrwxrwx 1 root root 0 2026-10-10 20:50 video12cif -> ../../devices/platform/camera/video4linux/video12cif
+/sys/class/video4linux/v4l-subdev0/name
+se_cif.12
+/sys/class/video4linux/v4l-subdev1/name
+dw-csi.4
+/sys/class/video4linux/v4l-subdev2/name
+ub954_mipi 7-003d
+/sys/class/video4linux/video0vicam/name
+se-vicam
+/sys/class/video4linux/video12cif/name
+se_cif.12.capture

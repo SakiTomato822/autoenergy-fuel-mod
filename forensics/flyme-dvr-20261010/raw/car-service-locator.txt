@@ -1,0 +1,72 @@
+Sun Oct 11 20:33:08 CST 2026
+com.android.car.CarFeatureController
+com.android.car.user.CarUserService
+com.android.car.SystemActivityMonitoringService
+com.android.car.CarPowerManagementService
+com.android.car.CarPropertyService
+com.android.car.config.future.ECarXCarConfigService
+com.android.car.CarOccupantZoneService
+com.android.car.CarUxRestrictionsManagerService
+com.android.car.pm.CarPackageManagerService
+com.android.car.CarInputService
+com.android.car.garagemode.GarageModeService
+com.android.car.user.CarUserNoticeService
+com.android.car.AppFocusService
+com.android.car.audio.CarAudioService
+com.android.car.CarNightService
+com.android.car.am.FixedActivityService
+com.android.car.cluster.InstrumentClusterService
+com.android.car.SystemStateControllerService
+com.android.car.PerUserCarServiceHelper
+com.android.car.CarBluetoothService
+com.android.car.CarProjectionService
+com.android.car.CarDiagnosticService
+com.android.car.CarStorageMonitoringService
+com.android.car.CarConfigurationService
+com.android.car.vms.VmsBrokerService
+com.android.car.trust.CarTrustedDeviceService
+com.android.car.CarMediaService
+com.android.car.CarLocationService
+com.android.car.CarBugreportManagerService
+com.android.car.watchdog.CarWatchdogService
+com.android.car.EcarXUpdateLocalConfigService
+com.android.car.bicv.VehicleService
+com.android.car.bicv.PowerManagerService
+com.android.car.bicv.SystemService
+com.android.car.bicv.BDKeyService
+com.android.car.bicv.time.AutoTimeService
+com.android.car.bicvcluster.CarClusterService
+
+Exception occurred while dumping:
+java.lang.NullPointerException: Attempt to invoke virtual method 'java.lang.Class java.lang.Object.getClass()' on a null object reference
+	at com.android.car.ICarImpl.dumpListOfServices(ICarImpl.java:937)
+	at com.android.car.ICarImpl.dump(ICarImpl.java:838)
+	at android.os.Binder.doDump(Binder.java:866)
+	at android.os.Binder.dump(Binder.java:856)
+	at android.os.Binder.onTransact(Binder.java:792)
+	at android.car.ICar$Stub.onTransact(ICar.java:287)
+	at android.os.Binder.execTransactInternal(Binder.java:1159)
+	at android.os.Binder.execTransact(Binder.java:1123)
+-rwxr-xr-x 1 root shell   34656 2009-01-01 08:00 /system/bin/carwatchdogd
+-rwxr-xr-x 1 root shell   37296 2009-01-01 08:00 /system/bin/com.android.car.procfsinspector
+-rwxr-xr-x 1 root shell     218 2009-01-01 08:00 /system/bin/ecarx_log_export.sh
+-rwxr-xr-x 1 root shell  132312 2009-01-01 08:00 /system/bin/ecarx_log_processor
+-rwxr-xr-x 1 root shell    2346 2009-01-01 08:00 /system/bin/ecarx_log_zip.sh
+-rwxr-xr-x 1 root shell   50008 2009-01-01 08:00 /system/bin/ecarx_update_engine
+-rwxr-xr-x 1 root shell   79536 2009-01-01 08:00 /system/bin/ecarx_verifier
+-rwxr-xr-x 1 root shell   29144 2009-01-01 08:00 /system/bin/sdcard
+-rwxr-xr-x 1 root shell   20840 2009-01-01 08:00 /system/bin/secdiscard
+-rwxr-xr-x 1 root shell 5855384 2009-01-01 08:00 /vendor/bin/hw/android.hardware.automotive.vehicle@2.0-service
+/data/data/ecarx.os.ota:
+total 29
+drwx------   4 system system  3452 1970-01-01 08:00 .
+drwxrwx--x 221 system system 20480 2026-10-11 14:30 ..
+drwxrws--x   2 system system  3452 1970-01-01 08:00 cache
+drwxrws--x   2 system system  3452 1970-01-01 08:00 code_cache
+
+/data/user/0/ecarx.os.ota:
+total 29
+drwx------   4 system system  3452 1970-01-01 08:00 .
+drwxrwx--x 221 system system 20480 2026-10-11 14:30 ..
+drwxrws--x   2 system system  3452 1970-01-01 08:00 cache
+drwxrws--x   2 system system  3452 1970-01-01 08:00 code_cache

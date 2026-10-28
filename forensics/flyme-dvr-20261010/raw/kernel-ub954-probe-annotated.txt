@@ -1,0 +1,530 @@
+
+forensics/flyme-dvr-20261010/raw/kernel-max96722-init-pages.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00000000011493f8 <.data+0x13f8>:
+ 11493f8:	d503233f 	paciasp
+ 11493fc:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!
+ 1149400:	910003fd 	mov	x29, sp
+ 1149404:	a90153f3 	stp	x19, x20, [sp, #16]
+ 1149408:	90002573 	adrp	x19, 0x15f5000
+ 114940c:	9125e273 	add	x19, x19, #0x978
+ 1149410:	a9025bf5 	stp	x21, x22, [sp, #32]
+ 1149414:	12001c16 	and	w22, w0, #0xff
+ 1149418:	52800015 	mov	w21, #0x0                   	// #0
+ 114941c:	a90363f7 	stp	x23, x24, [sp, #48]
+ 1149420:	b000b197 	adrp	x23, 0x277a000
+ 1149424:	d280e2f8 	mov	x24, #0x717                 	// #1815
+ 1149428:	912b42f7 	add	x23, x23, #0xad0
+ 114942c:	a9046bf9 	stp	x25, x26, [sp, #64]
+ 1149430:	d281e2f9 	mov	x25, #0xf17                 	// #3863
+ 1149434:	9100227a 	add	x26, x19, #0x8
+ 1149438:	f2e00d19 	movk	x25, #0x68, lsl #48
+ 114943c:	f2e00d18 	movk	x24, #0x68, lsl #48
+ 1149440:	394002e2 	ldrb	w2, [x23]
+ 1149444:	d2801001 	mov	x1, #0x80                  	// #128
+ 1149448:	d2b3f400 	mov	x0, #0x9fa00000            	// #2678063104
+ 114944c:	7100005f 	cmp	w2, #0x0
+ 1149450:	9a981322 	csel	x2, x25, x24, ne	// ne = any
+ 1149454:	97bbd52f 	bl	0x3e910 // KERNEL_SYMBOL __ioremap
+ 1149458:	39400c14 	ldrb	w20, [x0, #3]
+ 114945c:	51000680 	sub	w0, w20, #0x1
+ 1149460:	12001c00 	and	w0, w0, #0xff
+ 1149464:	7103f41f 	cmp	w0, #0xfd
+ 1149468:	54000189 	b.ls	0x1149498  // b.plast
+ 114946c:	2a1503e3 	mov	w3, w21
+ 1149470:	2a1403e2 	mov	w2, w20
+ 1149474:	aa1a03e1 	mov	x1, x26
+ 1149478:	90004400 	adrp	x0, 0x19c9000
+ 114947c:	91360000 	add	x0, x0, #0xd80
+ 1149480:	97ffbf74 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149484:	110006b5 	add	w21, w21, #0x1
+ 1149488:	52800c80 	mov	w0, #0x64                  	// #100
+ 114948c:	97bf0e7d 	bl	0x10ce80 // KERNEL_SYMBOL msleep
+ 1149490:	71000ebf 	cmp	w21, #0x3
+ 1149494:	54fffd61 	b.ne	0x1149440  // b.any
+ 1149498:	710002df 	cmp	w22, #0x0
+ 114949c:	121f0681 	and	w1, w20, #0x6
+ 11494a0:	52800040 	mov	w0, #0x2                   	// #2
+ 11494a4:	1a8003e0 	csel	w0, wzr, w0, eq	// eq = none
+ 11494a8:	6b00003f 	cmp	w1, w0
+ 11494ac:	2a1603e3 	mov	w3, w22
+ 11494b0:	2a1403e2 	mov	w2, w20
+ 11494b4:	91002261 	add	x1, x19, #0x8
+ 11494b8:	540000c1 	b.ne	0x11494d0  // b.any
+ 11494bc:	90004400 	adrp	x0, 0x19c9000
+ 11494c0:	9136e000 	add	x0, x0, #0xdb8
+ 11494c4:	97ffbf63 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 11494c8:	52800020 	mov	w0, #0x1                   	// #1
+ 11494cc:	14000005 	b	0x11494e0
+ 11494d0:	90004400 	adrp	x0, 0x19c9000
+ 11494d4:	9137e000 	add	x0, x0, #0xdf8
+ 11494d8:	97ffbf5e 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 11494dc:	52800000 	mov	w0, #0x0                   	// #0
+ 11494e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 11494e4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+ 11494e8:	a94363f7 	ldp	x23, x24, [sp, #48]
+ 11494ec:	a9446bf9 	ldp	x25, x26, [sp, #64]
+ 11494f0:	a8c57bfd 	ldp	x29, x30, [sp], #80
+ 11494f4:	d50323bf 	autiasp
+ 11494f8:	d65f03c0 	ret
+ 11494fc:	d503233f 	paciasp
+ 1149500:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+ 1149504:	90004401 	adrp	x1, 0x19c9000
+ 1149508:	910003fd 	mov	x29, sp
+ 114950c:	a90153f3 	stp	x19, x20, [sp, #16]
+ 1149510:	913ae021 	add	x1, x1, #0xeb8 // STATIC_STRING@19c9eb8 "%s: ub954_data \n"
+ 1149514:	aa0003f3 	mov	x19, x0
+ 1149518:	a9025bf5 	stp	x21, x22, [sp, #32]
+ 114951c:	90002575 	adrp	x21, 0x15f5000
+ 1149520:	9125e2b5 	add	x21, x21, #0x978
+ 1149524:	f9404c14 	ldr	x20, [x0, #152]
+ 1149528:	9100e2b6 	add	x22, x21, #0x38
+ 114952c:	aa1603e2 	mov	x2, x22
+ 1149530:	97ffd5c7 	bl	0x113ec4c // KERNEL_SYMBOL _dev_info
+ 1149534:	b4000074 	cbz	x20, 0x1149540
+ 1149538:	b140069f 	cmn	x20, #0x1, lsl #12
+ 114953c:	540000e9 	b.ls	0x1149558  // b.plast
+ 1149540:	9100e2a2 	add	x2, x21, #0x38
+ 1149544:	aa1303e0 	mov	x0, x19
+ 1149548:	90004401 	adrp	x1, 0x19c9000
+ 114954c:	913b4021 	add	x1, x1, #0xed0 // STATIC_STRING@19c9ed0 "%s: ub954_data is error or null\n"
+ 1149550:	97ffd559 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 1149554:	14000016 	b	0x11495ac
+ 1149558:	39529280 	ldrb	w0, [x20, #1188]
+ 114955c:	72001c1f 	tst	w0, #0xff
+ 1149560:	54000260 	b.eq	0x11495ac  // b.none
+ 1149564:	aa1403e0 	mov	x0, x20
+ 1149568:	52800602 	mov	w2, #0x30                  	// #48
+ 114956c:	52800401 	mov	w1, #0x20                  	// #32
+ 1149570:	97e7f829 	bl	0xb47614 // KERNEL_SYMBOL ub954_write_reg.isra.0
+ 1149574:	b944de80 	ldr	w0, [x20, #1244]
+ 1149578:	340000e0 	cbz	w0, 0x1149594
+ 114957c:	52800001 	mov	w1, #0x0                   	// #0
+ 1149580:	97e7f945 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 1149584:	d281f401 	mov	x1, #0xfa0                 	// #4000
+ 1149588:	d280fa00 	mov	x0, #0x7d0                 	// #2000
+ 114958c:	94004985 	bl	0x115bba0 // KERNEL_SYMBOL usleep_range
+ 1149590:	14000007 	b	0x11495ac
+ 1149594:	90004401 	adrp	x1, 0x19c9000
+ 1149598:	aa1603e2 	mov	x2, x22
+ 114959c:	aa1303e0 	mov	x0, x19
+ 11495a0:	913be021 	add	x1, x1, #0xef8 // STATIC_STRING@19c9ef8 "%s pdb_gpio error,pdb_gpio = 0x%02x\n"
+ 11495a4:	52800003 	mov	w3, #0x0                   	// #0
+ 11495a8:	97ffd543 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 11495ac:	52800000 	mov	w0, #0x0                   	// #0
+ 11495b0:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 11495b4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+ 11495b8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+ 11495bc:	d50323bf 	autiasp
+ 11495c0:	d65f03c0 	ret
+ 11495c4:	d503233f 	paciasp
+ 11495c8:	a9bc7bfd 	stp	x29, x30, [sp, #-64]!
+ 11495cc:	90004401 	adrp	x1, 0x19c9000
+ 11495d0:	910003fd 	mov	x29, sp
+ 11495d4:	a90153f3 	stp	x19, x20, [sp, #16]
+ 11495d8:	913ae021 	add	x1, x1, #0xeb8 // STATIC_STRING@19c9eb8 "%s: ub954_data \n"
+ 11495dc:	aa0003f4 	mov	x20, x0
+ 11495e0:	a9025bf5 	stp	x21, x22, [sp, #32]
+ 11495e4:	90002575 	adrp	x21, 0x15f5000
+ 11495e8:	9125e2b5 	add	x21, x21, #0x978
+ 11495ec:	f9001bf7 	str	x23, [sp, #48]
+ 11495f0:	910262b7 	add	x23, x21, #0x98
+ 11495f4:	aa1703e2 	mov	x2, x23
+ 11495f8:	f9404c13 	ldr	x19, [x0, #152]
+ 11495fc:	97ffd594 	bl	0x113ec4c // KERNEL_SYMBOL _dev_info
+ 1149600:	b4000073 	cbz	x19, 0x114960c
+ 1149604:	b140067f 	cmn	x19, #0x1, lsl #12
+ 1149608:	54000109 	b.ls	0x1149628  // b.plast
+ 114960c:	aa1403e0 	mov	x0, x20
+ 1149610:	910262a2 	add	x2, x21, #0x98
+ 1149614:	90004401 	adrp	x1, 0x19c9000
+ 1149618:	913b4021 	add	x1, x1, #0xed0 // STATIC_STRING@19c9ed0 "%s: ub954_data is error or null\n"
+ 114961c:	97ffd526 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 1149620:	52800000 	mov	w0, #0x0                   	// #0
+ 1149624:	1400002f 	b	0x11496e0
+ 1149628:	39529260 	ldrb	w0, [x19, #1188]
+ 114962c:	72001c1f 	tst	w0, #0xff
+ 1149630:	54000560 	b.eq	0x11496dc  // b.none
+ 1149634:	b944de60 	ldr	w0, [x19, #1244]
+ 1149638:	52800036 	mov	w22, #0x1                   	// #1
+ 114963c:	b904e276 	str	w22, [x19, #1248]
+ 1149640:	34000200 	cbz	w0, 0x1149680
+ 1149644:	2a1603e1 	mov	w1, w22
+ 1149648:	97e7f913 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 114964c:	d281f401 	mov	x1, #0xfa0                 	// #4000
+ 1149650:	d280fa00 	mov	x0, #0x7d0                 	// #2000
+ 1149654:	94004953 	bl	0x115bba0 // KERNEL_SYMBOL usleep_range
+ 1149658:	b944de60 	ldr	w0, [x19, #1244]
+ 114965c:	52800001 	mov	w1, #0x0                   	// #0
+ 1149660:	97e7f90d 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 1149664:	d281f401 	mov	x1, #0xfa0                 	// #4000
+ 1149668:	d280fa00 	mov	x0, #0x7d0                 	// #2000
+ 114966c:	9400494d 	bl	0x115bba0 // KERNEL_SYMBOL usleep_range
+ 1149670:	b944de60 	ldr	w0, [x19, #1244]
+ 1149674:	2a1603e1 	mov	w1, w22
+ 1149678:	97e7f907 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 114967c:	14000007 	b	0x1149698
+ 1149680:	90004401 	adrp	x1, 0x19c9000
+ 1149684:	aa1703e2 	mov	x2, x23
+ 1149688:	913be021 	add	x1, x1, #0xef8 // STATIC_STRING@19c9ef8 "%s pdb_gpio error,pdb_gpio = 0x%02x\n"
+ 114968c:	aa1403e0 	mov	x0, x20
+ 1149690:	52800003 	mov	w3, #0x0                   	// #0
+ 1149694:	97ffd508 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 1149698:	aa1303e0 	mov	x0, x19
+ 114969c:	97e7f962 	bl	0xb47c24 // KERNEL_SYMBOL ub954_initialize
+ 11496a0:	b904e27f 	str	wzr, [x19, #1248]
+ 11496a4:	36f80100 	tbz	w0, #31, 0x11496c4
+ 11496a8:	aa1403e0 	mov	x0, x20
+ 11496ac:	910262a2 	add	x2, x21, #0x98
+ 11496b0:	90004401 	adrp	x1, 0x19c9000
+ 11496b4:	913da021 	add	x1, x1, #0xf68 // STATIC_STRING@19c9f68 "%s Init Failed\n"
+ 11496b8:	97ffd4ff 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 11496bc:	128002a0 	mov	w0, #0xffffffea            	// #-22
+ 11496c0:	14000008 	b	0x11496e0
+ 11496c4:	aa1303e0 	mov	x0, x19
+ 11496c8:	52800402 	mov	w2, #0x20                  	// #32
+ 11496cc:	52800401 	mov	w1, #0x20                  	// #32
+ 11496d0:	97e7f7d1 	bl	0xb47614 // KERNEL_SYMBOL ub954_write_reg.isra.0
+ 11496d4:	52800000 	mov	w0, #0x0                   	// #0
+ 11496d8:	14000002 	b	0x11496e0
+ 11496dc:	52800000 	mov	w0, #0x0                   	// #0
+ 11496e0:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 11496e4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+ 11496e8:	f9401bf7 	ldr	x23, [sp, #48]
+ 11496ec:	a8c47bfd 	ldp	x29, x30, [sp], #64
+ 11496f0:	d50323bf 	autiasp
+ 11496f4:	d65f03c0 	ret
+ 11496f8:	d503233f 	paciasp
+ 11496fc:	a9bb7bfd 	stp	x29, x30, [sp, #-80]!
+ 1149700:	910003fd 	mov	x29, sp
+ 1149704:	a9025bf5 	stp	x21, x22, [sp, #32]
+ 1149708:	90002575 	adrp	x21, 0x15f5000
+ 114970c:	9125e2b5 	add	x21, x21, #0x978
+ 1149710:	a90363f7 	stp	x23, x24, [sp, #48]
+ 1149714:	aa0003f8 	mov	x24, x0
+ 1149718:	91008316 	add	x22, x24, #0x20
+ 114971c:	f90023f9 	str	x25, [sp, #64]
+ 1149720:	910302b9 	add	x25, x21, #0xc0
+ 1149724:	aa1903e1 	mov	x1, x25
+ 1149728:	90004400 	adrp	x0, 0x19c9000
+ 114972c:	9130e000 	add	x0, x0, #0xc38
+ 1149730:	a90153f3 	stp	x19, x20, [sp, #16]
+ 1149734:	97ffbec7 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149738:	aa1603e0 	mov	x0, x22
+ 114973c:	5281b802 	mov	w2, #0xdc0                 	// #3520
+ 1149740:	d2809d01 	mov	x1, #0x4e8                 	// #1256
+ 1149744:	97dc3d18 	bl	0x858ba4 // KERNEL_SYMBOL devm_kmalloc
+ 1149748:	b50000e0 	cbnz	x0, 0x1149764
+ 114974c:	aa1903e1 	mov	x1, x25
+ 1149750:	b0004400 	adrp	x0, 0x19ca000
+ 1149754:	12800174 	mov	w20, #0xfffffff4            	// #-12
+ 1149758:	91036000 	add	x0, x0, #0xd8
+ 114975c:	97ffbebd 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149760:	14000128 	b	0x1149c00
+ 1149764:	aa0003f3 	mov	x19, x0
+ 1149768:	3912901f 	strb	wzr, [x0, #1188]
+ 114976c:	f9416ec0 	ldr	x0, [x22, #728]
+ 1149770:	b0004417 	adrp	x23, 0x19ca000
+ 1149774:	9103e2f7 	add	x23, x23, #0xf8
+ 1149778:	d2800003 	mov	x3, #0x0                   	// #0
+ 114977c:	aa1703e1 	mov	x1, x23
+ 1149780:	52800002 	mov	w2, #0x0                   	// #0
+ 1149784:	97d3b4a7 	bl	0x636a20 // KERNEL_SYMBOL of_get_named_gpio_flags
+ 1149788:	2a0003f4 	mov	w20, w0
+ 114978c:	7107fc1f 	cmp	w0, #0x1ff
+ 1149790:	540001a8 	b.hi	0x11497c4  // b.pmore
+ 1149794:	2a0003e1 	mov	w1, w0
+ 1149798:	aa1703e2 	mov	x2, x23
+ 114979c:	aa1603e0 	mov	x0, x22
+ 11497a0:	97d3b0e9 	bl	0x635b44 // KERNEL_SYMBOL devm_gpio_request
+ 11497a4:	aa1903e1 	mov	x1, x25
+ 11497a8:	2a1403e2 	mov	w2, w20
+ 11497ac:	b0004400 	adrp	x0, 0x19ca000
+ 11497b0:	91042000 	add	x0, x0, #0x108
+ 11497b4:	97ffbea7 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 11497b8:	2a1403e0 	mov	w0, w20
+ 11497bc:	97d392a6 	bl	0x62e254 // KERNEL_SYMBOL gpio_to_desc
+ 11497c0:	97d39d6d 	bl	0x630d74 // KERNEL_SYMBOL gpiod_direction_input
+ 11497c4:	52800000 	mov	w0, #0x0                   	// #0
+ 11497c8:	97ffff0c 	bl	0x11493f8 // KERNEL_SYMBOL is_match_config_read_from_veh
+ 11497cc:	72001c1f 	tst	w0, #0xff
+ 11497d0:	54000100 	b.eq	0x11497f0  // b.none
+ 11497d4:	52800022 	mov	w2, #0x1                   	// #1
+ 11497d8:	39129262 	strb	w2, [x19, #1188]
+ 11497dc:	910302a1 	add	x1, x21, #0xc0
+ 11497e0:	b0004400 	adrp	x0, 0x19ca000
+ 11497e4:	9104a000 	add	x0, x0, #0x128
+ 11497e8:	97ffbe9a 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 11497ec:	1400000a 	b	0x1149814
+ 11497f0:	52800020 	mov	w0, #0x1                   	// #1
+ 11497f4:	97ffff01 	bl	0x11493f8 // KERNEL_SYMBOL is_match_config_read_from_veh
+ 11497f8:	72001c1f 	tst	w0, #0xff
+ 11497fc:	54fffec1 	b.ne	0x11497d4  // b.any
+ 1149800:	910302a1 	add	x1, x21, #0xc0
+ 1149804:	b0004400 	adrp	x0, 0x19ca000
+ 1149808:	91052000 	add	x0, x0, #0x148
+ 114980c:	97ffbe91 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149810:	3912927f 	strb	wzr, [x19, #1188]
+ 1149814:	f9416ec0 	ldr	x0, [x22, #728]
+ 1149818:	d2800003 	mov	x3, #0x0                   	// #0
+ 114981c:	52800002 	mov	w2, #0x0                   	// #0
+ 1149820:	b0004401 	adrp	x1, 0x19ca000
+ 1149824:	9105c021 	add	x1, x1, #0x170
+ 1149828:	910302b9 	add	x25, x21, #0xc0
+ 114982c:	97d3b47d 	bl	0x636a20 // KERNEL_SYMBOL of_get_named_gpio_flags
+ 1149830:	2a0003f7 	mov	w23, w0
+ 1149834:	f9416ec0 	ldr	x0, [x22, #728]
+ 1149838:	d2800003 	mov	x3, #0x0                   	// #0
+ 114983c:	52800002 	mov	w2, #0x0                   	// #0
+ 1149840:	b0004401 	adrp	x1, 0x19ca000
+ 1149844:	91060021 	add	x1, x1, #0x180
+ 1149848:	97d3b476 	bl	0x636a20 // KERNEL_SYMBOL of_get_named_gpio_flags
+ 114984c:	2a0003e3 	mov	w3, w0
+ 1149850:	2a1703e2 	mov	w2, w23
+ 1149854:	2a0003f4 	mov	w20, w0
+ 1149858:	aa1903e1 	mov	x1, x25
+ 114985c:	b0004400 	adrp	x0, 0x19ca000
+ 1149860:	91064000 	add	x0, x0, #0x190
+ 1149864:	97ffbe7b 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149868:	2a1703e0 	mov	w0, w23
+ 114986c:	b0004401 	adrp	x1, 0x19ca000
+ 1149870:	9106e021 	add	x1, x1, #0x1b8
+ 1149874:	97d3b1b7 	bl	0x635f50 // KERNEL_SYMBOL gpio_request
+ 1149878:	b904da77 	str	w23, [x19, #1240]
+ 114987c:	2a1403e0 	mov	w0, w20
+ 1149880:	b0004401 	adrp	x1, 0x19ca000
+ 1149884:	91072021 	add	x1, x1, #0x1c8
+ 1149888:	97d3b1b2 	bl	0x635f50 // KERNEL_SYMBOL gpio_request
+ 114988c:	b904de74 	str	w20, [x19, #1244]
+ 1149890:	2a1703e0 	mov	w0, w23
+ 1149894:	52800021 	mov	w1, #0x1                   	// #1
+ 1149898:	97e7f87f 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 114989c:	d000aad7 	adrp	x23, 0x26a3000
+ 11498a0:	d281f401 	mov	x1, #0xfa0                 	// #4000
+ 11498a4:	d280fa00 	mov	x0, #0x7d0                 	// #2000
+ 11498a8:	940048be 	bl	0x115bba0 // KERNEL_SYMBOL usleep_range
+ 11498ac:	910d22f7 	add	x23, x23, #0x348
+ 11498b0:	2a1403e0 	mov	w0, w20
+ 11498b4:	52800021 	mov	w1, #0x1                   	// #1
+ 11498b8:	97e7f877 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 11498bc:	d281f401 	mov	x1, #0xfa0                 	// #4000
+ 11498c0:	d280fa00 	mov	x0, #0x7d0                 	// #2000
+ 11498c4:	940048b7 	bl	0x115bba0 // KERNEL_SYMBOL usleep_range
+ 11498c8:	2a1403e0 	mov	w0, w20
+ 11498cc:	52800001 	mov	w1, #0x0                   	// #0
+ 11498d0:	97e7f871 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 11498d4:	d281f401 	mov	x1, #0xfa0                 	// #4000
+ 11498d8:	d280fa00 	mov	x0, #0x7d0                 	// #2000
+ 11498dc:	940048b1 	bl	0x115bba0 // KERNEL_SYMBOL usleep_range
+ 11498e0:	2a1403e0 	mov	w0, w20
+ 11498e4:	52800021 	mov	w1, #0x1                   	// #1
+ 11498e8:	97e7f86b 	bl	0xb47a94 // KERNEL_SYMBOL gpio_direction_output.isra.0
+ 11498ec:	f9004ed3 	str	x19, [x22, #152]
+ 11498f0:	f9011278 	str	x24, [x19, #544]
+ 11498f4:	9112a260 	add	x0, x19, #0x4a8
+ 11498f8:	b000c382 	adrp	x2, 0x29ba000
+ 11498fc:	b0004401 	adrp	x1, 0x19ca000
+ 1149900:	912b8042 	add	x2, x2, #0xae0
+ 1149904:	91076021 	add	x1, x1, #0x1d8
+ 1149908:	97bdf786 	bl	0xc7720 // KERNEL_SYMBOL __mutex_init
+ 114990c:	528401e0 	mov	w0, #0x200f                	// #8207
+ 1149910:	39529261 	ldrb	w1, [x19, #1188]
+ 1149914:	b94106e2 	ldr	w2, [x23, #260]
+ 1149918:	528000e3 	mov	w3, #0x7                   	// #7
+ 114991c:	b9023260 	str	w0, [x19, #560]
+ 1149920:	12001c21 	and	w1, w1, #0xff
+ 1149924:	b9410ae0 	ldr	w0, [x23, #264]
+ 1149928:	b9022a62 	str	w2, [x19, #552]
+ 114992c:	b9022e60 	str	w0, [x19, #556]
+ 1149930:	b9023a63 	str	w3, [x19, #568]
+ 1149934:	79068a62 	strh	w2, [x19, #836]
+ 1149938:	79068e60 	strh	w0, [x19, #838]
+ 114993c:	7100043f 	cmp	w1, #0x1
+ 1149940:	540002c1 	b.ne	0x1149998  // b.any
+ 1149944:	b904e261 	str	w1, [x19, #1248]
+ 1149948:	52800280 	mov	w0, #0x14                  	// #20
+ 114994c:	97bf0d4d 	bl	0x10ce80 // KERNEL_SYMBOL msleep
+ 1149950:	52800001 	mov	w1, #0x0                   	// #0
+ 1149954:	aa1303e0 	mov	x0, x19
+ 1149958:	97e7f85b 	bl	0xb47ac4 // KERNEL_SYMBOL ub954_read_reg
+ 114995c:	2a0003e2 	mov	w2, w0
+ 1149960:	7101e85f 	cmp	w2, #0x7a
+ 1149964:	528007a0 	mov	w0, #0x3d                  	// #61
+ 1149968:	aa1903e1 	mov	x1, x25
+ 114996c:	7a401044 	ccmp	w2, w0, #0x4, ne	// ne = any
+ 1149970:	540000e0 	b.eq	0x114998c  // b.none
+ 1149974:	b0004400 	adrp	x0, 0x19ca000
+ 1149978:	12800254 	mov	w20, #0xffffffed            	// #-19
+ 114997c:	9107e000 	add	x0, x0, #0x1f8
+ 1149980:	97ffbe34 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149984:	b904e27f 	str	wzr, [x19, #1248]
+ 1149988:	1400009e 	b	0x1149c00
+ 114998c:	b0004400 	adrp	x0, 0x19ca000
+ 1149990:	9108a000 	add	x0, x0, #0x228
+ 1149994:	97ffbe2f 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149998:	79468a67 	ldrh	w7, [x19, #836]
+ 114999c:	d2800029 	mov	x9, #0x1                   	// #1
+ 11499a0:	79468e65 	ldrh	w5, [x19, #838]
+ 11499a4:	529f9808 	mov	w8, #0xfcc0                	// #64704
+ 11499a8:	52800023 	mov	w3, #0x1                   	// #1
+ 11499ac:	5280480b 	mov	w11, #0x240                 	// #576
+ 11499b0:	d282000a 	mov	x10, #0x1000                	// #4096
+ 11499b4:	f2c003c9 	movk	x9, #0x1e, lsl #32
+ 11499b8:	52804e26 	mov	w6, #0x271                 	// #625
+ 11499bc:	d2800504 	mov	x4, #0x28                  	// #40
+ 11499c0:	72a03368 	movk	w8, #0x19b, lsl #16
+ 11499c4:	b9023663 	str	w3, [x19, #564]
+ 11499c8:	79048a6b 	strh	w11, [x19, #580]
+ 11499cc:	aa1803e1 	mov	x1, x24
+ 11499d0:	f9012e6a 	str	x10, [x19, #600]
+ 11499d4:	910342a2 	add	x2, x21, #0xd0
+ 11499d8:	f9013269 	str	x9, [x19, #608]
+ 11499dc:	aa1303e0 	mov	x0, x19
+ 11499e0:	b902ba7f 	str	wzr, [x19, #696]
+ 11499e4:	390af263 	strb	w3, [x19, #700]
+ 11499e8:	b9030268 	str	w8, [x19, #768]
+ 11499ec:	b9030667 	str	w7, [x19, #772]
+ 11499f0:	f901867f 	str	xzr, [x19, #776]
+ 11499f4:	b9031266 	str	w6, [x19, #784]
+ 11499f8:	b9031665 	str	w5, [x19, #788]
+ 11499fc:	f9018e7f 	str	xzr, [x19, #792]
+ 1149a00:	f9019264 	str	x4, [x19, #800]
+ 1149a04:	f901967f 	str	xzr, [x19, #808]
+ 1149a08:	b903327f 	str	wzr, [x19, #816]
+ 1149a0c:	b903427f 	str	wzr, [x19, #832]
+ 1149a10:	97e751f5 	bl	0xb1e1e4 // KERNEL_SYMBOL v4l2_i2c_subdev_init
+ 1149a14:	b9409e64 	ldr	w4, [x19, #156]
+ 1149a18:	52800025 	mov	w5, #0x1                   	// #1
+ 1149a1c:	d2800043 	mov	x3, #0x2                   	// #2
+ 1149a20:	72a00045 	movk	w5, #0x2, lsl #16
+ 1149a24:	321e0084 	orr	w4, w4, #0x4
+ 1149a28:	b9002e65 	str	w5, [x19, #44]
+ 1149a2c:	b9009e64 	str	w4, [x19, #156]
+ 1149a30:	91050262 	add	x2, x19, #0x140
+ 1149a34:	f900ba63 	str	x3, [x19, #368]
+ 1149a38:	aa1303e0 	mov	x0, x19
+ 1149a3c:	f900d663 	str	x3, [x19, #424]
+ 1149a40:	52800081 	mov	w1, #0x4                   	// #4
+ 1149a44:	f900f263 	str	x3, [x19, #480]
+ 1149a48:	f9010e63 	str	x3, [x19, #536]
+ 1149a4c:	97e6b6a1 	bl	0xaf74d0 // KERNEL_SYMBOL media_entity_pads_init
+ 1149a50:	2a0003f4 	mov	w20, w0
+ 1149a54:	36f800e0 	tbz	w0, #31, 0x1149a70
+ 1149a58:	910302a1 	add	x1, x21, #0xc0
+ 1149a5c:	2a1403e2 	mov	w2, w20
+ 1149a60:	b0004400 	adrp	x0, 0x19ca000
+ 1149a64:	91092000 	add	x0, x0, #0x248
+ 1149a68:	97ffbdfa 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149a6c:	14000065 	b	0x1149c00
+ 1149a70:	910442a1 	add	x1, x21, #0x110
+ 1149a74:	d2800022 	mov	x2, #0x1                   	// #1
+ 1149a78:	f2a00042 	movk	x2, #0x2, lsl #16
+ 1149a7c:	f9001a62 	str	x2, [x19, #48]
+ 1149a80:	f9003261 	str	x1, [x19, #96]
+ 1149a84:	aa1303e0 	mov	x0, x19
+ 1149a88:	97e7210b 	bl	0xb11eb4 // KERNEL_SYMBOL v4l2_async_register_subdev
+ 1149a8c:	2a0003e3 	mov	w3, w0
+ 1149a90:	36f800c0 	tbz	w0, #31, 0x1149aa8
+ 1149a94:	b0004401 	adrp	x1, 0x19ca000
+ 1149a98:	910302a2 	add	x2, x21, #0xc0
+ 1149a9c:	910a0021 	add	x1, x1, #0x280
+ 1149aa0:	aa1603e0 	mov	x0, x22
+ 1149aa4:	97ffd404 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 1149aa8:	39529274 	ldrb	w20, [x19, #1188]
+ 1149aac:	12001e94 	and	w20, w20, #0xff
+ 1149ab0:	7100069f 	cmp	w20, #0x1
+ 1149ab4:	540005e1 	b.ne	0x1149b70  // b.any
+ 1149ab8:	aa1303e0 	mov	x0, x19
+ 1149abc:	97e7f85a 	bl	0xb47c24 // KERNEL_SYMBOL ub954_initialize
+ 1149ac0:	36f80300 	tbz	w0, #31, 0x1149b20
+ 1149ac4:	9104a2a1 	add	x1, x21, #0x128
+ 1149ac8:	b0004400 	adrp	x0, 0x19ca000
+ 1149acc:	910aa000 	add	x0, x0, #0x2a8
+ 1149ad0:	97ffbde0 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149ad4:	910302a2 	add	x2, x21, #0xc0
+ 1149ad8:	128001a3 	mov	w3, #0xfffffff2            	// #-14
+ 1149adc:	aa1603e0 	mov	x0, x22
+ 1149ae0:	b0004401 	adrp	x1, 0x19ca000
+ 1149ae4:	910b2021 	add	x1, x1, #0x2c8
+ 1149ae8:	97ffd3f3 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 1149aec:	d2827101 	mov	x1, #0x1388                	// #5000
+ 1149af0:	aa0103e0 	mov	x0, x1
+ 1149af4:	9400482b 	bl	0x115bba0 // KERNEL_SYMBOL usleep_range
+ 1149af8:	128001b4 	mov	w20, #0xfffffff2            	// #-14
+ 1149afc:	f9415a75 	ldr	x21, [x19, #688]
+ 1149b00:	aa1503e0 	mov	x0, x21
+ 1149b04:	97d6577f 	bl	0x6df900 // KERNEL_SYMBOL clk_disable
+ 1149b08:	aa1503e0 	mov	x0, x21
+ 1149b0c:	97d65689 	bl	0x6df530 // KERNEL_SYMBOL clk_unprepare
+ 1149b10:	aa1303e0 	mov	x0, x19
+ 1149b14:	97e72327 	bl	0xb127b0 // KERNEL_SYMBOL v4l2_async_unregister_subdev
+ 1149b18:	b904e27f 	str	wzr, [x19, #1248]
+ 1149b1c:	14000039 	b	0x1149c00
+ 1149b20:	b9034a7f 	str	wzr, [x19, #840]
+ 1149b24:	aa1303e0 	mov	x0, x19
+ 1149b28:	52800081 	mov	w1, #0x4                   	// #4
+ 1149b2c:	97e7f7e6 	bl	0xb47ac4 // KERNEL_SYMBOL ub954_read_reg
+ 1149b30:	d3420800 	ubfx	x0, x0, #2, #1
+ 1149b34:	390d3260 	strb	w0, [x19, #844]
+ 1149b38:	340000a0 	cbz	w0, 0x1149b4c
+ 1149b3c:	b9434a60 	ldr	w0, [x19, #840]
+ 1149b40:	11000400 	add	w0, w0, #0x1
+ 1149b44:	b9034a60 	str	w0, [x19, #840]
+ 1149b48:	14000009 	b	0x1149b6c
+ 1149b4c:	b9034a74 	str	w20, [x19, #840]
+ 1149b50:	b0004400 	adrp	x0, 0x19ca000
+ 1149b54:	390d3274 	strb	w20, [x19, #844]
+ 1149b58:	2a1403e3 	mov	w3, w20
+ 1149b5c:	910bc000 	add	x0, x0, #0x2f0
+ 1149b60:	2a1403e2 	mov	w2, w20
+ 1149b64:	9104a2a1 	add	x1, x21, #0x128
+ 1149b68:	97ffbdba 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149b6c:	b904e27f 	str	wzr, [x19, #1248]
+ 1149b70:	910c42e1 	add	x1, x23, #0x310
+ 1149b74:	aa1603e0 	mov	x0, x22
+ 1149b78:	97dc043a 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+ 1149b7c:	2a0003f4 	mov	w20, w0
+ 1149b80:	37f801e0 	tbnz	w0, #31, 0x1149bbc
+ 1149b84:	39529260 	ldrb	w0, [x19, #1188]
+ 1149b88:	12001c00 	and	w0, w0, #0xff
+ 1149b8c:	7100041f 	cmp	w0, #0x1
+ 1149b90:	54000241 	b.ne	0x1149bd8  // b.any
+ 1149b94:	910cc2e1 	add	x1, x23, #0x330
+ 1149b98:	aa1603e0 	mov	x0, x22
+ 1149b9c:	97dc0431 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+ 1149ba0:	2a0003f4 	mov	w20, w0
+ 1149ba4:	37f800c0 	tbnz	w0, #31, 0x1149bbc
+ 1149ba8:	910d42e1 	add	x1, x23, #0x350
+ 1149bac:	aa1603e0 	mov	x0, x22
+ 1149bb0:	97dc042c 	bl	0x84ac60 // KERNEL_SYMBOL device_create_file
+ 1149bb4:	2a0003f4 	mov	w20, w0
+ 1149bb8:	36f80100 	tbz	w0, #31, 0x1149bd8
+ 1149bbc:	910302a2 	add	x2, x21, #0xc0
+ 1149bc0:	aa1603e0 	mov	x0, x22
+ 1149bc4:	2a1403e3 	mov	w3, w20
+ 1149bc8:	b0004401 	adrp	x1, 0x19ca000
+ 1149bcc:	910ca021 	add	x1, x1, #0x328
+ 1149bd0:	97ffd3b9 	bl	0x113eab4 // KERNEL_SYMBOL _dev_err
+ 1149bd4:	1400000b 	b	0x1149c00
+ 1149bd8:	f9411260 	ldr	x0, [x19, #544]
+ 1149bdc:	91030262 	add	x2, x19, #0xc0
+ 1149be0:	b0004401 	adrp	x1, 0x19ca000
+ 1149be4:	910d6021 	add	x1, x1, #0x358
+ 1149be8:	91008000 	add	x0, x0, #0x20
+ 1149bec:	97ffd418 	bl	0x113ec4c // KERNEL_SYMBOL _dev_info
+ 1149bf0:	90004400 	adrp	x0, 0x19c9000
+ 1149bf4:	910302a1 	add	x1, x21, #0xc0
+ 1149bf8:	9132c000 	add	x0, x0, #0xcb0
+ 1149bfc:	97ffbd95 	bl	0x1139250 // KERNEL_SYMBOL printk
+ 1149c00:	2a1403e0 	mov	w0, w20
+ 1149c04:	a94153f3 	ldp	x19, x20, [sp, #16]
+ 1149c08:	a9425bf5 	ldp	x21, x22, [sp, #32]
+ 1149c0c:	a94363f7 	ldp	x23, x24, [sp, #48]
+ 1149c10:	f94023f9 	ldr	x25, [sp, #64]
+ 1149c14:	a8c57bfd 	ldp	x29, x30, [sp], #80
+ 1149c18:	d50323bf 	autiasp
+ 1149c1c:	d65f03c0 	ret
+

@@ -1,0 +1,15 @@
+TARGETS [
+  { addr: 847585892, text: '---MCU rpmsg dlen %d > 205, --!!!' },
+  { addr: 847586383, text: 'rev mcu 0323' },
+  { addr: 847586454, text: 'MCU DATA HEAD Err!,%02x,%02x' },
+  { addr: 847586593, text: '---ERR:MCU checksum invalid---' },
+  { addr: 847587382, text: '---WARNING:NO MCU MSG %us---' },
+  { addr: 847587930, text: 'r52_sendto_ap0_a76' },
+  { addr: 847588034, text: 'r52_sendto_ap0_a76_bcl' }
+]
+MOVW_MOVT 0x328201f4 0x328201f8 possible_start 0x32820174 { addr: 847587930, text: 'r52_sendto_ap0_a76' }
+MOVW_MOVT 0x3282025c 0x32820260 possible_start 0x32820174 { addr: 847588034, text: 'r52_sendto_ap0_a76_bcl' }
+MOVW_MOVT 0x32820998 0x3282099c possible_start 0x32820938 { addr: 847587382, text: '---WARNING:NO MCU MSG %us---' }
+MOVW_MOVT 0x328218e0 0x328218e4 possible_start 0x328216cc { addr: 847585892, text: '---MCU rpmsg dlen %d > 205, --!!!' }
+MOVW_MOVT 0x32821be8 0x32821bec possible_start 0x328216cc { addr: 847586593, text: '---ERR:MCU checksum invalid---' }
+MOVW_MOVT 0x32821c2c 0x32821c30 possible_start 0x328216cc { addr: 847586454, text: 'MCU DATA HEAD Err!,%02x,%02x' }

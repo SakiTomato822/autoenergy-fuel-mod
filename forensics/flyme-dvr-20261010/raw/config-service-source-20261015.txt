@@ -1,0 +1,1174 @@
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;-><clinit> code=1765436 regs=42 ins=0
+   0 4012 const/4 v0 4
+   1 0123 0fb8 
+   3 0126 0063 0000 
+   6 0169 6cd7 Lcom/android/car/config/future/ECarXCarConfigService;->MULTIPLE_AREA_IDS_PROPS:[I
+   8 021a 05e5 "0x00"
+  10 031a 05e5 "0x00"
+  12 041a 05e5 "0x00"
+  14 051a 05e5 "0x00"
+  16 061a 05e5 "0x00"
+  18 071a 05e5 "0x00"
+  20 081a 05e5 "0x00"
+  22 091a 05e5 "0x00"
+  24 0a1a 05e5 "0x00"
+  26 0b1a 05e5 "0x00"
+  28 0c1a 05e5 "0x00"
+  30 0d1a 05e5 "0x00"
+  32 0e1a 05e5 "0x00"
+  34 0f1a 05e5 "0x00"
+  36 101a 05e5 "0x00"
+  38 111a 05e5 "0x00"
+  40 121a 05e5 "0x00"
+  42 131a 05e5 "0x00"
+  44 141a 05e5 "0x00"
+  46 151a 05e5 "0x00"
+  48 161a 05e5 "0x00"
+  50 171a 05e5 "0x00"
+  52 181a 05e5 "0x00"
+  54 191a 05e5 "0x00"
+  56 1a1a 05e5 "0x00"
+  58 1b1a 05e5 "0x00"
+  60 1c1a 05e5 "0x00"
+  62 1d1a 05e5 "0x00"
+  64 1e1a 05e5 "0x00"
+  66 1f1a 05e5 "0x00"
+  68 201a 05e5 "0x00"
+  70 211a 05e5 "0x00"
+  72 221a 05e5 "0x00"
+  74 231a 05e5 "0x00"
+  76 241a 05e5 "0x00"
+  78 251a 05e5 "0x00"
+  80 261a 05e5 "0x00"
+  82 271a 05e5 "0x00"
+  84 281a 05e5 "0x00"
+  86 291a 05e5 "0x00"
+  88 2825 1027 0002 
+  91 010c 
+  92 0169 6cd6 Lcom/android/car/config/future/ECarXCarConfigService;->DEFAULT_CONF:[Ljava/lang/String;
+  94 0023 0fb8 
+  96 0026 0012 0000 
+  99 0069 6cd4 Lcom/android/car/config/future/ECarXCarConfigService;->ACC_ENGINE_PROPS:[I
+ 101 000e 
+ 102 0300 0004 0004 0000 0504 1320 050b 1540 
+ 114 0300 0004 0004 0000 0014 2870 002f 2870 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;-><init> code=1765704 regs=5 ins=3
+   0 1070 0211 0002 Landroid/car/carconfig/ICarConfigObserver$Stub;-><init>
+   3 0022 0f79 
+   5 1070 6ab6 0000 Ljava/util/concurrent/locks/ReentrantLock;-><init>
+   8 205b 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+  10 0022 030d 
+  12 1070 0a79 0000 Landroid/util/SparseArray;-><init>
+  15 205b 6cde Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpas:Landroid/util/SparseArray;
+  17 0022 030d 
+  19 1070 0a79 0000 Landroid/util/SparseArray;-><init>
+  22 205b 6cdd Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventAreaIdSpas:Landroid/util/SparseArray;
+  24 0022 0734 
+  26 2070 31f2 0020 Lcom/android/car/config/future/ECarXCarConfigService$1;-><init>
+  29 205b 6ce7 Lcom/android/car/config/future/ECarXCarConfigService;->mSupportPropertyEventListener:Landroid/car/hardware/property/ICarPropertyEventListener$Stub;
+  31 0022 0735 
+  33 2070 31f4 0020 Lcom/android/car/config/future/ECarXCarConfigService$2;-><init>
+  36 205b 6cda Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineEventListener:Landroid/car/hardware/property/ICarPropertyEventListener$Stub;
+  38 0022 0f79 
+  40 1070 6ab6 0000 Ljava/util/concurrent/locks/ReentrantLock;-><init>
+  43 205b 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+  45 0012 const/4 v0 0
+  46 2059 6ce8 Lcom/android/car/config/future/ECarXCarConfigService;->mVCUePTReadyStatus:I
+  48 2059 6ce2 Lcom/android/car/config/future/ECarXCarConfigService;->mEMSEngStatus:I
+  50 0122 0f77 
+  52 1070 6ab1 0001 Ljava/util/concurrent/atomic/AtomicReference;-><init>
+  55 215b 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+  57 0122 0736 
+  59 2070 31f6 0021 Lcom/android/car/config/future/ECarXCarConfigService$3;-><init>
+  62 215b 6cdb Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineTask:Lcom/android/car/config/future/ECarXCarConfigService$ConfTask;
+  64 2059 6ce5 Lcom/android/car/config/future/ECarXCarConfigService;->mNotifyAllErrorCount:I
+  66 235b 6ce1 Lcom/android/car/config/future/ECarXCarConfigService;->mContext:Landroid/content/Context;
+  68 245b 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  70 0071 320e 0000 Lcom/android/car/config/future/ECarXCarConfigService;->initWorkHandler
+  73 000c 
+  74 205b 6ce9 Lcom/android/car/config/future/ECarXCarConfigService;->mWorkHandler:Landroid/os/Handler;
+  76 0022 0738 
+  78 2070 31fd 0020 Lcom/android/car/config/future/ECarXCarConfigService$NonConfigurationWordOpt;-><init>
+  81 205b 6ce4 Lcom/android/car/config/future/ECarXCarConfigService;->mNonConfigurationWordOpt:Lcom/android/car/config/future/ECarXCarConfigService$NonConfigurationWordOpt;
+  83 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->access$000 code=1765888 regs=2 ins=2
+   0 2070 320c 0010 Lcom/android/car/config/future/ECarXCarConfigService;->handleSupportPropertyEvent
+   3 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->access$100 code=1765912 regs=2 ins=2
+   0 2070 320b 0010 Lcom/android/car/config/future/ECarXCarConfigService;->handleAccEngineEvent
+   3 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->access$300 code=1765936 regs=1 ins=1
+   0 1070 321a 0000 Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChanged
+   3 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->access$400 code=1763656 regs=2 ins=1
+   0 1054 6ce9 Lcom/android/car/config/future/ECarXCarConfigService;->mWorkHandler:Landroid/os/Handler;
+   2 0011 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->getLocalConfig code=1764916 regs=13 ins=1
+   0 0012 const/4 v0 0
+   1 c154 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+   3 021a 1076 "ECarXCarConfigService"
+   5 0139 0008 if target 13
+   7 011a 572e "getLocalConfig ECarXCarConfigService is null, return"
+   9 2071 0a4c 0012 Landroid/util/Log;->e
+  12 0011 
+  13 c154 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  15 0314 0370 2870 const 678429552 / 0x28700370
+  18 0412 const/4 v4 0
+  19 306e 17ac 0431 Lcom/android/car/CarPropertyService;->getProperty
+  22 010c 
+  23 0139 0008 if target 31
+  25 031a 5733 "getLocalConfig: propertyValue is null, return"
+  27 2071 0a4c 0032 Landroid/util/Log;->e
+  30 0011 
+  31 106e 027c 0001 Landroid/car/hardware/CarPropertyValue;->getValue
+  34 030c 
+  35 031f 0fb4 
+  37 0422 0edf 
+  39 1070 6866 0004 Ljava/lang/StringBuilder;-><init>
+  42 051a 5735 "getLocalConfig: vehicle get content="
+  44 206e 686f 0054 Ljava/lang/StringBuilder;->append
+  47 1071 696a 0003 Ljava/util/Arrays;->toString
+  50 050c 
+  51 206e 686f 0054 Ljava/lang/StringBuilder;->append
+  54 106e 6876 0004 Ljava/lang/StringBuilder;->toString
+  57 040c 
+  58 2071 0a4f 0042 Landroid/util/Log;->i
+  61 2070 3221 003c Lcom/android/car/config/future/ECarXCarConfigService;->retryGetLocalCfg
+  64 040c 
+  65 4307 
+  66 0339 0008 if target 74
+  68 041a 5731 "getLocalConfig: content == null"
+  70 2071 0a4c 0042 Landroid/util/Log;->e
+  73 0011 
+  74 2070 3220 003c Lcom/android/car/config/future/ECarXCarConfigService;->resetLocalConfigFromSystemProp
+  77 040a 
+  78 0522 0edf 
+  80 1070 6866 0005 Ljava/lang/StringBuilder;-><init>
+  83 061a 5734 "getLocalConfig: resetRet="
+  85 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  88 206e 6870 0045 Ljava/lang/StringBuilder;->append
+  91 061a 041d ", "
+  93 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  96 0438 0005 if target 101
+  98 061a 808a "reset local_cfg to sys_prop_cfg"
+ 100 0328 
+ 101 061a 72a1 "mcu local_cfg is valid, not reset"
+ 103 206e 686f 0065 Ljava/lang/StringBuilder;->append
+ 106 106e 6876 0005 Ljava/lang/StringBuilder;->toString
+ 109 050c 
+ 110 2071 0a54 0052 Landroid/util/Log;->w
+ 113 0522 0edf 
+ 115 1070 6866 0005 Ljava/lang/StringBuilder;-><init>
+ 118 0612 const/4 v6 0
+ 119 0338 0069 if target 224
+ 121 0712 const/4 v7 0
+ 122 3821 
+ 123 8735 0031 if target 172
+ 125 0848 0703 
+ 127 f912 const/4 v9 -1
+ 128 9833 0004 if target 132
+ 130 06d8 0106 
+ 132 0848 0703 
+ 134 88d5 00ff 
+ 136 1071 67e7 0008 Ljava/lang/Integer;->toHexString
+ 139 090c 
+ 140 106e 6858 0009 Ljava/lang/String;->toUpperCase
+ 143 090c 
+ 144 3a21 
+ 145 0ad8 ff0a 
+ 147 0b1a 05e3 "0x"
+ 149 a733 0009 if target 158
+ 151 206e 686f 00b5 Ljava/lang/StringBuilder;->append
+ 154 206e 686f 0095 Ljava/lang/StringBuilder;->append
+ 157 0c28 
+ 158 206e 686f 00b5 Ljava/lang/StringBuilder;->append
+ 161 206e 686f 0095 Ljava/lang/StringBuilder;->append
+ 164 0a1a 93bf "|"
+ 166 206e 686f 00a5 Ljava/lang/StringBuilder;->append
+ 169 07d8 0107 
+ 171 cf28 
+ 172 0722 0edf 
+ 174 1070 6866 0007 Ljava/lang/StringBuilder;-><init>
+ 177 081a 572f "getLocalConfig configs: "
+ 179 206e 686f 0087 Ljava/lang/StringBuilder;->append
+ 182 206e 686e 0057 Ljava/lang/StringBuilder;->append
+ 185 081a 0453 ", configFFCount: "
+ 187 206e 686f 0087 Ljava/lang/StringBuilder;->append
+ 190 206e 686b 0067 Ljava/lang/StringBuilder;->append
+ 193 106e 6876 0007 Ljava/lang/StringBuilder;->toString
+ 196 070c 
+ 197 2071 0a54 0072 Landroid/util/Log;->w
+ 200 021a 0000 ""
+ 202 106e 6876 0005 Ljava/lang/StringBuilder;->toString
+ 205 070c 
+ 206 206e 683f 0072 Ljava/lang/String;->equals
+ 209 020a 
+ 210 0238 0003 if target 213
+ 212 0011 
+ 213 106e 6876 0005 Ljava/lang/StringBuilder;->toString
+ 216 020c 
+ 217 071a 3bec "\\|"
+ 219 206e 6852 0072 Ljava/lang/String;->split
+ 222 000c 
+ 223 0011 
+ 224 0011 
+ 225 010d 
+ 226 0222 0ed9 
+ 228 031a 5730 "getLocalConfig.failed"
+ 230 3070 6828 0132 Ljava/lang/RuntimeException;-><init>
+ 233 106e 682b 0002 Ljava/lang/RuntimeException;->printStackTrace
+ 236 0011 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->handleAccEngineEvent code=1765980 regs=13 ins=2
+   0 106e 028c 000c Landroid/car/hardware/property/CarPropertyEvent;->getCarPropertyValue
+   3 000c 
+   4 106e 0279 0000 Landroid/car/hardware/CarPropertyValue;->getPropertyId
+   7 010a 
+   8 3212 const/4 v2 3
+   9 4312 const/4 v3 4
+  10 1412 const/4 v4 1
+  11 0512 const/4 v5 0
+  12 2612 const/4 v6 2
+  13 071a 1076 "ECarXCarConfigService"
+  15 012c 013b 0000 switch payload 330
+  18 0029 0136 
+  20 106e 027c 0000 Landroid/car/hardware/CarPropertyValue;->getValue
+  23 080c 
+  24 081f 0fb4 
+  26 b952 6ce2 Lcom/android/car/config/future/ECarXCarConfigService;->mEMSEngStatus:I
+  28 0838 001f if target 59
+  30 8a21 
+  31 3a34 001c if target 59
+  33 0348 0508 
+  35 33d5 00ff 
+  37 03e0 1803 
+  39 0448 0408 
+  41 44d5 00ff 
+  43 04e0 1004 
+  45 43b6 
+  46 0448 0608 
+  48 44d5 00ff 
+  50 04e0 0804 
+  52 43b6 
+  53 0248 0208 
+  55 22d5 00ff 
+  57 0996 0203 
+  59 b254 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+  61 106e 6ab7 0002 Ljava/util/concurrent/locks/ReentrantLock;->lock
+  64 b252 6ce2 Lcom/android/car/config/future/ECarXCarConfigService;->mEMSEngStatus:I
+  66 2932 0004 if target 70
+  68 b959 6ce2 Lcom/android/car/config/future/ECarXCarConfigService;->mEMSEngStatus:I
+  70 0222 0edf 
+  72 1070 6866 0002 Ljava/lang/StringBuilder;-><init>
+  75 031a 6ab5 "mEMSEngStatus = "
+  77 206e 686f 0032 Ljava/lang/StringBuilder;->append
+  80 b352 6ce2 Lcom/android/car/config/future/ECarXCarConfigService;->mEMSEngStatus:I
+  82 206e 686b 0032 Ljava/lang/StringBuilder;->append
+  85 106e 6876 0002 Ljava/lang/StringBuilder;->toString
+  88 020c 
+  89 2071 0a4f 0027 Landroid/util/Log;->i
+  92 0828 
+  93 020d 
+  94 031a 5c56 "handleAccEngineEvent change mEMSEngStatus fault: "
+  96 3071 0a4d 0237 Landroid/util/Log;->e
+  99 0000 
+ 100 b254 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 102 106e 6ab9 0002 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 105 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 108 0000 
+ 109 0029 00db 
+ 111 020d 
+ 112 b354 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 114 106e 6ab9 0003 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 117 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 120 0227 
+ 121 106e 027c 0000 Landroid/car/hardware/CarPropertyValue;->getValue
+ 124 080c 
+ 125 081f 0fb4 
+ 127 b952 6ce8 Lcom/android/car/config/future/ECarXCarConfigService;->mVCUePTReadyStatus:I
+ 129 0838 001f if target 160
+ 131 8a21 
+ 132 3a34 001c if target 160
+ 134 0348 0508 
+ 136 33d5 00ff 
+ 138 03e0 1803 
+ 140 0448 0408 
+ 142 44d5 00ff 
+ 144 04e0 1004 
+ 146 43b6 
+ 147 0448 0608 
+ 149 44d5 00ff 
+ 151 04e0 0804 
+ 153 43b6 
+ 154 0248 0208 
+ 156 22d5 00ff 
+ 158 0996 0203 
+ 160 b254 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 162 106e 6ab7 0002 Ljava/util/concurrent/locks/ReentrantLock;->lock
+ 165 b252 6ce8 Lcom/android/car/config/future/ECarXCarConfigService;->mVCUePTReadyStatus:I
+ 167 2932 0004 if target 171
+ 169 b959 6ce8 Lcom/android/car/config/future/ECarXCarConfigService;->mVCUePTReadyStatus:I
+ 171 0222 0edf 
+ 173 1070 6866 0002 Ljava/lang/StringBuilder;-><init>
+ 176 031a 716c "mVCUePTReadyStatus = "
+ 178 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 181 b352 6ce8 Lcom/android/car/config/future/ECarXCarConfigService;->mVCUePTReadyStatus:I
+ 183 206e 686b 0032 Ljava/lang/StringBuilder;->append
+ 186 106e 6876 0002 Ljava/lang/StringBuilder;->toString
+ 189 020c 
+ 190 2071 0a4f 0027 Landroid/util/Log;->i
+ 193 0828 
+ 194 020d 
+ 195 031a 5c58 "handleAccEngineEvent change mVCUePTReadyStatus fault: "
+ 197 3071 0a4d 0237 Landroid/util/Log;->e
+ 200 0000 
+ 201 b254 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 203 106e 6ab9 0002 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 206 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 209 0029 0077 
+ 211 020d 
+ 212 b354 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 214 106e 6ab9 0003 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 217 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 220 0227 
+ 221 106e 027c 0000 Landroid/car/hardware/CarPropertyValue;->getValue
+ 224 020c 
+ 225 021f 0fb4 
+ 227 b352 6ce3 Lcom/android/car/config/future/ECarXCarConfigService;->mEnginStatus:I
+ 229 0238 0004 if target 233
+ 231 0348 0502 
+ 233 b454 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 235 106e 6ab7 0004 Ljava/util/concurrent/locks/ReentrantLock;->lock
+ 238 b452 6ce3 Lcom/android/car/config/future/ECarXCarConfigService;->mEnginStatus:I
+ 240 4332 0004 if target 244
+ 242 b359 6ce3 Lcom/android/car/config/future/ECarXCarConfigService;->mEnginStatus:I
+ 244 0000 
+ 245 b454 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 247 106e 6ab9 0004 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 250 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 253 0928 
+ 254 040d 
+ 255 051a 5c57 "handleAccEngineEvent change mEnginStatus fault: "
+ 257 3071 0a4d 0457 Landroid/util/Log;->e
+ 260 0000 
+ 261 f028 
+ 262 4228 
+ 263 040d 
+ 264 b554 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 266 106e 6ab9 0005 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 269 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 272 0427 
+ 273 106e 027c 0000 Landroid/car/hardware/CarPropertyValue;->getValue
+ 276 020c 
+ 277 021f 0fb4 
+ 279 b352 6cdc Lcom/android/car/config/future/ECarXCarConfigService;->mAccStatus:I
+ 281 0238 0007 if target 288
+ 283 2521 
+ 284 6534 0004 if target 288
+ 286 0348 0402 
+ 288 b454 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 290 106e 6ab7 0004 Ljava/util/concurrent/locks/ReentrantLock;->lock
+ 293 b452 6cdc Lcom/android/car/config/future/ECarXCarConfigService;->mAccStatus:I
+ 295 4332 0004 if target 299
+ 297 b359 6cdc Lcom/android/car/config/future/ECarXCarConfigService;->mAccStatus:I
+ 299 0000 
+ 300 b454 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 302 106e 6ab9 0004 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 305 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 308 0928 
+ 309 040d 
+ 310 051a 5c55 "handleAccEngineEvent change mAccStatus fault: "
+ 312 3071 0a4d 0457 Landroid/util/Log;->e
+ 315 0000 
+ 316 f028 
+ 317 0b28 
+ 318 040d 
+ 319 b554 6cd9 Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineChangedLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 321 106e 6ab9 0005 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 324 1070 3219 000b Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay
+ 327 0427 
+ 328 000e 
+ 329 0000 
+ 330 0200 0004 0014 2870 002f 2870 0045 2970 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->handleSupportPropertyEvent code=1766780 regs=10 ins=2
+   0 001a 05a5 "/"
+   2 011a 1076 "ECarXCarConfigService"
+   4 0939 0008 if target 12
+   6 001a 5d06 "handlePropertyEvent: event == null"
+   8 2071 0a4c 0001 Landroid/util/Log;->e
+  11 000e 
+  12 106e 028c 0009 Landroid/car/hardware/property/CarPropertyEvent;->getCarPropertyValue
+  15 020c 
+  16 106e 0279 0002 Landroid/car/hardware/CarPropertyValue;->getPropertyId
+  19 030a 
+  20 106e 0278 0002 Landroid/car/hardware/CarPropertyValue;->getAreaId
+  23 040a 
+  24 2070 321c 0098 Lcom/android/car/config/future/ECarXCarConfigService;->preprocessEvent
+  27 8554 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+  29 106e 6ab7 0005 Ljava/util/concurrent/locks/ReentrantLock;->lock
+  32 1071 3214 0003 Lcom/android/car/config/future/ECarXCarConfigService;->isMultipleAreaIds
+  35 050a 
+  36 0538 0058 if target 124
+  38 8554 6cdd Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventAreaIdSpas:Landroid/util/SparseArray;
+  40 206e 0a80 0035 Landroid/util/SparseArray;->get
+  43 050c 
+  44 051f 030d 
+  46 0539 000d if target 59
+  48 0622 030d 
+  50 1070 0a79 0006 Landroid/util/SparseArray;-><init>
+  53 6507 
+  54 8654 6cdd Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventAreaIdSpas:Landroid/util/SparseArray;
+  56 306e 0a84 0536 Landroid/util/SparseArray;->put
+  59 306e 0a84 0945 Landroid/util/SparseArray;->put
+  62 0622 0edf 
+  64 1070 6866 0006 Ljava/lang/StringBuilder;-><init>
+  67 071a 5d3d "handleSupportPropertyEvent: propertyId: "
+  69 206e 686f 0076 Ljava/lang/StringBuilder;->append
+  72 1071 061e 0003 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  75 070c 
+  76 206e 686f 0076 Ljava/lang/StringBuilder;->append
+  79 206e 686f 0006 Ljava/lang/StringBuilder;->append
+  82 206e 686b 0036 Ljava/lang/StringBuilder;->append
+  85 071a 0438 ", areaId: "
+  87 206e 686f 0076 Ljava/lang/StringBuilder;->append
+  90 1071 061a 0004 Landroid/hardware/automotive/vehicle/V2_0/VehicleArea;->toString
+  93 070c 
+  94 206e 686f 0076 Ljava/lang/StringBuilder;->append
+  97 206e 686f 0006 Ljava/lang/StringBuilder;->append
+ 100 206e 686b 0046 Ljava/lang/StringBuilder;->append
+ 103 001a 044d ", carPropertyEventSpa: "
+ 105 206e 686f 0006 Ljava/lang/StringBuilder;->append
+ 108 106e 0a89 0005 Landroid/util/SparseArray;->size
+ 111 000a 
+ 112 206e 686b 0006 Ljava/lang/StringBuilder;->append
+ 115 106e 6876 0006 Ljava/lang/StringBuilder;->toString
+ 118 000c 
+ 119 2071 0a54 0001 Landroid/util/Log;->w
+ 122 0000 
+ 123 0628 
+ 124 8054 6cde Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpas:Landroid/util/SparseArray;
+ 126 306e 0a84 0930 Landroid/util/SparseArray;->put
+ 129 0000 
+ 130 8054 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 132 106e 6ab9 0000 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 135 0928 
+ 136 000d 
+ 137 051a 5d3c "handleSupportPropertyEvent fault: "
+ 139 3071 0a4d 0051 Landroid/util/Log;->e
+ 142 0000 
+ 143 f328 
+ 144 000e 
+ 145 000d 
+ 146 8154 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 148 106e 6ab9 0001 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 151 0027 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->initWorkHandler code=1763680 regs=3 ins=0
+   0 0022 0291 
+   2 011a 1076 "ECarXCarConfigService"
+   4 2070 0891 0010 Landroid/os/HandlerThread;-><init>
+   7 1112 const/4 v1 1
+   8 206e 0898 0010 Landroid/os/HandlerThread;->setDaemon
+  11 0162 6c5a Lcom/android/car/config/future/-$$Lambda$ECarXCarConfigService$CJXUjGO29XKJMIyEzuMpcbhiuig;->INSTANCE:Lcom/android/car/config/future/-$$Lambda$ECarXCarConfigService$CJXUjGO29XKJMIyEzuMpcbhiuig;
+  13 206e 089a 0010 Landroid/os/HandlerThread;->setUncaughtExceptionHandler
+  16 106e 089b 0000 Landroid/os/HandlerThread;->start
+  19 0122 028f 
+  21 106e 0893 0000 Landroid/os/HandlerThread;->getLooper
+  24 020c 
+  25 2070 087c 0021 Landroid/os/Handler;-><init>
+  28 0111 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->isMultipleAreaIds code=1764040 regs=6 ins=1
+   0 0062 6cd7 Lcom/android/car/config/future/ECarXCarConfigService;->MULTIPLE_AREA_IDS_PROPS:[I
+   2 0121 
+   3 0212 const/4 v2 0
+   4 2301 
+   5 1335 000b if target 16
+   7 0444 0300 
+   9 4533 0004 if target 13
+  11 1012 const/4 v0 1
+  12 000f 
+  13 03d8 0103 
+  15 f628 
+  16 020f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->lambda$MLC3JPAt5pteNb6O9gC0uu0Plog code=1767168 regs=1 ins=1
+   0 1070 321a 0000 Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChanged
+   3 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->lambda$initWorkHandler$0 code=1767428 regs=4 ins=2
+   0 0022 0edf 
+   2 1070 6866 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a 8810 "setUncaughtExceptionHandler: thd="
+   7 206e 686f 0010 Ljava/lang/StringBuilder;->append
+  10 206e 686e 0020 Ljava/lang/StringBuilder;->append
+  13 106e 6876 0000 Ljava/lang/StringBuilder;->toString
+  16 000c 
+  17 011a 1076 "ECarXCarConfigService"
+  19 3071 0a4d 0301 Landroid/util/Log;->e
+  22 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChangeDelay code=1767492 regs=5 ins=1
+   0 4054 6ce9 Lcom/android/car/config/future/ECarXCarConfigService;->mWorkHandler:Landroid/os/Handler;
+   2 4154 6cdb Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineTask:Lcom/android/car/config/future/ECarXCarConfigService$ConfTask;
+   4 206e 0889 0010 Landroid/os/Handler;->removeCallbacks
+   7 4054 6ce9 Lcom/android/car/config/future/ECarXCarConfigService;->mWorkHandler:Landroid/os/Handler;
+   9 4154 6cdb Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineTask:Lcom/android/car/config/future/ECarXCarConfigService$ConfTask;
+  11 0216 01f4 const/16 500
+  13 406e 0887 3210 Landroid/os/Handler;->postDelayed
+  16 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->notifyAllStatusChanged code=1767544 regs=9 ins=1
+   0 001a 1076 "ECarXCarConfigService"
+   2 0122 0f47 
+   4 1070 69d5 0001 Ljava/util/LinkedList;-><init>
+   7 8254 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+   9 106e 6ab7 0002 Ljava/util/concurrent/locks/ReentrantLock;->lock
+  12 0212 const/4 v2 0
+  13 0312 const/4 v3 0
+  14 8454 6cde Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpas:Landroid/util/SparseArray;
+  16 3070 321d 0148 Lcom/android/car/config/future/ECarXCarConfigService;->processSparseArray
+  19 0e28 
+  20 040d 
+  21 051a 75db "notifyAllStatusChanged 1 -> 1 fault: "
+  23 3071 0a4d 0450 Landroid/util/Log;->e
+  26 8552 6ce5 Lcom/android/car/config/future/ECarXCarConfigService;->mNotifyAllErrorCount:I
+  28 05d8 0105 
+  30 8559 6ce5 Lcom/android/car/config/future/ECarXCarConfigService;->mNotifyAllErrorCount:I
+  32 1212 const/4 v2 1
+  33 0412 const/4 v4 0
+  34 8554 6cdd Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventAreaIdSpas:Landroid/util/SparseArray;
+  36 106e 0a89 0005 Landroid/util/SparseArray;->size
+  39 050a 
+  40 5435 0018 if target 64
+  42 8554 6cdd Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventAreaIdSpas:Landroid/util/SparseArray;
+  44 206e 0a8b 0045 Landroid/util/SparseArray;->valueAt
+  47 050c 
+  48 051f 030d 
+  50 0539 0008 if target 58
+  52 061a 75df "notifyAllStatusChanged: carPropertyAreaIdSpa == null"
+  54 2071 0a4c 0060 Landroid/util/Log;->e
+  57 0428 
+  58 3070 321d 0158 Lcom/android/car/config/future/ECarXCarConfigService;->processSparseArray
+  61 04d8 0104 
+  63 e328 
+  64 0e28 
+  65 040d 
+  66 051a 75dc "notifyAllStatusChanged 1 -> many fault: "
+  68 3071 0a4d 0450 Landroid/util/Log;->e
+  71 8552 6ce5 Lcom/android/car/config/future/ECarXCarConfigService;->mNotifyAllErrorCount:I
+  73 05d8 0105 
+  75 8559 6ce5 Lcom/android/car/config/future/ECarXCarConfigService;->mNotifyAllErrorCount:I
+  77 1212 const/4 v2 1
+  78 8452 6ce5 Lcom/android/car/config/future/ECarXCarConfigService;->mNotifyAllErrorCount:I
+  80 6512 const/4 v5 6
+  81 5434 0011 if target 98
+  83 041a 75dd "notifyAllStatusChanged failed: "
+  85 0522 0ed9 
+  87 061a 2e0c "Out of 6 Errors"
+  89 2070 6827 0065 Ljava/lang/RuntimeException;-><init>
+  92 3071 0a4d 0540 Landroid/util/Log;->e
+  95 1071 6879 0003 Ljava/lang/System;->exit
+  98 0238 0018 if target 122
+ 100 8454 6ce9 Lcom/android/car/config/future/ECarXCarConfigService;->mWorkHandler:Landroid/os/Handler;
+ 102 0522 0730 
+ 104 2070 31e2 0085 Lcom/android/car/config/future/-$$Lambda$ECarXCarConfigService$MLC3JPAt5pteNb6O9gC0uu0Plog;-><init>
+ 107 0616 0064 const/16 100
+ 109 406e 0887 7654 Landroid/os/Handler;->postDelayed
+ 112 0a28 
+ 113 020d 
+ 114 041a 75de "notifyAllStatusChanged fault: "
+ 116 3071 0a4d 0240 Landroid/util/Log;->e
+ 119 1071 6879 0003 Ljava/lang/System;->exit
+ 122 8254 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 124 106e 6ab9 0002 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 127 0000 
+ 128 8254 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+ 130 206e 17b4 0012 Lcom/android/car/CarPropertyService;->onPropertyChange
+ 133 0222 0edf 
+ 135 1070 6866 0002 Ljava/lang/StringBuilder;-><init>
+ 138 031a 5c54 "handleAccEngineEvent > notifyAllStatusChanged "
+ 140 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 143 106e 69e3 0001 Ljava/util/LinkedList;->size
+ 146 030a 
+ 147 206e 686b 0032 Ljava/lang/StringBuilder;->append
+ 150 031a 026b " successfully..."
+ 152 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 155 106e 6876 0002 Ljava/lang/StringBuilder;->toString
+ 158 020c 
+ 159 2071 0a54 0020 Landroid/util/Log;->w
+ 162 000e 
+ 163 000d 
+ 164 8254 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 166 106e 6ab9 0002 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 169 0027 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->notifyStatusChanged code=1767952 regs=8 ins=2
+   0 001a 1076 "ECarXCarConfigService"
+   2 0122 0f47 
+   4 1070 69d5 0001 Ljava/util/LinkedList;-><init>
+   7 6254 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+   9 106e 6ab7 0002 Ljava/util/concurrent/locks/ReentrantLock;->lock
+  12 6254 6cde Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpas:Landroid/util/SparseArray;
+  14 206e 0a80 0072 Landroid/util/SparseArray;->get
+  17 020c 
+  18 021f 00d7 
+  20 031a 75fe "notifyStatusChanged, propId: "
+  22 0239 001e if target 52
+  24 0422 0edf 
+  26 1070 6866 0004 Ljava/lang/StringBuilder;-><init>
+  29 206e 686f 0034 Ljava/lang/StringBuilder;->append
+  32 1071 061e 0007 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  35 050c 
+  36 206e 686f 0054 Ljava/lang/StringBuilder;->append
+  39 051a 0469 ", event == null, IGNORE"
+  41 206e 686f 0054 Ljava/lang/StringBuilder;->append
+  44 106e 6876 0004 Ljava/lang/StringBuilder;->toString
+  47 040c 
+  48 2071 0a4c 0040 Landroid/util/Log;->e
+  51 0428 
+  52 206e 69d6 0021 Ljava/util/LinkedList;->add
+  55 6254 6cdd Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventAreaIdSpas:Landroid/util/SparseArray;
+  57 206e 0a80 0072 Landroid/util/SparseArray;->get
+  60 020c 
+  61 021f 030d 
+  63 0239 001e if target 93
+  65 0422 0edf 
+  67 1070 6866 0004 Ljava/lang/StringBuilder;-><init>
+  70 206e 686f 0034 Ljava/lang/StringBuilder;->append
+  73 1071 061e 0007 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  76 030c 
+  77 206e 686f 0034 Ljava/lang/StringBuilder;->append
+  80 031a 044c ", carPropertyAreaIdSpa == null, IGNORE"
+  82 206e 686f 0034 Ljava/lang/StringBuilder;->append
+  85 106e 6876 0004 Ljava/lang/StringBuilder;->toString
+  88 030c 
+  89 2071 0a4c 0030 Landroid/util/Log;->e
+  92 0428 
+  93 3070 321d 0126 Lcom/android/car/config/future/ECarXCarConfigService;->processSparseArray
+  96 0828 
+  97 020d 
+  98 031a 75fd "notifyStatusChanged fault: "
+ 100 3071 0a4d 0230 Landroid/util/Log;->e
+ 103 0000 
+ 104 6254 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 106 106e 6ab9 0002 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 109 0000 
+ 110 6254 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+ 112 206e 17b4 0012 Lcom/android/car/CarPropertyService;->onPropertyChange
+ 115 0222 0edf 
+ 117 1070 6866 0002 Ljava/lang/StringBuilder;-><init>
+ 120 031a 75fc "notifyStatusChanged "
+ 122 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 125 106e 69e3 0001 Ljava/util/LinkedList;->size
+ 128 030a 
+ 129 206e 686b 0032 Ljava/lang/StringBuilder;->append
+ 132 031a 026c " successfully... for propId("
+ 134 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 137 1071 061e 0007 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+ 140 030c 
+ 141 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 144 031a 05a5 "/"
+ 146 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 149 206e 686b 0072 Ljava/lang/StringBuilder;->append
+ 152 031a 0386 ")"
+ 154 206e 686f 0032 Ljava/lang/StringBuilder;->append
+ 157 106e 6876 0002 Ljava/lang/StringBuilder;->toString
+ 160 020c 
+ 161 2071 0a54 0020 Landroid/util/Log;->w
+ 164 000e 
+ 165 000d 
+ 166 6254 6cdf Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyEventSpasLock:Ljava/util/concurrent/locks/ReentrantLock;
+ 168 106e 6ab9 0002 Ljava/util/concurrent/locks/ReentrantLock;->unlock
+ 171 0027 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->preprocessEvent code=1768344 regs=10 ins=2
+   0 001a 1076 "ECarXCarConfigService"
+   2 0939 000f if target 17
+   4 0122 0ed9 
+   6 021a 5004 "event == null"
+   8 2070 6827 0021 Ljava/lang/RuntimeException;-><init>
+  11 021a 7c55 "preprocessEvent fault: event == null "
+  13 3071 0a4d 0120 Landroid/util/Log;->e
+  16 000e 
+  17 106e 028c 0009 Landroid/car/hardware/property/CarPropertyEvent;->getCarPropertyValue
+  20 010c 
+  21 106e 0279 0001 Landroid/car/hardware/CarPropertyValue;->getPropertyId
+  24 020a 
+  25 106e 0278 0001 Landroid/car/hardware/CarPropertyValue;->getAreaId
+  28 030a 
+  29 0412 const/4 v4 0
+  30 406e 3210 4328 Lcom/android/car/config/future/ECarXCarConfigService;->isConfigFunctionSupported
+  33 040a 
+  34 1071 3222 0004 Lcom/android/car/config/future/ECarXCarConfigService;->switchConfStatus
+  37 040a 
+  38 206e 027d 0041 Landroid/car/hardware/CarPropertyValue;->setStatus
+  41 1071 3214 0002 Lcom/android/car/config/future/ECarXCarConfigService;->isMultipleAreaIds
+  44 050a 
+  45 0538 0034 if target 97
+  47 0522 0edf 
+  49 1070 6866 0005 Ljava/lang/StringBuilder;-><init>
+  52 061a 7c56 "preprocessEvent: propId: "
+  54 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  57 1071 061e 0002 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  60 060c 
+  61 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  64 061a 05a5 "/"
+  66 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  69 206e 686b 0025 Ljava/lang/StringBuilder;->append
+  72 071a 0438 ", areaId: "
+  74 206e 686f 0075 Ljava/lang/StringBuilder;->append
+  77 1071 061a 0003 Landroid/hardware/automotive/vehicle/V2_0/VehicleArea;->toString
+  80 070c 
+  81 206e 686f 0075 Ljava/lang/StringBuilder;->append
+  84 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  87 206e 686b 0035 Ljava/lang/StringBuilder;->append
+  90 106e 6876 0005 Ljava/lang/StringBuilder;->toString
+  93 050c 
+  94 2071 0a54 0050 Landroid/util/Log;->w
+  97 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->processSparseArray code=1768556 regs=8 ins=3
+   0 0012 const/4 v0 0
+   1 106e 0a89 0006 Landroid/util/SparseArray;->size
+   4 010a 
+   5 1035 0022 if target 39
+   7 206e 0a8b 0006 Landroid/util/SparseArray;->valueAt
+  10 010c 
+  11 011f 00d7 
+  13 0139 0011 if target 30
+  15 0222 0ed9 
+  17 031a 5004 "event == null"
+  19 2070 6827 0032 Ljava/lang/RuntimeException;-><init>
+  22 031a 1076 "ECarXCarConfigService"
+  24 041a 7cba "processSparseArray: event == null"
+  26 3071 0a4d 0243 Landroid/util/Log;->e
+  29 0728 
+  30 2070 321c 0015 Lcom/android/car/config/future/ECarXCarConfigService;->preprocessEvent
+  33 2072 69e6 0017 Ljava/util/List;->add
+  36 00d8 0100 
+  38 db28 
+  39 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->resetLocalConfigFromSystemProp code=1764160 regs=7 ins=2
+   0 0012 const/4 v0 0
+   1 0638 004d if target 78
+   3 6121 
+   4 0139 0003 if target 7
+   6 4828 
+   7 0112 const/4 v1 0
+   8 6221 
+   9 0301 
+  10 2335 000b if target 21
+  12 0448 0306 
+  14 0439 0004 if target 18
+  16 01d8 0101 
+  18 03d8 0103 
+  20 f628 
+  21 6221 
+  22 2133 0037 if target 77
+  24 021a 8c25 "sys.ecarx.local_config"
+  26 1071 091a 0002 Landroid/os/SystemProperties;->get
+  29 020c 
+  30 0238 002f if target 77
+  32 031a 0000 ""
+  34 206e 683f 0023 Ljava/lang/String;->equals
+  37 030a 
+  38 0339 0027 if target 77
+  40 106e 684c 0002 Ljava/lang/String;->length
+  43 030a 
+  44 6421 
+  45 04da 0204 
+  47 4333 001e if target 77
+  49 0012 const/4 v0 0
+  50 6321 
+  51 3035 0018 if target 75
+  53 03da 0200 
+  55 04da 0200 
+  57 04d8 0204 
+  59 306e 6855 0432 Ljava/lang/String;->substring
+  62 030c 
+  63 0413 0010 const/16 16
+  65 2071 67e4 0043 Ljava/lang/Integer;->parseInt
+  68 030a 
+  69 338d 
+  70 034f 0006 
+  72 00d8 0100 
+  74 e828 
+  75 1012 const/4 v0 1
+  76 000f 
+  77 000f 
+  78 011a 1076 "ECarXCarConfigService"
+  80 021a 5741 "getLocalConfig_sys_prop: localConfig is null or length is 0"
+  82 2071 0a4c 0021 Landroid/util/Log;->e
+  85 000f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->retryGetLocalCfg code=1764348 regs=9 ins=2
+   0 8007 
+   1 0113 0028 const/16 40
+   3 021a 1076 "ECarXCarConfigService"
+   5 0038 000d if target 18
+   7 0321 
+   8 1334 000a if target 18
+  10 031a 8102 "retryGetLocalCfg: retryLocalCfgSrc != null && retryLocalCfgSrc.length >= 40, perfectly"
+  12 2071 0a4f 0032 Landroid/util/Log;->i
+  15 0011 
+  16 000d 
+  17 6428 
+  18 0312 const/4 v3 0
+  19 0413 0014 const/16 20
+  21 4335 0056 if target 107
+  23 0416 00fa const/16 250
+  25 2071 688a 0054 Ljava/lang/Thread;->sleep
+  28 7454 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  30 0514 0370 2870 const 678429552 / 0x28700370
+  33 0612 const/4 v6 0
+  34 306e 17ac 0654 Lcom/android/car/CarPropertyService;->getProperty
+  37 040c 
+  38 0439 001c if target 66
+  40 0522 0edf 
+  42 1070 6866 0005 Ljava/lang/StringBuilder;-><init>
+  45 061a 8104 "retryGetLocalCfg: retryPropertyValue is null, continue["
+  47 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  50 206e 686b 0035 Ljava/lang/StringBuilder;->append
+  53 061a 3bf8 "] next"
+  55 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  58 106e 6876 0005 Ljava/lang/StringBuilder;->toString
+  61 050c 
+  62 2071 0a4c 0052 Landroid/util/Log;->e
+  65 2728 
+  66 106e 027c 0004 Landroid/car/hardware/CarPropertyValue;->getValue
+  69 050c 
+  70 051f 0fb4 
+  72 5007 
+  73 0038 001f if target 104
+  75 0521 
+  76 1534 001c if target 104
+  78 0522 0edf 
+  80 1070 6866 0005 Ljava/lang/StringBuilder;-><init>
+  83 061a 8103 "retryGetLocalCfg: retryLocalCfgSrc != null && retryLocalCfgSrc.length >= 40, perfectly get on ["
+  85 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  88 206e 686b 0035 Ljava/lang/StringBuilder;->append
+  91 061a 3bed "]"
+  93 206e 686f 0065 Ljava/lang/StringBuilder;->append
+  96 106e 6876 0005 Ljava/lang/StringBuilder;->toString
+  99 050c 
+ 100 2071 0a4f 0052 Landroid/util/Log;->i
+ 103 0428 
+ 104 03d8 0103 
+ 106 a928 
+ 107 0039 0012 if target 125
+ 109 031a 8101 "retryGetLocalCfg: finally retryLocalCfgSrc == null"
+ 111 2071 0a4c 0032 Landroid/util/Log;->e
+ 114 1123 0fb4 
+ 116 0111 
+ 117 031a 8100 "retryGetLocalCfg.failed"
+ 119 3071 0a4d 0032 Landroid/util/Log;->e
+ 122 1123 0fb4 
+ 124 0111 
+ 125 0011 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->switchConfStatus code=1764796 regs=3 ins=1
+   0 0238 0015 if target 21
+   2 1012 const/4 v0 1
+   3 0232 0010 if target 19
+   5 2012 const/4 v0 2
+   6 0232 000b if target 17
+   8 001a 1076 "ECarXCarConfigService"
+  10 011a 8bde "switchConfStatus: default, mStatus = 3;"
+  12 2071 0a4c 0010 Landroid/util/Log;->e
+  15 3012 const/4 v0 3
+  16 0728 
+  17 3012 const/4 v0 3
+  18 0528 
+  19 1012 const/4 v0 1
+  20 0328 
+  21 0012 const/4 v0 0
+  22 0000 
+  23 000f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->dump code=1765960 regs=2 ins=2
+   0 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->getConfigSupportedFunctionValue code=1764860 regs=5 ins=2
+   0 0022 0ed9 
+   2 011a 2d79 "Not Impl"
+   4 2070 6827 0010 Ljava/lang/RuntimeException;-><init>
+   7 011a 1076 "ECarXCarConfigService"
+   9 021a 548c "getConfigSupportedFunctionValue: "
+  11 3071 0a4d 0021 Landroid/util/Log;->e
+  14 0013 0014 const/16 20
+  16 0023 0fb8 
+  18 0011 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->getInfoFromConfigFile code=1764628 regs=5 ins=2
+   0 3054 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   2 106e 6ab3 0000 Ljava/util/concurrent/atomic/AtomicReference;->get
+   5 000c 
+   6 001f 0732 
+   8 0039 000b if target 19
+  10 011a 1076 "ECarXCarConfigService"
+  12 021a 5679 "getInfoFromConfigFile: propertyStatusMap == null, IGNORE"
+  14 2071 0a4c 0021 Landroid/util/Log;->e
+  17 f112 const/4 v1 -1
+  18 010f 
+  19 106e 31e9 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getLocalConfigExcel
+  22 010c 
+  23 2071 31f1 0041 Lcom/android/car/config/future/CmdGetConf;->getInfoFromConfigFile
+  26 010a 
+  27 010f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->init code=1767124 regs=3 ins=1
+   0 0022 0ee3 
+   2 0122 0731 
+   4 2070 31e4 0021 Lcom/android/car/config/future/-$$Lambda$ECarXCarConfigService$RgAhnANLpe4Csuerpfvb0kOOn-A;-><init>
+   7 2070 687d 0010 Ljava/lang/Thread;-><init>
+  10 106e 688b 0000 Ljava/lang/Thread;->start
+  13 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->isAmplifierConfig code=1763756 regs=6 ins=1
+   0 5054 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   2 106e 6ab3 0000 Ljava/util/concurrent/atomic/AtomicReference;->get
+   5 000c 
+   6 001f 0732 
+   8 0112 const/4 v1 0
+   9 0039 0003 if target 12
+  11 010f 
+  12 106e 31e9 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getLocalConfigExcel
+  15 020c 
+  16 1312 const/4 v3 1
+  17 0238 0009 if target 26
+  19 106e 3231 0002 Lcom/android/car/config/future/LocalConfigExcel;->getAmplifierConfig
+  22 040a 
+  23 3437 0003 if target 26
+  25 3101 
+  26 010f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->isConfigFunctionSupported code=1764700 regs=14 ins=4
+   0 a054 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   2 106e 6ab3 0000 Ljava/util/concurrent/atomic/AtomicReference;->get
+   5 000c 
+   6 001f 0732 
+   8 0039 000b if target 19
+  10 011a 1076 "ECarXCarConfigService"
+  12 021a 61ce "isConfigFunctionSupported: propertyStatusMap == null, IGNORE"
+  14 2071 0a4c 0021 Landroid/util/Log;->e
+  17 2112 const/4 v1 2
+  18 010f 
+  19 a552 6cdc Lcom/android/car/config/future/ECarXCarConfigService;->mAccStatus:I
+  21 0112 const/4 v1 0
+  22 a159 6ce3 Lcom/android/car/config/future/ECarXCarConfigService;->mEnginStatus:I
+  24 f712 const/4 v7 -1
+  25 a852 6ce8 Lcom/android/car/config/future/ECarXCarConfigService;->mVCUePTReadyStatus:I
+  27 a952 6ce2 Lcom/android/car/config/future/ECarXCarConfigService;->mEMSEngStatus:I
+  29 0612 const/4 v6 0
+  30 0107 
+  31 b201 
+  32 c301 
+  33 d401 
+  34 0974 31ef 0001 Lcom/android/car/config/future/CarPropertyStatusMap;->mapConfigStatus
+  37 010a 
+  38 010f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->isDtsEffectModeSupported code=1763828 regs=5 ins=1
+   0 4054 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   2 106e 6ab3 0000 Ljava/util/concurrent/atomic/AtomicReference;->get
+   5 000c 
+   6 001f 0732 
+   8 0112 const/4 v1 0
+   9 0039 0003 if target 12
+  11 010f 
+  12 106e 31e9 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getLocalConfigExcel
+  15 020c 
+  16 0238 0009 if target 25
+  18 106e 3236 0002 Lcom/android/car/config/future/LocalConfigExcel;->getDTSSoundEffects
+  21 030a 
+  22 0338 0003 if target 25
+  24 1112 const/4 v1 1
+  25 010f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->isLowSpeedDrivingAudioSourceSupported code=1763896 regs=6 ins=1
+   0 5054 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   2 106e 6ab3 0000 Ljava/util/concurrent/atomic/AtomicReference;->get
+   5 000c 
+   6 001f 0732 
+   8 0112 const/4 v1 0
+   9 0039 0003 if target 12
+  11 010f 
+  12 106e 31e9 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getLocalConfigExcel
+  15 020c 
+  16 1312 const/4 v3 1
+  17 0238 0009 if target 26
+  19 106e 3265 0002 Lcom/android/car/config/future/LocalConfigExcel;->getLowSpeedAlarmSourceSettings
+  22 040a 
+  23 3434 0003 if target 26
+  25 3101 
+  26 010f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->isLowSpeedDrivingToneSupported code=1763968 regs=6 ins=1
+   0 5054 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   2 106e 6ab3 0000 Ljava/util/concurrent/atomic/AtomicReference;->get
+   5 000c 
+   6 001f 0732 
+   8 0112 const/4 v1 0
+   9 0039 0003 if target 12
+  11 010f 
+  12 106e 31e9 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getLocalConfigExcel
+  15 020c 
+  16 1312 const/4 v3 1
+  17 0238 0009 if target 26
+  19 106e 3264 0002 Lcom/android/car/config/future/LocalConfigExcel;->getLowSpeedAlarmLevelSettings
+  22 040a 
+  23 3434 0003 if target 26
+  25 3101 
+  26 010f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->isRadarBeepSupported code=1764092 regs=5 ins=1
+   0 4054 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   2 106e 6ab3 0000 Ljava/util/concurrent/atomic/AtomicReference;->get
+   5 000c 
+   6 001f 0732 
+   8 0112 const/4 v1 0
+   9 0039 0003 if target 12
+  11 010f 
+  12 106e 31e9 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getLocalConfigExcel
+  15 020c 
+  16 0238 0009 if target 25
+  18 106e 3286 0002 Lcom/android/car/config/future/LocalConfigExcel;->isRadarBeepSupported
+  21 030a 
+  22 0338 0003 if target 25
+  24 1112 const/4 v1 1
+  25 010f 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->lambda$init$1$ECarXCarConfigService code=1767192 regs=11 ins=1
+   0 001a 05e7 "1"
+   2 1070 320a 000a Lcom/android/car/config/future/ECarXCarConfigService;->getLocalConfig
+   5 010c 
+   6 a254 6ce0 Lcom/android/car/config/future/ECarXCarConfigService;->mCarPropertyStatusMap:Ljava/util/concurrent/atomic/AtomicReference;
+   8 0322 0732 
+  10 a454 6ce4 Lcom/android/car/config/future/ECarXCarConfigService;->mNonConfigurationWordOpt:Lcom/android/car/config/future/ECarXCarConfigService$NonConfigurationWordOpt;
+  12 3070 31e7 0413 Lcom/android/car/config/future/CarPropertyStatusMap;-><init>
+  15 206e 6ab4 0032 Ljava/util/concurrent/atomic/AtomicReference;->set
+  18 a254 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  20 0269 6c80 Lcom/android/car/config/future/CarPropertyStatusMap;->mPropertyService:Lcom/android/car/CarPropertyService;
+  22 0262 6cd0 Lcom/android/car/config/future/ECarXCarConfigService$NonConfigurationWordOpt;->PROPS:[I
+  24 2321 
+  25 0412 const/4 v4 0
+  26 4501 
+  27 0612 const/4 v6 0
+  28 3535 000e if target 42
+  30 0744 0502 
+  32 a854 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  34 a954 6ce4 Lcom/android/car/config/future/ECarXCarConfigService;->mNonConfigurationWordOpt:Lcom/android/car/config/future/ECarXCarConfigService$NonConfigurationWordOpt;
+  36 406e 17b6 9678 Lcom/android/car/CarPropertyService;->registerListener
+  39 05d8 0105 
+  41 f228 
+  42 0071 31ed 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getSupportedProperties
+  45 020c 
+  46 2321 
+  47 4501 
+  48 3535 000e if target 62
+  50 0744 0502 
+  52 a854 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  54 a954 6ce7 Lcom/android/car/config/future/ECarXCarConfigService;->mSupportPropertyEventListener:Landroid/car/hardware/property/ICarPropertyEventListener$Stub;
+  56 406e 17b6 9678 Lcom/android/car/CarPropertyService;->registerListener
+  59 05d8 0105 
+  61 f328 
+  62 0262 6cd4 Lcom/android/car/config/future/ECarXCarConfigService;->ACC_ENGINE_PROPS:[I
+  64 2321 
+  65 3435 000e if target 79
+  67 0544 0402 
+  69 a754 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  71 a854 6cda Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineEventListener:Landroid/car/hardware/property/ICarPropertyEventListener$Stub;
+  73 406e 17b6 8657 Lcom/android/car/CarPropertyService;->registerListener
+  76 04d8 0104 
+  78 f328 
+  79 021a 7b2c "persist.sys.vehicle.BOOK_TRIP"
+  81 2071 091f 0002 Landroid/os/SystemProperties;->set
+  84 021a 7b2b "persist.sys.vehicle.BOOK_CHARGING"
+  86 2071 091f 0002 Landroid/os/SystemProperties;->set
+  89 0b28 
+  90 000d 
+  91 106e 67c8 0000 Ljava/lang/Exception;->toString
+  94 010c 
+  95 021a 1076 "ECarXCarConfigService"
+  97 2071 0a4c 0012 Landroid/util/Log;->e
+ 100 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->registerCarConfigCallback code=1768652 regs=6 ins=3
+   0 0022 0ed9 
+   2 011a 2d79 "Not Impl"
+   4 2070 6827 0010 Ljava/lang/RuntimeException;-><init>
+   7 011a 1076 "ECarXCarConfigService"
+   9 021a 7efe "registerCarConfigCallback: "
+  11 3071 0a4d 0021 Landroid/util/Log;->e
+  14 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->release code=1768700 regs=8 ins=1
+   0 0062 6cd0 Lcom/android/car/config/future/ECarXCarConfigService$NonConfigurationWordOpt;->PROPS:[I
+   2 0121 
+   3 0212 const/4 v2 0
+   4 2301 
+   5 1335 000e if target 19
+   7 0444 0300 
+   9 7554 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  11 7654 6ce4 Lcom/android/car/config/future/ECarXCarConfigService;->mNonConfigurationWordOpt:Lcom/android/car/config/future/ECarXCarConfigService$NonConfigurationWordOpt;
+  13 306e 17bb 0645 Lcom/android/car/CarPropertyService;->unregisterListener
+  16 03d8 0103 
+  18 f328 
+  19 0071 31ed 0000 Lcom/android/car/config/future/CarPropertyStatusMap;->getSupportedProperties
+  22 000c 
+  23 0121 
+  24 2301 
+  25 1335 000e if target 39
+  27 0444 0300 
+  29 7554 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  31 7654 6ce7 Lcom/android/car/config/future/ECarXCarConfigService;->mSupportPropertyEventListener:Landroid/car/hardware/property/ICarPropertyEventListener$Stub;
+  33 306e 17bb 0645 Lcom/android/car/CarPropertyService;->unregisterListener
+  36 03d8 0103 
+  38 f328 
+  39 0062 6cd4 Lcom/android/car/config/future/ECarXCarConfigService;->ACC_ENGINE_PROPS:[I
+  41 0121 
+  42 1235 000e if target 56
+  44 0344 0200 
+  46 7454 6ce6 Lcom/android/car/config/future/ECarXCarConfigService;->mPropertyService:Lcom/android/car/CarPropertyService;
+  48 7554 6cda Lcom/android/car/config/future/ECarXCarConfigService;->mAccEngineEventListener:Landroid/car/hardware/property/ICarPropertyEventListener$Stub;
+  50 306e 17bb 0534 Lcom/android/car/CarPropertyService;->unregisterListener
+  53 02d8 0102 
+  55 f328 
+  56 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->unregisterCarConfigCallback code=1768832 regs=5 ins=2
+   0 0022 0ed9 
+   2 011a 2d79 "Not Impl"
+   4 2070 6827 0010 Ljava/lang/RuntimeException;-><init>
+   7 011a 1076 "ECarXCarConfigService"
+   9 021a 8f0d "unregisterCarConfigCallback: "
+  11 3071 0a4d 0021 Landroid/util/Log;->e
+  14 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->updateMediaStatus code=1768880 regs=5 ins=2
+   0 0022 0ed9 
+   2 011a 2d79 "Not Impl"
+   4 2070 6827 0010 Ljava/lang/RuntimeException;-><init>
+   7 011a 1076 "ECarXCarConfigService"
+   9 021a 8faf "updateMediaStatus: "
+  11 3071 0a4d 0021 Landroid/util/Log;->e
+  14 000e 
+
+METHOD Lcom/android/car/config/future/ECarXCarConfigService;->updatePhoneStatus code=1768928 regs=5 ins=2
+   0 0022 0ed9 
+   2 011a 2d79 "Not Impl"
+   4 2070 6827 0010 Ljava/lang/RuntimeException;-><init>
+   7 011a 1076 "ECarXCarConfigService"
+   9 021a 8fc0 "updatePhoneStatus: "
+  11 3071 0a4d 0021 Landroid/util/Log;->e
+  14 000e 

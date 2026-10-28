@@ -1,0 +1,2564 @@
+
+METHOD Lcom/ecarx/xupgrade/OTAZipHelper;->copyMcuZipByMpuZip code=3181272 regs=13 ins=2
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a 1db9 "LOTTIE--copyMcuZipByMpuZip filePath:"
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e ad90 00b0 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 011a 0169 " name:"
+  17 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  20 000c 
+  21 206e ad90 00c0 Ljava/lang/StringBuilder;->append
+  24 000c 
+  25 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  28 000c 
+  29 1071 7217 0000 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+  32 001a 0000 ""
+  34 1071 0890 000b Landroid/text/TextUtils;->isEmpty
+  37 010a 
+  38 0212 const/4 v2 0
+  39 0139 00e2 if target 265
+  41 1071 0890 000c Landroid/text/TextUtils;->isEmpty
+  44 010a 
+  45 0138 0004 if target 49
+  47 0029 00da 
+  49 0122 1587 
+  51 2070 abcb 00b1 Ljava/io/File;-><init>
+  54 0112 const/4 v1 0
+  55 0322 16b1 
+  57 2070 b0d2 00b3 Ljava/util/zip/ZipFile;-><init>
+  60 0b22 15e4 
+  62 1070 ad85 000b Ljava/lang/StringBuilder;-><init>
+  65 041a 04c0 "/private"
+  67 206e ad90 004b Ljava/lang/StringBuilder;->append
+  70 0b0c 
+  71 0462 e6f7 Ljava/io/File;->separator:Ljava/lang/String;
+  73 206e ad90 004b Ljava/lang/StringBuilder;->append
+  76 0b0c 
+  77 041a 9d09 "mcu_update.zip"
+  79 206e ad90 004b Ljava/lang/StringBuilder;->append
+  82 0b0c 
+  83 106e ad9a 000b Ljava/lang/StringBuilder;->toString
+  86 0b0c 
+  87 0422 15e4 
+  89 1070 ad85 0004 Ljava/lang/StringBuilder;-><init>
+  92 051a 1dbd "LOTTIE--path="
+  94 206e ad90 0054 Ljava/lang/StringBuilder;->append
+  97 040c 
+  98 206e ad90 00b4 Ljava/lang/StringBuilder;->append
+ 101 040c 
+ 102 106e ad9a 0004 Ljava/lang/StringBuilder;->toString
+ 105 040c 
+ 106 1071 7217 0004 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+ 109 0422 1587 
+ 111 2070 abcb 00b4 Ljava/io/File;-><init>
+ 114 106e abd2 0004 Ljava/io/File;->exists
+ 117 050a 
+ 118 0538 0006 if target 124
+ 120 106e abd1 0004 Ljava/io/File;->delete
+ 123 1228 
+ 124 106e abd8 0004 Ljava/io/File;->getParentFile
+ 127 050c 
+ 128 106e abd2 0005 Ljava/io/File;->exists
+ 131 050a 
+ 132 0539 0009 if target 141
+ 134 106e abd8 0004 Ljava/io/File;->getParentFile
+ 137 040c 
+ 138 106e abe1 0004 Ljava/io/File;->mkdirs
+ 141 0422 158c 
+ 143 2070 abf3 00b4 Ljava/io/FileOutputStream;-><init>
+ 146 106e b0d4 0003 Ljava/util/zip/ZipFile;->entries
+ 149 050c 
+ 150 1072 af72 0005 Ljava/util/Enumeration;->hasMoreElements
+ 153 060a 
+ 154 0638 0026 if target 192
+ 156 1072 af73 0005 Ljava/util/Enumeration;->nextElement
+ 159 060c 
+ 160 061f 16af 
+ 162 106e b0cc 0006 Ljava/util/zip/ZipEntry;->getName
+ 165 070c 
+ 166 206e ad5a 00c7 Ljava/lang/String;->equals
+ 169 070a 
+ 170 0738 ffec if target 150
+ 172 106e b0cd 0006 Ljava/util/zip/ZipEntry;->getSize
+ 175 070b 
+ 176 0916 0000 const/16 0
+ 178 0c31 0907 
+ 180 0c3d 000c if target 192
+ 182 206e b0d6 0063 Ljava/util/zip/ZipFile;->getInputStream
+ 185 0c0c 
+ 186 2071 7113 004c Lcom/ecarx/xupgrade/OtaTool;->copy
+ 189 1c12 const/4 v12 1
+ 190 b007 
+ 191 c101 
+ 192 106e abf5 0004 Ljava/io/FileOutputStream;->flush
+ 195 106e abf4 0004 Ljava/io/FileOutputStream;->close
+ 198 106e b0d3 0003 Ljava/util/zip/ZipFile;->close
+ 201 2528 
+ 202 0b0d 
+ 203 106e ac02 000b Ljava/io/IOException;->printStackTrace
+ 206 2028 
+ 207 0b0d 
+ 208 0e28 
+ 209 0b0d 
+ 210 2407 
+ 211 2028 
+ 212 0b0d 
+ 213 2407 
+ 214 0828 
+ 215 0b0d 
+ 216 2307 
+ 217 3407 
+ 218 1928 
+ 219 0b0d 
+ 220 2307 
+ 221 3407 
+ 222 106e acbd 000b Ljava/lang/Exception;->printStackTrace
+ 225 0438 0008 if target 233
+ 227 106e abf5 0004 Ljava/io/FileOutputStream;->flush
+ 230 106e abf4 0004 Ljava/io/FileOutputStream;->close
+ 233 0338 0008 if target 241
+ 235 106e b0d3 0003 Ljava/util/zip/ZipFile;->close
+ 238 0138 0003 if target 241
+ 240 0207 
+ 241 0211 
+ 242 0b0d 
+ 243 0438 000b if target 254
+ 245 106e abf5 0004 Ljava/io/FileOutputStream;->flush
+ 248 106e abf4 0004 Ljava/io/FileOutputStream;->close
+ 251 0328 
+ 252 0c0d 
+ 253 0828 
+ 254 0339 0003 if target 257
+ 256 0211 
+ 257 106e b0d3 0003 Ljava/util/zip/ZipFile;->close
+ 260 0428 
+ 261 106e ac02 000c Ljava/io/IOException;->printStackTrace
+ 264 0b27 
+ 265 0211 
+
+METHOD Lcom/ecarx/xupgrade/ota/FileUtil;->sortList code=3201856 regs=6 ins=2
+   0 0012 const/4 v0 0
+   1 0101 
+   2 106e af00 0004 Ljava/util/ArrayList;->size
+   5 020a 
+   6 2135 0016 if target 28
+   8 206e aef7 0014 Ljava/util/ArrayList;->get
+  11 020c 
+  12 021f 15e2 
+  14 031a 508e "abupdate.zip"
+  16 206e ad5a 0032 Ljava/lang/String;->equals
+  19 030a 
+  20 0338 0005 if target 25
+  22 206e aef0 0025 Ljava/util/ArrayList;->add
+  25 01d8 0101 
+  27 e728 
+  28 0101 
+  29 106e af00 0004 Ljava/util/ArrayList;->size
+  32 020a 
+  33 2135 0016 if target 55
+  35 206e aef7 0014 Ljava/util/ArrayList;->get
+  38 020c 
+  39 021f 15e2 
+  41 031a acdc "se_update_cp.zip"
+  43 206e ad5a 0032 Ljava/lang/String;->equals
+  46 030a 
+  47 0338 0005 if target 52
+  49 206e aef0 0025 Ljava/util/ArrayList;->add
+  52 01d8 0101 
+  54 e728 
+  55 0101 
+  56 106e af00 0004 Ljava/util/ArrayList;->size
+  59 020a 
+  60 2135 0016 if target 82
+  62 206e aef7 0014 Ljava/util/ArrayList;->get
+  65 020c 
+  66 021f 15e2 
+  68 031a acdf "se_update_fw.zip"
+  70 206e ad5a 0032 Ljava/lang/String;->equals
+  73 030a 
+  74 0338 0005 if target 79
+  76 206e aef0 0025 Ljava/util/ArrayList;->add
+  79 01d8 0101 
+  81 e728 
+  82 106e af00 0004 Ljava/util/ArrayList;->size
+  85 010a 
+  86 1035 0016 if target 108
+  88 206e aef7 0004 Ljava/util/ArrayList;->get
+  91 010c 
+  92 011f 15e2 
+  94 021a 375b "MB_UPDATE.bin"
+  96 206e ad57 0021 Ljava/lang/String;->contains
+  99 020a 
+ 100 0238 0005 if target 105
+ 102 206e aef0 0015 Ljava/util/ArrayList;->add
+ 105 00d8 0100 
+ 107 e728 
+ 108 000e 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->run code=3207264 regs=2 ins=1
+   0 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+   2 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+   5 000c 
+   6 0038 0041 if target 71
+   8 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  10 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  13 000c 
+  14 106e a8ca 0000 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  17 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  19 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  22 000c 
+  23 106e a8ca 0000 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  26 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  28 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  31 000c 
+  32 106e a8ca 0000 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  35 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  37 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  40 000c 
+  41 106e a8ca 0000 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  44 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  46 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  49 000c 
+  50 106e a8ca 0000 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  53 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  55 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  58 000c 
+  59 106e a8ca 0000 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  62 1054 5eca Lcom/ecarx/xupgrade/ota/UpgradeManager$7;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  64 1071 72e1 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  67 000c 
+  68 106e a8ca 0000 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  71 001a ad56 "sendResetToMcumcuReboot"
+  73 1071 7217 0000 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+  76 000e 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$300 code=3210672 regs=1 ins=1
+   0 0054 5ee3 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdatePath:Ljava/lang/String;
+   2 0011 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400 code=3210240 regs=1 ins=1
+   0 0054 5ee2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdate:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 0011 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager;->startUpgrade code=3213044 regs=7 ins=1
+   0 6054 5edf Lcom/ecarx/xupgrade/ota/UpgradeManager;->mPath:Ljava/lang/String;
+   2 1071 7272 0000 Lcom/ecarx/xupgrade/ota/FileUtil;->getAllSortDataFileName
+   5 000c 
+   6 106e aef9 0000 Ljava/util/ArrayList;->isEmpty
+   9 000a 
+  10 011a 4903 "UpgradeManger"
+  12 0039 015c if target 360
+  14 6054 5edf Lcom/ecarx/xupgrade/ota/UpgradeManager;->mPath:Ljava/lang/String;
+  16 1071 7272 0000 Lcom/ecarx/xupgrade/ota/FileUtil;->getAllSortDataFileName
+  19 000c 
+  20 106e aefa 0000 Ljava/util/ArrayList;->iterator
+  23 000c 
+  24 1072 af9f 0000 Ljava/util/Iterator;->hasNext
+  27 020a 
+  28 0238 0151 if target 365
+  30 1072 afa0 0000 Ljava/util/Iterator;->next
+  33 020c 
+  34 021f 15e2 
+  36 0322 15e4 
+  38 1070 ad85 0003 Ljava/lang/StringBuilder;-><init>
+  41 6454 5edf Lcom/ecarx/xupgrade/ota/UpgradeManager;->mPath:Ljava/lang/String;
+  43 206e ad90 0043 Ljava/lang/StringBuilder;->append
+  46 030c 
+  47 041a 04b7 "/"
+  49 206e ad90 0043 Ljava/lang/StringBuilder;->append
+  52 030c 
+  53 206e ad90 0023 Ljava/lang/StringBuilder;->append
+  56 030c 
+  57 106e ad9a 0003 Ljava/lang/StringBuilder;->toString
+  60 030c 
+  61 1071 7216 0003 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->e
+  64 0238 ffd8 if target 24
+  66 0422 1587 
+  68 2070 abcb 0034 Ljava/io/File;-><init>
+  71 106e abd2 0004 Ljava/io/File;->exists
+  74 040a 
+  75 0438 ffcd if target 24
+  77 2070 72ef 0026 Lcom/ecarx/xupgrade/ota/UpgradeManager;->getUpgradeType
+  80 040c 
+  81 051a be09 "updateClusterADirect"
+  83 206e ad5a 0054 Ljava/lang/String;->equals
+  86 040a 
+  87 0438 0012 if target 105
+  89 6054 5ede Lcom/ecarx/xupgrade/ota/UpgradeManager;->mOtaService:Lecarx/os/ota/IOsUpdateManager;
+  91 0122 1587 
+  93 2070 abcb 0031 Ljava/io/File;-><init>
+  96 106e abdd 0001 Ljava/io/File;->length
+  99 010b 
+ 100 4072 aa93 2130 Lecarx/os/ota/IOsUpdateManager;->updateClusterADirect
+ 103 0029 0106 
+ 105 2070 72ef 0026 Lcom/ecarx/xupgrade/ota/UpgradeManager;->getUpgradeType
+ 108 040c 
+ 109 051a bdea "updateAndroidADirect"
+ 111 206e ad5a 0054 Ljava/lang/String;->equals
+ 114 040a 
+ 115 0438 0012 if target 133
+ 117 6054 5ede Lcom/ecarx/xupgrade/ota/UpgradeManager;->mOtaService:Lecarx/os/ota/IOsUpdateManager;
+ 119 0122 1587 
+ 121 2070 abcb 0031 Ljava/io/File;-><init>
+ 124 106e abdd 0001 Ljava/io/File;->length
+ 127 010b 
+ 128 4072 aa8f 2130 Lecarx/os/ota/IOsUpdateManager;->updateAndroidADirect
+ 131 0029 00ea 
+ 133 2070 72ef 0026 Lcom/ecarx/xupgrade/ota/UpgradeManager;->getUpgradeType
+ 136 040c 
+ 137 051a be2c "updateFirmwareADirect"
+ 139 206e ad5a 0054 Ljava/lang/String;->equals
+ 142 040a 
+ 143 0438 0012 if target 161
+ 145 6054 5ede Lcom/ecarx/xupgrade/ota/UpgradeManager;->mOtaService:Lecarx/os/ota/IOsUpdateManager;
+ 147 0122 1587 
+ 149 2070 abcb 0031 Ljava/io/File;-><init>
+ 152 106e abdd 0001 Ljava/io/File;->length
+ 155 010b 
+ 156 4072 aa97 2130 Lecarx/os/ota/IOsUpdateManager;->updateFirmwareADirect
+ 159 0029 00ce 
+ 161 2070 72ef 0026 Lcom/ecarx/xupgrade/ota/UpgradeManager;->getUpgradeType
+ 164 040c 
+ 165 051a be0b "updateClusterBDirect"
+ 167 206e ad5a 0054 Ljava/lang/String;->equals
+ 170 040a 
+ 171 0438 0012 if target 189
+ 173 6054 5ede Lcom/ecarx/xupgrade/ota/UpgradeManager;->mOtaService:Lecarx/os/ota/IOsUpdateManager;
+ 175 0122 1587 
+ 177 2070 abcb 0031 Ljava/io/File;-><init>
+ 180 106e abdd 0001 Ljava/io/File;->length
+ 183 010b 
+ 184 4072 aa95 2130 Lecarx/os/ota/IOsUpdateManager;->updateClusterBDirect
+ 187 0029 00b2 
+ 189 2070 72ef 0026 Lcom/ecarx/xupgrade/ota/UpgradeManager;->getUpgradeType
+ 192 040c 
+ 193 051a bdec "updateAndroidBDirect"
+ 195 206e ad5a 0054 Ljava/lang/String;->equals
+ 198 040a 
+ 199 0438 0012 if target 217
+ 201 6054 5ede Lcom/ecarx/xupgrade/ota/UpgradeManager;->mOtaService:Lecarx/os/ota/IOsUpdateManager;
+ 203 0122 1587 
+ 205 2070 abcb 0031 Ljava/io/File;-><init>
+ 208 106e abdd 0001 Ljava/io/File;->length
+ 211 010b 
+ 212 4072 aa91 2130 Lecarx/os/ota/IOsUpdateManager;->updateAndroidBDirect
+ 215 0029 0096 
+ 217 2070 72ef 0026 Lcom/ecarx/xupgrade/ota/UpgradeManager;->getUpgradeType
+ 220 040c 
+ 221 051a be2e "updateFirmwareBDirect"
+ 223 206e ad5a 0054 Ljava/lang/String;->equals
+ 226 040a 
+ 227 0438 0012 if target 245
+ 229 6054 5ede Lcom/ecarx/xupgrade/ota/UpgradeManager;->mOtaService:Lecarx/os/ota/IOsUpdateManager;
+ 231 0122 1587 
+ 233 2070 abcb 0031 Ljava/io/File;-><init>
+ 236 106e abdd 0001 Ljava/io/File;->length
+ 239 010b 
+ 240 4072 aa99 2130 Lecarx/os/ota/IOsUpdateManager;->updateFirmwareBDirect
+ 243 0029 007a 
+ 245 2070 72ef 0026 Lcom/ecarx/xupgrade/ota/UpgradeManager;->getUpgradeType
+ 248 020c 
+ 249 041a be62 "updateMCU"
+ 251 206e ad5a 0042 Ljava/lang/String;->equals
+ 254 020a 
+ 255 0238 ff19 if target 24
+ 257 6255 5ee7 Lcom/ecarx/xupgrade/ota/UpgradeManager;->startUpgradeMCU:Z
+ 259 0239 ff15 if target 24
+ 261 1012 const/4 v0 1
+ 262 605c 5ee7 Lcom/ecarx/xupgrade/ota/UpgradeManager;->startUpgradeMCU:Z
+ 264 635b 5ee3 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdatePath:Ljava/lang/String;
+ 266 0022 1587 
+ 268 6254 5ee3 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdatePath:Ljava/lang/String;
+ 270 2070 abcb 0020 Ljava/io/File;-><init>
+ 273 1071 7275 0000 Lcom/ecarx/xupgrade/ota/MD5;->getFileMD5
+ 276 000c 
+ 277 0222 15e4 
+ 279 1070 ad85 0002 Ljava/lang/StringBuilder;-><init>
+ 282 041a 375c "MCU MD5："
+ 284 206e ad90 0042 Ljava/lang/StringBuilder;->append
+ 287 020c 
+ 288 206e ad90 0002 Ljava/lang/StringBuilder;->append
+ 291 020c 
+ 292 106e ad9a 0002 Ljava/lang/StringBuilder;->toString
+ 295 020c 
+ 296 2071 7218 0021 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+ 299 0212 const/4 v2 0
+ 300 625c 5ed9 Lcom/ecarx/xupgrade/ota/UpgradeManager;->isUpgradeMCU:Z
+ 302 625c 5eeb Lcom/ecarx/xupgrade/ota/UpgradeManager;->upgradeMCUSuccess:Z
+ 304 6254 5ed4 Lcom/ecarx/xupgrade/ota/UpgradeManager;->iMcuUpdateListener:Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;
+ 306 0238 003b if target 365
+ 308 021a 84f5 "iMcuUpdateListener!=null"
+ 310 2071 7218 0021 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+ 313 6254 5ee2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdate:Lcom/jsbd/mcuupdate/McuUpdate;
+ 315 0239 0015 if target 336
+ 317 021a 9d06 "mcuUpdate==null"
+ 319 2071 7218 0021 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+ 322 6154 5ed2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->context:Landroid/content/Context;
+ 324 0222 0ed1 
+ 326 4070 724b 0362 Lcom/ecarx/xupgrade/ota/-$$Lambda$UpgradeManager$XUwaBzlAiRy0up0xUBCotTX7-TU;-><init>
+ 329 2071 a8c0 0021 Lcom/jsbd/mcuupdate/McuUpdate;->create
+ 332 000c 
+ 333 605b 5ee2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdate:Lcom/jsbd/mcuupdate/McuUpdate;
+ 335 1e28 
+ 336 021a 9d05 "mcuUpdate!=null"
+ 338 2071 7218 0021 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+ 341 6154 5ee1 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuHandler:Landroid/os/Handler;
+ 343 0212 const/4 v2 0
+ 344 206e 06fd 0021 Landroid/os/Handler;->removeCallbacksAndMessages
+ 347 6154 5ee1 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuHandler:Landroid/os/Handler;
+ 349 0222 0ed0 
+ 351 4070 7249 0362 Lcom/ecarx/xupgrade/ota/-$$Lambda$UpgradeManager$7gpdKweoAQnOx2jAhRah1CtGM5s;-><init>
+ 354 0316 07d0 const/16 2000
+ 356 406e 06fa 4321 Landroid/os/Handler;->postDelayed
+ 359 0628 
+ 360 001a da70 "没有可以升级的东西了"
+ 362 2071 08f0 0001 Landroid/util/Log;->d
+ 365 000e 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager;->init code=3211652 regs=3 ins=3
+   0 015b 5ed2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->context:Landroid/content/Context;
+   2 025b 5edf Lcom/ecarx/xupgrade/ota/UpgradeManager;->mPath:Ljava/lang/String;
+   4 0122 0eef 
+   6 0212 const/4 v2 0
+   7 3070 72bc 0201 Lcom/ecarx/xupgrade/ota/UpgradeManager$OsUpdateCallback;-><init>
+  10 015b 5ed5 Lcom/ecarx/xupgrade/ota/UpgradeManager;->iOsUpdateCallback:Lecarx/os/ota/IOsUpdateCallback;
+  12 1070 72f2 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->initOtaService
+  15 1070 72f0 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->includingABUpgrade
+  18 010a 
+  19 015c 5ed6 Lcom/ecarx/xupgrade/ota/UpgradeManager;->includingABUpgrade:Z
+  21 1070 72f3 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->isIncludingMcu
+  24 010a 
+  25 015c 5ed7 Lcom/ecarx/xupgrade/ota/UpgradeManager;->includingMcu:Z
+  27 0155 5ed7 Lcom/ecarx/xupgrade/ota/UpgradeManager;->includingMcu:Z
+  29 0138 0012 if target 47
+  31 0122 0ee4 
+  33 2070 72a1 0001 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;-><init>
+  36 015b 5ed4 Lcom/ecarx/xupgrade/ota/UpgradeManager;->iMcuUpdateListener:Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;
+  38 0928 
+  39 010d 
+  40 106e acbe 0001 Ljava/lang/Exception;->toString
+  43 010c 
+  44 1071 7216 0001 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->e
+  47 000e 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager;->lambda$null$0$UpgradeManager code=3211928 regs=5 ins=3
+   0 2054 5ee2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdate:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 2154 5ed4 Lcom/ecarx/xupgrade/ota/UpgradeManager;->iMcuUpdateListener:Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;
+   4 406e a8cc 1430 Lcom/jsbd/mcuupdate/McuUpdate;->startMcuUpdate
+   7 000e 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager;->lambda$startUpgrade$1$UpgradeManager code=3211960 regs=6 ins=4
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a 38a9 "McuUpdate.create："
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e ad91 0050 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  18 000c 
+  19 011a 4903 "UpgradeManger"
+  21 2071 7218 0001 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+  24 2054 5ee2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdate:Lcom/jsbd/mcuupdate/McuUpdate;
+  26 0038 0016 if target 48
+  28 0538 0014 if target 48
+  30 2554 5ee1 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuHandler:Landroid/os/Handler;
+  32 0012 const/4 v0 0
+  33 206e 06fd 0005 Landroid/os/Handler;->removeCallbacksAndMessages
+  36 2554 5ee1 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuHandler:Landroid/os/Handler;
+  38 0022 0ed2 
+  40 4070 724d 4320 Lcom/ecarx/xupgrade/ota/-$$Lambda$UpgradeManager$wkYkQxXBVaxqcZhXe0_RQzWTJ30;-><init>
+  43 0316 07d0 const/16 2000
+  45 406e 06fa 4305 Landroid/os/Handler;->postDelayed
+  48 000e 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager;->lambda$startUpgrade$2$UpgradeManager code=3212076 regs=5 ins=3
+   0 2054 5ee2 Lcom/ecarx/xupgrade/ota/UpgradeManager;->mcuUpdate:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 2154 5ed4 Lcom/ecarx/xupgrade/ota/UpgradeManager;->iMcuUpdateListener:Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;
+   4 406e a8cc 1430 Lcom/jsbd/mcuupdate/McuUpdate;->startMcuUpdate
+   7 000e 
+
+METHOD Lcom/jsbd/mcuupdate/ByteUtils;->byteToHexString code=3947536 regs=2 ins=1
+   0 0012 const/4 v0 0
+   1 2071 a8a4 0001 Lcom/jsbd/mcuupdate/ByteUtils;->byteToHexString
+   4 010c 
+   5 0111 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$2;-><init> code=3947960 regs=2 ins=2
+   0 015b e574 Lcom/jsbd/mcuupdate/McuUpdate$2;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 1070 ad2c 0000 Ljava/lang/Object;-><init>
+   5 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$2;->run code=3947988 regs=3 ins=1
+   0 2054 e574 Lcom/jsbd/mcuupdate/McuUpdate$2;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 1071 a8b8 0000 Lcom/jsbd/mcuupdate/McuUpdate;->access$300
+   5 010c 
+   6 2071 a8b9 0010 Lcom/jsbd/mcuupdate/McuUpdate;->access$400
+   9 000a 
+  10 1112 const/4 v1 1
+  11 0039 0008 if target 19
+  13 2054 e574 Lcom/jsbd/mcuupdate/McuUpdate$2;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  15 2071 a8ba 0010 Lcom/jsbd/mcuupdate/McuUpdate;->access$500
+  18 000e 
+  19 2054 e574 Lcom/jsbd/mcuupdate/McuUpdate$2;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  21 2071 a8bc 0010 Lcom/jsbd/mcuupdate/McuUpdate;->access$602
+  24 2054 e574 Lcom/jsbd/mcuupdate/McuUpdate$2;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  26 0112 const/4 v1 0
+  27 2071 a8bd 0010 Lcom/jsbd/mcuupdate/McuUpdate;->access$702
+  30 2054 e574 Lcom/jsbd/mcuupdate/McuUpdate$2;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  32 2071 a8be 0010 Lcom/jsbd/mcuupdate/McuUpdate;->access$802
+  35 2054 e574 Lcom/jsbd/mcuupdate/McuUpdate$2;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  37 1071 a8bf 0000 Lcom/jsbd/mcuupdate/McuUpdate;->access$900
+  40 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;-><init> code=3948368 regs=3 ins=3
+   0 015b e576 Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 2070 06ea 0020 Landroid/os/Handler;-><init>
+   5 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;-><init> code=3948396 regs=4 ins=4
+   0 3070 a8ae 0210 Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;-><init>
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;->handleMessage code=3948420 regs=3 ins=2
+   0 206f 06ef 0021 Landroid/os/Handler;->handleMessage
+   3 2252 00d2 Landroid/os/Message;->what:I
+   5 0013 2711 const/16 10001
+   7 0232 000d if target 20
+   9 0013 2712 const/16 10002
+  11 0232 0003 if target 14
+  13 0c28 
+  14 1254 e576 Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  16 106e a8ca 0002 Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu
+  19 0628 
+  20 1254 e576 Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  22 1071 a8bf 0002 Lcom/jsbd/mcuupdate/McuUpdate;->access$900
+  25 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;-><init> code=3949368 regs=4 ins=3
+   0 1070 ad2c 0001 Ljava/lang/Object;-><init>
+   3 0022 1650 
+   5 1070 aeec 0000 Ljava/util/ArrayList;-><init>
+   8 105b e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  10 0012 const/4 v0 0
+  11 1059 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+  13 125b e57b Lcom/jsbd/mcuupdate/McuUpdate;->mContext:Landroid/content/Context;
+  15 135b e57a Lcom/jsbd/mcuupdate/McuUpdate;->mCarConnectListener:Lcom/jsbd/mcuupdate/listener/ICarConnectListener;
+  17 0322 14ed 
+  19 2070 a8fb 0023 Lcom/jsbd/mcuupdate/VehicleSignalManager;-><init>
+  22 135b e587 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  24 0222 14e5 
+  26 1354 e587 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  28 2070 a8ce 0032 Lcom/jsbd/mcuupdate/VehicleModule;-><init>
+  31 125b e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  33 1254 e587 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  35 0322 14e0 
+  37 2070 a8a5 0013 Lcom/jsbd/mcuupdate/McuUpdate$1;-><init>
+  40 206e a913 0032 Lcom/jsbd/mcuupdate/VehicleSignalManager;->registerConnectWatcher
+  43 1254 e587 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  45 106e a900 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->connectToAutoCarService
+  48 0222 0140 
+  50 031a 38ae "Mcu_update"
+  52 2070 0704 0032 Landroid/os/HandlerThread;-><init>
+  55 125b e57d Lcom/jsbd/mcuupdate/McuUpdate;->mHandlerThread:Landroid/os/HandlerThread;
+  57 106e 0708 0002 Landroid/os/HandlerThread;->start
+  60 0222 14e3 
+  62 1354 e57d Lcom/jsbd/mcuupdate/McuUpdate;->mHandlerThread:Landroid/os/HandlerThread;
+  64 106e 0706 0003 Landroid/os/HandlerThread;->getLooper
+  67 030c 
+  68 0012 const/4 v0 0
+  69 4070 a8af 0312 Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;-><init>
+  72 125b e57f Lcom/jsbd/mcuupdate/McuUpdate;->mMcuHandler:Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;
+  74 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$000 code=3949536 regs=1 ins=1
+   0 1070 a8c5 0000 Lcom/jsbd/mcuupdate/McuUpdate;->registerMcuValueChangeListener
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$100 code=3949296 regs=1 ins=1
+   0 0054 e57a Lcom/jsbd/mcuupdate/McuUpdate;->mCarConnectListener:Lcom/jsbd/mcuupdate/listener/ICarConnectListener;
+   2 0011 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$1000 code=3949272 regs=1 ins=1
+   0 0054 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+   2 0011 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$1100 code=3949560 regs=3 ins=3
+   0 3070 a8c1 0210 Lcom/jsbd/mcuupdate/McuUpdate;->handlerVehicleResultForTraveo2
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$300 code=3949344 regs=1 ins=1
+   0 0054 e57e Lcom/jsbd/mcuupdate/McuUpdate;->mMcuFilePath:Ljava/lang/String;
+   2 0011 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$400 code=3948488 regs=2 ins=2
+   0 2070 a8c4 0010 Lcom/jsbd/mcuupdate/McuUpdate;->readMcuUpdateFile
+   3 000a 
+   4 000f 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$500 code=3949584 regs=2 ins=2
+   0 2070 a8c3 0010 Lcom/jsbd/mcuupdate/McuUpdate;->notifyCallback
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$600 code=3948516 regs=1 ins=1
+   0 0055 e584 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdating:Z
+   2 000f 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$602 code=3948540 regs=2 ins=2
+   0 015c e584 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdating:Z
+   2 010f 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$702 code=3948564 regs=2 ins=2
+   0 015c e583 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateStarted:Z
+   2 010f 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$802 code=3949320 regs=2 ins=2
+   0 0159 e582 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateStartCount:I
+   2 010f 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->access$900 code=3949608 regs=1 ins=1
+   0 1070 a8cd 0000 Lcom/jsbd/mcuupdate/McuUpdate;->startSendStartToMcu
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->create code=3949244 regs=3 ins=2
+   0 0022 14e4 
+   2 3070 a8b3 0210 Lcom/jsbd/mcuupdate/McuUpdate;-><init>
+   5 0011 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->handlerVehicleResultForTraveo2 code=3949632 regs=14 ins=3
+   0 001a 0059 " , 2 = "
+   2 011a 0058 " , 1 = "
+   4 0214 0200 0001 const 66048 / 0x10200
+   7 031a aa7c "result: size = "
+   9 3412 const/4 v4 3
+  10 2512 const/4 v5 2
+  11 4612 const/4 v6 4
+  12 071a 38a8 "McuUpdate"
+  14 0812 const/4 v8 0
+  15 1912 const/4 v9 1
+  16 0a14 0100 0001 const 65792 / 0x10100
+  19 ac33 007b if target 142
+  21 dc21 
+  22 9c37 0186 if target 412
+  24 0c22 15e4 
+  26 1070 ad85 000c Ljava/lang/StringBuilder;-><init>
+  29 206e ad90 003c Ljava/lang/StringBuilder;->append
+  32 0c0c 
+  33 d321 
+  34 206e ad8c 003c Ljava/lang/StringBuilder;->append
+  37 0c0c 
+  38 206e ad90 001c Ljava/lang/StringBuilder;->append
+  41 0c0c 
+  42 0148 080d 
+  44 206e ad8c 001c Ljava/lang/StringBuilder;->append
+  47 0c0c 
+  48 206e ad90 000c Ljava/lang/StringBuilder;->append
+  51 0c0c 
+  52 0048 090d 
+  54 206e ad8c 000c Ljava/lang/StringBuilder;->append
+  57 0c0c 
+  58 106e ad9a 000c Ljava/lang/StringBuilder;->toString
+  61 0c0c 
+  62 2071 08f2 00c7 Landroid/util/Log;->e
+  65 0c48 090d 
+  67 9c33 0035 if target 120
+  69 b95c e583 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateStarted:Z
+  71 bc54 e57f Lcom/jsbd/mcuupdate/McuUpdate;->mMcuHandler:Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;
+  73 0d13 2711 const/16 10001
+  75 206e a8b1 00dc Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;->removeMessages
+  78 6c12 const/4 v12 6
+  79 cc23 1726 
+  81 094f 080c 
+  83 084f 090c 
+  85 6d23 1726 
+  87 b054 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  89 106e af00 0000 Ljava/util/ArrayList;->size
+  92 000a 
+  93 003d 000c if target 105
+  95 bd54 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  97 106e af00 000d Ljava/util/ArrayList;->size
+ 100 0d0a 
+ 101 2070 a8c2 00db Lcom/jsbd/mcuupdate/McuUpdate;->int2Byte2
+ 104 0d0c 
+ 105 5671 ad9c 5c8d Ljava/lang/System;->arraycopy
+ 108 0d1a ad37 "send file info to mcu!!!"
+ 110 2071 08f2 00d7 Landroid/util/Log;->e
+ 113 bd54 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+ 115 306e a8db 0c2d Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+ 118 0029 0126 
+ 120 0c48 090d 
+ 122 5c33 0004 if target 126
+ 124 0029 0120 
+ 126 0c48 090d 
+ 128 4c33 011c if target 412
+ 130 b859 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 132 0c1a a9ac "request mcu for md5!!!"
+ 134 2071 08f2 00c7 Landroid/util/Log;->e
+ 137 1070 a8c9 000b Lcom/jsbd/mcuupdate/McuUpdate;->sendRequestMcuMd5
+ 140 0029 0110 
+ 142 2c33 0007 if target 149
+ 144 2070 a8c8 008b Lcom/jsbd/mcuupdate/McuUpdate;->sendPkgToMcu
+ 147 0029 0109 
+ 149 0214 0300 0001 const 66304 / 0x10300
+ 152 2c33 00a7 if target 319
+ 154 dc21 
+ 155 6c37 0101 if target 412
+ 157 0c22 15e4 
+ 159 1070 ad85 000c Ljava/lang/StringBuilder;-><init>
+ 162 206e ad90 003c Ljava/lang/StringBuilder;->append
+ 165 0c0c 
+ 166 d221 
+ 167 206e ad8c 002c Ljava/lang/StringBuilder;->append
+ 170 0c0c 
+ 171 206e ad90 001c Ljava/lang/StringBuilder;->append
+ 174 0c0c 
+ 175 0148 080d 
+ 177 206e ad8c 001c Ljava/lang/StringBuilder;->append
+ 180 0c0c 
+ 181 206e ad90 000c Ljava/lang/StringBuilder;->append
+ 184 0c0c 
+ 185 0048 090d 
+ 187 206e ad8c 000c Ljava/lang/StringBuilder;->append
+ 190 0c0c 
+ 191 106e ad9a 000c Ljava/lang/StringBuilder;->toString
+ 194 0c0c 
+ 195 2071 08f2 00c7 Landroid/util/Log;->e
+ 198 0c22 15e4 
+ 200 1070 ad85 000c Ljava/lang/StringBuilder;-><init>
+ 203 206e ad90 003c Ljava/lang/StringBuilder;->append
+ 206 0c0c 
+ 207 d021 
+ 208 206e ad8c 000c Ljava/lang/StringBuilder;->append
+ 211 0c0c 
+ 212 001a 005a " , 3 = "
+ 214 206e ad90 000c Ljava/lang/StringBuilder;->append
+ 217 0c0c 
+ 218 0048 050d 
+ 220 206e ad8c 000c Ljava/lang/StringBuilder;->append
+ 223 0c0c 
+ 224 001a 005b " , 4 = "
+ 226 206e ad90 000c Ljava/lang/StringBuilder;->append
+ 229 0c0c 
+ 230 0048 040d 
+ 232 206e ad8c 000c Ljava/lang/StringBuilder;->append
+ 235 0c0c 
+ 236 001a 005c " , 5 = "
+ 238 206e ad90 000c Ljava/lang/StringBuilder;->append
+ 241 0c0c 
+ 242 0048 060d 
+ 244 206e ad8c 000c Ljava/lang/StringBuilder;->append
+ 247 0c0c 
+ 248 106e ad9a 000c Ljava/lang/StringBuilder;->toString
+ 251 0c0c 
+ 252 2071 08f2 00c7 Landroid/util/Log;->e
+ 255 0c48 080d 
+ 257 ccd5 00ff 
+ 259 0ce0 180c 
+ 261 0048 090d 
+ 263 00d5 00ff 
+ 265 00e0 1000 
+ 267 0cb6 
+ 268 0048 050d 
+ 270 00d5 00ff 
+ 272 00e0 0800 
+ 274 0cb6 
+ 275 0048 040d 
+ 277 00d5 00ff 
+ 279 0cb6 
+ 280 bc59 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 282 0048 060d 
+ 284 0039 000a if target 294
+ 286 9cb0 
+ 287 bc59 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 289 2070 a8c8 008b Lcom/jsbd/mcuupdate/McuUpdate;->sendPkgToMcu
+ 292 0029 0078 
+ 294 0048 060d 
+ 296 9033 000a if target 306
+ 298 0c39 0004 if target 302
+ 300 b959 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 302 2070 a8c8 009b Lcom/jsbd/mcuupdate/McuUpdate;->sendPkgToMcu
+ 305 6b28 
+ 306 0c48 060d 
+ 308 5c33 0068 if target 412
+ 310 0c1a a9ab "request mcu for md5!"
+ 312 2071 08f2 00c7 Landroid/util/Log;->e
+ 315 1070 a8c9 000b Lcom/jsbd/mcuupdate/McuUpdate;->sendRequestMcuMd5
+ 318 5e28 
+ 319 0014 6000 0002 const 155648 / 0x26000
+ 322 0c33 005a if target 412
+ 324 0d38 0058 if target 412
+ 326 0c22 15e4 
+ 328 1070 ad85 000c Ljava/lang/StringBuilder;-><init>
+ 331 001a 3760 "MCU_UPGRADE_MD5 : result: size = "
+ 333 206e ad90 000c Ljava/lang/StringBuilder;->append
+ 336 0c0c 
+ 337 d021 
+ 338 206e ad8c 000c Ljava/lang/StringBuilder;->append
+ 341 0c0c 
+ 342 106e ad9a 000c Ljava/lang/StringBuilder;->toString
+ 345 0c0c 
+ 346 2071 08f0 00c7 Landroid/util/Log;->d
+ 349 2071 a8a4 009d Lcom/jsbd/mcuupdate/ByteUtils;->byteToHexString
+ 352 0c0c 
+ 353 0d22 15e4 
+ 355 1070 ad85 000d Ljava/lang/StringBuilder;-><init>
+ 358 001a 9cfe "mcu md5 = "
+ 360 206e ad90 000d Ljava/lang/StringBuilder;->append
+ 363 0d0c 
+ 364 206e ad90 00cd Ljava/lang/StringBuilder;->append
+ 367 0d0c 
+ 368 001a 01a7 " source md5 = "
+ 370 206e ad90 000d Ljava/lang/StringBuilder;->append
+ 373 0d0c 
+ 374 b054 e580 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuMd5:Ljava/lang/String;
+ 376 206e ad90 000d Ljava/lang/StringBuilder;->append
+ 379 0d0c 
+ 380 106e ad9a 000d Ljava/lang/StringBuilder;->toString
+ 383 0d0c 
+ 384 2071 08f0 00d7 Landroid/util/Log;->d
+ 387 bd54 e580 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuMd5:Ljava/lang/String;
+ 389 206e ad5b 00dc Ljava/lang/String;->equalsIgnoreCase
+ 392 0c0a 
+ 393 0c38 0006 if target 399
+ 395 2070 a8c3 008b Lcom/jsbd/mcuupdate/McuUpdate;->notifyCallback
+ 398 0e28 
+ 399 0c1a 9d01 "mcu upgrade failed, md5 verification failed!"
+ 401 2071 08f2 00c7 Landroid/util/Log;->e
+ 404 b85c e584 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdating:Z
+ 406 1070 a8c7 000b Lcom/jsbd/mcuupdate/McuUpdate;->sendFailToMcu
+ 409 2070 a8c3 004b Lcom/jsbd/mcuupdate/McuUpdate;->notifyCallback
+ 412 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->notifyCallback code=3950476 regs=4 ins=2
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a a099 "notifyCallback : "
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e ad8c 0030 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  18 000c 
+  19 011a 38a8 "McuUpdate"
+  21 2071 08f0 0001 Landroid/util/Log;->d
+  24 2054 e581 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateListener:Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;
+  26 0038 0005 if target 31
+  28 2072 a922 0030 Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;->onUpdateComplete
+  31 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->readMcuUpdateFile code=3948588 regs=12 ins=2
+   0 001a 38a8 "McuUpdate"
+   2 a154 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+   4 106e aef2 0001 Ljava/util/ArrayList;->clear
+   7 0112 const/4 v1 0
+   8 a159 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+  10 0222 15e4 
+  12 1070 ad85 0002 Ljava/lang/StringBuilder;-><init>
+  15 031a 94d5 "mMcuBinPath : "
+  17 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  20 020c 
+  21 206e ad90 00b2 Ljava/lang/StringBuilder;->append
+  24 020c 
+  25 106e ad9a 0002 Ljava/lang/StringBuilder;->toString
+  28 020c 
+  29 2071 08f0 0020 Landroid/util/Log;->d
+  32 0222 158a 
+  34 2070 abe7 00b2 Ljava/io/FileInputStream;-><init>
+  37 0313 0080 const/16 128
+  39 3423 1726 
+  41 0522 1587 
+  43 2070 abcb 00b5 Ljava/io/File;-><init>
+  46 106e abdd 0005 Ljava/io/File;->length
+  49 050b 
+  50 1b01 
+  51 b781 
+  52 0731 0507 
+  54 073b 0014 if target 74
+  56 406e ac06 3142 Ljava/io/InputStream;->read
+  59 070a 
+  60 073a 000e if target 74
+  62 7bb0 
+  63 7823 1726 
+  65 5771 ad9c 1814 Ljava/lang/System;->arraycopy
+  68 a754 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  70 206e aef0 0087 Ljava/util/ArrayList;->add
+  73 ea28 
+  74 ab54 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  76 106e af00 000b Ljava/util/ArrayList;->size
+  79 0b0a 
+  80 0b3d 0004 if target 84
+  82 1b12 const/4 v11 1
+  83 0228 
+  84 1b01 
+  85 0222 15e4 
+  87 1070 ad85 0002 Ljava/lang/StringBuilder;-><init>
+  90 031a a801 "readMcuUpdateFile, mUpdateList.size: "
+  92 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  95 020c 
+  96 a354 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  98 106e af00 0003 Ljava/util/ArrayList;->size
+ 101 030a 
+ 102 206e ad8c 0032 Ljava/lang/StringBuilder;->append
+ 105 020c 
+ 106 106e ad9a 0002 Ljava/lang/StringBuilder;->toString
+ 109 020c 
+ 110 2071 08f0 0020 Landroid/util/Log;->d
+ 113 0029 007a 
+ 115 020d 
+ 116 2907 
+ 117 b201 
+ 118 9b07 
+ 119 0d28 
+ 120 020d 
+ 121 2907 
+ 122 b201 
+ 123 9b07 
+ 124 2b28 
+ 125 020d 
+ 126 2907 
+ 127 b201 
+ 128 9b07 
+ 129 4928 
+ 130 0b0d 
+ 131 1201 
+ 132 a354 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+ 134 106e aef2 0003 Ljava/util/ArrayList;->clear
+ 137 a159 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 139 0122 15e4 
+ 141 1070 ad85 0001 Ljava/lang/StringBuilder;-><init>
+ 144 031a a7fe "readMcuUpdateFile, Exception : "
+ 146 206e ad90 0031 Ljava/lang/StringBuilder;->append
+ 149 010c 
+ 150 206e ad8f 00b1 Ljava/lang/StringBuilder;->append
+ 153 010c 
+ 154 106e ad9a 0001 Ljava/lang/StringBuilder;->toString
+ 157 010c 
+ 158 2071 08f2 0010 Landroid/util/Log;->e
+ 161 106e acbd 000b Ljava/lang/Exception;->printStackTrace
+ 164 4628 
+ 165 0b0d 
+ 166 1201 
+ 167 a354 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+ 169 106e aef2 0003 Ljava/util/ArrayList;->clear
+ 172 a159 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 174 0122 15e4 
+ 176 1070 ad85 0001 Ljava/lang/StringBuilder;-><init>
+ 179 031a a800 "readMcuUpdateFile, IOException : "
+ 181 206e ad90 0031 Ljava/lang/StringBuilder;->append
+ 184 010c 
+ 185 206e ad8f 00b1 Ljava/lang/StringBuilder;->append
+ 188 010c 
+ 189 106e ad9a 0001 Ljava/lang/StringBuilder;->toString
+ 192 010c 
+ 193 2071 08f2 0010 Landroid/util/Log;->e
+ 196 106e ac02 000b Ljava/io/IOException;->printStackTrace
+ 199 2328 
+ 200 0b0d 
+ 201 1201 
+ 202 a354 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+ 204 106e aef2 0003 Ljava/util/ArrayList;->clear
+ 207 a159 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 209 0122 15e4 
+ 211 1070 ad85 0001 Ljava/lang/StringBuilder;-><init>
+ 214 031a a7ff "readMcuUpdateFile, FileNotFoundException : "
+ 216 206e ad90 0031 Ljava/lang/StringBuilder;->append
+ 219 010c 
+ 220 206e ad8f 00b1 Ljava/lang/StringBuilder;->append
+ 223 010c 
+ 224 106e ad9a 0001 Ljava/lang/StringBuilder;->toString
+ 227 010c 
+ 228 2071 08f2 0010 Landroid/util/Log;->e
+ 231 106e abef 000b Ljava/io/FileNotFoundException;->printStackTrace
+ 234 2b01 
+ 235 0122 15e4 
+ 237 1070 ad85 0001 Ljava/lang/StringBuilder;-><init>
+ 240 021a a802 "readMcuUpdateFile, ret : "
+ 242 206e ad90 0021 Ljava/lang/StringBuilder;->append
+ 245 010c 
+ 246 206e ad91 00b1 Ljava/lang/StringBuilder;->append
+ 249 010c 
+ 250 106e ad9a 0001 Ljava/lang/StringBuilder;->toString
+ 253 010c 
+ 254 2071 08f0 0010 Landroid/util/Log;->d
+ 257 0b0f 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->registerMcuValueChangeListener code=3950556 regs=7 ins=1
+   0 4012 const/4 v0 4
+   1 0123 172a 
+   3 0126 0049 0000 
+   6 6254 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+   8 0314 0300 0001 const 66304 / 0x10300
+  11 206e a8dd 0032 Lcom/jsbd/mcuupdate/VehicleModule;->validFunctionId
+  14 020a 
+  15 0238 0035 if target 68
+  17 6254 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  19 0314 0200 0001 const 66048 / 0x10200
+  22 206e a8dd 0032 Lcom/jsbd/mcuupdate/VehicleModule;->validFunctionId
+  25 020a 
+  26 0238 002a if target 68
+  28 6254 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  30 0314 0100 0001 const 65792 / 0x10100
+  33 206e a8dd 0032 Lcom/jsbd/mcuupdate/VehicleModule;->validFunctionId
+  36 020a 
+  37 0238 001f if target 68
+  39 0223 172a 
+  41 0312 const/4 v3 0
+  42 0335 000f if target 57
+  44 6454 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  46 0544 0301 
+  48 206e a8cf 0054 Lcom/jsbd/mcuupdate/VehicleModule;->convertFunctionIDToPropID
+  51 040a 
+  52 044b 0302 
+  54 03d8 0103 
+  56 f228 
+  57 6054 e587 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  59 0122 14e2 
+  61 2070 a8aa 0061 Lcom/jsbd/mcuupdate/McuUpdate$3;-><init>
+  64 306e a915 0120 Lcom/jsbd/mcuupdate/VehicleSignalManager;->registerValueChangeListener
+  67 0828 
+  68 001a 38a8 "McuUpdate"
+  70 011a bd5c "unSupport CarFunction,don't registerValueChangeListener!!!"
+  72 2071 08f2 0010 Landroid/util/Log;->e
+  75 000e 
+  76 0300 0004 0004 0000 0300 0001 0200 0001 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->sendFailToMcu code=3950820 regs=4 ins=1
+   0 001a 38a8 "McuUpdate"
+   2 011a ad39 "send update fail to mcu!!!"
+   4 2071 08f2 0010 Landroid/util/Log;->e
+   7 2012 const/4 v0 2
+   8 0023 1726 
+  10 0026 000c 0000 
+  13 3154 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  15 0214 0100 0001 const 65792 / 0x10100
+  18 306e a8db 0021 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+  21 000e 
+  22 0300 0001 0002 0000 0401 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->sendPkgToMcu code=3950892 regs=8 ins=2
+   0 1012 const/4 v0 1
+   1 0738 0007 if target 8
+   3 6752 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+   5 07b1 
+   6 6759 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+   8 6752 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+  10 011a 38a8 "McuUpdate"
+  12 073a 007a if target 134
+  14 6254 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  16 106e af00 0002 Ljava/util/ArrayList;->size
+  19 020a 
+  20 2735 0072 if target 134
+  22 6754 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  24 6252 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+  26 206e aef7 0027 Ljava/util/ArrayList;->get
+  29 070c 
+  30 071f 1726 
+  32 0212 const/4 v2 0
+  33 0739 000d if target 46
+  35 6754 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  37 106e aef2 0007 Ljava/util/ArrayList;->clear
+  40 6259 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+  42 2070 a8c3 0006 Lcom/jsbd/mcuupdate/McuUpdate;->notifyCallback
+  45 000e 
+  46 6352 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+  48 2070 a8c2 0036 Lcom/jsbd/mcuupdate/McuUpdate;->int2Byte2
+  51 030c 
+  52 7421 
+  53 4512 const/4 v5 4
+  54 54b0 
+  55 4423 1726 
+  57 5571 ad9c 2423 Ljava/lang/System;->arraycopy
+  60 7321 
+  61 5371 ad9c 5427 Ljava/lang/System;->arraycopy
+  64 6754 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  66 0214 0300 0001 const 66304 / 0x10300
+  69 306e a8db 0427 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+  72 0722 15e4 
+  74 1070 ad85 0007 Ljava/lang/StringBuilder;-><init>
+  77 021a ad53 "sendPkgToMcu, Index : "
+  79 206e ad90 0027 Ljava/lang/StringBuilder;->append
+  82 070c 
+  83 6252 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+  85 206e ad8c 0027 Ljava/lang/StringBuilder;->append
+  88 070c 
+  89 021a 044e ", total: "
+  91 206e ad90 0027 Ljava/lang/StringBuilder;->append
+  94 070c 
+  95 6254 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+  97 106e af00 0002 Ljava/util/ArrayList;->size
+ 100 020a 
+ 101 206e ad8c 0027 Ljava/lang/StringBuilder;->append
+ 104 070c 
+ 105 106e ad9a 0007 Ljava/lang/StringBuilder;->toString
+ 108 070c 
+ 109 2071 08f0 0071 Landroid/util/Log;->d
+ 112 6752 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 114 07b0 
+ 115 6759 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 117 6054 e581 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateListener:Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;
+ 119 0038 0029 if target 160
+ 121 07da 6407 
+ 123 6154 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+ 125 106e af00 0001 Ljava/util/ArrayList;->size
+ 128 010a 
+ 129 17b3 
+ 130 2072 a921 0070 Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;->onProgress
+ 133 1b28 
+ 134 6754 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+ 136 106e af00 0007 Ljava/util/ArrayList;->size
+ 139 070a 
+ 140 073d 0014 if target 160
+ 142 6752 e57c Lcom/jsbd/mcuupdate/McuUpdate;->mCurPackageIndex:I
+ 144 6054 e585 Lcom/jsbd/mcuupdate/McuUpdate;->mUpgradeList:Ljava/util/ArrayList;
+ 146 106e af00 0000 Ljava/util/ArrayList;->size
+ 149 000a 
+ 150 0733 000a if target 160
+ 152 071a a9ad "request md5 to mcu"
+ 154 2071 08f0 0071 Landroid/util/Log;->d
+ 157 1070 a8c9 0006 Lcom/jsbd/mcuupdate/McuUpdate;->sendRequestMcuMd5
+ 160 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->sendRequestMcuMd5 code=3951232 regs=4 ins=1
+   0 001a 38a8 "McuUpdate"
+   2 011a ad54 "sendRequestMcuMd5"
+   4 2071 08f0 0010 Landroid/util/Log;->d
+   7 3054 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+   9 0114 6000 0002 const 155648 / 0x26000
+  12 0212 const/4 v2 0
+  13 306e a8d8 0210 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+  16 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->startSendStartToMcu code=3951528 regs=5 ins=1
+   0 4055 e583 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateStarted:Z
+   2 011a 38a8 "McuUpdate"
+   4 0038 0008 if target 12
+   6 001a 9d00 "mcu update started"
+   8 2071 08f0 0001 Landroid/util/Log;->d
+  11 000e 
+  12 0022 15e4 
+  14 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+  17 021a b8f9 "start mcu update : "
+  19 206e ad90 0020 Ljava/lang/StringBuilder;->append
+  22 000c 
+  23 4252 e582 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateStartCount:I
+  25 206e ad8c 0020 Ljava/lang/StringBuilder;->append
+  28 000c 
+  29 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  32 000c 
+  33 2071 08f0 0001 Landroid/util/Log;->d
+  36 4052 e582 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateStartCount:I
+  38 0213 0014 const/16 20
+  40 2312 const/4 v3 2
+  41 2034 000b if target 52
+  43 001a 9cff "mcu started old time,but do not started"
+  45 2071 08f2 0001 Landroid/util/Log;->e
+  48 2070 a8c3 0034 Lcom/jsbd/mcuupdate/McuUpdate;->notifyCallback
+  51 000e 
+  52 00d8 0100 
+  54 4059 e582 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateStartCount:I
+  56 3023 1726 
+  58 0026 0016 0000 
+  61 4154 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  63 0214 0100 0001 const 65792 / 0x10100
+  66 306e a8db 0021 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+  69 4054 e57f Lcom/jsbd/mcuupdate/McuUpdate;->mMcuHandler:Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;
+  71 0113 2711 const/16 10001
+  73 0216 03e8 const/16 1000
+  75 406e a8b2 3210 Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;->sendEmptyMessageDelayed
+  78 000e 
+  79 0000 
+  80 0300 0001 0002 0000 0101 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->sendCompleteToMcu code=3950748 regs=4 ins=1
+   0 001a 38a8 "McuUpdate"
+   2 011a ad3a "send update over to mcu!!!"
+   4 2071 08f2 0010 Landroid/util/Log;->e
+   7 2012 const/4 v0 2
+   8 0023 1726 
+  10 0026 000c 0000 
+  13 3154 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  15 0214 0100 0001 const 65792 / 0x10100
+  18 306e a8db 0021 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+  21 000e 
+  22 0300 0001 0002 0000 0301 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->sendResetToMcu code=3951284 regs=5 ins=1
+   0 001a 38a8 "McuUpdate"
+   2 011a ad38 "send reset to mcu!!!"
+   4 2071 08f2 0010 Landroid/util/Log;->e
+   7 3012 const/4 v0 3
+   8 0023 1726 
+  10 0026 0016 0000 
+  13 4154 e586 Lcom/jsbd/mcuupdate/McuUpdate;->mVehicleModule:Lcom/jsbd/mcuupdate/VehicleModule;
+  15 0214 5000 0002 const 151552 / 0x25000
+  18 306e a8db 0021 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+  21 4054 e57f Lcom/jsbd/mcuupdate/McuUpdate;->mMcuHandler:Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;
+  23 0113 2712 const/16 10002
+  25 0216 01f4 const/16 500
+  27 406e a8b2 3210 Lcom/jsbd/mcuupdate/McuUpdate$McuHandler;->sendEmptyMessageDelayed
+  30 000e 
+  31 0000 
+  32 0300 0001 0003 0000 011a 0004 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->startMcuUpdate code=3951376 regs=4 ins=3
+   0 001a 0000 ""
+   2 406e a8cc 3021 Lcom/jsbd/mcuupdate/McuUpdate;->startMcuUpdate
+   5 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate;->startMcuUpdate code=3951404 regs=6 ins=4
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a b93d "startMcuUpdate : mcuFile = "
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e ad90 0030 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 011a 015f " md5 = "
+  17 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  20 000c 
+  21 206e ad90 0040 Ljava/lang/StringBuilder;->append
+  24 000c 
+  25 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  28 000c 
+  29 011a 38a8 "McuUpdate"
+  31 2071 08f0 0001 Landroid/util/Log;->d
+  34 235b e57e Lcom/jsbd/mcuupdate/McuUpdate;->mMcuFilePath:Ljava/lang/String;
+  36 245b e580 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuMd5:Ljava/lang/String;
+  38 255b e581 Lcom/jsbd/mcuupdate/McuUpdate;->mMcuUpdateListener:Lcom/jsbd/mcuupdate/listener/IMcuUpdateListener;
+  40 0322 15e8 
+  42 0422 14e1 
+  44 2070 a8a8 0024 Lcom/jsbd/mcuupdate/McuUpdate$2;-><init>
+  47 2070 ada5 0043 Ljava/lang/Thread;-><init>
+  50 106e adb5 0003 Ljava/lang/Thread;->start
+  53 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;-><init> code=3953720 regs=2 ins=2
+   0 1070 ad2c 0000 Ljava/lang/Object;-><init>
+   3 015b e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+   5 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->getBytesByFunctionValue code=3952276 regs=5 ins=2
+   0 206e a8cf 0043 Lcom/jsbd/mcuupdate/VehicleModule;->convertFunctionIDToPropID
+   3 000a 
+   4 4033 0033 if target 55
+   6 0022 15e4 
+   8 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+  11 011a b102 "setFunctionValue:convert function ("
+  13 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  16 000c 
+  17 1112 const/4 v1 1
+  18 1123 1801 
+  20 1071 ace9 0004 Ljava/lang/Integer;->valueOf
+  23 040c 
+  24 0212 const/4 v2 0
+  25 044d 0201 
+  27 041a 04cf "0x%08x"
+  29 2071 ad5c 0014 Ljava/lang/String;->format
+  32 040c 
+  33 206e ad90 0040 Ljava/lang/StringBuilder;->append
+  36 040c 
+  37 001a 0358 ") to propId error!!"
+  39 206e ad90 0004 Ljava/lang/StringBuilder;->append
+  42 040c 
+  43 106e ad9a 0004 Ljava/lang/StringBuilder;->toString
+  46 040c 
+  47 001a 4b18 "VehicleModule"
+  49 2071 08f5 0040 Landroid/util/Log;->i
+  52 2423 1726 
+  54 0411 
+  55 3454 e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  57 206e a903 0004 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getBytesByPropID
+  60 040c 
+  61 0411 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->getFunctionValue code=3953308 regs=3 ins=2
+   0 0012 const/4 v0 0
+   1 306e a8d4 0021 Lcom/jsbd/mcuupdate/VehicleModule;->getFunctionValue
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->getFunctionValue code=3953336 regs=10 ins=3
+   0 206e a8cf 0087 Lcom/jsbd/mcuupdate/VehicleModule;->convertFunctionIDToPropID
+   3 000a 
+   4 0112 const/4 v1 0
+   5 1212 const/4 v2 1
+   6 031a 04cf "0x%08x"
+   8 041a 7b78 "getFunctionValue:convert function ("
+  10 051a 4b18 "VehicleModule"
+  12 8033 002b if target 55
+  14 0922 15e4 
+  16 1070 ad85 0009 Ljava/lang/StringBuilder;-><init>
+  19 206e ad90 0049 Ljava/lang/StringBuilder;->append
+  22 090c 
+  23 2023 1801 
+  25 1071 ace9 0008 Ljava/lang/Integer;->valueOf
+  28 080c 
+  29 084d 0100 
+  31 2071 ad5c 0003 Ljava/lang/String;->format
+  34 080c 
+  35 206e ad90 0089 Ljava/lang/StringBuilder;->append
+  38 080c 
+  39 091a 0358 ") to propId error!!"
+  41 206e ad90 0098 Ljava/lang/StringBuilder;->append
+  44 080c 
+  45 106e ad9a 0008 Ljava/lang/StringBuilder;->toString
+  48 080c 
+  49 2071 08f5 0085 Landroid/util/Log;->i
+  52 0815 8000 
+  54 080f 
+  55 7654 e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  57 306e a90c 0906 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getIntByPropID
+  60 090a 
+  61 0022 15e4 
+  63 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+  66 206e ad90 0040 Ljava/lang/StringBuilder;->append
+  69 000c 
+  70 2223 1801 
+  72 1071 ace9 0008 Ljava/lang/Integer;->valueOf
+  75 040c 
+  76 044d 0102 
+  78 2071 ad5c 0023 Ljava/lang/String;->format
+  81 010c 
+  82 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  85 000c 
+  86 011a 034c ")  value = "
+  88 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  91 000c 
+  92 206e ad8c 0090 Ljava/lang/StringBuilder;->append
+  95 000c 
+  96 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  99 000c 
+ 100 2071 08f5 0005 Landroid/util/Log;->i
+ 103 306e a8d1 0987 Lcom/jsbd/mcuupdate/VehicleModule;->convertPropValueToFunctionValue
+ 106 080a 
+ 107 080f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->getMicVolume code=3953568 regs=2 ins=1
+   0 1054 e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+   2 106e a905 0000 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarAudioManager
+   5 000c 
+   6 106e 024e 0000 Landroid/car/media/CarAudioManager;->getMicVolume
+   9 000a 
+  10 000f 
+  11 000d 
+  12 106e ad1a 0000 Ljava/lang/NoSuchMethodError;->printStackTrace
+  15 0528 
+  16 000d 
+  17 106e acbd 0000 Ljava/lang/Exception;->printStackTrace
+  20 0012 const/4 v0 0
+  21 000f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->getMicVolumeRange code=3953644 regs=2 ins=1
+   0 1054 e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+   2 106e a905 0000 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarAudioManager
+   5 000c 
+   6 106e 024f 0000 Landroid/car/media/CarAudioManager;->getMicVolumeRange
+   9 000c 
+  10 0b28 
+  11 000d 
+  12 106e ad1a 0000 Ljava/lang/NoSuchMethodError;->printStackTrace
+  15 0528 
+  16 000d 
+  17 106e acbd 0000 Ljava/lang/Exception;->printStackTrace
+  20 0012 const/4 v0 0
+  21 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue code=3951772 regs=4 ins=3
+   0 0012 const/4 v0 0
+   1 406e a8d9 3021 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue code=3951936 regs=5 ins=4
+   0 206e a8cf 0021 Lcom/jsbd/mcuupdate/VehicleModule;->convertFunctionIDToPropID
+   3 000a 
+   4 2033 0031 if target 53
+   6 0322 15e4 
+   8 1070 ad85 0003 Ljava/lang/StringBuilder;-><init>
+  11 041a b102 "setFunctionValue:convert function ("
+  13 206e ad90 0043 Ljava/lang/StringBuilder;->append
+  16 030c 
+  17 1412 const/4 v4 1
+  18 4423 1801 
+  20 1071 ace9 0002 Ljava/lang/Integer;->valueOf
+  23 020c 
+  24 0012 const/4 v0 0
+  25 024d 0004 
+  27 021a 04cf "0x%08x"
+  29 2071 ad5c 0042 Ljava/lang/String;->format
+  32 020c 
+  33 206e ad90 0023 Ljava/lang/StringBuilder;->append
+  36 020c 
+  37 031a 0358 ") to propId error!!"
+  39 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  42 020c 
+  43 106e ad9a 0002 Ljava/lang/StringBuilder;->toString
+  46 020c 
+  47 031a 4b18 "VehicleModule"
+  49 2071 08f5 0023 Landroid/util/Log;->i
+  52 000f 
+  53 1254 e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  55 406e a91a 4302 Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendIntToMCUByPropID
+  58 020a 
+  59 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue code=3951800 regs=5 ins=4
+   0 206e a8cf 0021 Lcom/jsbd/mcuupdate/VehicleModule;->convertFunctionIDToPropID
+   3 000a 
+   4 2033 0031 if target 53
+   6 0322 15e4 
+   8 1070 ad85 0003 Ljava/lang/StringBuilder;-><init>
+  11 041a b102 "setFunctionValue:convert function ("
+  13 206e ad90 0043 Ljava/lang/StringBuilder;->append
+  16 030c 
+  17 1412 const/4 v4 1
+  18 4423 1801 
+  20 1071 ace9 0002 Ljava/lang/Integer;->valueOf
+  23 020c 
+  24 0012 const/4 v0 0
+  25 024d 0004 
+  27 021a 04cf "0x%08x"
+  29 2071 ad5c 0042 Ljava/lang/String;->format
+  32 020c 
+  33 206e ad90 0023 Ljava/lang/StringBuilder;->append
+  36 020c 
+  37 031a 0358 ") to propId error!!"
+  39 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  42 020c 
+  43 106e ad9a 0002 Ljava/lang/StringBuilder;->toString
+  46 020c 
+  47 031a 4b18 "VehicleModule"
+  49 2071 08f5 0023 Landroid/util/Log;->i
+  52 000f 
+  53 1254 e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  55 406e a917 4302 Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendBytesToMcuByPropID
+  58 020a 
+  59 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue code=3951744 regs=4 ins=3
+   0 0012 const/4 v0 0
+   1 406e a8da 3021 Lcom/jsbd/mcuupdate/VehicleModule;->setFunctionValue
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleModule;->setMicVolume code=3953748 regs=3 ins=2
+   0 1054 e589 Lcom/jsbd/mcuupdate/VehicleModule;->mVehicleSignalManager:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+   2 106e a905 0000 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarAudioManager
+   5 000c 
+   6 206e 0250 0020 Landroid/car/media/CarAudioManager;->setMicVolume
+   9 0a28 
+  10 020d 
+  11 106e ad1a 0002 Ljava/lang/NoSuchMethodError;->printStackTrace
+  14 0528 
+  15 020d 
+  16 106e acbd 0002 Ljava/lang/Exception;->printStackTrace
+  19 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;-><init> code=3953820 regs=3 ins=3
+   0 1070 ad2c 0000 Ljava/lang/Object;-><init>
+   3 025b e58b Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;->mListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$IValueAndStateChangeListener;
+   5 0222 15f9 
+   7 2070 adcb 0012 Ljava/lang/ref/WeakReference;-><init>
+  10 025b e58a Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;->cbManager:Ljava/lang/ref/WeakReference;
+  12 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;->onChangeEvent code=3953864 regs=4 ins=2
+   0 2054 e58a Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;->cbManager:Ljava/lang/ref/WeakReference;
+   2 106e adcd 0000 Ljava/lang/ref/WeakReference;->get
+   5 000c 
+   6 001f 14eb 
+   8 0038 0007 if target 15
+  10 2154 e58b Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;->mListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$IValueAndStateChangeListener;
+  12 3071 a8ef 0130 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->access$000
+  15 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;-><init> code=3954012 regs=4 ins=3
+   0 1070 023b 0001 Landroid/car/carconfig/ECarxCarConfigManager$CarConfigCallback;-><init>
+   3 0022 15f9 
+   5 2070 adcb 0020 Ljava/lang/ref/WeakReference;-><init>
+   8 105b e58c Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;->cbManager:Ljava/lang/ref/WeakReference;
+  10 135b e58d Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;->mListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$IValueAndStateChangeListener;
+  12 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;->onFunctionStatusChanged code=3954056 regs=6 ins=4
+   0 2054 e58c Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;->cbManager:Ljava/lang/ref/WeakReference;
+   2 106e adcd 0000 Ljava/lang/ref/WeakReference;->get
+   5 000c 
+   6 001f 14eb 
+   8 0038 0007 if target 15
+  10 2154 e58d Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;->mListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$IValueAndStateChangeListener;
+  12 5171 a8f0 5430 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->access$100
+  15 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;-><init> code=3955304 regs=5 ins=3
+   0 1070 ad2c 0002 Ljava/lang/Object;-><init>
+   3 1012 const/4 v0 1
+   4 205c e58e Lcom/jsbd/mcuupdate/VehicleRegisterManager;->DEBUG:Z
+   6 0012 const/4 v0 0
+   7 205b e590 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyEventListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;
+   9 0122 165f 
+  11 1070 af7b 0001 Ljava/util/HashMap;-><init>
+  14 215b e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+  16 205b e592 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarStateChangeListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;
+  18 0022 165f 
+  20 1070 af7b 0000 Ljava/util/HashMap;-><init>
+  23 205b e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+  25 235b e591 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyManager:Landroid/car/hardware/property/CarPropertyManager;
+  27 245b e593 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+  29 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->access$000 code=3955380 regs=3 ins=3
+   0 3070 a8f1 0210 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->handleOnChangeEvent
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->access$100 code=3955404 regs=5 ins=5
+   0 5470 a8f2 3210 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->handleOnStateChangeEvent
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->handleOnChangeEvent code=3955428 regs=6 ins=3
+   0 3054 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+   2 001d 
+   3 106e 0244 0004 Landroid/car/hardware/CarPropertyValue;->getPropertyId
+   6 010a 
+   7 106e 0243 0004 Landroid/car/hardware/CarPropertyValue;->getAreaId
+  10 020a 
+  11 106e 0245 0004 Landroid/car/hardware/CarPropertyValue;->getValue
+  14 040c 
+  15 041f 1726 
+  17 4072 a8ed 4215 Lcom/jsbd/mcuupdate/VehicleRegisterManager$IValueAndStateChangeListener;->onValueChanged
+  20 1071 a8fe 0004 Lcom/jsbd/mcuupdate/VehicleSignalManager;->byteToInt2
+  23 040a 
+  24 4072 a8ec 4215 Lcom/jsbd/mcuupdate/VehicleRegisterManager$IValueAndStateChangeListener;->onValueChanged
+  27 001e 
+  28 000e 
+  29 040d 
+  30 001e 
+  31 0427 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->handleOnStateChangeEvent code=3955520 regs=6 ins=5
+   0 1054 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+   2 001d 
+   3 4072 a8eb 4325 Lcom/jsbd/mcuupdate/VehicleRegisterManager$IValueAndStateChangeListener;->onStateChanged
+   6 001e 
+   7 000e 
+   8 020d 
+   9 001e 
+  10 0227 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->registerStateChangeListener code=3954124 regs=11 ins=3
+   0 001a 4b1a "VehicleRegisterManager"
+   2 0112 const/4 v1 0
+   3 8255 e58e Lcom/jsbd/mcuupdate/VehicleRegisterManager;->DEBUG:Z
+   5 0238 0054 if target 89
+   7 0222 15e3 
+   9 1070 ad81 0002 Ljava/lang/StringBuffer;-><init>
+  12 9321 
+  13 1401 
+  14 3435 0021 if target 47
+  16 0544 0409 
+  18 0622 15e4 
+  20 1070 ad85 0006 Ljava/lang/StringBuilder;-><init>
+  23 071a 0021 " "
+  25 206e ad90 0076 Ljava/lang/StringBuilder;->append
+  28 060c 
+  29 1071 0621 0005 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  32 050c 
+  33 206e ad90 0056 Ljava/lang/StringBuilder;->append
+  36 050c 
+  37 106e ad9a 0005 Ljava/lang/StringBuilder;->toString
+  40 050c 
+  41 206e ad83 0052 Ljava/lang/StringBuffer;->append
+  44 04d8 0104 
+  46 e028 
+  47 0322 15e4 
+  49 1070 ad85 0003 Ljava/lang/StringBuilder;-><init>
+  52 041a a8a4 "registerStateChangeListener() called with: propids("
+  54 206e ad90 0043 Ljava/lang/StringBuilder;->append
+  57 030c 
+  58 106e ad84 0002 Ljava/lang/StringBuffer;->toString
+  61 020c 
+  62 206e ad90 0023 Ljava/lang/StringBuilder;->append
+  65 020c 
+  66 031a 035a "), watcher["
+  68 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  71 020c 
+  72 206e ad8f 00a2 Ljava/lang/StringBuilder;->append
+  75 020c 
+  76 031a 4f19 "]"
+  78 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  81 020c 
+  82 106e ad9a 0002 Ljava/lang/StringBuilder;->toString
+  85 020c 
+  86 2071 08f0 0020 Landroid/util/Log;->d
+  89 0a39 0003 if target 92
+  91 010f 
+  92 8254 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+  94 206e af82 00a2 Ljava/util/HashMap;->get
+  97 020c 
+  98 0239 000a if target 108
+ 100 0222 14e7 
+ 102 3070 a8e2 0a82 Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;-><init>
+ 105 825b e592 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarStateChangeListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;
+ 107 0b28 
+ 108 8254 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+ 110 206e af82 00a2 Ljava/util/HashMap;->get
+ 113 020c 
+ 114 021f 14e7 
+ 116 825b e592 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarStateChangeListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;
+ 118 9221 
+ 119 1301 
+ 120 2335 0011 if target 137
+ 122 0444 0309 
+ 124 043c 0003 if target 127
+ 126 010f 
+ 127 8554 e593 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+ 129 8654 e592 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarStateChangeListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;
+ 131 306e 023f 0465 Landroid/car/carconfig/ECarxCarConfigManager;->registerConfigCallback
+ 134 03d8 0103 
+ 136 f028 
+ 137 8254 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+ 139 206e af7f 00a2 Ljava/util/HashMap;->containsKey
+ 142 020a 
+ 143 0239 0009 if target 152
+ 145 8254 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+ 147 8354 e592 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarStateChangeListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;
+ 149 306e af86 03a2 Ljava/util/HashMap;->put
+ 152 1912 const/4 v9 1
+ 153 090f 
+ 154 0a22 15e4 
+ 156 1070 ad85 000a Ljava/lang/StringBuilder;-><init>
+ 159 021a 00b9 " call registerStateChangeListener("
+ 161 206e ad90 002a Ljava/lang/StringBuilder;->append
+ 164 0a0c 
+ 165 0944 0109 
+ 167 1071 0621 0009 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+ 170 090c 
+ 171 206e ad90 009a Ljava/lang/StringBuilder;->append
+ 174 090c 
+ 175 0a1a 0354 ") error!!! "
+ 177 206e ad90 00a9 Ljava/lang/StringBuilder;->append
+ 180 090c 
+ 181 106e ad9a 0009 Ljava/lang/StringBuilder;->toString
+ 184 090c 
+ 185 2071 08f2 0090 Landroid/util/Log;->e
+ 188 010f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->registerValueChangeListener code=3954536 regs=4 ins=3
+   0 0012 const/4 v0 0
+   1 406e a8f5 0321 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->registerValueChangeListener
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->registerValueChangeListener code=3954564 regs=12 ins=4
+   0 001a 4b1a "VehicleRegisterManager"
+   2 0112 const/4 v1 0
+   3 8255 e58e Lcom/jsbd/mcuupdate/VehicleRegisterManager;->DEBUG:Z
+   5 0238 0054 if target 89
+   7 0222 15e3 
+   9 1070 ad81 0002 Ljava/lang/StringBuffer;-><init>
+  12 9321 
+  13 1401 
+  14 3435 0021 if target 47
+  16 0544 0409 
+  18 0622 15e4 
+  20 1070 ad85 0006 Ljava/lang/StringBuilder;-><init>
+  23 071a 0021 " "
+  25 206e ad90 0076 Ljava/lang/StringBuilder;->append
+  28 060c 
+  29 1071 0621 0005 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  32 050c 
+  33 206e ad90 0056 Ljava/lang/StringBuilder;->append
+  36 050c 
+  37 106e ad9a 0005 Ljava/lang/StringBuilder;->toString
+  40 050c 
+  41 206e ad83 0052 Ljava/lang/StringBuffer;->append
+  44 04d8 0104 
+  46 e028 
+  47 0322 15e4 
+  49 1070 ad85 0003 Ljava/lang/StringBuilder;-><init>
+  52 041a a8ac "registerValueChangeListener() called with: propids("
+  54 206e ad90 0043 Ljava/lang/StringBuilder;->append
+  57 030c 
+  58 106e ad84 0002 Ljava/lang/StringBuffer;->toString
+  61 020c 
+  62 206e ad90 0023 Ljava/lang/StringBuilder;->append
+  65 020c 
+  66 031a 035a "), watcher["
+  68 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  71 020c 
+  72 206e ad8f 00a2 Ljava/lang/StringBuilder;->append
+  75 020c 
+  76 031a 4f19 "]"
+  78 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  81 020c 
+  82 106e ad9a 0002 Ljava/lang/StringBuilder;->toString
+  85 020c 
+  86 2071 08f0 0020 Landroid/util/Log;->d
+  89 0a39 0003 if target 92
+  91 010f 
+  92 8254 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+  94 206e af82 00a2 Ljava/util/HashMap;->get
+  97 020c 
+  98 0239 000a if target 108
+ 100 0222 14e6 
+ 102 3070 a8df 0a82 Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;-><init>
+ 105 825b e590 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyEventListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;
+ 107 0b28 
+ 108 8254 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+ 110 206e af82 00a2 Ljava/util/HashMap;->get
+ 113 020c 
+ 114 021f 14e6 
+ 116 825b e590 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyEventListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;
+ 118 9221 
+ 119 1301 
+ 120 2335 0010 if target 136
+ 122 0444 0309 
+ 124 0438 0009 if target 133
+ 126 8554 e591 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyManager:Landroid/car/hardware/property/CarPropertyManager;
+ 128 8654 e590 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyEventListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;
+ 130 406e 024b b465 Landroid/car/hardware/property/CarPropertyManager;->registerCallback
+ 133 03d8 0103 
+ 135 f128 
+ 136 8b54 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+ 138 206e af7f 00ab Ljava/util/HashMap;->containsKey
+ 141 0b0a 
+ 142 0b39 0009 if target 151
+ 144 8b54 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+ 146 8254 e590 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyEventListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;
+ 148 306e af86 02ab Ljava/util/HashMap;->put
+ 151 1912 const/4 v9 1
+ 152 090f 
+ 153 0a22 15e4 
+ 155 1070 ad85 000a Ljava/lang/StringBuilder;-><init>
+ 158 0b1a 00ba " call registerValueChangeListener("
+ 160 206e ad90 00ba Ljava/lang/StringBuilder;->append
+ 163 0a0c 
+ 164 0944 0109 
+ 166 1071 0621 0009 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+ 169 090c 
+ 170 206e ad90 009a Ljava/lang/StringBuilder;->append
+ 173 090c 
+ 174 0a1a 0354 ") error!!! "
+ 176 206e ad90 00a9 Ljava/lang/StringBuilder;->append
+ 179 090c 
+ 180 106e ad9a 0009 Ljava/lang/StringBuilder;->toString
+ 183 090c 
+ 184 2071 08f2 0090 Landroid/util/Log;->e
+ 187 010f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->unregisterStateChangeListener code=3954972 regs=5 ins=2
+   0 001a 4b1a "VehicleRegisterManager"
+   2 0122 15e4 
+   4 1070 ad85 0001 Ljava/lang/StringBuilder;-><init>
+   7 021a bdb2 "unregisterStateChangeListener() called with: watcher = ["
+   9 206e ad90 0021 Ljava/lang/StringBuilder;->append
+  12 010c 
+  13 206e ad8f 0041 Ljava/lang/StringBuilder;->append
+  16 010c 
+  17 021a 4f19 "]"
+  19 206e ad90 0021 Ljava/lang/StringBuilder;->append
+  22 010c 
+  23 106e ad9a 0001 Ljava/lang/StringBuilder;->toString
+  26 010c 
+  27 2071 08f0 0010 Landroid/util/Log;->d
+  30 3054 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+  32 001d 
+  33 3154 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+  35 206e af82 0041 Ljava/util/HashMap;->get
+  38 010c 
+  39 011f 14e7 
+  41 315b e592 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarStateChangeListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarStateChangeListenerToBase;
+  43 3254 e593 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+  45 206e 0240 0012 Landroid/car/carconfig/ECarxCarConfigManager;->unregisterConfigCallback
+  48 3154 e594 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mStateChangeMap:Ljava/util/HashMap;
+  50 206e af88 0041 Ljava/util/HashMap;->remove
+  53 001e 
+  54 1412 const/4 v4 1
+  55 040f 
+  56 040d 
+  57 001e 
+  58 0427 
+  59 041a 4b1a "VehicleRegisterManager"
+  61 001a 00bb " call unregisterStateChangeListener() error!!! "
+  63 2071 08f2 0004 Landroid/util/Log;->e
+  66 0412 const/4 v4 0
+  67 040f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleRegisterManager;->unregisterValueChangeListener code=3955156 regs=5 ins=2
+   0 001a 4b1a "VehicleRegisterManager"
+   2 0122 15e4 
+   4 1070 ad85 0001 Ljava/lang/StringBuilder;-><init>
+   7 021a bdb6 "unregisterValueChangeListener() called with: watcher = ["
+   9 206e ad90 0021 Ljava/lang/StringBuilder;->append
+  12 010c 
+  13 206e ad8f 0041 Ljava/lang/StringBuilder;->append
+  16 010c 
+  17 021a 4f19 "]"
+  19 206e ad90 0021 Ljava/lang/StringBuilder;->append
+  22 010c 
+  23 106e ad9a 0001 Ljava/lang/StringBuilder;->toString
+  26 010c 
+  27 2071 08f0 0010 Landroid/util/Log;->d
+  30 3054 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+  32 001d 
+  33 3154 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+  35 206e af82 0041 Ljava/util/HashMap;->get
+  38 010c 
+  39 011f 14e6 
+  41 315b e590 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyEventListener:Lcom/jsbd/mcuupdate/VehicleRegisterManager$CarPropertyEventListenerToBase;
+  43 3254 e591 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mCarPropertyManager:Landroid/car/hardware/property/CarPropertyManager;
+  45 206e 024d 0012 Landroid/car/hardware/property/CarPropertyManager;->unregisterCallback
+  48 3154 e595 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->mValueChangeMap:Ljava/util/HashMap;
+  50 206e af88 0041 Ljava/util/HashMap;->remove
+  53 001e 
+  54 1412 const/4 v4 1
+  55 040f 
+  56 040d 
+  57 001e 
+  58 0427 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager$1;-><init> code=3955572 regs=2 ins=2
+   0 015b e596 Lcom/jsbd/mcuupdate/VehicleSignalManager$1;->this$0:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+   2 1070 ad2c 0000 Ljava/lang/Object;-><init>
+   5 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager$1;->onServiceConnected code=3955600 regs=3 ins=3
+   0 011a 4b1c "VehicleSignalManager"
+   2 021a 5b42 "connected to car service"
+   4 2071 08f5 0021 Landroid/util/Log;->i
+   7 0154 e596 Lcom/jsbd/mcuupdate/VehicleSignalManager$1;->this$0:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+   9 1071 a8fc 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->access$000
+  12 010c 
+  13 0138 000b if target 24
+  15 0154 e596 Lcom/jsbd/mcuupdate/VehicleSignalManager$1;->this$0:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  17 1071 a8fc 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->access$000
+  20 010c 
+  21 1072 a8e5 0001 Lcom/jsbd/mcuupdate/VehicleRegisterManager$IConnectable$IConnectWatcher;->onConnected
+  24 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager$1;->onServiceDisconnected code=3955668 regs=3 ins=2
+   0 021a 4b1c "VehicleSignalManager"
+   2 001a 6001 "disconnected to car service"
+   4 2071 08f5 0002 Landroid/util/Log;->i
+   7 1254 e596 Lcom/jsbd/mcuupdate/VehicleSignalManager$1;->this$0:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+   9 1071 a8fc 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->access$000
+  12 020c 
+  13 0238 000b if target 24
+  15 1254 e596 Lcom/jsbd/mcuupdate/VehicleSignalManager$1;->this$0:Lcom/jsbd/mcuupdate/VehicleSignalManager;
+  17 1071 a8fc 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->access$000
+  20 020c 
+  21 1072 a8e6 0002 Lcom/jsbd/mcuupdate/VehicleRegisterManager$IConnectable$IConnectWatcher;->onDisConnected
+  24 000e 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->onProgress code=3205056 regs=5 ins=2
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a a2b0 "onMcuUpdateProgress"
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e ad8c 0040 Ljava/lang/StringBuilder;->append
+  14 040c 
+  15 106e ad9a 0004 Ljava/lang/StringBuilder;->toString
+  18 040c 
+  19 1071 7217 0004 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+  22 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  24 1071 72e5 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$700
+  27 040a 
+  28 0439 0015 if target 49
+  30 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  32 1071 72e4 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$600
+  35 040c 
+  36 4012 const/4 v0 4
+  37 f112 const/4 v1 -1
+  38 0215 bf80 
+  40 4072 aa3f 2104 Lecarx/os/ota/IOsUpdateCallback;->onStatusUpdate
+  43 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  45 1012 const/4 v0 1
+  46 2071 72e6 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$702
+  49 000e 
+  50 040d 
+  51 0022 15dc 
+  53 2070 ad41 0040 Ljava/lang/RuntimeException;-><init>
+  56 0027 
+
+METHOD Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->onUpdateComplete code=3205204 regs=5 ins=2
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a a2af "onMcuUpdateComplete"
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e ad8c 0040 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  18 000c 
+  19 1071 7217 0000 Lcom/ecarx/xupgrade/fota/util/LogcatUtil;->i
+  22 3054 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  24 1071 72e0 0000 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$300
+  27 000c 
+  28 1071 7271 0000 Lcom/ecarx/xupgrade/ota/FileUtil;->deleteFile
+  31 0439 0049 if target 104
+  33 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  35 1071 72e1 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  38 040c 
+  39 106e a8c6 0004 Lcom/jsbd/mcuupdate/McuUpdate;->sendCompleteToMcu
+  42 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  44 1071 72e1 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  47 040c 
+  48 106e a8c6 0004 Lcom/jsbd/mcuupdate/McuUpdate;->sendCompleteToMcu
+  51 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  53 1071 72e1 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  56 040c 
+  57 106e a8c6 0004 Lcom/jsbd/mcuupdate/McuUpdate;->sendCompleteToMcu
+  60 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  62 1071 72e1 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  65 040c 
+  66 106e a8c6 0004 Lcom/jsbd/mcuupdate/McuUpdate;->sendCompleteToMcu
+  69 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  71 1071 72e1 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$400
+  74 040c 
+  75 106e a8c6 0004 Lcom/jsbd/mcuupdate/McuUpdate;->sendCompleteToMcu
+  78 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+  80 1012 const/4 v0 1
+  81 2071 72e3 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$502
+  84 0422 013f 
+  86 0071 071c 0000 Landroid/os/Looper;->getMainLooper
+  89 000c 
+  90 2070 06ea 0004 Landroid/os/Handler;-><init>
+  93 0022 0ecf 
+  95 2070 7247 0030 Lcom/ecarx/xupgrade/ota/-$$Lambda$UpgradeManager$1$v-LPVlS_97LY8JPmRIQ1-0GHIoI;-><init>
+  98 0116 0bb8 const/16 3000
+ 100 406e 06fa 2104 Landroid/os/Handler;->postDelayed
+ 103 1128 
+ 104 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+ 106 0012 const/4 v0 0
+ 107 2071 72e3 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$502
+ 110 3454 5ec0 Lcom/ecarx/xupgrade/ota/UpgradeManager$1;->this$0:Lcom/ecarx/xupgrade/ota/UpgradeManager;
+ 112 1071 72e4 0004 Lcom/ecarx/xupgrade/ota/UpgradeManager;->access$600
+ 115 040c 
+ 116 4112 const/4 v1 4
+ 117 3072 aa3b 0014 Lecarx/os/ota/IOsUpdateCallback;->onComplete
+ 120 000e 
+ 121 040d 
+ 122 0022 15dc 
+ 124 2070 ad41 0040 Ljava/lang/RuntimeException;-><init>
+ 127 0027 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$1;-><init> code=3947784 regs=2 ins=2
+   0 015b e573 Lcom/jsbd/mcuupdate/McuUpdate$1;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 1070 ad2c 0000 Ljava/lang/Object;-><init>
+   5 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$1;->onConnected code=3947812 regs=3 ins=1
+   0 001a 38a8 "McuUpdate"
+   2 011a a1b8 "onConnected"
+   4 2071 08f0 0010 Landroid/util/Log;->d
+   7 2054 e573 Lcom/jsbd/mcuupdate/McuUpdate$1;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+   9 1071 a8b4 0000 Lcom/jsbd/mcuupdate/McuUpdate;->access$000
+  12 2054 e573 Lcom/jsbd/mcuupdate/McuUpdate$1;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  14 1071 a8b5 0000 Lcom/jsbd/mcuupdate/McuUpdate;->access$100
+  17 000c 
+  18 0038 000c if target 30
+  20 2054 e573 Lcom/jsbd/mcuupdate/McuUpdate$1;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  22 1071 a8b5 0000 Lcom/jsbd/mcuupdate/McuUpdate;->access$100
+  25 000c 
+  26 1112 const/4 v1 1
+  27 2072 a920 0010 Lcom/jsbd/mcuupdate/listener/ICarConnectListener;->onConnect
+  30 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$1;->onDisConnected code=3947892 regs=3 ins=1
+   0 001a 38a8 "McuUpdate"
+   2 011a a1b8 "onConnected"
+   4 2071 08f0 0010 Landroid/util/Log;->d
+   7 2054 e573 Lcom/jsbd/mcuupdate/McuUpdate$1;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+   9 1071 a8b5 0000 Lcom/jsbd/mcuupdate/McuUpdate;->access$100
+  12 000c 
+  13 0038 000c if target 25
+  15 2054 e573 Lcom/jsbd/mcuupdate/McuUpdate$1;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  17 1071 a8b5 0000 Lcom/jsbd/mcuupdate/McuUpdate;->access$100
+  20 000c 
+  21 0112 const/4 v1 0
+  22 2072 a920 0010 Lcom/jsbd/mcuupdate/listener/ICarConnectListener;->onConnect
+  25 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$3;-><init> code=3948088 regs=2 ins=2
+   0 015b e575 Lcom/jsbd/mcuupdate/McuUpdate$3;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+   2 1070 ad2c 0000 Ljava/lang/Object;-><init>
+   5 000e 
+
+METHOD Lcom/jsbd/mcuupdate/McuUpdate$3;->onValueChanged code=3948136 regs=6 ins=4
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a a3ea "onValueChanged : propID = "
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 206e ad8c 0030 Ljava/lang/StringBuilder;->append
+  14 000c 
+  15 011a 005d " , zone ="
+  17 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  20 000c 
+  21 206e ad8c 0040 Ljava/lang/StringBuilder;->append
+  24 040c 
+  25 001a 005e " ,value.length = "
+  27 206e ad90 0004 Ljava/lang/StringBuilder;->append
+  30 040c 
+  31 0538 0008 if target 39
+  33 5021 
+  34 1071 ace9 0000 Ljava/lang/Integer;->valueOf
+  37 000c 
+  38 0328 
+  39 001a a0be "null"
+  41 206e ad8f 0004 Ljava/lang/StringBuilder;->append
+  44 040c 
+  45 106e ad9a 0004 Ljava/lang/StringBuilder;->toString
+  48 040c 
+  49 001a 38a8 "McuUpdate"
+  51 2071 08f2 0040 Landroid/util/Log;->e
+  54 2454 e575 Lcom/jsbd/mcuupdate/McuUpdate$3;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  56 1071 a8b6 0004 Lcom/jsbd/mcuupdate/McuUpdate;->access$1000
+  59 040c 
+  60 206e a8d0 0034 Lcom/jsbd/mcuupdate/VehicleModule;->convertPropIDToFunctionID
+  63 030a 
+  64 0414 0300 0001 const 66304 / 0x10300
+  67 4332 0011 if target 84
+  69 0414 0200 0001 const 66048 / 0x10200
+  72 4332 000c if target 84
+  74 0414 0100 0001 const 65792 / 0x10100
+  77 4332 0007 if target 84
+  79 0414 6000 0002 const 155648 / 0x26000
+  82 4333 000f if target 97
+  84 2454 e575 Lcom/jsbd/mcuupdate/McuUpdate$3;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  86 1071 a8bb 0004 Lcom/jsbd/mcuupdate/McuUpdate;->access$600
+  89 040a 
+  90 0438 0007 if target 97
+  92 2454 e575 Lcom/jsbd/mcuupdate/McuUpdate$3;->this$0:Lcom/jsbd/mcuupdate/McuUpdate;
+  94 3071 a8b7 0534 Lcom/jsbd/mcuupdate/McuUpdate;->access$1100
+  97 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;-><init> code=3957724 regs=4 ins=2
+   0 1070 ad2c 0002 Ljava/lang/Object;-><init>
+   3 0012 const/4 v0 0
+   4 205b e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   6 0122 15d5 
+   8 1070 ad2c 0001 Ljava/lang/Object;-><init>
+  11 215b e5af Lcom/jsbd/mcuupdate/VehicleSignalManager;->mECarxServiceManagerReady:Ljava/lang/Object;
+  13 205b e5ac Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarPropertyManager:Landroid/car/hardware/property/CarPropertyManager;
+  15 205b e5aa Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarAudioManager:Landroid/car/media/CarAudioManager;
+  17 205b e5ae Lcom/jsbd/mcuupdate/VehicleSignalManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+  19 205b e5b0 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mVehicleRegisterManager:Lcom/jsbd/mcuupdate/VehicleRegisterManager;
+  21 001a 0000 ""
+  23 205b e5b2 Lcom/jsbd/mcuupdate/VehicleSignalManager;->packageName:Ljava/lang/String;
+  25 0022 14ec 
+  27 2070 a8f8 0020 Lcom/jsbd/mcuupdate/VehicleSignalManager$1;-><init>
+  30 205b e5ab Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarConnectionCallback:Landroid/content/ServiceConnection;
+  32 235b e5ad Lcom/jsbd/mcuupdate/VehicleSignalManager;->mContext:Landroid/content/Context;
+  34 2071 0233 0003 Landroid/car/Car;->createCar
+  37 030c 
+  38 235b e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+  40 2354 e5ad Lcom/jsbd/mcuupdate/VehicleSignalManager;->mContext:Landroid/content/Context;
+  42 106e 0294 0003 Landroid/content/Context;->getPackageName
+  45 030c 
+  46 235b e5b2 Lcom/jsbd/mcuupdate/VehicleSignalManager;->packageName:Ljava/lang/String;
+  48 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->access$000 code=3956936 regs=1 ins=1
+   0 0054 e5b1 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mWatcher:Lcom/jsbd/mcuupdate/VehicleRegisterManager$IConnectable$IConnectWatcher;
+   2 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarManager code=3957544 regs=4 ins=2
+   0 2054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   2 206e 0236 0030 Landroid/car/Car;->getCarManager
+   5 030c 
+   6 0311 
+   7 030d 
+   8 0022 15e4 
+  10 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+  13 011a 7831 "getCarManager error!!! e="
+  15 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  18 000c 
+  19 106e 023a 0003 Landroid/car/CarNotConnectedException;->toString
+  22 030c 
+  23 206e ad90 0030 Ljava/lang/StringBuilder;->append
+  26 030c 
+  27 106e ad9a 0003 Ljava/lang/StringBuilder;->toString
+  30 030c 
+  31 001a 4b1c "VehicleSignalManager"
+  33 2071 08f2 0030 Landroid/util/Log;->e
+  36 0312 const/4 v3 0
+  37 0311 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager code=3955736 regs=2 ins=1
+   0 1054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   2 106e 0237 0000 Landroid/car/Car;->isConnected
+   5 000a 
+   6 0038 0010 if target 22
+   8 1054 e5ae Lcom/jsbd/mcuupdate/VehicleSignalManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+  10 0039 000c if target 22
+  12 001a 5828 "car_config"
+  14 2070 a906 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarManager
+  17 000c 
+  18 001f 005b 
+  20 105b e5ae Lcom/jsbd/mcuupdate/VehicleSignalManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+  22 1054 e5ae Lcom/jsbd/mcuupdate/VehicleSignalManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+  24 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager code=3956860 regs=4 ins=1
+   0 3054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   2 106e 0237 0000 Landroid/car/Car;->isConnected
+   5 000a 
+   6 0038 0015 if target 27
+   8 3054 e5b0 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mVehicleRegisterManager:Lcom/jsbd/mcuupdate/VehicleRegisterManager;
+  10 0039 0011 if target 27
+  12 0022 14eb 
+  14 106e a907 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarPropertyManager
+  17 010c 
+  18 1070 a909 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+  21 020c 
+  22 3070 a8ee 0210 Lcom/jsbd/mcuupdate/VehicleRegisterManager;-><init>
+  25 305b e5b0 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mVehicleRegisterManager:Lcom/jsbd/mcuupdate/VehicleRegisterManager;
+  27 3054 e5b0 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mVehicleRegisterManager:Lcom/jsbd/mcuupdate/VehicleRegisterManager;
+  29 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->connect code=3957840 regs=1 ins=1
+   0 106e a900 0000 Lcom/jsbd/mcuupdate/VehicleSignalManager;->connectToAutoCarService
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->connectToAutoCarService code=3957864 regs=5 ins=1
+   0 001a 4b1c "VehicleSignalManager"
+   2 4154 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   4 106e 0237 0001 Landroid/car/Car;->isConnected
+   7 010a 
+   8 0138 0008 if target 16
+  10 011a 52e8 "already connected to car service..."
+  12 2071 08f5 0010 Landroid/util/Log;->i
+  15 2f28 
+  16 4154 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+  18 106e 0238 0001 Landroid/car/Car;->isConnecting
+  21 010a 
+  22 0139 0028 if target 62
+  24 011a b8fa "start to connect to car service..."
+  26 2071 08f5 0010 Landroid/util/Log;->i
+  29 4154 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+  31 106e 0232 0001 Landroid/car/Car;->connect
+  34 1c28 
+  35 010d 
+  36 0222 15e4 
+  38 1070 ad85 0002 Ljava/lang/StringBuilder;-><init>
+  41 031a 5b40 "connectToAutoCarService error!!! e="
+  43 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  46 020c 
+  47 106e acd5 0001 Ljava/lang/IllegalStateException;->toString
+  50 010c 
+  51 206e ad90 0012 Ljava/lang/StringBuilder;->append
+  54 010c 
+  55 106e ad9a 0001 Ljava/lang/StringBuilder;->toString
+  58 010c 
+  59 2071 08f2 0010 Landroid/util/Log;->e
+  62 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->disconnect code=3958024 regs=1 ins=1
+   0 106e a902 0000 Lcom/jsbd/mcuupdate/VehicleSignalManager;->disconnectToAutoCarService
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->disconnectToAutoCarService code=3958048 regs=3 ins=1
+   0 2054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   2 106e 0237 0000 Landroid/car/Car;->isConnected
+   5 000a 
+   6 011a 4b1c "VehicleSignalManager"
+   8 0038 0013 if target 27
+  10 001a b8fb "start to disconnect to car service..."
+  12 2071 08f5 0001 Landroid/util/Log;->i
+  15 2054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+  17 106e 0235 0000 Landroid/car/Car;->disconnect
+  20 2054 e5ab Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarConnectionCallback:Landroid/content/ServiceConnection;
+  22 0112 const/4 v1 0
+  23 2072 02f9 0010 Landroid/content/ServiceConnection;->onServiceDisconnected
+  26 1428 
+  27 2054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+  29 106e 0238 0000 Landroid/car/Car;->isConnecting
+  32 000a 
+  33 0038 0008 if target 41
+  35 001a 8a27 "it is connecting to car service, do notiong, It hardly ever happens"
+  37 2071 08f5 0001 Landroid/util/Log;->i
+  40 0628 
+  41 001a 52e9 "already disconnected to car service..."
+  43 2071 08f5 0001 Landroid/util/Log;->i
+  46 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getBytesByPropID code=3956580 regs=3 ins=2
+   0 0012 const/4 v0 0
+   1 306e a904 0021 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getBytesByPropID
+   4 020c 
+   5 0211 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getBytesByPropID code=3956608 regs=6 ins=3
+   0 0012 const/4 v0 0
+   1 106e a907 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarPropertyManager
+   4 010c 
+   5 0138 000d if target 18
+   7 106e a907 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarPropertyManager
+  10 010c 
+  11 021c 1726 
+  13 406e 0249 5421 Landroid/car/hardware/property/CarPropertyManager;->getProperty
+  16 050c 
+  17 0228 
+  18 0507 
+  19 0538 0009 if target 28
+  21 106e 0245 0005 Landroid/car/hardware/CarPropertyValue;->getValue
+  24 050c 
+  25 051f 1726 
+  27 5007 
+  28 0011 
+  29 050d 
+  30 0122 15e4 
+  32 1070 ad85 0001 Ljava/lang/StringBuilder;-><init>
+  35 021a 00b8 " call getIntByPropID("
+  37 206e ad90 0021 Ljava/lang/StringBuilder;->append
+  40 010c 
+  41 1071 0621 0004 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  44 040c 
+  45 206e ad90 0041 Ljava/lang/StringBuilder;->append
+  48 040c 
+  49 011a 0354 ") error!!! "
+  51 206e ad90 0014 Ljava/lang/StringBuilder;->append
+  54 040c 
+  55 106e ad9a 0004 Ljava/lang/StringBuilder;->toString
+  58 040c 
+  59 011a 4b1c "VehicleSignalManager"
+  61 2071 08f2 0041 Landroid/util/Log;->e
+  64 106e acbd 0005 Ljava/lang/Exception;->printStackTrace
+  67 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarAudioManager code=3955872 regs=2 ins=1
+   0 1054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   2 106e 0237 0000 Landroid/car/Car;->isConnected
+   5 000a 
+   6 0038 0010 if target 22
+   8 1054 e5aa Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarAudioManager:Landroid/car/media/CarAudioManager;
+  10 0039 000c if target 22
+  12 001a 554e "audio"
+  14 2070 a906 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarManager
+  17 000c 
+  18 001f 0060 
+  20 105b e5aa Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarAudioManager:Landroid/car/media/CarAudioManager;
+  22 1054 e5aa Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarAudioManager:Landroid/car/media/CarAudioManager;
+  24 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarPropertyManager code=3955804 regs=2 ins=1
+   0 1054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   2 106e 0237 0000 Landroid/car/Car;->isConnected
+   5 000a 
+   6 0038 0010 if target 22
+   8 1054 e5ac Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarPropertyManager:Landroid/car/hardware/property/CarPropertyManager;
+  10 0039 000c if target 22
+  12 001a a71e "property"
+  14 2070 a906 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarManager
+  17 000c 
+  18 001f 005f 
+  20 105b e5ac Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarPropertyManager:Landroid/car/hardware/property/CarPropertyManager;
+  22 1054 e5ac Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarPropertyManager:Landroid/car/hardware/property/CarPropertyManager;
+  24 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getContext code=3955940 regs=2 ins=1
+   0 1054 e5ad Lcom/jsbd/mcuupdate/VehicleSignalManager;->mContext:Landroid/content/Context;
+   2 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getInfoFromConfigFile code=3957076 regs=5 ins=2
+   0 001a 4b1c "VehicleSignalManager"
+   2 f112 const/4 v1 -1
+   3 1070 a909 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+   6 020c 
+   7 0238 000b if target 18
+   9 1070 a909 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+  12 020c 
+  13 206e 023c 0042 Landroid/car/carconfig/ECarxCarConfigManager;->getInfoFromConfigFile
+  16 040a 
+  17 040f 
+  18 041a 12b0 "ECarXConfigManger is null..."
+  20 2071 08f2 0040 Landroid/util/Log;->e
+  23 010f 
+  24 040d 
+  25 021a 104f "Could not retrieve getInfoFromConfigFile"
+  27 3071 08f3 0420 Landroid/util/Log;->e
+  30 010f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getIntByPropID code=3957172 regs=3 ins=2
+   0 0012 const/4 v0 0
+   1 306e a90c 0021 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getIntByPropID
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getIntByPropID code=3957200 regs=3 ins=3
+   0 306e a904 0210 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getBytesByPropID
+   3 010c 
+   4 1071 a8fe 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->byteToInt2
+   7 010a 
+   8 010f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getPackageName code=3957648 regs=3 ins=1
+   0 0022 15e4 
+   2 1070 ad85 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a a4b4 "packageName = "
+   7 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  10 000c 
+  11 2154 e5b2 Lcom/jsbd/mcuupdate/VehicleSignalManager;->packageName:Ljava/lang/String;
+  13 206e ad90 0010 Ljava/lang/StringBuilder;->append
+  16 000c 
+  17 106e ad9a 0000 Ljava/lang/StringBuilder;->toString
+  20 000c 
+  21 011a 4b1c "VehicleSignalManager"
+  23 2071 08f0 0001 Landroid/util/Log;->d
+  26 2054 e5b2 Lcom/jsbd/mcuupdate/VehicleSignalManager;->packageName:Ljava/lang/String;
+  28 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->getSupportedFunctionValue code=3957388 regs=6 ins=2
+   0 0012 const/4 v0 0
+   1 053c 0003 if target 4
+   3 0011 
+   4 1070 a909 0004 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+   7 010c 
+   8 0138 000b if target 19
+  10 1070 a909 0004 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+  13 010c 
+  14 206e 023d 0051 Landroid/car/carconfig/ECarxCarConfigManager;->getSupportSupportedFunctionValue
+  17 050c 
+  18 0511 
+  19 0011 
+  20 010d 
+  21 0222 15e4 
+  23 1070 ad85 0002 Ljava/lang/StringBuilder;-><init>
+  26 031a 813a "getSupportedFunctionValue error!!! propId="
+  28 206e ad90 0032 Ljava/lang/StringBuilder;->append
+  31 020c 
+  32 1071 0621 0005 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  35 050c 
+  36 206e ad90 0052 Ljava/lang/StringBuilder;->append
+  39 050c 
+  40 021a 61af "e="
+  42 206e ad90 0025 Ljava/lang/StringBuilder;->append
+  45 050c 
+  46 106e 023a 0001 Landroid/car/CarNotConnectedException;->toString
+  49 010c 
+  50 206e ad90 0015 Ljava/lang/StringBuilder;->append
+  53 050c 
+  54 106e ad9a 0005 Ljava/lang/StringBuilder;->toString
+  57 050c 
+  58 011a 4b1c "VehicleSignalManager"
+  60 2071 08f2 0051 Landroid/util/Log;->e
+  63 0011 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->isConnected code=3955964 regs=2 ins=1
+   0 1054 e5a9 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mCarApiClient:Landroid/car/Car;
+   2 0039 0004 if target 6
+   4 0012 const/4 v0 0
+   5 0528 
+   6 106e 0237 0000 Landroid/car/Car;->isConnected
+   9 000a 
+  10 000f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->isFunctionSupported code=3957236 regs=6 ins=4
+   0 1070 a909 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+   3 000c 
+   4 2112 const/4 v1 2
+   5 0038 0037 if target 60
+   7 033c 0003 if target 10
+   9 3328 
+  10 2054 e5ae Lcom/jsbd/mcuupdate/VehicleSignalManager;->mECarxCarConfigManager:Landroid/car/carconfig/ECarxCarConfigManager;
+  12 406e 023e 5430 Landroid/car/carconfig/ECarxCarConfigManager;->isSupportFunctionSupported
+  15 030a 
+  16 030f 
+  17 040d 
+  18 0522 15e4 
+  20 1070 ad85 0005 Ljava/lang/StringBuilder;-><init>
+  23 001a 882a "isFunctionSupported error!!! propId="
+  25 206e ad90 0005 Ljava/lang/StringBuilder;->append
+  28 050c 
+  29 1071 0621 0003 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  32 030c 
+  33 206e ad90 0035 Ljava/lang/StringBuilder;->append
+  36 030c 
+  37 051a 61af "e="
+  39 206e ad90 0053 Ljava/lang/StringBuilder;->append
+  42 030c 
+  43 106e 023a 0004 Landroid/car/CarNotConnectedException;->toString
+  46 040c 
+  47 206e ad90 0043 Ljava/lang/StringBuilder;->append
+  50 030c 
+  51 106e ad9a 0003 Ljava/lang/StringBuilder;->toString
+  54 030c 
+  55 041a 4b1c "VehicleSignalManager"
+  57 2071 08f2 0034 Landroid/util/Log;->e
+  60 010f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->registerConnectWatcher code=3958160 regs=2 ins=2
+   0 015b e5b1 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mWatcher:Lcom/jsbd/mcuupdate/VehicleRegisterManager$IConnectable$IConnectWatcher;
+   2 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->registerValueAndStateChangeListener code=3956004 regs=5 ins=3
+   0 0012 const/4 v0 0
+   1 0338 001e if target 31
+   3 0439 0003 if target 6
+   5 1a28 
+   6 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+   9 010c 
+  10 0138 0015 if target 31
+  12 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+  15 010c 
+  16 306e a8f4 0431 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->registerValueChangeListener
+  19 010a 
+  20 0138 000b if target 31
+  22 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+  25 000c 
+  26 306e a8f3 0430 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->registerStateChangeListener
+  29 030a 
+  30 030f 
+  31 000f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->registerValueChangeListener code=3956084 regs=4 ins=3
+   0 0012 const/4 v0 0
+   1 406e a916 0321 Lcom/jsbd/mcuupdate/VehicleSignalManager;->registerValueChangeListener
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->registerValueChangeListener code=3956112 regs=6 ins=4
+   0 0012 const/4 v0 0
+   1 0338 0019 if target 26
+   3 0438 0017 if target 26
+   5 0112 const/4 v1 0
+   6 012e 0105 
+   8 013b 0003 if target 11
+  10 1028 
+  11 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+  14 010c 
+  15 0138 000b if target 26
+  17 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+  20 000c 
+  21 406e a8f5 5430 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->registerValueChangeListener
+  24 030a 
+  25 030f 
+  26 000f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendBytesToMcuByPropID code=3956212 regs=7 ins=4
+   0 0012 const/4 v0 0
+   1 0638 0041 if target 66
+   3 106e a907 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarPropertyManager
+   6 010c 
+   7 0138 003b if target 66
+   9 043c 0003 if target 12
+  11 3728 
+  12 106e a907 0003 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getCarPropertyManager
+  15 010c 
+  16 021c 1726 
+  18 566e 024c 5421 Landroid/car/hardware/property/CarPropertyManager;->setProperty
+  21 1412 const/4 v4 1
+  22 040f 
+  23 050d 
+  24 0622 15e4 
+  26 1070 ad85 0006 Ljava/lang/StringBuilder;-><init>
+  29 011a ad41 "sendBytesToMcuByPropID error!!! propId="
+  31 206e ad90 0016 Ljava/lang/StringBuilder;->append
+  34 060c 
+  35 1071 0621 0004 Landroid/hardware/automotive/vehicle/V2_0/VehicleProperty;->toString
+  38 040c 
+  39 206e ad90 0046 Ljava/lang/StringBuilder;->append
+  42 040c 
+  43 061a 61af "e="
+  45 206e ad90 0064 Ljava/lang/StringBuilder;->append
+  48 040c 
+  49 106e acbe 0005 Ljava/lang/Exception;->toString
+  52 050c 
+  53 206e ad90 0054 Ljava/lang/StringBuilder;->append
+  56 040c 
+  57 106e ad9a 0004 Ljava/lang/StringBuilder;->toString
+  60 040c 
+  61 051a 4b1c "VehicleSignalManager"
+  63 2071 08f2 0045 Landroid/util/Log;->e
+  66 000f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendBytesToMcuByPropID code=3956184 regs=4 ins=3
+   0 0012 const/4 v0 0
+   1 406e a917 3021 Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendBytesToMcuByPropID
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendIntToMCUByPropID code=3956380 regs=4 ins=3
+   0 0012 const/4 v0 0
+   1 406e a91a 3021 Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendIntToMCUByPropID
+   4 020a 
+   5 020f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendIntToMCUByPropID code=3956408 regs=6 ins=4
+   0 1012 const/4 v0 1
+   1 0023 1726 
+   3 558d 
+   4 0112 const/4 v1 0
+   5 054f 0100 
+   7 406e a917 0432 Lcom/jsbd/mcuupdate/VehicleSignalManager;->sendBytesToMcuByPropID
+  10 030a 
+  11 030f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->unregisterConnectWatcher code=3958184 regs=2 ins=1
+   0 0012 const/4 v0 0
+   1 105b e5b1 Lcom/jsbd/mcuupdate/VehicleSignalManager;->mWatcher:Lcom/jsbd/mcuupdate/VehicleRegisterManager$IConnectable$IConnectWatcher;
+   3 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->unregisterValueAndStateChangeListener code=3956448 regs=4 ins=2
+   0 0012 const/4 v0 0
+   1 0339 0003 if target 4
+   3 000f 
+   4 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+   7 010c 
+   8 0138 0015 if target 29
+  10 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+  13 010c 
+  14 206e a8f7 0031 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->unregisterValueChangeListener
+  17 010a 
+  18 0138 000b if target 29
+  20 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+  23 000c 
+  24 206e a8f6 0030 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->unregisterStateChangeListener
+  27 030a 
+  28 030f 
+  29 000f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->unregisterValueChangeListener code=3956524 regs=4 ins=2
+   0 0012 const/4 v0 0
+   1 0339 0003 if target 4
+   3 000f 
+   4 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+   7 010c 
+   8 0138 000b if target 19
+  10 1070 a90f 0002 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getVehicleRegisterManager
+  13 000c 
+  14 206e a8f7 0030 Lcom/jsbd/mcuupdate/VehicleRegisterManager;->unregisterValueChangeListener
+  17 030a 
+  18 030f 
+  19 000f 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->updateMediaStatus code=3958208 regs=3 ins=2
+   0 1070 a909 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+   3 000c 
+   4 0038 000a if target 14
+   6 1070 a909 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+   9 000c 
+  10 206e 0241 0020 Landroid/car/carconfig/ECarxCarConfigManager;->updateMediaStatus
+  13 0828 
+  14 021a 4b1c "VehicleSignalManager"
+  16 001a 12b0 "ECarXConfigManger is null..."
+  18 2071 08f2 0002 Landroid/util/Log;->e
+  21 000e 
+
+METHOD Lcom/jsbd/mcuupdate/VehicleSignalManager;->updatePhoneStatus code=3958268 regs=3 ins=2
+   0 1070 a909 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+   3 000c 
+   4 0038 000a if target 14
+   6 1070 a909 0001 Lcom/jsbd/mcuupdate/VehicleSignalManager;->getEcarxCarConfigManager
+   9 000c 
+  10 206e 0242 0020 Landroid/car/carconfig/ECarxCarConfigManager;->updatePhoneStatus
+  13 0828 
+  14 021a 4b1c "VehicleSignalManager"
+  16 001a 12b0 "ECarXConfigManger is null..."
+  18 2071 08f2 0002 Landroid/util/Log;->e
+  21 000e 

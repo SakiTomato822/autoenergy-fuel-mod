@@ -1,0 +1,105 @@
+SECTIONS [
+  [ '', '0x0', '0x0' ],
+  [ '.interp', '0x2e0', '0x15' ],
+  [ '.note.android.ident', '0x2f8', '0x18' ],
+  [ '.note.gnu.build-id', '0x310', '0x20' ],
+  [ '.dynsym', '0x330', '0x1050' ],
+  [ '.gnu.version', '0x1380', '0x15c' ],
+  [ '.gnu.version_r', '0x14dc', '0x50' ],
+  [ '.gnu.hash', '0x1530', '0x1c' ],
+  [ '.dynstr', '0x154c', '0x1f67' ],
+  [ '.rela.dyn', '0x34b8', '0x3b9' ],
+  [ '.relr.dyn', '0x3878', '0x58' ],
+  [ '.rela.plt', '0x38d0', '0xac8' ],
+  [ '.rodata', '0x4398', '0x198c' ],
+  [ '.eh_frame_hdr', '0x5d24', '0x1d44' ],
+  [ '.eh_frame', '0x7a68', '0x6d54' ],
+  [ '.text', '0xf000', '0x1695c' ],
+  [ '.plt', '0x25960', '0x750' ],
+  [ '.tdata', '0x27000', '0x0' ],
+  [ '.preinit_array', '0x27000', '0x10' ],
+  [ '.init_array', '0x27010', '0x18' ],
+  [ '.fini_array', '0x27028', '0x10' ],
+  [ '.data.rel.ro', '0x27038', '0xed0' ],
+  [ '.dynamic', '0x27f08', '0x2a0' ],
+  [ '.got', '0x281a8', '0x50' ],
+  [ '.got.plt', '0x281f8', '0x3b0' ],
+  [ '.data', '0x295a8', '0x4' ],
+  [ '.bss', '0x295b0', '0x30' ],
+  [ '.shstrtab', '0x0', '0x120' ],
+  [ '.gnu_debugdata', '0x0', '0x4414' ]
+]
+SYMBOLS [
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator17registerAsServiceERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEE',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator11linkToDeathERKNS_2spINS0_20hidl_death_recipientEEEm',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator12getDebugInfoENSt3__18functionIFvRKNS_4hidl4base4V1_09DebugInfoEEEE',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator12getHashChainENSt3__18functionIFvRKNS0_8hidl_vecINS0_10hidl_arrayIhLm32EJEEEEEEEE',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator13unlinkToDeathERKNS_2spINS0_20hidl_death_recipientEEE',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator14interfaceChainENSt3__18functionIFvRKNS0_8hidl_vecINS0_11hidl_stringEEEEEE',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator19interfaceDescriptorENSt3__18functionIFvRKNS0_11hidl_stringEEEE',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator21notifySyspropsChangedEv',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator21setHALInstrumentationEv',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator4pingEv',
+    value: 0,
+    size: 0,
+    type: 2
+  },
+  {
+    name: '_ZN7android8hardware10automotive3evs4V1_014IEvsEnumerator5debugERKNS0_11hidl_handleERKNS0_8hidl_vecINS0_11hidl_stringEEE',
+    value: 0,
+    size: 0,
+    type: 2
+  }
+]
+TARGETS [
+  { text: '/dev/video6cif', addr: 19244 },
+  { text: '/dev/video12cif', addr: 20977 }
+]
+XREF 0x1be34 0x1be38 { text: '/dev/video6cif', addr: 19244 } null
+XREF 0x1beac 0x1beb0 { text: '/dev/video12cif', addr: 20977 } null

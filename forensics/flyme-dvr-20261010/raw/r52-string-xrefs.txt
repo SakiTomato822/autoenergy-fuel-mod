@@ -1,0 +1,28 @@
+TARGETS [
+  { addr: 847586485, text: 'UARTTX DATA HEAD Err!,%02x,%02x' },
+  { addr: 847586638, text: '---apupgrade rpmsg dlen %d > (3-135), --' },
+  { addr: 847586681, text: '---ap rpmsg dlen %d (3-135), --' },
+  { addr: 847586781, text: '---ERR:AssembleR52Version buff NULL---' },
+  { addr: 847587700, text: '%s:---rpmsg_create_AP0 ept fail!---' },
+  { addr: 847587737, text: '%s:---rpmsg_create_AP1 ept fail!---' },
+  { addr: 847587774, text: '%s:---rpmsg_create_AP0_bcl ept fail!---' },
+  {
+    addr: 847587815,
+    text: '---ERR:%s:rpmsg_create_AP1_fast ept fail!---'
+  },
+  { addr: 847588077, text: 'AssembleR52Version' }
+]
+MOVW_MOVT 0x32810888 0x3281088c possible_start 0x32810790 { addr: 847586638, text: '---apupgrade rpmsg dlen %d > (3-135), --' }
+MOVW_MOVT 0x32810c48 0x32810c4c possible_start 0x32810b48 { addr: 847586681, text: '---ap rpmsg dlen %d (3-135), --' }
+MOVW_MOVT 0x32810f10 0x32810f14 possible_start 0x32810eec { addr: 847586781, text: '---ERR:AssembleR52Version buff NULL---' }
+MOVW_MOVT 0x328114f0 0x328114f4 possible_start 0x32810eec { addr: 847588077, text: 'AssembleR52Version' }
+MOVW_MOVT 0x3281152c 0x32811530 possible_start 0x32810eec { addr: 847588077, text: 'AssembleR52Version' }
+MOVW_MOVT 0x328140ec 0x328140f0 possible_start 0x32814000 { addr: 847586681, text: '---ap rpmsg dlen %d (3-135), --' }
+MOVW_MOVT 0x32820218 0x3282021c possible_start 0x32820174 { addr: 847587700, text: '%s:---rpmsg_create_AP0 ept fail!---' }
+MOVW_MOVT 0x32820280 0x32820284 possible_start 0x32820174 { addr: 847587774, text: '%s:---rpmsg_create_AP0_bcl ept fail!---' }
+MOVW_MOVT 0x328202e8 0x328202ec possible_start 0x32820174 { addr: 847587737, text: '%s:---rpmsg_create_AP1 ept fail!---' }
+MOVW_MOVT 0x32820350 0x32820354 possible_start 0x32820174 {
+  addr: 847587815,
+  text: '---ERR:%s:rpmsg_create_AP1_fast ept fail!---'
+}
+MOVW_MOVT 0x328220b4 0x328220b8 possible_start 0x32821ed4 { addr: 847586485, text: 'UARTTX DATA HEAD Err!,%02x,%02x' }

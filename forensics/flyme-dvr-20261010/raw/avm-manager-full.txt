@@ -1,0 +1,677 @@
+
+METHOD Lcom/ecarx/parking/AvmServiceManager$1;->binderDied code=3334080 regs=5 ins=1
+   0 001a 1330 "AvmServiceManager"
+   2 011a 7092 "Reconect avm_service ,because avm_service died....."
+   4 2071 1f69 0010 Landroid/util/Log;->e
+   7 4154 57a8 Lcom/ecarx/parking/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/AvmServiceManager;
+   9 1071 7590 0001 Lcom/ecarx/parking/AvmServiceManager;->access$100
+  12 010c 
+  13 1072 acd0 0001 Lecarx/avmservice/IAvmService;->asBinder
+  16 010c 
+  17 4254 57a8 Lcom/ecarx/parking/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/AvmServiceManager;
+  19 2254 57b3 Lcom/ecarx/parking/AvmServiceManager;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
+  21 0312 const/4 v3 0
+  22 3072 1d41 0321 Landroid/os/IBinder;->unlinkToDeath
+  25 4154 57a8 Lcom/ecarx/parking/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/AvmServiceManager;
+  27 0212 const/4 v2 0
+  28 2071 7591 0021 Lcom/ecarx/parking/AvmServiceManager;->access$102
+  31 011a a03f "binderDied recconnect AvmNativeService!"
+  33 2071 1f69 0010 Landroid/util/Log;->e
+  36 4054 57a8 Lcom/ecarx/parking/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/AvmServiceManager;
+  38 1071 7592 0000 Lcom/ecarx/parking/AvmServiceManager;->access$200
+  41 000c 
+  42 0113 0100 const/16 256
+  44 0216 03e8 const/16 1000
+  46 406e 758a 3210 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->sendEmptyMessageDelayed
+  49 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->handleCallbackCmd code=3334268 regs=6 ins=3
+   0 001a 1330 "AvmServiceManager"
+   2 0122 1fdd 
+   4 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+   7 021a a3f7 "cmd "
+   9 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  12 010c 
+  13 206e d226 0041 Ljava/lang/StringBuilder;->append
+  16 010c 
+  17 021a 00af " data: "
+  19 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  22 010c 
+  23 206e d226 0051 Ljava/lang/StringBuilder;->append
+  26 010c 
+  27 106e d234 0001 Ljava/lang/StringBuilder;->toString
+  30 010c 
+  31 2071 1f69 0010 Landroid/util/Log;->e
+  34 0071 7594 0000 Lcom/ecarx/parking/AvmServiceManager;->access$400
+  37 000c 
+  38 001d 
+  39 0071 7594 0000 Lcom/ecarx/parking/AvmServiceManager;->access$400
+  42 010c 
+  43 1072 d3c4 0001 Ljava/util/List;->iterator
+  46 010c 
+  47 1072 d3a3 0001 Ljava/util/Iterator;->hasNext
+  50 020a 
+  51 0238 000e if target 65
+  53 1072 d3a4 0001 Ljava/util/Iterator;->next
+  56 020c 
+  57 021f 0ee2 
+  59 0238 fff4 if target 47
+  61 3072 758d 0542 Lcom/ecarx/parking/AvmServiceManager$OnAvmServiceLister;->onCmdDataChange
+  64 ef28 
+  65 001e 
+  66 000e 
+  67 040d 
+  68 001e 
+  69 0427 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->handleMessage code=3334436 regs=4 ins=2
+   0 3052 1773 Landroid/os/Message;->what:I
+   2 0113 0100 const/16 256
+   4 1032 000f if target 19
+   6 0113 0101 const/16 257
+   8 1032 0003 if target 11
+  10 1428 
+  11 3052 176f Landroid/os/Message;->arg1:I
+  13 3352 1770 Landroid/os/Message;->arg2:I
+  15 3070 7585 0302 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->handleCallbackCmd
+  18 0c28 
+  19 2354 57a9 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->weakReference:Ljava/lang/ref/WeakReference;
+  21 106e d261 0003 Ljava/lang/ref/WeakReference;->get
+  24 030c 
+  25 031f 0ee3 
+  27 1071 7593 0003 Lcom/ecarx/parking/AvmServiceManager;->access$300
+  30 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;-><clinit> code=3334828 regs=1 ins=0
+   0 0022 202b 
+   2 1070 d302 0000 Ljava/util/ArrayList;-><init>
+   5 1071 d373 0000 Ljava/util/Collections;->synchronizedList
+   8 000c 
+   9 0069 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  11 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;-><init> code=3334868 regs=3 ins=2
+   0 1070 d1c5 0001 Ljava/lang/Object;-><init>
+   3 0022 0edf 
+   5 2070 7581 0010 Lcom/ecarx/parking/AvmServiceManager$1;-><init>
+   8 105b 57b3 Lcom/ecarx/parking/AvmServiceManager;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
+  10 0022 0ee1 
+  12 2070 758b 0010 Lcom/ecarx/parking/AvmServiceManager$IServerCallback;-><init>
+  15 105b 57b6 Lcom/ecarx/parking/AvmServiceManager;->mCallback:Lcom/ecarx/parking/AvmServiceManager$IServerCallback;
+  17 125b 57b7 Lcom/ecarx/parking/AvmServiceManager;->mContext:Landroid/content/Context;
+  19 0222 0ee0 
+  21 0012 const/4 v0 0
+  22 3070 7584 0012 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;-><init>
+  25 125b 57b5 Lcom/ecarx/parking/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;
+  27 1070 7596 0001 Lcom/ecarx/parking/AvmServiceManager;->initAvmService
+  30 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->access$100 code=3334632 regs=1 ins=1
+   0 0054 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0011 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->access$102 code=3334656 regs=2 ins=2
+   0 015b 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0111 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->access$200 code=3334608 regs=1 ins=1
+   0 0054 57b5 Lcom/ecarx/parking/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;
+   2 0011 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->access$300 code=3334948 regs=1 ins=1
+   0 1070 7596 0000 Lcom/ecarx/parking/AvmServiceManager;->initAvmService
+   3 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->access$400 code=3334804 regs=1 ins=0
+   0 0062 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+   2 0011 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->initAvmService code=3334972 regs=9 ins=1
+   0 8054 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0113 0100 const/16 256
+   4 0038 0008 if target 12
+   6 8054 57b5 Lcom/ecarx/parking/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;
+   8 206e 7589 0010 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->removeMessages
+  11 000e 
+  12 001a 9d58 "android.os.ServiceManager"
+  14 1071 d134 0000 Ljava/lang/Class;->forName
+  17 000c 
+  18 021a bbaa "getService"
+  20 1312 const/4 v3 1
+  21 3423 21ec 
+  23 051c 1fdb 
+  25 0612 const/4 v6 0
+  26 054d 0604 
+  28 306e d144 0420 Ljava/lang/Class;->getMethod
+  31 000c 
+  32 3223 21f0 
+  34 031a 9fae "avm_service"
+  36 034d 0602 
+  38 0312 const/4 v3 0
+  39 306e d288 0230 Ljava/lang/reflect/Method;->invoke
+  42 000c 
+  43 001f 048a 
+  45 0416 012c const/16 300
+  47 021a 1330 "AvmServiceManager"
+  49 0038 0035 if target 102
+  51 1071 acc7 0000 Lecarx/avmservice/IAvmService$Stub;->asInterface
+  54 000c 
+  55 805b 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+  57 1072 acd0 0000 Lecarx/avmservice/IAvmService;->asBinder
+  60 000c 
+  61 8754 57b3 Lcom/ecarx/parking/AvmServiceManager;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
+  63 3072 1d3d 0670 Landroid/os/IBinder;->linkToDeath
+  66 3528 
+  67 000d 
+  68 0622 1fdd 
+  70 1070 d21f 0006 Ljava/lang/StringBuilder;-><init>
+  73 071a b062 "get IAvmService exception"
+  75 206e d22b 0076 Ljava/lang/StringBuilder;->append
+  78 060c 
+  79 106e 1dd8 0000 Landroid/os/RemoteException;->getMessage
+  82 000c 
+  83 206e d22b 0006 Ljava/lang/StringBuilder;->append
+  86 000c 
+  87 106e d234 0000 Ljava/lang/StringBuilder;->toString
+  90 000c 
+  91 2071 1f69 0002 Landroid/util/Log;->e
+  94 835b 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+  96 8054 57b5 Lcom/ecarx/parking/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;
+  98 406e 758a 5410 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->sendEmptyMessageDelayed
+ 101 1228 
+ 102 001a b063 "get avm_service fail from ServiceManager"
+ 104 2071 1f69 0002 Landroid/util/Log;->e
+ 107 835b 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+ 109 8054 57b5 Lcom/ecarx/parking/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;
+ 111 406e 758a 5410 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->sendEmptyMessageDelayed
+ 114 0528 
+ 115 000d 
+ 116 106e d166 0000 Ljava/lang/Exception;->printStackTrace
+ 119 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->registerServerCallBack code=3335428 regs=4 ins=2
+   0 2054 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0038 0023 if target 37
+   4 2072 acd2 0030 Lecarx/avmservice/IAvmService;->registerAvmClient
+   7 1e28 
+   8 030d 
+   9 0022 1fdd 
+  11 1070 d21f 0000 Ljava/lang/StringBuilder;-><init>
+  14 011a 70d2 "RemoteException:"
+  16 206e d22b 0010 Ljava/lang/StringBuilder;->append
+  19 000c 
+  20 106e 1dd8 0003 Landroid/os/RemoteException;->getMessage
+  23 030c 
+  24 206e d22b 0030 Ljava/lang/StringBuilder;->append
+  27 030c 
+  28 106e d234 0003 Ljava/lang/StringBuilder;->toString
+  31 030c 
+  32 001a 1330 "AvmServiceManager"
+  34 2071 1f69 0030 Landroid/util/Log;->e
+  37 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->unregisterServerCallBack code=3335656 regs=4 ins=2
+   0 2054 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0038 0023 if target 37
+   4 2072 acd4 0030 Lecarx/avmservice/IAvmService;->unregisterAvmClient
+   7 1e28 
+   8 030d 
+   9 0022 1fdd 
+  11 1070 d21f 0000 Ljava/lang/StringBuilder;-><init>
+  14 011a 70d2 "RemoteException:"
+  16 206e d22b 0010 Ljava/lang/StringBuilder;->append
+  19 000c 
+  20 106e 1dd8 0003 Landroid/os/RemoteException;->getMessage
+  23 030c 
+  24 206e d22b 0030 Ljava/lang/StringBuilder;->append
+  27 030c 
+  28 106e d234 0003 Ljava/lang/StringBuilder;->toString
+  31 030c 
+  32 001a 1330 "AvmServiceManager"
+  34 2071 1f69 0030 Landroid/util/Log;->e
+  37 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->getAvmState code=3334680 regs=6 ins=3
+   0 3054 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 011a 1330 "AvmServiceManager"
+   4 0039 0009 if target 13
+   6 041a b065 "get fail ,because mIAvmService = null"
+   8 2071 1f69 0041 Landroid/util/Log;->e
+  11 f412 const/4 v4 -1
+  12 040f 
+  13 2212 const/4 v2 2
+  14 3072 acd1 0540 Lecarx/avmservice/IAvmService;->getAvmState
+  17 020a 
+  18 0528 
+  19 040d 
+  20 106e 1dd9 0004 Landroid/os/RemoteException;->printStackTrace
+  23 0422 1fdd 
+  25 1070 d21f 0004 Ljava/lang/StringBuilder;-><init>
+  28 051a dad2 "nState."
+  30 206e d22b 0054 Ljava/lang/StringBuilder;->append
+  33 040c 
+  34 206e d226 0024 Ljava/lang/StringBuilder;->append
+  37 040c 
+  38 106e d234 0004 Ljava/lang/StringBuilder;->toString
+  41 040c 
+  42 2071 1f6c 0041 Landroid/util/Log;->i
+  45 020f 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->onDestory code=3335264 regs=4 ins=1
+   0 3054 57b5 Lcom/ecarx/parking/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;
+   2 0038 0008 if target 10
+   4 0112 const/4 v1 0
+   5 206e 7588 0010 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->removeCallbacksAndMessages
+   8 315b 57b5 Lcom/ecarx/parking/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;
+  10 0062 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  12 001d 
+  13 0162 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  15 1072 d3c4 0001 Ljava/util/List;->iterator
+  18 010c 
+  19 1072 d3a3 0001 Ljava/util/Iterator;->hasNext
+  22 020a 
+  23 0238 0009 if target 32
+  25 1072 d3a4 0001 Ljava/util/Iterator;->next
+  28 1072 d3a5 0001 Ljava/util/Iterator;->remove
+  31 f428 
+  32 001e 
+  33 3054 57b6 Lcom/ecarx/parking/AvmServiceManager;->mCallback:Lcom/ecarx/parking/AvmServiceManager$IServerCallback;
+  35 2070 759c 0003 Lcom/ecarx/parking/AvmServiceManager;->unregisterServerCallBack
+  38 000e 
+  39 010d 
+  40 001e 
+  41 0127 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->registerCallBack code=3335384 regs=3 ins=2
+   0 0062 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+   2 2072 d3bd 0020 Ljava/util/List;->contains
+   5 000a 
+   6 0039 0007 if target 13
+   8 0062 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  10 2072 d3ba 0020 Ljava/util/List;->add
+  13 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->setAvmState code=3335536 regs=4 ins=3
+   0 1054 57b8 Lcom/ecarx/parking/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0039 000a if target 12
+   4 021a 1330 "AvmServiceManager"
+   6 031a b065 "get fail ,because mIAvmService = null"
+   8 2071 1f69 0032 Landroid/util/Log;->e
+  11 000e 
+  12 3072 acd3 0320 Lecarx/avmservice/IAvmService;->setAvmState
+  15 0528 
+  16 020d 
+  17 106e 1dd9 0002 Landroid/os/RemoteException;->printStackTrace
+  20 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager;->unRegisterCallBack code=3335612 regs=3 ins=2
+   0 0062 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+   2 2072 d3bd 0020 Ljava/util/List;->contains
+   5 000a 
+   6 0038 0007 if target 13
+   8 0062 57b4 Lcom/ecarx/parking/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  10 2072 d3c6 0020 Ljava/util/List;->remove
+  13 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager$1;->binderDied code=3360120 regs=5 ins=1
+   0 1012 const/4 v0 1
+   1 0123 21f0 
+   3 021a 7092 "Reconect avm_service ,because avm_service died....."
+   5 0312 const/4 v3 0
+   6 024d 0301 
+   8 1071 7683 0001 Lcom/ecarx/parking/glyburied/GlyLogUtil;->e
+  11 4154 6b2a Lcom/ecarx/parking/glyburied/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/glyburied/AvmServiceManager;
+  13 1071 7673 0001 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$100
+  16 010c 
+  17 1072 acd0 0001 Lecarx/avmservice/IAvmService;->asBinder
+  20 010c 
+  21 4254 6b2a Lcom/ecarx/parking/glyburied/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/glyburied/AvmServiceManager;
+  23 2254 6b32 Lcom/ecarx/parking/glyburied/AvmServiceManager;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
+  25 3072 1d41 0321 Landroid/os/IBinder;->unlinkToDeath
+  28 4154 6b2a Lcom/ecarx/parking/glyburied/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/glyburied/AvmServiceManager;
+  30 0212 const/4 v2 0
+  31 2071 7674 0021 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$102
+  34 0023 21f0 
+  36 011a a03f "binderDied recconnect AvmNativeService!"
+  38 014d 0300 
+  40 1071 7689 0000 Lcom/ecarx/parking/glyburied/GlyLogUtil;->w
+  43 4054 6b2a Lcom/ecarx/parking/glyburied/AvmServiceManager$1;->this$0:Lcom/ecarx/parking/glyburied/AvmServiceManager;
+  45 1071 7675 0000 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$200
+  48 000c 
+  49 0113 0100 const/16 256
+  51 0216 03e8 const/16 1000
+  53 406e 766d 3210 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->sendEmptyMessageDelayed
+  56 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->handleCallbackCmd code=3360324 regs=6 ins=3
+   0 1012 const/4 v0 1
+   1 0023 21f0 
+   3 0122 1fdd 
+   5 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+   8 021a a3f7 "cmd "
+  10 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  13 010c 
+  14 206e d226 0041 Ljava/lang/StringBuilder;->append
+  17 010c 
+  18 021a 00af " data: "
+  20 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  23 010c 
+  24 206e d226 0051 Ljava/lang/StringBuilder;->append
+  27 010c 
+  28 106e d234 0001 Ljava/lang/StringBuilder;->toString
+  31 010c 
+  32 0212 const/4 v2 0
+  33 014d 0200 
+  35 1071 7682 0000 Lcom/ecarx/parking/glyburied/GlyLogUtil;->d
+  38 0071 7677 0000 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$400
+  41 000c 
+  42 001d 
+  43 0071 7677 0000 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$400
+  46 010c 
+  47 1072 d3c4 0001 Ljava/util/List;->iterator
+  50 010c 
+  51 1072 d3a3 0001 Ljava/util/Iterator;->hasNext
+  54 020a 
+  55 0238 000e if target 69
+  57 1072 d3a4 0001 Ljava/util/Iterator;->next
+  60 020c 
+  61 021f 0f13 
+  63 0238 fff4 if target 51
+  65 3072 7670 0542 Lcom/ecarx/parking/glyburied/AvmServiceManager$OnAvmServiceLister;->onCmdDataChange
+  68 ef28 
+  69 001e 
+  70 000e 
+  71 040d 
+  72 001e 
+  73 0427 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->handleMessage code=3360500 regs=4 ins=2
+   0 3052 1773 Landroid/os/Message;->what:I
+   2 0113 0100 const/16 256
+   4 1032 000f if target 19
+   6 0113 0101 const/16 257
+   8 1032 0003 if target 11
+  10 1428 
+  11 3052 176f Landroid/os/Message;->arg1:I
+  13 3352 1770 Landroid/os/Message;->arg2:I
+  15 3070 7668 0302 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->handleCallbackCmd
+  18 0c28 
+  19 2354 6b2b Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->weakReference:Ljava/lang/ref/WeakReference;
+  21 106e d261 0003 Ljava/lang/ref/WeakReference;->get
+  24 030c 
+  25 031f 0f14 
+  27 1071 7676 0003 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$300
+  30 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;-><clinit> code=3360944 regs=1 ins=0
+   0 0022 202b 
+   2 1070 d302 0000 Ljava/util/ArrayList;-><init>
+   5 1071 d373 0000 Ljava/util/Collections;->synchronizedList
+   8 000c 
+   9 0069 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  11 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;-><init> code=3360984 regs=3 ins=2
+   0 1070 d1c5 0001 Ljava/lang/Object;-><init>
+   3 0022 0f10 
+   5 2070 7664 0010 Lcom/ecarx/parking/glyburied/AvmServiceManager$1;-><init>
+   8 105b 6b32 Lcom/ecarx/parking/glyburied/AvmServiceManager;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
+  10 0022 0f12 
+  12 2070 766e 0010 Lcom/ecarx/parking/glyburied/AvmServiceManager$IServerCallback;-><init>
+  15 105b 6b35 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mCallback:Lcom/ecarx/parking/glyburied/AvmServiceManager$IServerCallback;
+  17 125b 6b36 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mContext:Landroid/content/Context;
+  19 0222 0f11 
+  21 0012 const/4 v0 0
+  22 3070 7667 0012 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;-><init>
+  25 125b 6b34 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;
+  27 1070 767a 0001 Lcom/ecarx/parking/glyburied/AvmServiceManager;->initAvmService
+  30 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$100 code=3360696 regs=1 ins=1
+   0 0054 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0011 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$102 code=3360720 regs=2 ins=2
+   0 015b 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0111 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$200 code=3360672 regs=1 ins=1
+   0 0054 6b34 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;
+   2 0011 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$300 code=3361064 regs=1 ins=1
+   0 1070 767a 0000 Lcom/ecarx/parking/glyburied/AvmServiceManager;->initAvmService
+   3 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$400 code=3360920 regs=1 ins=0
+   0 0062 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+   2 0011 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->initAvmService code=3361088 regs=10 ins=1
+   0 1012 const/4 v0 1
+   1 0123 21f0 
+   3 021a 0000 ""
+   5 0312 const/4 v3 0
+   6 024d 0301 
+   8 1071 7682 0001 Lcom/ecarx/parking/glyburied/GlyLogUtil;->d
+  11 9154 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+  13 0213 0100 const/16 256
+  15 0138 0008 if target 23
+  17 9054 6b34 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;
+  19 206e 766c 0020 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->removeMessages
+  22 000e 
+  23 011a 9d58 "android.os.ServiceManager"
+  25 1071 d134 0001 Ljava/lang/Class;->forName
+  28 010c 
+  29 041a bbaa "getService"
+  31 0523 21ec 
+  33 061c 1fdb 
+  35 064d 0305 
+  37 306e d144 0541 Ljava/lang/Class;->getMethod
+  40 010c 
+  41 0423 21f0 
+  43 051a 9fae "avm_service"
+  45 054d 0304 
+  47 0512 const/4 v5 0
+  48 306e d288 0451 Ljava/lang/reflect/Method;->invoke
+  51 010c 
+  52 011f 048a 
+  54 0616 012c const/16 300
+  56 0138 0040 if target 120
+  58 1071 acc7 0001 Lecarx/avmservice/IAvmService$Stub;->asInterface
+  61 010c 
+  62 915b 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+  64 9154 6b35 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mCallback:Lcom/ecarx/parking/glyburied/AvmServiceManager$IServerCallback;
+  66 2070 767d 0019 Lcom/ecarx/parking/glyburied/AvmServiceManager;->registerServerCallBack
+  69 9154 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+  71 1072 acd0 0001 Lecarx/avmservice/IAvmService;->asBinder
+  74 010c 
+  75 9454 6b32 Lcom/ecarx/parking/glyburied/AvmServiceManager;->deathRecipient:Landroid/os/IBinder$DeathRecipient;
+  77 3072 1d3d 0341 Landroid/os/IBinder;->linkToDeath
+  80 3d28 
+  81 010d 
+  82 0023 21f0 
+  84 0422 1fdd 
+  86 1070 d21f 0004 Ljava/lang/StringBuilder;-><init>
+  89 081a a6a3 "create geely_avm failed!"
+  91 206e d22b 0084 Ljava/lang/StringBuilder;->append
+  94 040c 
+  95 106e 1dd8 0001 Landroid/os/RemoteException;->getMessage
+  98 010c 
+  99 206e d22b 0014 Ljava/lang/StringBuilder;->append
+ 102 010c 
+ 103 106e d234 0001 Ljava/lang/StringBuilder;->toString
+ 106 010c 
+ 107 014d 0300 
+ 109 1071 7683 0000 Lcom/ecarx/parking/glyburied/GlyLogUtil;->e
+ 112 955b 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+ 114 9054 6b34 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;
+ 116 406e 766d 7620 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->sendEmptyMessageDelayed
+ 119 1628 
+ 120 0023 21f0 
+ 122 011a b063 "get avm_service fail from ServiceManager"
+ 124 014d 0300 
+ 126 1071 7683 0000 Lcom/ecarx/parking/glyburied/GlyLogUtil;->e
+ 129 955b 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+ 131 9054 6b34 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;
+ 133 406e 766d 7620 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->sendEmptyMessageDelayed
+ 136 0528 
+ 137 000d 
+ 138 106e d166 0000 Ljava/lang/Exception;->printStackTrace
+ 141 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->registerServerCallBack code=3361592 regs=6 ins=2
+   0 4054 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0038 0027 if target 41
+   4 2072 acd2 0050 Lecarx/avmservice/IAvmService;->registerAvmClient
+   7 2228 
+   8 050d 
+   9 1012 const/4 v0 1
+  10 0023 21f0 
+  12 0112 const/4 v1 0
+  13 0222 1fdd 
+  15 1070 d21f 0002 Ljava/lang/StringBuilder;-><init>
+  18 031a 70d2 "RemoteException:"
+  20 206e d22b 0032 Ljava/lang/StringBuilder;->append
+  23 020c 
+  24 106e 1dd8 0005 Landroid/os/RemoteException;->getMessage
+  27 050c 
+  28 206e d22b 0052 Ljava/lang/StringBuilder;->append
+  31 050c 
+  32 106e d234 0005 Ljava/lang/StringBuilder;->toString
+  35 050c 
+  36 054d 0100 
+  38 1071 7683 0000 Lcom/ecarx/parking/glyburied/GlyLogUtil;->e
+  41 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->unregisterServerCallBack code=3361752 regs=6 ins=2
+   0 4054 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0038 0027 if target 41
+   4 2072 acd4 0050 Lecarx/avmservice/IAvmService;->unregisterAvmClient
+   7 2228 
+   8 050d 
+   9 1012 const/4 v0 1
+  10 0023 21f0 
+  12 0112 const/4 v1 0
+  13 0222 1fdd 
+  15 1070 d21f 0002 Ljava/lang/StringBuilder;-><init>
+  18 031a 70d2 "RemoteException:"
+  20 206e d22b 0032 Ljava/lang/StringBuilder;->append
+  23 020c 
+  24 106e 1dd8 0005 Landroid/os/RemoteException;->getMessage
+  27 050c 
+  28 206e d22b 0052 Ljava/lang/StringBuilder;->append
+  31 050c 
+  32 106e d234 0005 Ljava/lang/StringBuilder;->toString
+  35 050c 
+  36 054d 0100 
+  38 1071 7683 0000 Lcom/ecarx/parking/glyburied/GlyLogUtil;->e
+  41 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->getAvmState code=3360744 regs=3 ins=1
+   0 0014 0001 0011 const 1114113 / 0x110001
+   3 0112 const/4 v1 0
+   4 306e 7679 0102 Lcom/ecarx/parking/glyburied/AvmServiceManager;->getAvmState
+   7 000a 
+   8 000f 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->getAvmState code=3360780 regs=7 ins=3
+   0 4054 6b37 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mIAvmService:Lecarx/avmservice/IAvmService;
+   2 0112 const/4 v1 0
+   3 1212 const/4 v2 1
+   4 f312 const/4 v3 -1
+   5 0039 000c if target 17
+   7 2523 21f0 
+   9 061a b065 "get fail ,because mIAvmService = null"
+  11 064d 0105 
+  13 1071 7682 0005 Lcom/ecarx/parking/glyburied/GlyLogUtil;->d
+  16 030f 
+  17 3072 acd1 0650 Lecarx/avmservice/IAvmService;->getAvmState
+  20 030a 
+  21 0528 
+  22 050d 
+  23 106e 1dd9 0005 Landroid/os/RemoteException;->printStackTrace
+  26 2523 21f0 
+  28 0622 1fdd 
+  30 1070 d21f 0006 Ljava/lang/StringBuilder;-><init>
+  33 001a dad2 "nState."
+  35 206e d22b 0006 Ljava/lang/StringBuilder;->append
+  38 060c 
+  39 206e d226 0036 Ljava/lang/StringBuilder;->append
+  42 060c 
+  43 106e d234 0006 Ljava/lang/StringBuilder;->toString
+  46 060c 
+  47 064d 0105 
+  49 1071 7684 0005 Lcom/ecarx/parking/glyburied/GlyLogUtil;->i
+  52 030f 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->onDestory code=3361428 regs=4 ins=1
+   0 3054 6b34 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;
+   2 0038 0008 if target 10
+   4 0112 const/4 v1 0
+   5 206e 766b 0010 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->removeCallbacksAndMessages
+   8 315b 6b34 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmWorkHandler:Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;
+  10 0062 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  12 001d 
+  13 0162 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  15 1072 d3c4 0001 Ljava/util/List;->iterator
+  18 010c 
+  19 1072 d3a3 0001 Ljava/util/Iterator;->hasNext
+  22 020a 
+  23 0238 0009 if target 32
+  25 1072 d3a4 0001 Ljava/util/Iterator;->next
+  28 1072 d3a5 0001 Ljava/util/Iterator;->remove
+  31 f428 
+  32 001e 
+  33 3054 6b35 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mCallback:Lcom/ecarx/parking/glyburied/AvmServiceManager$IServerCallback;
+  35 2070 767f 0003 Lcom/ecarx/parking/glyburied/AvmServiceManager;->unregisterServerCallBack
+  38 000e 
+  39 010d 
+  40 001e 
+  41 0127 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->registerCallBack code=3361548 regs=3 ins=2
+   0 0062 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+   2 2072 d3bd 0020 Ljava/util/List;->contains
+   5 000a 
+   6 0039 0007 if target 13
+   8 0062 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  10 2072 d3ba 0020 Ljava/util/List;->add
+  13 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager;->unRegisterCallBack code=3361708 regs=3 ins=2
+   0 0062 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+   2 2072 d3bd 0020 Ljava/util/List;->contains
+   5 000a 
+   6 0038 0007 if target 13
+   8 0062 6b33 Lcom/ecarx/parking/glyburied/AvmServiceManager;->mAvmMangerCallBack:Ljava/util/List;
+  10 2072 d3c6 0020 Ljava/util/List;->remove
+  13 000e 
+
+METHOD Lcom/ecarx/parking/AvmServiceManager$IServerCallback;->onAVMStatusChange code=3334544 regs=5 ins=3
+   0 2054 57aa Lcom/ecarx/parking/AvmServiceManager$IServerCallback;->this$0:Lcom/ecarx/parking/AvmServiceManager;
+   2 1071 7592 0000 Lcom/ecarx/parking/AvmServiceManager;->access$200
+   5 000c 
+   6 0038 0011 if target 23
+   8 2054 57aa Lcom/ecarx/parking/AvmServiceManager$IServerCallback;->this$0:Lcom/ecarx/parking/AvmServiceManager;
+  10 1071 7592 0000 Lcom/ecarx/parking/AvmServiceManager;->access$200
+  13 000c 
+  14 0113 0101 const/16 257
+  16 406e 7587 4310 Lcom/ecarx/parking/AvmServiceManager$AvmWorkHandler;->obtainMessage
+  19 030c 
+  20 106e 1d64 0003 Landroid/os/Message;->sendToTarget
+  23 000e 
+
+METHOD Lcom/ecarx/parking/glyburied/AvmServiceManager$IServerCallback;->onAVMStatusChange code=3360608 regs=5 ins=3
+   0 2054 6b2c Lcom/ecarx/parking/glyburied/AvmServiceManager$IServerCallback;->this$0:Lcom/ecarx/parking/glyburied/AvmServiceManager;
+   2 1071 7675 0000 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$200
+   5 000c 
+   6 0038 0011 if target 23
+   8 2054 6b2c Lcom/ecarx/parking/glyburied/AvmServiceManager$IServerCallback;->this$0:Lcom/ecarx/parking/glyburied/AvmServiceManager;
+  10 1071 7675 0000 Lcom/ecarx/parking/glyburied/AvmServiceManager;->access$200
+  13 000c 
+  14 0113 0101 const/16 257
+  16 406e 766a 4310 Lcom/ecarx/parking/glyburied/AvmServiceManager$AvmWorkHandler;->obtainMessage
+  19 030c 
+  20 106e 1d64 0003 Landroid/os/Message;->sendToTarget
+  23 000e 

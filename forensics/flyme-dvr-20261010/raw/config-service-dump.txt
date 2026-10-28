@@ -1,0 +1,22 @@
+Sun Oct 11 20:33:35 CST 2026
+** Dumping ECarXCarConfigService
+
+
+** Dumping EcarXUpdateLocalConfigService
+
+*EcarXUpdateLocalConfig*
+
+** Dumping CarConfigurationService
+
+*CarConfigurationService*
+Config value initialized: true
+Config: {
+  "SpeedBump": {
+    "acquiredPermitsPerSecond": 0.5,
+    "maxPermitPool": 5,
+    "permitFillDelay": 600
+  }
+}
+SpeedBumpConfig initialized: true
+SpeedBumpConfig: [acquired_permits_per_second: 0.500000, max_permit_pool: 5.000000, permit_fill_delay: 600]
+

@@ -1,0 +1,5 @@
+64	evs.render.engine: [evs.render.engine]
+ls: /vendor/bin/*avm*: No such file or directory
+-rwxr-xr-x 1 root shell  84680 2009-01-01 08:00 /system/bin/avm-native
+-rw-r--r-- 1 root root  282504 2009-01-01 08:00 /system/lib64/libavm_sdk.so
+-rw-r--r-- 1 root root   77008 2009-01-01 08:00 /system/lib64/libvc_avm.so

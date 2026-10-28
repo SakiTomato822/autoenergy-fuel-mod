@@ -1,0 +1,2 @@
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+{"bytes":163968,"declared":163968,"nodes":1154,"phandles":317}

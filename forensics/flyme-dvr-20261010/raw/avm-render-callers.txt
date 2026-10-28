@@ -1,0 +1,288 @@
+
+METHOD Lcom/sensorsdata/analytics/android/sdk/advert/oaid/SAOaidHelper;->initSDKLibrary code=3852652 regs=2 ins=0
+   0 0062 b72a Lcom/sensorsdata/analytics/android/sdk/advert/oaid/SAOaidHelper;->mLoadLibrary:Ljava/util/List;
+   2 1072 d3c4 0000 Ljava/util/List;->iterator
+   5 000c 
+   6 1072 d3a3 0000 Ljava/util/Iterator;->hasNext
+   9 010a 
+  10 0138 000b if target 21
+  12 1072 d3a4 0000 Ljava/util/Iterator;->next
+  15 010c 
+  16 011f 1fdb 
+  18 1071 d23a 0001 Ljava/lang/System;->loadLibrary
+  21 000e 
+
+METHOD Lcom/sensorsdata/analytics/android/sdk/util/ViewUtil;->getViewContentAndType code=3987208 regs=8 ins=2
+   0 0071 abf7 0000 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getInstance
+   3 000c 
+   4 206e abfc 0060 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getViewType
+   7 000c 
+   8 0071 abf7 0000 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getInstance
+  11 010c 
+  12 206e abfb 0061 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getViewText
+  15 010c 
+  16 021a 0000 ""
+  18 0038 0004 if target 22
+  20 0139 01dd if target 497
+  22 0071 abf7 0000 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getInstance
+  25 000c 
+  26 106e d1c8 0006 Ljava/lang/Object;->getClass
+  29 010c 
+  30 206e abf6 0010 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getCanonicalName
+  33 000c 
+  34 6120 05bb 
+  36 0312 const/4 v3 0
+  37 0138 0011 if target 54
+  39 011a 1cb6 "CheckBox"
+  41 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+  44 000c 
+  45 6107 
+  46 011f 05bb 
+  48 106e 24a2 0001 Landroid/widget/CheckBox;->getText
+  51 030c 
+  52 0029 018b 
+  54 6120 05dd 
+  56 0138 0011 if target 73
+  58 011a 705e "RadioButton"
+  60 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+  63 000c 
+  64 6107 
+  65 011f 05dd 
+  67 106e 26a2 0001 Landroid/widget/RadioButton;->getText
+  70 030c 
+  71 0029 0178 
+  73 6120 05f5 
+  75 0138 000e if target 89
+  77 011a 88a6 "ToggleButton"
+  79 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+  82 000c 
+  83 1071 a8c6 0006 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getCompoundButtonText
+  86 030c 
+  87 0029 0168 
+  89 6120 05bf 
+  91 0138 000c if target 103
+  93 1071 a8ce 0006 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewTypeByReflect
+  96 000c 
+  97 1071 a8c6 0006 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getCompoundButtonText
+ 100 030c 
+ 101 0029 015a 
+ 103 6120 05ba 
+ 105 0138 0011 if target 122
+ 107 011a 16f9 "Button"
+ 109 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 112 000c 
+ 113 6107 
+ 114 011f 05ba 
+ 116 106e 2485 0001 Landroid/widget/Button;->getText
+ 119 030c 
+ 120 0029 0147 
+ 122 6120 05bd 
+ 124 0138 0011 if target 141
+ 126 011a 1cbc "CheckedTextView"
+ 128 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 131 000c 
+ 132 6107 
+ 133 011f 05bd 
+ 135 106e 24aa 0001 Landroid/widget/CheckedTextView;->getText
+ 138 030c 
+ 139 0029 0134 
+ 141 6120 05f2 
+ 143 0138 0023 if target 178
+ 145 011a 86ef "TextView"
+ 147 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 150 000c 
+ 151 6107 
+ 152 011f 05f2 
+ 154 041a 9df0 "androidx.appcompat.widget.AppCompatTextView"
+ 156 1024 21f2 0004 
+ 159 040c 
+ 160 051a d267 "mPrecomputedTextFuture"
+ 162 1024 21f2 0005 
+ 165 050c 
+ 166 3071 a92b 0514 Lcom/sensorsdata/analytics/android/sdk/util/ReflectUtil;->findField
+ 169 040c 
+ 170 0439 0115 if target 447
+ 172 106e 274a 0001 Landroid/widget/TextView;->getText
+ 175 030c 
+ 176 0029 010f 
+ 178 6120 05d1 
+ 180 0138 001f if target 211
+ 182 011a 3747 "ImageView"
+ 184 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 187 000c 
+ 188 6107 
+ 189 011f 05d1 
+ 191 106e 25b2 0001 Landroid/widget/ImageView;->getContentDescription
+ 194 040c 
+ 195 1071 1ef1 0004 Landroid/text/TextUtils;->isEmpty
+ 198 040a 
+ 199 0439 00f8 if target 447
+ 201 106e 25b2 0001 Landroid/widget/ImageView;->getContentDescription
+ 204 010c 
+ 205 1072 d122 0001 Ljava/lang/CharSequence;->toString
+ 208 030c 
+ 209 0029 00ee 
+ 211 6120 05df 
+ 213 0138 0015 if target 234
+ 215 011a 7072 "RatingBar"
+ 217 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 220 000c 
+ 221 6107 
+ 222 011f 05df 
+ 224 106e 26ac 0001 Landroid/widget/RatingBar;->getRating
+ 227 010a 
+ 228 1071 d212 0001 Ljava/lang/String;->valueOf
+ 231 030c 
+ 232 0029 00d7 
+ 234 6120 05e5 
+ 236 0138 0015 if target 257
+ 238 011a 7d69 "SeekBar"
+ 240 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 243 000c 
+ 244 6107 
+ 245 011f 05e5 
+ 247 106e 26da 0001 Landroid/widget/SeekBar;->getProgress
+ 250 010a 
+ 251 1071 d213 0001 Ljava/lang/String;->valueOf
+ 254 030c 
+ 255 0029 00c0 
+ 257 6120 05e8 
+ 259 0412 const/4 v4 0
+ 260 0138 0031 if target 309
+ 262 011a 7f06 "Spinner"
+ 264 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 267 000c 
+ 268 0122 1fdd 
+ 270 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+ 273 6507 
+ 274 051f 056b 
+ 276 2071 a8d6 0051 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->traverseView
+ 279 030c 
+ 280 1071 1ef1 0003 Landroid/text/TextUtils;->isEmpty
+ 283 010a 
+ 284 0139 00a3 if target 447
+ 286 1072 d122 0003 Ljava/lang/CharSequence;->toString
+ 289 010c 
+ 290 1072 d120 0003 Ljava/lang/CharSequence;->length
+ 293 050a 
+ 294 05d8 ff05 
+ 296 306e d209 0541 Ljava/lang/String;->substring
+ 299 010c 
+ 300 1307 
+ 301 0029 0092 
+ 303 010d 
+ 304 1071 9fce 0001 Lcom/sensorsdata/analytics/android/sdk/SALog;->printStackTrace
+ 307 0029 008c 
+ 309 1071 a9d9 0006 Lcom/sensorsdata/analytics/android/sdk/util/ViewUtil;->instanceOfTabView
+ 312 010c 
+ 313 0138 000e if target 327
+ 315 1071 a9c8 0001 Lcom/sensorsdata/analytics/android/sdk/util/ViewUtil;->getTabLayoutContent
+ 318 030c 
+ 319 011a 85d4 "TabLayout"
+ 321 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 324 000c 
+ 325 0029 007a 
+ 327 1071 a9d2 0006 Lcom/sensorsdata/analytics/android/sdk/util/ViewUtil;->instanceOfBottomNavigationItemView
+ 330 010a 
+ 331 0138 0027 if target 370
+ 333 1071 a9c6 0006 Lcom/sensorsdata/analytics/android/sdk/util/ViewUtil;->getItemData
+ 336 010c 
+ 337 0138 006e if target 447
+ 339 041a 9def "androidx.appcompat.view.menu.MenuItemImpl"
+ 341 1024 21f2 0004 
+ 344 040c 
+ 345 1071 a930 0004 Lcom/sensorsdata/analytics/android/sdk/util/ReflectUtil;->getCurrentClass
+ 348 040c 
+ 349 0438 0062 if target 447
+ 351 051a d59b "mTitle"
+ 353 1024 21f2 0005 
+ 356 050c 
+ 357 3071 a92a 0514 Lcom/sensorsdata/analytics/android/sdk/util/ReflectUtil;->findField
+ 360 010c 
+ 361 011f 1fdb 
+ 363 1071 1ef1 0001 Landroid/text/TextUtils;->isEmpty
+ 366 040a 
+ 367 0439 0050 if target 447
+ 369 bb28 
+ 370 1071 a9d4 0006 Lcom/sensorsdata/analytics/android/sdk/util/ViewUtil;->instanceOfNavigationView
+ 373 010a 
+ 374 0138 0015 if target 395
+ 376 1071 a9e3 0006 Lcom/sensorsdata/analytics/android/sdk/util/ViewUtil;->isViewSelfVisible
+ 379 010a 
+ 380 0138 0005 if target 385
+ 382 011a 67b1 "Open"
+ 384 0328 
+ 385 011a 1d39 "Close"
+ 387 1307 
+ 388 011a 64c5 "NavigationView"
+ 390 2071 a8cd 0010 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewType
+ 393 000c 
+ 394 3528 
+ 395 6120 056b 
+ 397 0138 0032 if target 447
+ 399 1071 a8ca 0006 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->getViewGroupTypeByReflect
+ 402 000c 
+ 403 106e 20e2 0006 Landroid/view/View;->getContentDescription
+ 406 030c 
+ 407 1071 1ef1 0003 Landroid/text/TextUtils;->isEmpty
+ 410 010a 
+ 411 0138 0024 if target 447
+ 413 0122 1fdd 
+ 415 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+ 418 6507 
+ 419 051f 056b 
+ 421 2071 a8d6 0051 Lcom/sensorsdata/analytics/android/sdk/util/AopUtil;->traverseView
+ 424 010c 
+ 425 1071 1ef1 0001 Landroid/text/TextUtils;->isEmpty
+ 428 030a 
+ 429 0339 ff7f if target 300
+ 431 1072 d122 0001 Ljava/lang/CharSequence;->toString
+ 434 030c 
+ 435 1072 d120 0001 Ljava/lang/CharSequence;->length
+ 438 050a 
+ 439 05d8 ff05 
+ 441 306e d209 0543 Ljava/lang/String;->substring
+ 444 010c 
+ 445 0029 ff6f 
+ 447 1071 1ef1 0003 Landroid/text/TextUtils;->isEmpty
+ 450 010a 
+ 451 0138 000d if target 464
+ 453 6120 05f2 
+ 455 0138 0009 if target 464
+ 457 6107 
+ 458 011f 05f2 
+ 460 106e 2730 0001 Landroid/widget/TextView;->getHint
+ 463 030c 
+ 464 1071 1ef1 0003 Landroid/text/TextUtils;->isEmpty
+ 467 010a 
+ 468 0138 0006 if target 474
+ 470 106e 20e2 0006 Landroid/view/View;->getContentDescription
+ 473 030c 
+ 474 0339 0004 if target 478
+ 476 2107 
+ 477 0228 
+ 478 3107 
+ 479 0071 abf7 0000 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getInstance
+ 482 030c 
+ 483 306e ac01 0063 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->setViewType
+ 486 0071 abf7 0000 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->getInstance
+ 489 030c 
+ 490 1072 d122 0001 Ljava/lang/CharSequence;->toString
+ 493 040c 
+ 494 306e ac00 0463 Lcom/sensorsdata/analytics/android/sdk/visual/snap/SnapCache;->setViewText
+ 497 6320 05c2 
+ 499 0338 000c if target 511
+ 501 0738 0009 if target 510
+ 503 061f 05c2 
+ 505 106e 24f9 0006 Landroid/widget/EditText;->getText
+ 508 010c 
+ 509 0228 
+ 510 2107 
+ 511 0139 0003 if target 514
+ 513 0228 
+ 514 1207 
+ 515 0622 1999 
+ 517 1072 d122 0002 Ljava/lang/CharSequence;->toString
+ 520 070c 
+ 521 3070 aaea 0076 Lcom/sensorsdata/analytics/android/sdk/visual/model/ViewNode;-><init>
+ 524 0611 

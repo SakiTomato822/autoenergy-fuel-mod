@@ -1,0 +1,183 @@
+
+raw/cp-b/files/usr/local/bin/cluster-e04/middleware/Samples:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000005f9c0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34178>:
+   5f9c0:	d2800201 	mov	x1, #0x10                  	// #16
+   5f9c4:	97fee15f 	bl	17f40 <std::__throw_bad_alloc()@plt+0x10>
+   5f9c8:	90000c00 	adrp	x0, 1df000 <typeinfo for ara::core::FutureErrorDomain@@Base+0x19d8>
+   5f9cc:	f9478c00 	ldr	x0, [x0, #3864]
+   5f9d0:	f94017e2 	ldr	x2, [sp, #40]
+   5f9d4:	f9400001 	ldr	x1, [x0]
+   5f9d8:	eb010042 	subs	x2, x2, x1
+   5f9dc:	d2800001 	mov	x1, #0x0                   	// #0
+   5f9e0:	54000081 	b.ne	5f9f0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x341a8>  // b.any
+   5f9e4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   5f9e8:	d50323bf 	autiasp
+   5f9ec:	d65f03c0 	ret
+   5f9f0:	97fee3f8 	bl	189d0 <ara::log::Logger::~Logger()@plt+0x8>
+   5f9f4:	d503233f 	paciasp
+   5f9f8:	d11443ff 	sub	sp, sp, #0x510
+   5f9fc:	a9007bfd 	stp	x29, x30, [sp]
+   5fa00:	910003fd 	mov	x29, sp
+   5fa04:	a90153f3 	stp	x19, x20, [sp, #16]
+   5fa08:	a9025bf5 	stp	x21, x22, [sp, #32]
+   5fa0c:	a9046bf9 	stp	x25, x26, [sp, #64]
+   5fa10:	a90573fb 	stp	x27, x28, [sp, #80]
+   5fa14:	aa0803f4 	mov	x20, x8
+   5fa18:	aa0003f6 	mov	x22, x0
+   5fa1c:	aa0203f3 	mov	x19, x2
+   5fa20:	90000c00 	adrp	x0, 1df000 <typeinfo for ara::core::FutureErrorDomain@@Base+0x19d8>
+   5fa24:	f9478c00 	ldr	x0, [x0, #3864]
+   5fa28:	f9400001 	ldr	x1, [x0]
+   5fa2c:	f90287e1 	str	x1, [sp, #1288]
+   5fa30:	d2800001 	mov	x1, #0x0                   	// #0
+   5fa34:	d2800200 	mov	x0, #0x10                  	// #16
+   5fa38:	97fee152 	bl	17f80 <ara::com::proxy::events::ProxyEvent::ProxyEvent(ara::com::InstanceIdentifier::InstanceType)@plt+0x8>
+   5fa3c:	52800041 	mov	w1, #0x2                   	// #2
+   5fa40:	b9000001 	str	w1, [x0]
+   5fa44:	b900041f 	str	wzr, [x0, #4]
+   5fa48:	b0000c01 	adrp	x1, 1e0000 <typeinfo for ara::core::FutureErrorDomain@@Base+0x29d8>
+   5fa4c:	9100e021 	add	x1, x1, #0x38
+   5fa50:	f9000401 	str	x1, [x0, #8]
+   5fa54:	f900029f 	str	xzr, [x20]
+   5fa58:	f9000680 	str	x0, [x20, #8]
+   5fa5c:	f90033ff 	str	xzr, [sp, #96]
+   5fa60:	b5000393 	cbnz	x19, 5fad0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34288>
+   5fa64:	52800040 	mov	w0, #0x2                   	// #2
+   5fa68:	b900abe0 	str	w0, [sp, #168]
+   5fa6c:	9101a3e8 	add	x8, sp, #0x68
+   5fa70:	9102a3e0 	add	x0, sp, #0xa8
+   5fa74:	94003c8b 	bl	6eca0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x43458>
+   5fa78:	9101a3f3 	add	x19, sp, #0x68
+   5fa7c:	aa1303e1 	mov	x1, x19
+   5fa80:	aa1403e0 	mov	x0, x20
+   5fa84:	94003c9b 	bl	6ecf0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x434a8>
+   5fa88:	aa1303e0 	mov	x0, x19
+   5fa8c:	94003c74 	bl	6ec5c <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x43414>
+   5fa90:	90000c00 	adrp	x0, 1df000 <typeinfo for ara::core::FutureErrorDomain@@Base+0x19d8>
+   5fa94:	f9478c00 	ldr	x0, [x0, #3864]
+   5fa98:	f94287e2 	ldr	x2, [sp, #1288]
+   5fa9c:	f9400001 	ldr	x1, [x0]
+   5faa0:	eb010042 	subs	x2, x2, x1
+   5faa4:	d2800001 	mov	x1, #0x0                   	// #0
+   5faa8:	54001021 	b.ne	5fcac <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34464>  // b.any
+   5faac:	aa1403e0 	mov	x0, x20
+   5fab0:	a94153f3 	ldp	x19, x20, [sp, #16]
+   5fab4:	a9425bf5 	ldp	x21, x22, [sp, #32]
+   5fab8:	a9446bf9 	ldp	x25, x26, [sp, #64]
+   5fabc:	a94573fb 	ldp	x27, x28, [sp, #80]
+   5fac0:	a9407bfd 	ldp	x29, x30, [sp]
+   5fac4:	911443ff 	add	sp, sp, #0x510
+   5fac8:	d50323bf 	autiasp
+   5facc:	d65f03c0 	ret
+   5fad0:	9101a3e8 	add	x8, sp, #0x68
+   5fad4:	52800022 	mov	w2, #0x1                   	// #1
+   5fad8:	aa1303e1 	mov	x1, x19
+   5fadc:	f9400ec0 	ldr	x0, [x22, #24]
+   5fae0:	97fee258 	bl	18440 <ara::com::proxy::ProxyAdapter::GetHandle()@plt>
+   5fae4:	a90363f7 	stp	x23, x24, [sp, #48]
+   5fae8:	f94037f8 	ldr	x24, [sp, #104]
+   5faec:	b4000b58 	cbz	x24, 5fc54 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x3440c>
+   5faf0:	f9400313 	ldr	x19, [x24]
+   5faf4:	f9400717 	ldr	x23, [x24, #8]
+   5faf8:	eb17027f 	cmp	x19, x23
+   5fafc:	540007c0 	b.eq	5fbf4 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x343ac>  // b.none
+   5fb00:	9102e3f5 	add	x21, sp, #0xb8
+   5fb04:	900008ba 	adrp	x26, 173000 <std::__allocated_ptr<std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> > > std::__allocate_guarded<std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> > >(std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> >&)@@Base+0x64738>
+   5fb08:	9134835a 	add	x26, x26, #0xd20
+   5fb0c:	900008b9 	adrp	x25, 173000 <std::__allocated_ptr<std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> > > std::__allocate_guarded<std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> > >(std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> >&)@@Base+0x64738>
+   5fb10:	9125e339 	add	x25, x25, #0x978
+   5fb14:	14000022 	b	5fb9c <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34354>
+   5fb18:	9101e3e8 	add	x8, sp, #0x78
+   5fb1c:	97ff1b1e 	bl	26794 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag)@@Base+0x3f4>
+   5fb20:	9101e3fb 	add	x27, sp, #0x78
+   5fb24:	aa1903e1 	mov	x1, x25
+   5fb28:	aa1b03e0 	mov	x0, x27
+   5fb2c:	97fee321 	bl	187b0 <__strncat_chk@plt+0x10>
+   5fb30:	aa1b03e0 	mov	x0, x27
+   5fb34:	97fee14b 	bl	18060 <ara::com::proxy::ProxyAdapter::StartFindService(ara::com::ServiceIdentifierType const&, std::function<void (std::vector<ara::com::proxy::HandleType, std::allocator<ara::com::proxy::HandleType> >, ara::com::FindServiceHandle)>, ara::core::InstanceSpecifier)@plt+0x10>
+   5fb38:	528023c3 	mov	w3, #0x11e                 	// #286
+   5fb3c:	900008a2 	adrp	x2, 173000 <std::__allocated_ptr<std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> > > std::__allocate_guarded<std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> > >(std::allocator<std::_Sp_counted_ptr_inplace<ara::core::Result<bool, ara::core::ErrorCode>, std::allocator<ara::core::Result<bool, ara::core::ErrorCode> >, (__gnu_cxx::_Lock_policy)2> >&)@@Base+0x64738>
+   5fb40:	91266042 	add	x2, x2, #0x998
+   5fb44:	52800021 	mov	w1, #0x1                   	// #1
+   5fb48:	52800060 	mov	w0, #0x3                   	// #3
+   5fb4c:	97fee0e1 	bl	17ed0 <__getauxval@plt>
+   5fb50:	14000010 	b	5fb90 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34348>
+   5fb54:	b944d7e0 	ldr	w0, [sp, #1236]
+   5fb58:	11004c01 	add	w1, w0, #0x13
+   5fb5c:	710ff83f 	cmp	w1, #0x3fe
+   5fb60:	540003a9 	b.ls	5fbd4 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x3438c>  // b.plast
+   5fb64:	52807fc1 	mov	w1, #0x3fe                 	// #1022
+   5fb68:	6b00003c 	subs	w28, w1, w0
+   5fb6c:	54000221 	b.ne	5fbb0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34368>  // b.any
+   5fb70:	39400361 	ldrb	w1, [x27]
+   5fb74:	aa1503e0 	mov	x0, x21
+   5fb78:	97ff15bb 	bl	25264 <std::__atomic_futex_unsigned_base::_M_futex_notify_all(unsigned int*)@plt+0xc134>
+   5fb7c:	aa1503e0 	mov	x0, x21
+   5fb80:	97ff1493 	bl	24dcc <std::__atomic_futex_unsigned_base::_M_futex_notify_all(unsigned int*)@plt+0xbc9c>
+   5fb84:	f94033e1 	ldr	x1, [sp, #96]
+   5fb88:	91000421 	add	x1, x1, #0x1
+   5fb8c:	f90033e1 	str	x1, [sp, #96]
+   5fb90:	91004273 	add	x19, x19, #0x10
+   5fb94:	eb1302ff 	cmp	x23, x19
+   5fb98:	540002e0 	b.eq	5fbf4 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x343ac>  // b.none
+   5fb9c:	f940027b 	ldr	x27, [x19]
+   5fba0:	b4fffbdb 	cbz	x27, 5fb18 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x342d0>
+   5fba4:	aa1503e8 	mov	x8, x21
+   5fba8:	97ff16ad 	bl	2565c <std::__atomic_futex_unsigned_base::_M_futex_notify_all(unsigned int*)@plt+0xc52c>
+   5fbac:	17ffffea 	b	5fb54 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x3430c>
+   5fbb0:	d2808283 	mov	x3, #0x414                 	// #1044
+   5fbb4:	2a1c03e2 	mov	w2, w28
+   5fbb8:	aa1a03e1 	mov	x1, x26
+   5fbbc:	910303e0 	add	x0, sp, #0xc0
+   5fbc0:	97fee230 	bl	18480 <__cxa_guard_abort@plt+0x10>
+   5fbc4:	b944d7e0 	ldr	w0, [sp, #1236]
+   5fbc8:	0b1c0000 	add	w0, w0, w28
+   5fbcc:	b904d7e0 	str	w0, [sp, #1236]
+   5fbd0:	17ffffe8 	b	5fb70 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34328>
+   5fbd4:	d2808282 	mov	x2, #0x414                 	// #1044
+   5fbd8:	aa1a03e1 	mov	x1, x26
+   5fbdc:	910303e0 	add	x0, sp, #0xc0
+   5fbe0:	97fee0f4 	bl	17fb0 <std::ostream::sentry::~sentry()@plt+0x8>
+   5fbe4:	b944d7e0 	ldr	w0, [sp, #1236]
+   5fbe8:	11004c00 	add	w0, w0, #0x13
+   5fbec:	b904d7e0 	str	w0, [sp, #1236]
+   5fbf0:	17ffffe0 	b	5fb70 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34328>
+   5fbf4:	f9400701 	ldr	x1, [x24, #8]
+   5fbf8:	f9400300 	ldr	x0, [x24]
+   5fbfc:	cb000021 	sub	x1, x1, x0
+   5fc00:	910223e8 	add	x8, sp, #0x88
+   5fc04:	d3448c21 	ubfx	x1, x1, #4, #32
+   5fc08:	f9400ec0 	ldr	x0, [x22, #24]
+   5fc0c:	97fee249 	bl	18530 <std::ostream& std::ostream::_M_insert<void const*>(void const*)@plt>
+   5fc10:	f94047e0 	ldr	x0, [sp, #136]
+   5fc14:	b4000060 	cbz	x0, 5fc20 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x343d8>
+   5fc18:	d2800201 	mov	x1, #0x10                  	// #16
+   5fc1c:	97fee0c9 	bl	17f40 <std::__throw_bad_alloc()@plt+0x10>
+   5fc20:	910263e8 	add	x8, sp, #0x98
+   5fc24:	910183e0 	add	x0, sp, #0x60
+   5fc28:	94003c7c 	bl	6ee18 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x435d0>
+   5fc2c:	910263f3 	add	x19, sp, #0x98
+   5fc30:	aa1303e1 	mov	x1, x19
+   5fc34:	aa1403e0 	mov	x0, x20
+   5fc38:	94003c2e 	bl	6ecf0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x434a8>
+   5fc3c:	aa1303e0 	mov	x0, x19
+   5fc40:	94003c07 	bl	6ec5c <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x43414>
+   5fc44:	9101a3e0 	add	x0, sp, #0x68
+   5fc48:	94003c47 	bl	6ed64 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x4351c>
+   5fc4c:	a94363f7 	ldp	x23, x24, [sp, #48]
+   5fc50:	17ffff90 	b	5fa90 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x34248>
+   5fc54:	9102a3e8 	add	x8, sp, #0xa8
+   5fc58:	910183e0 	add	x0, sp, #0x60
+   5fc5c:	94003c6f 	bl	6ee18 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x435d0>
+   5fc60:	9102a3f3 	add	x19, sp, #0xa8
+   5fc64:	aa1303e1 	mov	x1, x19
+   5fc68:	aa1403e0 	mov	x0, x20
+   5fc6c:	94003c21 	bl	6ecf0 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x434a8>
+   5fc70:	aa1303e0 	mov	x0, x19
+   5fc74:	94003bfa 	bl	6ec5c <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x43414>
+   5fc78:	17fffff3 	b	5fc44 <void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char*>(char*, char*, std::forward_iterator_tag)@@Base+0x343fc>
+   5fc7c:	d503249f 	bti	j

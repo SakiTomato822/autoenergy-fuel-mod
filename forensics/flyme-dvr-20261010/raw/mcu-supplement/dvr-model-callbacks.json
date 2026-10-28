@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1a2",
+    "descriptor_offset": "69e1a",
+    "descriptor": "210214000300a201",
+    "callback": "43c61d"
+  },
+  {
+    "id": "1a3",
+    "descriptor_offset": "69e22",
+    "descriptor": "210214000300a301",
+    "callback": "43c62d"
+  },
+  {
+    "id": "1a4",
+    "descriptor_offset": "69e2a",
+    "descriptor": "210214000300a401",
+    "callback": "43c63d"
+  },
+  {
+    "id": "1a7",
+    "descriptor_offset": "69e42",
+    "descriptor": "210214000300a701",
+    "callback": "43c66d"
+  },
+  {
+    "id": "1a8",
+    "descriptor_offset": "69e4a",
+    "descriptor": "210214000300a801",
+    "callback": "43c67d"
+  },
+  {
+    "id": "1ab",
+    "descriptor_offset": "69e62",
+    "descriptor": "210214000300ab01",
+    "callback": "43c6ad"
+  },
+  {
+    "id": "1ad",
+    "descriptor_offset": "69e72",
+    "descriptor": "210214000300ad01",
+    "callback": "43c6d1"
+  }
+]

@@ -1,0 +1,20 @@
+Archive:  /data/media/0/Documents/.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+     6000  2026-10-09 01:01   TERMUX_HANDOFF.md
+     3677  2026-10-09 00:23   MEDIA_TRACE_README.md
+     6056  2026-10-09 00:25   MEDIA_FINDINGS.md
+     6562  2026-10-09 00:23   carplay_media_trace.js
+     3771  2026-10-09 00:24   test_media_trace.cjs
+---------                     -------
+    26066                     5 files
+Archive:  /data/media/0/Download/CarPlay-Termux-Handoff-20261009.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+     6000  2026-10-09 01:01   TERMUX_HANDOFF.md
+     3677  2026-10-09 00:23   MEDIA_TRACE_README.md
+     6056  2026-10-09 00:25   MEDIA_FINDINGS.md
+     6562  2026-10-09 00:23   carplay_media_trace.js
+     3771  2026-10-09 00:24   test_media_trace.cjs
+---------                     -------
+    26066                     5 files

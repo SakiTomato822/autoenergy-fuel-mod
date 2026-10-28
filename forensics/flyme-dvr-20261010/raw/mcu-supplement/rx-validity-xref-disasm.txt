@@ -1,0 +1,152 @@
+# MCU 2B1 缓存/状态和接收路径摘录
+# 固件 DHUBX11G0622CSJ；Thumb VA = 0x420000 + file offset。
+# 这些是静态代码路径证据，不证明历史时刻运行过。
+
+# 两张不同的描述表：物理RX表 0x20408bbc，缓存/状态维护表 *[0x20409804+0x218]=0x20409a20。
+# 物理RX index20: file 0x7b274 / RAM 0x20408dec，28字节，类别0、DLC8、ID 0x02b1、callback 0x00435fd5。
+# 缓存/状态维护 index20: file 0x7c0d8 / RAM 0x20409c50:
+#   01 00 00 00 0c 90 48 00 08 00 64 00 01 00 00 00 bd e1 43 00 ...
+#   row[0]=1, row[4]=0x0048900c, row[12]=1, row[16]=0x0043e1bd。
+# 不得将物理RX行的 row[0]/row[12] 用于解释 0x435f28 或 0x4366e0。
+
+# 0x43480c 规范化参数后调用 0x4348f0；后者遍历物理RX表，按类别、ID、DLC匹配。
+  43480c: b507       push    {r0, r1, r2, lr}
+  43480e: 4611       mov     r1, r2              @ ID
+  434818: f8ad 3004 strh.w  r3, [sp, #4]        @ DLC放入局部参数块
+  434820: 9300       str     r3, [sp, #0]        @ payload指针放入局部参数块
+  434822: f000 f865 bl      0x4348f0
+  4348f0: e92d 47f0  push    {r4-r9, lr}
+  4348fc: f504 6844  add.w   r8, r4, #0xc40       @ 106行 * 28 字节
+  434908: 8963       ldrh    r3, [r4, #10]        @ 描述行 ID
+  43490a: 42b3       cmp     r3, r6
+  43490e: 79a3       ldrb    r3, [r4, #6]         @ 类别
+  434910: 42bb       cmp     r3, r7
+  434914: 88aa       ldrh    r2, [r5, #4]         @ 输入 DLC
+  434916: 79e3       ldrb    r3, [r4, #7]         @ 描述行 DLC
+  434918: 429a       cmp     r2, r3
+  43491c: 6963       ldr     r3, [r4, #20]        @ callback
+  434920: 4629       mov     r1, r5              @ 帧参数块
+  434922: 7a20       ldrb    r0, [r4, #8]         @ index
+  434924: 4798       blx     r3
+# 对 index20，类别0 / ID 0x2b1 / DLC8 匹配物理行，调用 callback 0x435fd5(index=20, frame_args)。
+
+# 类别0记录消费者 0x42a338；record stride=80，基址由 literal 0x20410e8c 提供。
+  42a338: 2901       cmp     r1, #1
+  42a346: 4c1f       ldr     r4, [pc, #124]       @ 0x20410e8c
+  42a354: 2550       movs    r5, #80
+  42a35a: fb05 4101  mla     r1, r5, r1, r4       @ record = base + index*80
+  42a35e: f043 f83b  bl      0x46d3d8
+  42a382: 3308       adds    r3, #8
+  42a386: f890 3048  ldrb.w  r3, [r0, #72]        @ DLC
+  42a38c: 8892       ldrh    r2, [r2, #4]         @ record +4 的 ID
+  42a388: 2000       movs    r0, #0               @ 类别0
+  42a390: f00a fa3c bl      0x43480c
+# 邻近入口 0x42a408 调 0x43480c 时传类别1；index20物理RX行类别0，故不与之匹配。
+
+# 控制器配置把 callback 0x42a339 (Thumb) 放入 controller object +0x610。
+# 配置初始化 0x42a4e8 -> 0x46cf88；配置对象源映射到 RAM 0x204086a8；callback 字段来自 VA 0x497794。
+# 0x46cc7c 读取硬件基址表 VA 0x4997dc，channel0 表项 0x40304000；记录缓冲区取自 object +0x600。
+  46cc7c: e92d 41f0  push    {r4-r8, lr}
+  46cc8a: f853 6020  ldr.w   r6, [r3, r0, lsl #2] @ 硬件基址表项
+  46cc96: e8df f001  tbb     [pc, r1]
+  46cca6: f8d4 3600  ldr.w   r3, [r4, #0x600]
+  46ccb0: f8d4 1600  ldr.w   r1, [r4, #0x600]      @ RX record缓冲
+  46ccb6: f002 fc45  bl      0x46f544
+  46ccbe: f8d4 8610  ldr.w   r8, [r4, #0x610]      @ 已安装回调
+  46ccea: 47c0       blx     r8
+# 0x46f544 从控制器 MMIO/FIFO 读帧信息，填充 80-byte record。
+  46f546: f500 5500  add.w   r5, r0, #0x2000
+  46f54c: f856 0b08  ldr.w   r0, [r6], #8
+  46f550: f3c0 4003  ubfx    r0, r0, #16, #4
+  46f564: f881 2048  strb.w  r2, [r1, #72]         @ DLC
+  46f568: 682c       ldr     r4, [r5, #0]
+  46f56e: 600c       str     r4, [r1, #0]
+  46f570: 686b       ldr     r3, [r5, #4]
+  46f582: 604b       str     r3, [r1, #4]
+  46f5a8: 089c       lsrs    r4, r3, #2
+  46f5ac: f856 1024  ldr.w   r1, [r6, r4, lsl #2]  @ 后续FIFO/寄存器数据
+  46f5b2: f840 1024  str.w   r1, [r0, r4, lsl #2]  @ payload写入record+8
+
+# 2B1 callback：要求对象 0x204181e8 + 0xeb7 == 1；标记事件字节，再把 data* 交给 0x435f28。
+  435fd4: e92d 43f8  push    {r3-r9, lr}
+  435fde: f895 1eb7  ldrb.w  r1, [r5, #0xeb7]
+  435fe2: 2901       cmp     r1, #1
+  435fe4: d130       bne.n   0x436048
+  43600a: 192e       adds    r6, r5, r4
+  43600c: 2303       movs    r3, #3
+  436010: f886 3e4d  strb.w  r3, [r6, #0xe4d]      @ event[index]=3
+  436014: 6839       ldr     r1, [r7, #0]          @ frame_args.payload
+  436016: f7ff ff87  bl      0x435f28             @ (index, data*)
+# 0x435fd4 不直接写 software status[20]。
+
+# 0x435f28 读取缓存/状态表 0x20409804+0x218 和缓存指针表 0x2040aa78。
+# index20 的维护行 row[0]=1，故走 row[4] 掩码分支；掩码结果与缓存比较，变化时才写入。
+  435f28: b5f7       push    {r0-r2, r4-r7, lr}
+  435f32: f852 6024  ldr.w   r6, [r2, r4, lsl #2] @ 每项缓存长度
+  435f38: f8d5 5218  ldr.w   r5, [r5, #0x218]    @ 维护/缓存描述表指针
+  435f42: eb05 0702  add.w   r7, r5, r2           @ row[index]
+  435f46: 5cad       ldrb    r5, [r5, r2]          @ row[0]
+  435f50: b9a5       cbnz    r5, 0x435f7c         @ row[0]=1 -> mask path
+  435f70: 6879       ldr     r1, [r7, #4]          @ mask pointer
+  435f76: 400a       ands    r2, r1               @ input byte & mask byte
+  435f88: eb05 03c4  add.w   r3, r5, r4, lsl #3   @ cache pointer table[index]
+  435f90: 889a       ldrh    r2, [r3, #4]          @ configured length
+  435f92: f026 fec1  bl      0x45cd18             @ compare current buffer/result
+  435f96: 2800       cmp     r0, #0
+  435f98: d0e6       beq.n   0x435f68             @ equal: leave cache unchanged
+  435f9e: ad02       add     r5, sp, #8
+  435fa0: f851 0034  ldr.w   r0, [r1, r4, lsl #3] @ destination buffer[index]
+  435faa: 5485       strb    r5, [r0, r2]          @ changed bytes copied to cache
+  435fc4: 2001       movs    r0, #1
+# index20 destination from buffer-table file 0x7cf00 is 0x204003c4, length8。
+
+# 435cb0 cache initializer: 93 rows; index20 initializer pointer 0x48e254 (file 0x6e254), bytes 20 00 00 00 00 00 00 00; destination 0x204003c4, length8。
+  435cb0: 4826       ldr     r0, [pc, #152]        @ initial helper/table state
+  435cb2: 225d       movs    r2, #93
+  435cba: f7ff fff3  bl      0x435ca4
+  435cdc: 4b1d       ldr     r3, [pc, #116]        @ 0x2040a790 initializer pointer table
+  435ce0: 4d1d       ldr     r5, [pc, #116]        @ 0x2040aa78 cache-pointer table
+  435ce2: f8df c080  ldr.w   ip, [pc, #128]        @ 0x20418cf0
+  435ce6: 4f1d       ldr     r7, [pc, #116]        @ 0x0048dea0 lengths
+  435ce8: eb0c 00c2  add.w   r0, ip, r2, lsl #3
+  435cec: f855 1032  ldr.w   r1, [r5, r2, lsl #3] @ template pointer
+  435cf2: 6041       str     r1, [r0, #4]
+  435d3e: f816 8001  ldrb.w  r8, [r6, r1]
+  435d44: 6826       ldr     r6, [r4, #0]
+  435d48: f806 8001  strb.w  r8, [r6, r1]
+# 0x4360d8 仅在 gate byte 0x20400079==0 时置 gate、调用 0x435a80，再尾调 0x435cb0。
+# 0x436678 的 LSLS #31 测输入 bit0；LSLS #27 测输入 bit4。
+# bit4 路径仅在 r1!=0 且 object+0xeb7!=1 时调用 0x435cb0；不是无条件 reset 初始化。
+
+# 报告 builder 的状态和数据是两次独立读取。
+  449dfa: 2300       movs    r3, #0
+  449dfc: 71e3       strb    r3, [r4, #7]         @ byte7 默认0
+  449dfe: f8d1 3218  ldr.w   r3, [r1, #0x218]     @ 维护表，不是物理RX表
+  449e06: 7b1b       ldrb    r3, [r3, #12]
+  449e08: 069b       lsls    r3, r3, #26          @ bit5屏蔽检查
+  449e0c: f8d1 31a8  ldr.w   r3, [r1, #0x1a8]
+  449e10: 5d5b       ldrb    r3, [r3, r5]         @ software status[index]
+  449e16: 71e3       strb    r3, [r4, #7]         @ 非零时写1
+  449e60: f850 1035  ldr.w   r1, [r0, r5, lsl #3] @ cache pointer
+  449e64: 5cc9       ldrb    r1, [r1, r3]
+  449e68: 3301       adds    r3, #1
+  449e6a: f802 1b01  strb.w  r1, [r2], #1         @ 与状态检查独立的数据拷贝
+
+# 状态指针与表身份：r6=0x20409804；status pointer slot 0x204099ac -> 0x2040007a；index20地址0x2040008e。
+  436742: f8d6 21a8  ldr.w   r2, [r6, #0x1a8]
+  436746: 5d12       ldrb    r2, [r2, r4]
+  4367da: 7013       strb    r3, [r2, #0]         @ 可见 status=0 分支
+  436832: 7013       strb    r3, [r2, #0]         @ 可见 status=1 分支
+# 0x4366e0 同时使用 +0x1a8 状态指针与 +0x218 维护表。
+# index20 的真实维护行 +0=1,+12=1；存在状态0/1写分支。分支依赖事件/计时及回调，不能据此命名 valid/timeout。
+
+# 报告入口 0x44a518 直接读取同一 software status，并独立复制 0x2040aa78[index] 缓存。
+  44a530: 2213       movs    r2, #19              @ command 0x13
+  44a534: 2202       movs    r2, #2               @ subcommand 0x02
+  44a540: f8d2 21a8  ldr.w   r2, [r2, #0x1a8]
+  44a544: 5c52       ldrb    r2, [r2, r1]
+  44a54a: f042 0201  orr.w   r2, r2, #1           @ status非零时byte7 bit0
+  44a580: 47b0       blx     r6                   @ output callback
+  44a584: 8823       ldrh    r3, [r4, #0]         @ iterator
+  44a588: 2b69       cmp     r3, #0x69
+# 此次扫描没有找到指向 0x44a518 的直接 BL/B.W；未排除间接调度。

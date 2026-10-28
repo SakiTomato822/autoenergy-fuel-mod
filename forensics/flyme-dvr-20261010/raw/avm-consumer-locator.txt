@@ -1,0 +1,10 @@
+Sun Oct 11 22:05:22 CST 2026
+   345 evsrenderengine             evsrenderengine
+   348 android.hardware.automotive.evs@1.0-service android.hardware.automotive.evs@1.0-service
+   387 evsapp                      evsapp
+   513 cameraserver                cameraserver
+  2893 com.ecarx.parking           com.ecarx.parking
+  9018 adb                         adb -P 5038 -s 127.0.0.1:5555 shell date; ps -A -o PID,NAME,ARGS | grep -i -E "avm|parking|camera|evs|apa"; pm list packages -f | grep -i -E "parking|avm|camera|dvr"
+  9022 sh                          sh -c date; ps -A -o PID,NAME,ARGS | grep -i -E "avm|parking|camera|evs|apa"; pm list packages -f | grep -i -E "parking|avm|camera|dvr"
+  9027 grep                        grep -i -E avm|parking|camera|evs|apa
+package:/system/app/OneOSAvmApp/OneOSAvmApp.apk=com.ecarx.parking

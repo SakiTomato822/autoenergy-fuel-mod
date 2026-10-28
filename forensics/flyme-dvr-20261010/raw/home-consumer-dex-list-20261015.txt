@@ -1,0 +1,6 @@
+Archive:  /system/priv-app/GeelyAutoLauncher/GeelyAutoLauncher.apk
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+  7110784  2009-01-01 00:00   classes.dex
+---------                     -------
+  7110784                     1 file

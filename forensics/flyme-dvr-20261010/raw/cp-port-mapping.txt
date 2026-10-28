@@ -1,0 +1,166 @@
+ProvidedIpcServiceInstance [
+  {
+    "ShortName": "VehicleServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/VehicleServiceDeployment",
+    "ServiceInstanceId": 1
+  },
+  {
+    "ShortName": "GaugeServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/GaugeServiceDeployment",
+    "ServiceInstanceId": 3
+  },
+  {
+    "ShortName": "TelltaleServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/TelltaleServiceDeployment",
+    "ServiceInstanceId": 9
+  },
+  {
+    "ShortName": "MixtureServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/MixtureServiceDeployment",
+    "ServiceInstanceId": 7
+  },
+  {
+    "ShortName": "WarnServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/WarnServiceDeployment",
+    "ServiceInstanceId": 10
+  },
+  {
+    "ShortName": "TcServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/TcServiceDeployment",
+    "ServiceInstanceId": 5
+  },
+  {
+    "ShortName": "IVIServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/IVIServiceDeployment",
+    "ServiceInstanceId": 12
+  },
+  {
+    "ShortName": "DFSServiceProvidedIpcServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/DFSServiceDeployment",
+    "ServiceInstanceId": 13
+  }
+]
+RequiredIpcServiceInstance [
+  {
+    "ShortName": "VehicleServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/VehicleServiceDeployment",
+    "ServiceInstanceId": 1
+  },
+  {
+    "ShortName": "GaugeServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/GaugeServiceDeployment",
+    "ServiceInstanceId": 3
+  },
+  {
+    "ShortName": "TelltaleServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/TelltaleServiceDeployment",
+    "ServiceInstanceId": 9
+  },
+  {
+    "ShortName": "MixtureServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/MixtureServiceDeployment",
+    "ServiceInstanceId": 7
+  },
+  {
+    "ShortName": "WarnServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/WarnServiceDeployment",
+    "ServiceInstanceId": 10
+  },
+  {
+    "ShortName": "TcServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/TcServiceDeployment",
+    "ServiceInstanceId": 5
+  },
+  {
+    "ShortName": "IVIServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/IVIServiceDeployment",
+    "ServiceInstanceId": 12
+  },
+  {
+    "ShortName": "DFSServiceRequiredIPCServiceInstance",
+    "ServiceInterfaceDeployment": "/IpcServiceInterfaceDeployment/DFSServiceDeployment",
+    "ServiceInstanceId": 13
+  }
+]
+ServiceInstanceToPortPrototypeMapping [
+  {
+    "ShortName": "VehicleServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/VehicleServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/VehicleServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "VehicleServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/VehicleServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/VehicleServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  },
+  {
+    "ShortName": "GaugeServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/GaugeServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/GaugeServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "GaugeServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/GaugeServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/GaugeServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  },
+  {
+    "ShortName": "TelltaleServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/TelltaleServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/TelltaleServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "TelltaleServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/TelltaleServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/TelltaleServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  },
+  {
+    "ShortName": "MixtureServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/MixtureServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/MixtureServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "MixtureServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/MixtureServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/MixtureServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  },
+  {
+    "ShortName": "WarnServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/WarnServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/WarnServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "WarnServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/WarnServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/WarnServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  },
+  {
+    "ShortName": "TcServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/TcServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/TcServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "TcServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/TcServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/TcServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  },
+  {
+    "ShortName": "IVIServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/IVIServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/IVIServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "IVIServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/IVIServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/IVIServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  },
+  {
+    "ShortName": "DFSServiceProvidedMapping",
+    "ServiceInstance": "/ProvidedIpcServiceInstance/DFSServiceProvidedIpcServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/DFSServiceAdaptiveApplicationSwComponentType/Ports/TestPPortPrototype"
+  },
+  {
+    "ShortName": "DFSServiceRequiredMapping",
+    "ServiceInstance": "/RequiredIpcServiceInstance/DFSServiceRequiredIPCServiceInstance",
+    "TargetPortPrototype": "/AdaptiveApplicationSwComponentType/DFSServiceAdaptiveApplicationSwComponentType/Ports/TestRPortPrototype"
+  }
+]

@@ -1,0 +1,2 @@
+package:/system/priv-app/GeelyAutoLauncher/GeelyAutoLauncher.apk
+/system/bin/unzip

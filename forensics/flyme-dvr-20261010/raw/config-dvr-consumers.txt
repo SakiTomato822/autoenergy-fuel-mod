@@ -1,0 +1,330 @@
+
+METHOD Lcom/android/car/ECarXCarConfigService$CmdLocalConfig;->getInfoFromConfigFile code=1318868 regs=5 ins=2
+   0 0013 0074 const/16 116
+   2 0432 00e0 if target 226
+   4 0013 00a1 const/16 161
+   6 0432 00d7 if target 221
+   8 042b 00e0 0000 switch payload 232
+  11 042b 00ed 0000 switch payload 248
+  14 0063 6a6a Lcom/android/car/config/ConfigUtil;->DBG:Z
+  16 0038 0026 if target 54
+  18 0063 6a6b Lcom/android/car/config/ConfigUtil;->DBG_HIGH_FREQ:Z
+  20 0038 0022 if target 54
+  22 0022 0edf 
+  24 1070 6866 0000 Ljava/lang/StringBuilder;-><init>
+  27 011a 5677 "getInfoFromConfigFile: cmd="
+  29 206e 686f 0010 Ljava/lang/StringBuilder;->append
+  32 206e 686b 0040 Ljava/lang/StringBuilder;->append
+  35 011a 01c9 " is un-support:"
+  37 206e 686f 0010 Ljava/lang/StringBuilder;->append
+  40 106e 6876 0000 Ljava/lang/StringBuilder;->toString
+  43 000c 
+  44 0122 0ec4 
+  46 1070 67d1 0001 Ljava/lang/IllegalArgumentException;-><init>
+  49 021a 107a "ECarX_cfg_230731"
+  51 3071 0a4d 0102 Landroid/util/Log;->e
+  54 f012 const/4 v0 -1
+  55 000f 
+  56 106e 3186 0003 Lcom/android/car/config/LocalConfig;->getESESoundWave
+  59 000a 
+  60 000f 
+  61 106e 318c 0003 Lcom/android/car/config/LocalConfig;->getIpkMediaCoverInfo
+  64 000a 
+  65 000f 
+  66 106e 31b2 0003 Lcom/android/car/config/LocalConfig;->getPassengerSeatHeating
+  69 000a 
+  70 000f 
+  71 106e 31b5 0003 Lcom/android/car/config/LocalConfig;->getRadarType
+  74 000a 
+  75 000f 
+  76 106e 31b0 0003 Lcom/android/car/config/LocalConfig;->getPM25
+  79 000a 
+  80 000f 
+  81 106e 31be 0003 Lcom/android/car/config/LocalConfig;->getSunroof
+  84 000a 
+  85 000f 
+  86 106e 31b4 0003 Lcom/android/car/config/LocalConfig;->getRadar
+  89 000a 
+  90 000f 
+  91 106e 31b3 0003 Lcom/android/car/config/LocalConfig;->getRVC
+  94 000a 
+  95 000f 
+  96 106e 317f 0003 Lcom/android/car/config/LocalConfig;->getAcConfing
+  99 000a 
+ 100 000f 
+ 101 106e 31c8 0003 Lcom/android/car/config/LocalConfig;->getWindowAntiPinch
+ 104 000a 
+ 105 000f 
+ 106 106e 3180 0003 Lcom/android/car/config/LocalConfig;->getAmplifierConfig
+ 109 000a 
+ 110 000f 
+ 111 106e 31b6 0003 Lcom/android/car/config/LocalConfig;->getRadioAndLanguage
+ 114 000a 
+ 115 000f 
+ 116 106e 31c4 0003 Lcom/android/car/config/LocalConfig;->getUiDisplayConfig
+ 119 000a 
+ 120 000f 
+ 121 106e 318f 0003 Lcom/android/car/config/LocalConfig;->getLanguage
+ 124 000a 
+ 125 000f 
+ 126 106e 31c2 0003 Lcom/android/car/config/LocalConfig;->getThemeMode
+ 129 000a 
+ 130 000f 
+ 131 106e 31b9 0003 Lcom/android/car/config/LocalConfig;->getSeatVentilatorGearCoDriver
+ 134 000a 
+ 135 000f 
+ 136 106e 31ba 0003 Lcom/android/car/config/LocalConfig;->getSeatVentilatorGearDriver
+ 139 000a 
+ 140 000f 
+ 141 106e 318d 0003 Lcom/android/car/config/LocalConfig;->getLaneAssist
+ 144 000a 
+ 145 000f 
+ 146 106e 31b7 0003 Lcom/android/car/config/LocalConfig;->getSaveKey
+ 149 000a 
+ 150 000f 
+ 151 106e 31ad 0003 Lcom/android/car/config/LocalConfig;->getNOAConfig
+ 154 000a 
+ 155 000f 
+ 156 106e 3185 0003 Lcom/android/car/config/LocalConfig;->getDriverSeatHeating
+ 159 000a 
+ 160 000f 
+ 161 106e 3188 0003 Lcom/android/car/config/LocalConfig;->getHUDConfig
+ 164 000a 
+ 165 000f 
+ 166 106e 31bf 0003 Lcom/android/car/config/LocalConfig;->getSunroofControlType
+ 169 000a 
+ 170 000f 
+ 171 106e 31b8 0003 Lcom/android/car/config/LocalConfig;->getSceneMode
+ 174 000a 
+ 175 000f 
+ 176 106e 31c5 0003 Lcom/android/car/config/LocalConfig;->getVehicleConfig
+ 179 000a 
+ 180 000f 
+ 181 106e 3182 0003 Lcom/android/car/config/LocalConfig;->getCmdSocEquilibriumPoint
+ 184 000a 
+ 185 000f 
+ 186 106e 31a5 0003 Lcom/android/car/config/LocalConfig;->getLocalSeatMemoryConfig
+ 189 000a 
+ 190 000f 
+ 191 106e 31c7 0003 Lcom/android/car/config/LocalConfig;->getVehicleType
+ 194 000a 
+ 195 000f 
+ 196 106e 31bd 0003 Lcom/android/car/config/LocalConfig;->getSteeringWheel
+ 199 000a 
+ 200 000f 
+ 201 106e 317d 0003 Lcom/android/car/config/LocalConfig;->getAVM
+ 204 000a 
+ 205 000f 
+ 206 106e 3184 0003 Lcom/android/car/config/LocalConfig;->getDVRConfig
+ 209 000a 
+ 210 000f 
+ 211 106e 3189 0003 Lcom/android/car/config/LocalConfig;->getHornConfig
+ 214 000a 
+ 215 000f 
+ 216 106e 31ab 0003 Lcom/android/car/config/LocalConfig;->getMMIKeyLightType
+ 219 000a 
+ 220 000f 
+ 221 106e 31c6 0003 Lcom/android/car/config/LocalConfig;->getVehicleEngineType
+ 224 000a 
+ 225 000f 
+ 226 106e 318b 0003 Lcom/android/car/config/LocalConfig;->getIntelligentFragrance
+ 229 000a 
+ 230 000f 
+ 231 0000 
+ 232 0100 0006 0064 0000 00d0 0000 00cb 0000 
+ 248 0100 001b 00cc 0000 00af 0000 00aa 0000 
+
+METHOD Lcom/android/car/config/future/CmdGetConf;->getInfoFromConfigFile code=1761904 regs=6 ins=2
+   0 f012 const/4 v0 -1
+   1 011a 0d94 "CarConfigServiceCmd"
+   3 0439 0008 if target 11
+   5 021a 5678 "getInfoFromConfigFile: localConfig == null"
+   7 2071 0a4c 0021 Landroid/util/Log;->e
+  10 000f 
+  11 0222 0edf 
+  13 1070 6866 0002 Ljava/lang/StringBuilder;-><init>
+  16 031a 5676 "getInfoFromConfigFile cmd= "
+  18 206e 686f 0032 Ljava/lang/StringBuilder;->append
+  21 206e 686b 0052 Ljava/lang/StringBuilder;->append
+  24 106e 6876 0002 Ljava/lang/StringBuilder;->toString
+  27 020c 
+  28 2071 0a4a 0021 Landroid/util/Log;->d
+  31 0213 006b const/16 107
+  33 2532 0130 if target 337
+  35 0213 006c const/16 108
+  37 2532 0127 if target 332
+  39 0213 0074 const/16 116
+  41 2532 011e if target 327
+  43 0213 00a1 const/16 161
+  45 2532 0115 if target 322
+  47 052b 0127 0000 switch payload 342
+  50 052b 0134 0000 switch payload 358
+  53 0263 6a6a Lcom/android/car/config/ConfigUtil;->DBG:Z
+  55 0238 0024 if target 91
+  57 0263 6a6b Lcom/android/car/config/ConfigUtil;->DBG_HIGH_FREQ:Z
+  59 0238 0020 if target 91
+  61 0222 0edf 
+  63 1070 6866 0002 Ljava/lang/StringBuilder;-><init>
+  66 031a 5677 "getInfoFromConfigFile: cmd="
+  68 206e 686f 0032 Ljava/lang/StringBuilder;->append
+  71 206e 686b 0052 Ljava/lang/StringBuilder;->append
+  74 031a 01c9 " is un-support:"
+  76 206e 686f 0032 Ljava/lang/StringBuilder;->append
+  79 106e 6876 0002 Ljava/lang/StringBuilder;->toString
+  82 020c 
+  83 0322 0ec4 
+  85 1070 67d1 0003 Ljava/lang/IllegalArgumentException;-><init>
+  88 3071 0a4d 0321 Landroid/util/Log;->e
+  91 000f 
+  92 106e 3242 0004 Lcom/android/car/config/future/LocalConfigExcel;->getEngineMaintenance
+  95 000a 
+  96 000f 
+  97 106e 3234 0004 Lcom/android/car/config/future/LocalConfigExcel;->getCarplay
+ 100 000a 
+ 101 000f 
+ 102 106e 3272 0004 Lcom/android/car/config/future/LocalConfigExcel;->getRestSpace
+ 105 000a 
+ 106 000f 
+ 107 106e 3240 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDrivingLinkageAmbientLight
+ 110 000a 
+ 111 000f 
+ 112 106e 3233 0004 Lcom/android/car/config/future/LocalConfigExcel;->getBreathingModeAmbientLight
+ 115 000a 
+ 116 000f 
+ 117 106e 3278 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSolidColorAmbientLight
+ 120 000a 
+ 121 000f 
+ 122 106e 3238 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriveMode_Custom
+ 125 000a 
+ 126 000f 
+ 127 106e 3239 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriveMode_Smart
+ 130 000a 
+ 131 000f 
+ 132 106e 323c 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriverMode_Offload
+ 135 000a 
+ 136 000f 
+ 137 106e 323d 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriverMode_Snow
+ 140 000a 
+ 141 000f 
+ 142 106e 323e 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriverMode_Sport
+ 145 000a 
+ 146 000f 
+ 147 106e 323a 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriverMode_Comfort
+ 150 000a 
+ 151 000f 
+ 152 106e 323b 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriverMode_ECO
+ 155 000a 
+ 156 000f 
+ 157 106e 3241 0004 Lcom/android/car/config/future/LocalConfigExcel;->getESESoundWave
+ 160 000a 
+ 161 000f 
+ 162 106e 3248 0004 Lcom/android/car/config/future/LocalConfigExcel;->getIpkMediaCoverInfo
+ 165 000a 
+ 166 000f 
+ 167 106e 326d 0004 Lcom/android/car/config/future/LocalConfigExcel;->getPassengerSeatHeating
+ 170 000a 
+ 171 000f 
+ 172 106e 3270 0004 Lcom/android/car/config/future/LocalConfigExcel;->getRadarType
+ 175 000a 
+ 176 000f 
+ 177 106e 326b 0004 Lcom/android/car/config/future/LocalConfigExcel;->getPM25
+ 180 000a 
+ 181 000f 
+ 182 106e 327c 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSunroof
+ 185 000a 
+ 186 000f 
+ 187 106e 326f 0004 Lcom/android/car/config/future/LocalConfigExcel;->getRadar
+ 190 000a 
+ 191 000f 
+ 192 106e 326e 0004 Lcom/android/car/config/future/LocalConfigExcel;->getRVC
+ 195 000a 
+ 196 000f 
+ 197 106e 3230 0004 Lcom/android/car/config/future/LocalConfigExcel;->getAcConfing
+ 200 000a 
+ 201 000f 
+ 202 106e 3284 0004 Lcom/android/car/config/future/LocalConfigExcel;->getWindowAntiPinch
+ 205 000a 
+ 206 000f 
+ 207 106e 3231 0004 Lcom/android/car/config/future/LocalConfigExcel;->getAmplifierConfig
+ 210 000a 
+ 211 000f 
+ 212 106e 3271 0004 Lcom/android/car/config/future/LocalConfigExcel;->getRadioAndLanguage
+ 215 000a 
+ 216 000f 
+ 217 106e 3280 0004 Lcom/android/car/config/future/LocalConfigExcel;->getUiDisplayConfig
+ 220 000a 
+ 221 000f 
+ 222 106e 324b 0004 Lcom/android/car/config/future/LocalConfigExcel;->getLanguage
+ 225 000a 
+ 226 000f 
+ 227 106e 327e 0004 Lcom/android/car/config/future/LocalConfigExcel;->getThemeMode
+ 230 000a 
+ 231 000f 
+ 232 106e 3275 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSeatVentilatorGearCoDriver
+ 235 000a 
+ 236 000f 
+ 237 106e 3276 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSeatVentilatorGearDriver
+ 240 000a 
+ 241 000f 
+ 242 106e 3249 0004 Lcom/android/car/config/future/LocalConfigExcel;->getLaneAssist
+ 245 000a 
+ 246 000f 
+ 247 106e 3273 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSaveKey
+ 250 000a 
+ 251 000f 
+ 252 106e 3268 0004 Lcom/android/car/config/future/LocalConfigExcel;->getNOAConfig
+ 255 000a 
+ 256 000f 
+ 257 106e 323f 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDriverSeatHeating
+ 260 000a 
+ 261 000f 
+ 262 106e 3244 0004 Lcom/android/car/config/future/LocalConfigExcel;->getHUDConfig
+ 265 000a 
+ 266 000f 
+ 267 106e 327d 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSunroofControlType
+ 270 000a 
+ 271 000f 
+ 272 106e 3274 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSceneMode
+ 275 000a 
+ 276 000f 
+ 277 106e 3281 0004 Lcom/android/car/config/future/LocalConfigExcel;->getVehicleConfig
+ 280 000a 
+ 281 000f 
+ 282 106e 3235 0004 Lcom/android/car/config/future/LocalConfigExcel;->getCmdSocEquilibriumPoint
+ 285 000a 
+ 286 000f 
+ 287 106e 3260 0004 Lcom/android/car/config/future/LocalConfigExcel;->getLocalSeatMemoryConfig
+ 290 000a 
+ 291 000f 
+ 292 106e 3283 0004 Lcom/android/car/config/future/LocalConfigExcel;->getVehicleType
+ 295 000a 
+ 296 000f 
+ 297 106e 327b 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSteeringWheel
+ 300 000a 
+ 301 000f 
+ 302 106e 322e 0004 Lcom/android/car/config/future/LocalConfigExcel;->getAVM
+ 305 000a 
+ 306 000f 
+ 307 106e 3237 0004 Lcom/android/car/config/future/LocalConfigExcel;->getDVRConfig
+ 310 000a 
+ 311 000f 
+ 312 106e 3245 0004 Lcom/android/car/config/future/LocalConfigExcel;->getHornConfig
+ 315 000a 
+ 316 000f 
+ 317 106e 3266 0004 Lcom/android/car/config/future/LocalConfigExcel;->getMMIKeyLightType
+ 320 000a 
+ 321 000f 
+ 322 106e 3282 0004 Lcom/android/car/config/future/LocalConfigExcel;->getVehicleEngineType
+ 325 000a 
+ 326 000f 
+ 327 106e 3247 0004 Lcom/android/car/config/future/LocalConfigExcel;->getIntelligentFragrance
+ 330 000a 
+ 331 000f 
+ 332 106e 3279 0004 Lcom/android/car/config/future/LocalConfigExcel;->getSpatialSound
+ 335 000a 
+ 336 000f 
+ 337 106e 3285 0004 Lcom/android/car/config/future/LocalConfigExcel;->getmLocalAudioVirtualSurround
+ 340 000a 
+ 341 000f 
+ 342 0100 0006 0064 0000 010e 0000 0109 0000 
+ 358 0100 0028 00cc 0000 00ed 0000 00e8 0000 

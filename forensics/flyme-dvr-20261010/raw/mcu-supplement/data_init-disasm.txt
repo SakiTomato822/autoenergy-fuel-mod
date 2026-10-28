@@ -1,0 +1,44 @@
+
+raw/mcu-supplement/3C5525_MB_UPDATE.bin:     file format binary
+
+
+Disassembly of section .data:
+
+00463848 <.data+0x43848>:
+  463848:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+  46384a:	4b11      	ldr	r3, [pc, #68]	@ (0x463890)
+  46384c:	2100      	movs	r1, #0
+  46384e:	681d      	ldr	r5, [r3, #0]
+  463850:	42a9      	cmp	r1, r5
+  463852:	d105      	bne.n	0x463860
+  463854:	4c0f      	ldr	r4, [pc, #60]	@ (0x463894)
+  463856:	2500      	movs	r5, #0
+  463858:	6826      	ldr	r6, [r4, #0]
+  46385a:	42b5      	cmp	r5, r6
+  46385c:	d10e      	bne.n	0x46387c
+  46385e:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+  463860:	68da      	ldr	r2, [r3, #12]
+  463862:	e9d3 6401 	ldrd	r6, r4, [r3, #4]
+  463866:	1b10      	subs	r0, r2, r4
+  463868:	2200      	movs	r2, #0
+  46386a:	4282      	cmp	r2, r0
+  46386c:	d102      	bne.n	0x463874
+  46386e:	3101      	adds	r1, #1
+  463870:	330c      	adds	r3, #12
+  463872:	e7ed      	b.n	0x463850
+  463874:	5ca7      	ldrb	r7, [r4, r2]
+  463876:	54b7      	strb	r7, [r6, r2]
+  463878:	3201      	adds	r2, #1
+  46387a:	e7f6      	b.n	0x46386a
+  46387c:	6860      	ldr	r0, [r4, #4]
+  46387e:	2100      	movs	r1, #0
+  463880:	f854 2f08 	ldr.w	r2, [r4, #8]!
+  463884:	3501      	adds	r5, #1
+  463886:	1a12      	subs	r2, r2, r0
+  463888:	f7f9 fa7e 	bl	0x45cd88
+  46388c:	e7e5      	b.n	0x46385a
+  46388e:	bf00      	nop
+  463890:	98d8      	ldr	r0, [sp, #864]	@ 0x360
+  463892:	0049      	lsls	r1, r1, #1
+  463894:	990c      	ldr	r1, [sp, #48]	@ 0x30
+  463896:	0049      	lsls	r1, r1, #1

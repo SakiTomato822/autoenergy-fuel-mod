@@ -1,0 +1,45 @@
+                 U sdk_manager::layout_switch(layout_category)
+                 U sdk_manager::set_camera_ashing(int)
+                 U sdk_manager::get_display_status()
+                 U sdk_manager::set_display_status(int)
+                 U sdk_manager::enqueue_input_buffer(avm_cal_camera, int)
+                 U sdk_manager::set_camera_property_param(char*)
+                 U sdk_manager::init_sdk(sdk_callback, ANativeWindow*, void*, avm_camera_module, t_car_config)
+                 U android::BBinder::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)
+                 U android::BBinder::transact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::linkToDeath(android::sp<android::hardware::hidl_death_recipient> const&, unsigned long)
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::getDebugInfo(std::__1::function<void (android::hidl::base::V1_0::DebugInfo const&)>)
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::getHashChain(std::__1::function<void (android::hardware::hidl_vec<android::hardware::hidl_array<unsigned char, 32ul> > const&)>)
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::unlinkToDeath(android::sp<android::hardware::hidl_death_recipient> const&)
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::interfaceChain(std::__1::function<void (android::hardware::hidl_vec<android::hardware::hidl_string> const&)>)
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::interfaceDescriptor(std::__1::function<void (android::hardware::hidl_string const&)>)
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::notifySyspropsChanged()
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::setHALInstrumentation()
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::ping()
+                 U android::hardware::automotive::evs::V1_0::IEvsCameraStream::debug(android::hardware::hidl_handle const&, android::hardware::hidl_vec<android::hardware::hidl_string> const&)
+000000000002eed8 B button_2D3D_switch
+000000000002ee68 B button_calibration_mode_switch
+00000000000282fc T get_button_view_entity
+000000000002858c T get_image_view_entity
+00000000000285d0 T get_label_view_entity
+0000000000028548 T get_window_view_entity
+                 U glViewport
+0000000000028aa0 T ui_view_handler_get_by_name
+0000000000028aa4 T ui_view_handler_get_by_tag
+0000000000028b20 T ui_view_set_background_col
+0000000000028b68 T ui_view_set_foreground_col
+0000000000028ad8 T ui_view_set_parent
+0000000000028aa8 T ui_view_set_pos
+0000000000028b38 T ui_view_set_scale_x
+0000000000028b50 T ui_view_set_scale_y
+0000000000028ac0 T ui_view_set_size
+0000000000028af0 T ui_view_set_visible
+0000000000028b08 T ui_view_set_z_order
+                 U vc_ui_display_set_visible
+                 U vc_ui_set_display_id
+                 U vc_ui_set_display_resolution
+00000000000287c0 T view_list_add
+000000000002886c T view_list_find
+00000000000288c0 T view_list_find_button_by_handler
+000000000002892c T view_list_remove
+00000000000289e8 T view_list_remove_all

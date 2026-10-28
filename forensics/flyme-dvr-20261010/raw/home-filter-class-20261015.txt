@@ -1,0 +1,1067 @@
+
+METHOD Lf2/p;->test code=3993608 regs=6 ins=2
+   0 4052 45e3 Lf2/p;->a:I
+   2 0112 const/4 v1 0
+   3 1212 const/4 v2 1
+   4 4454 45e4 Lf2/p;->b:Ljava/lang/Object;
+   6 002b 00e0 0000 switch payload 230
+   9 0029 00cb 
+  11 041f 0cb5 
+  13 051f 0104 
+  15 106e acaf 0004 Ljava/lang/Object;->getClass
+  18 5552 022c Landroid/app/ActivityManager$RunningTaskInfo;->taskId:I
+  20 4452 2072 Lcom/android/quickstep/g2;->b:I
+  22 4533 0003 if target 25
+  24 2101 
+  25 010f 
+  26 041f 0cdd 
+  28 051f 0d70 
+  30 0060 2116 Lcom/android/quickstep/n;->Y:I
+  32 106e acaf 0004 Ljava/lang/Object;->getClass
+  35 5552 2313 Lcom/android/systemui/shared/system/t;->c:I
+  37 4454 2100 Lcom/android/quickstep/n1;->e:Lcom/android/quickstep/u;
+  39 4452 2186 Lcom/android/quickstep/u;->j:I
+  41 4533 0003 if target 44
+  43 2101 
+  44 010f 
+  45 041f 1e26 
+  47 051f 1d85 
+  49 106e acaf 0004 Ljava/lang/Object;->getClass
+  52 5020 1d87 
+  54 0039 0014 if target 74
+  56 5020 1d88 
+  58 0039 0010 if target 74
+  60 5554 4d7e Lk3/b;->a:Ll2/h;
+  62 1071 9f48 0005 Le3/o0;->b
+  65 050c 
+  66 4454 4e87 Ll3/i;->g:Le3/o0;
+  68 206e 9f4b 0045 Le3/o0;->equals
+  71 040a 
+  72 0438 0003 if target 75
+  74 2101 
+  75 010f 
+  76 041f 0c7d 
+  78 051f 1d85 
+  80 0060 1fbd Lcom/android/launcher3/widget/picker/WidgetsFullSheet;->R:I
+  82 106e acaf 0004 Ljava/lang/Object;->getClass
+  85 5554 4d7e Lk3/b;->a:Ll2/h;
+  87 5554 4e5e Ll2/e;->o:Landroid/os/UserHandle;
+  89 4454 1fc1 Lcom/android/launcher3/widget/picker/WidgetsFullSheet;->t:Landroid/os/UserHandle;
+  91 206e 0e27 0054 Landroid/os/UserHandle;->equals
+  94 040a 
+  95 040f 
+  96 041f 1c4b 
+  98 051f 1e1b 
+ 100 206e af35 0054 Ljava/util/HashSet;->contains
+ 103 040a 
+ 104 040f 
+ 105 041f 1c65 
+ 107 051f 1e15 
+ 109 0062 44b8 Le3/x;->a:Landroid/content/ComponentName;
+ 111 0538 0012 if target 129
+ 113 5052 4e51 Ll2/e;->b:I
+ 115 6312 const/4 v3 6
+ 116 3033 000d if target 129
+ 118 1071 d1be 0005 Lv2/b;->c
+ 121 050c 
+ 122 2072 afc0 0054 Ljava/util/Set;->contains
+ 125 040a 
+ 126 0438 0003 if target 129
+ 128 2101 
+ 129 010f 
+ 130 041f 187c 
+ 132 051f 187c 
+ 134 206e 9f4b 0054 Le3/o0;->equals
+ 137 040a 
+ 138 040f 
+ 139 041f 1d3e 
+ 141 051f 1e1b 
+ 143 306e b2f7 0154 Lk2/b0;->f
+ 146 050c 
+ 147 4454 4c74 Lk2/b0;->c:Landroid/content/Context;
+ 149 206e b56a 0045 Ll2/d;->a
+ 152 040a 
+ 153 040f 
+ 154 041f 1d44 
+ 156 051f 1e0f 
+ 158 106e acaf 0004 Ljava/lang/Object;->getClass
+ 161 5554 4e3b Ll2/a;->t:Landroid/content/ComponentName;
+ 163 106e 0819 0005 Landroid/content/ComponentName;->getPackageName
+ 166 050c 
+ 167 4454 4c9e Lk2/c;->c:Lu1/c;
+ 169 4454 5baa Lu1/c;->c:Ljava/util/List;
+ 171 0438 0009 if target 180
+ 173 2072 af5e 0054 Ljava/util/List;->contains
+ 176 040a 
+ 177 0438 0003 if target 180
+ 179 2101 
+ 180 04df 0101 
+ 182 040f 
+ 183 041f 192b 
+ 185 051f 1e16 
+ 187 106e acaf 0004 Ljava/lang/Object;->getClass
+ 190 5054 4e5f Ll2/f;->p:Lf2/b;
+ 192 0038 0013 if target 211
+ 194 106e a179 0000 Lf2/b;->d
+ 197 000a 
+ 198 0039 000c if target 210
+ 200 5054 4e5f Ll2/f;->p:Lf2/b;
+ 202 5554 4e5e Ll2/e;->o:Landroid/os/UserHandle;
+ 204 306e a44b 0504 Lg2/b;->l
+ 207 040a 
+ 208 0439 0003 if target 211
+ 210 2101 
+ 211 010f 
+ 212 041f 1cb3 
+ 214 051f 1c55 
+ 216 1072 af82 0005 Ljava/util/Map$Entry;->getValue
+ 219 050c 
+ 220 051f 209c 
+ 222 5554 543d Lp3/x$a;->a:Lr3/a$a;
+ 224 2072 b0ad 0054 Ljava/util/function/Predicate;->test
+ 227 040a 
+ 228 040f 
+ 229 0000 
+ 230 0100 000a 0000 0000 00b1 0000 0094 0000 
+
+METHOD Lk2/c;-><init> code=4229864 regs=5 ins=3
+   0 1070 acab 0002 Ljava/lang/Object;-><init>
+   3 0022 1c3d 
+   5 0113 002a const/16 42
+   7 2070 ae78 0010 Ljava/util/ArrayList;-><init>
+  10 205b 4c9c Lk2/c;->a:Ljava/util/ArrayList;
+  12 0012 const/4 v0 0
+  13 205c 4c9f Lk2/c;->d:Z
+  15 0162 4ca5 Lk2/c;->j:Lu1/p1;
+  17 215b 4ca0 Lk2/c;->e:Ljava/util/function/Consumer;
+  19 0122 1c3d 
+  21 1070 ae77 0001 Ljava/util/ArrayList;-><init>
+  24 215b 4ca3 Lk2/c;->h:Ljava/util/List;
+  26 0122 1d40 
+  28 3070 b302 0201 Lk2/b;-><init>
+  31 215b 4ca4 Lk2/c;->i:Lk2/b;
+  33 235b 4c9d Lk2/c;->b:Lf2/t;
+  35 245b 4c9e Lk2/c;->c:Lu1/c;
+  37 0322 26b8 
+  39 0071 0d97 0000 Landroid/os/LocaleList;->getDefault
+  42 040c 
+  43 2070 d866 0043 Lz1/a;-><init>
+  46 235b 4ca1 Lk2/c;->f:Lz1/a;
+  48 000e 
+
+METHOD Lk2/c;->a code=4228504 regs=7 ins=4
+   0 4054 4e3b Ll2/a;->t:Landroid/content/ComponentName;
+   2 3154 4c9e Lk2/c;->c:Lu1/c;
+   4 206e cdbd 0001 Lu1/c;->a
+   7 000a 
+   8 0112 const/4 v1 0
+   9 0039 0003 if target 12
+  11 010f 
+  12 4054 4e3b Ll2/a;->t:Landroid/content/ComponentName;
+  14 4254 4e5e Ll2/e;->o:Landroid/os/UserHandle;
+  16 306e b30e 0203 Lk2/c;->d
+  19 000c 
+  20 0038 0003 if target 23
+  22 010f 
+  23 0638 001d if target 52
+  25 3654 4c9d Lk2/c;->b:Lf2/t;
+  27 061d 
+  28 0022 239d 
+  30 2212 const/4 v2 2
+  31 3070 cde5 0520 Lu1/h;-><init>
+  34 516e a20f 1046 Lf2/t;->w
+  37 061e 
+  38 3654 4ca1 Lk2/c;->f:Lz1/a;
+  40 4054 4e5b Ll2/e;->l:Ljava/lang/CharSequence;
+  42 206e d867 0006 Lz1/a;->a
+  45 060c 
+  46 465b 4e3c Ll2/a;->u:Ljava/lang/String;
+  48 0828 
+  49 030d 
+  50 061e 
+  51 0327 
+  52 061a 0000 ""
+  54 465b 4e5b Ll2/e;->l:Ljava/lang/CharSequence;
+  56 3654 4c9c Lk2/c;->a:Ljava/util/ArrayList;
+  58 206e ae7b 0046 Ljava/util/ArrayList;->add
+  61 1412 const/4 v4 1
+  62 345c 4c9f Lk2/c;->d:Z
+  64 3654 4ca3 Lk2/c;->h:Ljava/util/List;
+  66 1072 af64 0006 Ljava/util/List;->isEmpty
+  69 060a 
+  70 0639 0022 if target 104
+  72 106e 0913 0005 Landroid/content/pm/LauncherActivityInfo;->getComponentName
+  75 050c 
+  76 106e 0817 0005 Landroid/content/ComponentName;->flattenToString
+  79 050c 
+  80 3654 4ca3 Lk2/c;->h:Ljava/util/List;
+  82 2072 af5e 0056 Ljava/util/List;->contains
+  85 060a 
+  86 0639 0012 if target 104
+  88 0622 1c3d 
+  90 1070 ae77 0006 Ljava/util/ArrayList;-><init>
+  93 206e ae7b 0056 Ljava/util/ArrayList;->add
+  96 3354 4ca3 Lk2/c;->h:Ljava/util/List;
+  98 2072 af5c 0063 Ljava/util/List;->addAll
+ 101 2071 6338 0016 Lcom/flyme/auto/launcher/applist/a;->c
+ 104 040f 
+
+METHOD Lk2/e1$b;-><init> code=4275016 regs=3 ins=2
+   0 1070 acab 0001 Ljava/lang/Object;-><init>
+   3 106e acaf 0002 Ljava/lang/Object;->getClass
+   6 0022 2389 
+   8 2254 1c8f Lcom/android/launcher3/j;->a:Landroid/content/Context;
+  10 2070 cdbc 0020 Lu1/c;-><init>
+  13 105b 4caf Lk2/e1$b;->a:Lu1/c;
+  15 000e 
+
+METHOD Lk2/e1$b;->test code=4274924 regs=5 ins=2
+   0 041f 1d3f 
+   2 4054 4c8c Lk2/b1;->d:Lh3/e;
+   4 0112 const/4 v1 0
+   5 0038 0014 if target 25
+   7 0263 5bff Lu1/l2;->f:Z
+   9 0238 0005 if target 14
+  11 0252 0255 Landroid/appwidget/AppWidgetProviderInfo;->widgetFeatures:I
+  13 0228 
+  14 1201 
+  15 02dd 0202 
+  17 0238 0003 if target 20
+  19 1228 
+  20 0055 486f Lh3/e;->g:Z
+  22 0039 0003 if target 25
+  24 0d28 
+  25 3354 4caf Lk2/e1$b;->a:Lu1/c;
+  27 4454 442f Le3/g;->a:Landroid/content/ComponentName;
+  29 206e cdbd 0043 Lu1/c;->a
+  32 030a 
+  33 0339 0003 if target 36
+  35 0228 
+  36 1112 const/4 v1 1
+  37 010f 
+
+METHOD Lk2/f0;->a code=4249912 regs=14 ins=1
+   0 d054 4cbb Lk2/f0;->i:Lo2/i;
+   2 106e bb9f 0000 Lo2/i;->e
+   5 000c 
+   6 0122 1c3d 
+   8 1070 ae77 0001 Ljava/util/ArrayList;-><init>
+  11 d254 4cb4 Lk2/f0;->b:Lk2/c;
+  13 2354 4c9c Lk2/c;->a:Ljava/util/ArrayList;
+  15 106e ae7e 0003 Ljava/util/ArrayList;->clear
+  18 0312 const/4 v3 0
+  19 235c 4c9f Lk2/c;->d:Z
+  21 0422 26b8 
+  23 0071 0d97 0000 Landroid/os/LocaleList;->getDefault
+  26 050c 
+  27 2070 d866 0054 Lz1/a;-><init>
+  30 245b 4ca1 Lk2/c;->f:Lz1/a;
+  32 0071 6337 0000 Lcom/flyme/auto/launcher/applist/a;->b
+  35 040c 
+  36 2554 4c9e Lk2/c;->c:Lu1/c;
+  38 545b 5baa Lu1/c;->c:Ljava/util/List;
+  40 0422 1c3d 
+  42 1070 ae77 0004 Ljava/util/ArrayList;-><init>
+  45 1072 af65 0000 Ljava/util/List;->iterator
+  48 000c 
+  49 1072 af3c 0000 Ljava/util/Iterator;->hasNext
+  52 050a 
+  53 1612 const/4 v6 1
+  54 d754 4cbe Lk2/f0;->l:Lk2/w0;
+  56 0812 const/4 v8 0
+  57 0538 004f if target 136
+  59 1072 af3d 0000 Ljava/util/Iterator;->next
+  62 050c 
+  63 051f 0277 
+  65 d954 4cb9 Lk2/f0;->g:Landroid/content/pm/LauncherApps;
+  67 306e 0928 0589 Landroid/content/pm/LauncherApps;->getActivityList
+  70 080c 
+  71 0838 0040 if target 135
+  73 1072 af64 0008 Ljava/util/List;->isEmpty
+  76 090a 
+  77 0938 0003 if target 80
+  79 3828 
+  80 7754 4d49 Lk2/w0;->c:Ljava/lang/Object;
+  82 071f 02e6 
+  84 106e 0e2a 0005 Landroid/os/UserHandle;->hashCode
+  87 090a 
+  88 206e 0fce 0097 Landroid/util/SparseBooleanArray;->get
+  91 070a 
+  92 3901 
+  93 1072 af6c 0008 Ljava/util/List;->size
+  96 0a0a 
+  97 a935 0022 if target 131
+  99 2072 af61 0098 Ljava/util/List;->get
+ 102 0a0c 
+ 103 0a1f 0185 
+ 105 0b22 1e0f 
+ 107 4070 b54a 75ab Ll2/a;-><init>
+ 110 0c22 1e14 
+ 112 4070 b568 3abc Ll2/d;-><init>
+ 115 206e ae7b 00c4 Ljava/util/ArrayList;->add
+ 118 0c62 0036 La2/a;->l:La2/a$a;
+ 120 106e 001a 000c La2/a$a;->b
+ 123 0c0a 
+ 124 6cb7 
+ 125 406e b30b cab2 Lk2/c;->a
+ 128 09d8 0109 
+ 130 db28 
+ 131 206e ae7d 0081 Ljava/util/ArrayList;->addAll
+ 134 ab28 
+ 135 0111 
+ 136 0062 002c La2/a;->b:La2/a$a;
+ 138 106e 001a 0000 La2/a$a;->b
+ 141 000a 
+ 142 d554 4cb3 Lk2/f0;->a:Lcom/android/launcher3/j;
+ 144 0038 0039 if target 201
+ 146 d054 4cbc Lk2/f0;->j:Lo2/a;
+ 148 106e bb6e 0000 Lo2/a;->c
+ 151 000c 
+ 152 106e ae86 0000 Ljava/util/ArrayList;->iterator
+ 155 000c 
+ 156 1072 af3c 0000 Ljava/util/Iterator;->hasNext
+ 159 090a 
+ 160 0938 0029 if target 201
+ 162 1072 af3d 0000 Ljava/util/Iterator;->next
+ 165 090c 
+ 166 091f 018d 
+ 168 5a54 1c8f Lcom/android/launcher3/j;->a:Landroid/content/Context;
+ 170 0b22 1fbe 
+ 172 2070 bb83 009b Lo2/d;-><init>
+ 175 0962 0036 La2/a;->l:La2/a$a;
+ 177 106e 001a 0009 La2/a$a;->b
+ 180 090a 
+ 181 69b7 
+ 182 406e b30c 9ba2 Lk2/c;->b
+ 185 090c 
+ 186 0938 ffe2 if target 156
+ 188 0a22 1e14 
+ 190 106e b57c 0009 Ll2/f;->E
+ 193 0b0a 
+ 194 4070 b568 b89a Ll2/d;-><init>
+ 197 206e ae7b 00a4 Ljava/util/ArrayList;->add
+ 200 d428 
+ 201 0062 0036 La2/a;->l:La2/a$a;
+ 203 106e 001a 0000 La2/a$a;->b
+ 206 000a 
+ 207 0038 001f if target 238
+ 209 001a 3b45 "LoadAllAppsIconsInBulk"
+ 211 1071 0e22 0000 Landroid/os/Trace;->beginSection
+ 214 d054 4cbd Lk2/f0;->k:Lf2/t;
+ 216 206e a206 0040 Lf2/t;->A
+ 219 0022 23c5 
+ 221 0913 0009 const/16 9
+ 223 3070 ce79 0d90 Lu1/n2;-><init>
+ 226 206e ae82 0004 Ljava/util/ArrayList;->forEach
+ 229 0071 0e24 0000 Landroid/os/Trace;->endSection
+ 232 0628 
+ 233 0d0d 
+ 234 0071 0e24 0000 Landroid/os/Trace;->endSection
+ 237 0d27 
+ 238 2d12 const/4 v13 2
+ 239 106e b3c1 0007 Lk2/w0;->b
+ 242 000a 
+ 243 306e b311 00d2 Lk2/c;->g
+ 246 5d54 1c8f Lcom/android/launcher3/j;->a:Landroid/content/Context;
+ 248 001c 018a 
+ 250 206e 0881 000d Landroid/content/Context;->getSystemService
+ 253 0d0c 
+ 254 0d1f 018a 
+ 256 106e 0931 000d Landroid/content/pm/LauncherApps;->hasShortcutHostPermission
+ 259 0d0a 
+ 260 0a28 
+ 261 0d0d 
+ 262 001a 46b2 "PackageManagerHelper"
+ 264 041a 1380 "Failed to make shortcut manager call"
+ 266 3071 0f95 0d40 Landroid/util/Log;->e
+ 269 3d01 
+ 270 306e b311 0d62 Lk2/c;->g
+ 273 5d54 1c8f Lcom/android/launcher3/j;->a:Landroid/content/Context;
+ 275 001a 5a3e "android.permission.MODIFY_QUIET_MODE"
+ 277 206e 0859 000d Landroid/content/Context;->checkSelfPermission
+ 280 0d0a 
+ 281 0d39 0004 if target 285
+ 283 6d01 
+ 284 0228 
+ 285 3d01 
+ 286 4012 const/4 v0 4
+ 287 306e b311 0d02 Lk2/c;->g
+ 290 235c 4c9f Lk2/c;->d:Z
+ 292 0d62 2804 Lcom/flyme/auto/launcher/LauncherApplication;->h:Lcom/flyme/auto/launcher/LauncherApplication;
+ 294 106e 06a0 000d Landroid/app/Application;->getPackageName
+ 297 000c 
+ 298 306e 06a3 030d Landroid/app/Application;->getSharedPreferences
+ 301 0d0c 
+ 302 001a 673c "first_load_apps"
+ 304 3072 08fd 060d Landroid/content/SharedPreferences;->getBoolean
+ 307 0d0a 
+ 308 0d38 0066 if target 410
+ 310 0d62 2804 Lcom/flyme/auto/launcher/LauncherApplication;->h:Lcom/flyme/auto/launcher/LauncherApplication;
+ 312 106e 069c 000d Landroid/app/Application;->getContentResolver
+ 315 0d0c 
+ 316 1071 627d 0003 Lcom/flyme/auto/launcher/applist/AppContentProvider;->a
+ 319 040c 
+ 320 306e 0833 084d Landroid/content/ContentResolver;->delete
+ 323 106e b30d 0002 Lk2/c;->c
+ 326 0d0c 
+ 327 d421 
+ 328 4423 276b 
+ 330 0522 1c3d 
+ 332 1070 ae77 0005 Ljava/util/ArrayList;-><init>
+ 335 3601 
+ 336 d721 
+ 337 7635 0024 if target 373
+ 339 0722 016e 
+ 341 1070 0843 0007 Landroid/content/ContentValues;-><init>
+ 344 0846 060d 
+ 346 8854 4e3b Ll2/a;->t:Landroid/content/ComponentName;
+ 348 106e 0817 0008 Landroid/content/ComponentName;->flattenToString
+ 351 080c 
+ 352 091a 6100 "component"
+ 354 306e 0851 0897 Landroid/content/ContentValues;->put
+ 357 074d 0604 
+ 359 0746 060d 
+ 361 7754 4e3b Ll2/a;->t:Landroid/content/ComponentName;
+ 363 106e 0817 0007 Landroid/content/ComponentName;->flattenToString
+ 366 070c 
+ 367 206e ae7b 0075 Ljava/util/ArrayList;->add
+ 370 06d8 0106 
+ 372 dc28 
+ 373 255b 4ca3 Lk2/c;->h:Ljava/util/List;
+ 375 0d62 2804 Lcom/flyme/auto/launcher/LauncherApplication;->h:Lcom/flyme/auto/launcher/LauncherApplication;
+ 377 106e 069c 000d Landroid/app/Application;->getContentResolver
+ 380 0d0c 
+ 381 1071 627d 0003 Lcom/flyme/auto/launcher/applist/AppContentProvider;->a
+ 384 020c 
+ 385 306e 0831 042d Landroid/content/ContentResolver;->bulkInsert
+ 388 0d62 2804 Lcom/flyme/auto/launcher/LauncherApplication;->h:Lcom/flyme/auto/launcher/LauncherApplication;
+ 390 106e 06a0 000d Landroid/app/Application;->getPackageName
+ 393 020c 
+ 394 306e 06a3 032d Landroid/app/Application;->getSharedPreferences
+ 397 0d0c 
+ 398 1072 08fb 000d Landroid/content/SharedPreferences;->edit
+ 401 0d0c 
+ 402 3072 08f3 030d Landroid/content/SharedPreferences$Editor;->putBoolean
+ 405 0d0c 
+ 406 1072 08f0 000d Landroid/content/SharedPreferences$Editor;->apply
+ 409 4028 
+ 410 0d62 2804 Lcom/flyme/auto/launcher/LauncherApplication;->h:Lcom/flyme/auto/launcher/LauncherApplication;
+ 412 106e 069c 000d Landroid/app/Application;->getContentResolver
+ 415 0d0c 
+ 416 1071 627d 0003 Lcom/flyme/auto/launcher/applist/AppContentProvider;->a
+ 419 000c 
+ 420 586e 083b 880d Landroid/content/ContentResolver;->query
+ 423 0d0c 
+ 424 106e b30d 0002 Lk2/c;->c
+ 427 000c 
+ 428 1071 aec0 0000 Ljava/util/Arrays;->stream
+ 431 000c 
+ 432 0322 239c 
+ 434 0413 0015 const/16 21
+ 436 2070 cde3 0043 Lu1/h2;-><init>
+ 439 2072 b0e3 0030 Ljava/util/stream/Stream;->map
+ 442 000c 
+ 443 0071 b0c3 0000 Ljava/util/stream/Collectors;->toList
+ 446 030c 
+ 447 2072 b0d8 0030 Ljava/util/stream/Stream;->collect
+ 450 000c 
+ 451 001f 1c51 
+ 453 0d38 0014 if target 473
+ 455 1072 09e4 000d Landroid/database/Cursor;->getCount
+ 458 030a 
+ 459 033d 000b if target 470
+ 461 3071 6336 020d Lcom/flyme/auto/launcher/applist/a;->a
+ 464 0628 
+ 465 000d 
+ 466 1072 09e0 000d Landroid/database/Cursor;->close
+ 469 0027 
+ 470 1072 09e0 000d Landroid/database/Cursor;->close
+ 473 0111 
+
+METHOD Lu1/c;-><init> code=4834472 regs=5 ins=2
+   0 1070 acab 0003 Ljava/lang/Object;-><init>
+   3 345b 5ba9 Lu1/c;->b:Landroid/content/Context;
+   5 106e 087d 0004 Landroid/content/Context;->getResources
+   8 000c 
+   9 0114 000b 7f03 const 2130903051 / 0x7f03000b
+  12 206e 09b8 0010 Landroid/content/res/Resources;->getStringArray
+  15 000c 
+  16 1071 aec0 0000 Ljava/util/Arrays;->stream
+  19 000c 
+  20 0122 2385 
+  22 0212 const/4 v2 0
+  23 2070 cdb4 0021 Lu1/b;-><init>
+  26 2072 b0e3 0010 Ljava/util/stream/Stream;->map
+  29 000c 
+  30 0071 b0c5 0000 Ljava/util/stream/Collectors;->toSet
+  33 010c 
+  34 2072 b0d8 0010 Ljava/util/stream/Stream;->collect
+  37 000c 
+  38 001f 1c65 
+  40 305b 5ba8 Lu1/c;->a:Ljava/util/Set;
+  42 1071 d56d 0004 Lx6/c;->b
+  45 030c 
+  46 106e d56e 0003 Lx6/c;->c
+  49 030a 
+  50 0339 0017 if target 73
+  52 031a 0c59 "AppFilter"
+  54 011a 0c5a "AppFilter carplay config not match, add to filter list"
+  56 2071 0f92 0013 Landroid/util/Log;->d
+  59 0314 0086 7f11 const 2131820678 / 0x7f110086
+  62 206e 087f 0034 Landroid/content/Context;->getString
+  65 030c 
+  66 1071 081d 0003 Landroid/content/ComponentName;->unflattenFromString
+  69 030c 
+  70 2072 afbd 0030 Ljava/util/Set;->add
+  73 000e 
+
+METHOD Lu1/c;->a code=4834304 regs=7 ins=2
+   0 106e 0819 0006 Landroid/content/ComponentName;->getPackageName
+   3 000c 
+   4 5154 5ba9 Lu1/c;->b:Landroid/content/Context;
+   6 106e 087b 0001 Landroid/content/Context;->getPackageManager
+   9 010c 
+  10 206e 0955 0001 Landroid/content/pm/PackageManager;->getInstallerPackageName
+  13 010c 
+  14 0228 
+  15 0112 const/4 v1 0
+  16 0212 const/4 v2 0
+  17 1312 const/4 v3 1
+  18 0138 0015 if target 39
+  20 041a 5fd7 "com.carbit.service.display"
+  22 206e acd9 0014 Ljava/lang/String;->equals
+  25 010a 
+  26 0138 000d if target 39
+  28 011a 5fd8 "com.carbit.virtual.launcher"
+  30 206e acd9 0001 Ljava/lang/String;->equals
+  33 010a 
+  34 0138 0003 if target 37
+  36 0328 
+  37 3101 
+  38 0228 
+  39 2101 
+  40 0138 0003 if target 43
+  42 020f 
+  43 5154 5ba8 Lu1/c;->a:Ljava/util/Set;
+  45 2072 afc0 0061 Ljava/util/Set;->contains
+  48 060a 
+  49 0639 0012 if target 67
+  51 5554 5baa Lu1/c;->c:Ljava/util/List;
+  53 0538 000a if target 63
+  55 2072 af5e 0005 Ljava/util/List;->contains
+  58 050a 
+  59 0538 0004 if target 63
+  61 3501 
+  62 0228 
+  63 2501 
+  64 0539 0003 if target 67
+  66 3201 
+  67 020f 
+
+METHOD Lcom/android/launcher3/j;-><init> code=2285468 regs=7 ins=3
+   0 1070 acab 0004 Ljava/lang/Object;-><init>
+   3 0022 188b 
+   5 1070 9f7a 0000 Le3/t0;-><init>
+   8 405b 1c94 Lcom/android/launcher3/j;->f:Le3/t0;
+  10 0122 0bc1 
+  12 0222 0258 
+  14 0071 0d9b 0000 Landroid/os/Looper;->getMainLooper
+  17 030c 
+  18 2070 0d6a 0032 Landroid/os/Handler;-><init>
+  21 3070 4ab2 0241 Lcom/android/launcher3/j$b;-><init>
+  24 415b 1c96 Lcom/android/launcher3/j;->h:Lcom/android/launcher3/j$b;
+  26 455b 1c8f Lcom/android/launcher3/j;->a:Landroid/content/Context;
+  28 0162 1c64 Lcom/android/launcher3/h;->K:Le3/d0;
+  30 206e 9eda 0051 Le3/d0;->a
+  33 010c 
+  34 011f 0bba 
+  36 415b 1c93 Lcom/android/launcher3/j;->e:Lcom/android/launcher3/h;
+  38 0222 1934 
+  40 2070 a233 0052 Lf2/z;-><init>
+  43 425b 1c91 Lcom/android/launcher3/j;->c:Lf2/z;
+  45 0322 192b 
+  47 5270 a205 6153 Lf2/t;-><init>
+  50 435b 1c92 Lcom/android/launcher3/j;->d:Lf2/t;
+  52 0622 237f 
+  54 0122 2389 
+  56 2070 cdbc 0051 Lu1/c;-><init>
+  59 5170 cd89 3456 Lu1/a1;-><init>
+  62 465b 1c90 Lcom/android/launcher3/j;->b:Lu1/a1;
+  64 0422 23e6 
+  66 0512 const/4 v5 0
+  67 3070 cecb 0534 Lu1/v0;-><init>
+  70 206e 9f7b 0040 Le3/t0;->a
+  73 000e 
+
+METHOD Lk2/q0;->e code=4267344 regs=35 ins=4
+   0 0008 001f 
+   2 0e08 0020 
+   4 0f08 0021 
+   6 0108 0022 
+   8 ed54 1c8f Lcom/android/launcher3/j;->a:Landroid/content/Context;
+  10 eb54 1c92 Lcom/android/launcher3/j;->d:Lf2/t;
+  12 0c54 4d24 Lk2/q0;->i:[Ljava/lang/String;
+  14 ca21 
+  15 0922 1c4b 
+  17 1071 ae93 000c Ljava/util/Arrays;->asList
+  20 020c 
+  21 2070 af32 0029 Ljava/util/HashSet;-><init>
+  24 0252 4d22 Lk2/q0;->g:I
+  26 1812 const/4 v8 1
+  27 7712 const/4 v7 7
+  28 7233 000c if target 40
+  30 0254 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+  32 0362 44b8 Le3/x;->a:Landroid/content/ComponentName;
+  34 0322 1d82 
+  36 3070 b3e6 0283 Lk2/z;-><init>
+  39 0a28 
+  40 0254 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+  42 0362 44b8 Le3/x;->a:Landroid/content/ComponentName;
+  44 0322 2063 
+  46 4070 bf6a 9283 Lp2/f;-><init>
+  49 3507 
+  50 0622 1c4b 
+  52 1070 af30 0006 Ljava/util/HashSet;-><init>
+  55 0422 1c4a 
+  57 1070 af20 0004 Ljava/util/HashMap;-><init>
+  60 0071 6337 0000 Lcom/flyme/auto/launcher/applist/a;->b
+  63 020c 
+  64 1354 4c9e Lk2/c;->c:Lu1/c;
+  66 325b 5baa Lu1/c;->c:Ljava/util/List;
+  68 0252 4d22 Lk2/q0;->g:I
+  70 0312 const/4 v3 0
+  71 022b 0337 0000 switch payload 894
+  74 1508 0006 
+  76 1602 000a 
+  78 0162 4480 Le3/o;->a:Le3/n;
+  80 0029 015b 
+  82 0222 1d76 
+  84 2070 b3be 0032 Lk2/w0;-><init>
+  87 0362 523e Lo2/i;->g:Le3/d0;
+  89 206e 9eda 00d3 Le3/d0;->a
+  92 030c 
+  93 031f 1fc5 
+  95 071c 0278 
+  97 206e 0881 007d Landroid/content/Context;->getSystemService
+ 100 070c 
+ 101 071f 0278 
+ 103 306e b3c0 0732 Lk2/w0;->a
+ 106 0362 4480 Le3/o;->a:Le3/n;
+ 108 0754 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 110 2854 4d49 Lk2/w0;->c:Ljava/lang/Object;
+ 112 081f 02e6 
+ 114 106e 0e2a 0007 Landroid/os/UserHandle;->hashCode
+ 117 070a 
+ 118 206e 0fce 0078 Landroid/util/SparseBooleanArray;->get
+ 121 070a 
+ 122 0813 0008 const/16 8
+ 124 3072 9f51 0783 Le3/o;->b
+ 127 030c 
+ 128 306e b312 0351 Lk2/c;->h
+ 131 106e b3c1 0002 Lk2/w0;->b
+ 134 020a 
+ 135 2712 const/4 v7 2
+ 136 306e b311 0271 Lk2/c;->g
+ 139 1508 0006 
+ 141 1602 000a 
+ 143 3a07 
+ 144 0029 011c 
+ 146 0362 4480 Le3/o;->a:Le3/n;
+ 148 5712 const/4 v7 5
+ 149 7233 0004 if target 153
+ 151 1212 const/4 v2 1
+ 152 0228 
+ 153 0212 const/4 v2 0
+ 154 4712 const/4 v7 4
+ 155 3072 9f51 0273 Le3/o;->b
+ 158 020c 
+ 159 306e b312 0251 Lk2/c;->h
+ 162 1508 0006 
+ 164 1602 000a 
+ 166 2a07 
+ 167 0029 0105 
+ 169 4712 const/4 v7 4
+ 170 0212 const/4 v2 0
+ 171 a235 0022 if target 205
+ 173 031a 46b3 "PackageUpdatedTask"
+ 175 0822 1bd6 
+ 177 071a 47fd "Removing app icon"
+ 179 2070 ad0a 0078 Ljava/lang/StringBuilder;-><init>
+ 182 0746 020c 
+ 184 206e ad14 0078 Ljava/lang/StringBuilder;->append
+ 187 106e ad22 0008 Ljava/lang/StringBuilder;->toString
+ 190 070c 
+ 191 2071 aa01 0073 Lj2/b;->a
+ 194 0346 020c 
+ 196 0754 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 198 306e a44f 037b Lg2/b;->p
+ 201 02d8 0102 
+ 203 4712 const/4 v7 4
+ 204 df28 
+ 205 0212 const/4 v2 0
+ 206 a235 000c if target 218
+ 208 0346 020c 
+ 210 0754 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 212 306e b310 0371 Lk2/c;->f
+ 215 02d8 0102 
+ 217 f528 
+ 218 0162 4480 Le3/o;->a:Le3/n;
+ 220 2212 const/4 v2 2
+ 221 2072 9f52 0021 Le3/o;->c
+ 224 010c 
+ 225 1508 0006 
+ 227 6128 
+ 228 0222 1d77 
+ 230 1312 const/4 v3 1
+ 231 3070 b3c4 0362 Lk2/w;-><init>
+ 234 125b 4ca0 Lk2/c;->e:Ljava/util/function/Consumer;
+ 236 0212 const/4 v2 0
+ 237 a235 004a if target 311
+ 239 0346 020c 
+ 241 0754 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 243 306e a208 037b Lf2/t;->C
+ 246 0346 020c 
+ 248 0754 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 250 406e b314 37d1 Lk2/c;->j
+ 253 070c 
+ 254 306e af2b 0734 Ljava/util/HashMap;->put
+ 257 0362 1a02 Lcom/android/launcher3/Launcher;->K0:Le3/d;
+ 259 106e 9ee0 0003 Le3/d;->a
+ 262 030c 
+ 263 031f 0b58 
+ 265 0338 001b if target 292
+ 267 0722 187c 
+ 269 0846 020c 
+ 271 1508 0006 
+ 273 0654 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 275 3070 9f46 0687 Le3/o0;-><init>
+ 278 3354 1a13 Lcom/android/launcher3/Launcher;->o0:Lu1/a1;
+ 280 106e acaf 0003 Ljava/lang/Object;->getClass
+ 283 0622 238f 
+ 285 2070 cdc9 0076 Lu1/e1;-><init>
+ 288 206e cd91 0063 Lu1/a1;->h
+ 291 0328 
+ 292 1508 0006 
+ 294 02d8 0102 
+ 296 0608 0015 
+ 298 c328 
+ 299 000d 
+ 300 0207 
+ 301 0062 4ca5 Lk2/c;->j:Lu1/p1;
+ 303 105b 4ca0 Lk2/c;->e:Ljava/util/function/Consumer;
+ 305 0528 
+ 306 000d 
+ 307 206e ad4e 0002 Ljava/lang/Throwable;->addSuppressed
+ 310 0227 
+ 311 1508 0006 
+ 313 0262 4ca5 Lk2/c;->j:Lu1/p1;
+ 315 125b 4ca0 Lk2/c;->e:Ljava/util/function/Consumer;
+ 317 0162 4480 Le3/o;->a:Le3/n;
+ 319 2212 const/4 v2 2
+ 320 2072 9f4f 0021 Le3/o;->a
+ 323 010c 
+ 324 1602 000a 
+ 326 6528 
+ 327 1508 0006 
+ 329 0212 const/4 v2 0
+ 330 a235 0058 if target 418
+ 332 0346 020c 
+ 334 0654 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 336 306e a208 036b Lf2/t;->C
+ 339 0362 002c La2/a;->b:La2/a$a;
+ 341 106e 001a 0003 La2/a$a;->b
+ 344 030a 
+ 345 0338 0009 if target 354
+ 347 0346 020c 
+ 349 0654 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 351 306e b310 0361 Lk2/c;->f
+ 354 0346 020c 
+ 356 0654 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 358 071c 018a 
+ 360 206e 0881 007d Landroid/content/Context;->getSystemService
+ 363 070c 
+ 364 071f 018a 
+ 366 306e 0928 0637 Landroid/content/pm/LauncherApps;->getActivityList
+ 369 070c 
+ 370 1072 af65 0007 Ljava/util/List;->iterator
+ 373 080c 
+ 374 1072 af3c 0008 Ljava/util/Iterator;->hasNext
+ 377 160a 
+ 378 1638 0020 if target 410
+ 380 1072 af3d 0008 Ljava/util/Iterator;->next
+ 383 160c 
+ 384 1708 0008 
+ 386 0808 0016 
+ 388 081f 0185 
+ 390 1602 000a 
+ 392 0a22 1e0f 
+ 394 4070 b549 68da Ll2/a;-><init>
+ 397 1808 0006 
+ 399 1612 const/4 v6 1
+ 400 406e b30b 68a1 Lk2/c;->a
+ 403 0a02 0016 
+ 405 0808 0017 
+ 407 0608 0018 
+ 409 dd28 
+ 410 1602 000a 
+ 412 306e af2b 0734 Ljava/util/HashMap;->put
+ 415 02d8 0102 
+ 417 a928 
+ 418 1602 000a 
+ 420 0162 4480 Le3/o;->a:Le3/n;
+ 422 2212 const/4 v2 2
+ 423 2072 9f4f 0021 Le3/o;->a
+ 426 010c 
+ 427 1a07 
+ 428 0174 b376 001f Lk2/n;->a
+ 431 0822 1891 
+ 433 1070 9f9b 0008 Le3/v;-><init>
+ 436 0722 1891 
+ 438 1070 9f9b 0007 Le3/v;-><init>
+ 441 0152 4d22 Lk2/q0;->g:I
+ 443 1612 const/4 v6 1
+ 444 6132 0017 if target 467
+ 446 0162 4480 Le3/o;->a:Le3/n;
+ 448 1a32 0003 if target 451
+ 450 1128 
+ 451 0207 
+ 452 1a08 0007 
+ 454 1d08 000c 
+ 456 1e08 000d 
+ 458 1808 0015 
+ 460 1c02 0016 
+ 462 2312 const/4 v3 2
+ 463 7512 const/4 v5 7
+ 464 0812 const/4 v8 0
+ 465 0029 00e6 
+ 467 0322 1c3d 
+ 469 1070 ae77 0003 Ljava/util/ArrayList;-><init>
+ 472 0222 1c3d 
+ 474 1070 ae77 0002 Ljava/util/ArrayList;-><init>
+ 477 0152 4d22 Lk2/q0;->g:I
+ 479 2208 0008 
+ 481 2812 const/4 v8 2
+ 482 6132 0008 if target 490
+ 484 8133 0003 if target 487
+ 486 0428 
+ 487 1013 0000 const/16 0
+ 489 0328 
+ 490 1002 0006 
+ 492 0154 4d21 Lk2/q0;->f:Ljava/lang/Object;
+ 494 011d 
+ 495 0e54 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 497 0022 1d68 
+ 499 1408 0001 
+ 501 0107 
+ 502 1908 0002 
+ 504 0208 001f 
+ 506 1108 0003 
+ 508 1213 0004 const/16 4
+ 510 9307 
+ 511 1708 0004 
+ 513 d407 
+ 514 1808 0015 
+ 516 1502 0006 
+ 518 7607 
+ 519 1a08 0007 
+ 521 0702 0010 
+ 523 1008 0022 
+ 525 0808 0010 
+ 527 1b08 0009 
+ 529 0908 0018 
+ 531 1308 000a 
+ 533 1c02 0016 
+ 535 0a08 0017 
+ 537 1d08 000c 
+ 539 0c08 0013 
+ 541 1e08 000d 
+ 543 0d08 0011 
+ 545 0d76 b39a 0001 Lk2/p0;-><init>
+ 548 306e b396 00ef Lk2/o;->d
+ 551 f054 4d0a Lk2/o;->c:Ljava/util/ArrayList;
+ 553 106e ae86 0000 Ljava/util/ArrayList;->iterator
+ 556 000c 
+ 557 1072 af3c 0000 Ljava/util/Iterator;->hasNext
+ 560 010a 
+ 561 0138 0055 if target 646
+ 563 1072 af3d 0000 Ljava/util/Iterator;->next
+ 566 010c 
+ 567 011f 1e17 
+ 569 0208 001f 
+ 571 2354 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 573 1454 4e5e Ll2/e;->o:Landroid/os/UserHandle;
+ 575 206e 0e27 0043 Landroid/os/UserHandle;->equals
+ 578 030a 
+ 579 0338 0038 if target 635
+ 581 2312 const/4 v3 2
+ 582 206e b584 0031 Ll2/g;->z
+ 585 040a 
+ 586 0438 002c if target 630
+ 588 1454 4e63 Ll2/g;->q:Landroid/content/ComponentName;
+ 590 106e 0819 0004 Landroid/content/ComponentName;->getPackageName
+ 593 040c 
+ 594 0508 001b 
+ 596 206e af35 0045 Ljava/util/HashSet;->contains
+ 599 040a 
+ 600 0438 001b if target 627
+ 602 1452 4e64 Ll2/g;->r:I
+ 604 04dd f504 
+ 606 04de 0404 
+ 608 1459 4e64 Ll2/g;->r:I
+ 610 0408 0019 
+ 612 206e ae7b 0014 Ljava/util/ArrayList;->add
+ 615 2654 4d02 Lk2/n;->b:Lu1/a1;
+ 617 0712 const/4 v7 0
+ 618 0812 const/4 v8 0
+ 619 406e cd94 7886 Lu1/a1;->k
+ 622 060c 
+ 623 206e b362 0016 Lk2/m0;->k
+ 626 0f28 
+ 627 0408 0019 
+ 629 0b28 
+ 630 0408 0019 
+ 632 0508 001b 
+ 634 0628 
+ 635 0408 0019 
+ 637 0508 001b 
+ 639 2312 const/4 v3 2
+ 640 0812 const/4 v8 0
+ 641 1908 0004 
+ 643 1b08 0005 
+ 645 a828 
+ 646 0408 0019 
+ 648 2312 const/4 v3 2
+ 649 0812 const/4 v8 0
+ 650 0208 001f 
+ 652 141e 
+ 653 0008 0011 
+ 655 206e b378 0002 Lk2/n;->c
+ 658 0174 9f9f 0010 Le3/v;->isEmpty
+ 661 000a 
+ 662 0039 0012 if target 680
+ 664 0062 44b8 Le3/x;->a:Landroid/content/ComponentName;
+ 666 0022 1772 
+ 668 0108 0010 
+ 670 7512 const/4 v5 7
+ 671 3070 9a48 0150 Ld2/d;-><init>
+ 674 011a 8d76 "removed because the target component is invalid"
+ 676 306e b379 0102 Lk2/n;->d
+ 679 0228 
+ 680 7512 const/4 v5 7
+ 681 106e ae85 0004 Ljava/util/ArrayList;->isEmpty
+ 684 000a 
+ 685 0039 000a if target 695
+ 687 0022 1d57 
+ 689 3070 b345 0430 Lk2/j;-><init>
+ 692 206e b37b 0002 Lk2/n;->f
+ 695 0022 1c4b 
+ 697 1070 af30 0000 Ljava/util/HashSet;-><init>
+ 700 2152 4d22 Lk2/q0;->g:I
+ 702 3412 const/4 v4 3
+ 703 4133 0008 if target 711
+ 705 0408 001d 
+ 707 2071 aef2 0040 Ljava/util/Collections;->addAll
+ 710 2628 
+ 711 0408 001d 
+ 713 3133 0023 if target 748
+ 715 011c 018a 
+ 717 0308 001e 
+ 719 206e 0881 0013 Landroid/content/Context;->getSystemService
+ 722 010c 
+ 723 011f 018a 
+ 725 8601 
+ 726 0702 001c 
+ 728 7635 0018 if target 752
+ 730 0946 0604 
+ 732 2a54 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 734 306e 0933 0a91 Landroid/content/pm/LauncherApps;->isPackageEnabled
+ 737 090a 
+ 738 0939 0007 if target 745
+ 740 0946 0604 
+ 742 206e af33 0090 Ljava/util/HashSet;->add
+ 745 06d8 0106 
+ 747 ed28 
+ 748 0702 001c 
+ 750 0308 001e 
+ 752 106e af36 0000 Ljava/util/HashSet;->isEmpty
+ 755 010a 
+ 756 0138 000b if target 767
+ 758 0174 af36 0018 Ljava/util/HashSet;->isEmpty
+ 761 010a 
+ 762 0139 0003 if target 765
+ 764 0328 
+ 765 1912 const/4 v9 1
+ 766 5728 
+ 767 2154 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 769 0662 44b8 Le3/x;->a:Landroid/content/ComponentName;
+ 771 0622 2063 
+ 773 1912 const/4 v9 1
+ 774 4070 bf6a 0196 Lp2/f;-><init>
+ 777 0a22 1d80 
+ 779 0b08 0018 
+ 781 4070 b3e1 b19a Lk2/y;-><init>
+ 784 2072 b0ac 00a6 Ljava/util/function/Predicate;->or
+ 787 010c 
+ 788 0622 1772 
+ 790 0a08 001a 
+ 792 3070 9a48 0a56 Ld2/d;-><init>
+ 795 1072 b0ab 0006 Ljava/util/function/Predicate;->negate
+ 798 050c 
+ 799 2072 b0aa 0051 Ljava/util/function/Predicate;->and
+ 802 010c 
+ 803 051a 8d74 "removed because the corresponding package or component is removed"
+ 805 306e b379 0512 Lk2/n;->d
+ 808 0162 4c62 Lk2/a0;->e:Le3/d0;
+ 810 206e 9eda 0031 Le3/d0;->a
+ 813 010c 
+ 814 011f 1d3b 
+ 816 2354 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 818 106e acaf 0001 Ljava/lang/Object;->getClass
+ 821 106e af36 0000 Ljava/util/HashSet;->isEmpty
+ 824 050a 
+ 825 0538 0003 if target 828
+ 827 1a28 
+ 828 106e b2e7 0001 Lk2/a0;->a
+ 831 1554 4c61 Lk2/a0;->d:Ljava/util/List;
+ 833 0622 1d80 
+ 835 4070 b3e1 0386 Lk2/y;-><init>
+ 838 2072 aeee 0065 Ljava/util/Collection;->removeIf
+ 841 000a 
+ 842 0038 000b if target 853
+ 844 1054 4c5f Lk2/a0;->b:Landroid/content/Context;
+ 846 1354 4c61 Lk2/a0;->d:Ljava/util/List;
+ 848 1154 4c5e Lk2/a0;->a:Le3/r0;
+ 850 306e 9f6c 0031 Le3/r0;->a
+ 853 2052 4d22 Lk2/q0;->g:I
+ 855 9033 001b if target 882
+ 857 8301 
+ 858 7335 0015 if target 879
+ 860 f054 4d0e Lk2/o;->g:Lk2/e1;
+ 862 0122 187c 
+ 864 0546 0304 
+ 866 2654 4d23 Lk2/q0;->h:Landroid/os/UserHandle;
+ 868 3070 9f46 0651 Le3/o0;-><init>
+ 871 0508 0020 
+ 873 306e b325 0150 Lk2/e1;->d
+ 876 03d8 0103 
+ 878 ec28 
+ 879 206e b377 00f2 Lk2/n;->b
+ 882 000e 
+ 883 000d 
+ 884 0428 
+ 885 000d 
+ 886 1408 0001 
+ 888 0108 0014 
+ 890 011e 
+ 891 0027 
+ 892 000d 
+ 893 fd28 
+ 894 0100 0007 0001 0000 0100 0000 009d 0000 
+
+METHOD Lu1/w0$a;->e code=4847860 regs=4 ins=4
+   0 0071 6337 0000 Lcom/flyme/auto/launcher/applist/a;->b
+   3 010c 
+   4 3254 4c9e Lk2/c;->c:Lu1/c;
+   6 215b 5baa Lu1/c;->c:Ljava/util/List;
+   8 106e b376 0000 Lk2/n;->a
+  11 000e 

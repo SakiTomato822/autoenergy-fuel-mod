@@ -1,0 +1,11 @@
+Sun Oct 11 22:31:53 CST 2026
+/data/media/0/Documents/.zip
+/data/media/0/Documents/flyme_dvr_codex_handoff_20261010.zip
+/data/media/0/Download/EVCC/backups/auto/EVCC_auto_backup_20261006_170610.zip
+/data/media/0/Download/EVCC/backups/auto/EVCC_auto_backup_20261006_194013.zip
+/data/media/0/Download/EVCC/backups/auto/EVCC_auto_backup_20261007_194021.zip
+/data/media/0/Download/EVCC/backups/auto/EVCC_auto_backup_20261008_194021.zip
+/data/media/0/Download/EVCC/backups/auto/EVCC_auto_backup_20261009_194021.zip
+/data/media/0/Download/EVCC/backups/auto/EVCC_auto_backup_20261010_194941.zip
+/data/media/0/Download/EVCC/backups/auto/EVCC_auto_backup_20261011_201326.zip
+/data/media/0/Download/CarPlay-Termux-Handoff-20261009.zip

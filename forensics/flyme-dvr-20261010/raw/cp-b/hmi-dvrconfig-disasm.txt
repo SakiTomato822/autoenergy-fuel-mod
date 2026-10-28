@@ -1,0 +1,219 @@
+
+/data/data/com.termux/files/home/forensics/flyme-dvr-20261010/raw/cp-b/hmi-partial.elf:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000001f3d70 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]>:
+  1f3d70:	d503233f 	paciasp
+  1f3d74:	d11483ff 	sub	sp, sp, #0x520
+  1f3d78:	90007781 	adrp	x1, 10e3000 <typeinfo for std::_Weak_result_type<void (ara::com::proxy::methods::MethodAdapter<void, impl_type::ST_PageSetting>::*)(unsigned short, std::vector<unsigned char, std::allocator<unsigned char> > const&, bool)>+0x8>
+  1f3d7c:	a9007bfd 	stp	x29, x30, [sp]
+  1f3d80:	910003fd 	mov	x29, sp
+  1f3d84:	f9476421 	ldr	x1, [x1, #3784]
+  1f3d88:	a90153f3 	stp	x19, x20, [sp, #16]
+  1f3d8c:	aa0003f3 	mov	x19, x0
+  1f3d90:	a9025bf5 	stp	x21, x22, [sp, #32]
+  1f3d94:	52800040 	mov	w0, #0x2                   	// #2
+  1f3d98:	a9046bf9 	stp	x25, x26, [sp, #64]
+  1f3d9c:	aa0803f9 	mov	x25, x8
+  1f3da0:	a90573fb 	stp	x27, x28, [sp, #80]
+  1f3da4:	9101e3fc 	add	x28, sp, #0x78
+  1f3da8:	f90033f3 	str	x19, [sp, #96]
+  1f3dac:	f9400022 	ldr	x2, [x1]
+  1f3db0:	f9028fe2 	str	x2, [sp, #1304]
+  1f3db4:	d2800002 	mov	x2, #0x0                   	// #0
+  1f3db8:	97ffe4b2 	bl	1ed080 <std::enable_if<std::is_constructible<ara::core::ErrorCode, ara::com::ComErrc>::value, ara::core::Result<unsigned long, ara::core::ErrorCode> >::type ara::core::Result<unsigned long, ara::core::ErrorCode>::FromError<ara::com::ComErrc>(ara::com::ComErrc&&) [clone .isra.0]>
+  1f3dbc:	f9400e60 	ldr	x0, [x19, #24]
+  1f3dc0:	aa1c03e8 	mov	x8, x28
+  1f3dc4:	52800022 	mov	w2, #0x1                   	// #1
+  1f3dc8:	d2800021 	mov	x1, #0x1                   	// #1
+  1f3dcc:	97fce315 	bl	12ca20 <std::thread::_State::~_State()@plt+0x10>
+  1f3dd0:	a90363f7 	stp	x23, x24, [sp, #48]
+  1f3dd4:	f9403ff8 	ldr	x24, [sp, #120]
+  1f3dd8:	b4000d58 	cbz	x24, 1f3f80 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x210>
+  1f3ddc:	a9405b13 	ldp	x19, x22, [x24]
+  1f3de0:	eb16027f 	cmp	x19, x22
+  1f3de4:	54000d80 	b.eq	1f3f94 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x224>  // b.none
+  1f3de8:	b0006e1b 	adrp	x27, fb4000 <std::_Sp_make_shared_tag::_S_ti()::__tag+0x2710>
+  1f3dec:	d0006dfa 	adrp	x26, fb1000 <MiddwareUtils::KSyslog::printheadInfo()::sFormatString+0x2ef8>
+  1f3df0:	9132a37b 	add	x27, x27, #0xca8
+  1f3df4:	912e435a 	add	x26, x26, #0xb90
+  1f3df8:	910323f5 	add	x21, sp, #0xc8
+  1f3dfc:	d2800017 	mov	x23, #0x0                   	// #0
+  1f3e00:	14000013 	b	1f3e4c <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0xdc>
+  1f3e04:	aa1503e8 	mov	x8, x21
+  1f3e08:	97fe7eb6 	bl	1938e0 <LogInfo()>
+  1f3e0c:	b944e7e0 	ldr	w0, [sp, #1252]
+  1f3e10:	11004c01 	add	w1, w0, #0x13
+  1f3e14:	710ff83f 	cmp	w1, #0x3fe
+  1f3e18:	540008e9 	b.ls	1f3f34 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x1c4>  // b.plast
+  1f3e1c:	52807fc1 	mov	w1, #0x3fe                 	// #1022
+  1f3e20:	6b000024 	subs	w4, w1, w0
+  1f3e24:	54000981 	b.ne	1f3f54 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x1e4>  // b.any
+  1f3e28:	39400281 	ldrb	w1, [x20]
+  1f3e2c:	aa1503e0 	mov	x0, x21
+  1f3e30:	91004273 	add	x19, x19, #0x10
+  1f3e34:	910006f7 	add	x23, x23, #0x1
+  1f3e38:	97ffe442 	bl	1ecf40 <MiddwareUtils::KSyslog::operator<<(unsigned char) [clone .isra.0]>
+  1f3e3c:	aa1503e0 	mov	x0, x21
+  1f3e40:	97fe7e50 	bl	193780 <MiddwareUtils::KSyslog::~KSyslog()>
+  1f3e44:	eb1302df 	cmp	x22, x19
+  1f3e48:	54000280 	b.eq	1f3e98 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x128>  // b.none
+  1f3e4c:	f9400274 	ldr	x20, [x19]
+  1f3e50:	b5fffdb4 	cbnz	x20, 1f3e04 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x94>
+  1f3e54:	910223f4 	add	x20, sp, #0x88
+  1f3e58:	aa1403e8 	mov	x8, x20
+  1f3e5c:	97feaf1d 	bl	19fad0 <ara::com::SoaLogError()>
+  1f3e60:	aa1a03e1 	mov	x1, x26
+  1f3e64:	aa1403e0 	mov	x0, x20
+  1f3e68:	97fce4de 	bl	12d1e0 <calloc@plt+0x8>
+  1f3e6c:	aa1403e0 	mov	x0, x20
+  1f3e70:	97fce144 	bl	12c380 <glBufferData@plt>
+  1f3e74:	d0006de2 	adrp	x2, fb1000 <MiddwareUtils::KSyslog::printheadInfo()::sFormatString+0x2ef8>
+  1f3e78:	528023c3 	mov	w3, #0x11e                 	// #286
+  1f3e7c:	912ec042 	add	x2, x2, #0xbb0
+  1f3e80:	52800021 	mov	w1, #0x1                   	// #1
+  1f3e84:	52800060 	mov	w0, #0x3                   	// #3
+  1f3e88:	97fce052 	bl	12bfd0 <strerror@plt+0x10>
+  1f3e8c:	91004273 	add	x19, x19, #0x10
+  1f3e90:	eb1302df 	cmp	x22, x19
+  1f3e94:	54fffdc1 	b.ne	1f3e4c <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0xdc>  // b.any
+  1f3e98:	a9405b01 	ldp	x1, x22, [x24]
+  1f3e9c:	cb0102c1 	sub	x1, x22, x1
+  1f3ea0:	f94033e0 	ldr	x0, [sp, #96]
+  1f3ea4:	910263e8 	add	x8, sp, #0x98
+  1f3ea8:	d3448c21 	ubfx	x1, x1, #4, #32
+  1f3eac:	f9400c00 	ldr	x0, [x0, #24]
+  1f3eb0:	97fce348 	bl	12cbd0 <ara::log::Logger::Logger()@plt+0x10>
+  1f3eb4:	f9404fe0 	ldr	x0, [sp, #152]
+  1f3eb8:	b4000060 	cbz	x0, 1f3ec4 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x154>
+  1f3ebc:	d2800201 	mov	x1, #0x10                  	// #16
+  1f3ec0:	97fce068 	bl	12c060 <__syslog_chk@plt+0x10>
+  1f3ec4:	9102a3f3 	add	x19, sp, #0xa8
+  1f3ec8:	aa1703e0 	mov	x0, x23
+  1f3ecc:	aa1303e8 	mov	x8, x19
+  1f3ed0:	97ffe45c 	bl	1ed040 <std::enable_if<std::is_constructible<unsigned long, unsigned long&>::value, ara::core::Result<unsigned long, ara::core::ErrorCode> >::type ara::core::Result<unsigned long, ara::core::ErrorCode>::FromValue<unsigned long&>(unsigned long&) [clone .isra.0]>
+  1f3ed4:	aa1303e1 	mov	x1, x19
+  1f3ed8:	aa1903e0 	mov	x0, x25
+  1f3edc:	97ffe3fd 	bl	1eced0 <ara::core::Result<unsigned long, ara::core::ErrorCode>::operator=(ara::core::Result<unsigned long, ara::core::ErrorCode>&&) [clone .isra.0]>
+  1f3ee0:	aa1303e0 	mov	x0, x19
+  1f3ee4:	97ff762b 	bl	1d1790 <ara::core::Result<unsigned long, ara::core::ErrorCode>::~Result()>
+  1f3ee8:	aa1c03e0 	mov	x0, x28
+  1f3eec:	97ff763d 	bl	1d17e0 <ara::core::Result<std::vector<ara::com::proxy::events::buff_node, std::allocator<ara::com::proxy::events::buff_node> >, ara::core::ErrorCode>::~Result()>
+  1f3ef0:	90007780 	adrp	x0, 10e3000 <typeinfo for std::_Weak_result_type<void (ara::com::proxy::methods::MethodAdapter<void, impl_type::ST_PageSetting>::*)(unsigned short, std::vector<unsigned char, std::allocator<unsigned char> > const&, bool)>+0x8>
+  1f3ef4:	f9476400 	ldr	x0, [x0, #3784]
+  1f3ef8:	f9428fe2 	ldr	x2, [sp, #1304]
+  1f3efc:	f9400001 	ldr	x1, [x0]
+  1f3f00:	eb010042 	subs	x2, x2, x1
+  1f3f04:	d2800001 	mov	x1, #0x0                   	// #0
+  1f3f08:	540004c1 	b.ne	1f3fa0 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x230>  // b.any
+  1f3f0c:	aa1903e0 	mov	x0, x25
+  1f3f10:	a9407bfd 	ldp	x29, x30, [sp]
+  1f3f14:	a94153f3 	ldp	x19, x20, [sp, #16]
+  1f3f18:	a9425bf5 	ldp	x21, x22, [sp, #32]
+  1f3f1c:	a94363f7 	ldp	x23, x24, [sp, #48]
+  1f3f20:	a9446bf9 	ldp	x25, x26, [sp, #64]
+  1f3f24:	a94573fb 	ldp	x27, x28, [sp, #80]
+  1f3f28:	911483ff 	add	sp, sp, #0x520
+  1f3f2c:	d50323bf 	autiasp
+  1f3f30:	d65f03c0 	ret
+  1f3f34:	aa1b03e1 	mov	x1, x27
+  1f3f38:	910343e0 	add	x0, sp, #0xd0
+  1f3f3c:	d2808282 	mov	x2, #0x414                 	// #1044
+  1f3f40:	97fce080 	bl	12c140 <glEnableVertexAttribArray@plt>
+  1f3f44:	b944e7e0 	ldr	w0, [sp, #1252]
+  1f3f48:	11004c00 	add	w0, w0, #0x13
+  1f3f4c:	b904e7e0 	str	w0, [sp, #1252]
+  1f3f50:	17ffffb6 	b	1f3e28 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0xb8>
+  1f3f54:	2a0403e2 	mov	w2, w4
+  1f3f58:	aa1b03e1 	mov	x1, x27
+  1f3f5c:	910343e0 	add	x0, sp, #0xd0
+  1f3f60:	d2808283 	mov	x3, #0x414                 	// #1044
+  1f3f64:	b9006fe4 	str	w4, [sp, #108]
+  1f3f68:	97fce2ce 	bl	12caa0 <std::ostream& std::ostream::_M_insert<bool>(bool)@plt>
+  1f3f6c:	b944e7e0 	ldr	w0, [sp, #1252]
+  1f3f70:	b9406fe4 	ldr	w4, [sp, #108]
+  1f3f74:	0b040000 	add	w0, w0, w4
+  1f3f78:	b904e7e0 	str	w0, [sp, #1252]
+  1f3f7c:	17ffffab 	b	1f3e28 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0xb8>
+  1f3f80:	9102e3f3 	add	x19, sp, #0xb8
+  1f3f84:	d2800000 	mov	x0, #0x0                   	// #0
+  1f3f88:	aa1303e8 	mov	x8, x19
+  1f3f8c:	97ffe42d 	bl	1ed040 <std::enable_if<std::is_constructible<unsigned long, unsigned long&>::value, ara::core::Result<unsigned long, ara::core::ErrorCode> >::type ara::core::Result<unsigned long, ara::core::ErrorCode>::FromValue<unsigned long&>(unsigned long&) [clone .isra.0]>
+  1f3f90:	17ffffd1 	b	1f3ed4 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x164>
+  1f3f94:	aa1603e1 	mov	x1, x22
+  1f3f98:	d2800017 	mov	x23, #0x0                   	// #0
+  1f3f9c:	17ffffc0 	b	1f3e9c <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x12c>
+  1f3fa0:	97fce5a0 	bl	12d620 <sendto@plt+0x10>
+  1f3fa4:	d503249f 	bti	j
+  1f3fa8:	aa0003f3 	mov	x19, x0
+  1f3fac:	aa1c03e0 	mov	x0, x28
+  1f3fb0:	97ff760c 	bl	1d17e0 <ara::core::Result<std::vector<ara::com::proxy::events::buff_node, std::allocator<ara::com::proxy::events::buff_node> >, ara::core::ErrorCode>::~Result()>
+  1f3fb4:	aa1903e0 	mov	x0, x25
+  1f3fb8:	97ff75f6 	bl	1d1790 <ara::core::Result<unsigned long, ara::core::ErrorCode>::~Result()>
+  1f3fbc:	aa1303e0 	mov	x0, x19
+  1f3fc0:	97fce2ec 	bl	12cb70 <std::__throw_range_error(char const*)@plt+0x10>
+  1f3fc4:	d503249f 	bti	j
+  1f3fc8:	aa0003f3 	mov	x19, x0
+  1f3fcc:	a90363f7 	stp	x23, x24, [sp, #48]
+  1f3fd0:	17fffff9 	b	1f3fb4 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]+0x244>
+
+00000000001f3fd4 <ClusterServiceHandler::HandleEventDVRConfig()>:
+  1f3fd4:	d503233f 	paciasp
+  1f3fd8:	90007781 	adrp	x1, 10e3000 <typeinfo for std::_Weak_result_type<void (ara::com::proxy::methods::MethodAdapter<void, impl_type::ST_PageSetting>::*)(unsigned short, std::vector<unsigned char, std::allocator<unsigned char> > const&, bool)>+0x8>
+  1f3fdc:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+  1f3fe0:	910003fd 	mov	x29, sp
+  1f3fe4:	f9476421 	ldr	x1, [x1, #3784]
+  1f3fe8:	910063e8 	add	x8, sp, #0x18
+  1f3fec:	f9401400 	ldr	x0, [x0, #40]
+  1f3ff0:	f9400022 	ldr	x2, [x1]
+  1f3ff4:	f90017e2 	str	x2, [sp, #40]
+  1f3ff8:	d2800002 	mov	x2, #0x0                   	// #0
+  1f3ffc:	9122a000 	add	x0, x0, #0x8a8
+  1f4000:	97ffff5c 	bl	1f3d70 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventDVRConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]>
+  1f4004:	f9400fe0 	ldr	x0, [sp, #24]
+  1f4008:	b4000060 	cbz	x0, 1f4014 <ClusterServiceHandler::HandleEventDVRConfig()+0x40>
+  1f400c:	d2800101 	mov	x1, #0x8                   	// #8
+  1f4010:	97fce014 	bl	12c060 <__syslog_chk@plt+0x10>
+  1f4014:	f94013e0 	ldr	x0, [sp, #32]
+  1f4018:	b4000060 	cbz	x0, 1f4024 <ClusterServiceHandler::HandleEventDVRConfig()+0x50>
+  1f401c:	d2800201 	mov	x1, #0x10                  	// #16
+  1f4020:	97fce010 	bl	12c060 <__syslog_chk@plt+0x10>
+  1f4024:	f0007760 	adrp	x0, 10e3000 <typeinfo for std::_Weak_result_type<void (ara::com::proxy::methods::MethodAdapter<void, impl_type::ST_PageSetting>::*)(unsigned short, std::vector<unsigned char, std::allocator<unsigned char> > const&, bool)>+0x8>
+  1f4028:	f9476400 	ldr	x0, [x0, #3784]
+  1f402c:	f94017e2 	ldr	x2, [sp, #40]
+  1f4030:	f9400001 	ldr	x1, [x0]
+  1f4034:	eb010042 	subs	x2, x2, x1
+  1f4038:	d2800001 	mov	x1, #0x0                   	// #0
+  1f403c:	54000081 	b.ne	1f404c <ClusterServiceHandler::HandleEventDVRConfig()+0x78>  // b.any
+  1f4040:	a8c37bfd 	ldp	x29, x30, [sp], #48
+  1f4044:	d50323bf 	autiasp
+  1f4048:	d65f03c0 	ret
+  1f404c:	97fce575 	bl	12d620 <sendto@plt+0x10>
+
+00000000001f4050 <ara::core::Result<unsigned long, ara::core::ErrorCode> ara::com::proxy::events::EventAdapter<unsigned char>::GetNewSamples<ClusterServiceHandler::HandleEventAVASConfig()::{lambda(unsigned char&)#1}&>(ClusterServiceHandler::HandleEventAVASConfig()::{lambda(unsigned char&)#1}&, unsigned long) [clone .constprop.0] [clone .isra.0]>:
+  1f4050:	d503233f 	paciasp
+  1f4054:	d11483ff 	sub	sp, sp, #0x520
+  1f4058:	f0007761 	adrp	x1, 10e3000 <typeinfo for std::_Weak_result_type<void (ara::com::proxy::methods::MethodAdapter<void, impl_type::ST_PageSetting>::*)(unsigned short, std::vector<unsigned char, std::allocator<unsigned char> > const&, bool)>+0x8>
+  1f405c:	a9007bfd 	stp	x29, x30, [sp]
+  1f4060:	910003fd 	mov	x29, sp
+  1f4064:	f9476421 	ldr	x1, [x1, #3784]
+  1f4068:	a90153f3 	stp	x19, x20, [sp, #16]
+  1f406c:	aa0003f3 	mov	x19, x0
+  1f4070:	a9025bf5 	stp	x21, x22, [sp, #32]
+  1f4074:	52800040 	mov	w0, #0x2                   	// #2
+  1f4078:	a9046bf9 	stp	x25, x26, [sp, #64]
+  1f407c:	aa0803f9 	mov	x25, x8
+  1f4080:	a90573fb 	stp	x27, x28, [sp, #80]
+  1f4084:	9101e3fc 	add	x28, sp, #0x78
+  1f4088:	f90033f3 	str	x19, [sp, #96]
+  1f408c:	f9400022 	ldr	x2, [x1]
+  1f4090:	f9028fe2 	str	x2, [sp, #1304]
+  1f4094:	d2800002 	mov	x2, #0x0                   	// #0
+  1f4098:	97ffe3fa 	bl	1ed080 <std::enable_if<std::is_constructible<ara::core::ErrorCode, ara::com::ComErrc>::value, ara::core::Result<unsigned long, ara::core::ErrorCode> >::type ara::core::Result<unsigned long, ara::core::ErrorCode>::FromError<ara::com::ComErrc>(ara::com::ComErrc&&) [clone .isra.0]>
+  1f409c:	f9400e60 	ldr	x0, [x19, #24]
+  1f40a0:	aa1c03e8 	mov	x8, x28
+  1f40a4:	52800022 	mov	w2, #0x1                   	// #1
+  1f40a8:	d2800021 	mov	x1, #0x1                   	// #1
+  1f40ac:	97fce25d 	bl	12ca20 <std::thread::_State::~_State()@plt+0x10>

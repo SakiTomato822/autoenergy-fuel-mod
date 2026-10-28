@@ -1,0 +1,1449 @@
+
+forensics/flyme-dvr-20261010/raw/evsrenderengine:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000001a1f8 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)>:
+   1a1f8:	d102c3ff 	sub	sp, sp, #0xb0
+   1a1fc:	a9077bfd 	stp	x29, x30, [sp, #112]
+   1a200:	a9085ff8 	stp	x24, x23, [sp, #128]
+   1a204:	a90957f6 	stp	x22, x21, [sp, #144]
+   1a208:	a90a4ff4 	stp	x20, x19, [sp, #160]
+   1a20c:	9101c3fd 	add	x29, sp, #0x70
+   1a210:	d53bd058 	mrs	x24, tpidr_el0
+   1a214:	f9401708 	ldr	x8, [x24, #40]
+   1a218:	aa0203f3 	mov	x19, x2
+   1a21c:	2a0103f6 	mov	w22, w1
+   1a220:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a224:	d0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1a228:	aa0303f5 	mov	x21, x3
+   1a22c:	aa0003f7 	mov	x23, x0
+   1a230:	911e4421 	add	x1, x1, #0x791
+   1a234:	913e4842 	add	x2, x2, #0xf92
+   1a238:	52800060 	mov	w0, #0x3                   	// #3
+   1a23c:	2a1603e3 	mov	w3, w22
+   1a240:	2a0403f4 	mov	w20, w4
+   1a244:	f81f83a8 	stur	x8, [x29, #-8]
+   1a248:	94003da2 	bl	298d0 <__android_log_print@plt>
+   1a24c:	510052c8 	sub	w8, w22, #0x14
+   1a250:	7101791f 	cmp	w8, #0x5e
+   1a254:	54006ca8 	b.hi	1afe8 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xdf0>  // b.pmore
+   1a258:	d0ffffa9 	adrp	x9, 10000 <abitag+0xfd08>
+   1a25c:	912a2929 	add	x9, x9, #0xa8a
+   1a260:	1000008a 	adr	x10, 1a270 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0x78>
+   1a264:	7868792b 	ldrh	w11, [x9, x8, lsl #1]
+   1a268:	8b0b094a 	add	x10, x10, x11, lsl #2
+   1a26c:	d61f0140 	br	x10
+   1a270:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a274:	912f9021 	add	x1, x1, #0xbe4
+   1a278:	d100c3a0 	sub	x0, x29, #0x30
+   1a27c:	94003f51 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a280:	d100c3a1 	sub	x1, x29, #0x30
+   1a284:	aa1303e0 	mov	x0, x19
+   1a288:	aa1f03e2 	mov	x2, xzr
+   1a28c:	94003f61 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a290:	d100c3a0 	sub	x0, x29, #0x30
+   1a294:	94003f53 	bl	29fe0 <android::String16::~String16()@plt>
+   1a298:	d10043a8 	sub	x8, x29, #0x10
+   1a29c:	aa1303e0 	mov	x0, x19
+   1a2a0:	f81d03bf 	stur	xzr, [x29, #-48]
+   1a2a4:	94003f5f 	bl	2a020 <android::Parcel::readStrongBinder() const@plt>
+   1a2a8:	d100c3a8 	sub	x8, x29, #0x30
+   1a2ac:	d10043a0 	sub	x0, x29, #0x10
+   1a2b0:	94003f60 	bl	2a030 <android::IGraphicBufferProducer::asInterface(android::sp<android::IBinder> const&)@plt>
+   1a2b4:	f85f03a8 	ldur	x8, [x29, #-16]
+   1a2b8:	b40000c8 	cbz	x8, 1a2d0 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xd8>
+   1a2bc:	f9400109 	ldr	x9, [x8]
+   1a2c0:	d10043a1 	sub	x1, x29, #0x10
+   1a2c4:	f85e8129 	ldur	x9, [x9, #-24]
+   1a2c8:	8b090100 	add	x0, x8, x9
+   1a2cc:	94003e7d 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1a2d0:	f85d03a3 	ldur	x3, [x29, #-48]
+   1a2d4:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a2d8:	d0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1a2dc:	911e4421 	add	x1, x1, #0x791
+   1a2e0:	9136dc42 	add	x2, x2, #0xdb7
+   1a2e4:	528000c0 	mov	w0, #0x6                   	// #6
+   1a2e8:	94003d7a 	bl	298d0 <__android_log_print@plt>
+   1a2ec:	f85d03a8 	ldur	x8, [x29, #-48]
+   1a2f0:	f81f03bf 	stur	xzr, [x29, #-16]
+   1a2f4:	b4007108 	cbz	x8, 1b114 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf1c>
+   1a2f8:	5283fc00 	mov	w0, #0x1fe0                	// #8160
+   1a2fc:	94003d15 	bl	29750 <operator new(unsigned long)@plt>
+   1a300:	d100c3a1 	sub	x1, x29, #0x30
+   1a304:	2a1f03e2 	mov	w2, wzr
+   1a308:	aa0003f3 	mov	x19, x0
+   1a30c:	94003f4d 	bl	2a040 <android::Surface::Surface(android::sp<android::IGraphicBufferProducer> const&, bool)@plt>
+   1a310:	d10043a0 	sub	x0, x29, #0x10
+   1a314:	aa1303e1 	mov	x1, x19
+   1a318:	940003dc 	bl	1b288 <android::sp<android::Surface>::operator=(android::Surface*)>
+   1a31c:	900000b3 	adrp	x19, 2e000 <_DYNAMIC+0x1698>
+   1a320:	9126a273 	add	x19, x19, #0x9a8
+   1a324:	d10043a1 	sub	x1, x29, #0x10
+   1a328:	aa1303e0 	mov	x0, x19
+   1a32c:	940003f4 	bl	1b2fc <android::sp<android::Surface>::operator=(android::sp<android::Surface> const&)>
+   1a330:	f9400263 	ldr	x3, [x19]
+   1a334:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a338:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a33c:	911e4421 	add	x1, x1, #0x791
+   1a340:	91157c42 	add	x2, x2, #0x55f
+   1a344:	528000c0 	mov	w0, #0x6                   	// #6
+   1a348:	94003d62 	bl	298d0 <__android_log_print@plt>
+   1a34c:	14000376 	b	1b124 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf2c>
+   1a350:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a354:	912f9021 	add	x1, x1, #0xbe4
+   1a358:	d100c3a0 	sub	x0, x29, #0x30
+   1a35c:	94003f19 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a360:	d100c3a1 	sub	x1, x29, #0x30
+   1a364:	aa1303e0 	mov	x0, x19
+   1a368:	aa1f03e2 	mov	x2, xzr
+   1a36c:	94003f29 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a370:	d100c3a0 	sub	x0, x29, #0x30
+   1a374:	94003f1b 	bl	29fe0 <android::String16::~String16()@plt>
+   1a378:	d100c3a1 	sub	x1, x29, #0x30
+   1a37c:	aa1303e0 	mov	x0, x19
+   1a380:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a384:	94003f33 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a388:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a38c:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a390:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a394:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a398:	b909c103 	str	w3, [x8, #2496]
+   1a39c:	911e4421 	add	x1, x1, #0x791
+   1a3a0:	9131c442 	add	x2, x2, #0xc71
+   1a3a4:	14000339 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a3a8:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a3ac:	912f9021 	add	x1, x1, #0xbe4
+   1a3b0:	d100c3a0 	sub	x0, x29, #0x30
+   1a3b4:	94003f03 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a3b8:	d100c3a1 	sub	x1, x29, #0x30
+   1a3bc:	aa1303e0 	mov	x0, x19
+   1a3c0:	aa1f03e2 	mov	x2, xzr
+   1a3c4:	94003f13 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a3c8:	d100c3a0 	sub	x0, x29, #0x30
+   1a3cc:	94003f05 	bl	29fe0 <android::String16::~String16()@plt>
+   1a3d0:	d100c3a1 	sub	x1, x29, #0x30
+   1a3d4:	aa1303e0 	mov	x0, x19
+   1a3d8:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a3dc:	94003f1d 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a3e0:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a3e4:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a3e8:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1a3ec:	5280002a 	mov	w10, #0x1                   	// #1
+   1a3f0:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a3f4:	b0ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1a3f8:	b908d903 	str	w3, [x8, #2264]
+   1a3fc:	3927712a 	strb	w10, [x9, #2524]
+   1a400:	911e4421 	add	x1, x1, #0x791
+   1a404:	91116c42 	add	x2, x2, #0x45b
+   1a408:	14000320 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a40c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a410:	912f9021 	add	x1, x1, #0xbe4
+   1a414:	d100c3a0 	sub	x0, x29, #0x30
+   1a418:	94003eea 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a41c:	d100c3a1 	sub	x1, x29, #0x30
+   1a420:	aa1303e0 	mov	x0, x19
+   1a424:	aa1f03e2 	mov	x2, xzr
+   1a428:	94003efa 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a42c:	d100c3a0 	sub	x0, x29, #0x30
+   1a430:	94003eec 	bl	29fe0 <android::String16::~String16()@plt>
+   1a434:	d100c3a1 	sub	x1, x29, #0x30
+   1a438:	aa1303e0 	mov	x0, x19
+   1a43c:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a440:	94003f04 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a444:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a448:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a44c:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1a450:	5280002a 	mov	w10, #0x1                   	// #1
+   1a454:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a458:	b0ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1a45c:	b908e903 	str	w3, [x8, #2280]
+   1a460:	392aa12a 	strb	w10, [x9, #2728]
+   1a464:	911e4421 	add	x1, x1, #0x791
+   1a468:	911b3042 	add	x2, x2, #0x6cc
+   1a46c:	14000307 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a470:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a474:	912f9021 	add	x1, x1, #0xbe4
+   1a478:	d100c3a0 	sub	x0, x29, #0x30
+   1a47c:	94003ed1 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a480:	d100c3a1 	sub	x1, x29, #0x30
+   1a484:	aa1303e0 	mov	x0, x19
+   1a488:	aa1f03e2 	mov	x2, xzr
+   1a48c:	94003ee1 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a490:	d100c3a0 	sub	x0, x29, #0x30
+   1a494:	94003ed3 	bl	29fe0 <android::String16::~String16()@plt>
+   1a498:	d100c3a1 	sub	x1, x29, #0x30
+   1a49c:	aa1303e0 	mov	x0, x19
+   1a4a0:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a4a4:	94003eeb 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a4a8:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a4ac:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a4b0:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1a4b4:	5280002a 	mov	w10, #0x1                   	// #1
+   1a4b8:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a4bc:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1a4c0:	b909e103 	str	w3, [x8, #2528]
+   1a4c4:	3927912a 	strb	w10, [x9, #2532]
+   1a4c8:	911e4421 	add	x1, x1, #0x791
+   1a4cc:	913acc42 	add	x2, x2, #0xeb3
+   1a4d0:	140002ee 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a4d4:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a4d8:	912f9021 	add	x1, x1, #0xbe4
+   1a4dc:	d100c3a0 	sub	x0, x29, #0x30
+   1a4e0:	94003eb8 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a4e4:	d100c3a1 	sub	x1, x29, #0x30
+   1a4e8:	aa1303e0 	mov	x0, x19
+   1a4ec:	aa1f03e2 	mov	x2, xzr
+   1a4f0:	94003ec8 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a4f4:	d100c3a0 	sub	x0, x29, #0x30
+   1a4f8:	94003eba 	bl	29fe0 <android::String16::~String16()@plt>
+   1a4fc:	d100c3a1 	sub	x1, x29, #0x30
+   1a500:	aa1303e0 	mov	x0, x19
+   1a504:	a93d7fbf 	stp	xzr, xzr, [x29, #-48]
+   1a508:	f81e03bf 	stur	xzr, [x29, #-32]
+   1a50c:	94003ed5 	bl	2a060 <android::Parcel::readInt32Vector(std::__1::vector<int, std::__1::allocator<int> >*) const@plt>
+   1a510:	a97d23a9 	ldp	x9, x8, [x29, #-48]
+   1a514:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a518:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a51c:	911e4421 	add	x1, x1, #0x791
+   1a520:	cb090108 	sub	x8, x8, x9
+   1a524:	9342fd03 	asr	x3, x8, #2
+   1a528:	912fd842 	add	x2, x2, #0xbf6
+   1a52c:	52800060 	mov	w0, #0x3                   	// #3
+   1a530:	94003ce8 	bl	298d0 <__android_log_print@plt>
+   1a534:	a97d27a8 	ldp	x8, x9, [x29, #-48]
+   1a538:	900000ab 	adrp	x11, 2e000 <_DYNAMIC+0x1698>
+   1a53c:	5280002c 	mov	w12, #0x1                   	// #1
+   1a540:	b908e56c 	str	w12, [x11, #2276]
+   1a544:	cb08012a 	sub	x10, x9, x8
+   1a548:	9342fd49 	asr	x9, x10, #2
+   1a54c:	7100053f 	cmp	w9, #0x1
+   1a550:	5400014b 	b.lt	1a578 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0x380>  // b.tstop
+   1a554:	900000ab 	adrp	x11, 2e000 <_DYNAMIC+0x1698>
+   1a558:	d342854a 	ubfx	x10, x10, #2, #32
+   1a55c:	9129316b 	add	x11, x11, #0xa4c
+   1a560:	b4006329 	cbz	x9, 1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>
+   1a564:	b840450c 	ldr	w12, [x8], #4
+   1a568:	f100054a 	subs	x10, x10, #0x1
+   1a56c:	d1000529 	sub	x9, x9, #0x1
+   1a570:	b800456c 	str	w12, [x11], #4
+   1a574:	54ffff61 	b.ne	1a560 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0x368>  // b.any
+   1a578:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a57c:	91293108 	add	x8, x8, #0xa4c
+   1a580:	29401103 	ldp	w3, w4, [x8]
+   1a584:	29411905 	ldp	w5, w6, [x8, #8]
+   1a588:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a58c:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a590:	911e4421 	add	x1, x1, #0x791
+   1a594:	9116cc42 	add	x2, x2, #0x5b3
+   1a598:	52800060 	mov	w0, #0x3                   	// #3
+   1a59c:	94003ccd 	bl	298d0 <__android_log_print@plt>
+   1a5a0:	140002d8 	b	1b100 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf08>
+   1a5a4:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a5a8:	912f9021 	add	x1, x1, #0xbe4
+   1a5ac:	d100c3a0 	sub	x0, x29, #0x30
+   1a5b0:	94003e84 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a5b4:	d100c3a1 	sub	x1, x29, #0x30
+   1a5b8:	aa1303e0 	mov	x0, x19
+   1a5bc:	aa1f03e2 	mov	x2, xzr
+   1a5c0:	94003e94 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a5c4:	d100c3a0 	sub	x0, x29, #0x30
+   1a5c8:	94003e86 	bl	29fe0 <android::String16::~String16()@plt>
+   1a5cc:	d100c3a1 	sub	x1, x29, #0x30
+   1a5d0:	aa1303e0 	mov	x0, x19
+   1a5d4:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a5d8:	94003e9e 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a5dc:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a5e0:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a5e4:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a5e8:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1a5ec:	b90aa103 	str	w3, [x8, #2720]
+   1a5f0:	911e4421 	add	x1, x1, #0x791
+   1a5f4:	912c2c42 	add	x2, x2, #0xb0b
+   1a5f8:	140002a4 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a5fc:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a600:	912f9021 	add	x1, x1, #0xbe4
+   1a604:	d100c3a0 	sub	x0, x29, #0x30
+   1a608:	94003e6e 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a60c:	d100c3a1 	sub	x1, x29, #0x30
+   1a610:	aa1303e0 	mov	x0, x19
+   1a614:	aa1f03e2 	mov	x2, xzr
+   1a618:	94003e7e 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a61c:	d100c3a0 	sub	x0, x29, #0x30
+   1a620:	94003e70 	bl	29fe0 <android::String16::~String16()@plt>
+   1a624:	d100c3a1 	sub	x1, x29, #0x30
+   1a628:	aa1303e0 	mov	x0, x19
+   1a62c:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a630:	f81ec3bf 	stur	xzr, [x29, #-20]
+   1a634:	94003e87 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a638:	d10043a1 	sub	x1, x29, #0x10
+   1a63c:	aa1303e0 	mov	x0, x19
+   1a640:	94003e84 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a644:	d10053a1 	sub	x1, x29, #0x14
+   1a648:	aa1303e0 	mov	x0, x19
+   1a64c:	94003e81 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a650:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a654:	297d93a5 	ldp	w5, w4, [x29, #-20]
+   1a658:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a65c:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1a660:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a664:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1a668:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1a66c:	911e4421 	add	x1, x1, #0x791
+   1a670:	911dbc42 	add	x2, x2, #0x76f
+   1a674:	528000c0 	mov	w0, #0x6                   	// #6
+   1a678:	b909b103 	str	w3, [x8, #2480]
+   1a67c:	b909b524 	str	w4, [x9, #2484]
+   1a680:	b909b945 	str	w5, [x10, #2488]
+   1a684:	94003c93 	bl	298d0 <__android_log_print@plt>
+   1a688:	140002c4 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1a68c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a690:	912f9021 	add	x1, x1, #0xbe4
+   1a694:	d100c3a0 	sub	x0, x29, #0x30
+   1a698:	94003e4a 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a69c:	d100c3a1 	sub	x1, x29, #0x30
+   1a6a0:	aa1303e0 	mov	x0, x19
+   1a6a4:	aa1f03e2 	mov	x2, xzr
+   1a6a8:	94003e5a 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a6ac:	d100c3a0 	sub	x0, x29, #0x30
+   1a6b0:	94003e4c 	bl	29fe0 <android::String16::~String16()@plt>
+   1a6b4:	d100c3a1 	sub	x1, x29, #0x30
+   1a6b8:	aa1303e0 	mov	x0, x19
+   1a6bc:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a6c0:	94003e64 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a6c4:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a6c8:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a6cc:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a6d0:	b0ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1a6d4:	b909bd03 	str	w3, [x8, #2492]
+   1a6d8:	911e4421 	add	x1, x1, #0x791
+   1a6dc:	91206442 	add	x2, x2, #0x819
+   1a6e0:	1400026a 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a6e4:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a6e8:	912f9021 	add	x1, x1, #0xbe4
+   1a6ec:	d100c3a0 	sub	x0, x29, #0x30
+   1a6f0:	94003e34 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a6f4:	d100c3a1 	sub	x1, x29, #0x30
+   1a6f8:	aa1303e0 	mov	x0, x19
+   1a6fc:	aa1f03e2 	mov	x2, xzr
+   1a700:	94003e44 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a704:	d100c3a0 	sub	x0, x29, #0x30
+   1a708:	94003e36 	bl	29fe0 <android::String16::~String16()@plt>
+   1a70c:	d100c3a1 	sub	x1, x29, #0x30
+   1a710:	aa1303e0 	mov	x0, x19
+   1a714:	a93d7fbf 	stp	xzr, xzr, [x29, #-48]
+   1a718:	f81e03bf 	stur	xzr, [x29, #-32]
+   1a71c:	94003e51 	bl	2a060 <android::Parcel::readInt32Vector(std::__1::vector<int, std::__1::allocator<int> >*) const@plt>
+   1a720:	a97d23a9 	ldp	x9, x8, [x29, #-48]
+   1a724:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a728:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a72c:	911e4421 	add	x1, x1, #0x791
+   1a730:	cb090108 	sub	x8, x8, x9
+   1a734:	9342fd03 	asr	x3, x8, #2
+   1a738:	912fd842 	add	x2, x2, #0xbf6
+   1a73c:	52800060 	mov	w0, #0x3                   	// #3
+   1a740:	94003c64 	bl	298d0 <__android_log_print@plt>
+   1a744:	a97d27a8 	ldp	x8, x9, [x29, #-48]
+   1a748:	900000b6 	adrp	x22, 2e000 <_DYNAMIC+0x1698>
+   1a74c:	912802d6 	add	x22, x22, #0xa00
+   1a750:	cb080129 	sub	x9, x9, x8
+   1a754:	9342fd29 	asr	x9, x9, #2
+   1a758:	7100053f 	cmp	w9, #0x1
+   1a75c:	5400034b 	b.lt	1a7c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0x5cc>  // b.tstop
+   1a760:	d0ffff94 	adrp	x20, c000 <abitag+0xbd08>
+   1a764:	90ffffb5 	adrp	x21, e000 <abitag+0xdd08>
+   1a768:	aa1f03f3 	mov	x19, xzr
+   1a76c:	911e4694 	add	x20, x20, #0x791
+   1a770:	9117ceb5 	add	x21, x21, #0x5f3
+   1a774:	eb13013f 	cmp	x9, x19
+   1a778:	54005269 	b.ls	1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>  // b.plast
+   1a77c:	b8737904 	ldr	w4, [x8, x19, lsl #2]
+   1a780:	52800060 	mov	w0, #0x3                   	// #3
+   1a784:	aa1403e1 	mov	x1, x20
+   1a788:	aa1503e2 	mov	x2, x21
+   1a78c:	2a1303e3 	mov	w3, w19
+   1a790:	94003c50 	bl	298d0 <__android_log_print@plt>
+   1a794:	a97d27a8 	ldp	x8, x9, [x29, #-48]
+   1a798:	cb08012a 	sub	x10, x9, x8
+   1a79c:	9342fd49 	asr	x9, x10, #2
+   1a7a0:	eb13013f 	cmp	x9, x19
+   1a7a4:	54005109 	b.ls	1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>  // b.plast
+   1a7a8:	d37ef66b 	lsl	x11, x19, #2
+   1a7ac:	b86b690c 	ldr	w12, [x8, x11]
+   1a7b0:	91000673 	add	x19, x19, #0x1
+   1a7b4:	d342fd4a 	lsr	x10, x10, #2
+   1a7b8:	eb2ac27f 	cmp	x19, w10, sxtw
+   1a7bc:	b82b6acc 	str	w12, [x22, x11]
+   1a7c0:	54fffdab 	b.lt	1a774 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0x57c>  // b.tstop
+   1a7c4:	29432ac9 	ldp	w9, w10, [x22, #24]
+   1a7c8:	294012c3 	ldp	w3, w4, [x22]
+   1a7cc:	29411ac5 	ldp	w5, w6, [x22, #8]
+   1a7d0:	294222c7 	ldp	w7, w8, [x22, #16]
+   1a7d4:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a7d8:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a7dc:	b90013ea 	str	w10, [sp, #16]
+   1a7e0:	b9000be9 	str	w9, [sp, #8]
+   1a7e4:	911e4421 	add	x1, x1, #0x791
+   1a7e8:	91180442 	add	x2, x2, #0x601
+   1a7ec:	14000220 	b	1b06c <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe74>
+   1a7f0:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a7f4:	912f9021 	add	x1, x1, #0xbe4
+   1a7f8:	d100c3a0 	sub	x0, x29, #0x30
+   1a7fc:	94003df1 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a800:	d100c3a1 	sub	x1, x29, #0x30
+   1a804:	aa1303e0 	mov	x0, x19
+   1a808:	aa1f03e2 	mov	x2, xzr
+   1a80c:	94003e01 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a810:	d100c3a0 	sub	x0, x29, #0x30
+   1a814:	94003df3 	bl	29fe0 <android::String16::~String16()@plt>
+   1a818:	d100c3a1 	sub	x1, x29, #0x30
+   1a81c:	aa1303e0 	mov	x0, x19
+   1a820:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a824:	94003e0b 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a828:	94000c82 	bl	1da30 <createEvsRwDirector()>
+   1a82c:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a830:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a834:	d0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1a838:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a83c:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1a840:	911e4421 	add	x1, x1, #0x791
+   1a844:	9120a042 	add	x2, x2, #0x828
+   1a848:	528000c0 	mov	w0, #0x6                   	// #6
+   1a84c:	2a0303e4 	mov	w4, w3
+   1a850:	b90a9d03 	str	w3, [x8, #2716]
+   1a854:	b908e123 	str	w3, [x9, #2272]
+   1a858:	1400024f 	b	1b194 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf9c>
+   1a85c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a860:	912f9021 	add	x1, x1, #0xbe4
+   1a864:	d100c3a0 	sub	x0, x29, #0x30
+   1a868:	94003dd6 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a86c:	d100c3a1 	sub	x1, x29, #0x30
+   1a870:	aa1303e0 	mov	x0, x19
+   1a874:	aa1f03e2 	mov	x2, xzr
+   1a878:	94003de6 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a87c:	d100c3a0 	sub	x0, x29, #0x30
+   1a880:	94003dd8 	bl	29fe0 <android::String16::~String16()@plt>
+   1a884:	d100c3a1 	sub	x1, x29, #0x30
+   1a888:	aa1303e0 	mov	x0, x19
+   1a88c:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a890:	94003df0 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a894:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a898:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a89c:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a8a0:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a8a4:	b908dd03 	str	w3, [x8, #2268]
+   1a8a8:	911e4421 	add	x1, x1, #0x791
+   1a8ac:	911f9042 	add	x2, x2, #0x7e4
+   1a8b0:	140001f6 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a8b4:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a8b8:	912f9021 	add	x1, x1, #0xbe4
+   1a8bc:	d100c3a0 	sub	x0, x29, #0x30
+   1a8c0:	94003dc0 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a8c4:	d100c3a1 	sub	x1, x29, #0x30
+   1a8c8:	aa1303e0 	mov	x0, x19
+   1a8cc:	aa1f03e2 	mov	x2, xzr
+   1a8d0:	94003dd0 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a8d4:	d100c3a0 	sub	x0, x29, #0x30
+   1a8d8:	94003dc2 	bl	29fe0 <android::String16::~String16()@plt>
+   1a8dc:	d100c3a1 	sub	x1, x29, #0x30
+   1a8e0:	aa1303e0 	mov	x0, x19
+   1a8e4:	a93d7fbf 	stp	xzr, xzr, [x29, #-48]
+   1a8e8:	f81e03bf 	stur	xzr, [x29, #-32]
+   1a8ec:	94003ddd 	bl	2a060 <android::Parcel::readInt32Vector(std::__1::vector<int, std::__1::allocator<int> >*) const@plt>
+   1a8f0:	a97d23a9 	ldp	x9, x8, [x29, #-48]
+   1a8f4:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a8f8:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1a8fc:	911e4421 	add	x1, x1, #0x791
+   1a900:	cb090108 	sub	x8, x8, x9
+   1a904:	9342fd03 	asr	x3, x8, #2
+   1a908:	912fd842 	add	x2, x2, #0xbf6
+   1a90c:	52800060 	mov	w0, #0x3                   	// #3
+   1a910:	94003bf0 	bl	298d0 <__android_log_print@plt>
+   1a914:	a97d27a8 	ldp	x8, x9, [x29, #-48]
+   1a918:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1a91c:	5280002b 	mov	w11, #0x1                   	// #1
+   1a920:	3929214b 	strb	w11, [x10, #2632]
+   1a924:	cb080129 	sub	x9, x9, x8
+   1a928:	9342fd2b 	asr	x11, x9, #2
+   1a92c:	7100197f 	cmp	w11, #0x6
+   1a930:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1a934:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1a938:	540036e1 	b.ne	1b014 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe1c>  // b.any
+   1a93c:	f100157f 	cmp	x11, #0x5
+   1a940:	54004429 	b.ls	1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>  // b.plast
+   1a944:	b940150c 	ldr	w12, [x8, #20]
+   1a948:	b90a692c 	str	w12, [x9, #2664]
+   1a94c:	b940110c 	ldr	w12, [x8, #16]
+   1a950:	b90a654c 	str	w12, [x10, #2660]
+   1a954:	5280008c 	mov	w12, #0x4                   	// #4
+   1a958:	140001b2 	b	1b020 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe28>
+   1a95c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a960:	912f9021 	add	x1, x1, #0xbe4
+   1a964:	d100c3a0 	sub	x0, x29, #0x30
+   1a968:	94003d96 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a96c:	d100c3a1 	sub	x1, x29, #0x30
+   1a970:	aa1303e0 	mov	x0, x19
+   1a974:	aa1f03e2 	mov	x2, xzr
+   1a978:	94003da6 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1a97c:	d100c3a0 	sub	x0, x29, #0x30
+   1a980:	94003d98 	bl	29fe0 <android::String16::~String16()@plt>
+   1a984:	d100c3a1 	sub	x1, x29, #0x30
+   1a988:	aa1303e0 	mov	x0, x19
+   1a98c:	b81d03bf 	stur	wzr, [x29, #-48]
+   1a990:	94003db0 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1a994:	b85d03a3 	ldur	w3, [x29, #-48]
+   1a998:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a99c:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a9a0:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1a9a4:	b908ed03 	str	w3, [x8, #2284]
+   1a9a8:	911e4421 	add	x1, x1, #0x791
+   1a9ac:	913b7442 	add	x2, x2, #0xedd
+   1a9b0:	140001b6 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1a9b4:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1a9b8:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1a9bc:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1a9c0:	12800009 	mov	w9, #0xffffffff            	// #-1
+   1a9c4:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1a9c8:	911e4421 	add	x1, x1, #0x791
+   1a9cc:	9109c842 	add	x2, x2, #0x272
+   1a9d0:	528000c0 	mov	w0, #0x6                   	// #6
+   1a9d4:	b908c909 	str	w9, [x8, #2248]
+   1a9d8:	b908cd49 	str	w9, [x10, #2252]
+   1a9dc:	94003bbd 	bl	298d0 <__android_log_print@plt>
+   1a9e0:	140001ee 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1a9e4:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1a9e8:	912f9021 	add	x1, x1, #0xbe4
+   1a9ec:	d100c3a0 	sub	x0, x29, #0x30
+   1a9f0:	94003d74 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1a9f4:	d100c3a1 	sub	x1, x29, #0x30
+   1a9f8:	aa1303e0 	mov	x0, x19
+   1a9fc:	aa1f03e2 	mov	x2, xzr
+   1aa00:	94003d84 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1aa04:	d100c3a0 	sub	x0, x29, #0x30
+   1aa08:	94003d76 	bl	29fe0 <android::String16::~String16()@plt>
+   1aa0c:	d100c3a1 	sub	x1, x29, #0x30
+   1aa10:	aa1303e0 	mov	x0, x19
+   1aa14:	b81d03bf 	stur	wzr, [x29, #-48]
+   1aa18:	94003d8e 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1aa1c:	b85d03a3 	ldur	w3, [x29, #-48]
+   1aa20:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1aa24:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1aa28:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1aa2c:	911e4421 	add	x1, x1, #0x791
+   1aa30:	913c1c42 	add	x2, x2, #0xf07
+   1aa34:	b9090903 	str	w3, [x8, #2312]
+   1aa38:	14000016 	b	1aa90 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0x898>
+   1aa3c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1aa40:	912f9021 	add	x1, x1, #0xbe4
+   1aa44:	d100c3a0 	sub	x0, x29, #0x30
+   1aa48:	94003d5e 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1aa4c:	d100c3a1 	sub	x1, x29, #0x30
+   1aa50:	aa1303e0 	mov	x0, x19
+   1aa54:	aa1f03e2 	mov	x2, xzr
+   1aa58:	94003d6e 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1aa5c:	d100c3a0 	sub	x0, x29, #0x30
+   1aa60:	94003d60 	bl	29fe0 <android::String16::~String16()@plt>
+   1aa64:	d100c3a1 	sub	x1, x29, #0x30
+   1aa68:	aa1303e0 	mov	x0, x19
+   1aa6c:	b81d03bf 	stur	wzr, [x29, #-48]
+   1aa70:	94003d78 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1aa74:	b85d03a3 	ldur	w3, [x29, #-48]
+   1aa78:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1aa7c:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1aa80:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1aa84:	b9090d03 	str	w3, [x8, #2316]
+   1aa88:	911e4421 	add	x1, x1, #0x791
+   1aa8c:	91328042 	add	x2, x2, #0xca0
+   1aa90:	528000c0 	mov	w0, #0x6                   	// #6
+   1aa94:	94003b8f 	bl	298d0 <__android_log_print@plt>
+   1aa98:	140001c0 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1aa9c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1aaa0:	912f9021 	add	x1, x1, #0xbe4
+   1aaa4:	d100c3a0 	sub	x0, x29, #0x30
+   1aaa8:	94003d46 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1aaac:	d100c3a1 	sub	x1, x29, #0x30
+   1aab0:	aa1303e0 	mov	x0, x19
+   1aab4:	aa1f03e2 	mov	x2, xzr
+   1aab8:	94003d56 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1aabc:	d100c3a0 	sub	x0, x29, #0x30
+   1aac0:	94003d48 	bl	29fe0 <android::String16::~String16()@plt>
+   1aac4:	d100c3a1 	sub	x1, x29, #0x30
+   1aac8:	aa1303e0 	mov	x0, x19
+   1aacc:	b81d03bf 	stur	wzr, [x29, #-48]
+   1aad0:	94003d60 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1aad4:	b85d03a3 	ldur	w3, [x29, #-48]
+   1aad8:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1aadc:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1aae0:	52800034 	mov	w20, #0x1                   	// #1
+   1aae4:	7100487f 	cmp	w3, #0x12
+   1aae8:	b909c503 	str	w3, [x8, #2500]
+   1aaec:	39272134 	strb	w20, [x9, #2504]
+   1aaf0:	54002c41 	b.ne	1b078 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe80>  // b.any
+   1aaf4:	d10043a1 	sub	x1, x29, #0x10
+   1aaf8:	aa1303e0 	mov	x0, x19
+   1aafc:	f81ec3bf 	stur	xzr, [x29, #-20]
+   1ab00:	b81e83bf 	stur	wzr, [x29, #-24]
+   1ab04:	94003d53 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1ab08:	d10053a1 	sub	x1, x29, #0x14
+   1ab0c:	aa1303e0 	mov	x0, x19
+   1ab10:	94003d50 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1ab14:	d10063a1 	sub	x1, x29, #0x18
+   1ab18:	aa1303e0 	mov	x0, x19
+   1ab1c:	94003d4d 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1ab20:	297d93a5 	ldp	w5, w4, [x29, #-20]
+   1ab24:	b85e83a6 	ldur	w6, [x29, #-24]
+   1ab28:	b85d03a3 	ldur	w3, [x29, #-48]
+   1ab2c:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1ab30:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1ab34:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1ab38:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1ab3c:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1ab40:	900000ab 	adrp	x11, 2e000 <_DYNAMIC+0x1698>
+   1ab44:	911e4421 	add	x1, x1, #0x791
+   1ab48:	91087042 	add	x2, x2, #0x21c
+   1ab4c:	52800060 	mov	w0, #0x3                   	// #3
+   1ab50:	b909cd04 	str	w4, [x8, #2508]
+   1ab54:	b909d125 	str	w5, [x9, #2512]
+   1ab58:	b909d546 	str	w6, [x10, #2516]
+   1ab5c:	b908f174 	str	w20, [x11, #2288]
+   1ab60:	94003b5c 	bl	298d0 <__android_log_print@plt>
+   1ab64:	1400018d 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1ab68:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1ab6c:	912f9021 	add	x1, x1, #0xbe4
+   1ab70:	d100c3a0 	sub	x0, x29, #0x30
+   1ab74:	94003d13 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1ab78:	d100c3a1 	sub	x1, x29, #0x30
+   1ab7c:	aa1303e0 	mov	x0, x19
+   1ab80:	aa1f03e2 	mov	x2, xzr
+   1ab84:	94003d23 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1ab88:	d100c3a0 	sub	x0, x29, #0x30
+   1ab8c:	94003d15 	bl	29fe0 <android::String16::~String16()@plt>
+   1ab90:	d100c3a1 	sub	x1, x29, #0x30
+   1ab94:	aa1303e0 	mov	x0, x19
+   1ab98:	b81d03bf 	stur	wzr, [x29, #-48]
+   1ab9c:	94003d2d 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1aba0:	bc5d03a0 	ldur	s0, [x29, #-48]
+   1aba4:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1aba8:	5e21d800 	scvtf	s0, s0
+   1abac:	bd09d900 	str	s0, [x8, #2520]
+   1abb0:	1400017a 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1abb4:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1abb8:	912f9021 	add	x1, x1, #0xbe4
+   1abbc:	d100c3a0 	sub	x0, x29, #0x30
+   1abc0:	94003d00 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1abc4:	d100c3a1 	sub	x1, x29, #0x30
+   1abc8:	aa1303e0 	mov	x0, x19
+   1abcc:	aa1f03e2 	mov	x2, xzr
+   1abd0:	94003d10 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1abd4:	d100c3a0 	sub	x0, x29, #0x30
+   1abd8:	94003d02 	bl	29fe0 <android::String16::~String16()@plt>
+   1abdc:	d100c3a1 	sub	x1, x29, #0x30
+   1abe0:	aa1303e0 	mov	x0, x19
+   1abe4:	a93d7fbf 	stp	xzr, xzr, [x29, #-48]
+   1abe8:	f81e03bf 	stur	xzr, [x29, #-32]
+   1abec:	94003d1d 	bl	2a060 <android::Parcel::readInt32Vector(std::__1::vector<int, std::__1::allocator<int> >*) const@plt>
+   1abf0:	a97d23a9 	ldp	x9, x8, [x29, #-48]
+   1abf4:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1abf8:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1abfc:	911e4421 	add	x1, x1, #0x791
+   1ac00:	cb090108 	sub	x8, x8, x9
+   1ac04:	9342fd03 	asr	x3, x8, #2
+   1ac08:	912fd842 	add	x2, x2, #0xbf6
+   1ac0c:	52800060 	mov	w0, #0x3                   	// #3
+   1ac10:	94003b30 	bl	298d0 <__android_log_print@plt>
+   1ac14:	a97d23a9 	ldp	x9, x8, [x29, #-48]
+   1ac18:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1ac1c:	5280002b 	mov	w11, #0x1                   	// #1
+   1ac20:	3928d14b 	strb	w11, [x10, #2612]
+   1ac24:	cb090108 	sub	x8, x8, x9
+   1ac28:	9342fd0b 	asr	x11, x8, #2
+   1ac2c:	71001d7f 	cmp	w11, #0x7
+   1ac30:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1ac34:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1ac38:	540022e1 	b.ne	1b094 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe9c>  // b.any
+   1ac3c:	f100197f 	cmp	x11, #0x6
+   1ac40:	54002c29 	b.ls	1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>  // b.plast
+   1ac44:	b940192c 	ldr	w12, [x9, #24]
+   1ac48:	b90a610c 	str	w12, [x8, #2656]
+   1ac4c:	b940152c 	ldr	w12, [x9, #20]
+   1ac50:	b90a5d4c 	str	w12, [x10, #2652]
+   1ac54:	528000ac 	mov	w12, #0x5                   	// #5
+   1ac58:	14000112 	b	1b0a0 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xea8>
+   1ac5c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1ac60:	912f9021 	add	x1, x1, #0xbe4
+   1ac64:	d100c3a0 	sub	x0, x29, #0x30
+   1ac68:	94003cd6 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1ac6c:	d100c3a1 	sub	x1, x29, #0x30
+   1ac70:	aa1303e0 	mov	x0, x19
+   1ac74:	aa1f03e2 	mov	x2, xzr
+   1ac78:	94003ce6 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1ac7c:	d100c3a0 	sub	x0, x29, #0x30
+   1ac80:	94003cd8 	bl	29fe0 <android::String16::~String16()@plt>
+   1ac84:	d100c3a1 	sub	x1, x29, #0x30
+   1ac88:	aa1303e0 	mov	x0, x19
+   1ac8c:	a93d7fbf 	stp	xzr, xzr, [x29, #-48]
+   1ac90:	f81e03bf 	stur	xzr, [x29, #-32]
+   1ac94:	94003cf3 	bl	2a060 <android::Parcel::readInt32Vector(std::__1::vector<int, std::__1::allocator<int> >*) const@plt>
+   1ac98:	a97d23a9 	ldp	x9, x8, [x29, #-48]
+   1ac9c:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1aca0:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1aca4:	911e4421 	add	x1, x1, #0x791
+   1aca8:	cb090108 	sub	x8, x8, x9
+   1acac:	9342fd03 	asr	x3, x8, #2
+   1acb0:	912fd842 	add	x2, x2, #0xbf6
+   1acb4:	52800060 	mov	w0, #0x3                   	// #3
+   1acb8:	94003b06 	bl	298d0 <__android_log_print@plt>
+   1acbc:	a97d23a9 	ldp	x9, x8, [x29, #-48]
+   1acc0:	900000aa 	adrp	x10, 2e000 <_DYNAMIC+0x1698>
+   1acc4:	5280002b 	mov	w11, #0x1                   	// #1
+   1acc8:	392a614b 	strb	w11, [x10, #2712]
+   1accc:	cb09010c 	sub	x12, x8, x9
+   1acd0:	9342fd8a 	asr	x10, x12, #2
+   1acd4:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1acd8:	7100055f 	cmp	w10, #0x1
+   1acdc:	9129b108 	add	x8, x8, #0xa6c
+   1ace0:	5400016b 	b.lt	1ad0c <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xb14>  // b.tstop
+   1ace4:	aa1f03eb 	mov	x11, xzr
+   1ace8:	9342858c 	sbfx	x12, x12, #2, #32
+   1acec:	eb0b015f 	cmp	x10, x11
+   1acf0:	540026a9 	b.ls	1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>  // b.plast
+   1acf4:	d37ef56d 	lsl	x13, x11, #2
+   1acf8:	b86d692e 	ldr	w14, [x9, x13]
+   1acfc:	9100056b 	add	x11, x11, #0x1
+   1ad00:	eb0c017f 	cmp	x11, x12
+   1ad04:	b82d690e 	str	w14, [x8, x13]
+   1ad08:	54ffff2b 	b.lt	1acec <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xaf4>  // b.tstop
+   1ad0c:	29401103 	ldp	w3, w4, [x8]
+   1ad10:	29411905 	ldp	w5, w6, [x8, #8]
+   1ad14:	29422507 	ldp	w7, w9, [x8, #16]
+   1ad18:	29432d0a 	ldp	w10, w11, [x8, #24]
+   1ad1c:	2944350c 	ldp	w12, w13, [x8, #32]
+   1ad20:	b9402908 	ldr	w8, [x8, #40]
+   1ad24:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1ad28:	90ffffa2 	adrp	x2, e000 <abitag+0xdd08>
+   1ad2c:	b90023ed 	str	w13, [sp, #32]
+   1ad30:	b9002be8 	str	w8, [sp, #40]
+   1ad34:	b9001bec 	str	w12, [sp, #24]
+   1ad38:	b90013eb 	str	w11, [sp, #16]
+   1ad3c:	b9000bea 	str	w10, [sp, #8]
+   1ad40:	911e4421 	add	x1, x1, #0x791
+   1ad44:	91301842 	add	x2, x2, #0xc06
+   1ad48:	52800060 	mov	w0, #0x3                   	// #3
+   1ad4c:	b90003e9 	str	w9, [sp]
+   1ad50:	140000eb 	b	1b0fc <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf04>
+   1ad54:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1ad58:	912f9021 	add	x1, x1, #0xbe4
+   1ad5c:	d100c3a0 	sub	x0, x29, #0x30
+   1ad60:	94003c98 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1ad64:	d100c3a1 	sub	x1, x29, #0x30
+   1ad68:	aa1303e0 	mov	x0, x19
+   1ad6c:	aa1f03e2 	mov	x2, xzr
+   1ad70:	94003ca8 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1ad74:	d100c3a0 	sub	x0, x29, #0x30
+   1ad78:	94003c9a 	bl	29fe0 <android::String16::~String16()@plt>
+   1ad7c:	d100c3a1 	sub	x1, x29, #0x30
+   1ad80:	aa1303e0 	mov	x0, x19
+   1ad84:	b81d03bf 	stur	wzr, [x29, #-48]
+   1ad88:	94003cba 	bl	2a070 <android::Parcel::readFloat(float*) const@plt>
+   1ad8c:	b85d03a8 	ldur	w8, [x29, #-48]
+   1ad90:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1ad94:	b909e928 	str	w8, [x9, #2536]
+   1ad98:	14000100 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1ad9c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1ada0:	912f9021 	add	x1, x1, #0xbe4
+   1ada4:	d100c3a0 	sub	x0, x29, #0x30
+   1ada8:	94003c86 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1adac:	d100c3a1 	sub	x1, x29, #0x30
+   1adb0:	aa1303e0 	mov	x0, x19
+   1adb4:	aa1f03e2 	mov	x2, xzr
+   1adb8:	94003c96 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1adbc:	d100c3a0 	sub	x0, x29, #0x30
+   1adc0:	94003c88 	bl	29fe0 <android::String16::~String16()@plt>
+   1adc4:	d100c3a1 	sub	x1, x29, #0x30
+   1adc8:	aa1303e0 	mov	x0, x19
+   1adcc:	b81d03bf 	stur	wzr, [x29, #-48]
+   1add0:	94003ca0 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1add4:	b85d03a8 	ldur	w8, [x29, #-48]
+   1add8:	900000b4 	adrp	x20, 2e000 <_DYNAMIC+0x1698>
+   1addc:	9127b294 	add	x20, x20, #0x9ec
+   1ade0:	d100c3a1 	sub	x1, x29, #0x30
+   1ade4:	aa1303e0 	mov	x0, x19
+   1ade8:	b9000288 	str	w8, [x20]
+   1adec:	b81d03bf 	stur	wzr, [x29, #-48]
+   1adf0:	94003c98 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1adf4:	b85d03a8 	ldur	w8, [x29, #-48]
+   1adf8:	d100c3a1 	sub	x1, x29, #0x30
+   1adfc:	aa1303e0 	mov	x0, x19
+   1ae00:	b81d03bf 	stur	wzr, [x29, #-48]
+   1ae04:	b9000688 	str	w8, [x20, #4]
+   1ae08:	94003c92 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1ae0c:	b85d03a8 	ldur	w8, [x29, #-48]
+   1ae10:	d100c3a1 	sub	x1, x29, #0x30
+   1ae14:	aa1303e0 	mov	x0, x19
+   1ae18:	b81d03bf 	stur	wzr, [x29, #-48]
+   1ae1c:	b9000a88 	str	w8, [x20, #8]
+   1ae20:	94003c8c 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1ae24:	b85d03a8 	ldur	w8, [x29, #-48]
+   1ae28:	d100c3a1 	sub	x1, x29, #0x30
+   1ae2c:	aa1303e0 	mov	x0, x19
+   1ae30:	b81d03bf 	stur	wzr, [x29, #-48]
+   1ae34:	b9000e88 	str	w8, [x20, #12]
+   1ae38:	94003c86 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1ae3c:	b85d03a7 	ldur	w7, [x29, #-48]
+   1ae40:	29401283 	ldp	w3, w4, [x20]
+   1ae44:	29411a85 	ldp	w5, w6, [x20, #8]
+   1ae48:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1ae4c:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1ae50:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1ae54:	911e4421 	add	x1, x1, #0x791
+   1ae58:	910ab842 	add	x2, x2, #0x2ae
+   1ae5c:	52800060 	mov	w0, #0x3                   	// #3
+   1ae60:	b909fd07 	str	w7, [x8, #2556]
+   1ae64:	94003a9b 	bl	298d0 <__android_log_print@plt>
+   1ae68:	140000cc 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1ae6c:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1ae70:	912f9021 	add	x1, x1, #0xbe4
+   1ae74:	d100c3a0 	sub	x0, x29, #0x30
+   1ae78:	94003c52 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1ae7c:	d100c3a1 	sub	x1, x29, #0x30
+   1ae80:	aa1303e0 	mov	x0, x19
+   1ae84:	aa1f03e2 	mov	x2, xzr
+   1ae88:	94003c62 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1ae8c:	d100c3a0 	sub	x0, x29, #0x30
+   1ae90:	94003c54 	bl	29fe0 <android::String16::~String16()@plt>
+   1ae94:	d100d3a1 	sub	x1, x29, #0x34
+   1ae98:	aa1303e0 	mov	x0, x19
+   1ae9c:	b81cc3bf 	stur	wzr, [x29, #-52]
+   1aea0:	94003c74 	bl	2a070 <android::Parcel::readFloat(float*) const@plt>
+   1aea4:	b85cc3a8 	ldur	w8, [x29, #-52]
+   1aea8:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1aeac:	f0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1aeb0:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1aeb4:	1e270100 	fmov	s0, w8
+   1aeb8:	1e22c000 	fcvt	d0, s0
+   1aebc:	911e4421 	add	x1, x1, #0x791
+   1aec0:	912cd442 	add	x2, x2, #0xb35
+   1aec4:	52800060 	mov	w0, #0x3                   	// #3
+   1aec8:	b908d528 	str	w8, [x9, #2260]
+   1aecc:	94003a81 	bl	298d0 <__android_log_print@plt>
+   1aed0:	140000b2 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1aed4:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1aed8:	912f9021 	add	x1, x1, #0xbe4
+   1aedc:	d100c3a0 	sub	x0, x29, #0x30
+   1aee0:	94003c38 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1aee4:	d100c3a1 	sub	x1, x29, #0x30
+   1aee8:	aa1303e0 	mov	x0, x19
+   1aeec:	aa1f03e2 	mov	x2, xzr
+   1aef0:	94003c48 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1aef4:	d100c3a0 	sub	x0, x29, #0x30
+   1aef8:	94003c3a 	bl	29fe0 <android::String16::~String16()@plt>
+   1aefc:	94000acd 	bl	1da30 <createEvsRwDirector()>
+   1af00:	d100c3a1 	sub	x1, x29, #0x30
+   1af04:	aa1303e0 	mov	x0, x19
+   1af08:	b81d03bf 	stur	wzr, [x29, #-48]
+   1af0c:	94003c51 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1af10:	b85d03a3 	ldur	w3, [x29, #-48]
+   1af14:	7100047f 	cmp	w3, #0x1
+   1af18:	54001280 	b.eq	1b168 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf70>  // b.none
+   1af1c:	7100087f 	cmp	w3, #0x2
+   1af20:	540012c1 	b.ne	1b178 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf80>  // b.any
+   1af24:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1af28:	912ac108 	add	x8, x8, #0xab0
+   1af2c:	14000091 	b	1b170 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf78>
+   1af30:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1af34:	912f9021 	add	x1, x1, #0xbe4
+   1af38:	d100c3a0 	sub	x0, x29, #0x30
+   1af3c:	94003c21 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1af40:	d100c3a1 	sub	x1, x29, #0x30
+   1af44:	aa1303e0 	mov	x0, x19
+   1af48:	aa1f03e2 	mov	x2, xzr
+   1af4c:	94003c31 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1af50:	d100c3a0 	sub	x0, x29, #0x30
+   1af54:	94003c23 	bl	29fe0 <android::String16::~String16()@plt>
+   1af58:	d100c3a1 	sub	x1, x29, #0x30
+   1af5c:	aa1303e0 	mov	x0, x19
+   1af60:	b81d03bf 	stur	wzr, [x29, #-48]
+   1af64:	94003c3b 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1af68:	b85d03a3 	ldur	w3, [x29, #-48]
+   1af6c:	900000a9 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1af70:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1af74:	d0ffffa2 	adrp	x2, 10000 <abitag+0xfd08>
+   1af78:	7100007f 	cmp	w3, #0x0
+   1af7c:	1a9f07e8 	cset	w8, ne	// ne = any
+   1af80:	392ad128 	strb	w8, [x9, #2740]
+   1af84:	911e4421 	add	x1, x1, #0x791
+   1af88:	910bd842 	add	x2, x2, #0x2f6
+   1af8c:	1400003f 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1af90:	90ffffa1 	adrp	x1, e000 <abitag+0xdd08>
+   1af94:	912f9021 	add	x1, x1, #0xbe4
+   1af98:	d100c3a0 	sub	x0, x29, #0x30
+   1af9c:	94003c09 	bl	29fc0 <android::String16::String16(char const*)@plt>
+   1afa0:	d100c3a1 	sub	x1, x29, #0x30
+   1afa4:	aa1303e0 	mov	x0, x19
+   1afa8:	aa1f03e2 	mov	x2, xzr
+   1afac:	94003c19 	bl	2a010 <android::Parcel::enforceInterface(android::String16 const&, android::IPCThreadState*) const@plt>
+   1afb0:	d100c3a0 	sub	x0, x29, #0x30
+   1afb4:	94003c0b 	bl	29fe0 <android::String16::~String16()@plt>
+   1afb8:	d100c3a1 	sub	x1, x29, #0x30
+   1afbc:	aa1303e0 	mov	x0, x19
+   1afc0:	b81d03bf 	stur	wzr, [x29, #-48]
+   1afc4:	94003c23 	bl	2a050 <android::Parcel::readInt32(int*) const@plt>
+   1afc8:	b85d03a3 	ldur	w3, [x29, #-48]
+   1afcc:	900000a8 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1afd0:	d0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1afd4:	d0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1afd8:	b90aa503 	str	w3, [x8, #2724]
+   1afdc:	911e4421 	add	x1, x1, #0x791
+   1afe0:	91378c42 	add	x2, x2, #0xde3
+   1afe4:	14000029 	b	1b088 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe90>
+   1afe8:	aa1703e0 	mov	x0, x23
+   1afec:	2a1603e1 	mov	w1, w22
+   1aff0:	aa1303e2 	mov	x2, x19
+   1aff4:	aa1503e3 	mov	x3, x21
+   1aff8:	2a1403e4 	mov	w4, w20
+   1affc:	94003c21 	bl	2a080 <android::BBinder::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)@plt>
+   1b000:	f9401708 	ldr	x8, [x24, #40]
+   1b004:	f85f83a9 	ldur	x9, [x29, #-8]
+   1b008:	eb09011f 	cmp	x8, x9
+   1b00c:	54000d00 	b.eq	1b1ac <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfb4>  // b.none
+   1b010:	1400006f 	b	1b1cc <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfd4>
+   1b014:	7100057f 	cmp	w11, #0x1
+   1b018:	aa0b03ec 	mov	x12, x11
+   1b01c:	5400014b 	b.lt	1b044 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe4c>  // b.tstop
+   1b020:	f000008d 	adrp	x13, 2e000 <_DYNAMIC+0x1698>
+   1b024:	92407d8c 	and	x12, x12, #0xffffffff
+   1b028:	9128e1ad 	add	x13, x13, #0xa38
+   1b02c:	b4000ccb 	cbz	x11, 1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>
+   1b030:	b840450e 	ldr	w14, [x8], #4
+   1b034:	f100058c 	subs	x12, x12, #0x1
+   1b038:	d100056b 	sub	x11, x11, #0x1
+   1b03c:	b80045ae 	str	w14, [x13], #4
+   1b040:	54ffff61 	b.ne	1b02c <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xe34>  // b.any
+   1b044:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b048:	9128e108 	add	x8, x8, #0xa38
+   1b04c:	b94a6547 	ldr	w7, [x10, #2660]
+   1b050:	29401103 	ldp	w3, w4, [x8]
+   1b054:	29411905 	ldp	w5, w6, [x8, #8]
+   1b058:	b94a6928 	ldr	w8, [x9, #2664]
+   1b05c:	b0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1b060:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b064:	911e4421 	add	x1, x1, #0x791
+   1b068:	91045442 	add	x2, x2, #0x115
+   1b06c:	52800060 	mov	w0, #0x3                   	// #3
+   1b070:	b90003e8 	str	w8, [sp]
+   1b074:	14000022 	b	1b0fc <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf04>
+   1b078:	b0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1b07c:	f0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1b080:	911e4421 	add	x1, x1, #0x791
+   1b084:	91054c42 	add	x2, x2, #0x153
+   1b088:	52800060 	mov	w0, #0x3                   	// #3
+   1b08c:	94003a11 	bl	298d0 <__android_log_print@plt>
+   1b090:	14000042 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1b094:	7100057f 	cmp	w11, #0x1
+   1b098:	aa0b03ec 	mov	x12, x11
+   1b09c:	5400014b 	b.lt	1b0c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xecc>  // b.tstop
+   1b0a0:	f000008d 	adrp	x13, 2e000 <_DYNAMIC+0x1698>
+   1b0a4:	92407d8c 	and	x12, x12, #0xffffffff
+   1b0a8:	912881ad 	add	x13, x13, #0xa20
+   1b0ac:	b40008cb 	cbz	x11, 1b1c4 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfcc>
+   1b0b0:	b840452e 	ldr	w14, [x9], #4
+   1b0b4:	f100058c 	subs	x12, x12, #0x1
+   1b0b8:	d100056b 	sub	x11, x11, #0x1
+   1b0bc:	b80045ae 	str	w14, [x13], #4
+   1b0c0:	54ffff61 	b.ne	1b0ac <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xeb4>  // b.any
+   1b0c4:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1b0c8:	91288129 	add	x9, x9, #0xa20
+   1b0cc:	b94a5d4a 	ldr	w10, [x10, #2652]
+   1b0d0:	29401123 	ldp	w3, w4, [x9]
+   1b0d4:	29411925 	ldp	w5, w6, [x9, #8]
+   1b0d8:	b9401127 	ldr	w7, [x9, #16]
+   1b0dc:	b94a6108 	ldr	w8, [x8, #2656]
+   1b0e0:	b0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1b0e4:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b0e8:	911e4421 	add	x1, x1, #0x791
+   1b0ec:	913b8c42 	add	x2, x2, #0xee3
+   1b0f0:	52800060 	mov	w0, #0x3                   	// #3
+   1b0f4:	b9000be8 	str	w8, [sp, #8]
+   1b0f8:	b90003ea 	str	w10, [sp]
+   1b0fc:	940039f5 	bl	298d0 <__android_log_print@plt>
+   1b100:	f85d03a0 	ldur	x0, [x29, #-48]
+   1b104:	b40004a0 	cbz	x0, 1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1b108:	f81d83a0 	stur	x0, [x29, #-40]
+   1b10c:	94003999 	bl	29770 <operator delete(void*)@plt>
+   1b110:	14000022 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1b114:	f0000080 	adrp	x0, 2e000 <_DYNAMIC+0x1698>
+   1b118:	9126a000 	add	x0, x0, #0x9a8
+   1b11c:	aa1f03e1 	mov	x1, xzr
+   1b120:	9400005a 	bl	1b288 <android::sp<android::Surface>::operator=(android::Surface*)>
+   1b124:	f85f03a0 	ldur	x0, [x29, #-16]
+   1b128:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b12c:	b908c91f 	str	wzr, [x8, #2248]
+   1b130:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b134:	12800009 	mov	w9, #0xffffffff            	// #-1
+   1b138:	b908cd09 	str	w9, [x8, #2252]
+   1b13c:	b4000060 	cbz	x0, 1b148 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xf50>
+   1b140:	d10043a1 	sub	x1, x29, #0x10
+   1b144:	94003adf 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1b148:	f85d03a8 	ldur	x8, [x29, #-48]
+   1b14c:	b4000268 	cbz	x8, 1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1b150:	f9400109 	ldr	x9, [x8]
+   1b154:	d100c3a1 	sub	x1, x29, #0x30
+   1b158:	f85e8129 	ldur	x9, [x9, #-24]
+   1b15c:	8b090100 	add	x0, x8, x9
+   1b160:	94003ad8 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1b164:	1400000d 	b	1b198 <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfa0>
+   1b168:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b16c:	912ab108 	add	x8, x8, #0xaac
+   1b170:	52800029 	mov	w9, #0x1                   	// #1
+   1b174:	b9000109 	str	w9, [x8]
+   1b178:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b17c:	b94aad04 	ldr	w4, [x8, #2732]
+   1b180:	b0ffff81 	adrp	x1, c000 <abitag+0xbd08>
+   1b184:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b188:	911e4421 	add	x1, x1, #0x791
+   1b18c:	912fc042 	add	x2, x2, #0xbf0
+   1b190:	528000c0 	mov	w0, #0x6                   	// #6
+   1b194:	940039cf 	bl	298d0 <__android_log_print@plt>
+   1b198:	f9401708 	ldr	x8, [x24, #40]
+   1b19c:	f85f83a9 	ldur	x9, [x29, #-8]
+   1b1a0:	eb09011f 	cmp	x8, x9
+   1b1a4:	54000141 	b.ne	1b1cc <RenderEngine::onTransact(unsigned int, android::Parcel const&, android::Parcel*, unsigned int)+0xfd4>  // b.any
+   1b1a8:	2a1f03e0 	mov	w0, wzr
+   1b1ac:	a94a4ff4 	ldp	x20, x19, [sp, #160]
+   1b1b0:	a94957f6 	ldp	x22, x21, [sp, #144]
+   1b1b4:	a9485ff8 	ldp	x24, x23, [sp, #128]
+   1b1b8:	a9477bfd 	ldp	x29, x30, [sp, #112]
+   1b1bc:	9102c3ff 	add	sp, sp, #0xb0
+   1b1c0:	d65f03c0 	ret
+   1b1c4:	d100c3a0 	sub	x0, x29, #0x30
+   1b1c8:	94003bb2 	bl	2a090 <std::__1::__vector_base_common<true>::__throw_out_of_range() const@plt>
+   1b1cc:	94003965 	bl	29760 <__stack_chk_fail@plt>
+
+000000000001b1d0 <virtual thunk to RenderEngine::~RenderEngine()>:
+   1b1d0:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   1b1d4:	a9014ff4 	stp	x20, x19, [sp, #16]
+   1b1d8:	910003fd 	mov	x29, sp
+   1b1dc:	f9400008 	ldr	x8, [x0]
+   1b1e0:	90000089 	adrp	x9, 2b000 <__PREINIT_ARRAY__>
+   1b1e4:	91154129 	add	x9, x9, #0x550
+   1b1e8:	f85e8108 	ldur	x8, [x8, #-24]
+   1b1ec:	8b080013 	add	x19, x0, x8
+   1b1f0:	aa1303e0 	mov	x0, x19
+   1b1f4:	91030128 	add	x8, x9, #0xc0
+   1b1f8:	aa1303f4 	mov	x20, x19
+   1b1fc:	f8018409 	str	x9, [x0], #24
+   1b200:	f8020e88 	str	x8, [x20, #32]!
+   1b204:	94003b77 	bl	29fe0 <android::String16::~String16()@plt>
+   1b208:	90000081 	adrp	x1, 2b000 <__PREINIT_ARRAY__>
+   1b20c:	91192021 	add	x1, x1, #0x648
+   1b210:	aa1303e0 	mov	x0, x19
+   1b214:	94003b7b 	bl	2a000 <android::BBinder::~BBinder()@plt>
+   1b218:	aa1403e0 	mov	x0, x20
+   1b21c:	a9414ff4 	ldp	x20, x19, [sp, #16]
+   1b220:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   1b224:	14003b43 	b	29f30 <android::RefBase::~RefBase()@plt>
+
+000000000001b228 <virtual thunk to RenderEngine::~RenderEngine()>:
+   1b228:	a9be7bfd 	stp	x29, x30, [sp, #-32]!
+   1b22c:	a9014ff4 	stp	x20, x19, [sp, #16]
+   1b230:	910003fd 	mov	x29, sp
+   1b234:	f9400008 	ldr	x8, [x0]
+   1b238:	90000089 	adrp	x9, 2b000 <__PREINIT_ARRAY__>
+   1b23c:	91154129 	add	x9, x9, #0x550
+   1b240:	f85e8108 	ldur	x8, [x8, #-24]
+   1b244:	8b080013 	add	x19, x0, x8
+   1b248:	aa1303e0 	mov	x0, x19
+   1b24c:	91030128 	add	x8, x9, #0xc0
+   1b250:	aa1303f4 	mov	x20, x19
+   1b254:	f8018409 	str	x9, [x0], #24
+   1b258:	f8020e88 	str	x8, [x20, #32]!
+   1b25c:	94003b61 	bl	29fe0 <android::String16::~String16()@plt>
+   1b260:	90000081 	adrp	x1, 2b000 <__PREINIT_ARRAY__>
+   1b264:	91192021 	add	x1, x1, #0x648
+   1b268:	aa1303e0 	mov	x0, x19
+   1b26c:	94003b65 	bl	2a000 <android::BBinder::~BBinder()@plt>
+   1b270:	aa1403e0 	mov	x0, x20
+   1b274:	94003b2f 	bl	29f30 <android::RefBase::~RefBase()@plt>
+   1b278:	aa1303e0 	mov	x0, x19
+   1b27c:	a9414ff4 	ldp	x20, x19, [sp, #16]
+   1b280:	a8c27bfd 	ldp	x29, x30, [sp], #32
+   1b284:	1400393b 	b	29770 <operator delete(void*)@plt>
+
+000000000001b288 <android::sp<android::Surface>::operator=(android::Surface*)>:
+   1b288:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   1b28c:	f9000bf5 	str	x21, [sp, #16]
+   1b290:	a9024ff4 	stp	x20, x19, [sp, #32]
+   1b294:	910003fd 	mov	x29, sp
+   1b298:	f9400015 	ldr	x21, [x0]
+   1b29c:	aa0003f3 	mov	x19, x0
+   1b2a0:	aa0103f4 	mov	x20, x1
+   1b2a4:	b4000101 	cbz	x1, 1b2c4 <android::sp<android::Surface>::operator=(android::Surface*)+0x3c>
+   1b2a8:	ca1403a8 	eor	x8, x29, x20
+   1b2ac:	f13ffd1f 	cmp	x8, #0xfff
+   1b2b0:	54000048 	b.hi	1b2b8 <android::sp<android::Surface>::operator=(android::Surface*)+0x30>  // b.pmore
+   1b2b4:	94003ae7 	bl	29e50 <android::sp_report_stack_pointer()@plt>
+   1b2b8:	aa1403e0 	mov	x0, x20
+   1b2bc:	aa1303e1 	mov	x1, x19
+   1b2c0:	94003a7c 	bl	29cb0 <android::RefBase::incStrong(void const*) const@plt>
+   1b2c4:	b4000095 	cbz	x21, 1b2d4 <android::sp<android::Surface>::operator=(android::Surface*)+0x4c>
+   1b2c8:	aa1503e0 	mov	x0, x21
+   1b2cc:	aa1303e1 	mov	x1, x19
+   1b2d0:	94003a7c 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1b2d4:	f9400268 	ldr	x8, [x19]
+   1b2d8:	eb0802bf 	cmp	x21, x8
+   1b2dc:	54000040 	b.eq	1b2e4 <android::sp<android::Surface>::operator=(android::Surface*)+0x5c>  // b.none
+   1b2e0:	94003ac8 	bl	29e00 <android::sp_report_race()@plt>
+   1b2e4:	f9000274 	str	x20, [x19]
+   1b2e8:	aa1303e0 	mov	x0, x19
+   1b2ec:	a9424ff4 	ldp	x20, x19, [sp, #32]
+   1b2f0:	f9400bf5 	ldr	x21, [sp, #16]
+   1b2f4:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1b2f8:	d65f03c0 	ret
+
+000000000001b2fc <android::sp<android::Surface>::operator=(android::sp<android::Surface> const&)>:
+   1b2fc:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   1b300:	f9000bf5 	str	x21, [sp, #16]
+   1b304:	a9024ff4 	stp	x20, x19, [sp, #32]
+   1b308:	910003fd 	mov	x29, sp
+   1b30c:	f9400015 	ldr	x21, [x0]
+   1b310:	f9400034 	ldr	x20, [x1]
+   1b314:	aa0003f3 	mov	x19, x0
+   1b318:	b4000094 	cbz	x20, 1b328 <android::sp<android::Surface>::operator=(android::sp<android::Surface> const&)+0x2c>
+   1b31c:	aa1403e0 	mov	x0, x20
+   1b320:	aa1303e1 	mov	x1, x19
+   1b324:	94003a63 	bl	29cb0 <android::RefBase::incStrong(void const*) const@plt>
+   1b328:	b4000095 	cbz	x21, 1b338 <android::sp<android::Surface>::operator=(android::sp<android::Surface> const&)+0x3c>
+   1b32c:	aa1503e0 	mov	x0, x21
+   1b330:	aa1303e1 	mov	x1, x19
+   1b334:	94003a63 	bl	29cc0 <android::RefBase::decStrong(void const*) const@plt>
+   1b338:	f9400268 	ldr	x8, [x19]
+   1b33c:	eb0802bf 	cmp	x21, x8
+   1b340:	54000040 	b.eq	1b348 <android::sp<android::Surface>::operator=(android::sp<android::Surface> const&)+0x4c>  // b.none
+   1b344:	94003aaf 	bl	29e00 <android::sp_report_race()@plt>
+   1b348:	f9000274 	str	x20, [x19]
+   1b34c:	aa1303e0 	mov	x0, x19
+   1b350:	a9424ff4 	ldp	x20, x19, [sp, #32]
+   1b354:	f9400bf5 	ldr	x21, [sp, #16]
+   1b358:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1b35c:	d65f03c0 	ret
+
+000000000001b360 <_GLOBAL__sub_I_engine_render_server.cpp>:
+   1b360:	a9bf7bfd 	stp	x29, x30, [sp, #-16]!
+   1b364:	910003fd 	mov	x29, sp
+   1b368:	f0000081 	adrp	x1, 2e000 <_DYNAMIC+0x1698>
+   1b36c:	d0ffffe0 	adrp	x0, 19000 <ApaCameraModule::refreshGL()+0x284>
+   1b370:	f0000082 	adrp	x2, 2e000 <_DYNAMIC+0x1698>
+   1b374:	9126a021 	add	x1, x1, #0x9a8
+   1b378:	913cf000 	add	x0, x0, #0xf3c
+   1b37c:	9124a042 	add	x2, x2, #0x928
+   1b380:	f900003f 	str	xzr, [x1]
+   1b384:	94003a23 	bl	29c10 <__cxa_atexit@plt>
+   1b388:	f0ffff80 	adrp	x0, e000 <abitag+0xdd08>
+   1b38c:	912f1800 	add	x0, x0, #0xbc6
+   1b390:	52800021 	mov	w1, #0x1                   	// #1
+   1b394:	9400395f 	bl	29910 <property_get_int32@plt>
+   1b398:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b39c:	b909bd00 	str	w0, [x8, #2492]
+   1b3a0:	90ffffa0 	adrp	x0, f000 <abitag+0xed08>
+   1b3a4:	9103ec00 	add	x0, x0, #0xfb
+   1b3a8:	52800021 	mov	w1, #0x1                   	// #1
+   1b3ac:	94003959 	bl	29910 <property_get_int32@plt>
+   1b3b0:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b3b4:	b909c100 	str	w0, [x8, #2496]
+   1b3b8:	b0ffff80 	adrp	x0, c000 <abitag+0xbd08>
+   1b3bc:	91367000 	add	x0, x0, #0xd9c
+   1b3c0:	52800021 	mov	w1, #0x1                   	// #1
+   1b3c4:	94003953 	bl	29910 <property_get_int32@plt>
+   1b3c8:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b3cc:	b90ab900 	str	w0, [x8, #2744]
+   1b3d0:	a8c17bfd 	ldp	x29, x30, [sp], #16
+   1b3d4:	d65f03c0 	ret
+
+000000000001b3d8 <android::sp<ANativeWindow>::~sp()>:
+   1b3d8:	f9400000 	ldr	x0, [x0]
+   1b3dc:	b4000060 	cbz	x0, 1b3e8 <android::sp<ANativeWindow>::~sp()+0x10>
+   1b3e0:	f9401801 	ldr	x1, [x0, #48]
+   1b3e4:	d61f0020 	br	x1
+   1b3e8:	d65f03c0 	ret
+
+000000000001b3ec <android::Mutex::~Mutex()>:
+   1b3ec:	14003b2d 	b	2a0a0 <pthread_mutex_destroy@plt>
+
+000000000001b3f0 <android::Condition::~Condition()>:
+   1b3f0:	14003b30 	b	2a0b0 <pthread_cond_destroy@plt>
+
+000000000001b3f4 <isPreviewWindowReady()>:
+   1b3f4:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b3f8:	f9472508 	ldr	x8, [x8, #3656]
+   1b3fc:	f9400108 	ldr	x8, [x8]
+   1b400:	f100011f 	cmp	x8, #0x0
+   1b404:	1a9f07e0 	cset	w0, ne	// ne = any
+   1b408:	d65f03c0 	ret
+
+000000000001b40c <setRequestBuffer(int)>:
+   1b40c:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b410:	f9472908 	ldr	x8, [x8, #3664]
+   1b414:	b9000100 	str	w0, [x8]
+   1b418:	d65f03c0 	ret
+
+000000000001b41c <setCameraState(int)>:
+   1b41c:	b0ffffa8 	adrp	x8, 10000 <abitag+0xfd08>
+   1b420:	fd44bd02 	ldr	d2, [x8, #2424]
+   1b424:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b428:	f946f508 	ldr	x8, [x8, #3560]
+   1b42c:	0e040c00 	dup	v0.2s, w0
+   1b430:	2ea0b842 	neg	v2.2s, v2.2s
+   1b434:	0f000421 	movi	v1.2s, #0x1
+   1b438:	2ea24400 	ushl	v0.2s, v0.2s, v2.2s
+   1b43c:	53010409 	ubfx	w9, w0, #1, #1
+   1b440:	1200000a 	and	w10, w0, #0x1
+   1b444:	0e211c00 	and	v0.8b, v0.8b, v1.8b
+   1b448:	fd000100 	str	d0, [x8]
+   1b44c:	29012909 	stp	w9, w10, [x8, #8]
+   1b450:	d65f03c0 	ret
+
+000000000001b454 <ajustSurfaceAvmGraphicBufferFomat()>:
+   1b454:	a9bd7bfd 	stp	x29, x30, [sp, #-48]!
+   1b458:	f9000bf5 	str	x21, [sp, #16]
+   1b45c:	a9024ff4 	stp	x20, x19, [sp, #32]
+   1b460:	910003fd 	mov	x29, sp
+   1b464:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b468:	f9472508 	ldr	x8, [x8, #3656]
+   1b46c:	f9400108 	ldr	x8, [x8]
+   1b470:	b4000208 	cbz	x8, 1b4b0 <ajustSurfaceAvmGraphicBufferFomat()+0x5c>
+   1b474:	f0000095 	adrp	x21, 2e000 <_DYNAMIC+0x1698>
+   1b478:	f94586b4 	ldr	x20, [x21, #2824]
+   1b47c:	f9401d09 	ldr	x9, [x8, #56]
+   1b480:	91004113 	add	x19, x8, #0x10
+   1b484:	aa1303e0 	mov	x0, x19
+   1b488:	d63f0120 	blr	x9
+   1b48c:	b4000094 	cbz	x20, 1b49c <ajustSurfaceAvmGraphicBufferFomat()+0x48>
+   1b490:	f9401a88 	ldr	x8, [x20, #48]
+   1b494:	aa1403e0 	mov	x0, x20
+   1b498:	d63f0100 	blr	x8
+   1b49c:	f94586a8 	ldr	x8, [x21, #2824]
+   1b4a0:	eb08029f 	cmp	x20, x8
+   1b4a4:	54000040 	b.eq	1b4ac <ajustSurfaceAvmGraphicBufferFomat()+0x58>  // b.none
+   1b4a8:	94003a56 	bl	29e00 <android::sp_report_race()@plt>
+   1b4ac:	f90586b3 	str	x19, [x21, #2824]
+   1b4b0:	a9424ff4 	ldp	x20, x19, [sp, #32]
+   1b4b4:	f9400bf5 	ldr	x21, [sp, #16]
+   1b4b8:	a8c37bfd 	ldp	x29, x30, [sp], #48
+   1b4bc:	d65f03c0 	ret
+
+000000000001b4c0 <camera_video_stream_refresh(AvmSdk*, EvsParameters&, int)>:
+   1b4c0:	fc190fe8 	str	d8, [sp, #-112]!
+   1b4c4:	a9017bfd 	stp	x29, x30, [sp, #16]
+   1b4c8:	a9026ffc 	stp	x28, x27, [sp, #32]
+   1b4cc:	a90367fa 	stp	x26, x25, [sp, #48]
+   1b4d0:	a9045ff8 	stp	x24, x23, [sp, #64]
+   1b4d4:	a90557f6 	stp	x22, x21, [sp, #80]
+   1b4d8:	a9064ff4 	stp	x20, x19, [sp, #96]
+   1b4dc:	910003fd 	mov	x29, sp
+   1b4e0:	f000009c 	adrp	x28, 2e000 <_DYNAMIC+0x1698>
+   1b4e4:	b94acb88 	ldr	w8, [x28, #2760]
+   1b4e8:	aa0003f9 	mov	x25, x0
+   1b4ec:	52800020 	mov	w0, #0x1                   	// #1
+   1b4f0:	2a0203f6 	mov	w22, w2
+   1b4f4:	11000508 	add	w8, w8, #0x1
+   1b4f8:	aa0103f8 	mov	x24, x1
+   1b4fc:	b90acb88 	str	w8, [x28, #2760]
+   1b500:	94003af0 	bl	2a0c0 <systemTime@plt>
+   1b504:	aa0003f5 	mov	x21, x0
+   1b508:	52800020 	mov	w0, #0x1                   	// #1
+   1b50c:	94003aed 	bl	2a0c0 <systemTime@plt>
+   1b510:	f90007a0 	str	x0, [x29, #8]
+   1b514:	52800020 	mov	w0, #0x1                   	// #1
+   1b518:	94003aea 	bl	2a0c0 <systemTime@plt>
+   1b51c:	aa0003f4 	mov	x20, x0
+   1b520:	52800020 	mov	w0, #0x1                   	// #1
+   1b524:	94003ae7 	bl	2a0c0 <systemTime@plt>
+   1b528:	aa0003f7 	mov	x23, x0
+   1b52c:	52800020 	mov	w0, #0x1                   	// #1
+   1b530:	94003ae4 	bl	2a0c0 <systemTime@plt>
+   1b534:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b538:	f9472508 	ldr	x8, [x8, #3656]
+   1b53c:	aa0003fa 	mov	x26, x0
+   1b540:	f9400108 	ldr	x8, [x8]
+   1b544:	b4000228 	cbz	x8, 1b588 <camera_video_stream_refresh(AvmSdk*, EvsParameters&, int)+0xc8>
+   1b548:	f0000093 	adrp	x19, 2e000 <_DYNAMIC+0x1698>
+   1b54c:	f945867c 	ldr	x28, [x19, #2824]
+   1b550:	f9401d09 	ldr	x9, [x8, #56]
+   1b554:	9100411b 	add	x27, x8, #0x10
+   1b558:	aa1b03e0 	mov	x0, x27
+   1b55c:	d63f0120 	blr	x9
+   1b560:	b400009c 	cbz	x28, 1b570 <camera_video_stream_refresh(AvmSdk*, EvsParameters&, int)+0xb0>
+   1b564:	f9401b88 	ldr	x8, [x28, #48]
+   1b568:	aa1c03e0 	mov	x0, x28
+   1b56c:	d63f0100 	blr	x8
+   1b570:	f9458668 	ldr	x8, [x19, #2824]
+   1b574:	eb08039f 	cmp	x28, x8
+   1b578:	54000040 	b.eq	1b580 <camera_video_stream_refresh(AvmSdk*, EvsParameters&, int)+0xc0>  // b.none
+   1b57c:	94003a21 	bl	29e00 <android::sp_report_race()@plt>
+   1b580:	f000009c 	adrp	x28, 2e000 <_DYNAMIC+0x1698>
+   1b584:	f905867b 	str	x27, [x19, #2824]
+   1b588:	52800020 	mov	w0, #0x1                   	// #1
+   1b58c:	94003acd 	bl	2a0c0 <systemTime@plt>
+   1b590:	aa0003fb 	mov	x27, x0
+   1b594:	aa1903e0 	mov	x0, x25
+   1b598:	aa1803e1 	mov	x1, x24
+   1b59c:	2a1603e2 	mov	w2, w22
+   1b5a0:	9400074c 	bl	1d2d0 <renderAVMVideoAndLineFBOBuffer(AvmSdk*, EvsParameters&, int)>
+   1b5a4:	52800020 	mov	w0, #0x1                   	// #1
+   1b5a8:	94003ac6 	bl	2a0c0 <systemTime@plt>
+   1b5ac:	aa0003f6 	mov	x22, x0
+   1b5b0:	52800020 	mov	w0, #0x1                   	// #1
+   1b5b4:	94003ac3 	bl	2a0c0 <systemTime@plt>
+   1b5b8:	b94acb88 	ldr	w8, [x28, #2760]
+   1b5bc:	7103211f 	cmp	w8, #0xc8
+   1b5c0:	540011ab 	b.lt	1b7f4 <camera_video_stream_refresh(AvmSdk*, EvsParameters&, int)+0x334>  // b.tstop
+   1b5c4:	f94007ab 	ldr	x11, [x29, #8]
+   1b5c8:	d29ef9f3 	mov	x19, #0xf7cf                	// #63439
+   1b5cc:	f2bc6a73 	movk	x19, #0xe353, lsl #16
+   1b5d0:	f2d374b3 	movk	x19, #0x9ba5, lsl #32
+   1b5d4:	cb150008 	sub	x8, x0, x21
+   1b5d8:	f2e41893 	movk	x19, #0x20c4, lsl #48
+   1b5dc:	cb1b02c9 	sub	x9, x22, x27
+   1b5e0:	cb17034a 	sub	x10, x26, x23
+   1b5e4:	cb0b028b 	sub	x11, x20, x11
+   1b5e8:	9b537d08 	smulh	x8, x8, x19
+   1b5ec:	9b537d29 	smulh	x9, x9, x19
+   1b5f0:	9b537d4a 	smulh	x10, x10, x19
+   1b5f4:	9b537d6b 	smulh	x11, x11, x19
+   1b5f8:	9347fd0c 	asr	x12, x8, #7
+   1b5fc:	9347fd2d 	asr	x13, x9, #7
+   1b600:	9347fd4e 	asr	x14, x10, #7
+   1b604:	9347fd6f 	asr	x15, x11, #7
+   1b608:	52800020 	mov	w0, #0x1                   	// #1
+   1b60c:	8b48fd96 	add	x22, x12, x8, lsr #63
+   1b610:	8b49fdb5 	add	x21, x13, x9, lsr #63
+   1b614:	8b4afdd7 	add	x23, x14, x10, lsr #63
+   1b618:	8b4bfdf8 	add	x24, x15, x11, lsr #63
+   1b61c:	94003aa9 	bl	2a0c0 <systemTime@plt>
+   1b620:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b624:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1b628:	f9057100 	str	x0, [x8, #2784]
+   1b62c:	f9456d28 	ldr	x8, [x9, #2776]
+   1b630:	bd4acb80 	ldr	s0, [x28, #2760]
+   1b634:	f9056d20 	str	x0, [x9, #2776]
+   1b638:	f0000089 	adrp	x9, 2e000 <_DYNAMIC+0x1698>
+   1b63c:	cb080008 	sub	x8, x0, x8
+   1b640:	9b537d08 	smulh	x8, x8, x19
+   1b644:	9347fd0a 	asr	x10, x8, #7
+   1b648:	8b48fd48 	add	x8, x10, x8, lsr #63
+   1b64c:	5e21d800 	scvtf	s0, s0
+   1b650:	f9057528 	str	x8, [x9, #2792]
+   1b654:	9e220101 	scvtf	s1, x8
+   1b658:	52a88f48 	mov	w8, #0x447a0000            	// #1148846080
+   1b65c:	b0ffff94 	adrp	x20, c000 <abitag+0xbd08>
+   1b660:	b0ffff93 	adrp	x19, c000 <abitag+0xbd08>
+   1b664:	1e211800 	fdiv	s0, s0, s1
+   1b668:	1e270101 	fmov	s1, w8
+   1b66c:	911e4694 	add	x20, x20, #0x791
+   1b670:	91180273 	add	x19, x19, #0x600
+   1b674:	1e210800 	fmul	s0, s0, s1
+   1b678:	528000c0 	mov	w0, #0x6                   	// #6
+   1b67c:	aa1403e1 	mov	x1, x20
+   1b680:	aa1303e2 	mov	x2, x19
+   1b684:	1e210808 	fmul	s8, s0, s1
+   1b688:	94003892 	bl	298d0 <__android_log_print@plt>
+   1b68c:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b690:	91121042 	add	x2, x2, #0x484
+   1b694:	528000c0 	mov	w0, #0x6                   	// #6
+   1b698:	aa1403e1 	mov	x1, x20
+   1b69c:	9400388d 	bl	298d0 <__android_log_print@plt>
+   1b6a0:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1b6a4:	1e22c100 	fcvt	d0, s8
+   1b6a8:	9131e842 	add	x2, x2, #0xc7a
+   1b6ac:	528000c0 	mov	w0, #0x6                   	// #6
+   1b6b0:	aa1403e1 	mov	x1, x20
+   1b6b4:	aa1603e3 	mov	x3, x22
+   1b6b8:	94003886 	bl	298d0 <__android_log_print@plt>
+   1b6bc:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b6c0:	91310c42 	add	x2, x2, #0xc43
+   1b6c4:	528000c0 	mov	w0, #0x6                   	// #6
+   1b6c8:	aa1403e1 	mov	x1, x20
+   1b6cc:	aa1803e3 	mov	x3, x24
+   1b6d0:	94003880 	bl	298d0 <__android_log_print@plt>
+   1b6d4:	f0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1b6d8:	9133bc42 	add	x2, x2, #0xcef
+   1b6dc:	528000c0 	mov	w0, #0x6                   	// #6
+   1b6e0:	aa1403e1 	mov	x1, x20
+   1b6e4:	aa1703e3 	mov	x3, x23
+   1b6e8:	9400387a 	bl	298d0 <__android_log_print@plt>
+   1b6ec:	d0ffff82 	adrp	x2, d000 <abitag+0xcd08>
+   1b6f0:	91240842 	add	x2, x2, #0x902
+   1b6f4:	528000c0 	mov	w0, #0x6                   	// #6
+   1b6f8:	aa1403e1 	mov	x1, x20
+   1b6fc:	aa1503e3 	mov	x3, x21
+   1b700:	94003874 	bl	298d0 <__android_log_print@plt>
+   1b704:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b708:	f9472d08 	ldr	x8, [x8, #3672]
+   1b70c:	b0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1b710:	91270442 	add	x2, x2, #0x9c1
+   1b714:	528000c0 	mov	w0, #0x6                   	// #6
+   1b718:	f9400103 	ldr	x3, [x8]
+   1b71c:	aa1403e1 	mov	x1, x20
+   1b720:	9400386c 	bl	298d0 <__android_log_print@plt>
+   1b724:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b728:	f9473108 	ldr	x8, [x8, #3680]
+   1b72c:	f0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1b730:	91099842 	add	x2, x2, #0x266
+   1b734:	528000c0 	mov	w0, #0x6                   	// #6
+   1b738:	f9400103 	ldr	x3, [x8]
+   1b73c:	aa1403e1 	mov	x1, x20
+   1b740:	94003864 	bl	298d0 <__android_log_print@plt>
+   1b744:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b748:	f9473508 	ldr	x8, [x8, #3688]
+   1b74c:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b750:	910ba842 	add	x2, x2, #0x2ea
+   1b754:	528000c0 	mov	w0, #0x6                   	// #6
+   1b758:	f9400103 	ldr	x3, [x8]
+   1b75c:	aa1403e1 	mov	x1, x20
+   1b760:	9400385c 	bl	298d0 <__android_log_print@plt>
+   1b764:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b768:	f9473908 	ldr	x8, [x8, #3696]
+   1b76c:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b770:	91212042 	add	x2, x2, #0x848
+   1b774:	528000c0 	mov	w0, #0x6                   	// #6
+   1b778:	f9400103 	ldr	x3, [x8]
+   1b77c:	aa1403e1 	mov	x1, x20
+   1b780:	94003854 	bl	298d0 <__android_log_print@plt>
+   1b784:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b788:	f9473d08 	ldr	x8, [x8, #3704]
+   1b78c:	f0ffff82 	adrp	x2, e000 <abitag+0xdd08>
+   1b790:	9134b442 	add	x2, x2, #0xd2d
+   1b794:	528000c0 	mov	w0, #0x6                   	// #6
+   1b798:	f9400103 	ldr	x3, [x8]
+   1b79c:	aa1403e1 	mov	x1, x20
+   1b7a0:	9400384c 	bl	298d0 <__android_log_print@plt>
+   1b7a4:	b0000088 	adrp	x8, 2c000 <_mxml_entity_cb.entities+0x6d8>
+   1b7a8:	f9474108 	ldr	x8, [x8, #3712]
+   1b7ac:	b0ffff82 	adrp	x2, c000 <abitag+0xbd08>
+   1b7b0:	913eb842 	add	x2, x2, #0xfae
+   1b7b4:	528000c0 	mov	w0, #0x6                   	// #6
+   1b7b8:	f9400103 	ldr	x3, [x8]
+   1b7bc:	aa1403e1 	mov	x1, x20
+   1b7c0:	94003844 	bl	298d0 <__android_log_print@plt>
+   1b7c4:	f0000088 	adrp	x8, 2e000 <_DYNAMIC+0x1698>
+   1b7c8:	b94ad103 	ldr	w3, [x8, #2768]
+   1b7cc:	90ffffa2 	adrp	x2, f000 <abitag+0xed08>
+   1b7d0:	91132842 	add	x2, x2, #0x4ca
+   1b7d4:	528000c0 	mov	w0, #0x6                   	// #6
+   1b7d8:	aa1403e1 	mov	x1, x20
+   1b7dc:	9400383d 	bl	298d0 <__android_log_print@plt>
+   1b7e0:	528000c0 	mov	w0, #0x6                   	// #6
+   1b7e4:	aa1403e1 	mov	x1, x20
+   1b7e8:	aa1303e2 	mov	x2, x19
+   1b7ec:	94003839 	bl	298d0 <__android_log_print@plt>
+   1b7f0:	b90acb9f 	str	wzr, [x28, #2760]
+   1b7f4:	a9464ff4 	ldp	x20, x19, [sp, #96]
+   1b7f8:	a94557f6 	ldp	x22, x21, [sp, #80]
+   1b7fc:	a9445ff8 	ldp	x24, x23, [sp, #64]
+   1b800:	a94367fa 	ldp	x26, x25, [sp, #48]
+   1b804:	a9426ffc 	ldp	x28, x27, [sp, #32]
+   1b808:	a9417bfd 	ldp	x29, x30, [sp, #16]
+   1b80c:	52800020 	mov	w0, #0x1                   	// #1
+   1b810:	fc4707e8 	ldr	d8, [sp], #112
+   1b814:	d65f03c0 	ret
