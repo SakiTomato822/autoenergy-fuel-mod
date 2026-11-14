@@ -1,0 +1,2 @@
+PASS: proxy dispatch, close and ABI checks
+PASS: 60 retries then bounded failure

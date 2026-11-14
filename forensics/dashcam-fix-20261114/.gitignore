@@ -1,0 +1,8 @@
+out/
+tools/*.jar
+evidence/boot-v2-1409.txt
+evidence/apa-first-frame.raw*
+smali-original/
+smali-helper/
+*.p12
+*.pass

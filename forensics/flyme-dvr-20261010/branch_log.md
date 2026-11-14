@@ -300,3 +300,16 @@
 - 同份日志出现 avm→apa 请求，底层随后尝试不存在的 /dev/video6cif 并启动失败；未闭合全部扩展控制时序，不造设备别名、不重新注入复现。
 - 用户恢复后曾见 EVS restarting；新一次开机后服务稳定PID347、default注册、打开video12cif、无代理及daemon。未由此替代360实际画面确认。未捕获重启循环的直接linker错误，不把init环境缓存写成实证根因。
 - 证据 RESULT_20261114.md 与 raw/dashcam-viewer-20261114/；报告列逐项重查条件。只有新版本、作者源码/写入时序、相机ID隔离修复或可关联错误日志才重查；相同库/状态不重复扫描。
+
+## B32：第三方APK修改实验与实际帧不匹配（2026-11-14 13:00～14:15）
+- 未知：修复安装器/对象隔离/启动重试后是否能实际录制。用户要求提取本地APK修改，并明确停车后开展本地实验；此为B31之后的新阶段。
+- 本地修复安装器改为临时文件+hash+原子替换并保留原厂rc；隔离选定相机与其他ID。初版重试强引用有缺陷产生tombstone48，已纠正并用独立AArch64测试验证。init能力缺少DAC_OVERRIDE导致内置目录Permission denied的另一故障已在v2确认并修正；不是所有故障皆由缺外置存储导致。
+- 新整机开机v2读取apa→video12cif1920×896，StreamHub持续25fps；daemon四文件0byte。Sink入口只读观察3帧并mmap1帧，确认真实尺寸、format20/YUYV，画面是完整360合成UI。daemon 0x19d38/44只接收1280×3200，不符便归还丢弃。合成输入沿用历史事实；新增是实帧与此daemon过滤条件的直接对应，不能称四路录像进展。
+- v3回归avm/video6cif，在写系统前拒绝无video6cif设备和sysfs注册的环境。14:15原子恢复原厂开机rc，仅停止实验recorder，不停止运行EVS/360进程。当前映射库保留，下次正常整机启动退出注入。
+- 证据 ../dashcam-fix-20261114/RESULT.md、src、evidence。重查：真正匹配原始流、新布局适配/作者源码或新失败信息；不循环重装、读空文件或启动相同失败链。
+
+## B33：新启动日志解释v6相关链路被禁用（2026-11-14）
+- 未知：历史B8 disabled来自预置DT、启动选择，还是漏probe/权限问题。此前启动日志缺失，本次新开机记录符合重查条件；只分析已保存日志，不改引导/配置。
+- SBL实际记录AVM_data0x83/HW_data0x15，选择HW1.5 OUT_SIDE_AVM，主动将/i2c@E95E0000和/camera/csi@e8050000的okay改为disabled。结合B8 MAX96722父/CSI2映射，解释当前原始输入候选链未启用。不是root权限不足导致漏扫；不证明芯片未实装。
+- 旧MAX helper需配置byte&6为4/6；若启动0x83为同一字节，则&6=2不满足，作为静态支持，未读共享物理内存/寄存器。没有触碰车辆控制、I2C、GPIO或设备树写入。
+- 证据 ../dashcam-fix-20261114/evidence/boot-v2-selected.txt 和既有runtime-video-dt.jsonl/kernel-video-config-annotated.txt。下一最小证据为作者成功车型/硬件方案或同硬件video6成功记录；重查条件为硬件/引导配置/版本变化或这种新正证据。

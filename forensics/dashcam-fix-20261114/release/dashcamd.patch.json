@@ -1,0 +1,17 @@
+{
+  "name": "dashcamd",
+  "originalSha256": "64696d87575eec127b717cd98a03a746b1ad83a2d82acad361126470d2911abf",
+  "patchedSha256": "cdd6600c65ddf795a6440241fc89572093e32ee950c39163415b9419a0034ef8",
+  "insert": 100832,
+  "cave": 117216,
+  "amount": 16384,
+  "extraBss": 16,
+  "changes": [
+    {
+      "address": "0xc1ac",
+      "oldword": "0x52800093",
+      "target": "0x1c9e0",
+      "label": "patch_retry"
+    }
+  ]
+}

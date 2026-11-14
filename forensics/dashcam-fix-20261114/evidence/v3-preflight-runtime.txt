@@ -1,0 +1,9 @@
+Sat Nov 14 14:17:32 CST 2026
+66cc3b5c3d8bb5c0cb5daab25963e1792cf013e014c6de250af1d2b2fa977b93  /vendor/etc/init/android.hardware.automotive.evs@1.0-service.rc
+470503b3defbfd39632abce0d96f93b113b62589fbbe92373bc0695bff652dec  /vendor/lib64/libevsproxy_preload.so
+55857d713192256a8c259b57ae3285fe98112dbd69d0fe0622b0ceb765bbe52a  /vendor/bin/dashcamd
+--------- beginning of main
+11-14 14:17:38.210 28840 29737 W DashCamLocalFix: compatibility rejected: video6cif device and sysfs registration required; no system writes
+66cc3b5c3d8bb5c0cb5daab25963e1792cf013e014c6de250af1d2b2fa977b93  /vendor/etc/init/android.hardware.automotive.evs@1.0-service.rc
+470503b3defbfd39632abce0d96f93b113b62589fbbe92373bc0695bff652dec  /vendor/lib64/libevsproxy_preload.so
+55857d713192256a8c259b57ae3285fe98112dbd69d0fe0622b0ceb765bbe52a  /vendor/bin/dashcamd

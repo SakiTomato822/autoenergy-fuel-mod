@@ -1,0 +1,101 @@
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+{
+  name: 'libevsproxy_preload.so',
+  originalSha256: '86b81f73c692ebc0d3dee2ab48ca625093f2d83d8d4c05fab3d949e6680be7b0',
+  patchedSha256: '952c80382152d5441b4d9abbd54768444bb447528bb0c74718204f297e778c7f',
+  insert: 95488,
+  cave: 111872,
+  amount: 16384,
+  extraBss: 0,
+  changes: [
+    {
+      address: '0x168e0',
+      oldword: '0xd10383ff',
+      target: '0x1b500',
+      label: 'patch_open'
+    },
+    {
+      address: '0x16eac',
+      oldword: '0xd10143ff',
+      target: '0x1b558',
+      label: 'patch_close'
+    }
+  ]
+}
+{
+  name: 'dashcamd',
+  originalSha256: '64696d87575eec127b717cd98a03a746b1ad83a2d82acad361126470d2911abf',
+  patchedSha256: 'cdd6600c65ddf795a6440241fc89572093e32ee950c39163415b9419a0034ef8',
+  insert: 100832,
+  cave: 117216,
+  amount: 16384,
+  extraBss: 16,
+  changes: [
+    {
+      address: '0xc1ac',
+      oldword: '0x52800093',
+      target: '0x1c9e0',
+      label: 'patch_retry'
+    }
+  ]
+}
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+warning: [options] bootstrap class path not set in conjunction with -source 8
+1 warning
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+Verifies
+Verified using v1 scheme (JAR signing): false
+Verified using v2 scheme (APK Signature Scheme v2): true
+Verified using v3 scheme (APK Signature Scheme v3): true
+Verified using v3.1 scheme (APK Signature Scheme v3.1): false
+Verified using v4 scheme (APK Signature Scheme v4): false
+Verified for SourceStamp: false
+Number of signers: 1
+Signer #1 certificate DN: CN=DashCam Local Fix, OU=Local Experiment, O=Local Build, C=CN
+Signer #1 certificate SHA-256 digest: 9f803b1563f2043ff43f2b0a1ced8bca7201f9d2690e1671ea9b40de60125956
+Signer #1 certificate SHA-1 digest: 3ef20e9635a44f06348622d70c99cf8d405aa9a7
+Signer #1 certificate MD5 digest: 62c0ed2429d353655d6c8c469d7f8fe8
+Signer #1 key algorithm: RSA
+Signer #1 key size (bits): 3072
+Signer #1 public key SHA-256 digest: 261ac99fd92e53a2018329c199054fbad11b6c6c632d9dc0e0a27f1cea3ea5b2
+Signer #1 public key SHA-1 digest: abaf995c04bd4c6236e16af8bf3c58df8244e71b
+Signer #1 public key MD5 digest: ebfb1adc565a395dcf00dd4a060e4be5
+WARNING: linker: Warning: "/data/data/com.termux/files/usr/lib/node_modules/@mmmbuto/codex-cli-termux/bin/libc++_shared.so" unused DT entry: unknown processor-specific (type 0x70000001 arg 0x0) (ignoring)
+package: name='com.dashcam.fixv11' versionCode='5' versionName='1.1-localfix3' platformBuildVersionName='16' platformBuildVersionCode='36' compileSdkVersion='36' compileSdkVersionCodename='16'
+minSdkVersion:'26'
+targetSdkVersion:'29'
+uses-permission: name='android.permission.READ_EXTERNAL_STORAGE'
+uses-permission: name='android.permission.WRITE_EXTERNAL_STORAGE'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.SYSTEM_ALERT_WINDOW'
+uses-permission: name='android.permission.FOREGROUND_SERVICE'
+uses-permission: name='android.permission.RECEIVE_BOOT_COMPLETED'
+application-label:'四路记录仪·兼容检查'
+application-icon-160:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-240:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-320:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-480:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-640:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-65534:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application-icon-65535:'res/mipmap-anydpi-v26/ic_launcher.xml'
+application: label='四路记录仪·兼容检查' icon='res/mipmap-anydpi-v26/ic_launcher.xml'
+launchable-activity: name='com.dashcam.viewer.MainActivity'  label='' icon=''
+feature-group: label=''
+  uses-feature: name='android.hardware.faketouch'
+  uses-implied-feature: name='android.hardware.faketouch' reason='default feature for all apps'
+  uses-feature: name='android.hardware.screen.landscape'
+  uses-implied-feature: name='android.hardware.screen.landscape' reason='one or more activities have specified a landscape orientation'
+main
+other-activities
+other-receivers
+other-services
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--'
+densities: '160' '240' '320' '480' '640' '65534' '65535'

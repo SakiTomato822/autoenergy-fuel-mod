@@ -1,0 +1,6 @@
+Starting: Intent { cmp=com.ecarx.parking/.MainAvmActivity }
+Status: ok
+LaunchState: UNKNOWN (-1)
+Activity: com.geely.map/com.ecarx.navi.MainActivity
+WaitTime: 110
+Complete

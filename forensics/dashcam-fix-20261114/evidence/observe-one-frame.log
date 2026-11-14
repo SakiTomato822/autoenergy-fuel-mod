@@ -1,0 +1,10 @@
+BufferDesc words=[1920,896,1920,0,20,0,8128,1984252218] handle=0xef46d687d0f8
+native_handle numFds=1 numInts=0 data=[79]
+read-only mmap=0xef4417238000 length=3440640
+ONE_FRAME_SAVED
+BufferDesc words=[1920,896,1920,0,20,0,8129,1984252218] handle=0xef46d687d0f8
+native_handle numFds=1 numInts=0 data=[79]
+BufferDesc words=[1920,896,1920,0,20,0,8130,1984252218] handle=0xef46d687d0f8
+native_handle numFds=1 numInts=0 data=[79]
+OBSERVATION_COMPLETE
+OBSERVATION_TIMEOUT_DETACHED

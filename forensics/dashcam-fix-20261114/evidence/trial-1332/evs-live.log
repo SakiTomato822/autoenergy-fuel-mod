@@ -1,0 +1,58 @@
+--------- beginning of main
+11-14 13:32:38.473 22593 22593 I android.hardware.automotive.evs@1.0-service: evswrap: wrapping EVS enumerator, registering as 'default'
+11-14 13:32:38.475 22593 22593 I HidlServiceManagement: Registered android.hardware.automotive.evs@1.0::IEvsEnumerator/default
+11-14 13:32:38.475 22593 22593 I HidlServiceManagement: Removing namespace from process name android.hardware.automotive.evs@1.0-service to evs@1.0-service.
+11-14 13:32:38.475 22593 22593 I android.hardware.automotive.evs@1.0-service: evswrap: registered proxy as 'default' (wrapped=1)
+11-14 13:32:38.476 22593 22593 I android.hardware.automotive.evs@1.0-service: evswrap: spawned recorder (pid 22599)
+11-14 13:32:38.522 22593 22597 I android.hardware.automotive.evs@1.0-service: DirectBackend: openCamera('apa') -> 0xb400e6ecdb06d7f0
+11-14 13:32:38.523 22593 22597 I android.hardware.automotive.evs@1.0-service: CameraSession: backend camera opened (apa)
+11-14 13:32:38.523 22593 22597 I android.hardware.automotive.evs@1.0-service: ProxyEnumerator: openCamera(apa) -> proxy
+11-14 13:32:38.606 22593 22597 I android.hardware.automotive.evs@1.0-service: StreamHub: client added, total=1
+11-14 13:32:38.607 22593 22597 W V4L2Camera: [getSupportedFormats 496] Camera[0]Find really format:UYVY,width:1920,height:896
+11-14 13:32:38.607 22593 22597 W V4L2Camera: [setCaptureParams 528] Camera[0]VIDIOC_G_FMT size= 1920*896 successfully!
+11-14 13:32:38.607 22593 22597 E ion     : ioctl c0044901 failed with code -1: Inappropriate ioctl for device
+11-14 13:32:38.634 22593 22597 E android.hardware.automotive.evs@1.0-service: EVS_HAL: startVideoStream ret 0
+11-14 13:32:38.634 22593 22627 I android.hardware.automotive.evs@1.0-service: streamLoop ++
+11-14 13:32:38.634 22593 22597 E android.hardware.automotive.evs@1.0-service: EVS_HAL: EvsCamera::startVideoStream exit
+11-14 13:32:38.634 22593 22597 I android.hardware.automotive.evs@1.0-service: CameraSession: stream started (apa)
+11-14 13:32:38.634 22593 22597 I android.hardware.automotive.evs@1.0-service: ProxyCamera[apa]: startVideoStream, clients=1
+11-14 13:32:40.634 22593 22601 E V4L2Camera: [waitCameraReady 447] Camera[0]wait buffer timeout,freebufcnt=6
+11-14 13:32:42.523 22593 22600 W android.hardware.automotive.evs@1.0-service: CameraSession: watchdog restarting stalled stream
+11-14 13:32:42.523 22593 22600 W android.hardware.automotive.evs@1.0-service: CameraSession: no frames for 3889ms, restarting backend stream
+11-14 13:32:42.523 22593 22600 W V4L2Camera: [stopDevice 301] Camera[0]wait until capture thread pause or exit
+11-14 13:32:42.634 22593 22601 E V4L2Camera: [waitCameraReady 447] Camera[0]wait buffer timeout,freebufcnt=6
+11-14 13:32:42.634 22593 22601 W V4L2Camera: [captureThread 163] Camera[0]should stop capture now
+11-14 13:32:42.650 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:42.650 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:42.650 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:42.650 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:42.650 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:42.650 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:42.662 22593 22627 I android.hardware.automotive.evs@1.0-service: streamLoop --
+11-14 13:32:42.662 22593 22623 I android.hardware.automotive.evs@1.0-service: StreamHub: broadcast #1 clients=1 drops=0
+11-14 13:32:42.662 22593 22600 W V4L2Camera: [getSupportedFormats 496] Camera[0]Find really format:UYVY,width:1920,height:896
+11-14 13:32:42.662 22593 22600 W V4L2Camera: [setCaptureParams 528] Camera[0]VIDIOC_G_FMT size= 1920*896 successfully!
+11-14 13:32:42.696 22593 22600 E android.hardware.automotive.evs@1.0-service: EVS_HAL: startVideoStream ret 0
+11-14 13:32:42.696 22593 22721 I android.hardware.automotive.evs@1.0-service: streamLoop ++
+11-14 13:32:42.696 22593 22600 E android.hardware.automotive.evs@1.0-service: EVS_HAL: EvsCamera::startVideoStream exit
+11-14 13:32:42.696 22593 22600 I android.hardware.automotive.evs@1.0-service: CameraSession: stream started (apa)
+11-14 13:32:44.696 22593 22601 E V4L2Camera: [waitCameraReady 447] Camera[0]wait buffer timeout,freebufcnt=6
+11-14 13:32:46.696 22593 22601 E V4L2Camera: [waitCameraReady 447] Camera[0]wait buffer timeout,freebufcnt=6
+11-14 13:32:46.697 22593 22600 W android.hardware.automotive.evs@1.0-service: CameraSession: watchdog restarting stalled stream
+11-14 13:32:46.697 22593 22600 W android.hardware.automotive.evs@1.0-service: CameraSession: no frames for 4000ms, restarting backend stream
+11-14 13:32:46.697 22593 22600 W V4L2Camera: [stopDevice 301] Camera[0]wait until capture thread pause or exit
+11-14 13:32:48.696 22593 22601 E V4L2Camera: [waitCameraReady 447] Camera[0]wait buffer timeout,freebufcnt=6
+11-14 13:32:48.696 22593 22601 W V4L2Camera: [captureThread 163] Camera[0]should stop capture now
+11-14 13:32:48.713 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:48.713 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:48.713 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:48.713 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:48.713 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:48.713 22593 22600 E ion     : ioctl c0044901 failed with code -1: Bad file descriptor
+11-14 13:32:48.724 22593 22721 I android.hardware.automotive.evs@1.0-service: streamLoop --
+11-14 13:32:48.725 22593 22600 W V4L2Camera: [getSupportedFormats 496] Camera[0]Find really format:UYVY,width:1920,height:896
+11-14 13:32:48.725 22593 22600 W V4L2Camera: [setCaptureParams 528] Camera[0]VIDIOC_G_FMT size= 1920*896 successfully!
+11-14 13:32:48.754 22593 22600 E android.hardware.automotive.evs@1.0-service: EVS_HAL: startVideoStream ret 0
+11-14 13:32:48.754 22593 22857 I android.hardware.automotive.evs@1.0-service: streamLoop ++
+11-14 13:32:48.754 22593 22600 E android.hardware.automotive.evs@1.0-service: EVS_HAL: EvsCamera::startVideoStream exit
+11-14 13:32:48.754 22593 22600 I android.hardware.automotive.evs@1.0-service: CameraSession: stream started (apa)

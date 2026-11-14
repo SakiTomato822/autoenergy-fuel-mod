@@ -1,0 +1,60 @@
+Sat Nov 14 14:09:16 CST 2026
+257.45 797.63
+470503b3defbfd39632abce0d96f93b113b62589fbbe92373bc0695bff652dec  /vendor/lib64/libevsproxy_preload.so
+55857d713192256a8c259b57ae3285fe98112dbd69d0fe0622b0ceb765bbe52a  /vendor/bin/dashcamd
+service vendor.evs-hal-mock /vendor/bin/hw/android.hardware.automotive.evs@1.0-service
+    setenv LD_PRELOAD /vendor/lib64/libevsproxy_preload.so
+    class hal
+    priority -20
+    user root
+    group root sdcard_rw
+	capabilities BLOCK_SUSPEND SYS_NICE DAC_OVERRIDE
+	ioprio rt 4
+	task_profiles ProcessCapacityHigh HighPerformanc
+
+
+
+State:	S (sleeping)
+CapInh:	0000001000800002
+CapPrm:	0000001000800002
+CapEff:	0000001000800002
+CapBnd:	0000001000800002
+CapAmb:	0000001000800002
+/proc/368/fd/8 0
+/proc/368/fd/13 0
+/proc/368/fd/14 0
+/proc/368/fd/27 0
+rchar: 628477
+wchar: 4525
+syscr: 18242
+syscw: 56
+read_bytes: 7208960
+write_bytes: 32768
+cancelled_write_bytes: 0
+DM,FC    Y android.hardware.automotive.evs@1.0::IEvsEnumerator/default                       0/3        348    345 368 263
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:bx11_choose_i2c_func:125, start!!!
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:is_match_config_read_from_veh:56, Get veh, AVM_data:0x83, HW_data:0x15
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:bx11_choose_i2c_func:128, Match HW 1.5 and OUT_SIDE_AVM Found, Use i2c-31 Config
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:modify_node_value:99, /i2c@E95E0000 original status: okay
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:modify_node_value:114, /i2c@E95E0000 new status: disabled
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:modify_node_value:99, /camera/csi@e8050000 original status: okay
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:modify_node_value:114, /camera/csi@e8050000 new status: disabled
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:modify_node_value:99, /i2c@gpio_i2c_mfi original status: disabled
+01-01 08:00:02.917   404   404 I sbl     : BX11-I2C:modify_node_value:114, /i2c@gpio_i2c_mfi new status: okay
+01-01 08:00:02.773   368   368 I dashcamd: dashcamd: dir=/data/media/0/DashCam seg=60 max=8000MB camera=apa
+01-01 08:00:02.782   348   366 I android.hardware.automotive.evs@1.0-service: DirectBackend: openCamera('apa') -> 0xb400e93c60ffa650
+01-01 08:00:02.782   348   366 I android.hardware.automotive.evs@1.0-service: CameraSession: backend camera opened (apa)
+01-01 08:00:02.782   348   366 I android.hardware.automotive.evs@1.0-service: ProxyEnumerator: openCamera(apa) -> proxy
+01-01 08:00:04.131   368   368 I dashcamd: dashcamd: new segment 19700101_080002
+01-01 08:00:04.132   348   366 W V4L2Camera: [setCaptureParams 528] Camera[0]VIDIOC_G_FMT size= 1920*896 successfully!
+01-01 08:00:04.160   348   366 I android.hardware.automotive.evs@1.0-service: CameraSession: stream started (apa)
+01-01 08:00:04.160   348   366 I android.hardware.automotive.evs@1.0-service: ProxyCamera[apa]: startVideoStream, clients=1
+01-01 08:00:04.160   368   368 I dashcamd: dashcamd: recording started
+01-01 08:00:04.160   368   777 I dashcamd: dashcamd: preview server listening (@dashcam_preview)
+01-01 08:00:04.160   368   778 I dashcamd: dashcamd: accelerometer ready (/dev/input/event4)
+01-01 08:00:04.160   368   776 I dashcamd: dashcamd: http server on 127.0.0.1:8765
+01-01 08:00:04.220   348   762 I android.hardware.automotive.evs@1.0-service: StreamHub: broadcast #1 clients=1 drops=0
+01-01 08:00:04.703   368   779 I dashcamd: dashcamd: settings loaded bitrate=3000000 seg=60 max=8000MB paused=0 watermark=1 event=1 impact=1.80g
+01-01 08:00:08.219   348   762 I android.hardware.automotive.evs@1.0-service: StreamHub: broadcast #101 clients=1 drops=0
+11-14 14:05:32.566   368   777 I dashcamd: dashcamd: preview client connected
+11-14 14:09:11.604   348   762 I android.hardware.automotive.evs@1.0-service: StreamHub: broadcast #6201 clients=1 drops=0

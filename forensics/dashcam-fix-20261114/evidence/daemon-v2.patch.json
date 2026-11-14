@@ -1,0 +1,29 @@
+{
+  "name": "dashcamd",
+  "originalSha256": "64696d87575eec127b717cd98a03a746b1ad83a2d82acad361126470d2911abf",
+  "patchedSha256": "55857d713192256a8c259b57ae3285fe98112dbd69d0fe0622b0ceb765bbe52a",
+  "insert": 100832,
+  "cave": 117216,
+  "amount": 16384,
+  "extraBss": 16,
+  "changes": [
+    {
+      "address": "0xc1ac",
+      "oldword": "0x52800093",
+      "target": "0x1c9e0",
+      "label": "patch_retry"
+    },
+    {
+      "address": "0xb62c",
+      "oldword": "0x528ecc28",
+      "newword": "0x528e0c28",
+      "purpose": "default camera apa"
+    },
+    {
+      "address": "0xb630",
+      "oldword": "0x72a00da8",
+      "newword": "0x72a00c28",
+      "purpose": "default camera apa"
+    }
+  ]
+}

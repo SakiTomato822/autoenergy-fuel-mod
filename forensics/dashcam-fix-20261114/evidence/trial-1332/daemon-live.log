@@ -1,0 +1,48 @@
+--------- beginning of main
+11-14 13:32:38.521 22599 22599 I dashcamd: dashcamd: dir=/data/media/0/DashCam seg=60 max=8000MB camera=apa
+11-14 13:32:38.528 22599 22604 I OMXClient: IOmx service obtained
+11-14 13:32:38.530 22599 22604 W OMXUtils: do not know color format 0x7f10000b = 2131755019
+11-14 13:32:38.531 22599 22604 W OMXUtils: do not know color format 0x7f00a000 = 2130747392
+11-14 13:32:38.531 22599 22604 W OMXUtils: do not know color format 0xf = 15
+11-14 13:32:38.531 22599 22604 W OMXUtils: do not know color format 0x6 = 6
+11-14 13:32:38.531 22599 22604 W OMXUtils: do not know color format 0x19 = 25
+11-14 13:32:38.531 22599 22604 I ACodec  : setupAVCEncoderParameters with [profile: Baseline] [level: Level51]
+11-14 13:32:38.532 22599 22604 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode color aspects. Ignoring.
+11-14 13:32:38.532 22599 22604 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode HDR static metadata. Ignoring.
+11-14 13:32:38.532 22599 22604 I ACodec  : setupVideoEncoder succeeded
+11-14 13:32:38.561 22599 22610 I OMXClient: IOmx service obtained
+11-14 13:32:38.562 22599 22610 W OMXUtils: do not know color format 0x7f10000b = 2131755019
+11-14 13:32:38.562 22599 22610 W OMXUtils: do not know color format 0x7f00a000 = 2130747392
+11-14 13:32:38.563 22599 22610 W OMXUtils: do not know color format 0xf = 15
+11-14 13:32:38.563 22599 22610 W OMXUtils: do not know color format 0x6 = 6
+11-14 13:32:38.563 22599 22610 W OMXUtils: do not know color format 0x19 = 25
+11-14 13:32:38.563 22599 22610 I ACodec  : setupAVCEncoderParameters with [profile: Baseline] [level: Level51]
+11-14 13:32:38.563 22599 22610 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode color aspects. Ignoring.
+11-14 13:32:38.563 22599 22610 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode HDR static metadata. Ignoring.
+11-14 13:32:38.563 22599 22610 I ACodec  : setupVideoEncoder succeeded
+11-14 13:32:38.578 22599 22614 I OMXClient: IOmx service obtained
+11-14 13:32:38.580 22599 22614 W OMXUtils: do not know color format 0x7f10000b = 2131755019
+11-14 13:32:38.580 22599 22614 W OMXUtils: do not know color format 0x7f00a000 = 2130747392
+11-14 13:32:38.580 22599 22614 W OMXUtils: do not know color format 0xf = 15
+11-14 13:32:38.580 22599 22614 W OMXUtils: do not know color format 0x6 = 6
+11-14 13:32:38.580 22599 22614 W OMXUtils: do not know color format 0x19 = 25
+11-14 13:32:38.581 22599 22614 I ACodec  : setupAVCEncoderParameters with [profile: Baseline] [level: Level51]
+11-14 13:32:38.581 22599 22614 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode color aspects. Ignoring.
+11-14 13:32:38.581 22599 22614 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode HDR static metadata. Ignoring.
+11-14 13:32:38.581 22599 22614 I ACodec  : setupVideoEncoder succeeded
+11-14 13:32:38.593 22599 22618 I OMXClient: IOmx service obtained
+11-14 13:32:38.594 22599 22618 W OMXUtils: do not know color format 0x7f10000b = 2131755019
+11-14 13:32:38.595 22599 22618 W OMXUtils: do not know color format 0x7f00a000 = 2130747392
+11-14 13:32:38.595 22599 22618 W OMXUtils: do not know color format 0xf = 15
+11-14 13:32:38.595 22599 22618 W OMXUtils: do not know color format 0x6 = 6
+11-14 13:32:38.595 22599 22618 W OMXUtils: do not know color format 0x19 = 25
+11-14 13:32:38.595 22599 22618 I ACodec  : setupAVCEncoderParameters with [profile: Baseline] [level: Level51]
+11-14 13:32:38.595 22599 22618 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode color aspects. Ignoring.
+11-14 13:32:38.595 22599 22618 I ACodec  : [OMX.hantro.video.encoder.avc] cannot encode HDR static metadata. Ignoring.
+11-14 13:32:38.595 22599 22618 I ACodec  : setupVideoEncoder succeeded
+11-14 13:32:38.606 22599 22599 I dashcamd: dashcamd: new segment 20261114_133238
+11-14 13:32:38.634 22599 22599 I dashcamd: dashcamd: recording started
+11-14 13:32:38.634 22599 22629 I dashcamd: dashcamd: preview server listening (@dashcam_preview)
+11-14 13:32:38.634 22599 22628 I dashcamd: dashcamd: http server on 127.0.0.1:8765
+11-14 13:32:38.634 22599 22630 I dashcamd: dashcamd: accelerometer ready (/dev/input/event4)
+11-14 13:32:38.635 22599 22631 I dashcamd: dashcamd: settings loaded bitrate=3000000 seg=60 max=8000MB paused=0 watermark=1 event=1 impact=1.80g

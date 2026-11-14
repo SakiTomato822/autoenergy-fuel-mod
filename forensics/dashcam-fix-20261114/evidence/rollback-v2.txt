@@ -1,0 +1,18 @@
+Sat Nov 14 14:15:02 CST 2026
+service vendor.evs-hal-mock /vendor/bin/hw/android.hardware.automotive.evs@1.0-service
+    class hal
+    priority -20
+    user root
+    group root sdcard_rw
+	capabilities BLOCK_SUSPEND SYS_NICE
+	ioprio rt 4
+	task_profiles ProcessCapacityHigh HighPerformanc
+
+
+
+running
+   345      1 S<    evsrenderengine
+   348      1 S<    android.hardware.automotive.evs@1.0-service
+   368    348 Z<s   [dashcamd]
+   389      1 S     evsapp
+  6074    338 S     com.dashcam.viewer

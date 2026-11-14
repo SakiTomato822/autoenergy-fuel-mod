@@ -1,0 +1,23 @@
+{
+  "name": "libevsproxy_preload.so",
+  "originalSha256": "86b81f73c692ebc0d3dee2ab48ca625093f2d83d8d4c05fab3d949e6680be7b0",
+  "patchedSha256": "952c80382152d5441b4d9abbd54768444bb447528bb0c74718204f297e778c7f",
+  "insert": 95488,
+  "cave": 111872,
+  "amount": 16384,
+  "extraBss": 0,
+  "changes": [
+    {
+      "address": "0x168e0",
+      "oldword": "0xd10383ff",
+      "target": "0x1b500",
+      "label": "patch_open"
+    },
+    {
+      "address": "0x16eac",
+      "oldword": "0xd10143ff",
+      "target": "0x1b558",
+      "label": "patch_close"
+    }
+  ]
+}
