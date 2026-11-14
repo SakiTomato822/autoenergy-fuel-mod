@@ -1,0 +1,72 @@
+
+forensics/dashcam-fix-20261114/evidence/max96722-format-code-page.bin:     file format binary
+
+
+Disassembly of section .data:
+
+0000000000b42920 <.data+0x920>:
+  b42920:	d503245f 	bti	c
+  b42924:	b9400040 	ldr	w0, [x2]
+  b42928:	d503233f 	paciasp
+  b4292c:	35000280 	cbnz	w0, 0xb4297c
+  b42930:	9000f3c0 	adrp	x0, 0x29ba000
+  b42934:	f000dae1 	adrp	x1, 0x26a1000
+  b42938:	911b0021 	add	x1, x1, #0x6c0
+  b4293c:	396b2000 	ldrb	w0, [x0, #2760]
+  b42940:	71000c1f 	cmp	w0, #0x3
+  b42944:	52800000 	mov	w0, #0x0                   	// #0
+  b42948:	540000e1 	b.ne	0xb42964  // b.any
+  b4294c:	b941e423 	ldr	w3, [x1, #484]
+  b42950:	29018c43 	stp	w3, w3, [x2, #12]
+  b42954:	b941e821 	ldr	w1, [x1, #488]
+  b42958:	29028441 	stp	w1, w1, [x2, #20]
+  b4295c:	d50323bf 	autiasp
+  b42960:	d65f03c0 	ret
+  b42964:	b9412423 	ldr	w3, [x1, #292]
+  b42968:	d50323bf 	autiasp
+  b4296c:	29018c43 	stp	w3, w3, [x2, #12]
+  b42970:	b9412821 	ldr	w1, [x1, #296]
+  b42974:	29028441 	stp	w1, w1, [x2, #20]
+  b42978:	d65f03c0 	ret
+  b4297c:	128002a0 	mov	w0, #0xffffffea            	// #-22
+  b42980:	17fffff7 	b	0xb4295c
+  b42984:	d503245f 	bti	c
+  b42988:	aa0003e1 	mov	x1, x0
+  b4298c:	b9400440 	ldr	w0, [x2, #4]
+  b42990:	d503233f 	paciasp
+  b42994:	35000200 	cbnz	w0, 0xb429d4
+  b42998:	b9423024 	ldr	w4, [x1, #560]
+  b4299c:	91002043 	add	x3, x2, #0x8
+  b429a0:	b9001044 	str	w4, [x2, #16]
+  b429a4:	b9422824 	ldr	w4, [x1, #552]
+  b429a8:	b9000844 	str	w4, [x2, #8]
+  b429ac:	b9422c22 	ldr	w2, [x1, #556]
+  b429b0:	b9000462 	str	w2, [x3, #4]
+  b429b4:	b9423822 	ldr	w2, [x1, #568]
+  b429b8:	b9001062 	str	w2, [x3, #16]
+  b429bc:	b9423422 	ldr	w2, [x1, #564]
+  b429c0:	b9000c62 	str	w2, [x3, #12]
+  b429c4:	79448821 	ldrh	w1, [x1, #580]
+  b429c8:	79003861 	strh	w1, [x3, #28]
+  b429cc:	d50323bf 	autiasp
+  b429d0:	d65f03c0 	ret
+  b429d4:	128002a0 	mov	w0, #0xffffffea            	// #-22
+  b429d8:	17fffffd 	b	0xb429cc
+  b429dc:	d503201f 	nop
+  b429e0:	d503245f 	bti	c
+  b429e4:	52800000 	mov	w0, #0x0                   	// #0
+  b429e8:	d503233f 	paciasp
+  b429ec:	d50323bf 	autiasp
+  b429f0:	d65f03c0 	ret
+  b429f4:	d503245f 	bti	c
+  b429f8:	52800000 	mov	w0, #0x0                   	// #0
+  b429fc:	d503233f 	paciasp
+  b42a00:	d50323bf 	autiasp
+  b42a04:	d65f03c0 	ret
+  b42a08:	d503201f 	nop
+  b42a0c:	d503201f 	nop
+  b42a10:	d503245f 	bti	c
+  b42a14:	52800000 	mov	w0, #0x0                   	// #0
+  b42a18:	d503233f 	paciasp
+  b42a1c:	d50323bf 	autiasp
+  b42a20:	d65f03c0 	ret

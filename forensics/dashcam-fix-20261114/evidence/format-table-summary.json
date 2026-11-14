@@ -1,0 +1,245 @@
+{
+  "provenance": "boot_b Android v3 kernel offset4096; image base _text=ffff800010000000; each page read is4096 bytes; UB954 Image offset0x26a3000(skip9892); MAX table0x26a1000(skip9890); MAX code0xb42000(skip2883). No ioctls or hardware writes.",
+  "ub954": {
+    "tableVma": "0x26a3348",
+    "rows": [
+      {
+        "group": 0,
+        "index": 0,
+        "words": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 0,
+        "index": 1,
+        "words": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 0,
+        "index": 2,
+        "words": [
+          2,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 0,
+        "index": 3,
+        "words": [
+          3,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 0,
+        "index": 4,
+        "words": [
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 0,
+        "index": 5,
+        "words": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 0,
+        "index": 6,
+        "words": [
+          6,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 0,
+        "index": 7,
+        "words": [
+          7,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 0,
+        "words": [
+          0,
+          1920,
+          896,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 1,
+        "words": [
+          1,
+          1280,
+          800,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 2,
+        "words": [
+          2,
+          752,
+          480,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 3,
+        "words": [
+          3,
+          640,
+          480,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 4,
+        "words": [
+          4,
+          352,
+          288,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 5,
+        "words": [
+          5,
+          320,
+          240,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 6,
+        "words": [
+          6,
+          1920,
+          1080,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      },
+      {
+        "group": 1,
+        "index": 7,
+        "words": [
+          7,
+          1920,
+          1536,
+          0,
+          0,
+          0,
+          9,
+          0
+        ]
+      }
+    ]
+  },
+  "max96722": {
+    "baseVma": "0x26a16c0",
+    "default": {
+      "offset": 292,
+      "width": 1280,
+      "height": 3200
+    },
+    "flag3": {
+      "offset": 484,
+      "width": 1920,
+      "height": 1536
+    }
+  }
+}

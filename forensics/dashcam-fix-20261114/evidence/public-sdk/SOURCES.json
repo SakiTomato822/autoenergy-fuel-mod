@@ -1,0 +1,28 @@
+{
+  "repository": "https://gitlab.com/siengine-ubuntu-sdk/kernel",
+  "ref": "test",
+  "retrievedDate": "2026-11-14",
+  "note": "Public SDK comparator only. Does not establish identity with vehicle vendor kernel.",
+  "files": [
+    {
+      "name": "max96722.c",
+      "path": "drivers/media/platform/siengine/sensor/max96722.c",
+      "url": "https://gitlab.com/siengine-ubuntu-sdk/kernel/-/raw/test/drivers/media/platform/siengine/sensor/max96722.c"
+    },
+    {
+      "name": "se-media-dev.c",
+      "path": "drivers/media/platform/siengine/cif_ss/se-media-dev.c",
+      "url": "https://gitlab.com/siengine-ubuntu-sdk/kernel/-/raw/test/drivers/media/platform/siengine/cif_ss/se-media-dev.c"
+    },
+    {
+      "name": "se-cif-core.c",
+      "path": "drivers/media/platform/siengine/cif_ss/se-cif-core.c",
+      "url": "https://gitlab.com/siengine-ubuntu-sdk/kernel/-/raw/test/drivers/media/platform/siengine/cif_ss/se-cif-core.c"
+    },
+    {
+      "name": "dw-csi-plat.c",
+      "path": "drivers/media/platform/siengine/cif_ss/dw-csi-plat.c",
+      "url": "https://gitlab.com/siengine-ubuntu-sdk/kernel/-/raw/test/drivers/media/platform/siengine/cif_ss/dw-csi-plat.c"
+    }
+  ]
+}

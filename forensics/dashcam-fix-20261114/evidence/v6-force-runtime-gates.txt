@@ -1,0 +1,20 @@
+Sat Nov 14 14:20:59 CST 2026
+5.10.110-SE-SDK1.7+-ab1-userdebug
+-r--r--r-- 1 root root 44355 2026-11-14 14:20 /proc/config.gz
+drwxr-xr-x 2 root root 0 2026-11-14 14:20 /sys/module/configfs
+drwxr-xr-x 2 root root 0 2026-11-14 14:20 /sys/bus/i2c/drivers/max96722_mipi
+drwxr-xr-x 2 root root 0 2026-11-14 14:20 /sys/bus/platform/drivers/dw-csi
+drwxr-xr-x 2 root root 0 2026-11-14 14:20 /sys/bus/platform/drivers/se-cif
+total 0
+--w------- 1 root root 4096 2026-11-14 14:20 bind
+--w------- 1 root root 4096 2026-11-14 14:20 uevent
+--w------- 1 root root 4096 2026-11-14 14:20 unbind
+none /config configfs rw,nosuid,nodev,noexec,relatime 0 0
+lrwxrwxrwx 1 root root 0 2026-11-14 14:20 /sys/bus/platform/devices/e8660000.cif -> ../../../devices/platform/camera/e8660000.cif
+0
+hantrodec.ko
+rng-core.ko
+shm_drv.ko
+siengine-rng.ko
+vicam.ko
+wlan_8821cs.ko
