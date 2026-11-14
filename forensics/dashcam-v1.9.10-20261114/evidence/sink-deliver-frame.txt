@@ -1,0 +1,186 @@
+
+/data/data/com.termux/files/home/forensics/dashcam-v1.9.10-20261114/apk/assets/dashcamd:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000029b3c <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)>:
+   29b3c:	d10403ff 	sub	sp, sp, #0x100
+   29b40:	a90b7bfd 	stp	x29, x30, [sp, #176]
+   29b44:	f90063f9 	str	x25, [sp, #192]
+   29b48:	a90d5ff8 	stp	x24, x23, [sp, #208]
+   29b4c:	a90e57f6 	stp	x22, x21, [sp, #224]
+   29b50:	a90f4ff4 	stp	x20, x19, [sp, #240]
+   29b54:	9102c3fd 	add	x29, sp, #0xb0
+   29b58:	b9400029 	ldr	w9, [x1]
+   29b5c:	aa0803f3 	mov	x19, x8
+   29b60:	7114013f 	cmp	w9, #0x500
+   29b64:	54000821 	b.ne	29c68 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x12c>  // b.any
+   29b68:	b9400428 	ldr	w8, [x1, #4]
+   29b6c:	7132011f 	cmp	w8, #0xc80
+   29b70:	540007c1 	b.ne	29c68 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x12c>  // b.any
+   29b74:	aa0003f8 	mov	x24, x0
+   29b78:	91008020 	add	x0, x1, #0x20
+   29b7c:	aa0103f7 	mov	x23, x1
+   29b80:	94002868 	bl	33d20 <android::hardware::hidl_handle::getNativeHandle() const@plt>
+   29b84:	b4000980 	cbz	x0, 29cb4 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x178>
+   29b88:	b9400408 	ldr	w8, [x0, #4]
+   29b8c:	7100011f 	cmp	w8, #0x0
+   29b90:	5400092d 	b.le	29cb4 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x178>
+   29b94:	2940a2e9 	ldp	w9, w8, [x23, #4]
+   29b98:	b9400c04 	ldr	w4, [x0, #12]
+   29b9c:	aa1f03e0 	mov	x0, xzr
+   29ba0:	52800022 	mov	w2, #0x1                   	// #1
+   29ba4:	52800023 	mov	w3, #0x1                   	// #1
+   29ba8:	aa1f03e5 	mov	x5, xzr
+   29bac:	9ba87d28 	umull	x8, w9, w8
+   29bb0:	d37ff914 	lsl	x20, x8, #1
+   29bb4:	aa1403e1 	mov	x1, x20
+   29bb8:	9400285e 	bl	33d30 <mmap@plt>
+   29bbc:	b100041f 	cmn	x0, #0x1
+   29bc0:	540008a0 	b.eq	29cd4 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x198>  // b.none
+   29bc4:	aa0003f5 	mov	x21, x0
+   29bc8:	900000a1 	adrp	x1, 3d000 <g_captureSeq>
+   29bcc:	91002021 	add	x1, x1, #0x8
+   29bd0:	52800020 	mov	w0, #0x1                   	// #1
+   29bd4:	9400265f 	bl	33550 <__aarch64_ldadd8_acq_rel>
+   29bd8:	aa0003f6 	mov	x22, x0
+   29bdc:	94002755 	bl	33930 <std::__1::chrono::steady_clock::now()@plt>
+   29be0:	d28b8528 	mov	x8, #0x5c29                	// #23593
+   29be4:	d283d709 	mov	x9, #0x1eb8                	// #7864
+   29be8:	f2b851e8 	movk	x8, #0xc28f, lsl #16
+   29bec:	f2bd70a9 	movk	x9, #0xeb85, lsl #16
+   29bf0:	f2c51ea8 	movk	x8, #0x28f5, lsl #32
+   29bf4:	f2d70a29 	movk	x9, #0xb851, lsl #32
+   29bf8:	f2f1eb88 	movk	x8, #0x8f5c, lsl #48
+   29bfc:	f2e0a3c9 	movk	x9, #0x51e, lsl #48
+   29c00:	9b087ec8 	mul	x8, x22, x8
+   29c04:	93c80508 	ror	x8, x8, #1
+   29c08:	eb09011f 	cmp	x8, x9
+   29c0c:	900000a8 	adrp	x8, 3d000 <g_captureSeq>
+   29c10:	91004108 	add	x8, x8, #0x10
+   29c14:	c89ffd00 	stlr	x0, [x8]
+   29c18:	54000108 	b.hi	29c38 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0xfc>  // b.pmore
+   29c1c:	294016e4 	ldp	w4, w5, [x23]
+   29c20:	f0fffec2 	adrp	x2, 4000 <note_end+0x3c70>
+   29c24:	9115d442 	add	x2, x2, #0x575
+   29c28:	52800080 	mov	w0, #0x4                   	// #4
+   29c2c:	aa1f03e1 	mov	x1, xzr
+   29c30:	aa1603e3 	mov	x3, x22
+   29c34:	94002693 	bl	33680 <__android_log_print@plt>
+   29c38:	f0000080 	adrp	x0, 3c000 <_DYNAMIC+0x3f30>
+   29c3c:	913da000 	add	x0, x0, #0xf68
+   29c40:	94002798 	bl	33aa0 <std::__1::mutex::lock()@plt>
+   29c44:	f0000088 	adrp	x8, 3c000 <_DYNAMIC+0x3f30>
+   29c48:	f947b108 	ldr	x8, [x8, #3936]
+   29c4c:	f100111f 	cmp	x8, #0x4
+   29c50:	540005c3 	b.cc	29d08 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x1cc>  // b.lo, b.ul, b.last
+   29c54:	900000a1 	adrp	x1, 3d000 <g_captureSeq>
+   29c58:	91006021 	add	x1, x1, #0x18
+   29c5c:	52800020 	mov	w0, #0x1                   	// #1
+   29c60:	94002630 	bl	33520 <__aarch64_ldadd4_acq_rel>
+   29c64:	14000055 	b	29db8 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x27c>
+   29c68:	f9400400 	ldr	x0, [x0, #8]
+   29c6c:	b4000100 	cbz	x0, 29c8c <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x150>
+   29c70:	f9400008 	ldr	x8, [x0]
+   29c74:	d100a3b4 	sub	x20, x29, #0x28
+   29c78:	f9404109 	ldr	x9, [x8, #128]
+   29c7c:	d100a3a8 	sub	x8, x29, #0x28
+   29c80:	d63f0120 	blr	x9
+   29c84:	aa1403e0 	mov	x0, x20
+   29c88:	940026a2 	bl	33710 <android::hardware::details::return_status::~return_status()@plt>
+   29c8c:	6f00e400 	movi	v0.2d, #0x0
+   29c90:	3900827f 	strb	wzr, [x19, #32]
+   29c94:	ad000260 	stp	q0, q0, [x19]
+   29c98:	a94f4ff4 	ldp	x20, x19, [sp, #240]
+   29c9c:	f94063f9 	ldr	x25, [sp, #192]
+   29ca0:	a94e57f6 	ldp	x22, x21, [sp, #224]
+   29ca4:	a94d5ff8 	ldp	x24, x23, [sp, #208]
+   29ca8:	a94b7bfd 	ldp	x29, x30, [sp, #176]
+   29cac:	910403ff 	add	sp, sp, #0x100
+   29cb0:	d65f03c0 	ret
+   29cb4:	f9400700 	ldr	x0, [x24, #8]
+   29cb8:	b4fffea0 	cbz	x0, 29c8c <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x150>
+   29cbc:	f9400008 	ldr	x8, [x0]
+   29cc0:	aa1703e1 	mov	x1, x23
+   29cc4:	d10143b4 	sub	x20, x29, #0x50
+   29cc8:	f9404109 	ldr	x9, [x8, #128]
+   29ccc:	d10143a8 	sub	x8, x29, #0x50
+   29cd0:	17ffffec 	b	29c80 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x144>
+   29cd4:	f0fffee2 	adrp	x2, 8000 <drawFormatBits(qrcodegen_Ecc, qrcodegen_Mask, unsigned char*)::table+0x3cf0>
+   29cd8:	91391442 	add	x2, x2, #0xe45
+   29cdc:	528000c0 	mov	w0, #0x6                   	// #6
+   29ce0:	aa1f03e1 	mov	x1, xzr
+   29ce4:	94002667 	bl	33680 <__android_log_print@plt>
+   29ce8:	f9400700 	ldr	x0, [x24, #8]
+   29cec:	b4fffd00 	cbz	x0, 29c8c <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x150>
+   29cf0:	f9400008 	ldr	x8, [x0]
+   29cf4:	aa1703e1 	mov	x1, x23
+   29cf8:	9100e3f4 	add	x20, sp, #0x38
+   29cfc:	f9404109 	ldr	x9, [x8, #128]
+   29d00:	9100e3e8 	add	x8, sp, #0x38
+   29d04:	17ffffdf 	b	29c80 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x144>
+   29d08:	f0000088 	adrp	x8, 3c000 <_DYNAMIC+0x3f30>
+   29d0c:	f947e909 	ldr	x9, [x8, #4048]
+   29d10:	b5000049 	cbnz	x9, 29d18 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x1dc>
+   29d14:	f907e914 	str	x20, [x8, #4048]
+   29d18:	f0000088 	adrp	x8, 3c000 <_DYNAMIC+0x3f30>
+   29d1c:	f0000099 	adrp	x25, 3c000 <_DYNAMIC+0x3f30>
+   29d20:	913f8339 	add	x25, x25, #0xfe0
+   29d24:	b94fd916 	ldr	w22, [x8, #4056]
+   29d28:	110006c9 	add	w9, w22, #0x1
+   29d2c:	f8765b20 	ldr	x0, [x25, w22, uxtw #3]
+   29d30:	12000529 	and	w9, w9, #0x3
+   29d34:	b90fd909 	str	w9, [x8, #4056]
+   29d38:	b50000a0 	cbnz	x0, 29d4c <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x210>
+   29d3c:	aa1403e0 	mov	x0, x20
+   29d40:	94002800 	bl	33d40 <malloc@plt>
+   29d44:	f8365b20 	str	x0, [x25, w22, uxtw #3]
+   29d48:	b4fff860 	cbz	x0, 29c54 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x118>
+   29d4c:	aa1503e1 	mov	x1, x21
+   29d50:	aa1403e2 	mov	x2, x20
+   29d54:	940026f3 	bl	33920 <memcpy@plt>
+   29d58:	900000a8 	adrp	x8, 3d000 <g_captureSeq>
+   29d5c:	5288480a 	mov	w10, #0x4240                	// #16960
+   29d60:	d295c2ab 	mov	x11, #0xae15                	// #44565
+   29d64:	f9400109 	ldr	x9, [x8]
+   29d68:	72a001ea 	movk	w10, #0xf, lsl #16
+   29d6c:	f2bc28eb 	movk	x11, #0xe147, lsl #16
+   29d70:	f2c28f4b 	movk	x11, #0x147a, lsl #32
+   29d74:	b9002bf6 	str	w22, [sp, #40]
+   29d78:	9b0a7d2a 	mul	x10, x9, x10
+   29d7c:	f2e8f5cb 	movk	x11, #0x47ae, lsl #48
+   29d80:	91000529 	add	x9, x9, #0x1
+   29d84:	f9000109 	str	x9, [x8]
+   29d88:	9bcb7d4b 	umulh	x11, x10, x11
+   29d8c:	cb0b014a 	sub	x10, x10, x11
+   29d90:	8b4a056a 	add	x10, x11, x10, lsr #1
+   29d94:	d344fd48 	lsr	x8, x10, #4
+   29d98:	f9001be8 	str	x8, [sp, #48]
+   29d9c:	f0000080 	adrp	x0, 3c000 <_DYNAMIC+0x3f30>
+   29da0:	913ce000 	add	x0, x0, #0xf38
+   29da4:	9100a3e1 	add	x1, sp, #0x28
+   29da8:	94000049 	bl	29ecc <std::__1::deque<QueuedFrame, std::__1::allocator<QueuedFrame> >::push_back(QueuedFrame&&)>
+   29dac:	f0000080 	adrp	x0, 3c000 <_DYNAMIC+0x3f30>
+   29db0:	913e4000 	add	x0, x0, #0xf90
+   29db4:	940027e7 	bl	33d50 <std::__1::condition_variable::notify_one()@plt>
+   29db8:	f0000080 	adrp	x0, 3c000 <_DYNAMIC+0x3f30>
+   29dbc:	913da000 	add	x0, x0, #0xf68
+   29dc0:	94002730 	bl	33a80 <std::__1::mutex::unlock()@plt>
+   29dc4:	aa1503e0 	mov	x0, x21
+   29dc8:	aa1403e1 	mov	x1, x20
+   29dcc:	940027e5 	bl	33d60 <munmap@plt>
+   29dd0:	f9400700 	ldr	x0, [x24, #8]
+   29dd4:	b4fff5c0 	cbz	x0, 29c8c <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x150>
+   29dd8:	f9400008 	ldr	x8, [x0]
+   29ddc:	aa1703e1 	mov	x1, x23
+   29de0:	910003f4 	mov	x20, sp
+   29de4:	f9404109 	ldr	x9, [x8, #128]
+   29de8:	910003e8 	mov	x8, sp
+   29dec:	17ffffa5 	b	29c80 <Sink::deliverFrame(android::hardware::automotive::evs::V1_0::BufferDesc const&)+0x144>
+   29df0:	aa0003f3 	mov	x19, x0
+   29df4:	f0000080 	adrp	x0, 3c000 <_DYNAMIC+0x3f30>
+   29df8:	913da000 	add	x0, x0, #0xf68
+   29dfc:	94002721 	bl	33a80 <std::__1::mutex::unlock()@plt>
+   29e00:	aa1303e0 	mov	x0, x19
+   29e04:	9400269b 	bl	33870 <_Unwind_Resume@plt>

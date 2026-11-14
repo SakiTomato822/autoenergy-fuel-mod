@@ -1,0 +1,471 @@
+
+/data/data/com.termux/files/home/forensics/flyme-dvr-20261010/raw/evsapp:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000004ed00 <RenderApaViewBX11::onClickTouchEvent(int, int, int)>:
+   4ed00:	d10583ff 	sub	sp, sp, #0x160
+   4ed04:	a9107bfd 	stp	x29, x30, [sp, #256]
+   4ed08:	f9008bfc 	str	x28, [sp, #272]
+   4ed0c:	a91267fa 	stp	x26, x25, [sp, #288]
+   4ed10:	a9135ff8 	stp	x24, x23, [sp, #304]
+   4ed14:	a91457f6 	stp	x22, x21, [sp, #320]
+   4ed18:	a9154ff4 	stp	x20, x19, [sp, #336]
+   4ed1c:	910403fd 	add	x29, sp, #0x100
+   4ed20:	d53bd058 	mrs	x24, tpidr_el0
+   4ed24:	f9401708 	ldr	x8, [x24, #40]
+   4ed28:	2a0303f6 	mov	w22, w3
+   4ed2c:	2a0203f7 	mov	w23, w2
+   4ed30:	2a0103f5 	mov	w21, w1
+   4ed34:	b0fffe21 	adrp	x1, 13000 <abitag+0x12d08>
+   4ed38:	b0fffe22 	adrp	x2, 13000 <abitag+0x12d08>
+   4ed3c:	b0fffe63 	adrp	x3, 1b000 <abitag+0x1ad08>
+   4ed40:	aa0003f4 	mov	x20, x0
+   4ed44:	9113c821 	add	x1, x1, #0x4f2
+   4ed48:	9130cc42 	add	x2, x2, #0xc33
+   4ed4c:	912af463 	add	x3, x3, #0xabd
+   4ed50:	52800080 	mov	w0, #0x4                   	// #4
+   4ed54:	2a1503e4 	mov	w4, w21
+   4ed58:	2a1703e5 	mov	w5, w23
+   4ed5c:	2a1603e6 	mov	w6, w22
+   4ed60:	d101c3b9 	sub	x25, x29, #0x70
+   4ed64:	f81f83a8 	stur	x8, [x29, #-8]
+   4ed68:	9400263a 	bl	58650 <__android_log_print@plt>
+   4ed6c:	71000abf 	cmp	w21, #0x2
+   4ed70:	54000061 	b.ne	4ed7c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x7c>  // b.any
+   4ed74:	528ea600 	mov	w0, #0x7530                	// #30000
+   4ed78:	94002642 	bl	58680 <usleep@plt>
+   4ed7c:	91016333 	add	x19, x25, #0x58
+   4ed80:	6f00e400 	movi	v0.2d, #0x0
+   4ed84:	aa1303e0 	mov	x0, x19
+   4ed88:	f900333f 	str	xzr, [x25, #96]
+   4ed8c:	ad020320 	stp	q0, q0, [x25, #64]
+   4ed90:	ad010320 	stp	q0, q0, [x25, #32]
+   4ed94:	ad000320 	stp	q0, q0, [x25]
+   4ed98:	940026be 	bl	58890 <android::hardware::hidl_string::hidl_string()@plt>
+   4ed9c:	52a44e08 	mov	w8, #0x22700000            	// #577765376
+   4eda0:	52800069 	mov	w9, #0x3                   	// #3
+   4eda4:	910023e0 	add	x0, sp, #0x8
+   4eda8:	910013e1 	add	x1, sp, #0x4
+   4edac:	a900ffff 	stp	xzr, xzr, [sp, #8]
+   4edb0:	f9000fff 	str	xzr, [sp, #24]
+   4edb4:	b819c3a8 	stur	w8, [x29, #-100]
+   4edb8:	390013e9 	strb	w9, [sp, #4]
+   4edbc:	97ff8c5c 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4edc0:	a9412be8 	ldp	x8, x10, [sp, #16]
+   4edc4:	52800049 	mov	w9, #0x2                   	// #2
+   4edc8:	390013e9 	strb	w9, [sp, #4]
+   4edcc:	eb0a011f 	cmp	x8, x10
+   4edd0:	540000c2 	b.cs	4ede8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0xe8>  // b.hs, b.nlast
+   4edd4:	39000109 	strb	w9, [x8]
+   4edd8:	f9400be8 	ldr	x8, [sp, #16]
+   4eddc:	91000508 	add	x8, x8, #0x1
+   4ede0:	f9000be8 	str	x8, [sp, #16]
+   4ede4:	14000005 	b	4edf8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0xf8>
+   4ede8:	910023e0 	add	x0, sp, #0x8
+   4edec:	910013e1 	add	x1, sp, #0x4
+   4edf0:	97ff8c4f 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4edf4:	f9400be8 	ldr	x8, [sp, #16]
+   4edf8:	f9400fea 	ldr	x10, [sp, #24]
+   4edfc:	52800529 	mov	w9, #0x29                  	// #41
+   4ee00:	390013e9 	strb	w9, [sp, #4]
+   4ee04:	eb0a011f 	cmp	x8, x10
+   4ee08:	540000c2 	b.cs	4ee20 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x120>  // b.hs, b.nlast
+   4ee0c:	39000109 	strb	w9, [x8]
+   4ee10:	f9400be8 	ldr	x8, [sp, #16]
+   4ee14:	91000508 	add	x8, x8, #0x1
+   4ee18:	f9000be8 	str	x8, [sp, #16]
+   4ee1c:	14000005 	b	4ee30 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x130>
+   4ee20:	910023e0 	add	x0, sp, #0x8
+   4ee24:	910013e1 	add	x1, sp, #0x4
+   4ee28:	97ff8c41 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4ee2c:	f9400be8 	ldr	x8, [sp, #16]
+   4ee30:	f9400fea 	ldr	x10, [sp, #24]
+   4ee34:	52800e09 	mov	w9, #0x70                  	// #112
+   4ee38:	390013e9 	strb	w9, [sp, #4]
+   4ee3c:	eb0a011f 	cmp	x8, x10
+   4ee40:	540000c2 	b.cs	4ee58 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x158>  // b.hs, b.nlast
+   4ee44:	39000109 	strb	w9, [x8]
+   4ee48:	f9400be8 	ldr	x8, [sp, #16]
+   4ee4c:	91000508 	add	x8, x8, #0x1
+   4ee50:	f9000be8 	str	x8, [sp, #16]
+   4ee54:	14000005 	b	4ee68 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x168>
+   4ee58:	910023e0 	add	x0, sp, #0x8
+   4ee5c:	910013e1 	add	x1, sp, #0x4
+   4ee60:	97ff8c33 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4ee64:	f9400be8 	ldr	x8, [sp, #16]
+   4ee68:	f9400fea 	ldr	x10, [sp, #24]
+   4ee6c:	52800049 	mov	w9, #0x2                   	// #2
+   4ee70:	390013e9 	strb	w9, [sp, #4]
+   4ee74:	eb0a011f 	cmp	x8, x10
+   4ee78:	540000c2 	b.cs	4ee90 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x190>  // b.hs, b.nlast
+   4ee7c:	39000109 	strb	w9, [x8]
+   4ee80:	f9400be8 	ldr	x8, [sp, #16]
+   4ee84:	91000508 	add	x8, x8, #0x1
+   4ee88:	f9000be8 	str	x8, [sp, #16]
+   4ee8c:	14000005 	b	4eea0 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x1a0>
+   4ee90:	910023e0 	add	x0, sp, #0x8
+   4ee94:	910013e1 	add	x1, sp, #0x4
+   4ee98:	97ff8c25 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4ee9c:	f9400be8 	ldr	x8, [sp, #16]
+   4eea0:	f9400fea 	ldr	x10, [sp, #24]
+   4eea4:	528008c9 	mov	w9, #0x46                  	// #70
+   4eea8:	390013e9 	strb	w9, [sp, #4]
+   4eeac:	eb0a011f 	cmp	x8, x10
+   4eeb0:	540000c2 	b.cs	4eec8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x1c8>  // b.hs, b.nlast
+   4eeb4:	39000109 	strb	w9, [x8]
+   4eeb8:	f9400be8 	ldr	x8, [sp, #16]
+   4eebc:	91000508 	add	x8, x8, #0x1
+   4eec0:	f9000be8 	str	x8, [sp, #16]
+   4eec4:	14000005 	b	4eed8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x1d8>
+   4eec8:	910023e0 	add	x0, sp, #0x8
+   4eecc:	910013e1 	add	x1, sp, #0x4
+   4eed0:	97ff8c17 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4eed4:	f9400be8 	ldr	x8, [sp, #16]
+   4eed8:	f9400fea 	ldr	x10, [sp, #24]
+   4eedc:	53087ee9 	lsr	w9, w23, #8
+   4eee0:	390013e9 	strb	w9, [sp, #4]
+   4eee4:	eb0a011f 	cmp	x8, x10
+   4eee8:	540000c2 	b.cs	4ef00 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x200>  // b.hs, b.nlast
+   4eeec:	39000109 	strb	w9, [x8]
+   4eef0:	f9400be8 	ldr	x8, [sp, #16]
+   4eef4:	91000508 	add	x8, x8, #0x1
+   4eef8:	f9000be8 	str	x8, [sp, #16]
+   4eefc:	14000005 	b	4ef10 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x210>
+   4ef00:	910023e0 	add	x0, sp, #0x8
+   4ef04:	910013e1 	add	x1, sp, #0x4
+   4ef08:	97ff8c09 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4ef0c:	f9400be8 	ldr	x8, [sp, #16]
+   4ef10:	f9400fe9 	ldr	x9, [sp, #24]
+   4ef14:	390013f7 	strb	w23, [sp, #4]
+   4ef18:	eb09011f 	cmp	x8, x9
+   4ef1c:	540000c2 	b.cs	4ef34 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x234>  // b.hs, b.nlast
+   4ef20:	39000117 	strb	w23, [x8]
+   4ef24:	f9400be8 	ldr	x8, [sp, #16]
+   4ef28:	91000508 	add	x8, x8, #0x1
+   4ef2c:	f9000be8 	str	x8, [sp, #16]
+   4ef30:	14000005 	b	4ef44 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x244>
+   4ef34:	910023e0 	add	x0, sp, #0x8
+   4ef38:	910013e1 	add	x1, sp, #0x4
+   4ef3c:	97ff8bfc 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4ef40:	f9400be8 	ldr	x8, [sp, #16]
+   4ef44:	f9400fea 	ldr	x10, [sp, #24]
+   4ef48:	52800049 	mov	w9, #0x2                   	// #2
+   4ef4c:	390013e9 	strb	w9, [sp, #4]
+   4ef50:	eb0a011f 	cmp	x8, x10
+   4ef54:	540000c2 	b.cs	4ef6c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x26c>  // b.hs, b.nlast
+   4ef58:	39000109 	strb	w9, [x8]
+   4ef5c:	f9400be8 	ldr	x8, [sp, #16]
+   4ef60:	91000508 	add	x8, x8, #0x1
+   4ef64:	f9000be8 	str	x8, [sp, #16]
+   4ef68:	14000005 	b	4ef7c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x27c>
+   4ef6c:	910023e0 	add	x0, sp, #0x8
+   4ef70:	910013e1 	add	x1, sp, #0x4
+   4ef74:	97ff8bee 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4ef78:	f9400be8 	ldr	x8, [sp, #16]
+   4ef7c:	f9400fea 	ldr	x10, [sp, #24]
+   4ef80:	52800529 	mov	w9, #0x29                  	// #41
+   4ef84:	390013e9 	strb	w9, [sp, #4]
+   4ef88:	eb0a011f 	cmp	x8, x10
+   4ef8c:	540000c2 	b.cs	4efa4 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x2a4>  // b.hs, b.nlast
+   4ef90:	39000109 	strb	w9, [x8]
+   4ef94:	f9400be8 	ldr	x8, [sp, #16]
+   4ef98:	91000508 	add	x8, x8, #0x1
+   4ef9c:	f9000be8 	str	x8, [sp, #16]
+   4efa0:	14000005 	b	4efb4 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x2b4>
+   4efa4:	910023e0 	add	x0, sp, #0x8
+   4efa8:	910013e1 	add	x1, sp, #0x4
+   4efac:	97ff8be0 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4efb0:	f9400be8 	ldr	x8, [sp, #16]
+   4efb4:	f9400fea 	ldr	x10, [sp, #24]
+   4efb8:	52800e09 	mov	w9, #0x70                  	// #112
+   4efbc:	390013e9 	strb	w9, [sp, #4]
+   4efc0:	eb0a011f 	cmp	x8, x10
+   4efc4:	540000c2 	b.cs	4efdc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x2dc>  // b.hs, b.nlast
+   4efc8:	39000109 	strb	w9, [x8]
+   4efcc:	f9400be8 	ldr	x8, [sp, #16]
+   4efd0:	91000508 	add	x8, x8, #0x1
+   4efd4:	f9000be8 	str	x8, [sp, #16]
+   4efd8:	14000005 	b	4efec <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x2ec>
+   4efdc:	910023e0 	add	x0, sp, #0x8
+   4efe0:	910013e1 	add	x1, sp, #0x4
+   4efe4:	97ff8bd2 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4efe8:	f9400be8 	ldr	x8, [sp, #16]
+   4efec:	f9400fea 	ldr	x10, [sp, #24]
+   4eff0:	52800049 	mov	w9, #0x2                   	// #2
+   4eff4:	390013e9 	strb	w9, [sp, #4]
+   4eff8:	eb0a011f 	cmp	x8, x10
+   4effc:	540000c2 	b.cs	4f014 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x314>  // b.hs, b.nlast
+   4f000:	39000109 	strb	w9, [x8]
+   4f004:	f9400be8 	ldr	x8, [sp, #16]
+   4f008:	91000508 	add	x8, x8, #0x1
+   4f00c:	f9000be8 	str	x8, [sp, #16]
+   4f010:	14000005 	b	4f024 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x324>
+   4f014:	910023e0 	add	x0, sp, #0x8
+   4f018:	910013e1 	add	x1, sp, #0x4
+   4f01c:	97ff8bc4 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f020:	f9400be8 	ldr	x8, [sp, #16]
+   4f024:	f9400fea 	ldr	x10, [sp, #24]
+   4f028:	528008e9 	mov	w9, #0x47                  	// #71
+   4f02c:	390013e9 	strb	w9, [sp, #4]
+   4f030:	eb0a011f 	cmp	x8, x10
+   4f034:	540000c2 	b.cs	4f04c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x34c>  // b.hs, b.nlast
+   4f038:	39000109 	strb	w9, [x8]
+   4f03c:	f9400be8 	ldr	x8, [sp, #16]
+   4f040:	91000508 	add	x8, x8, #0x1
+   4f044:	f9000be8 	str	x8, [sp, #16]
+   4f048:	14000005 	b	4f05c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x35c>
+   4f04c:	910023e0 	add	x0, sp, #0x8
+   4f050:	910013e1 	add	x1, sp, #0x4
+   4f054:	97ff8bb6 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f058:	f9400be8 	ldr	x8, [sp, #16]
+   4f05c:	f9400fea 	ldr	x10, [sp, #24]
+   4f060:	53087ec9 	lsr	w9, w22, #8
+   4f064:	390013e9 	strb	w9, [sp, #4]
+   4f068:	eb0a011f 	cmp	x8, x10
+   4f06c:	540000c2 	b.cs	4f084 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x384>  // b.hs, b.nlast
+   4f070:	39000109 	strb	w9, [x8]
+   4f074:	f9400be8 	ldr	x8, [sp, #16]
+   4f078:	91000508 	add	x8, x8, #0x1
+   4f07c:	f9000be8 	str	x8, [sp, #16]
+   4f080:	14000005 	b	4f094 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x394>
+   4f084:	910023e0 	add	x0, sp, #0x8
+   4f088:	910013e1 	add	x1, sp, #0x4
+   4f08c:	97ff8ba8 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f090:	f9400be8 	ldr	x8, [sp, #16]
+   4f094:	f9400fe9 	ldr	x9, [sp, #24]
+   4f098:	390013f6 	strb	w22, [sp, #4]
+   4f09c:	eb09011f 	cmp	x8, x9
+   4f0a0:	540000c2 	b.cs	4f0b8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x3b8>  // b.hs, b.nlast
+   4f0a4:	39000116 	strb	w22, [x8]
+   4f0a8:	f9400be8 	ldr	x8, [sp, #16]
+   4f0ac:	91000508 	add	x8, x8, #0x1
+   4f0b0:	f9000be8 	str	x8, [sp, #16]
+   4f0b4:	14000005 	b	4f0c8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x3c8>
+   4f0b8:	910023e0 	add	x0, sp, #0x8
+   4f0bc:	910013e1 	add	x1, sp, #0x4
+   4f0c0:	97ff8b9b 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f0c4:	f9400be8 	ldr	x8, [sp, #16]
+   4f0c8:	f9400fea 	ldr	x10, [sp, #24]
+   4f0cc:	52800029 	mov	w9, #0x1                   	// #1
+   4f0d0:	390013e9 	strb	w9, [sp, #4]
+   4f0d4:	eb0a011f 	cmp	x8, x10
+   4f0d8:	540000c2 	b.cs	4f0f0 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x3f0>  // b.hs, b.nlast
+   4f0dc:	39000109 	strb	w9, [x8]
+   4f0e0:	f9400be8 	ldr	x8, [sp, #16]
+   4f0e4:	91000508 	add	x8, x8, #0x1
+   4f0e8:	f9000be8 	str	x8, [sp, #16]
+   4f0ec:	14000005 	b	4f100 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x400>
+   4f0f0:	910023e0 	add	x0, sp, #0x8
+   4f0f4:	910013e1 	add	x1, sp, #0x4
+   4f0f8:	97ff8b8d 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f0fc:	f9400be8 	ldr	x8, [sp, #16]
+   4f100:	f9400fea 	ldr	x10, [sp, #24]
+   4f104:	52800529 	mov	w9, #0x29                  	// #41
+   4f108:	390013e9 	strb	w9, [sp, #4]
+   4f10c:	eb0a011f 	cmp	x8, x10
+   4f110:	540000c2 	b.cs	4f128 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x428>  // b.hs, b.nlast
+   4f114:	39000109 	strb	w9, [x8]
+   4f118:	f9400be8 	ldr	x8, [sp, #16]
+   4f11c:	91000508 	add	x8, x8, #0x1
+   4f120:	f9000be8 	str	x8, [sp, #16]
+   4f124:	14000005 	b	4f138 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x438>
+   4f128:	910023e0 	add	x0, sp, #0x8
+   4f12c:	910013e1 	add	x1, sp, #0x4
+   4f130:	97ff8b7f 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f134:	f9400be8 	ldr	x8, [sp, #16]
+   4f138:	f9400fea 	ldr	x10, [sp, #24]
+   4f13c:	52800e09 	mov	w9, #0x70                  	// #112
+   4f140:	390013e9 	strb	w9, [sp, #4]
+   4f144:	eb0a011f 	cmp	x8, x10
+   4f148:	540000c2 	b.cs	4f160 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x460>  // b.hs, b.nlast
+   4f14c:	39000109 	strb	w9, [x8]
+   4f150:	f9400be8 	ldr	x8, [sp, #16]
+   4f154:	91000508 	add	x8, x8, #0x1
+   4f158:	f9000be8 	str	x8, [sp, #16]
+   4f15c:	14000005 	b	4f170 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x470>
+   4f160:	910023e0 	add	x0, sp, #0x8
+   4f164:	910013e1 	add	x1, sp, #0x4
+   4f168:	97ff8b71 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f16c:	f9400be8 	ldr	x8, [sp, #16]
+   4f170:	f9400fea 	ldr	x10, [sp, #24]
+   4f174:	52800049 	mov	w9, #0x2                   	// #2
+   4f178:	390013e9 	strb	w9, [sp, #4]
+   4f17c:	eb0a011f 	cmp	x8, x10
+   4f180:	540000c2 	b.cs	4f198 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x498>  // b.hs, b.nlast
+   4f184:	39000109 	strb	w9, [x8]
+   4f188:	f9400be8 	ldr	x8, [sp, #16]
+   4f18c:	91000508 	add	x8, x8, #0x1
+   4f190:	f9000be8 	str	x8, [sp, #16]
+   4f194:	14000005 	b	4f1a8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x4a8>
+   4f198:	910023e0 	add	x0, sp, #0x8
+   4f19c:	910013e1 	add	x1, sp, #0x4
+   4f1a0:	97ff8b63 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f1a4:	f9400be8 	ldr	x8, [sp, #16]
+   4f1a8:	f9400fea 	ldr	x10, [sp, #24]
+   4f1ac:	52800909 	mov	w9, #0x48                  	// #72
+   4f1b0:	390013e9 	strb	w9, [sp, #4]
+   4f1b4:	eb0a011f 	cmp	x8, x10
+   4f1b8:	540000c2 	b.cs	4f1d0 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x4d0>  // b.hs, b.nlast
+   4f1bc:	39000109 	strb	w9, [x8]
+   4f1c0:	f9400be8 	ldr	x8, [sp, #16]
+   4f1c4:	91000508 	add	x8, x8, #0x1
+   4f1c8:	f9000be8 	str	x8, [sp, #16]
+   4f1cc:	14000005 	b	4f1e0 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x4e0>
+   4f1d0:	910023e0 	add	x0, sp, #0x8
+   4f1d4:	910013e1 	add	x1, sp, #0x4
+   4f1d8:	97ff8b55 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f1dc:	f9400be8 	ldr	x8, [sp, #16]
+   4f1e0:	f9400fe9 	ldr	x9, [sp, #24]
+   4f1e4:	390013f5 	strb	w21, [sp, #4]
+   4f1e8:	eb09011f 	cmp	x8, x9
+   4f1ec:	540000c2 	b.cs	4f204 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x504>  // b.hs, b.nlast
+   4f1f0:	39000115 	strb	w21, [x8]
+   4f1f4:	f9400be8 	ldr	x8, [sp, #16]
+   4f1f8:	91000508 	add	x8, x8, #0x1
+   4f1fc:	f9000be8 	str	x8, [sp, #16]
+   4f200:	14000004 	b	4f210 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x510>
+   4f204:	910023e0 	add	x0, sp, #0x8
+   4f208:	910013e1 	add	x1, sp, #0x4
+   4f20c:	97ff8b48 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4f210:	385e43a8 	ldurb	w8, [x29, #-28]
+   4f214:	d101c3a9 	sub	x9, x29, #0x70
+   4f218:	91012135 	add	x21, x9, #0x48
+   4f21c:	34000088 	cbz	w8, 4f22c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x52c>
+   4f220:	f9402720 	ldr	x0, [x25, #72]
+   4f224:	b4000040 	cbz	x0, 4f22c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x52c>
+   4f228:	9400257a 	bl	58810 <operator delete[](void*)@plt>
+   4f22c:	a940a3fa 	ldp	x26, x8, [sp, #8]
+   4f230:	52800029 	mov	w9, #0x1                   	// #1
+   4f234:	381e43a9 	sturb	w9, [x29, #-28]
+   4f238:	cb1a0116 	sub	x22, x8, x26
+   4f23c:	b81e03b6 	stur	w22, [x29, #-32]
+   4f240:	340003d6 	cbz	w22, 4f2b8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x5b8>
+   4f244:	aa1603e0 	mov	x0, x22
+   4f248:	9400258e 	bl	58880 <operator new[](unsigned long)@plt>
+   4f24c:	2a1f03e1 	mov	w1, wzr
+   4f250:	aa1603e2 	mov	x2, x22
+   4f254:	aa0003f7 	mov	x23, x0
+   4f258:	94002592 	bl	588a0 <memset@plt>
+   4f25c:	f9002737 	str	x23, [x25, #72]
+   4f260:	b40002f6 	cbz	x22, 4f2bc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x5bc>
+   4f264:	39400348 	ldrb	w8, [x26]
+   4f268:	f10006df 	cmp	x22, #0x1
+   4f26c:	390002e8 	strb	w8, [x23]
+   4f270:	54000260 	b.eq	4f2bc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x5bc>  // b.none
+   4f274:	39400748 	ldrb	w8, [x26, #1]
+   4f278:	f1000adf 	cmp	x22, #0x2
+   4f27c:	390006e8 	strb	w8, [x23, #1]
+   4f280:	540001e0 	b.eq	4f2bc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x5bc>  // b.none
+   4f284:	39400b48 	ldrb	w8, [x26, #2]
+   4f288:	f1000edf 	cmp	x22, #0x3
+   4f28c:	39000ae8 	strb	w8, [x23, #2]
+   4f290:	54000160 	b.eq	4f2bc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x5bc>  // b.none
+   4f294:	52800068 	mov	w8, #0x3                   	// #3
+   4f298:	f94007e9 	ldr	x9, [sp, #8]
+   4f29c:	f940272a 	ldr	x10, [x25, #72]
+   4f2a0:	38686929 	ldrb	w9, [x9, x8]
+   4f2a4:	38286949 	strb	w9, [x10, x8]
+   4f2a8:	91000508 	add	x8, x8, #0x1
+   4f2ac:	eb0802df 	cmp	x22, x8
+   4f2b0:	54ffff41 	b.ne	4f298 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x598>  // b.any
+   4f2b4:	14000002 	b	4f2bc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x5bc>
+   4f2b8:	f900273f 	str	xzr, [x25, #72]
+   4f2bc:	52a04008 	mov	w8, #0x2000000             	// #33554432
+   4f2c0:	b81983a8 	stur	w8, [x29, #-104]
+   4f2c4:	940025c3 	bl	589d0 <android::elapsedRealtimeNano()@plt>
+   4f2c8:	f9000320 	str	x0, [x25]
+   4f2cc:	b81a03bf 	stur	wzr, [x29, #-96]
+   4f2d0:	3dc00320 	ldr	q0, [x25]
+   4f2d4:	910083f6 	add	x22, sp, #0x20
+   4f2d8:	d101c3b7 	sub	x23, x29, #0x70
+   4f2dc:	910062c0 	add	x0, x22, #0x18
+   4f2e0:	910062e1 	add	x1, x23, #0x18
+   4f2e4:	b90033ff 	str	wzr, [sp, #48]
+   4f2e8:	3d800be0 	str	q0, [sp, #32]
+   4f2ec:	97ff75f6 	bl	2cac4 <android::hardware::hidl_vec<float>::hidl_vec(android::hardware::hidl_vec<float> const&)>
+   4f2f0:	9100a2c0 	add	x0, x22, #0x28
+   4f2f4:	9100a2e1 	add	x1, x23, #0x28
+   4f2f8:	97ff75f3 	bl	2cac4 <android::hardware::hidl_vec<float>::hidl_vec(android::hardware::hidl_vec<float> const&)>
+   4f2fc:	9100e2c0 	add	x0, x22, #0x38
+   4f300:	9100e2e1 	add	x1, x23, #0x38
+   4f304:	97ff762d 	bl	2cbb8 <android::hardware::hidl_vec<long>::hidl_vec(android::hardware::hidl_vec<long> const&)>
+   4f308:	910122c0 	add	x0, x22, #0x48
+   4f30c:	aa1503e1 	mov	x1, x21
+   4f310:	97ff7667 	bl	2ccac <android::hardware::hidl_vec<unsigned char>::hidl_vec(android::hardware::hidl_vec<unsigned char> const&)>
+   4f314:	910162d5 	add	x21, x22, #0x58
+   4f318:	aa1503e0 	mov	x0, x21
+   4f31c:	aa1303e1 	mov	x1, x19
+   4f320:	94002550 	bl	58860 <android::hardware::hidl_string::hidl_string(android::hardware::hidl_string const&)@plt>
+   4f324:	910083e1 	add	x1, sp, #0x20
+   4f328:	aa1403e0 	mov	x0, x20
+   4f32c:	97fff380 	bl	4c12c <RenderApaViewBX11::invokeSet(android::hardware::automotive::vehicle::V2_0::VehiclePropValue)>
+   4f330:	aa1503e0 	mov	x0, x21
+   4f334:	94002533 	bl	58800 <android::hardware::hidl_string::~hidl_string()@plt>
+   4f338:	3941d3e8 	ldrb	w8, [sp, #116]
+   4f33c:	34000088 	cbz	w8, 4f34c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x64c>
+   4f340:	f94037e0 	ldr	x0, [sp, #104]
+   4f344:	b4000040 	cbz	x0, 4f34c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x64c>
+   4f348:	94002532 	bl	58810 <operator delete[](void*)@plt>
+   4f34c:	394193e8 	ldrb	w8, [sp, #100]
+   4f350:	f90037ff 	str	xzr, [sp, #104]
+   4f354:	34000088 	cbz	w8, 4f364 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x664>
+   4f358:	f9402fe0 	ldr	x0, [sp, #88]
+   4f35c:	b4000040 	cbz	x0, 4f364 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x664>
+   4f360:	9400252c 	bl	58810 <operator delete[](void*)@plt>
+   4f364:	394153e8 	ldrb	w8, [sp, #84]
+   4f368:	f9002fff 	str	xzr, [sp, #88]
+   4f36c:	34000088 	cbz	w8, 4f37c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x67c>
+   4f370:	f94027e0 	ldr	x0, [sp, #72]
+   4f374:	b4000040 	cbz	x0, 4f37c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x67c>
+   4f378:	94002526 	bl	58810 <operator delete[](void*)@plt>
+   4f37c:	394113e8 	ldrb	w8, [sp, #68]
+   4f380:	f90027ff 	str	xzr, [sp, #72]
+   4f384:	34000088 	cbz	w8, 4f394 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x694>
+   4f388:	f9401fe0 	ldr	x0, [sp, #56]
+   4f38c:	b4000040 	cbz	x0, 4f394 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x694>
+   4f390:	94002520 	bl	58810 <operator delete[](void*)@plt>
+   4f394:	f94007e0 	ldr	x0, [sp, #8]
+   4f398:	f9001fff 	str	xzr, [sp, #56]
+   4f39c:	b4000060 	cbz	x0, 4f3a8 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x6a8>
+   4f3a0:	f9000be0 	str	x0, [sp, #16]
+   4f3a4:	940024c3 	bl	586b0 <operator delete(void*)@plt>
+   4f3a8:	aa1303e0 	mov	x0, x19
+   4f3ac:	94002515 	bl	58800 <android::hardware::hidl_string::~hidl_string()@plt>
+   4f3b0:	385e43a8 	ldurb	w8, [x29, #-28]
+   4f3b4:	34000088 	cbz	w8, 4f3c4 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x6c4>
+   4f3b8:	f9402720 	ldr	x0, [x25, #72]
+   4f3bc:	b4000040 	cbz	x0, 4f3c4 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x6c4>
+   4f3c0:	94002514 	bl	58810 <operator delete[](void*)@plt>
+   4f3c4:	f900273f 	str	xzr, [x25, #72]
+   4f3c8:	385d43a8 	ldurb	w8, [x29, #-44]
+   4f3cc:	34000088 	cbz	w8, 4f3dc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x6dc>
+   4f3d0:	f9401f20 	ldr	x0, [x25, #56]
+   4f3d4:	b4000040 	cbz	x0, 4f3dc <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x6dc>
+   4f3d8:	9400250e 	bl	58810 <operator delete[](void*)@plt>
+   4f3dc:	f9001f3f 	str	xzr, [x25, #56]
+   4f3e0:	385c43a8 	ldurb	w8, [x29, #-60]
+   4f3e4:	34000088 	cbz	w8, 4f3f4 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x6f4>
+   4f3e8:	f9401720 	ldr	x0, [x25, #40]
+   4f3ec:	b4000040 	cbz	x0, 4f3f4 <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x6f4>
+   4f3f0:	94002508 	bl	58810 <operator delete[](void*)@plt>
+   4f3f4:	f900173f 	str	xzr, [x25, #40]
+   4f3f8:	385b43a8 	ldurb	w8, [x29, #-76]
+   4f3fc:	34000088 	cbz	w8, 4f40c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x70c>
+   4f400:	f9400f20 	ldr	x0, [x25, #24]
+   4f404:	b4000040 	cbz	x0, 4f40c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x70c>
+   4f408:	94002502 	bl	58810 <operator delete[](void*)@plt>
+   4f40c:	f9401708 	ldr	x8, [x24, #40]
+   4f410:	f85f83a9 	ldur	x9, [x29, #-8]
+   4f414:	eb09011f 	cmp	x8, x9
+   4f418:	54000121 	b.ne	4f43c <RenderApaViewBX11::onClickTouchEvent(int, int, int)+0x73c>  // b.any
+   4f41c:	a9554ff4 	ldp	x20, x19, [sp, #336]
+   4f420:	a95457f6 	ldp	x22, x21, [sp, #320]
+   4f424:	a9535ff8 	ldp	x24, x23, [sp, #304]
+   4f428:	a95267fa 	ldp	x26, x25, [sp, #288]
+   4f42c:	f9408bfc 	ldr	x28, [sp, #272]
+   4f430:	a9507bfd 	ldp	x29, x30, [sp, #256]
+   4f434:	910583ff 	add	sp, sp, #0x160
+   4f438:	d65f03c0 	ret
+   4f43c:	940024ed 	bl	587f0 <__stack_chk_fail@plt>

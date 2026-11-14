@@ -1,0 +1,194 @@
+[
+  {
+    "index": 31,
+    "offset": 1240,
+    "property": "0x2970003e",
+    "model": "0x11f",
+    "length": 18,
+    "name": "MMI_VehicleModeReq"
+  },
+  {
+    "index": 71,
+    "offset": 2840,
+    "property": "0x2970022c",
+    "model": "0x91",
+    "length": 20,
+    "name": "AVM_HalfScrnDispResp"
+  },
+  {
+    "index": 72,
+    "offset": 2880,
+    "property": "0x2970023c",
+    "model": "0xb0",
+    "length": 27,
+    "name": "MMI_3DTouringViewKeyRequest"
+  },
+  {
+    "index": 73,
+    "offset": 2920,
+    "property": "0x2970023f",
+    "model": "0xbe",
+    "length": 30,
+    "name": "MMI_AVM_RestoreFactorySettings"
+  },
+  {
+    "index": 74,
+    "offset": 2960,
+    "property": "0x29700238",
+    "model": "0xb5",
+    "length": 21,
+    "name": "MMI_DynamicPGSRequest"
+  },
+  {
+    "index": 75,
+    "offset": 3000,
+    "property": "0x29700239",
+    "model": "0xb8",
+    "length": 22,
+    "name": "MMI_AVM_SoftKeyRequest"
+  },
+  {
+    "index": 76,
+    "offset": 3040,
+    "property": "0x2970023b",
+    "model": "0xb6",
+    "length": 23,
+    "name": "MMI_AVMMODEnableRequest"
+  },
+  {
+    "index": 77,
+    "offset": 3080,
+    "property": "0x2970023d",
+    "model": "0xaf",
+    "length": 25,
+    "name": "MMI_AVM_TurnONSetResponse"
+  },
+  {
+    "index": 78,
+    "offset": 3120,
+    "property": "0x2970022e",
+    "model": "0x11c",
+    "length": 25,
+    "name": "MMI_CarIconTransparentReq"
+  },
+  {
+    "index": 79,
+    "offset": 3160,
+    "property": "0x2970022d",
+    "model": "0x116",
+    "length": 18,
+    "name": "MMI_OnroadCalibReq"
+  },
+  {
+    "index": 80,
+    "offset": 3200,
+    "property": "0x29700237",
+    "model": "0xffff",
+    "length": 35,
+    "name": "MMI_AVM_highTrunningEnterAVMFuncSet"
+  },
+  {
+    "index": 81,
+    "offset": 3240,
+    "property": "0x29700234",
+    "model": "0xbc",
+    "length": 23,
+    "name": "MMI_AVM_CarIconColorSet"
+  },
+  {
+    "index": 82,
+    "offset": 3280,
+    "property": "0x29700235",
+    "model": "0xbd",
+    "length": 31,
+    "name": "MMI_AVM_TrunningEnterAVMFuncSet"
+  },
+  {
+    "index": 83,
+    "offset": 3320,
+    "property": "0x29700233",
+    "model": "0xb4",
+    "length": 23,
+    "name": "MMI_AVMViewModeSwitch_1"
+  },
+  {
+    "index": 84,
+    "offset": 3360,
+    "property": "0x297002e6",
+    "model": "0x11f",
+    "length": 18,
+    "name": "MMI_VehicleModeReq"
+  },
+  {
+    "index": 87,
+    "offset": 3480,
+    "property": "0x2970022f",
+    "model": "0x8c",
+    "length": 25,
+    "name": "MMI_View_RGearModeRequest"
+  },
+  {
+    "index": 88,
+    "offset": 3520,
+    "property": "0x29700230",
+    "model": "0x8d",
+    "length": 29,
+    "name": "MMI_PAS_TopViewSettingRequest"
+  },
+  {
+    "index": 117,
+    "offset": 4680,
+    "property": "0x2970024f",
+    "model": "0xffff",
+    "length": 16,
+    "name": "TCM_SW_AutoLight"
+  },
+  {
+    "index": 122,
+    "offset": 4880,
+    "property": "0x2970024b",
+    "model": "0x190",
+    "length": 20,
+    "name": "MMI_AntiPinchWarnSet"
+  },
+  {
+    "index": 152,
+    "offset": 6080,
+    "property": "0x297000de",
+    "model": "0xb1",
+    "length": 22,
+    "name": "MMI_AVMViewAngleSwitch"
+  },
+  {
+    "index": 203,
+    "offset": 8120,
+    "property": "0x29700246",
+    "model": "0xb9",
+    "length": 19,
+    "name": "MMI_AVM_Xcoordinate"
+  },
+  {
+    "index": 204,
+    "offset": 8160,
+    "property": "0x29700247",
+    "model": "0xba",
+    "length": 19,
+    "name": "MMI_AVM_Ycoordinate"
+  },
+  {
+    "index": 205,
+    "offset": 8200,
+    "property": "0x29700248",
+    "model": "0xbb",
+    "length": 22,
+    "name": "MMI_AVM_TouchEventType"
+  },
+  {
+    "index": 206,
+    "offset": 8240,
+    "property": "0x29700236",
+    "model": "0xaf",
+    "length": 25,
+    "name": "MMI_AVM_TurnONSetResponse"
+  }
+]

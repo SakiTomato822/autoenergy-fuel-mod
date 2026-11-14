@@ -1,0 +1,247 @@
+Offline selected callbacks; binary base0x420000. No IO.
+
+MODEL af
+  43b554:	4b02      	ldr	r3, [pc, #8]	@ (0x43b560)
+  43b556:	781a      	ldrb	r2, [r3, #0]
+  43b558:	f360 0200 	bfi	r2, r0, #0, #1
+  43b55c:	701a      	strb	r2, [r3, #0]
+  43b55e:	4770      	bx	lr
+  43b560:	053f      	lsls	r7, r7, #20
+  43b562:	2040      	movs	r0, #64	@ 0x40
+  43b564:	4b02      	ldr	r3, [pc, #8]	@ (0x43b570)
+  43b566:	781a      	ldrb	r2, [r3, #0]
+  43b568:	f360 0242 	bfi	r2, r0, #1, #2
+  43b56c:	701a      	strb	r2, [r3, #0]
+  43b56e:	4770      	bx	lr
+  43b570:	053f      	lsls	r7, r7, #20
+  43b572:	2040      	movs	r0, #64	@ 0x40
+  43b574:	4b02      	ldr	r3, [pc, #8]	@ (0x43b580)
+  43b576:	781a      	ldrb	r2, [r3, #0]
+  43b578:	f360 02c5 	bfi	r2, r0, #3, #3
+
+MODEL b0
+  43b564:	4b02      	ldr	r3, [pc, #8]	@ (0x43b570)
+  43b566:	781a      	ldrb	r2, [r3, #0]
+  43b568:	f360 0242 	bfi	r2, r0, #1, #2
+  43b56c:	701a      	strb	r2, [r3, #0]
+  43b56e:	4770      	bx	lr
+  43b570:	053f      	lsls	r7, r7, #20
+  43b572:	2040      	movs	r0, #64	@ 0x40
+  43b574:	4b02      	ldr	r3, [pc, #8]	@ (0x43b580)
+  43b576:	781a      	ldrb	r2, [r3, #0]
+  43b578:	f360 02c5 	bfi	r2, r0, #3, #3
+  43b57c:	701a      	strb	r2, [r3, #0]
+  43b57e:	4770      	bx	lr
+  43b580:	053f      	lsls	r7, r7, #20
+  43b582:	2040      	movs	r0, #64	@ 0x40
+  43b584:	4b02      	ldr	r3, [pc, #8]	@ (0x43b590)
+  43b586:	781a      	ldrb	r2, [r3, #0]
+  43b588:	f360 12c7 	bfi	r2, r0, #7, #1
+
+MODEL b1
+  43b574:	4b02      	ldr	r3, [pc, #8]	@ (0x43b580)
+  43b576:	781a      	ldrb	r2, [r3, #0]
+  43b578:	f360 02c5 	bfi	r2, r0, #3, #3
+  43b57c:	701a      	strb	r2, [r3, #0]
+  43b57e:	4770      	bx	lr
+  43b580:	053f      	lsls	r7, r7, #20
+  43b582:	2040      	movs	r0, #64	@ 0x40
+  43b584:	4b02      	ldr	r3, [pc, #8]	@ (0x43b590)
+  43b586:	781a      	ldrb	r2, [r3, #0]
+  43b588:	f360 12c7 	bfi	r2, r0, #7, #1
+  43b58c:	701a      	strb	r2, [r3, #0]
+  43b58e:	4770      	bx	lr
+  43b590:	053f      	lsls	r7, r7, #20
+  43b592:	2040      	movs	r0, #64	@ 0x40
+  43b594:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5a0)
+  43b596:	785a      	ldrb	r2, [r3, #1]
+  43b598:	f360 0202 	bfi	r2, r0, #0, #3
+
+MODEL b4
+  43b5a4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5b0)
+  43b5a6:	785a      	ldrb	r2, [r3, #1]
+  43b5a8:	f360 1207 	bfi	r2, r0, #4, #4
+  43b5ac:	705a      	strb	r2, [r3, #1]
+  43b5ae:	4770      	bx	lr
+  43b5b0:	053f      	lsls	r7, r7, #20
+  43b5b2:	2040      	movs	r0, #64	@ 0x40
+  43b5b4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5c0)
+  43b5b6:	789a      	ldrb	r2, [r3, #2]
+  43b5b8:	f360 0201 	bfi	r2, r0, #0, #2
+  43b5bc:	709a      	strb	r2, [r3, #2]
+  43b5be:	4770      	bx	lr
+  43b5c0:	053f      	lsls	r7, r7, #20
+  43b5c2:	2040      	movs	r0, #64	@ 0x40
+  43b5c4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5d0)
+  43b5c6:	789a      	ldrb	r2, [r3, #2]
+  43b5c8:	f360 0283 	bfi	r2, r0, #2, #2
+
+MODEL b5
+  43b5b4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5c0)
+  43b5b6:	789a      	ldrb	r2, [r3, #2]
+  43b5b8:	f360 0201 	bfi	r2, r0, #0, #2
+  43b5bc:	709a      	strb	r2, [r3, #2]
+  43b5be:	4770      	bx	lr
+  43b5c0:	053f      	lsls	r7, r7, #20
+  43b5c2:	2040      	movs	r0, #64	@ 0x40
+  43b5c4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5d0)
+  43b5c6:	789a      	ldrb	r2, [r3, #2]
+  43b5c8:	f360 0283 	bfi	r2, r0, #2, #2
+  43b5cc:	709a      	strb	r2, [r3, #2]
+  43b5ce:	4770      	bx	lr
+  43b5d0:	053f      	lsls	r7, r7, #20
+  43b5d2:	2040      	movs	r0, #64	@ 0x40
+  43b5d4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5e0)
+  43b5d6:	789a      	ldrb	r2, [r3, #2]
+  43b5d8:	f360 1205 	bfi	r2, r0, #4, #2
+
+MODEL b6
+  43b5c4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5d0)
+  43b5c6:	789a      	ldrb	r2, [r3, #2]
+  43b5c8:	f360 0283 	bfi	r2, r0, #2, #2
+  43b5cc:	709a      	strb	r2, [r3, #2]
+  43b5ce:	4770      	bx	lr
+  43b5d0:	053f      	lsls	r7, r7, #20
+  43b5d2:	2040      	movs	r0, #64	@ 0x40
+  43b5d4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5e0)
+  43b5d6:	789a      	ldrb	r2, [r3, #2]
+  43b5d8:	f360 1205 	bfi	r2, r0, #4, #2
+  43b5dc:	709a      	strb	r2, [r3, #2]
+  43b5de:	4770      	bx	lr
+  43b5e0:	053f      	lsls	r7, r7, #20
+  43b5e2:	2040      	movs	r0, #64	@ 0x40
+  43b5e4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5f0)
+  43b5e6:	789a      	ldrb	r2, [r3, #2]
+  43b5e8:	f360 1287 	bfi	r2, r0, #6, #2
+
+MODEL b8
+  43b5e4:	4b02      	ldr	r3, [pc, #8]	@ (0x43b5f0)
+  43b5e6:	789a      	ldrb	r2, [r3, #2]
+  43b5e8:	f360 1287 	bfi	r2, r0, #6, #2
+  43b5ec:	709a      	strb	r2, [r3, #2]
+  43b5ee:	4770      	bx	lr
+  43b5f0:	053f      	lsls	r7, r7, #20
+  43b5f2:	2040      	movs	r0, #64	@ 0x40
+  43b5f4:	4b03      	ldr	r3, [pc, #12]	@ (0x43b604)
+  43b5f6:	0902      	lsrs	r2, r0, #4
+  43b5f8:	70da      	strb	r2, [r3, #3]
+  43b5fa:	791a      	ldrb	r2, [r3, #4]
+  43b5fc:	f360 1207 	bfi	r2, r0, #4, #4
+  43b600:	711a      	strb	r2, [r3, #4]
+  43b602:	4770      	bx	lr
+  43b604:	053f      	lsls	r7, r7, #20
+  43b606:	2040      	movs	r0, #64	@ 0x40
+  43b608:	4b06      	ldr	r3, [pc, #24]	@ (0x43b624)
+  43b60a:	09c2      	lsrs	r2, r0, #7
+
+MODEL b9
+  43b5f4:	4b03      	ldr	r3, [pc, #12]	@ (0x43b604)
+  43b5f6:	0902      	lsrs	r2, r0, #4
+  43b5f8:	70da      	strb	r2, [r3, #3]
+  43b5fa:	791a      	ldrb	r2, [r3, #4]
+  43b5fc:	f360 1207 	bfi	r2, r0, #4, #4
+  43b600:	711a      	strb	r2, [r3, #4]
+  43b602:	4770      	bx	lr
+  43b604:	053f      	lsls	r7, r7, #20
+  43b606:	2040      	movs	r0, #64	@ 0x40
+  43b608:	4b06      	ldr	r3, [pc, #24]	@ (0x43b624)
+  43b60a:	09c2      	lsrs	r2, r0, #7
+  43b60c:	ea42 6241 	orr.w	r2, r2, r1, lsl #25
+  43b610:	7919      	ldrb	r1, [r3, #4]
+  43b612:	f362 0103 	bfi	r1, r2, #0, #4
+  43b616:	795a      	ldrb	r2, [r3, #5]
+  43b618:	f360 0247 	bfi	r2, r0, #1, #7
+
+MODEL ba
+  43b608:	4b06      	ldr	r3, [pc, #24]	@ (0x43b624)
+  43b60a:	09c2      	lsrs	r2, r0, #7
+  43b60c:	ea42 6241 	orr.w	r2, r2, r1, lsl #25
+  43b610:	7919      	ldrb	r1, [r3, #4]
+  43b612:	f362 0103 	bfi	r1, r2, #0, #4
+  43b616:	795a      	ldrb	r2, [r3, #5]
+  43b618:	f360 0247 	bfi	r2, r0, #1, #7
+  43b61c:	7119      	strb	r1, [r3, #4]
+  43b61e:	715a      	strb	r2, [r3, #5]
+  43b620:	4770      	bx	lr
+  43b622:	bf00      	nop
+  43b624:	053f      	lsls	r7, r7, #20
+  43b626:	2040      	movs	r0, #64	@ 0x40
+  43b628:	4b02      	ldr	r3, [pc, #8]	@ (0x43b634)
+  43b62a:	799a      	ldrb	r2, [r3, #6]
+  43b62c:	f360 0201 	bfi	r2, r0, #0, #2
+
+MODEL bb
+  43b628:	4b02      	ldr	r3, [pc, #8]	@ (0x43b634)
+  43b62a:	799a      	ldrb	r2, [r3, #6]
+  43b62c:	f360 0201 	bfi	r2, r0, #0, #2
+  43b630:	719a      	strb	r2, [r3, #6]
+  43b632:	4770      	bx	lr
+  43b634:	053f      	lsls	r7, r7, #20
+  43b636:	2040      	movs	r0, #64	@ 0x40
+  43b638:	4b02      	ldr	r3, [pc, #8]	@ (0x43b644)
+  43b63a:	799a      	ldrb	r2, [r3, #6]
+  43b63c:	f360 0284 	bfi	r2, r0, #2, #3
+  43b640:	719a      	strb	r2, [r3, #6]
+  43b642:	4770      	bx	lr
+  43b644:	053f      	lsls	r7, r7, #20
+  43b646:	2040      	movs	r0, #64	@ 0x40
+  43b648:	4b02      	ldr	r3, [pc, #8]	@ (0x43b654)
+  43b64a:	799a      	ldrb	r2, [r3, #6]
+  43b64c:	f360 1246 	bfi	r2, r0, #5, #2
+
+MODEL bc
+  43b638:	4b02      	ldr	r3, [pc, #8]	@ (0x43b644)
+  43b63a:	799a      	ldrb	r2, [r3, #6]
+  43b63c:	f360 0284 	bfi	r2, r0, #2, #3
+  43b640:	719a      	strb	r2, [r3, #6]
+  43b642:	4770      	bx	lr
+  43b644:	053f      	lsls	r7, r7, #20
+  43b646:	2040      	movs	r0, #64	@ 0x40
+  43b648:	4b02      	ldr	r3, [pc, #8]	@ (0x43b654)
+  43b64a:	799a      	ldrb	r2, [r3, #6]
+  43b64c:	f360 1246 	bfi	r2, r0, #5, #2
+  43b650:	719a      	strb	r2, [r3, #6]
+  43b652:	4770      	bx	lr
+  43b654:	053f      	lsls	r7, r7, #20
+  43b656:	2040      	movs	r0, #64	@ 0x40
+  43b658:	4b02      	ldr	r3, [pc, #8]	@ (0x43b664)
+  43b65a:	799a      	ldrb	r2, [r3, #6]
+  43b65c:	f360 12c7 	bfi	r2, r0, #7, #1
+
+MODEL bd
+  43b648:	4b02      	ldr	r3, [pc, #8]	@ (0x43b654)
+  43b64a:	799a      	ldrb	r2, [r3, #6]
+  43b64c:	f360 1246 	bfi	r2, r0, #5, #2
+  43b650:	719a      	strb	r2, [r3, #6]
+  43b652:	4770      	bx	lr
+  43b654:	053f      	lsls	r7, r7, #20
+  43b656:	2040      	movs	r0, #64	@ 0x40
+  43b658:	4b02      	ldr	r3, [pc, #8]	@ (0x43b664)
+  43b65a:	799a      	ldrb	r2, [r3, #6]
+  43b65c:	f360 12c7 	bfi	r2, r0, #7, #1
+  43b660:	719a      	strb	r2, [r3, #6]
+  43b662:	4770      	bx	lr
+  43b664:	053f      	lsls	r7, r7, #20
+  43b666:	2040      	movs	r0, #64	@ 0x40
+  43b668:	4b02      	ldr	r3, [pc, #8]	@ (0x43b674)
+  43b66a:	79da      	ldrb	r2, [r3, #7]
+  43b66c:	f360 0202 	bfi	r2, r0, #0, #3
+
+MODEL be
+  43b658:	4b02      	ldr	r3, [pc, #8]	@ (0x43b664)
+  43b65a:	799a      	ldrb	r2, [r3, #6]
+  43b65c:	f360 12c7 	bfi	r2, r0, #7, #1
+  43b660:	719a      	strb	r2, [r3, #6]
+  43b662:	4770      	bx	lr
+  43b664:	053f      	lsls	r7, r7, #20
+  43b666:	2040      	movs	r0, #64	@ 0x40
+  43b668:	4b02      	ldr	r3, [pc, #8]	@ (0x43b674)
+  43b66a:	79da      	ldrb	r2, [r3, #7]
+  43b66c:	f360 0202 	bfi	r2, r0, #0, #3
+  43b670:	71da      	strb	r2, [r3, #7]
+  43b672:	4770      	bx	lr
+  43b674:	053f      	lsls	r7, r7, #20
+  43b676:	2040      	movs	r0, #64	@ 0x40
+  43b678:	4b02      	ldr	r3, [pc, #8]	@ (0x43b684)
+  43b67a:	79da      	ldrb	r2, [r3, #7]
+  43b67c:	f360 02c7 	bfi	r2, r0, #3, #5

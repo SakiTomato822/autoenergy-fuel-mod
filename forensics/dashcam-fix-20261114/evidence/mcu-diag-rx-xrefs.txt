@@ -1,0 +1,69 @@
+{"stringAddress":"0x492d0e","text":"com_diag_rx %d : %d \r\n","literalPointers":["0x44cddc"]}
+  44cd88:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+  44cd8a:	4803      	ldr	r0, [pc, #12]	@ (0x44cd98)
+  44cd8c:	e7fc      	b.n	0x44cd88
+  44cd8e:	4628      	mov	r0, r5
+  44cd90:	e7fa      	b.n	0x44cd88
+  44cd92:	bf00      	nop
+  44cd94:	0c4c      	lsrs	r4, r1, #17
+  44cd96:	2043      	movs	r0, #67	@ 0x43
+  44cd98:	2600      	movs	r6, #0
+  44cd9a:	031f      	lsls	r7, r3, #12
+  44cd9c:	b538      	push	{r3, r4, r5, lr}
+  44cd9e:	4604      	mov	r4, r0
+  44cda0:	79c2      	ldrb	r2, [r0, #7]
+  44cda2:	2100      	movs	r1, #0
+  44cda4:	480d      	ldr	r0, [pc, #52]	@ (0x44cddc)
+  44cda6:	f7dc fb23 	bl	0x4293f0
+  44cdaa:	7961      	ldrb	r1, [r4, #5]
+  44cdac:	1e4d      	subs	r5, r1, #1
+  44cdae:	b2ed      	uxtb	r5, r5
+  44cdb0:	2d25      	cmp	r5, #37	@ 0x25
+  44cdb2:	d80d      	bhi.n	0x44cdd0
+  44cdb4:	4b0a      	ldr	r3, [pc, #40]	@ (0x44cde0)
+{"stringAddress":"0x492d25","text":"com_diag_cmd_rx %d : %d \r\n","literalPointers":["0x44cde4"]}
+  44cda6:	f7dc fb23 	bl	0x4293f0
+  44cdaa:	7961      	ldrb	r1, [r4, #5]
+  44cdac:	1e4d      	subs	r5, r1, #1
+  44cdae:	b2ed      	uxtb	r5, r5
+  44cdb0:	2d25      	cmp	r5, #37	@ 0x25
+  44cdb2:	d80d      	bhi.n	0x44cdd0
+  44cdb4:	4b0a      	ldr	r3, [pc, #40]	@ (0x44cde0)
+  44cdb6:	eb03 03c5 	add.w	r3, r3, r5, lsl #3
+  44cdba:	685b      	ldr	r3, [r3, #4]
+  44cdbc:	b10b      	cbz	r3, 0x44cdc2
+  44cdbe:	4620      	mov	r0, r4
+  44cdc0:	4798      	blx	r3
+  44cdc2:	79e2      	ldrb	r2, [r4, #7]
+  44cdc4:	4629      	mov	r1, r5
+  44cdc6:	4807      	ldr	r0, [pc, #28]	@ (0x44cde4)
+  44cdc8:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+  44cdcc:	f7dc bb10 	b.w	0x4293f0
+  44cdd0:	4805      	ldr	r0, [pc, #20]	@ (0x44cde8)
+  44cdd2:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+  44cdd6:	f7dc bb0b 	b.w	0x4293f0
+  44cdda:	bf00      	nop
+  44cddc:	2d0e      	cmp	r5, #14
+{"stringAddress":"0x492d40","text":"com_diag_rx error : %d \r\n","literalPointers":["0x44cde8"]}
+  44cdae:	b2ed      	uxtb	r5, r5
+  44cdb0:	2d25      	cmp	r5, #37	@ 0x25
+  44cdb2:	d80d      	bhi.n	0x44cdd0
+  44cdb4:	4b0a      	ldr	r3, [pc, #40]	@ (0x44cde0)
+  44cdb6:	eb03 03c5 	add.w	r3, r3, r5, lsl #3
+  44cdba:	685b      	ldr	r3, [r3, #4]
+  44cdbc:	b10b      	cbz	r3, 0x44cdc2
+  44cdbe:	4620      	mov	r0, r4
+  44cdc0:	4798      	blx	r3
+  44cdc2:	79e2      	ldrb	r2, [r4, #7]
+  44cdc4:	4629      	mov	r1, r5
+  44cdc6:	4807      	ldr	r0, [pc, #28]	@ (0x44cde4)
+  44cdc8:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+  44cdcc:	f7dc bb10 	b.w	0x4293f0
+  44cdd0:	4805      	ldr	r0, [pc, #20]	@ (0x44cde8)
+  44cdd2:	e8bd 4038 	ldmia.w	sp!, {r3, r4, r5, lr}
+  44cdd6:	f7dc bb0b 	b.w	0x4293f0
+  44cdda:	bf00      	nop
+  44cddc:	2d0e      	cmp	r5, #14
+  44cdde:	0049      	lsls	r1, r1, #1
+  44cde0:	0254      	lsls	r4, r2, #9
+  44cde2:	0049      	lsls	r1, r1, #1

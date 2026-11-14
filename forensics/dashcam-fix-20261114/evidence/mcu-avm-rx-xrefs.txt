@@ -1,0 +1,23 @@
+{"stringAddress":"0x492c57","text":"com_avm_rx error %d \r\n","literalPointers":["0x4496f0"]}
+  4496c4:	4770      	bx	lr
+  4496c6:	bf00      	nop
+  4496c8:	0698      	lsls	r0, r3, #26
+  4496ca:	2042      	movs	r0, #66	@ 0x42
+  4496cc:	7941      	ldrb	r1, [r0, #5]
+  4496ce:	1e4a      	subs	r2, r1, #1
+  4496d0:	b2d3      	uxtb	r3, r2
+  4496d2:	2b0c      	cmp	r3, #12
+  4496d4:	d805      	bhi.n	0x4496e2
+  4496d6:	4b05      	ldr	r3, [pc, #20]	@ (0x4496ec)
+  4496d8:	eb03 03c2 	add.w	r3, r3, r2, lsl #3
+  4496dc:	685b      	ldr	r3, [r3, #4]
+  4496de:	b11b      	cbz	r3, 0x4496e8
+  4496e0:	4718      	bx	r3
+  4496e2:	4803      	ldr	r0, [pc, #12]	@ (0x4496f0)
+  4496e4:	f7df be84 	b.w	0x4293f0
+  4496e8:	4770      	bx	lr
+  4496ea:	bf00      	nop
+  4496ec:	f848 0048 	str.w	r0, [r8, r8]
+  4496f0:	2c57      	cmp	r4, #87	@ 0x57
+  4496f2:	0049      	lsls	r1, r1, #1
+  4496f4:	4770      	bx	lr

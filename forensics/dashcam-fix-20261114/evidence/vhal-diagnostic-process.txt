@@ -1,0 +1,392 @@
+
+forensics/flyme-dvr-20261010/raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000004b5ffc <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x352d28>:
+  4b5ffc:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+  4b6000:	a9016ffc 	stp	x28, x27, [sp, #16]
+  4b6004:	a90267fa 	stp	x26, x25, [sp, #32]
+  4b6008:	a9035ff8 	stp	x24, x23, [sp, #48]
+  4b600c:	a90457f6 	stp	x22, x21, [sp, #64]
+  4b6010:	a9054ff4 	stp	x20, x19, [sp, #80]
+  4b6014:	910003fd 	mov	x29, sp
+  4b6018:	d10a43ff 	sub	sp, sp, #0x290
+  4b601c:	f90027e0 	str	x0, [sp, #72]
+  4b6020:	d53bd05a 	mrs	x26, tpidr_el0
+  4b6024:	f9401748 	ldr	x8, [x26, #40]
+  4b6028:	aa0103f4 	mov	x20, x1
+  4b602c:	9103e3f5 	add	x21, sp, #0xf8
+  4b6030:	f81e83a8 	stur	x8, [x29, #-24]
+  4b6034:	f9400020 	ldr	x0, [x1]
+  4b6038:	97f365af 	bl	18f6f4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c420>
+  4b603c:	39400017 	ldrb	w23, [x0]
+  4b6040:	f9400280 	ldr	x0, [x20]
+  4b6044:	97f365ae 	bl	18f6fc <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c428>
+  4b6048:	39400016 	ldrb	w22, [x0]
+  4b604c:	f9400280 	ldr	x0, [x20]
+  4b6050:	97f365ad 	bl	18f704 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c430>
+  4b6054:	39400018 	ldrb	w24, [x0]
+  4b6058:	2a1603f3 	mov	w19, w22
+  4b605c:	33181ef3 	bfi	w19, w23, #8, #8
+  4b6060:	d0ffdae1 	adrp	x1, 14000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x49a70>
+  4b6064:	d0ffdb22 	adrp	x2, 1c000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x41a70>
+  4b6068:	f0ffdb43 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  4b606c:	91347421 	add	x1, x1, #0xd1d // STATIC_STRING@14d1d "uevent_listerner_in_userspace"
+  4b6070:	912c9c42 	add	x2, x2, #0xb27 // STATIC_STRING@1cb27 "%s, mcu readId = 0x%04x, mainCmdId = 0x%x ,subCmdId = 0x%x , datalen = %d"
+  4b6074:	913eac63 	add	x3, x3, #0xfab // STATIC_STRING@21fab "processMessage"
+  4b6078:	52800080 	mov	w0, #0x4                   	// #4
+  4b607c:	2a1303e4 	mov	w4, w19
+  4b6080:	2a1703e5 	mov	w5, w23
+  4b6084:	2a1603e6 	mov	w6, w22
+  4b6088:	2a1803e7 	mov	w7, w24
+  4b608c:	94034d1d 	bl	589500 <__android_log_print@plt>
+  4b6090:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b6094:	f9400108 	ldr	x8, [x8]
+  4b6098:	f9400108 	ldr	x8, [x8]
+  4b609c:	b4000c48 	cbz	x8, 4b6224 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x352f50>
+  4b60a0:	b9400908 	ldr	w8, [x8, #8]
+  4b60a4:	7100111f 	cmp	w8, #0x4
+  4b60a8:	54000beb 	b.lt	4b6224 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x352f50>  // b.tstop
+  4b60ac:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b60b0:	f9400508 	ldr	x8, [x8, #8]
+  4b60b4:	52800089 	mov	w9, #0x4                   	// #4
+  4b60b8:	52801640 	mov	w0, #0xb2                  	// #178
+  4b60bc:	b90113e9 	str	w9, [sp, #272]
+  4b60c0:	91004108 	add	x8, x8, #0x10
+  4b60c4:	f9007fe8 	str	x8, [sp, #248]
+  4b60c8:	94034d12 	bl	589510 <syscall@plt>
+  4b60cc:	b90117e0 	str	w0, [sp, #276]
+  4b60d0:	900006ca 	adrp	x10, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b60d4:	f9400d4a 	ldr	x10, [x10, #24]
+  4b60d8:	9103e3e9 	add	x9, sp, #0xf8
+  4b60dc:	528006a8 	mov	w8, #0x35                  	// #53
+  4b60e0:	9100e139 	add	x25, x9, #0x38
+  4b60e4:	a911a3ff 	stp	xzr, x8, [sp, #280]
+  4b60e8:	91028120 	add	x0, x9, #0xa0
+  4b60ec:	91006148 	add	x8, x10, #0x18
+  4b60f0:	91010149 	add	x9, x10, #0x40
+  4b60f4:	aa1903e1 	mov	x1, x25
+  4b60f8:	f90097e8 	str	x8, [sp, #296]
+  4b60fc:	f900cfe9 	str	x9, [sp, #408]
+  4b6100:	94034d08 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  4b6104:	f90113ff 	str	xzr, [sp, #544]
+  4b6108:	900006c9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b610c:	f9401129 	ldr	x9, [x9, #32]
+  4b6110:	12800008 	mov	w8, #0xffffffff            	// #-1
+  4b6114:	b9022be8 	str	w8, [sp, #552]
+  4b6118:	aa1903e0 	mov	x0, x25
+  4b611c:	91006128 	add	x8, x9, #0x18
+  4b6120:	91010129 	add	x9, x9, #0x40
+  4b6124:	f90097e8 	str	x8, [sp, #296]
+  4b6128:	f900cfe9 	str	x9, [sp, #408]
+  4b612c:	94034d01 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  4b6130:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b6134:	f9400908 	ldr	x8, [x8, #16]
+  4b6138:	6f00e400 	movi	v0.2d, #0x0
+  4b613c:	52800209 	mov	w9, #0x10                  	// #16
+  4b6140:	910243e0 	add	x0, sp, #0x90
+  4b6144:	91004108 	add	x8, x8, #0x10
+  4b6148:	f9009be8 	str	x8, [sp, #304]
+  4b614c:	d0ffdac8 	adrp	x8, 10000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4da70>
+  4b6150:	3c8782a0 	stur	q0, [x21, #120]
+  4b6154:	3c8882a0 	stur	q0, [x21, #136]
+  4b6158:	b90193e9 	str	w9, [sp, #400]
+  4b615c:	90ffdb89 	adrp	x9, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  4b6160:	91263108 	add	x8, x8, #0x98c // STATIC_STRING@1098c "virtual void android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::processMessage(std::unique_ptr<Message> &)"
+  4b6164:	910c8929 	add	x9, x9, #0x322
+  4b6168:	aa1f03e1 	mov	x1, xzr
+  4b616c:	f9011be8 	str	x8, [sp, #560]
+  4b6170:	f9011fe9 	str	x9, [sp, #568]
+  4b6174:	b90243ff 	str	wzr, [sp, #576]
+  4b6178:	ad0a82a0 	stp	q0, q0, [x21, #336]
+  4b617c:	3d805ea0 	str	q0, [x21, #368]
+  4b6180:	a9097fff 	stp	xzr, xzr, [sp, #144]
+  4b6184:	94034cef 	bl	589540 <gettimeofday@plt>
+  4b6188:	a94927e8 	ldp	x8, x9, [sp, #144]
+  4b618c:	d29ef9ea 	mov	x10, #0xf7cf                	// #63439
+  4b6190:	f2bc6a6a 	movk	x10, #0xe353, lsl #16
+  4b6194:	f2d374aa 	movk	x10, #0x9ba5, lsl #32
+  4b6198:	f2e4188a 	movk	x10, #0x20c4, lsl #48
+  4b619c:	f90083e8 	str	x8, [sp, #256]
+  4b61a0:	9b4a7d28 	smulh	x8, x9, x10
+  4b61a4:	d37ffd09 	lsr	x9, x8, #63
+  4b61a8:	d0ffdae1 	adrp	x1, 14000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x49a70>
+  4b61ac:	d0ffdb22 	adrp	x2, 1c000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x41a70>
+  4b61b0:	f0ffdb43 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  4b61b4:	0b481d28 	add	w8, w9, w8, lsr #7
+  4b61b8:	91347421 	add	x1, x1, #0xd1d // STATIC_STRING@14d1d "uevent_listerner_in_userspace"
+  4b61bc:	912c9c42 	add	x2, x2, #0xb27 // STATIC_STRING@1cb27 "%s, mcu readId = 0x%04x, mainCmdId = 0x%x ,subCmdId = 0x%x , datalen = %d"
+  4b61c0:	913eac63 	add	x3, x3, #0xfab // STATIC_STRING@21fab "processMessage"
+  4b61c4:	9103e3e0 	add	x0, sp, #0xf8
+  4b61c8:	2a1303e4 	mov	w4, w19
+  4b61cc:	2a1703e5 	mov	w5, w23
+  4b61d0:	2a1603e6 	mov	w6, w22
+  4b61d4:	2a1803e7 	mov	w7, w24
+  4b61d8:	790213e8 	strh	w8, [sp, #264]
+  4b61dc:	97ee9742 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  4b61e0:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b61e4:	f9400108 	ldr	x8, [x8]
+  4b61e8:	f9400118 	ldr	x24, [x8]
+  4b61ec:	a9412319 	ldp	x25, x8, [x24, #16]
+  4b61f0:	eb08033f 	cmp	x25, x8
+  4b61f4:	54000140 	b.eq	4b621c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x352f48>  // b.none
+  4b61f8:	aa0003f7 	mov	x23, x0
+  4b61fc:	f8408720 	ldr	x0, [x25], #8
+  4b6200:	aa1703e1 	mov	x1, x23
+  4b6204:	f9400008 	ldr	x8, [x0]
+  4b6208:	f9400908 	ldr	x8, [x8, #16]
+  4b620c:	d63f0100 	blr	x8
+  4b6210:	f9400f08 	ldr	x8, [x24, #24]
+  4b6214:	eb08033f 	cmp	x25, x8
+  4b6218:	54ffff21 	b.ne	4b61fc <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x352f28>  // b.any
+  4b621c:	9103e3e0 	add	x0, sp, #0xf8
+  4b6220:	97ee977e 	bl	5c018 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1a58>
+  4b6224:	f94027e8 	ldr	x8, [sp, #72]
+  4b6228:	a906ffff 	stp	xzr, xzr, [sp, #104]
+  4b622c:	f9003fff 	str	xzr, [sp, #120]
+  4b6230:	2a1303e1 	mov	w1, w19
+  4b6234:	f9401908 	ldr	x8, [x8, #48]
+  4b6238:	f9400500 	ldr	x0, [x8, #8]
+  4b623c:	f9400008 	ldr	x8, [x0]
+  4b6240:	f9403109 	ldr	x9, [x8, #96]
+  4b6244:	9101a3e8 	add	x8, sp, #0x68
+  4b6248:	d63f0120 	blr	x9
+  4b624c:	a946a3e0 	ldp	x0, x8, [sp, #104]
+  4b6250:	eb08001f 	cmp	x0, x8
+  4b6254:	54003380 	b.eq	4b68c4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x3535f0>  // b.none
+  4b6258:	cb000108 	sub	x8, x8, x0
+  4b625c:	d343fd08 	lsr	x8, x8, #3
+  4b6260:	7100051f 	cmp	w8, #0x1
+  4b6264:	5400312b 	b.lt	4b6888 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x3535b4>  // b.tstop
+  4b6268:	f90007fa 	str	x26, [sp, #8]
+  4b626c:	910243e8 	add	x8, sp, #0x90
+  4b6270:	9103e3e9 	add	x9, sp, #0xf8
+  4b6274:	900006ca 	adrp	x10, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b6278:	f94037e0 	ldr	x0, [sp, #104]
+  4b627c:	f940054a 	ldr	x10, [x10, #8]
+  4b6280:	900006cb 	adrp	x11, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b6284:	91006119 	add	x25, x8, #0x18
+  4b6288:	9101210c 	add	x12, x8, #0x48
+  4b628c:	9101611b 	add	x27, x8, #0x58
+  4b6290:	9100e128 	add	x8, x9, #0x38 // STATIC_STRING@26038 "antTypeSts"
+  4b6294:	f940096b 	ldr	x11, [x11, #16]
+  4b6298:	a903b3e8 	stp	x8, x12, [sp, #56]
+  4b629c:	91028128 	add	x8, x9, #0xa0 // STATIC_STRING@260a0 " int> android::hardware::automotive::vehicle::V2_0::mcuengine::CANAnalysis::parse_0x2FD_Data(const int, const uint8_t *, const uint8_t)"
+  4b62a0:	f9001be8 	str	x8, [sp, #48]
+  4b62a4:	9101e128 	add	x8, x9, #0x78
+  4b62a8:	f90017e8 	str	x8, [sp, #40]
+  4b62ac:	91054128 	add	x8, x9, #0x150 // STATIC_STRING@26150 "ware::automotive::vehicle::V2_0::mcuengine::CANAnalysis::parse_0x225_Data(const int, const uint8_t *, const uint8_t)"
+  4b62b0:	f90013e8 	str	x8, [sp, #32]
+  4b62b4:	91004148 	add	x8, x10, #0x10
+  4b62b8:	aa1f03f8 	mov	x24, xzr
+  4b62bc:	f9000fe8 	str	x8, [sp, #24]
+  4b62c0:	91004168 	add	x8, x11, #0x10
+  4b62c4:	f9000be8 	str	x8, [sp, #16]
+  4b62c8:	14000007 	b	4b62e4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353010>
+  4b62cc:	a946a3e0 	ldp	x0, x8, [sp, #104]
+  4b62d0:	91000718 	add	x24, x24, #0x1
+  4b62d4:	cb000108 	sub	x8, x8, x0
+  4b62d8:	d343fd08 	lsr	x8, x8, #3
+  4b62dc:	eb28c31f 	cmp	x24, w8, sxtw
+  4b62e0:	54002d2a 	b.ge	4b6884 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x3535b0>  // b.tcont
+  4b62e4:	f8787815 	ldr	x21, [x0, x24, lsl #3]
+  4b62e8:	710056df 	cmp	w22, #0x15
+  4b62ec:	540014e0 	b.eq	4b6588 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x3532b4>  // b.none
+  4b62f0:	710052df 	cmp	w22, #0x14
+  4b62f4:	54fffec1 	b.ne	4b62cc <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x352ff8>  // b.any
+  4b62f8:	a9057fff 	stp	xzr, xzr, [sp, #80]
+  4b62fc:	f90033ff 	str	xzr, [sp, #96]
+  4b6300:	f9400280 	ldr	x0, [x20]
+  4b6304:	97f36504 	bl	18f714 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c440>
+  4b6308:	f940001c 	ldr	x28, [x0]
+  4b630c:	f9400280 	ldr	x0, [x20]
+  4b6310:	97f36501 	bl	18f714 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c440>
+  4b6314:	f940041a 	ldr	x26, [x0, #8]
+  4b6318:	a905ffff 	stp	xzr, xzr, [sp, #88]
+  4b631c:	f9002bff 	str	xzr, [sp, #80]
+  4b6320:	eb1c0357 	subs	x23, x26, x28
+  4b6324:	54000200 	b.eq	4b6364 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353090>  // b.none
+  4b6328:	b7f83ab7 	tbnz	x23, #63, 4b6a7c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x3537a8>
+  4b632c:	aa1703e0 	mov	x0, x23
+  4b6330:	94034c60 	bl	5894b0 <_Znwm@plt>
+  4b6334:	8b170008 	add	x8, x0, x23
+  4b6338:	eb1a039f 	cmp	x28, x26
+  4b633c:	a90503e0 	stp	x0, x0, [sp, #80]
+  4b6340:	f90033e8 	str	x8, [sp, #96]
+  4b6344:	54000100 	b.eq	4b6364 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353090>  // b.none
+  4b6348:	38401788 	ldrb	w8, [x28], #1
+  4b634c:	39000008 	strb	w8, [x0]
+  4b6350:	f9402fe8 	ldr	x8, [sp, #88]
+  4b6354:	eb1c035f 	cmp	x26, x28
+  4b6358:	91000500 	add	x0, x8, #0x1
+  4b635c:	f9002fe0 	str	x0, [sp, #88]
+  4b6360:	54ffff41 	b.ne	4b6348 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353074>  // b.any
+  4b6364:	6f00e400 	movi	v0.2d, #0x0
+  4b6368:	f9007bff 	str	xzr, [sp, #240]
+  4b636c:	ad0683e0 	stp	q0, q0, [sp, #208]
+  4b6370:	ad0583e0 	stp	q0, q0, [sp, #176]
+  4b6374:	ad0483e0 	stp	q0, q0, [sp, #144]
+  4b6378:	94034dd6 	bl	589ad0 <_ZN7android19elapsedRealtimeNanoEv@plt>
+  4b637c:	f9004be0 	str	x0, [sp, #144]
+  4b6380:	b94002a8 	ldr	w8, [x21]
+  4b6384:	f94023e0 	ldr	x0, [sp, #64]
+  4b6388:	6f00e400 	movi	v0.2d, #0x0
+  4b638c:	910143e1 	add	x1, sp, #0x50
+  4b6390:	12080d08 	and	w8, w8, #0xf000000
+  4b6394:	b9009be8 	str	w8, [sp, #152]
+  4b6398:	b94002a8 	ldr	w8, [x21]
+  4b639c:	2913ffe8 	stp	w8, wzr, [sp, #156]
+  4b63a0:	ad000320 	stp	q0, q0, [x25]
+  4b63a4:	3d800b20 	str	q0, [x25, #32]
+  4b63a8:	97f3fc23 	bl	1b5434 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x52160>
+  4b63ac:	aa1b03e0 	mov	x0, x27
+  4b63b0:	94034c20 	bl	589430 <_ZN7android8hardware11hidl_stringC1Ev@plt>
+  4b63b4:	f94027e8 	ldr	x8, [sp, #72]
+  4b63b8:	910243e1 	add	x1, sp, #0x90
+  4b63bc:	f9401908 	ldr	x8, [x8, #48]
+  4b63c0:	f9400500 	ldr	x0, [x8, #8]
+  4b63c4:	f9400008 	ldr	x8, [x0]
+  4b63c8:	f9403508 	ldr	x8, [x8, #104]
+  4b63cc:	d63f0100 	blr	x8
+  4b63d0:	b94002a4 	ldr	w4, [x21]
+  4b63d4:	12000017 	and	w23, w0, #0x1
+  4b63d8:	d0ffdae1 	adrp	x1, 14000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x49a70>
+  4b63dc:	f0ffdb62 	adrp	x2, 25000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x38a70>
+  4b63e0:	f0ffdb43 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  4b63e4:	52800060 	mov	w0, #0x3                   	// #3
+  4b63e8:	91347421 	add	x1, x1, #0xd1d // STATIC_STRING@14d1d "uevent_listerner_in_userspace"
+  4b63ec:	91316042 	add	x2, x2, #0xc58 // STATIC_STRING@25c58 "%s: property ID %x ,mcuId = 0x%04x transmit flag: %d"
+  4b63f0:	913eac63 	add	x3, x3, #0xfab // STATIC_STRING@21fab "processMessage"
+  4b63f4:	2a1303e5 	mov	w5, w19
+  4b63f8:	2a1703e6 	mov	w6, w23
+  4b63fc:	94034c41 	bl	589500 <__android_log_print@plt>
+  4b6400:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b6404:	f9400108 	ldr	x8, [x8]
+  4b6408:	f9400108 	ldr	x8, [x8]
+  4b640c:	b4002008 	cbz	x8, 4b680c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353538>
+  4b6410:	b9400908 	ldr	w8, [x8, #8]
+  4b6414:	7100151f 	cmp	w8, #0x5
+  4b6418:	54001fab 	b.lt	4b680c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353538>  // b.tstop
+  4b641c:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b6420:	f9400508 	ldr	x8, [x8, #8]
+  4b6424:	52801640 	mov	w0, #0xb2                  	// #178
+  4b6428:	91004108 	add	x8, x8, #0x10
+  4b642c:	f9007fe8 	str	x8, [sp, #248]
+  4b6430:	528000a8 	mov	w8, #0x5                   	// #5
+  4b6434:	b90113e8 	str	w8, [sp, #272]
+  4b6438:	94034c36 	bl	589510 <syscall@plt>
+  4b643c:	52800948 	mov	w8, #0x4a                  	// #74
+  4b6440:	b90117e0 	str	w0, [sp, #276]
+  4b6444:	a911a3ff 	stp	xzr, x8, [sp, #280]
+  4b6448:	900006c9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b644c:	f9400d29 	ldr	x9, [x9, #24]
+  4b6450:	a9436be0 	ldp	x0, x26, [sp, #48]
+  4b6454:	91006128 	add	x8, x9, #0x18
+  4b6458:	91010129 	add	x9, x9, #0x40
+  4b645c:	aa1a03e1 	mov	x1, x26
+  4b6460:	f90097e8 	str	x8, [sp, #296]
+  4b6464:	f900cfe9 	str	x9, [sp, #408]
+  4b6468:	94034c2e 	bl	589520 <_ZNSt3__18ios_base4initEPv@plt>
+  4b646c:	12800008 	mov	w8, #0xffffffff            	// #-1
+  4b6470:	f90113ff 	str	xzr, [sp, #544]
+  4b6474:	b9022be8 	str	w8, [sp, #552]
+  4b6478:	900006c9 	adrp	x9, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b647c:	f9401129 	ldr	x9, [x9, #32]
+  4b6480:	aa1a03e0 	mov	x0, x26
+  4b6484:	91006128 	add	x8, x9, #0x18
+  4b6488:	91010129 	add	x9, x9, #0x40
+  4b648c:	f90097e8 	str	x8, [sp, #296]
+  4b6490:	f900cfe9 	str	x9, [sp, #408]
+  4b6494:	94034c27 	bl	589530 <_ZNSt3__115basic_streambufIcNS_11char_traitsIcEEEC2Ev@plt>
+  4b6498:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b649c:	f9400908 	ldr	x8, [x8, #16]
+  4b64a0:	6f00e400 	movi	v0.2d, #0x0
+  4b64a4:	910203e0 	add	x0, sp, #0x80
+  4b64a8:	aa1f03e1 	mov	x1, xzr
+  4b64ac:	91004108 	add	x8, x8, #0x10
+  4b64b0:	f9009be8 	str	x8, [sp, #304]
+  4b64b4:	f94017e8 	ldr	x8, [sp, #40]
+  4b64b8:	a9087fff 	stp	xzr, xzr, [sp, #128]
+  4b64bc:	ad000100 	stp	q0, q0, [x8]
+  4b64c0:	52800208 	mov	w8, #0x10                  	// #16
+  4b64c4:	b90193e8 	str	w8, [sp, #400]
+  4b64c8:	d0ffdac8 	adrp	x8, 10000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4da70>
+  4b64cc:	91263108 	add	x8, x8, #0x98c // STATIC_STRING@1098c "virtual void android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::processMessage(std::unique_ptr<Message> &)"
+  4b64d0:	f9011be8 	str	x8, [sp, #560]
+  4b64d4:	90ffdb88 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  4b64d8:	910c8908 	add	x8, x8, #0x322
+  4b64dc:	f9011fe8 	str	x8, [sp, #568]
+  4b64e0:	f94013e8 	ldr	x8, [sp, #32]
+  4b64e4:	b90243ff 	str	wzr, [sp, #576]
+  4b64e8:	ad008100 	stp	q0, q0, [x8, #16]
+  4b64ec:	3d800100 	str	q0, [x8]
+  4b64f0:	94034c14 	bl	589540 <gettimeofday@plt>
+  4b64f4:	a94827e8 	ldp	x8, x9, [sp, #128]
+  4b64f8:	d0ffdae1 	adrp	x1, 14000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x49a70>
+  4b64fc:	f0ffdb62 	adrp	x2, 25000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x38a70>
+  4b6500:	f0ffdb43 	adrp	x3, 21000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3ca70>
+  4b6504:	f90083e8 	str	x8, [sp, #256]
+  4b6508:	d29ef9e8 	mov	x8, #0xf7cf                	// #63439
+  4b650c:	f2bc6a68 	movk	x8, #0xe353, lsl #16
+  4b6510:	f2d374a8 	movk	x8, #0x9ba5, lsl #32
+  4b6514:	f2e41888 	movk	x8, #0x20c4, lsl #48
+  4b6518:	9b487d28 	smulh	x8, x9, x8
+  4b651c:	d37ffd09 	lsr	x9, x8, #63
+  4b6520:	0b481d28 	add	w8, w9, w8, lsr #7
+  4b6524:	790213e8 	strh	w8, [sp, #264]
+  4b6528:	b94002a4 	ldr	w4, [x21]
+  4b652c:	9103e3e0 	add	x0, sp, #0xf8
+  4b6530:	91347421 	add	x1, x1, #0xd1d // STATIC_STRING@14d1d "uevent_listerner_in_userspace"
+  4b6534:	91316042 	add	x2, x2, #0xc58 // STATIC_STRING@25c58 "%s: property ID %x ,mcuId = 0x%04x transmit flag: %d"
+  4b6538:	913eac63 	add	x3, x3, #0xfab // STATIC_STRING@21fab "processMessage"
+  4b653c:	2a1303e5 	mov	w5, w19
+  4b6540:	2a1703e6 	mov	w6, w23
+  4b6544:	97ee9668 	bl	5bee4 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x1b8c>
+  4b6548:	900006c8 	adrp	x8, 58e000 <_ZTCNSt3__113basic_fstreamIcNS_11char_traitsIcEEEE16_NS_13basic_ostreamIcS2_EE@@Base+0x15a0>
+  4b654c:	f9400108 	ldr	x8, [x8]
+  4b6550:	f9400115 	ldr	x21, [x8]
+  4b6554:	a94122ba 	ldp	x26, x8, [x21, #16]
+  4b6558:	eb08035f 	cmp	x26, x8
+  4b655c:	54001540 	b.eq	4b6804 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353530>  // b.none
+  4b6560:	aa0003f7 	mov	x23, x0
+  4b6564:	f8408740 	ldr	x0, [x26], #8
+  4b6568:	aa1703e1 	mov	x1, x23
+  4b656c:	f9400008 	ldr	x8, [x0]
+  4b6570:	f9400908 	ldr	x8, [x8, #16]
+  4b6574:	d63f0100 	blr	x8
+  4b6578:	f9400ea8 	ldr	x8, [x21, #24]
+  4b657c:	eb08035f 	cmp	x26, x8
+  4b6580:	54ffff21 	b.ne	4b6564 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353290>  // b.any
+  4b6584:	140000a0 	b	4b6804 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353530>
+  4b6588:	a9057fff 	stp	xzr, xzr, [sp, #80]
+  4b658c:	f90033ff 	str	xzr, [sp, #96]
+  4b6590:	f9400280 	ldr	x0, [x20]
+  4b6594:	97f36460 	bl	18f714 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c440>
+  4b6598:	f940001c 	ldr	x28, [x0]
+  4b659c:	f9400280 	ldr	x0, [x20]
+  4b65a0:	97f3645d 	bl	18f714 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x2c440>
+  4b65a4:	f940041a 	ldr	x26, [x0, #8]
+  4b65a8:	a905ffff 	stp	xzr, xzr, [sp, #88]
+  4b65ac:	f9002bff 	str	xzr, [sp, #80]
+  4b65b0:	eb1c0357 	subs	x23, x26, x28
+  4b65b4:	54000200 	b.eq	4b65f4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353320>  // b.none
+  4b65b8:	b7f82637 	tbnz	x23, #63, 4b6a7c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x3537a8>
+  4b65bc:	aa1703e0 	mov	x0, x23
+  4b65c0:	94034bbc 	bl	5894b0 <_Znwm@plt>
+  4b65c4:	8b170008 	add	x8, x0, x23
+  4b65c8:	eb1a039f 	cmp	x28, x26
+  4b65cc:	a90503e0 	stp	x0, x0, [sp, #80]
+  4b65d0:	f90033e8 	str	x8, [sp, #96]
+  4b65d4:	54000100 	b.eq	4b65f4 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353320>  // b.none
+  4b65d8:	38401788 	ldrb	w8, [x28], #1
+  4b65dc:	39000008 	strb	w8, [x0]
+  4b65e0:	f9402fe8 	ldr	x8, [sp, #88]
+  4b65e4:	eb1c035f 	cmp	x26, x28
+  4b65e8:	91000500 	add	x0, x8, #0x1
+  4b65ec:	f9002fe0 	str	x0, [sp, #88]
+  4b65f0:	54ffff41 	b.ne	4b65d8 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x353304>  // b.any
+  4b65f4:	6f00e400 	movi	v0.2d, #0x0
+  4b65f8:	f9007bff 	str	xzr, [sp, #240]
+  4b65fc:	ad0683e0 	stp	q0, q0, [sp, #208]

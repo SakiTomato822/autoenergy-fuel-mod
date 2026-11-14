@@ -1,0 +1,80 @@
+[
+  {
+    "sub": 1,
+    "address": "0x48f848",
+    "word0": "0x1",
+    "callback": "0x0"
+  },
+  {
+    "sub": 2,
+    "address": "0x48f850",
+    "word0": "0x2",
+    "callback": "0x0"
+  },
+  {
+    "sub": 3,
+    "address": "0x48f858",
+    "word0": "0x3",
+    "callback": "0x0"
+  },
+  {
+    "sub": 4,
+    "address": "0x48f860",
+    "word0": "0x4",
+    "callback": "0x449519"
+  },
+  {
+    "sub": 5,
+    "address": "0x48f868",
+    "word0": "0x5",
+    "callback": "0x44951b"
+  },
+  {
+    "sub": 6,
+    "address": "0x48f870",
+    "word0": "0x6",
+    "callback": "0x0"
+  },
+  {
+    "sub": 7,
+    "address": "0x48f878",
+    "word0": "0x7",
+    "callback": "0x0"
+  },
+  {
+    "sub": 8,
+    "address": "0x48f880",
+    "word0": "0x8",
+    "callback": "0x0"
+  },
+  {
+    "sub": 9,
+    "address": "0x48f888",
+    "word0": "0x9",
+    "callback": "0x0"
+  },
+  {
+    "sub": 10,
+    "address": "0x48f890",
+    "word0": "0xa",
+    "callback": "0x0"
+  },
+  {
+    "sub": 11,
+    "address": "0x48f898",
+    "word0": "0xb",
+    "callback": "0x449543"
+  },
+  {
+    "sub": 12,
+    "address": "0x48f8a0",
+    "word0": "0xc",
+    "callback": "0x449539"
+  },
+  {
+    "sub": 13,
+    "address": "0x48f8a8",
+    "word0": "0xd",
+    "callback": "0x0"
+  }
+]

@@ -1,0 +1,279 @@
+
+forensics/flyme-dvr-20261010/raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000032b9a0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c86cc>:
+  32b9a0:	35000795 	cbnz	w21, 32ba90 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c87bc>
+  32b9a4:	394cf668 	ldrb	w8, [x19, #829]
+  32b9a8:	34000748 	cbz	w8, 32ba90 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c87bc>
+  32b9ac:	f94007e8 	ldr	x8, [sp, #8]
+  32b9b0:	b7c806e8 	tbnz	x8, #57, 32ba8c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c87b8>
+  32b9b4:	f9403269 	ldr	x9, [x19, #96]
+  32b9b8:	b247012a 	orr	x10, x9, #0x200000000000000
+  32b9bc:	f900326a 	str	x10, [x19, #96]
+  32b9c0:	b7c80668 	tbnz	x8, #57, 32ba8c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c87b8>
+  32b9c4:	90ffe7ea 	adrp	x10, 27000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x36a70>
+  32b9c8:	9246f928 	and	x8, x9, #0xfdffffffffffffff
+  32b9cc:	91271d4a 	add	x10, x10, #0x9c7 // STATIC_STRING@279c7 "AVM_MMI_Failure"
+  32b9d0:	f9003268 	str	x8, [x19, #96]
+  32b9d4:	f8407148 	ldur	x8, [x10, #7]
+  32b9d8:	f940014a 	ldr	x10, [x10]
+  32b9dc:	528003c9 	mov	w9, #0x1e                  	// #30
+  32b9e0:	910043e1 	add	x1, sp, #0x10
+  32b9e4:	910083e2 	add	x2, sp, #0x20
+  32b9e8:	aa1403e0 	mov	x0, x20
+  32b9ec:	a9027fff 	stp	xzr, xzr, [sp, #32]
+  32b9f0:	390083e9 	strb	w9, [sp, #32]
+  32b9f4:	b9003bff 	str	wzr, [sp, #56]
+  32b9f8:	a902ffe8 	stp	x8, xzr, [sp, #40]
+  32b9fc:	f80213ea 	stur	x10, [sp, #33]
+  32ba00:	f9000bff 	str	xzr, [sp, #16]
+  32ba04:	97ff6ea1 	bl	307488 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1a41b4>
+  32ba08:	f9400008 	ldr	x8, [x0]
+  32ba0c:	b5000388 	cbnz	x8, 32ba7c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c87a8>
+  32ba10:	aa0003f6 	mov	x22, x0
+  32ba14:	52800800 	mov	w0, #0x40                  	// #64
+  32ba18:	940976a6 	bl	5894b0 <_Znwm@plt>
+  32ba1c:	f9401be8 	ldr	x8, [sp, #48]
+  32ba20:	3dc00be0 	ldr	q0, [sp, #32]
+  32ba24:	a902ffff 	stp	xzr, xzr, [sp, #40]
+  32ba28:	f90013ff 	str	xzr, [sp, #32]
+  32ba2c:	f9001808 	str	x8, [x0, #48]
+  32ba30:	b9403be8 	ldr	w8, [sp, #56]
+  32ba34:	a9007c1f 	stp	xzr, xzr, [x0]
+  32ba38:	3d800800 	str	q0, [x0, #32]
+  32ba3c:	b9003808 	str	w8, [x0, #56]
+  32ba40:	f9400be8 	ldr	x8, [sp, #16]
+  32ba44:	f9000808 	str	x8, [x0, #16]
+  32ba48:	f90002c0 	str	x0, [x22]
+  32ba4c:	f9400288 	ldr	x8, [x20]
+  32ba50:	f9400108 	ldr	x8, [x8]
+  32ba54:	b4000088 	cbz	x8, 32ba64 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8790>
+  32ba58:	f9000288 	str	x8, [x20]
+  32ba5c:	f94002c1 	ldr	x1, [x22]
+  32ba60:	14000002 	b	32ba68 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8794>
+  32ba64:	aa0003e1 	mov	x1, x0
+  32ba68:	f9400680 	ldr	x0, [x20, #8]
+  32ba6c:	97f4cfca 	bl	5f994 <_ZNSt3__127__tree_balance_after_insertIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base>
+  32ba70:	f9400a88 	ldr	x8, [x20, #16]
+  32ba74:	91000508 	add	x8, x8, #0x1
+  32ba78:	f9000a88 	str	x8, [x20, #16]
+  32ba7c:	394083e8 	ldrb	w8, [sp, #32]
+  32ba80:	36000068 	tbz	w8, #0, 32ba8c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c87b8>
+  32ba84:	f9401be0 	ldr	x0, [sp, #48]
+  32ba88:	940976c2 	bl	589590 <_ZdlPv@plt>
+  32ba8c:	390cf67f 	strb	wzr, [x19, #829]
+  32ba90:	35000855 	cbnz	w21, 32bb98 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c88c4>
+  32ba94:	394cfa68 	ldrb	w8, [x19, #830]
+  32ba98:	34000808 	cbz	w8, 32bb98 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c88c4>
+  32ba9c:	f94007e9 	ldr	x9, [sp, #8]
+  32baa0:	d37cfd28 	lsr	x8, x9, #60
+  32baa4:	b5000788 	cbnz	x8, 32bb94 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c88c0>
+  32baa8:	f940326a 	ldr	x10, [x19, #96]
+  32baac:	d2e2000b 	mov	x11, #0x1000000000000000    	// #1152921504606846976
+  32bab0:	d2e2000c 	mov	x12, #0x1000000000000000    	// #1152921504606846976
+  32bab4:	92440d29 	and	x9, x9, #0xf000000000000000
+  32bab8:	b340ed4c 	bfxil	x12, x10, #0, #60
+  32babc:	eb0b013f 	cmp	x9, x11
+  32bac0:	f900326c 	str	x12, [x19, #96]
+  32bac4:	54000680 	b.eq	32bb94 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c88c0>  // b.none
+  32bac8:	d0ffe72c 	adrp	x12, 11000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x4ca70>
+  32bacc:	9104f58c 	add	x12, x12, #0x13d // STATIC_STRING@1113d "AVM_ViewModeResp"
+  32bad0:	3dc00180 	ldr	q0, [x12]
+  32bad4:	9240ed4a 	and	x10, x10, #0xfffffffffffffff
+  32bad8:	5280040b 	mov	w11, #0x20                  	// #32
+  32badc:	aa090149 	orr	x9, x10, x9
+  32bae0:	910043e1 	add	x1, sp, #0x10
+  32bae4:	910083e2 	add	x2, sp, #0x20
+  32bae8:	aa1403e0 	mov	x0, x20
+  32baec:	f9003269 	str	x9, [x19, #96]
+  32baf0:	a9027fff 	stp	xzr, xzr, [sp, #32]
+  32baf4:	f9001bff 	str	xzr, [sp, #48]
+  32baf8:	390083eb 	strb	w11, [sp, #32]
+  32bafc:	3900c7ff 	strb	wzr, [sp, #49]
+  32bb00:	b9003be8 	str	w8, [sp, #56]
+  32bb04:	3c8213e0 	stur	q0, [sp, #33]
+  32bb08:	f9000bff 	str	xzr, [sp, #16]
+  32bb0c:	97ff6e5f 	bl	307488 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1a41b4>
+  32bb10:	f9400008 	ldr	x8, [x0]
+  32bb14:	b5000388 	cbnz	x8, 32bb84 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c88b0>
+  32bb18:	aa0003f5 	mov	x21, x0
+  32bb1c:	52800800 	mov	w0, #0x40                  	// #64
+  32bb20:	94097664 	bl	5894b0 <_Znwm@plt>
+  32bb24:	f9401be8 	ldr	x8, [sp, #48]
+  32bb28:	3dc00be0 	ldr	q0, [sp, #32]
+  32bb2c:	a902ffff 	stp	xzr, xzr, [sp, #40]
+  32bb30:	f90013ff 	str	xzr, [sp, #32]
+  32bb34:	f9001808 	str	x8, [x0, #48]
+  32bb38:	b9403be8 	ldr	w8, [sp, #56]
+  32bb3c:	a9007c1f 	stp	xzr, xzr, [x0]
+  32bb40:	3d800800 	str	q0, [x0, #32]
+  32bb44:	b9003808 	str	w8, [x0, #56]
+  32bb48:	f9400be8 	ldr	x8, [sp, #16]
+  32bb4c:	f9000808 	str	x8, [x0, #16]
+  32bb50:	f90002a0 	str	x0, [x21]
+  32bb54:	f9400288 	ldr	x8, [x20]
+  32bb58:	f9400108 	ldr	x8, [x8]
+  32bb5c:	b4000088 	cbz	x8, 32bb6c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8898>
+  32bb60:	f9000288 	str	x8, [x20]
+  32bb64:	f94002a1 	ldr	x1, [x21]
+  32bb68:	14000002 	b	32bb70 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c889c>
+  32bb6c:	aa0003e1 	mov	x1, x0
+  32bb70:	f9400680 	ldr	x0, [x20, #8]
+  32bb74:	97f4cf88 	bl	5f994 <_ZNSt3__127__tree_balance_after_insertIPNS_16__tree_node_baseIPvEEEEvT_S5_@@Base>
+  32bb78:	f9400a88 	ldr	x8, [x20, #16]
+  32bb7c:	91000508 	add	x8, x8, #0x1
+  32bb80:	f9000a88 	str	x8, [x20, #16]
+  32bb84:	394083e8 	ldrb	w8, [sp, #32]
+  32bb88:	36000068 	tbz	w8, #0, 32bb94 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c88c0>
+  32bb8c:	f9401be0 	ldr	x0, [sp, #48]
+  32bb90:	94097680 	bl	589590 <_ZdlPv@plt>
+  32bb94:	390cfa7f 	strb	wzr, [x19, #830]
+  32bb98:	aa1303f6 	mov	x22, x19
+  32bb9c:	f94007e9 	ldr	x9, [sp, #8]
+  32bba0:	f8460ec8 	ldr	x8, [x22, #96]!
+  32bba4:	92400d2a 	and	x10, x9, #0xf
+  32bba8:	12000d0b 	and	w11, w8, #0xf
+  32bbac:	6b0a017f 	cmp	w11, w10
+  32bbb0:	54000360 	b.eq	32bc1c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8948>  // b.none
+  32bbb4:	b0ffe7cb 	adrp	x11, 24000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x39a70>
+  32bbb8:	9136916b 	add	x11, x11, #0xda4 // STATIC_STRING@24da4 "AVM_ViewModeRespExtend"
+  32bbbc:	3dc00160 	ldr	q0, [x11]
+  32bbc0:	f840e16b 	ldur	x11, [x11, #14]
+  32bbc4:	927ced08 	and	x8, x8, #0xfffffffffffffff0
+  32bbc8:	52800589 	mov	w9, #0x2c                  	// #44
+  32bbcc:	aa0a0108 	orr	x8, x8, x10
+  32bbd0:	910043e1 	add	x1, sp, #0x10
+  32bbd4:	910083e2 	add	x2, sp, #0x20
+  32bbd8:	aa1403e0 	mov	x0, x20
+  32bbdc:	f90002c8 	str	x8, [x22]
+  32bbe0:	390083e9 	strb	w9, [sp, #32]
+  32bbe4:	3900dfff 	strb	wzr, [sp, #55]
+  32bbe8:	b9003bea 	str	w10, [sp, #56]
+  32bbec:	3c8213e0 	stur	q0, [sp, #33]
+  32bbf0:	f802f3eb 	stur	x11, [sp, #47]
+  32bbf4:	f9000bff 	str	xzr, [sp, #16]
+  32bbf8:	97ff6e24 	bl	307488 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1a41b4>
+  32bbfc:	f9400008 	ldr	x8, [x0]
+  32bc00:	b4005ce8 	cbz	x8, 32c79c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c94c8>
+  32bc04:	394083e8 	ldrb	w8, [sp, #32]
+  32bc08:	36000068 	tbz	w8, #0, 32bc14 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8940>
+  32bc0c:	f9401be0 	ldr	x0, [sp, #48]
+  32bc10:	94097660 	bl	589590 <_ZdlPv@plt>
+  32bc14:	f94007e9 	ldr	x9, [sp, #8]
+  32bc18:	f94002c8 	ldr	x8, [x22]
+  32bc1c:	d344112a 	ubfx	x10, x9, #4, #1
+  32bc20:	5304110b 	ubfx	w11, w8, #4, #1
+  32bc24:	6b0a017f 	cmp	w11, w10
+  32bc28:	54000360 	b.eq	32bc94 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c89c0>  // b.none
+  32bc2c:	90ffe7cb 	adrp	x11, 23000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x3aa70>
+  32bc30:	910e496b 	add	x11, x11, #0x392 // STATIC_STRING@23392 "AVM_ViewTouchBeef"
+  32bc34:	3dc00160 	ldr	q0, [x11]
+  32bc38:	b37c0148 	bfi	x8, x10, #4, #1
+  32bc3c:	52800449 	mov	w9, #0x22                  	// #34
+  32bc40:	52800ccc 	mov	w12, #0x66                  	// #102
+  32bc44:	910043e1 	add	x1, sp, #0x10
+  32bc48:	910083e2 	add	x2, sp, #0x20
+  32bc4c:	aa1403e0 	mov	x0, x20
+  32bc50:	f90002c8 	str	x8, [x22]
+  32bc54:	a9027fff 	stp	xzr, xzr, [sp, #32]
+  32bc58:	f9001bff 	str	xzr, [sp, #48]
+  32bc5c:	390083e9 	strb	w9, [sp, #32]
+  32bc60:	780313ec 	sturh	w12, [sp, #49]
+  32bc64:	b9003bea 	str	w10, [sp, #56]
+  32bc68:	3c8213e0 	stur	q0, [sp, #33]
+  32bc6c:	f9000bff 	str	xzr, [sp, #16]
+  32bc70:	97ff6e06 	bl	307488 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1a41b4>
+  32bc74:	f9400008 	ldr	x8, [x0]
+  32bc78:	b4005bc8 	cbz	x8, 32c7f0 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c951c>
+  32bc7c:	394083e8 	ldrb	w8, [sp, #32]
+  32bc80:	36000068 	tbz	w8, #0, 32bc8c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c89b8>
+  32bc84:	f9401be0 	ldr	x0, [sp, #48]
+  32bc88:	94097642 	bl	589590 <_ZdlPv@plt>
+  32bc8c:	f94007e9 	ldr	x9, [sp, #8]
+  32bc90:	f94002c8 	ldr	x8, [x22]
+  32bc94:	d3482135 	ubfx	x21, x9, #8, #1
+  32bc98:	5308210a 	ubfx	w10, w8, #8, #1
+  32bc9c:	6b15015f 	cmp	w10, w21
+  32bca0:	540003c0 	b.eq	32bd18 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8a44>  // b.none
+  32bca4:	b37802a8 	bfi	x8, x21, #8, #1
+  32bca8:	52800400 	mov	w0, #0x20                  	// #32
+  32bcac:	f90002c8 	str	x8, [x22]
+  32bcb0:	94097600 	bl	5894b0 <_Znwm@plt>
+  32bcb4:	90ffe769 	adrp	x9, 17000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x46a70>
+  32bcb8:	9118c929 	add	x9, x9, #0x632 // STATIC_STRING@17632 "AVM_3DTouringViewKeyResponse"
+  32bcbc:	d0ffe708 	adrp	x8, d000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x50a70>
+  32bcc0:	3cc0c121 	ldur	q1, [x9, #12]
+  32bcc4:	3dc00122 	ldr	q2, [x9]
+  32bcc8:	3dc3ed00 	ldr	q0, [x8, #4016]
+  32bccc:	f9001be0 	str	x0, [sp, #48]
+  32bcd0:	3900701f 	strb	wzr, [x0, #28]
+  32bcd4:	3c80c001 	stur	q1, [x0, #12]
+  32bcd8:	3d800002 	str	q2, [x0]
+  32bcdc:	910043e1 	add	x1, sp, #0x10
+  32bce0:	910083e2 	add	x2, sp, #0x20
+  32bce4:	aa1403e0 	mov	x0, x20
+  32bce8:	b9003bf5 	str	w21, [sp, #56]
+  32bcec:	3d800be0 	str	q0, [sp, #32]
+  32bcf0:	f9000bff 	str	xzr, [sp, #16]
+  32bcf4:	97ff6de5 	bl	307488 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1a41b4>
+  32bcf8:	f9400008 	ldr	x8, [x0]
+  32bcfc:	b4005a48 	cbz	x8, 32c844 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c9570>
+  32bd00:	394083e8 	ldrb	w8, [sp, #32]
+  32bd04:	36000068 	tbz	w8, #0, 32bd10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8a3c>
+  32bd08:	f9401be0 	ldr	x0, [sp, #48]
+  32bd0c:	94097621 	bl	589590 <_ZdlPv@plt>
+  32bd10:	f94007e9 	ldr	x9, [sp, #8]
+  32bd14:	f94002c8 	ldr	x8, [x22]
+  32bd18:	d34a352a 	ubfx	x10, x9, #10, #4
+  32bd1c:	530a350b 	ubfx	w11, w8, #10, #4
+  32bd20:	6b0a017f 	cmp	w11, w10
+  32bd24:	54000340 	b.eq	32bd8c <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8ab8>  // b.none
+  32bd28:	f0ffe7cb 	adrp	x11, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  32bd2c:	9139796b 	add	x11, x11, #0xe5e // STATIC_STRING@26e5e "AVM_CameraFltSts"
+  32bd30:	3dc00160 	ldr	q0, [x11]
+  32bd34:	b3760d48 	bfi	x8, x10, #10, #4
+  32bd38:	52800409 	mov	w9, #0x20                  	// #32
+  32bd3c:	910043e1 	add	x1, sp, #0x10
+  32bd40:	910083e2 	add	x2, sp, #0x20
+  32bd44:	aa1403e0 	mov	x0, x20
+  32bd48:	f90002c8 	str	x8, [x22]
+  32bd4c:	a9027fff 	stp	xzr, xzr, [sp, #32]
+  32bd50:	f9001bff 	str	xzr, [sp, #48]
+  32bd54:	390083e9 	strb	w9, [sp, #32]
+  32bd58:	3900c7ff 	strb	wzr, [sp, #49]
+  32bd5c:	b9003bea 	str	w10, [sp, #56]
+  32bd60:	3c8213e0 	stur	q0, [sp, #33]
+  32bd64:	f9000bff 	str	xzr, [sp, #16]
+  32bd68:	97ff6dc8 	bl	307488 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1a41b4>
+  32bd6c:	f9400008 	ldr	x8, [x0]
+  32bd70:	b4005948 	cbz	x8, 32c898 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c95c4>
+  32bd74:	394083e8 	ldrb	w8, [sp, #32]
+  32bd78:	36000068 	tbz	w8, #0, 32bd84 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8ab0>
+  32bd7c:	f9401be0 	ldr	x0, [sp, #48]
+  32bd80:	94097604 	bl	589590 <_ZdlPv@plt>
+  32bd84:	f94007e9 	ldr	x9, [sp, #8]
+  32bd88:	f94002c8 	ldr	x8, [x22]
+  32bd8c:	d34e3d35 	ubfx	x21, x9, #14, #2
+  32bd90:	530e3d0a 	ubfx	w10, w8, #14, #2
+  32bd94:	6b15015f 	cmp	w10, w21
+  32bd98:	540003c0 	b.eq	32be10 <_ZNSt3__113basic_filebufIcNS_11char_traitsIcEEEC2Ev@@Base+0x1c8b3c>  // b.none
+  32bd9c:	b37206a8 	bfi	x8, x21, #14, #2
+  32bda0:	52800600 	mov	w0, #0x30                  	// #48
+  32bda4:	f90002c8 	str	x8, [x22]
+  32bda8:	940975c2 	bl	5894b0 <_Znwm@plt>
+  32bdac:	d0ffe708 	adrp	x8, d000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x50a70>
+  32bdb0:	3dc3f100 	ldr	q0, [x8, #4032]
+  32bdb4:	f0ffe7c8 	adrp	x8, 26000 <_ZNSt3__115basic_stringbufIcNS_11char_traitsIcEENS_9allocatorIcEEE7seekoffExNS_8ios_base7seekdirEj@@Base-0x37a70>
+  32bdb8:	9139bd08 	add	x8, x8, #0xe6f // STATIC_STRING@26e6f "AVM_RestoreFactorySettingsFeedback"
+  32bdbc:	f9001be0 	str	x0, [sp, #48]
+  32bdc0:	3d800be0 	str	q0, [sp, #32]
+  32bdc4:	ad400500 	ldp	q0, q1, [x8]
+  32bdc8:	528d6c68 	mov	w8, #0x6b63                	// #27491
+  32bdcc:	3900881f 	strb	wzr, [x0, #34]
+  32bdd0:	79004008 	strh	w8, [x0, #32]
+  32bdd4:	ad000400 	stp	q0, q1, [x0]
+  32bdd8:	910043e1 	add	x1, sp, #0x10
+  32bddc:	910083e2 	add	x2, sp, #0x20

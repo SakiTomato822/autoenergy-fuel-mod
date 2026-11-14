@@ -1,0 +1,34 @@
+[
+  {
+    "index": 1006,
+    "property": "0x28700393",
+    "access": 3,
+    "getId": "0x0",
+    "readId": "0xf0a",
+    "writeId": "0xf0b"
+  },
+  {
+    "index": 1007,
+    "property": "0x287003ad",
+    "access": 3,
+    "getId": "0xf0c",
+    "readId": "0xf0d",
+    "writeId": "0x0"
+  },
+  {
+    "index": 1122,
+    "property": "0x28700399",
+    "access": 3,
+    "getId": "0xf04",
+    "readId": "0xf06",
+    "writeId": "0xf05"
+  },
+  {
+    "index": 1132,
+    "property": "0x287003ac",
+    "access": 3,
+    "getId": "0x1f22",
+    "readId": "0x1f25",
+    "writeId": "0x1f23"
+  }
+]

@@ -1,0 +1,112 @@
+
+/data/data/com.termux/files/home/forensics/dashcam-v1.9.10-20261114/apk/assets/libevsproxy_preload.so:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+0000000000013300 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)>:
+   13300:	d10203ff 	sub	sp, sp, #0x80
+   13304:	a9047bfd 	stp	x29, x30, [sp, #64]
+   13308:	f9002bf7 	str	x23, [sp, #80]
+   1330c:	a90657f6 	stp	x22, x21, [sp, #96]
+   13310:	a9074ff4 	stp	x20, x19, [sp, #112]
+   13314:	910103fd 	add	x29, sp, #0x40
+   13318:	aa0003f3 	mov	x19, x0
+   1331c:	f8410e69 	ldr	x9, [x19, #16]!
+   13320:	b4000189 	cbz	x9, 13350 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x50>
+   13324:	f940012a 	ldr	x10, [x9]
+   13328:	f9000109 	str	x9, [x8]
+   1332c:	f85e814a 	ldur	x10, [x10, #-24]
+   13330:	8b0a0120 	add	x0, x9, x10
+   13334:	aa0803e1 	mov	x1, x8
+   13338:	a9474ff4 	ldp	x20, x19, [sp, #112]
+   1333c:	f9402bf7 	ldr	x23, [sp, #80]
+   13340:	a94657f6 	ldp	x22, x21, [sp, #96]
+   13344:	a9447bfd 	ldp	x29, x30, [sp, #64]
+   13348:	910203ff 	add	sp, sp, #0x80
+   1334c:	14002175 	b	1b920 <android::RefBase::incStrong(void const*) const@plt>
+   13350:	f9400414 	ldr	x20, [x0, #8]
+   13354:	b4000854 	cbz	x20, 1345c <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x15c>
+   13358:	910003e0 	mov	x0, sp
+   1335c:	aa0803f5 	mov	x21, x8
+   13360:	aa0103f6 	mov	x22, x1
+   13364:	94002173 	bl	1b930 <android::hardware::hidl_string::hidl_string(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@plt>
+   13368:	f9400288 	ldr	x8, [x20]
+   1336c:	f9403909 	ldr	x9, [x8, #112]
+   13370:	910043e8 	add	x8, sp, #0x10
+   13374:	910003e1 	mov	x1, sp
+   13378:	aa1403e0 	mov	x0, x20
+   1337c:	d63f0120 	blr	x9
+   13380:	910043e0 	add	x0, sp, #0x10
+   13384:	910043f4 	add	x20, sp, #0x10
+   13388:	9400216e 	bl	1b940 <android::hardware::details::return_status::onValueRetrieval() const@plt>
+   1338c:	f9401fe8 	ldr	x8, [sp, #56]
+   13390:	f9000fa8 	str	x8, [x29, #24]
+   13394:	b40000c8 	cbz	x8, 133ac <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xac>
+   13398:	f9400109 	ldr	x9, [x8]
+   1339c:	f85e8129 	ldur	x9, [x9, #-24]
+   133a0:	8b090100 	add	x0, x8, x9
+   133a4:	910063a1 	add	x1, x29, #0x18
+   133a8:	9400215e 	bl	1b920 <android::RefBase::incStrong(void const*) const@plt>
+   133ac:	f9400277 	ldr	x23, [x19]
+   133b0:	b40000d7 	cbz	x23, 133c8 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xc8>
+   133b4:	f94002e8 	ldr	x8, [x23]
+   133b8:	f85e8108 	ldur	x8, [x8, #-24]
+   133bc:	8b0802e0 	add	x0, x23, x8
+   133c0:	aa1303e1 	mov	x1, x19
+   133c4:	94002143 	bl	1b8d0 <android::RefBase::decStrong(void const*) const@plt>
+   133c8:	f9400268 	ldr	x8, [x19]
+   133cc:	eb0802ff 	cmp	x23, x8
+   133d0:	54000040 	b.eq	133d8 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0xd8>  // b.none
+   133d4:	9400215f 	bl	1b950 <android::sp_report_race()@plt>
+   133d8:	f9400fa9 	ldr	x9, [x29, #24]
+   133dc:	f9401fe8 	ldr	x8, [sp, #56]
+   133e0:	f9000fbf 	str	xzr, [x29, #24]
+   133e4:	f9000269 	str	x9, [x19]
+   133e8:	b40000c8 	cbz	x8, 13400 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x100>
+   133ec:	f9400109 	ldr	x9, [x8]
+   133f0:	f85e8129 	ldur	x9, [x9, #-24]
+   133f4:	8b090100 	add	x0, x8, x9
+   133f8:	9100a281 	add	x1, x20, #0x28
+   133fc:	94002135 	bl	1b8d0 <android::RefBase::decStrong(void const*) const@plt>
+   13400:	910043e0 	add	x0, sp, #0x10
+   13404:	9400213f 	bl	1b900 <android::hardware::details::return_status::~return_status()@plt>
+   13408:	910003e0 	mov	x0, sp
+   1340c:	94002155 	bl	1b960 <android::hardware::hidl_string::~hidl_string()@plt>
+   13410:	394002c8 	ldrb	w8, [x22]
+   13414:	f9400ac9 	ldr	x9, [x22, #16]
+   13418:	90ffffc2 	adrp	x2, b000 <GCC_except_table75+0xc>
+   1341c:	91395842 	add	x2, x2, #0xe56
+   13420:	f9400264 	ldr	x4, [x19]
+   13424:	52800080 	mov	w0, #0x4                   	// #4
+   13428:	7200011f 	tst	w8, #0x1
+   1342c:	aa1f03e1 	mov	x1, xzr
+   13430:	9a961523 	csinc	x3, x9, x22, ne	// ne = any
+   13434:	9400212f 	bl	1b8f0 <__android_log_print@plt>
+   13438:	f9400268 	ldr	x8, [x19]
+   1343c:	f90002a8 	str	x8, [x21]
+   13440:	b4000108 	cbz	x8, 13460 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x160>
+   13444:	f9400109 	ldr	x9, [x8]
+   13448:	aa1503e1 	mov	x1, x21
+   1344c:	f85e8129 	ldur	x9, [x9, #-24]
+   13450:	8b090100 	add	x0, x8, x9
+   13454:	94002133 	bl	1b920 <android::RefBase::incStrong(void const*) const@plt>
+   13458:	14000002 	b	13460 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x160>
+   1345c:	f900011f 	str	xzr, [x8]
+   13460:	a9474ff4 	ldp	x20, x19, [sp, #112]
+   13464:	f9402bf7 	ldr	x23, [sp, #80]
+   13468:	a94657f6 	ldp	x22, x21, [sp, #96]
+   1346c:	a9447bfd 	ldp	x29, x30, [sp, #64]
+   13470:	910203ff 	add	sp, sp, #0x80
+   13474:	d65f03c0 	ret
+   13478:	940000c9 	bl	1379c <__clang_call_terminate>
+   1347c:	aa0003f3 	mov	x19, x0
+   13480:	14000005 	b	13494 <evsproxy::DirectBackend::acquireCamera(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)+0x194>
+   13484:	940000c6 	bl	1379c <__clang_call_terminate>
+   13488:	aa0003f3 	mov	x19, x0
+   1348c:	910043e0 	add	x0, sp, #0x10
+   13490:	94002138 	bl	1b970 <android::hardware::Return<android::sp<android::hardware::automotive::evs::V1_0::IEvsCamera> >::~Return()@plt>
+   13494:	910003e0 	mov	x0, sp
+   13498:	94002132 	bl	1b960 <android::hardware::hidl_string::~hidl_string()@plt>
+   1349c:	aa1303e0 	mov	x0, x19
+   134a0:	9400211c 	bl	1b910 <_Unwind_Resume@plt>

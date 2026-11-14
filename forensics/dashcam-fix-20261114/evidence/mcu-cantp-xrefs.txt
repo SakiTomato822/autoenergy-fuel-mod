@@ -1,0 +1,1 @@
+{"stringAddress":"0x49269d","text":"cantp","literalPointers":["0x4876c8"]}

@@ -348,3 +348,14 @@
 - 只读离线定位OneOSAvmApp openApa检查externalAvmLockStatus并设置0x23040100；getAvmConfig经0x800500→cmd103。支持区分实际APA功能、apa视频接口名及外置/内置AVM方案，未证明其配置位会生成video6。
 - 复用六个OTA dex定向寻找AVM/DVR升级目标和身份握手，只有通用常量/图标及IHU/TEM任务字段；未恢复外置模块升级/查询链。此窄阴性不扩展为整车不存在该接口。
 - 证据 ../dashcam-fix-20261114/EXTERNAL_AVM_LINK.md、avm-apa-config-{app,adapter}.txt、ota-avm-targeted-strings.json。重查：成功车辆的具体硬件/链路记录、外置模块料号/协议/升级目标或版本变化；不重复功能状态或常量扫描。
+
+## B39：AVM控制映射与直接MCU消息来源（2026-11-14）
+- 未知：视图切换能否通向四路原图、AVMManager消息是否为模块能力返回。核对运行态初始化表与匹配固件，实际B4→CAN2AE；纠正初始错位8字节导致的11F误关联，未发送过命令。
+- 0F0D经MCU CAN124缓存计算，交叉核对属性名为轮速；0F0A/06为标定动作/状态。1F25摄像头状态声明尚未闭合远端来源，1F22在MCU RX表无callback。cantp任务实际执行一般CAN处理，不以名字推断UDS。
+- 新分支CAN2AB确有MCU RX描述符，VHAL从bits10..13提取CameraFltSts；未实测新鲜载荷，不以零值作结论。6E4缺于已提取MCU RX清单，引用既有空观察，不重查。
+- 证据 ../dashcam-fix-20261114/AVM_CONTROL_PROTOCOL.md和筛选evidence；重查需协议/固件/真实响应或成功同硬件新证据。未执行控制/标定/换挡/APA、未重开360。
+
+## B40：用户新ZIP diag与v1.9.10离线审查（2026-11-14）
+- 用户指定Luna xhigh子代理审diag，已完成；未执行脚本或安装APK。diag能取证，但跨ID、时间对齐、尺寸/零帧分类有证据缺陷；不能以自动报告证明硬件故障。
+- 新APK仍只收1280×3200，拒收在有效帧时间戳更新前，watchdog可重启EVS mock；缓存对象无ID隔离、安装先写后停仍在。静态风险不是新版本本车实测。
+- 证据 ../dashcam-v1.9.10-20261114/{DIAG_REVIEW,APK_REVIEW}.md及定向反汇编。重查仅在适配/修复或新错误证据时；当前不原样跑整套diag或重复安装。

@@ -1,0 +1,58 @@
+
+/data/data/com.termux/files/home/forensics/dashcam-v1.9.10-20261114/apk/assets/dashcamd:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000000142d0 <frameWatchdog()>:
+   142d0:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+   142d4:	f9000bfb 	str	x27, [sp, #16]
+   142d8:	a90267fa 	stp	x26, x25, [sp, #32]
+   142dc:	a9035ff8 	stp	x24, x23, [sp, #48]
+   142e0:	a90457f6 	stp	x22, x21, [sp, #64]
+   142e4:	a9054ff4 	stp	x20, x19, [sp, #80]
+   142e8:	910003fd 	mov	x29, sp
+   142ec:	d28b4a7a 	mov	x26, #0x5a53                	// #23123
+   142f0:	d2990038 	mov	x24, #0xc801                	// #51201
+   142f4:	d2810039 	mov	x25, #0x801                 	// #2049
+   142f8:	f2b4137a 	movk	x26, #0xa09b, lsl #16
+   142fc:	f2b502f8 	movk	x24, #0xa817, lsl #16
+   14300:	f2bd1ad9 	movk	x25, #0xe8d6, lsl #16
+   14304:	f2d705fa 	movk	x26, #0xb82f, lsl #32
+   14308:	aa1f03f5 	mov	x21, xzr
+   1430c:	b0000157 	adrp	x23, 3d000 <g_captureSeq>
+   14310:	910042f7 	add	x23, x23, #0x10
+   14314:	f2c00098 	movk	x24, #0x4, lsl #32
+   14318:	f2c00539 	movk	x25, #0x29, lsl #32
+   1431c:	90ffffb3 	adrp	x19, 8000 <drawFormatBits(qrcodegen_Ecc, qrcodegen_Mask, unsigned char*)::table+0x3cf0>
+   14320:	91304a73 	add	x19, x19, #0xc12
+   14324:	f2e0089a 	movk	x26, #0x44, lsl #48
+   14328:	90ffffb4 	adrp	x20, 8000 <drawFormatBits(qrcodegen_Ecc, qrcodegen_Mask, unsigned char*)::table+0x3cf0>
+   1432c:	9114ce94 	add	x20, x20, #0x533
+   14330:	94007d80 	bl	33930 <std::__1::chrono::steady_clock::now()@plt>
+   14334:	aa0003f6 	mov	x22, x0
+   14338:	528000a0 	mov	w0, #0x5                   	// #5
+   1433c:	94007ce5 	bl	336d0 <sleep@plt>
+   14340:	c8dffee8 	ldar	x8, [x23]
+   14344:	eb16011f 	cmp	x8, x22
+   14348:	9a96c11b 	csel	x27, x8, x22, gt
+   1434c:	94007d79 	bl	33930 <std::__1::chrono::steady_clock::now()@plt>
+   14350:	cb1b001b 	sub	x27, x0, x27
+   14354:	eb18037f 	cmp	x27, x24
+   14358:	54ffff0b 	b.lt	14338 <frameWatchdog()+0x68>  // b.tstop
+   1435c:	94007d75 	bl	33930 <std::__1::chrono::steady_clock::now()@plt>
+   14360:	cb150008 	sub	x8, x0, x21
+   14364:	eb19011f 	cmp	x8, x25
+   14368:	54fffe8b 	b.lt	14338 <frameWatchdog()+0x68>  // b.tstop
+   1436c:	d349ff68 	lsr	x8, x27, #9
+   14370:	528000c0 	mov	w0, #0x6                   	// #6
+   14374:	aa1f03e1 	mov	x1, xzr
+   14378:	aa1303e2 	mov	x2, x19
+   1437c:	9bda7d08 	umulh	x8, x8, x26
+   14380:	d34bfd03 	lsr	x3, x8, #11
+   14384:	94007cbf 	bl	33680 <__android_log_print@plt>
+   14388:	aa1403e0 	mov	x0, x20
+   1438c:	94007da9 	bl	33a30 <system@plt>
+   14390:	94007d68 	bl	33930 <std::__1::chrono::steady_clock::now()@plt>
+   14394:	aa0003f5 	mov	x21, x0
+   14398:	17ffffe6 	b	14330 <frameWatchdog()+0x60>
