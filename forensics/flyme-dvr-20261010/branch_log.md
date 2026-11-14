@@ -291,3 +291,12 @@
 - 未知：原厂DVR是否仅被禁用或对当前用户卸载。只读执行 `pm list packages -u -f` 并按已知DVR/供应商关键词筛选，不改包状态、不启动、不安装。
 - 结果：无 `dvr`、`cardvr`、`longhorn`、`roadrover`、`neusoft`、`dash`、`行车`、`记录` 匹配输出；关闭同名隐藏/卸载包窄分支。仍不排除无明显命名的系统内置实现或配置缺失。
 - 证据：`raw/hidden-package-dvr-check-20261017.md`。重查条件：系统/包清单变化、donor包或具体组件名出现；相同清单不重查。
+
+## B31：第三方四路记录仪 EVS 注入故障（2026-11-14）
+- 未知：新安装的 `com.dashcam.viewer` 1.1 为何无法录制、是否连带破坏原厂 360。这是新包及新现场，历史原厂 DVR 分支不重做。
+- 恢复前确认 rc 注入 LD_PRELOAD、EVS 服务 maps 加载代理、IEvsEnumerator/default 由该服务提供；dashcamd 为其僵尸子进程，exit_code=1024（正常退出 4）。daemon main 的返回 4 分支对应 startVideoStream 失败；没有没插 U 盘导致本次退出的证据，程序具备回退内置存储路径。
+- 保存 tombstone_44：12:22:06，EVS 进程 SIGBUS/BUS_ADRERR，PC=代理库虚拟地址0x14da0，对应 watchdogLoop 中 sleep_for 返回后的寄存器加法。不能由线程名就归因看门狗算法；代码页失效/文件截断是强候选，精确系统调用未捕获。
+- 离线确认安装缺陷：在停止 EVS 之前通过 `base64 -d > 目标路径` 原位覆盖代理库，无临时文件原子替换；时间窗口与上述 SIGBUS 相符。另确认 DirectBackend 只缓存单个相机对象，缓存非空时不比较新 ID；ProxyEnumerator 的不同 ID Session 共用一个 Backend，avm/apa 隔离不成立。
+- 同份日志出现 avm→apa 请求，底层随后尝试不存在的 /dev/video6cif 并启动失败；未闭合全部扩展控制时序，不造设备别名、不重新注入复现。
+- 用户恢复后曾见 EVS restarting；新一次开机后服务稳定PID347、default注册、打开video12cif、无代理及daemon。未由此替代360实际画面确认。未捕获重启循环的直接linker错误，不把init环境缓存写成实证根因。
+- 证据 RESULT_20261114.md 与 raw/dashcam-viewer-20261114/；报告列逐项重查条件。只有新版本、作者源码/写入时序、相机ID隔离修复或可关联错误日志才重查；相同库/状态不重复扫描。

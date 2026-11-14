@@ -1,0 +1,10 @@
+service vendor.evs-hal-mock /vendor/bin/hw/android.hardware.automotive.evs@1.0-service
+    class hal
+    priority -20
+    user root
+    group root sdcard_rw
+	capabilities BLOCK_SUSPEND SYS_NICE
+	ioprio rt 4
+	task_profiles ProcessCapacityHigh HighPerformanc
+
+

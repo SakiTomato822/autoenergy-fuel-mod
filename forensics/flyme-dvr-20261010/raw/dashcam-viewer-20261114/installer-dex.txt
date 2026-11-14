@@ -1,0 +1,728 @@
+
+METHOD Lcom/dashcam/viewer/MainActivity;->thumb code=27008 regs=12 ins=4
+   0 9954 0094 Ll;->g:Ly;
+   2 0b12 const/4 v11 0
+   3 0939 0003 if target 6
+   5 0b11 
+   6 001a 025b "http://127.0.0.1:8765/thumb?kind="
+   8 0122 0077 
+  10 106e 0035 0008 Landroid/content/Context;->getCacheDir
+  13 080c 
+  14 021a 0378 "thumb"
+  16 3070 018d 0281 Ljava/io/File;-><init>
+  19 106e 0193 0001 Ljava/io/File;->mkdirs
+  22 0822 0077 
+  24 9254 00c2 Ly;->a:Ljava/lang/String;
+  26 0322 0090 
+  28 1070 01cc 0003 Ljava/lang/StringBuilder;-><init>
+  31 206e 01d3 0023 Ljava/lang/StringBuilder;->append
+  34 021a 002d ".thumb"
+  36 206e 01d3 0023 Ljava/lang/StringBuilder;->append
+  39 106e 01d5 0003 Ljava/lang/StringBuilder;->toString
+  42 020c 
+  43 3070 018d 0218 Ljava/io/File;-><init>
+  46 106e 018f 0008 Ljava/io/File;->exists
+  49 010a 
+  50 0213 00c8 const/16 200
+  52 0312 const/4 v3 0
+  53 0416 2710 const/16 10000
+  55 0138 000c if target 67
+  57 106e 0192 0008 Ljava/io/File;->length
+  60 060b 
+  61 0131 0406 
+  63 013d 0004 if target 67
+  65 0029 0079 
+  67 0122 0099 
+  69 9654 00c3 Ly;->b:Ljava/lang/String;
+  71 9954 00c2 Ly;->a:Ljava/lang/String;
+  73 0722 0090 
+  75 2070 01ce 0007 Ljava/lang/StringBuilder;-><init>
+  78 206e 01d3 0067 Ljava/lang/StringBuilder;->append
+  81 001a 0025 "&prefix="
+  83 206e 01d3 0007 Ljava/lang/StringBuilder;->append
+  86 206e 01d3 0097 Ljava/lang/StringBuilder;->append
+  89 106e 01d5 0007 Ljava/lang/StringBuilder;->toString
+  92 090c 
+  93 2070 01ec 0091 Ljava/net/URL;-><init>
+  96 106e 01ed 0001 Ljava/net/URL;->openConnection
+  99 090c 
+ 100 091f 0095 
+ 102 0013 05dc const/16 1500
+ 104 206e 01ef 0009 Ljava/net/URLConnection;->setConnectTimeout
+ 107 0013 1388 const/16 5000
+ 109 206e 01f0 0009 Ljava/net/URLConnection;->setReadTimeout
+ 112 106e 01e4 0009 Ljava/net/HttpURLConnection;->getResponseCode
+ 115 000a 
+ 116 2032 0004 if target 120
+ 118 b807 
+ 119 4328 
+ 120 106e 01ee 0009 Ljava/net/URLConnection;->getInputStream
+ 123 000c 
+ 124 0122 0079 
+ 126 2070 0197 0081 Ljava/io/FileOutputStream;-><init>
+ 129 0614 8000 0000 const 32768 / 0x8000
+ 132 6623 00cb 
+ 134 206e 01a0 0060 Ljava/io/InputStream;->read
+ 137 070a 
+ 138 073d 0008 if target 146
+ 140 406e 019c 7361 Ljava/io/FileOutputStream;->write
+ 143 f728 
+ 144 080d 
+ 145 1528 
+ 146 106e 0199 0001 Ljava/io/FileOutputStream;->close
+ 149 106e 019f 0000 Ljava/io/InputStream;->close
+ 152 106e 01e3 0009 Ljava/net/HttpURLConnection;->disconnect
+ 155 106e 0192 0008 Ljava/io/File;->length
+ 158 000b 
+ 159 0931 0400 
+ 161 093d ffd5 if target 118
+ 163 1728 
+ 164 080d 
+ 165 0a28 
+ 166 106e 0199 0001 Ljava/io/FileOutputStream;->close
+ 169 0528 
+ 170 090d 
+ 171 206e 01e0 0098 Ljava/lang/Throwable;->addSuppressed
+ 174 0827 
+ 175 0038 000a if target 185
+ 177 106e 019f 0000 Ljava/io/InputStream;->close
+ 180 0528 
+ 181 090d 
+ 182 206e 01e0 0098 Ljava/lang/Throwable;->addSuppressed
+ 185 0827 
+ 186 0839 0003 if target 189
+ 188 0b11 
+ 189 3901 
+ 190 0062 002a Lcom/dashcam/viewer/MainActivity;->THUMB_ORDER:[Ljava/lang/String;
+ 192 0121 
+ 193 1335 000e if target 207
+ 195 0046 0300 
+ 197 206e 01bd 00a0 Ljava/lang/String;->equals
+ 200 000a 
+ 201 0038 0003 if target 204
+ 203 3901 
+ 204 03d8 0103 
+ 206 f028 
+ 207 0a14 7700 0001 const 96000 / 0x17700
+ 210 a023 00cb 
+ 212 0122 007e 
+ 214 031a 02f9 "r"
+ 216 3070 01a3 0381 Ljava/io/RandomAccessFile;-><init>
+ 219 9881 
+ 220 a381 
+ 221 38bd 
+ 222 306e 01a6 0981 Ljava/io/RandomAccessFile;->seek
+ 225 206e 01a5 0001 Ljava/io/RandomAccessFile;->readFully
+ 228 106e 01a4 0001 Ljava/io/RandomAccessFile;->close
+ 231 0813 0140 const/16 320
+ 233 3071 00d9 0280 Lcom/dashcam/viewer/MainActivity;->nv12ToBitmap
+ 236 080c 
+ 237 0811 
+ 238 080d 
+ 239 106e 01a4 0001 Ljava/io/RandomAccessFile;->close
+ 242 0528 
+ 243 090d 
+ 244 206e 01e0 0098 Ljava/lang/Throwable;->addSuppressed
+ 247 0827 
+ 248 0b11 
+
+METHOD Lcom/dashcam/viewer/OverlayService;->protectNow code=34236 regs=7 ins=1
+   0 0012 const/4 v0 0
+   1 0112 const/4 v1 0
+   2 206e 0036 0006 Landroid/content/Context;->getExternalFilesDir
+   5 000c 
+   6 0039 0009 if target 15
+   8 0071 016e 0000 Ld;->c
+  11 000c 
+  12 0328 
+  13 000d 
+  14 4828 
+  15 106e 0193 0000 Ljava/io/File;->mkdirs
+  18 0222 0077 
+  20 031a 02ee "protect.req"
+  22 3070 018d 0302 Ljava/io/File;-><init>
+  25 0022 0079 
+  27 3070 0198 0120 Ljava/io/FileOutputStream;-><init>
+  30 0262 008b Ljava/util/Locale;->US:Ljava/util/Locale;
+  32 0071 01d7 0000 Ljava/lang/System;->currentTimeMillis
+  35 020b 
+  36 0416 03e8 const/16 1000
+  38 42be 
+  39 0422 0090 
+  41 1070 01cc 0004 Ljava/lang/StringBuilder;-><init>
+  44 306e 01d2 0324 Ljava/lang/StringBuilder;->append
+  47 021a 0002 "\n"
+  49 206e 01d3 0024 Ljava/lang/StringBuilder;->append
+  52 106e 01d5 0004 Ljava/lang/StringBuilder;->toString
+  55 020c 
+  56 106e 01c0 0002 Ljava/lang/String;->getBytes
+  59 020c 
+  60 206e 019b 0020 Ljava/io/FileOutputStream;->write
+  63 106e 0199 0000 Ljava/io/FileOutputStream;->close
+  66 001a 03ba "已标记最近 10 分钟（含正在录制）为保留"
+  68 3071 00ab 0106 Landroid/widget/Toast;->makeText
+  71 000c 
+  72 106e 00ac 0000 Landroid/widget/Toast;->show
+  75 000e 
+  76 020d 
+  77 106e 0199 0000 Ljava/io/FileOutputStream;->close
+  80 0528 
+  81 000d 
+  82 206e 01e0 0002 Ljava/lang/Throwable;->addSuppressed
+  85 0227 
+  86 021a 0063 "DashCamOverlay"
+  88 031a 02ed "protect failed"
+  90 3071 0079 0032 Landroid/util/Log;->e
+  93 106e 01e1 0000 Ljava/lang/Throwable;->getMessage
+  96 000c 
+  97 0222 0090 
+  99 031a 03d0 "操作失败："
+ 101 2070 01ce 0032 Ljava/lang/StringBuilder;-><init>
+ 104 206e 01d3 0002 Ljava/lang/StringBuilder;->append
+ 107 106e 01d5 0002 Ljava/lang/StringBuilder;->toString
+ 110 000c 
+ 111 3071 00ab 0106 Landroid/widget/Toast;->makeText
+ 114 060c 
+ 115 106e 00ac 0006 Landroid/widget/Toast;->show
+ 118 000e 
+
+METHOD Lcom/dashcam/viewer/PlayerActivity;->fileFor code=35324 regs=11 ins=3
+   0 0071 0170 0000 Ld;->e
+   3 000c 
+   4 106e 0208 0000 Ljava/util/ArrayList;->size
+   7 010a 
+   8 0212 const/4 v2 0
+   9 2301 
+  10 0412 const/4 v4 0
+  11 1335 00de if target 233
+  13 206e 0206 0030 Ljava/util/ArrayList;->get
+  16 050c 
+  17 03d8 0103 
+  19 051f 00c6 
+  21 5654 00c2 Ly;->a:Ljava/lang/String;
+  23 206e 01bd 0096 Ljava/lang/String;->equals
+  26 060a 
+  27 0638 ffef if target 10
+  29 5654 00c3 Ly;->b:Ljava/lang/String;
+  31 8754 0053 Lcom/dashcam/viewer/PlayerActivity;->kind:Ljava/lang/String;
+  33 206e 01bd 0076 Ljava/lang/String;->equals
+  36 060a 
+  37 0639 0003 if target 40
+  39 e328 
+  40 091a 0259 "http://127.0.0.1:8765/get?kind="
+  42 5054 00c5 Ly;->d:Ljava/util/LinkedHashMap;
+  44 206e 0216 00a0 Ljava/util/LinkedHashMap;->get
+  47 0a0c 
+  48 0a1f 00c5 
+  50 0a39 0004 if target 54
+  52 0029 00b4 
+  54 0022 0077 
+  56 106e 0035 0008 Landroid/content/Context;->getCacheDir
+  59 080c 
+  60 011a 0305 "remote"
+  62 3070 018d 0180 Ljava/io/File;-><init>
+  65 106e 0193 0000 Ljava/io/File;->mkdirs
+  68 0822 0077 
+  70 a154 00c0 Lx;->a:Ljava/lang/String;
+  72 3070 018d 0108 Ljava/io/File;-><init>
+  75 106e 018f 0008 Ljava/io/File;->exists
+  78 000a 
+  79 0038 000d if target 92
+  81 106e 0192 0008 Ljava/io/File;->length
+  84 000b 
+  85 a653 00c1 Lx;->b:J
+  87 0031 0600 
+  89 0039 0003 if target 92
+  91 0811 
+  92 0022 0099 
+  94 5154 00c3 Ly;->b:Ljava/lang/String;
+  96 a354 00c0 Lx;->a:Ljava/lang/String;
+  98 0522 0090 
+ 100 2070 01ce 0095 Ljava/lang/StringBuilder;-><init>
+ 103 206e 01d3 0015 Ljava/lang/StringBuilder;->append
+ 106 091a 0024 "&name="
+ 108 206e 01d3 0095 Ljava/lang/StringBuilder;->append
+ 111 206e 01d3 0035 Ljava/lang/StringBuilder;->append
+ 114 106e 01d5 0005 Ljava/lang/StringBuilder;->toString
+ 117 090c 
+ 118 2070 01ec 0090 Ljava/net/URL;-><init>
+ 121 106e 01ed 0000 Ljava/net/URL;->openConnection
+ 124 090c 
+ 125 091f 0095 
+ 127 0013 0bb8 const/16 3000
+ 129 206e 01ef 0009 Ljava/net/URLConnection;->setConnectTimeout
+ 132 0013 3a98 const/16 15000
+ 134 206e 01f0 0009 Ljava/net/URLConnection;->setReadTimeout
+ 137 106e 01ee 0009 Ljava/net/URLConnection;->getInputStream
+ 140 000c 
+ 141 0122 0079 
+ 143 2070 0197 0081 Ljava/io/FileOutputStream;-><init>
+ 146 0315 0001 
+ 148 3323 00cb 
+ 150 206e 01a0 0030 Ljava/io/InputStream;->read
+ 153 050a 
+ 154 053d 0008 if target 162
+ 156 406e 019c 5231 Ljava/io/FileOutputStream;->write
+ 159 f728 
+ 160 090d 
+ 161 0f28 
+ 162 106e 0199 0001 Ljava/io/FileOutputStream;->close
+ 165 106e 019f 0000 Ljava/io/InputStream;->close
+ 168 106e 01e3 0009 Ljava/net/HttpURLConnection;->disconnect
+ 171 0811 
+ 172 090d 
+ 173 1728 
+ 174 090d 
+ 175 0a28 
+ 176 106e 0199 0001 Ljava/io/FileOutputStream;->close
+ 179 0528 
+ 180 010d 
+ 181 206e 01e0 0019 Ljava/lang/Throwable;->addSuppressed
+ 184 0927 
+ 185 0038 000a if target 195
+ 187 106e 019f 0000 Ljava/io/InputStream;->close
+ 190 0528 
+ 191 000d 
+ 192 206e 01e0 0009 Ljava/lang/Throwable;->addSuppressed
+ 195 0927 
+ 196 aa54 00c0 Lx;->a:Ljava/lang/String;
+ 198 1071 01cb 0009 Ljava/lang/String;->valueOf
+ 201 090c 
+ 202 0022 0090 
+ 204 011a 0210 "fetch failed "
+ 206 2070 01ce 0010 Ljava/lang/StringBuilder;-><init>
+ 209 206e 01d3 00a0 Ljava/lang/StringBuilder;->append
+ 212 0a1a 004b ": "
+ 214 206e 01d3 00a0 Ljava/lang/StringBuilder;->append
+ 217 206e 01d3 0090 Ljava/lang/StringBuilder;->append
+ 220 106e 01d5 0000 Ljava/lang/StringBuilder;->toString
+ 223 090c 
+ 224 0a1a 0066 "DashCamRemote"
+ 226 2071 007b 009a Landroid/util/Log;->w
+ 229 106e 018e 0008 Ljava/io/File;->delete
+ 232 0411 
+ 233 8854 0053 Lcom/dashcam/viewer/PlayerActivity;->kind:Ljava/lang/String;
+ 235 0022 0090 
+ 237 011a 02a5 "missing "
+ 239 2070 01ce 0010 Ljava/lang/StringBuilder;-><init>
+ 242 206e 01d3 0090 Ljava/lang/StringBuilder;->append
+ 245 091a 000a " "
+ 247 206e 01d3 0090 Ljava/lang/StringBuilder;->append
+ 250 206e 01d3 00a0 Ljava/lang/StringBuilder;->append
+ 253 091a 000b " ("
+ 255 206e 01d3 0090 Ljava/lang/StringBuilder;->append
+ 258 206e 01d3 0080 Ljava/lang/StringBuilder;->append
+ 261 081a 002c ")"
+ 263 206e 01d3 0080 Ljava/lang/StringBuilder;->append
+ 266 106e 01d5 0000 Ljava/lang/StringBuilder;->toString
+ 269 080c 
+ 270 091a 0064 "DashCamPlayer"
+ 272 2071 007b 0089 Landroid/util/Log;->w
+ 275 0411 
+
+METHOD Lcom/dashcam/viewer/SettingsActivity;->doFormat code=40348 regs=5 ins=1
+   0 0012 const/4 v0 0
+   1 206e 0036 0004 Landroid/content/Context;->getExternalFilesDir
+   4 000c 
+   5 0039 0003 if target 8
+   7 000e 
+   8 0122 0077 
+  10 021a 021a "format.req"
+  12 3070 018d 0201 Ljava/io/File;-><init>
+  15 0222 0077 
+  17 031a 021b "format.result"
+  19 3070 018d 0302 Ljava/io/File;-><init>
+  22 106e 018e 0002 Ljava/io/File;->delete
+  25 0022 0079 
+  27 2070 0197 0010 Ljava/io/FileOutputStream;-><init>
+  30 0113 0031 const/16 49
+  32 206e 019a 0010 Ljava/io/FileOutputStream;->write
+  35 106e 0199 0000 Ljava/io/FileOutputStream;->close
+  38 001a 03e1 "正在格式化，请稍候…"
+  40 0112 const/4 v1 0
+  41 3071 00ab 0104 Landroid/widget/Toast;->makeText
+  44 000c 
+  45 106e 00ac 0000 Landroid/widget/Toast;->show
+  48 0022 0092 
+  50 0122 0070 
+  52 3312 const/4 v3 3
+  53 4070 0180 3241 Lj;-><init>
+  56 2070 01d9 0010 Ljava/lang/Thread;-><init>
+  59 106e 01df 0000 Ljava/lang/Thread;->start
+  62 000e 
+  63 000d 
+  64 0b28 
+  65 010d 
+  66 106e 0199 0000 Ljava/io/FileOutputStream;->close
+  69 0528 
+  70 000d 
+  71 206e 01e0 0001 Ljava/lang/Throwable;->addSuppressed
+  74 0127 
+  75 106e 01e1 0000 Ljava/lang/Throwable;->getMessage
+  78 000c 
+  79 0122 0090 
+  81 021a 03cd "提交失败："
+  83 2070 01ce 0021 Ljava/lang/StringBuilder;-><init>
+  86 206e 01d3 0001 Ljava/lang/StringBuilder;->append
+  89 106e 01d5 0001 Ljava/lang/StringBuilder;->toString
+  92 000c 
+  93 1112 const/4 v1 1
+  94 3071 00ab 0104 Landroid/widget/Toast;->makeText
+  97 040c 
+  98 106e 00ac 0004 Landroid/widget/Toast;->show
+ 101 000e 
+
+METHOD Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$18 code=41888 regs=21 ins=3
+   0 0108 0012 
+   2 0208 0014 
+   4 001a 034b "setprop ctl.start vendor.evs-hal-mock"
+   6 051a 034c "setprop ctl.stop vendor.evs-hal-mock"
+   8 061a 0031 "/vendor/etc/init/android.hardware.automotive.evs@1.0-service.rc"
+  10 071a 01db "class hal"
+  12 081a 01d1 "cat /vendor/etc/init/android.hardware.automotive.evs@1.0-service.rc"
+  14 091a 0384 "uid=0"
+  16 0a1a 025d "id"
+  18 0b1a 03f1 "连接车机…"
+  20 0c1a 03b1 "失败："
+  22 0d1a 0061 "DashCamInstall"
+  24 1338 00e7 if target 255
+  26 0e1a 01f4 "dashcamd"
+  28 0f1a 0307 "remount: "
+  30 1016 04b0 const/16 1200
+  32 0322 0063 
+  34 1070 00b1 0003 Lc;-><init>
+  37 3070 015b 0b21 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+  40 106e 00b3 0003 Lc;->b
+  43 041a 03dd "检查权限…"
+  45 3070 015b 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+  48 206e 00b4 00a3 Lc;->c
+  51 040c 
+  52 206e 01bc 0094 Ljava/lang/String;->contains
+  55 040a 
+  56 0439 000f if target 71
+  58 001a 03b3 "失败：拿不到 root（车机可能关闭了 adb 网络端口）"
+  60 106e 00b2 0003 Lc;->a
+  63 0029 0133 
+  65 000d 
+  66 0029 00b9 
+  68 000d 
+  69 0029 009f 
+  71 041a 03ca "挂载 /vendor 可写…"
+  73 3070 015b 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+  76 041a 02a9 "mount -o remount,rw /vendor 2>&1"
+  78 206e 00b4 0043 Lc;->c
+  81 040c 
+  82 106e 01ca 0004 Ljava/lang/String;->trim
+  85 090c 
+  86 106e 01c3 0009 Ljava/lang/String;->isEmpty
+  89 090a 
+  90 0939 0011 if target 107
+  92 091a 0306 "remount"
+  94 206e 01bc 0094 Ljava/lang/String;->contains
+  97 090a 
+  98 0939 0009 if target 107
+ 100 206e 01bb 004f Ljava/lang/String;->concat
+ 103 040c 
+ 104 2071 007b 004d Landroid/util/Log;->w
+ 107 041a 03cb "推送代理库…"
+ 109 3070 015b 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+ 112 041a 0032 "/vendor/lib64/libevsproxy_preload.so"
+ 114 091a 0294 "libevsproxy_preload.so"
+ 116 2071 0172 0091 Ld;->g
+ 119 090c 
+ 120 306e 00b6 0943 Lc;->e
+ 123 041a 03cc "推送录制进程…"
+ 125 3070 015b 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+ 128 041a 0030 "/vendor/bin/dashcamd"
+ 130 2071 0172 00e1 Ld;->g
+ 133 090c 
+ 134 306e 00b6 0943 Lc;->e
+ 137 041a 03eb "设置权限…"
+ 139 3070 015b 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+ 142 041a 01d9 "chmod 755 /vendor/bin/dashcamd; chmod 644 /vendor/lib64/libevsproxy_preload.so; ls -l /vendor/bin/dashcamd"
+ 144 206e 00b4 0043 Lc;->c
+ 147 041a 03d1 "改写 EVS 服务配置…"
+ 149 3070 015b 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+ 152 206e 00b4 0083 Lc;->c
+ 155 040c 
+ 156 206e 01bc 0074 Ljava/lang/String;->contains
+ 159 070a 
+ 160 0739 0005 if target 165
+ 162 001a 03b4 "失败：读取 EVS 服务配置失败"
+ 164 9828 
+ 165 1071 0171 0004 Ld;->f
+ 168 070c 
+ 169 206e 01bd 0047 Ljava/lang/String;->equals
+ 172 040a 
+ 173 0439 000b if target 184
+ 175 0462 008a Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+ 177 206e 01c1 0047 Ljava/lang/String;->getBytes
+ 180 040c 
+ 181 306e 00b6 0463 Lc;->e
+ 184 041a 03f2 "重启 AV 相机服务…"
+ 186 3070 015b 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+ 189 206e 00b4 0053 Lc;->c
+ 192 0277 01dd 0010 Ljava/lang/Thread;->sleep
+ 195 206e 00b4 0003 Lc;->c
+ 198 0416 07d0 const/16 2000
+ 200 2071 01dd 0054 Ljava/lang/Thread;->sleep
+ 203 001a 03e9 "自检…"
+ 205 3070 015b 0021 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$14
+ 208 001a 02f0 "ps -A | grep -E 'evs@1.0|dashcamd'"
+ 210 206e 00b4 0003 Lc;->c
+ 213 000c 
+ 214 206e 01bc 00e0 Ljava/lang/String;->contains
+ 217 000a 
+ 218 0038 0006 if target 224
+ 220 001a 03b5 "安装完成，建议重启车机一次"
+ 222 0029 ff5e 
+ 224 001a 03b8 "已安装，但录制进程未启动，请重启车机后再看"
+ 226 0029 ff5a 
+ 228 041a 0262 "install failed"
+ 230 3071 0079 004d Landroid/util/Log;->e
+ 233 106e 01e1 0000 Ljava/lang/Throwable;->getMessage
+ 236 000c 
+ 237 0422 0090 
+ 239 2070 01ce 00c4 Ljava/lang/StringBuilder;-><init>
+ 242 206e 01d3 0004 Ljava/lang/StringBuilder;->append
+ 245 106e 01d5 0004 Ljava/lang/StringBuilder;->toString
+ 248 000c 
+ 249 0029 ff43 
+ 251 106e 00b2 0003 Lc;->a
+ 254 0027 
+ 255 1016 04b0 const/16 1200
+ 257 0322 0063 
+ 259 1070 00b1 0003 Lc;-><init>
+ 262 3070 015d 0b21 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$16
+ 265 106e 00b3 0003 Lc;->b
+ 268 206e 00b4 00a3 Lc;->c
+ 271 040c 
+ 272 206e 01bc 0094 Ljava/lang/String;->contains
+ 275 040a 
+ 276 0439 000c if target 288
+ 278 001a 03b2 "失败：拿不到 root"
+ 280 106e 00b2 0003 Lc;->a
+ 283 5728 
+ 284 000d 
+ 285 5e28 
+ 286 000d 
+ 287 3d28 
+ 288 041a 03c2 "恢复服务配置…"
+ 290 3070 015d 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$16
+ 293 041a 02a8 "mount -o remount,rw /vendor"
+ 295 206e 00b4 0043 Lc;->c
+ 298 206e 00b4 0083 Lc;->c
+ 301 040c 
+ 302 206e 01bc 0074 Ljava/lang/String;->contains
+ 305 070a 
+ 306 0738 000f if target 321
+ 308 1071 0173 0004 Ld;->h
+ 311 040c 
+ 312 0762 008a Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+ 314 206e 01c1 0074 Ljava/lang/String;->getBytes
+ 317 040c 
+ 318 306e 00b6 0463 Lc;->e
+ 321 041a 03ac "删除代理与录制程序…"
+ 323 3070 015d 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$16
+ 326 041a 030f "rm -f /vendor/lib64/libevsproxy_preload.so /vendor/bin/dashcamd"
+ 328 206e 00b4 0043 Lc;->c
+ 331 041a 03f3 "重启服务…"
+ 333 3070 015d 0421 Lcom/dashcam/viewer/SettingsActivity;->lambda$runInstaller$16
+ 336 206e 00b4 0053 Lc;->c
+ 339 0277 01dd 0010 Ljava/lang/Thread;->sleep
+ 342 206e 00b4 0003 Lc;->c
+ 345 001a 03b9 "已恢复原厂，建议重启车机"
+ 347 bd28 
+ 348 041a 0385 "uninstall failed"
+ 350 3071 0079 004d Landroid/util/Log;->e
+ 353 106e 01e1 0000 Ljava/lang/Throwable;->getMessage
+ 356 000c 
+ 357 0422 0090 
+ 359 2070 01ce 00c4 Ljava/lang/StringBuilder;-><init>
+ 362 206e 01d3 0004 Ljava/lang/StringBuilder;->append
+ 365 106e 01d5 0004 Ljava/lang/StringBuilder;->toString
+ 368 000c 
+ 369 a728 
+ 370 0322 00b9 
+ 372 4070 0235 0213 Ln;-><init>
+ 375 206e 001c 0031 Landroid/app/Activity;->runOnUiThread
+ 378 000e 
+ 379 106e 00b2 0003 Lc;->a
+ 382 0027 
+
+METHOD Lcom/dashcam/viewer/SettingsActivity;->save code=44104 regs=14 ins=1
+   0 001a 01c8 "bitrate="
+   2 0162 006b Lcom/dashcam/viewer/SettingsActivity;->BITRATES:[I
+   4 d254 0079 Lcom/dashcam/viewer/SettingsActivity;->spBitrate:Landroid/widget/Spinner;
+   6 106e 0094 0002 Landroid/widget/AdapterView;->getSelectedItemPosition
+   9 020a 
+  10 0144 0201 
+  12 0262 0072 Lcom/dashcam/viewer/SettingsActivity;->SEGS:[I
+  14 d354 007c Lcom/dashcam/viewer/SettingsActivity;->spSeg:Landroid/widget/Spinner;
+  16 106e 0094 0003 Landroid/widget/AdapterView;->getSelectedItemPosition
+  19 030a 
+  20 0244 0302 
+  22 0362 0070 Lcom/dashcam/viewer/SettingsActivity;->MAXMB:[I
+  24 d454 007b Lcom/dashcam/viewer/SettingsActivity;->spMax:Landroid/widget/Spinner;
+  26 106e 0094 0004 Landroid/widget/AdapterView;->getSelectedItemPosition
+  29 040a 
+  30 0344 0403 
+  32 d454 0077 Lcom/dashcam/viewer/SettingsActivity;->cbPause:Landroid/widget/CheckBox;
+  34 106e 009b 0004 Landroid/widget/CompoundButton;->isChecked
+  37 040a 
+  38 1512 const/4 v5 1
+  39 d654 006d Lcom/dashcam/viewer/SettingsActivity;->CONF:Ljava/io/File;
+  41 106e 0191 0006 Ljava/io/File;->getParentFile
+  44 060c 
+  45 106e 0193 0006 Ljava/io/File;->mkdirs
+  48 0622 0079 
+  50 d754 006d Lcom/dashcam/viewer/SettingsActivity;->CONF:Ljava/io/File;
+  52 0812 const/4 v8 0
+  53 3070 0198 0876 Ljava/io/FileOutputStream;-><init>
+  56 d754 0078 Lcom/dashcam/viewer/SettingsActivity;->cbWatermark:Landroid/widget/CheckBox;
+  58 106e 009b 0007 Landroid/widget/CompoundButton;->isChecked
+  61 070a 
+  62 d954 0076 Lcom/dashcam/viewer/SettingsActivity;->cbEvent:Landroid/widget/CheckBox;
+  64 106e 009b 0009 Landroid/widget/CompoundButton;->isChecked
+  67 090a 
+  68 0a62 006e Lcom/dashcam/viewer/SettingsActivity;->IMPACT_G:[F
+  70 db54 007a Lcom/dashcam/viewer/SettingsActivity;->spImpact:Landroid/widget/Spinner;
+  72 106e 0094 000b Landroid/widget/AdapterView;->getSelectedItemPosition
+  75 0b0a 
+  76 0a44 0b0a 
+  78 0b62 0075 Lcom/dashcam/viewer/SettingsActivity;->STORAGE_VALUES:[Ljava/lang/String;
+  80 dc54 007d Lcom/dashcam/viewer/SettingsActivity;->spStorage:Landroid/widget/Spinner;
+  82 106e 0094 000c Landroid/widget/AdapterView;->getSelectedItemPosition
+  85 0c0a 
+  86 0b46 0c0b 
+  88 0c22 0090 
+  90 2070 01ce 000c Ljava/lang/StringBuilder;-><init>
+  93 206e 01d1 001c Ljava/lang/StringBuilder;->append
+  96 001a 0007 "\nseg="
+  98 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 101 206e 01d1 002c Ljava/lang/StringBuilder;->append
+ 104 001a 0005 "\nmax_mb="
+ 106 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 109 206e 01d1 003c Ljava/lang/StringBuilder;->append
+ 112 001a 0006 "\npaused="
+ 114 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 117 206e 01d1 004c Ljava/lang/StringBuilder;->append
+ 120 001a 0009 "\nwatermark="
+ 122 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 125 206e 01d1 007c Ljava/lang/StringBuilder;->append
+ 128 001a 0003 "\nevent="
+ 130 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 133 206e 01d1 009c Ljava/lang/StringBuilder;->append
+ 136 001a 0004 "\nimpact_g="
+ 138 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 141 206e 01d0 00ac Ljava/lang/StringBuilder;->append
+ 144 001a 0008 "\nstorage="
+ 146 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 149 206e 01d3 00bc Ljava/lang/StringBuilder;->append
+ 152 001a 0002 "\n"
+ 154 206e 01d3 000c Ljava/lang/StringBuilder;->append
+ 157 106e 01d5 000c Ljava/lang/StringBuilder;->toString
+ 160 000c 
+ 161 106e 01c0 0000 Ljava/lang/String;->getBytes
+ 164 000c 
+ 165 206e 019b 0006 Ljava/io/FileOutputStream;->write
+ 168 106e 0199 0006 Ljava/io/FileOutputStream;->close
+ 171 0071 01b9 0000 Ljava/lang/Runtime;->getRuntime
+ 174 000c 
+ 175 011a 002f "/system/bin/chmod"
+ 177 021a 0047 "666"
+ 179 d354 006d Lcom/dashcam/viewer/SettingsActivity;->CONF:Ljava/io/File;
+ 181 106e 0190 0003 Ljava/io/File;->getAbsolutePath
+ 184 030c 
+ 185 3024 00d5 0321 
+ 188 010c 
+ 189 206e 01b8 0010 Ljava/lang/Runtime;->exec
+ 192 000c 
+ 193 106e 01b7 0000 Ljava/lang/Process;->waitFor
+ 196 001a 03b6 "已保存，约 2 秒内生效"
+ 198 3071 00ab 080d Landroid/widget/Toast;->makeText
+ 201 000c 
+ 202 106e 00ac 0000 Landroid/widget/Toast;->show
+ 205 106e 0011 000d Landroid/app/Activity;->finish
+ 208 2d28 
+ 209 000d 
+ 210 0b28 
+ 211 000d 
+ 212 106e 0199 0006 Ljava/io/FileOutputStream;->close
+ 215 0528 
+ 216 010d 
+ 217 206e 01e0 0010 Ljava/lang/Throwable;->addSuppressed
+ 220 0027 
+ 221 011a 0067 "DashCamSettings"
+ 223 021a 0317 "save failed"
+ 225 3071 0079 0021 Landroid/util/Log;->e
+ 228 106e 01e1 0000 Ljava/lang/Throwable;->getMessage
+ 231 000c 
+ 232 0122 0090 
+ 234 021a 03a8 "保存失败："
+ 236 2070 01ce 0021 Ljava/lang/StringBuilder;-><init>
+ 239 206e 01d3 0001 Ljava/lang/StringBuilder;->append
+ 242 106e 01d5 0001 Ljava/lang/StringBuilder;->toString
+ 245 000c 
+ 246 3071 00ab 050d Landroid/widget/Toast;->makeText
+ 249 0d0c 
+ 250 106e 00ac 000d Landroid/widget/Toast;->show
+ 253 000e 
+
+METHOD Ld;->f code=18644 regs=5 ins=1
+   0 0022 0090 
+   2 1070 01cc 0000 Ljava/lang/StringBuilder;-><init>
+   5 011a 0002 "\n"
+   7 f212 const/4 v2 -1
+   8 306e 01c6 0214 Ljava/lang/String;->split
+  11 040c 
+  12 4121 
+  13 0212 const/4 v2 0
+  14 1235 000f if target 29
+  16 0346 0204 
+  18 206e 01d3 0030 Ljava/lang/StringBuilder;->append
+  21 0313 000a const/16 10
+  23 206e 01cf 0030 Ljava/lang/StringBuilder;->append
+  26 02d8 0102 
+  28 f228 
+  29 106e 01d5 0000 Ljava/lang/StringBuilder;->toString
+  32 040c 
+  33 001a 0293 "libevsproxy_preload"
+  35 206e 01bc 0004 Ljava/lang/String;->contains
+  38 000a 
+  39 0039 000a if target 49
+  41 001a 0029 "(?m)^([ \t]*class hal[ \t]*)$"
+  43 011a 001c "$1\n\t setenv LD_PRELOAD /vendor/lib64/libevsproxy_preload.so"
+  45 306e 01c5 0104 Ljava/lang/String;->replaceFirst
+  48 040c 
+  49 001a 02a2 "media_rw"
+  51 206e 01bc 0004 Ljava/lang/String;->contains
+  54 000a 
+  55 0039 000a if target 65
+  57 001a 0027 "(?m)^([ \t]*)group root[ \t]*$"
+  59 011a 001e "$1group root sdcard_rw media_rw"
+  61 306e 01c5 0104 Ljava/lang/String;->replaceFirst
+  64 040c 
+  65 001a 005b "DAC_OVERRIDE"
+  67 206e 01bc 0004 Ljava/lang/String;->contains
+  70 000a 
+  71 0039 000a if target 81
+  73 001a 0028 "(?m)^([ \t]*)user root[ \t]*$"
+  75 011a 001f "$1user root\n$1capabilities BLOCK_SUSPEND SYS_NICE DAC_OVERRIDE"
+  77 306e 01c5 0104 Ljava/lang/String;->replaceFirst
+  80 040c 
+  81 0411 
+
+METHOD Ld;->h code=18824 regs=3 ins=1
+   0 001a 002b "(?m)^[ \t]*setenv LD_PRELOAD .*\\n"
+   2 011a 0000 ""
+   4 306e 01c4 0102 Ljava/lang/String;->replaceAll
+   7 020c 
+   8 001a 002a "(?m)^[ \t]*capabilities BLOCK_SUSPEND SYS_NICE DAC_OVERRIDE[ \t]*\\n"
+  10 306e 01c4 0102 Ljava/lang/String;->replaceAll
+  13 020c 
+  14 001a 0026 "(?m)^([ \t]*)group root sdcard_rw media_rw[ \t]*$"
+  16 011a 001d "$1group root"
+  18 306e 01c4 0102 Ljava/lang/String;->replaceAll
+  21 020c 
+  22 0211 

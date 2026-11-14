@@ -1,0 +1,8 @@
+Sat Nov 14 12:57:10 CST 2026
+224.50 404.99
+running
+347
+lrwx------ 1 root root 64 2026-11-14 12:57 /proc/347/fd/6 -> /dev/video12cif
+DM,FC    Y android.hardware.automotive.evs@1.0::IEvsEnumerator/default                       0/3        347    344 261
+Filesystem       Size  Used Avail Use% Mounted on
+/dev/block/sda18  70G   24G   45G  35% /mnt/installer/0/emulated/0/Android/obb
