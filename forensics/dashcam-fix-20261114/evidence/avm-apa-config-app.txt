@@ -1,0 +1,340 @@
+
+METHOD Lcom/ecarx/parking/CarFunManager;->getAvmConfig code=3336684 regs=5 ins=1
+   0 4054 57ce Lcom/ecarx/parking/CarFunManager;->mICar:Lcom/ecarx/xui/adaptapi/car/ICar;
+   2 0038 0026 if target 40
+   4 1072 7854 0000 Lcom/ecarx/xui/adaptapi/car/ICar;->getCarInfoManager
+   7 000c
+   8 0114 0500 0080 const 8389888 / 0x800500
+  11 2072 7889 0010 Lcom/ecarx/xui/adaptapi/car/base/ICarInfo;->getCarInfoInt
+  14 000a
+  15 4154 57cc Lcom/ecarx/parking/CarFunManager;->TAG:Ljava/lang/String;
+  17 0222 1fdd
+  19 1070 d21f 0002 Ljava/lang/StringBuilder;-><init>
+  22 031a b16d "getAvmConfig: avm="
+  24 206e d22b 0032 Ljava/lang/StringBuilder;->append
+  27 020c
+  28 206e d226 0002 Ljava/lang/StringBuilder;->append
+  31 020c
+  32 106e d234 0002 Ljava/lang/StringBuilder;->toString
+  35 020c
+  36 2071 1f69 0021 Landroid/util/Log;->e
+  39 000f
+  40 4054 57cc Lcom/ecarx/parking/CarFunManager;->TAG:Ljava/lang/String;
+  42 011a b16c "getAvmConfig and mICar is null return -1"
+  44 2071 1f69 0010 Landroid/util/Log;->e
+  47 f012 const/4 v0 -1
+  48 000f
+
+METHOD Lcom/geely/cabin/avmsdk/AvmSdkManager;->isAPASHow code=3385520 regs=4 ins=1
+   0 3052 9706 Lcom/geely/cabin/avmsdk/AvmSdkManager;->mAvmCurrentState:I
+   2 4112 const/4 v1 4
+   3 1033 0004 if target 7
+   5 1012 const/4 v0 1
+   6 0228
+   7 0012 const/4 v0 0
+   8 0039 001c if target 36
+  10 0122 1fdd
+  12 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+  15 021a c2d4 "isAPASHow false "
+  17 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  20 010c
+  21 3252 9708 Lcom/geely/cabin/avmsdk/AvmSdkManager;->mCarType:I
+  23 206e d226 0021 Ljava/lang/StringBuilder;->append
+  26 010c
+  27 106e d234 0001 Ljava/lang/StringBuilder;->toString
+  30 010c
+  31 021a 132f "AvmSdk_bicv"
+  33 2071 1f69 0012 Landroid/util/Log;->e
+  36 000f
+
+METHOD Lcom/ecarx/parking/AvmEnterService;->dealAvmError code=3324484 regs=5 ins=1
+   0 4054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+   2 0122 1fdd
+   4 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+   7 021a e0e9 "openAvm: avmConfig="
+   9 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  12 010c
+  13 4252 578f Lcom/ecarx/parking/AvmEnterService;->avmConfig:I
+  15 206e d226 0021 Ljava/lang/StringBuilder;->append
+  18 010c
+  19 106e d234 0001 Ljava/lang/StringBuilder;->toString
+  22 010c
+  23 2071 1f69 0010 Landroid/util/Log;->e
+  26 4054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+  28 0122 1fdd
+  30 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+  33 021a e0eb "openAvm: externalAvmLockStatus="
+  35 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  38 010c
+  39 4252 5795 Lcom/ecarx/parking/AvmEnterService;->externalAvmLockStatus:I
+  41 206e d226 0021 Ljava/lang/StringBuilder;->append
+  44 010c
+  45 106e d234 0001 Ljava/lang/StringBuilder;->toString
+  48 010c
+  49 2071 1f69 0010 Landroid/util/Log;->e
+  52 4054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+  54 0122 1fdd
+  56 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+  59 021a e0ec "openAvm: internalAvmLockStatus="
+  61 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  64 010c
+  65 4252 5799 Lcom/ecarx/parking/AvmEnterService;->internalAvmLockStatus:I
+  67 206e d226 0021 Ljava/lang/StringBuilder;->append
+  70 010c
+  71 106e d234 0001 Ljava/lang/StringBuilder;->toString
+  74 010c
+  75 2071 1f69 0010 Landroid/util/Log;->e
+  78 4052 578f Lcom/ecarx/parking/AvmEnterService;->avmConfig:I
+  80 0114 006a 7f0d const 2131558506 / 0x7f0d006a
+  83 1212 const/4 v2 1
+  84 2312 const/4 v3 2
+  85 3033 0016 if target 107
+  87 4052 5799 Lcom/ecarx/parking/AvmEnterService;->internalAvmLockStatus:I
+  89 0039 002a if target 131
+  91 0071 7629 0000 Lcom/ecarx/parking/ToastManager;->getInstance
+  94 000c
+  95 106e 7557 0004 Lcom/ecarx/parking/AvmEnterService;->getResources
+  98 030c
+  99 206e 179a 0013 Landroid/content/res/Resources;->getString
+ 102 010c
+ 103 306e 762c 0140 Lcom/ecarx/parking/ToastManager;->showLong
+ 106 020f
+ 107 0038 0004 if target 111
+ 109 2033 0016 if target 131
+ 111 4052 5795 Lcom/ecarx/parking/AvmEnterService;->externalAvmLockStatus:I
+ 113 0039 0012 if target 131
+ 115 0071 7629 0000 Lcom/ecarx/parking/ToastManager;->getInstance
+ 118 000c
+ 119 106e 7557 0004 Lcom/ecarx/parking/AvmEnterService;->getResources
+ 122 030c
+ 123 206e 179a 0013 Landroid/content/res/Resources;->getString
+ 126 010c
+ 127 306e 762c 0140 Lcom/ecarx/parking/ToastManager;->showLong
+ 130 020f
+ 131 0012 const/4 v0 0
+ 132 000f
+
+METHOD Lcom/ecarx/parking/AvmEnterService;->dealAvmShowMode code=3327924 regs=5 ins=2
+   0 3054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+   2 0122 1fdd
+   4 1070 d21f 0001 Ljava/lang/StringBuilder;-><init>
+   7 021a a888 "dealAvmShowMode start.."
+   9 206e d22b 0021 Ljava/lang/StringBuilder;->append
+  12 010c
+  13 206e d226 0041 Ljava/lang/StringBuilder;->append
+  16 010c
+  17 106e d234 0001 Ljava/lang/StringBuilder;->toString
+  20 010c
+  21 2071 1f69 0010 Landroid/util/Log;->e
+  24 3012 const/4 v0 3
+  25 4033 0036 if target 79
+  27 1070 7551 0003 Lcom/ecarx/parking/AvmEnterService;->dealAvmError
+  30 3452 578f Lcom/ecarx/parking/AvmEnterService;->avmConfig:I
+  32 0438 0028 if target 72
+  34 1012 const/4 v0 1
+  35 0433 0003 if target 38
+  37 2328
+  38 3454 5790 Lcom/ecarx/parking/AvmEnterService;->carSensorData:Lcom/ecarx/parking/CarSensorData;
+  40 106e 75c2 0004 Lcom/ecarx/parking/CarSensorData;->isOverSpeed
+  43 040a
+  44 0438 0023 if target 79
+  46 3454 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+  48 001a a889 "dealAvmShowMode: AVM exit and speed is over"
+  50 2071 1f69 0004 Landroid/util/Log;->e
+  53 0071 7629 0000 Lcom/ecarx/parking/ToastManager;->getInstance
+  56 040c
+  57 106e 7557 0003 Lcom/ecarx/parking/AvmEnterService;->getResources
+  60 000c
+  61 0114 002d 7f0d const 2131558445 / 0x7f0d002d
+  64 206e 179a 0010 Landroid/content/res/Resources;->getString
+  67 000c
+  68 306e 762c 0034 Lcom/ecarx/parking/ToastManager;->showLong
+  71 0828
+  72 3454 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+  74 001a a887 "dealAvmShowMode is outAVM and return.."
+  76 2071 1f69 0004 Landroid/util/Log;->e
+  79 3454 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+  81 001a a886 "dealAvmShowMode end.."
+  83 2071 1f69 0004 Landroid/util/Log;->e
+  86 000e
+
+METHOD Lcom/ecarx/parking/AvmEnterService;->onCreate code=3330756 regs=7 ins=1
+   0 106f 01f6 0006 Landroid/app/Service;->onCreate
+   3 106e 7556 0006 Lcom/ecarx/parking/AvmEnterService;->getApplicationContext
+   6 000c
+   7 011a ffa8 "window"
+   9 206e 16a5 0010 Landroid/content/Context;->getSystemService
+  12 000c
+  13 001f 057f
+  15 605b 57a7 Lcom/ecarx/parking/AvmEnterService;->windowManager:Landroid/view/WindowManager;
+  17 0022 202b
+  19 1070 d302 0000 Ljava/util/ArrayList;-><init>
+  22 605b 579b Lcom/ecarx/parking/AvmEnterService;->keyList3:Ljava/util/List;
+  24 0114 0101 2302 const 587333889 / 0x23020101
+  27 1071 d18b 0001 Ljava/lang/Integer;->valueOf
+  30 010c
+  31 2072 d3ba 0010 Ljava/util/List;->add
+  34 6054 579b Lcom/ecarx/parking/AvmEnterService;->keyList3:Ljava/util/List;
+  36 0214 0102 2302 const 587333890 / 0x23020102
+  39 1071 d18b 0002 Ljava/lang/Integer;->valueOf
+  42 020c
+  43 2072 d3ba 0020 Ljava/util/List;->add
+  46 6054 579b Lcom/ecarx/parking/AvmEnterService;->keyList3:Ljava/util/List;
+  48 0314 0103 2302 const 587333891 / 0x23020103
+  51 1071 d18b 0003 Ljava/lang/Integer;->valueOf
+  54 030c
+  55 2072 d3ba 0030 Ljava/util/List;->add
+  58 0022 202b
+  60 1070 d302 0000 Ljava/util/ArrayList;-><init>
+  63 605b 579c Lcom/ecarx/parking/AvmEnterService;->keyList4:Ljava/util/List;
+  65 2072 d3ba 0010 Ljava/util/List;->add
+  68 6054 579c Lcom/ecarx/parking/AvmEnterService;->keyList4:Ljava/util/List;
+  70 2072 d3ba 0020 Ljava/util/List;->add
+  73 6054 579c Lcom/ecarx/parking/AvmEnterService;->keyList4:Ljava/util/List;
+  75 2072 d3ba 0030 Ljava/util/List;->add
+  78 6054 579c Lcom/ecarx/parking/AvmEnterService;->keyList4:Ljava/util/List;
+  80 0114 0104 2302 const 587333892 / 0x23020104
+  83 1071 d18b 0001 Ljava/lang/Integer;->valueOf
+  86 010c
+  87 2072 d3ba 0010 Ljava/util/List;->add
+  90 0022 0f0f
+  92 2070 7657 0060 Lcom/ecarx/parking/geely/VoiceHelper;-><init>
+  95 605b 57a3 Lcom/ecarx/parking/AvmEnterService;->mVoicHelper:Lcom/ecarx/parking/geely/VoiceHelper;
+  97 001a db84 "notification"
+  99 206e 7559 0006 Lcom/ecarx/parking/AvmEnterService;->getSystemService
+ 102 000c
+ 103 001f 0044
+ 105 0122 0042
+ 107 021a a483 "com.ecarx.parking"
+ 109 031a 1325 "AvmEnter"
+ 111 4412 const/4 v4 4
+ 112 4070 019e 4321 Landroid/app/NotificationChannel;-><init>
+ 115 1312 const/4 v3 1
+ 116 206e 019f 0031 Landroid/app/NotificationChannel;->enableLights
+ 119 206e 01a1 0031 Landroid/app/NotificationChannel;->setShowBadge
+ 122 206e 01a0 0031 Landroid/app/NotificationChannel;->setLockscreenVisibility
+ 125 206e 01a6 0010 Landroid/app/NotificationManager;->createNotificationChannel
+ 128 0022 0957
+ 130 2070 4a14 0060 Landroidx/core/app/NotificationCompat$Builder;-><init>
+ 133 206e 4a2e 0020 Landroidx/core/app/NotificationCompat$Builder;->setChannelId
+ 136 000c
+ 137 011b 00fe 0001 "标题"
+ 140 206e 4a36 0010 Landroidx/core/app/NotificationCompat$Builder;->setContentTitle
+ 143 010c
+ 144 021b 00f7 0001 "内容"
+ 147 206e 4a35 0021 Landroidx/core/app/NotificationCompat$Builder;->setContentText
+ 150 010c
+ 151 0071 d236 0000 Ljava/lang/System;->currentTimeMillis
+ 154 040b
+ 155 306e 4a5c 0541 Landroidx/core/app/NotificationCompat$Builder;->setWhen
+ 158 010c
+ 159 0214 0072 7f07 const 2131165298 / 0x7f070072
+ 162 206e 4a4f 0021 Landroidx/core/app/NotificationCompat$Builder;->setSmallIcon
+ 165 010c
+ 166 106e 7557 0006 Lcom/ecarx/parking/AvmEnterService;->getResources
+ 169 040c
+ 170 2071 181a 0024 Landroid/graphics/BitmapFactory;->decodeResource
+ 173 020c
+ 174 206e 4a42 0021 Landroidx/core/app/NotificationCompat$Builder;->setLargeIcon
+ 177 010c
+ 178 106e 4a1c 0001 Landroidx/core/app/NotificationCompat$Builder;->build
+ 181 106e 4a1c 0000 Landroidx/core/app/NotificationCompat$Builder;->build
+ 184 000c
+ 185 306e 7575 0036 Lcom/ecarx/parking/AvmEnterService;->startForeground
+ 188 0071 75b5 0000 Lcom/ecarx/parking/CarFunManager;->getInstance
+ 191 000c
+ 192 206e 75b7 0060 Lcom/ecarx/parking/CarFunManager;->init
+ 195 0071 75bf 0000 Lcom/ecarx/parking/CarSensorData;->getInstance
+ 198 000c
+ 199 605b 5790 Lcom/ecarx/parking/AvmEnterService;->carSensorData:Lcom/ecarx/parking/CarSensorData;
+ 201 0071 75b5 0000 Lcom/ecarx/parking/CarFunManager;->getInstance
+ 204 000c
+ 205 106e 75b2 0000 Lcom/ecarx/parking/CarFunManager;->getAvmConfig
+ 208 000a
+ 209 6059 578f Lcom/ecarx/parking/AvmEnterService;->avmConfig:I
+ 211 0071 75f5 0000 Lcom/ecarx/parking/ObserveManager;->getInstance
+ 214 000c
+ 215 011a c710 "key_CarFun_Change"
+ 217 306e 75f7 0160 Lcom/ecarx/parking/ObserveManager;->registerDataChange
+ 220 1070 755e 0006 Lcom/ecarx/parking/AvmEnterService;->hasExternalAvmLockFile
+ 223 000a
+ 224 0038 0007 if target 231
+ 226 6054 5791 Lcom/ecarx/parking/AvmEnterService;->checkExternalAvmLockThread:Ljava/lang/Thread;
+ 228 106e d24d 0000 Ljava/lang/Thread;->start
+ 231 1070 755f 0006 Lcom/ecarx/parking/AvmEnterService;->hasInternalAvmLockFile
+ 234 000a
+ 235 0038 0007 if target 242
+ 237 6054 5792 Lcom/ecarx/parking/AvmEnterService;->checkInternalAvmLockThread:Ljava/lang/Thread;
+ 239 106e d24d 0000 Ljava/lang/Thread;->start
+ 242 0071 768d 0000 Lcom/ecarx/parking/glyburied/GlySensorsData;->initSensors
+ 245 1070 7561 0006 Lcom/ecarx/parking/AvmEnterService;->initOneOSManager
+ 248 1070 7560 0006 Lcom/ecarx/parking/AvmEnterService;->initHandler
+ 251 1070 7572 0006 Lcom/ecarx/parking/AvmEnterService;->setBuriedBroadcast
+ 254 000e
+
+METHOD Lcom/ecarx/parking/AvmEnterService;->openApa code=3325512 regs=5 ins=1
+   0 4054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+   2 011a e0e2 "openApa"
+   4 2071 1f69 0010 Landroid/util/Log;->e
+   7 4054 5790 Lcom/ecarx/parking/AvmEnterService;->carSensorData:Lcom/ecarx/parking/CarSensorData;
+   9 106e 75bc 0000 Lcom/ecarx/parking/CarSensorData;->accIsOff
+  12 000a
+  13 0112 const/4 v1 0
+  14 0038 0015 if target 35
+  16 0071 7629 0000 Lcom/ecarx/parking/ToastManager;->getInstance
+  19 000c
+  20 106e 7557 0004 Lcom/ecarx/parking/AvmEnterService;->getResources
+  23 020c
+  24 0314 0066 7f0d const 2131558502 / 0x7f0d0066
+  27 206e 179a 0032 Landroid/content/res/Resources;->getString
+  30 020c
+  31 306e 762c 0240 Lcom/ecarx/parking/ToastManager;->showLong
+  34 010f
+  35 4054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+  37 0222 1fdd
+  39 1070 d21f 0002 Ljava/lang/StringBuilder;-><init>
+  42 031a e0e3 "openApa: externalAvmLockStatus="
+  44 206e d22b 0032 Ljava/lang/StringBuilder;->append
+  47 020c
+  48 4352 5795 Lcom/ecarx/parking/AvmEnterService;->externalAvmLockStatus:I
+  50 206e d226 0032 Ljava/lang/StringBuilder;->append
+  53 020c
+  54 106e d234 0002 Ljava/lang/StringBuilder;->toString
+  57 020c
+  58 2071 1f69 0020 Landroid/util/Log;->e
+  61 4052 5795 Lcom/ecarx/parking/AvmEnterService;->externalAvmLockStatus:I
+  63 0039 0015 if target 84
+  65 0071 7629 0000 Lcom/ecarx/parking/ToastManager;->getInstance
+  68 000c
+  69 106e 7557 0004 Lcom/ecarx/parking/AvmEnterService;->getResources
+  72 020c
+  73 0314 0069 7f0d const 2131558505 / 0x7f0d0069
+  76 206e 179a 0032 Landroid/content/res/Resources;->getString
+  79 020c
+  80 306e 762c 0240 Lcom/ecarx/parking/ToastManager;->showLong
+  83 010f
+  84 4054 5790 Lcom/ecarx/parking/AvmEnterService;->carSensorData:Lcom/ecarx/parking/CarSensorData;
+  86 106e 75c0 0000 Lcom/ecarx/parking/CarSensorData;->isApaOverSpeed
+  89 000a
+  90 0038 001c if target 118
+  92 4054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+  94 021a e0e4 "openApa: isOverSpeed"
+  96 2071 1f69 0020 Landroid/util/Log;->e
+  99 0071 7629 0000 Lcom/ecarx/parking/ToastManager;->getInstance
+ 102 000c
+ 103 106e 7557 0004 Lcom/ecarx/parking/AvmEnterService;->getResources
+ 106 020c
+ 107 0314 0067 7f0d const 2131558503 / 0x7f0d0067
+ 110 206e 179a 0032 Landroid/content/res/Resources;->getString
+ 113 020c
+ 114 306e 762c 0240 Lcom/ecarx/parking/ToastManager;->showLong
+ 117 010f
+ 118 4054 578e Lcom/ecarx/parking/AvmEnterService;->TAG:Ljava/lang/String;
+ 120 011a e0e5 "openApa: send instructions to open APA"
+ 122 2071 1f69 0010 Landroid/util/Log;->e
+ 125 0071 75b5 0000 Lcom/ecarx/parking/CarFunManager;->getInstance
+ 128 000c
+ 129 0114 0100 2304 const 587464960 / 0x23040100
+ 132 1212 const/4 v2 1
+ 133 306e 75b9 0210 Lcom/ecarx/parking/CarFunManager;->setFunctionValue
+ 136 020f

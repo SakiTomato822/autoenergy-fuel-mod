@@ -1,0 +1,147 @@
+
+forensics/flyme-dvr-20261010/raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000032a380 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c70ac>:
+  32a380:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+  32a384:	a9016ffc 	stp	x28, x27, [sp, #16]
+  32a388:	a90267fa 	stp	x26, x25, [sp, #32]
+  32a38c:	a9035ff8 	stp	x24, x23, [sp, #48]
+  32a390:	a90457f6 	stp	x22, x21, [sp, #64]
+  32a394:	a9054ff4 	stp	x20, x19, [sp, #80]
+  32a398:	910003fd 	mov	x29, sp
+  32a39c:	d10683ff 	sub	sp, sp, #0x1a0
+  32a3a0:	d53bd058 	mrs	x24, tpidr_el0
+  32a3a4:	aa0803f4 	mov	x20, x8
+  32a3a8:	f9401708 	ldr	x8, [x24, #40]
+  32a3ac:	aa0203e9 	mov	x9, x2
+  32a3b0:	2a0103f5 	mov	w21, w1
+  32a3b4:	aa0003f3 	mov	x19, x0
+  32a3b8:	92401c62 	and	x2, x3, #0xff
+  32a3bc:	910003e0 	mov	x0, sp
+  32a3c0:	52800103 	mov	w3, #0x8                   	// #8
+  32a3c4:	aa0903e1 	mov	x1, x9
+  32a3c8:	f81f83a8 	stur	x8, [x29, #-8]
+  32a3cc:	f90003ff 	str	xzr, [sp]
+  32a3d0:	94097fa4 	bl	58a260 <__memcpy_chk@plt>
+  32a3d4:	aa1403f9 	mov	x25, x20
+  32a3d8:	f8008f3f 	str	xzr, [x25, #8]!
+  32a3dc:	f9000a9f 	str	xzr, [x20, #16]
+  32a3e0:	f9000299 	str	x25, [x20]
+  32a3e4:	350006f5 	cbnz	w21, 32a4c0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c71ec>
+  32a3e8:	394cae68 	ldrb	w8, [x19, #811]
+  32a3ec:	340006a8 	cbz	w8, 32a4c0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c71ec>
+  32a3f0:	f94003e8 	ldr	x8, [sp]
+  32a3f4:	b5000648 	cbnz	x8, 32a4bc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c71e8>
+  32a3f8:	b0ffe729 	adrp	x9, f000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4ea70>
+  32a3fc:	911be129 	add	x9, x9, #0x6f8
+  32a400:	3dc00120 	ldr	q0, [x9]
+  32a404:	f840e129 	ldur	x9, [x9, #14]
+  32a408:	52800588 	mov	w8, #0x2c                  	// #44
+  32a40c:	910023e1 	add	x1, sp, #0x8
+  32a410:	910063e2 	add	x2, sp, #0x18
+  32a414:	aa1403e0 	mov	x0, x20
+  32a418:	f9002e7f 	str	xzr, [x19, #88]
+  32a41c:	3900bfff 	strb	wzr, [sp, #47]
+  32a420:	b90033ff 	str	wzr, [sp, #48]
+  32a424:	390063e8 	strb	w8, [sp, #24]
+  32a428:	3c8193e0 	stur	q0, [sp, #25]
+  32a42c:	f80273e9 	stur	x9, [sp, #39]
+  32a430:	f90007ff 	str	xzr, [sp, #8]
+  32a434:	97ff7415 	bl	307488 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1a41b4>
+  32a438:	f9400008 	ldr	x8, [x0]
+  32a43c:	b5000388 	cbnz	x8, 32a4ac <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c71d8>
+  32a440:	aa0003f5 	mov	x21, x0
+  32a444:	52800800 	mov	w0, #0x40                  	// #64
+  32a448:	94097c1a 	bl	5894b0 <operator new(unsigned long)@plt>
+  32a44c:	f94017e8 	ldr	x8, [sp, #40]
+  32a450:	3cc183e0 	ldur	q0, [sp, #24]
+  32a454:	a9027fff 	stp	xzr, xzr, [sp, #32]
+  32a458:	f9000fff 	str	xzr, [sp, #24]
+  32a45c:	f9001808 	str	x8, [x0, #48]
+  32a460:	b94033e8 	ldr	w8, [sp, #48]
+  32a464:	a9007c1f 	stp	xzr, xzr, [x0]
+  32a468:	3d800800 	str	q0, [x0, #32]
+  32a46c:	b9003808 	str	w8, [x0, #56]
+  32a470:	f94007e8 	ldr	x8, [sp, #8]
+  32a474:	f9000808 	str	x8, [x0, #16]
+  32a478:	f90002a0 	str	x0, [x21]
+  32a47c:	f9400288 	ldr	x8, [x20]
+  32a480:	f9400108 	ldr	x8, [x8]
+  32a484:	b4000088 	cbz	x8, 32a494 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c71c0>
+  32a488:	f9000288 	str	x8, [x20]
+  32a48c:	f94002a1 	ldr	x1, [x21]
+  32a490:	14000002 	b	32a498 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c71c4>
+  32a494:	aa0003e1 	mov	x1, x0
+  32a498:	f9400680 	ldr	x0, [x20, #8]
+  32a49c:	97f4d53e 	bl	5f994 <void std::__1::__tree_balance_after_insert<std::__1::__tree_node_base<void*>*>(std::__1::__tree_node_base<void*>*, std::__1::__tree_node_base<void*>*)@@Base>
+  32a4a0:	f9400a88 	ldr	x8, [x20, #16]
+  32a4a4:	91000508 	add	x8, x8, #0x1
+  32a4a8:	f9000a88 	str	x8, [x20, #16]
+  32a4ac:	394063e8 	ldrb	w8, [sp, #24]
+  32a4b0:	36000068 	tbz	w8, #0, 32a4bc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c71e8>
+  32a4b4:	f94017e0 	ldr	x0, [sp, #40]
+  32a4b8:	94097c36 	bl	589590 <operator delete(void*)@plt>
+  32a4bc:	390cae7f 	strb	wzr, [x19, #811]
+  32a4c0:	f94003e8 	ldr	x8, [sp]
+  32a4c4:	f9402e69 	ldr	x9, [x19, #88]
+  32a4c8:	eb09011f 	cmp	x8, x9
+  32a4cc:	540002e0 	b.eq	32a528 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c7254>  // b.none
+  32a4d0:	b0ffe72a 	adrp	x10, f000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4ea70>
+  32a4d4:	911be14a 	add	x10, x10, #0x6f8
+  32a4d8:	3dc00140 	ldr	q0, [x10]
+  32a4dc:	f840e14a 	ldur	x10, [x10, #14]
+  32a4e0:	52800589 	mov	w9, #0x2c                  	// #44
+  32a4e4:	910023e1 	add	x1, sp, #0x8
+  32a4e8:	910063e2 	add	x2, sp, #0x18
+  32a4ec:	aa1403e0 	mov	x0, x20
+  32a4f0:	f9002e68 	str	x8, [x19, #88]
+  32a4f4:	3900bfff 	strb	wzr, [sp, #47]
+  32a4f8:	b90033e8 	str	w8, [sp, #48]
+  32a4fc:	390063e9 	strb	w9, [sp, #24]
+  32a500:	3c8193e0 	stur	q0, [sp, #25]
+  32a504:	f80273ea 	stur	x10, [sp, #39]
+  32a508:	f90007ff 	str	xzr, [sp, #8]
+  32a50c:	97ff73df 	bl	307488 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1a41b4>
+  32a510:	f9400008 	ldr	x8, [x0]
+  32a514:	b4001708 	cbz	x8, 32a7f4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c7520>
+  32a518:	394063e8 	ldrb	w8, [sp, #24]
+  32a51c:	36000068 	tbz	w8, #0, 32a528 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c7254>
+  32a520:	f94017e0 	ldr	x0, [sp, #40]
+  32a524:	94097c1b 	bl	589590 <operator delete(void*)@plt>
+  32a528:	f9400a85 	ldr	x5, [x20, #16]
+  32a52c:	b0ffe721 	adrp	x1, f000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4ea70>
+  32a530:	90ffe7c2 	adrp	x2, 22000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ba70>
+  32a534:	f0ffe783 	adrp	x3, 1d000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x40a70>
+  32a538:	9126dc21 	add	x1, x1, #0x9b7
+  32a53c:	91184442 	add	x2, x2, #0x611
+  32a540:	912f1063 	add	x3, x3, #0xbc4
+  32a544:	52800080 	mov	w0, #0x4                   	// #4
+  32a548:	52818d64 	mov	w4, #0xc6b                 	// #3179
+  32a54c:	94097bed 	bl	589500 <__android_log_print@plt>
+  32a550:	90001336 	adrp	x22, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  32a554:	f94002d6 	ldr	x22, [x22]
+  32a558:	f94002c8 	ldr	x8, [x22]
+  32a55c:	b4000bc8 	cbz	x8, 32a6d4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c7400>
+  32a560:	b9400908 	ldr	w8, [x8, #8]
+  32a564:	7100111f 	cmp	w8, #0x4
+  32a568:	54000b6b 	b.lt	32a6d4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x1c7400>  // b.tstop
+  32a56c:	90001328 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  32a570:	f9400508 	ldr	x8, [x8, #8]
+  32a574:	52800089 	mov	w9, #0x4                   	// #4
+  32a578:	52801640 	mov	w0, #0xb2                  	// #178
+  32a57c:	910063f7 	add	x23, sp, #0x18
+  32a580:	91004108 	add	x8, x8, #0x10
+  32a584:	f9000fe8 	str	x8, [sp, #24]
+  32a588:	b90033e9 	str	w9, [sp, #48]
+  32a58c:	94097be1 	bl	589510 <syscall@plt>
+  32a590:	b90037e0 	str	w0, [sp, #52]
+  32a594:	9000132a 	adrp	x10, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  32a598:	f9400d4a 	ldr	x10, [x10, #24]
+  32a59c:	910063e9 	add	x9, sp, #0x18
+  32a5a0:	52818d68 	mov	w8, #0xc6b                 	// #3179
+  32a5a4:	9100e135 	add	x21, x9, #0x38
+  32a5a8:	a903a3ff 	stp	xzr, x8, [sp, #56]
+  32a5ac:	91028120 	add	x0, x9, #0xa0

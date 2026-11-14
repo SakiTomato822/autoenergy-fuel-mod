@@ -1,0 +1,1259 @@
+
+/data/data/com.termux/files/home/forensics/flyme-dvr-20261010/raw/current-vhal:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+00000000004b5ffc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352d28>:
+  4b5ffc:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+  4b6000:	a9016ffc 	stp	x28, x27, [sp, #16]
+  4b6004:	a90267fa 	stp	x26, x25, [sp, #32]
+  4b6008:	a9035ff8 	stp	x24, x23, [sp, #48]
+  4b600c:	a90457f6 	stp	x22, x21, [sp, #64]
+  4b6010:	a9054ff4 	stp	x20, x19, [sp, #80]
+  4b6014:	910003fd 	mov	x29, sp
+  4b6018:	d10a43ff 	sub	sp, sp, #0x290
+  4b601c:	f90027e0 	str	x0, [sp, #72]
+  4b6020:	d53bd05a 	mrs	x26, tpidr_el0
+  4b6024:	f9401748 	ldr	x8, [x26, #40]
+  4b6028:	aa0103f4 	mov	x20, x1
+  4b602c:	9103e3f5 	add	x21, sp, #0xf8
+  4b6030:	f81e83a8 	stur	x8, [x29, #-24]
+  4b6034:	f9400020 	ldr	x0, [x1]
+  4b6038:	97f365af 	bl	18f6f4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x2c420>
+  4b603c:	39400017 	ldrb	w23, [x0]
+  4b6040:	f9400280 	ldr	x0, [x20]
+  4b6044:	97f365ae 	bl	18f6fc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x2c428>
+  4b6048:	39400016 	ldrb	w22, [x0]
+  4b604c:	f9400280 	ldr	x0, [x20]
+  4b6050:	97f365ad 	bl	18f704 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x2c430>
+  4b6054:	39400018 	ldrb	w24, [x0]
+  4b6058:	2a1603f3 	mov	w19, w22
+  4b605c:	33181ef3 	bfi	w19, w23, #8, #8
+  4b6060:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b6064:	d0ffdb22 	adrp	x2, 1c000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x41a70>
+  4b6068:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b606c:	91347421 	add	x1, x1, #0xd1d
+  4b6070:	912c9c42 	add	x2, x2, #0xb27
+  4b6074:	913eac63 	add	x3, x3, #0xfab
+  4b6078:	52800080 	mov	w0, #0x4                   	// #4
+  4b607c:	2a1303e4 	mov	w4, w19
+  4b6080:	2a1703e5 	mov	w5, w23
+  4b6084:	2a1603e6 	mov	w6, w22
+  4b6088:	2a1803e7 	mov	w7, w24
+  4b608c:	94034d1d 	bl	589500 <__android_log_print@plt>
+  4b6090:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6094:	f9400108 	ldr	x8, [x8]
+  4b6098:	f9400108 	ldr	x8, [x8]
+  4b609c:	b4000c48 	cbz	x8, 4b6224 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352f50>
+  4b60a0:	b9400908 	ldr	w8, [x8, #8]
+  4b60a4:	7100111f 	cmp	w8, #0x4
+  4b60a8:	54000beb 	b.lt	4b6224 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352f50>  // b.tstop
+  4b60ac:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b60b0:	f9400508 	ldr	x8, [x8, #8]
+  4b60b4:	52800089 	mov	w9, #0x4                   	// #4
+  4b60b8:	52801640 	mov	w0, #0xb2                  	// #178
+  4b60bc:	b90113e9 	str	w9, [sp, #272]
+  4b60c0:	91004108 	add	x8, x8, #0x10
+  4b60c4:	f9007fe8 	str	x8, [sp, #248]
+  4b60c8:	94034d12 	bl	589510 <syscall@plt>
+  4b60cc:	b90117e0 	str	w0, [sp, #276]
+  4b60d0:	900006ca 	adrp	x10, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b60d4:	f9400d4a 	ldr	x10, [x10, #24]
+  4b60d8:	9103e3e9 	add	x9, sp, #0xf8
+  4b60dc:	528006a8 	mov	w8, #0x35                  	// #53
+  4b60e0:	9100e139 	add	x25, x9, #0x38
+  4b60e4:	a911a3ff 	stp	xzr, x8, [sp, #280]
+  4b60e8:	91028120 	add	x0, x9, #0xa0
+  4b60ec:	91006148 	add	x8, x10, #0x18
+  4b60f0:	91010149 	add	x9, x10, #0x40
+  4b60f4:	aa1903e1 	mov	x1, x25
+  4b60f8:	f90097e8 	str	x8, [sp, #296]
+  4b60fc:	f900cfe9 	str	x9, [sp, #408]
+  4b6100:	94034d08 	bl	589520 <std::__1::ios_base::init(void*)@plt>
+  4b6104:	f90113ff 	str	xzr, [sp, #544]
+  4b6108:	900006c9 	adrp	x9, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b610c:	f9401129 	ldr	x9, [x9, #32]
+  4b6110:	12800008 	mov	w8, #0xffffffff            	// #-1
+  4b6114:	b9022be8 	str	w8, [sp, #552]
+  4b6118:	aa1903e0 	mov	x0, x25
+  4b611c:	91006128 	add	x8, x9, #0x18
+  4b6120:	91010129 	add	x9, x9, #0x40
+  4b6124:	f90097e8 	str	x8, [sp, #296]
+  4b6128:	f900cfe9 	str	x9, [sp, #408]
+  4b612c:	94034d01 	bl	589530 <std::__1::basic_streambuf<char, std::__1::char_traits<char> >::basic_streambuf()@plt>
+  4b6130:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6134:	f9400908 	ldr	x8, [x8, #16]
+  4b6138:	6f00e400 	movi	v0.2d, #0x0
+  4b613c:	52800209 	mov	w9, #0x10                  	// #16
+  4b6140:	910243e0 	add	x0, sp, #0x90
+  4b6144:	91004108 	add	x8, x8, #0x10
+  4b6148:	f9009be8 	str	x8, [sp, #304]
+  4b614c:	d0ffdac8 	adrp	x8, 10000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4da70>
+  4b6150:	3c8782a0 	stur	q0, [x21, #120]
+  4b6154:	3c8882a0 	stur	q0, [x21, #136]
+  4b6158:	b90193e9 	str	w9, [sp, #400]
+  4b615c:	90ffdb89 	adrp	x9, 26000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x37a70>
+  4b6160:	91263108 	add	x8, x8, #0x98c
+  4b6164:	910c8929 	add	x9, x9, #0x322
+  4b6168:	aa1f03e1 	mov	x1, xzr
+  4b616c:	f9011be8 	str	x8, [sp, #560]
+  4b6170:	f9011fe9 	str	x9, [sp, #568]
+  4b6174:	b90243ff 	str	wzr, [sp, #576]
+  4b6178:	ad0a82a0 	stp	q0, q0, [x21, #336]
+  4b617c:	3d805ea0 	str	q0, [x21, #368]
+  4b6180:	a9097fff 	stp	xzr, xzr, [sp, #144]
+  4b6184:	94034cef 	bl	589540 <gettimeofday@plt>
+  4b6188:	a94927e8 	ldp	x8, x9, [sp, #144]
+  4b618c:	d29ef9ea 	mov	x10, #0xf7cf                	// #63439
+  4b6190:	f2bc6a6a 	movk	x10, #0xe353, lsl #16
+  4b6194:	f2d374aa 	movk	x10, #0x9ba5, lsl #32
+  4b6198:	f2e4188a 	movk	x10, #0x20c4, lsl #48
+  4b619c:	f90083e8 	str	x8, [sp, #256]
+  4b61a0:	9b4a7d28 	smulh	x8, x9, x10
+  4b61a4:	d37ffd09 	lsr	x9, x8, #63
+  4b61a8:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b61ac:	d0ffdb22 	adrp	x2, 1c000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x41a70>
+  4b61b0:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b61b4:	0b481d28 	add	w8, w9, w8, lsr #7
+  4b61b8:	91347421 	add	x1, x1, #0xd1d
+  4b61bc:	912c9c42 	add	x2, x2, #0xb27
+  4b61c0:	913eac63 	add	x3, x3, #0xfab
+  4b61c4:	9103e3e0 	add	x0, sp, #0xf8
+  4b61c8:	2a1303e4 	mov	w4, w19
+  4b61cc:	2a1703e5 	mov	w5, w23
+  4b61d0:	2a1603e6 	mov	w6, w22
+  4b61d4:	2a1803e7 	mov	w7, w24
+  4b61d8:	790213e8 	strh	w8, [sp, #264]
+  4b61dc:	97ee9742 	bl	5bee4 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1b8c>
+  4b61e0:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b61e4:	f9400108 	ldr	x8, [x8]
+  4b61e8:	f9400118 	ldr	x24, [x8]
+  4b61ec:	a9412319 	ldp	x25, x8, [x24, #16]
+  4b61f0:	eb08033f 	cmp	x25, x8
+  4b61f4:	54000140 	b.eq	4b621c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352f48>  // b.none
+  4b61f8:	aa0003f7 	mov	x23, x0
+  4b61fc:	f8408720 	ldr	x0, [x25], #8
+  4b6200:	aa1703e1 	mov	x1, x23
+  4b6204:	f9400008 	ldr	x8, [x0]
+  4b6208:	f9400908 	ldr	x8, [x8, #16]
+  4b620c:	d63f0100 	blr	x8
+  4b6210:	f9400f08 	ldr	x8, [x24, #24]
+  4b6214:	eb08033f 	cmp	x25, x8
+  4b6218:	54ffff21 	b.ne	4b61fc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352f28>  // b.any
+  4b621c:	9103e3e0 	add	x0, sp, #0xf8
+  4b6220:	97ee977e 	bl	5c018 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1a58>
+  4b6224:	f94027e8 	ldr	x8, [sp, #72]
+  4b6228:	a906ffff 	stp	xzr, xzr, [sp, #104]
+  4b622c:	f9003fff 	str	xzr, [sp, #120]
+  4b6230:	2a1303e1 	mov	w1, w19
+  4b6234:	f9401908 	ldr	x8, [x8, #48]
+  4b6238:	f9400500 	ldr	x0, [x8, #8]
+  4b623c:	f9400008 	ldr	x8, [x0]
+  4b6240:	f9403109 	ldr	x9, [x8, #96]
+  4b6244:	9101a3e8 	add	x8, sp, #0x68
+  4b6248:	d63f0120 	blr	x9
+  4b624c:	a946a3e0 	ldp	x0, x8, [sp, #104]
+  4b6250:	eb08001f 	cmp	x0, x8
+  4b6254:	54003380 	b.eq	4b68c4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3535f0>  // b.none
+  4b6258:	cb000108 	sub	x8, x8, x0
+  4b625c:	d343fd08 	lsr	x8, x8, #3
+  4b6260:	7100051f 	cmp	w8, #0x1
+  4b6264:	5400312b 	b.lt	4b6888 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3535b4>  // b.tstop
+  4b6268:	f90007fa 	str	x26, [sp, #8]
+  4b626c:	910243e8 	add	x8, sp, #0x90
+  4b6270:	9103e3e9 	add	x9, sp, #0xf8
+  4b6274:	900006ca 	adrp	x10, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6278:	f94037e0 	ldr	x0, [sp, #104]
+  4b627c:	f940054a 	ldr	x10, [x10, #8]
+  4b6280:	900006cb 	adrp	x11, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6284:	91006119 	add	x25, x8, #0x18
+  4b6288:	9101210c 	add	x12, x8, #0x48
+  4b628c:	9101611b 	add	x27, x8, #0x58
+  4b6290:	9100e128 	add	x8, x9, #0x38
+  4b6294:	f940096b 	ldr	x11, [x11, #16]
+  4b6298:	a903b3e8 	stp	x8, x12, [sp, #56]
+  4b629c:	91028128 	add	x8, x9, #0xa0
+  4b62a0:	f9001be8 	str	x8, [sp, #48]
+  4b62a4:	9101e128 	add	x8, x9, #0x78
+  4b62a8:	f90017e8 	str	x8, [sp, #40]
+  4b62ac:	91054128 	add	x8, x9, #0x150
+  4b62b0:	f90013e8 	str	x8, [sp, #32]
+  4b62b4:	91004148 	add	x8, x10, #0x10
+  4b62b8:	aa1f03f8 	mov	x24, xzr
+  4b62bc:	f9000fe8 	str	x8, [sp, #24]
+  4b62c0:	91004168 	add	x8, x11, #0x10
+  4b62c4:	f9000be8 	str	x8, [sp, #16]
+  4b62c8:	14000007 	b	4b62e4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353010>
+  4b62cc:	a946a3e0 	ldp	x0, x8, [sp, #104]
+  4b62d0:	91000718 	add	x24, x24, #0x1
+  4b62d4:	cb000108 	sub	x8, x8, x0
+  4b62d8:	d343fd08 	lsr	x8, x8, #3
+  4b62dc:	eb28c31f 	cmp	x24, w8, sxtw
+  4b62e0:	54002d2a 	b.ge	4b6884 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3535b0>  // b.tcont
+  4b62e4:	f8787815 	ldr	x21, [x0, x24, lsl #3]
+  4b62e8:	710056df 	cmp	w22, #0x15
+  4b62ec:	540014e0 	b.eq	4b6588 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3532b4>  // b.none
+  4b62f0:	710052df 	cmp	w22, #0x14
+  4b62f4:	54fffec1 	b.ne	4b62cc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352ff8>  // b.any
+  4b62f8:	a9057fff 	stp	xzr, xzr, [sp, #80]
+  4b62fc:	f90033ff 	str	xzr, [sp, #96]
+  4b6300:	f9400280 	ldr	x0, [x20]
+  4b6304:	97f36504 	bl	18f714 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x2c440>
+  4b6308:	f940001c 	ldr	x28, [x0]
+  4b630c:	f9400280 	ldr	x0, [x20]
+  4b6310:	97f36501 	bl	18f714 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x2c440>
+  4b6314:	f940041a 	ldr	x26, [x0, #8]
+  4b6318:	a905ffff 	stp	xzr, xzr, [sp, #88]
+  4b631c:	f9002bff 	str	xzr, [sp, #80]
+  4b6320:	eb1c0357 	subs	x23, x26, x28
+  4b6324:	54000200 	b.eq	4b6364 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353090>  // b.none
+  4b6328:	b7f83ab7 	tbnz	x23, #63, 4b6a7c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3537a8>
+  4b632c:	aa1703e0 	mov	x0, x23
+  4b6330:	94034c60 	bl	5894b0 <operator new(unsigned long)@plt>
+  4b6334:	8b170008 	add	x8, x0, x23
+  4b6338:	eb1a039f 	cmp	x28, x26
+  4b633c:	a90503e0 	stp	x0, x0, [sp, #80]
+  4b6340:	f90033e8 	str	x8, [sp, #96]
+  4b6344:	54000100 	b.eq	4b6364 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353090>  // b.none
+  4b6348:	38401788 	ldrb	w8, [x28], #1
+  4b634c:	39000008 	strb	w8, [x0]
+  4b6350:	f9402fe8 	ldr	x8, [sp, #88]
+  4b6354:	eb1c035f 	cmp	x26, x28
+  4b6358:	91000500 	add	x0, x8, #0x1
+  4b635c:	f9002fe0 	str	x0, [sp, #88]
+  4b6360:	54ffff41 	b.ne	4b6348 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353074>  // b.any
+  4b6364:	6f00e400 	movi	v0.2d, #0x0
+  4b6368:	f9007bff 	str	xzr, [sp, #240]
+  4b636c:	ad0683e0 	stp	q0, q0, [sp, #208]
+  4b6370:	ad0583e0 	stp	q0, q0, [sp, #176]
+  4b6374:	ad0483e0 	stp	q0, q0, [sp, #144]
+  4b6378:	94034dd6 	bl	589ad0 <android::elapsedRealtimeNano()@plt>
+  4b637c:	f9004be0 	str	x0, [sp, #144]
+  4b6380:	b94002a8 	ldr	w8, [x21]
+  4b6384:	f94023e0 	ldr	x0, [sp, #64]
+  4b6388:	6f00e400 	movi	v0.2d, #0x0
+  4b638c:	910143e1 	add	x1, sp, #0x50
+  4b6390:	12080d08 	and	w8, w8, #0xf000000
+  4b6394:	b9009be8 	str	w8, [sp, #152]
+  4b6398:	b94002a8 	ldr	w8, [x21]
+  4b639c:	2913ffe8 	stp	w8, wzr, [sp, #156]
+  4b63a0:	ad000320 	stp	q0, q0, [x25]
+  4b63a4:	3d800b20 	str	q0, [x25, #32]
+  4b63a8:	97f3fc23 	bl	1b5434 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x52160>
+  4b63ac:	aa1b03e0 	mov	x0, x27
+  4b63b0:	94034c20 	bl	589430 <android::hardware::hidl_string::hidl_string()@plt>
+  4b63b4:	f94027e8 	ldr	x8, [sp, #72]
+  4b63b8:	910243e1 	add	x1, sp, #0x90
+  4b63bc:	f9401908 	ldr	x8, [x8, #48]
+  4b63c0:	f9400500 	ldr	x0, [x8, #8]
+  4b63c4:	f9400008 	ldr	x8, [x0]
+  4b63c8:	f9403508 	ldr	x8, [x8, #104]
+  4b63cc:	d63f0100 	blr	x8
+  4b63d0:	b94002a4 	ldr	w4, [x21]
+  4b63d4:	12000017 	and	w23, w0, #0x1
+  4b63d8:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b63dc:	f0ffdb62 	adrp	x2, 25000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x38a70>
+  4b63e0:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b63e4:	52800060 	mov	w0, #0x3                   	// #3
+  4b63e8:	91347421 	add	x1, x1, #0xd1d
+  4b63ec:	91316042 	add	x2, x2, #0xc58
+  4b63f0:	913eac63 	add	x3, x3, #0xfab
+  4b63f4:	2a1303e5 	mov	w5, w19
+  4b63f8:	2a1703e6 	mov	w6, w23
+  4b63fc:	94034c41 	bl	589500 <__android_log_print@plt>
+  4b6400:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6404:	f9400108 	ldr	x8, [x8]
+  4b6408:	f9400108 	ldr	x8, [x8]
+  4b640c:	b4002008 	cbz	x8, 4b680c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353538>
+  4b6410:	b9400908 	ldr	w8, [x8, #8]
+  4b6414:	7100151f 	cmp	w8, #0x5
+  4b6418:	54001fab 	b.lt	4b680c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353538>  // b.tstop
+  4b641c:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6420:	f9400508 	ldr	x8, [x8, #8]
+  4b6424:	52801640 	mov	w0, #0xb2                  	// #178
+  4b6428:	91004108 	add	x8, x8, #0x10
+  4b642c:	f9007fe8 	str	x8, [sp, #248]
+  4b6430:	528000a8 	mov	w8, #0x5                   	// #5
+  4b6434:	b90113e8 	str	w8, [sp, #272]
+  4b6438:	94034c36 	bl	589510 <syscall@plt>
+  4b643c:	52800948 	mov	w8, #0x4a                  	// #74
+  4b6440:	b90117e0 	str	w0, [sp, #276]
+  4b6444:	a911a3ff 	stp	xzr, x8, [sp, #280]
+  4b6448:	900006c9 	adrp	x9, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b644c:	f9400d29 	ldr	x9, [x9, #24]
+  4b6450:	a9436be0 	ldp	x0, x26, [sp, #48]
+  4b6454:	91006128 	add	x8, x9, #0x18
+  4b6458:	91010129 	add	x9, x9, #0x40
+  4b645c:	aa1a03e1 	mov	x1, x26
+  4b6460:	f90097e8 	str	x8, [sp, #296]
+  4b6464:	f900cfe9 	str	x9, [sp, #408]
+  4b6468:	94034c2e 	bl	589520 <std::__1::ios_base::init(void*)@plt>
+  4b646c:	12800008 	mov	w8, #0xffffffff            	// #-1
+  4b6470:	f90113ff 	str	xzr, [sp, #544]
+  4b6474:	b9022be8 	str	w8, [sp, #552]
+  4b6478:	900006c9 	adrp	x9, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b647c:	f9401129 	ldr	x9, [x9, #32]
+  4b6480:	aa1a03e0 	mov	x0, x26
+  4b6484:	91006128 	add	x8, x9, #0x18
+  4b6488:	91010129 	add	x9, x9, #0x40
+  4b648c:	f90097e8 	str	x8, [sp, #296]
+  4b6490:	f900cfe9 	str	x9, [sp, #408]
+  4b6494:	94034c27 	bl	589530 <std::__1::basic_streambuf<char, std::__1::char_traits<char> >::basic_streambuf()@plt>
+  4b6498:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b649c:	f9400908 	ldr	x8, [x8, #16]
+  4b64a0:	6f00e400 	movi	v0.2d, #0x0
+  4b64a4:	910203e0 	add	x0, sp, #0x80
+  4b64a8:	aa1f03e1 	mov	x1, xzr
+  4b64ac:	91004108 	add	x8, x8, #0x10
+  4b64b0:	f9009be8 	str	x8, [sp, #304]
+  4b64b4:	f94017e8 	ldr	x8, [sp, #40]
+  4b64b8:	a9087fff 	stp	xzr, xzr, [sp, #128]
+  4b64bc:	ad000100 	stp	q0, q0, [x8]
+  4b64c0:	52800208 	mov	w8, #0x10                  	// #16
+  4b64c4:	b90193e8 	str	w8, [sp, #400]
+  4b64c8:	d0ffdac8 	adrp	x8, 10000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4da70>
+  4b64cc:	91263108 	add	x8, x8, #0x98c
+  4b64d0:	f9011be8 	str	x8, [sp, #560]
+  4b64d4:	90ffdb88 	adrp	x8, 26000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x37a70>
+  4b64d8:	910c8908 	add	x8, x8, #0x322
+  4b64dc:	f9011fe8 	str	x8, [sp, #568]
+  4b64e0:	f94013e8 	ldr	x8, [sp, #32]
+  4b64e4:	b90243ff 	str	wzr, [sp, #576]
+  4b64e8:	ad008100 	stp	q0, q0, [x8, #16]
+  4b64ec:	3d800100 	str	q0, [x8]
+  4b64f0:	94034c14 	bl	589540 <gettimeofday@plt>
+  4b64f4:	a94827e8 	ldp	x8, x9, [sp, #128]
+  4b64f8:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b64fc:	f0ffdb62 	adrp	x2, 25000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x38a70>
+  4b6500:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b6504:	f90083e8 	str	x8, [sp, #256]
+  4b6508:	d29ef9e8 	mov	x8, #0xf7cf                	// #63439
+  4b650c:	f2bc6a68 	movk	x8, #0xe353, lsl #16
+  4b6510:	f2d374a8 	movk	x8, #0x9ba5, lsl #32
+  4b6514:	f2e41888 	movk	x8, #0x20c4, lsl #48
+  4b6518:	9b487d28 	smulh	x8, x9, x8
+  4b651c:	d37ffd09 	lsr	x9, x8, #63
+  4b6520:	0b481d28 	add	w8, w9, w8, lsr #7
+  4b6524:	790213e8 	strh	w8, [sp, #264]
+  4b6528:	b94002a4 	ldr	w4, [x21]
+  4b652c:	9103e3e0 	add	x0, sp, #0xf8
+  4b6530:	91347421 	add	x1, x1, #0xd1d
+  4b6534:	91316042 	add	x2, x2, #0xc58
+  4b6538:	913eac63 	add	x3, x3, #0xfab
+  4b653c:	2a1303e5 	mov	w5, w19
+  4b6540:	2a1703e6 	mov	w6, w23
+  4b6544:	97ee9668 	bl	5bee4 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1b8c>
+  4b6548:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b654c:	f9400108 	ldr	x8, [x8]
+  4b6550:	f9400115 	ldr	x21, [x8]
+  4b6554:	a94122ba 	ldp	x26, x8, [x21, #16]
+  4b6558:	eb08035f 	cmp	x26, x8
+  4b655c:	54001540 	b.eq	4b6804 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353530>  // b.none
+  4b6560:	aa0003f7 	mov	x23, x0
+  4b6564:	f8408740 	ldr	x0, [x26], #8
+  4b6568:	aa1703e1 	mov	x1, x23
+  4b656c:	f9400008 	ldr	x8, [x0]
+  4b6570:	f9400908 	ldr	x8, [x8, #16]
+  4b6574:	d63f0100 	blr	x8
+  4b6578:	f9400ea8 	ldr	x8, [x21, #24]
+  4b657c:	eb08035f 	cmp	x26, x8
+  4b6580:	54ffff21 	b.ne	4b6564 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353290>  // b.any
+  4b6584:	140000a0 	b	4b6804 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353530>
+  4b6588:	a9057fff 	stp	xzr, xzr, [sp, #80]
+  4b658c:	f90033ff 	str	xzr, [sp, #96]
+  4b6590:	f9400280 	ldr	x0, [x20]
+  4b6594:	97f36460 	bl	18f714 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x2c440>
+  4b6598:	f940001c 	ldr	x28, [x0]
+  4b659c:	f9400280 	ldr	x0, [x20]
+  4b65a0:	97f3645d 	bl	18f714 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x2c440>
+  4b65a4:	f940041a 	ldr	x26, [x0, #8]
+  4b65a8:	a905ffff 	stp	xzr, xzr, [sp, #88]
+  4b65ac:	f9002bff 	str	xzr, [sp, #80]
+  4b65b0:	eb1c0357 	subs	x23, x26, x28
+  4b65b4:	54000200 	b.eq	4b65f4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353320>  // b.none
+  4b65b8:	b7f82637 	tbnz	x23, #63, 4b6a7c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3537a8>
+  4b65bc:	aa1703e0 	mov	x0, x23
+  4b65c0:	94034bbc 	bl	5894b0 <operator new(unsigned long)@plt>
+  4b65c4:	8b170008 	add	x8, x0, x23
+  4b65c8:	eb1a039f 	cmp	x28, x26
+  4b65cc:	a90503e0 	stp	x0, x0, [sp, #80]
+  4b65d0:	f90033e8 	str	x8, [sp, #96]
+  4b65d4:	54000100 	b.eq	4b65f4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353320>  // b.none
+  4b65d8:	38401788 	ldrb	w8, [x28], #1
+  4b65dc:	39000008 	strb	w8, [x0]
+  4b65e0:	f9402fe8 	ldr	x8, [sp, #88]
+  4b65e4:	eb1c035f 	cmp	x26, x28
+  4b65e8:	91000500 	add	x0, x8, #0x1
+  4b65ec:	f9002fe0 	str	x0, [sp, #88]
+  4b65f0:	54ffff41 	b.ne	4b65d8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353304>  // b.any
+  4b65f4:	6f00e400 	movi	v0.2d, #0x0
+  4b65f8:	f9007bff 	str	xzr, [sp, #240]
+  4b65fc:	ad0683e0 	stp	q0, q0, [sp, #208]
+  4b6600:	ad0583e0 	stp	q0, q0, [sp, #176]
+  4b6604:	ad0483e0 	stp	q0, q0, [sp, #144]
+  4b6608:	94034d32 	bl	589ad0 <android::elapsedRealtimeNano()@plt>
+  4b660c:	f9004be0 	str	x0, [sp, #144]
+  4b6610:	b94002a8 	ldr	w8, [x21]
+  4b6614:	f94023e0 	ldr	x0, [sp, #64]
+  4b6618:	6f00e400 	movi	v0.2d, #0x0
+  4b661c:	910143e1 	add	x1, sp, #0x50
+  4b6620:	12080d08 	and	w8, w8, #0xf000000
+  4b6624:	b9009be8 	str	w8, [sp, #152]
+  4b6628:	b94002a8 	ldr	w8, [x21]
+  4b662c:	2913ffe8 	stp	w8, wzr, [sp, #156]
+  4b6630:	ad000320 	stp	q0, q0, [x25]
+  4b6634:	3d800b20 	str	q0, [x25, #32]
+  4b6638:	97f3fb7f 	bl	1b5434 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x52160>
+  4b663c:	aa1b03e0 	mov	x0, x27
+  4b6640:	94034b7c 	bl	589430 <android::hardware::hidl_string::hidl_string()@plt>
+  4b6644:	f94027e8 	ldr	x8, [sp, #72]
+  4b6648:	910243e1 	add	x1, sp, #0x90
+  4b664c:	f9401908 	ldr	x8, [x8, #48]
+  4b6650:	f9400500 	ldr	x0, [x8, #8]
+  4b6654:	f9400008 	ldr	x8, [x0]
+  4b6658:	f9403508 	ldr	x8, [x8, #104]
+  4b665c:	d63f0100 	blr	x8
+  4b6660:	b94002a4 	ldr	w4, [x21]
+  4b6664:	12000017 	and	w23, w0, #0x1
+  4b6668:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b666c:	f0ffdb62 	adrp	x2, 25000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x38a70>
+  4b6670:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b6674:	52800060 	mov	w0, #0x3                   	// #3
+  4b6678:	91347421 	add	x1, x1, #0xd1d
+  4b667c:	91316042 	add	x2, x2, #0xc58
+  4b6680:	913eac63 	add	x3, x3, #0xfab
+  4b6684:	2a1303e5 	mov	w5, w19
+  4b6688:	2a1703e6 	mov	w6, w23
+  4b668c:	94034b9d 	bl	589500 <__android_log_print@plt>
+  4b6690:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6694:	f9400108 	ldr	x8, [x8]
+  4b6698:	f9400108 	ldr	x8, [x8]
+  4b669c:	b4000b88 	cbz	x8, 4b680c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353538>
+  4b66a0:	b9400908 	ldr	w8, [x8, #8]
+  4b66a4:	7100151f 	cmp	w8, #0x5
+  4b66a8:	54000b2b 	b.lt	4b680c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353538>  // b.tstop
+  4b66ac:	f9400fe8 	ldr	x8, [sp, #24]
+  4b66b0:	52801640 	mov	w0, #0xb2                  	// #178
+  4b66b4:	f9007fe8 	str	x8, [sp, #248]
+  4b66b8:	528000a8 	mov	w8, #0x5                   	// #5
+  4b66bc:	b90113e8 	str	w8, [sp, #272]
+  4b66c0:	94034b94 	bl	589510 <syscall@plt>
+  4b66c4:	52800ae8 	mov	w8, #0x57                  	// #87
+  4b66c8:	b90117e0 	str	w0, [sp, #276]
+  4b66cc:	a911a3ff 	stp	xzr, x8, [sp, #280]
+  4b66d0:	900006c9 	adrp	x9, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b66d4:	f9400d29 	ldr	x9, [x9, #24]
+  4b66d8:	a9436be0 	ldp	x0, x26, [sp, #48]
+  4b66dc:	91006128 	add	x8, x9, #0x18
+  4b66e0:	91010129 	add	x9, x9, #0x40
+  4b66e4:	aa1a03e1 	mov	x1, x26
+  4b66e8:	f90097e8 	str	x8, [sp, #296]
+  4b66ec:	f900cfe9 	str	x9, [sp, #408]
+  4b66f0:	94034b8c 	bl	589520 <std::__1::ios_base::init(void*)@plt>
+  4b66f4:	12800008 	mov	w8, #0xffffffff            	// #-1
+  4b66f8:	f90113ff 	str	xzr, [sp, #544]
+  4b66fc:	b9022be8 	str	w8, [sp, #552]
+  4b6700:	900006c9 	adrp	x9, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6704:	f9401129 	ldr	x9, [x9, #32]
+  4b6708:	aa1a03e0 	mov	x0, x26
+  4b670c:	91006128 	add	x8, x9, #0x18
+  4b6710:	91010129 	add	x9, x9, #0x40
+  4b6714:	f90097e8 	str	x8, [sp, #296]
+  4b6718:	f900cfe9 	str	x9, [sp, #408]
+  4b671c:	94034b85 	bl	589530 <std::__1::basic_streambuf<char, std::__1::char_traits<char> >::basic_streambuf()@plt>
+  4b6720:	f9400be8 	ldr	x8, [sp, #16]
+  4b6724:	6f00e400 	movi	v0.2d, #0x0
+  4b6728:	910203e0 	add	x0, sp, #0x80
+  4b672c:	aa1f03e1 	mov	x1, xzr
+  4b6730:	f9009be8 	str	x8, [sp, #304]
+  4b6734:	f94017e8 	ldr	x8, [sp, #40]
+  4b6738:	a9087fff 	stp	xzr, xzr, [sp, #128]
+  4b673c:	ad000100 	stp	q0, q0, [x8]
+  4b6740:	52800208 	mov	w8, #0x10                  	// #16
+  4b6744:	b90193e8 	str	w8, [sp, #400]
+  4b6748:	d0ffdac8 	adrp	x8, 10000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4da70>
+  4b674c:	91263108 	add	x8, x8, #0x98c
+  4b6750:	f9011be8 	str	x8, [sp, #560]
+  4b6754:	90ffdb88 	adrp	x8, 26000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x37a70>
+  4b6758:	910c8908 	add	x8, x8, #0x322
+  4b675c:	f9011fe8 	str	x8, [sp, #568]
+  4b6760:	f94013e8 	ldr	x8, [sp, #32]
+  4b6764:	b90243ff 	str	wzr, [sp, #576]
+  4b6768:	ad008100 	stp	q0, q0, [x8, #16]
+  4b676c:	3d800100 	str	q0, [x8]
+  4b6770:	94034b74 	bl	589540 <gettimeofday@plt>
+  4b6774:	a94827e8 	ldp	x8, x9, [sp, #128]
+  4b6778:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b677c:	f0ffdb62 	adrp	x2, 25000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x38a70>
+  4b6780:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b6784:	f90083e8 	str	x8, [sp, #256]
+  4b6788:	d29ef9e8 	mov	x8, #0xf7cf                	// #63439
+  4b678c:	f2bc6a68 	movk	x8, #0xe353, lsl #16
+  4b6790:	f2d374a8 	movk	x8, #0x9ba5, lsl #32
+  4b6794:	f2e41888 	movk	x8, #0x20c4, lsl #48
+  4b6798:	9b487d28 	smulh	x8, x9, x8
+  4b679c:	d37ffd09 	lsr	x9, x8, #63
+  4b67a0:	0b481d28 	add	w8, w9, w8, lsr #7
+  4b67a4:	790213e8 	strh	w8, [sp, #264]
+  4b67a8:	b94002a4 	ldr	w4, [x21]
+  4b67ac:	9103e3e0 	add	x0, sp, #0xf8
+  4b67b0:	91347421 	add	x1, x1, #0xd1d
+  4b67b4:	91316042 	add	x2, x2, #0xc58
+  4b67b8:	913eac63 	add	x3, x3, #0xfab
+  4b67bc:	2a1303e5 	mov	w5, w19
+  4b67c0:	2a1703e6 	mov	w6, w23
+  4b67c4:	97ee95c8 	bl	5bee4 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1b8c>
+  4b67c8:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b67cc:	f9400108 	ldr	x8, [x8]
+  4b67d0:	f9400115 	ldr	x21, [x8]
+  4b67d4:	a94122ba 	ldp	x26, x8, [x21, #16]
+  4b67d8:	eb08035f 	cmp	x26, x8
+  4b67dc:	54000140 	b.eq	4b6804 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353530>  // b.none
+  4b67e0:	aa0003f7 	mov	x23, x0
+  4b67e4:	f8408740 	ldr	x0, [x26], #8
+  4b67e8:	aa1703e1 	mov	x1, x23
+  4b67ec:	f9400008 	ldr	x8, [x0]
+  4b67f0:	f9400908 	ldr	x8, [x8, #16]
+  4b67f4:	d63f0100 	blr	x8
+  4b67f8:	f9400ea8 	ldr	x8, [x21, #24]
+  4b67fc:	eb08035f 	cmp	x26, x8
+  4b6800:	54ffff21 	b.ne	4b67e4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353510>  // b.any
+  4b6804:	9103e3e0 	add	x0, sp, #0xf8
+  4b6808:	97ee9604 	bl	5c018 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1a58>
+  4b680c:	aa1b03e0 	mov	x0, x27
+  4b6810:	94034b14 	bl	589460 <android::hardware::hidl_string::~hidl_string()@plt>
+  4b6814:	394393e8 	ldrb	w8, [sp, #228]
+  4b6818:	34000088 	cbz	w8, 4b6828 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353554>
+  4b681c:	f9406fe0 	ldr	x0, [sp, #216]
+  4b6820:	b4000040 	cbz	x0, 4b6828 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353554>
+  4b6824:	94034b13 	bl	589470 <operator delete[](void*)@plt>
+  4b6828:	394353e8 	ldrb	w8, [sp, #212]
+  4b682c:	f9006fff 	str	xzr, [sp, #216]
+  4b6830:	34000088 	cbz	w8, 4b6840 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35356c>
+  4b6834:	f94067e0 	ldr	x0, [sp, #200]
+  4b6838:	b4000040 	cbz	x0, 4b6840 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35356c>
+  4b683c:	94034b0d 	bl	589470 <operator delete[](void*)@plt>
+  4b6840:	394313e8 	ldrb	w8, [sp, #196]
+  4b6844:	f90067ff 	str	xzr, [sp, #200]
+  4b6848:	34000088 	cbz	w8, 4b6858 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353584>
+  4b684c:	f9405fe0 	ldr	x0, [sp, #184]
+  4b6850:	b4000040 	cbz	x0, 4b6858 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353584>
+  4b6854:	94034b07 	bl	589470 <operator delete[](void*)@plt>
+  4b6858:	3942d3e8 	ldrb	w8, [sp, #180]
+  4b685c:	f9005fff 	str	xzr, [sp, #184]
+  4b6860:	34000088 	cbz	w8, 4b6870 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35359c>
+  4b6864:	f94057e0 	ldr	x0, [sp, #168]
+  4b6868:	b4000040 	cbz	x0, 4b6870 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35359c>
+  4b686c:	94034b01 	bl	589470 <operator delete[](void*)@plt>
+  4b6870:	f9402be0 	ldr	x0, [sp, #80]
+  4b6874:	b4ffd2c0 	cbz	x0, 4b62cc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352ff8>
+  4b6878:	f9002fe0 	str	x0, [sp, #88]
+  4b687c:	94034b45 	bl	589590 <operator delete(void*)@plt>
+  4b6880:	17fffe93 	b	4b62cc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x352ff8>
+  4b6884:	f94007fa 	ldr	x26, [sp, #8]
+  4b6888:	b4000060 	cbz	x0, 4b6894 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3535c0>
+  4b688c:	f9003be0 	str	x0, [sp, #112]
+  4b6890:	94034b40 	bl	589590 <operator delete(void*)@plt>
+  4b6894:	f9401748 	ldr	x8, [x26, #40]
+  4b6898:	f85e83a9 	ldur	x9, [x29, #-24]
+  4b689c:	eb09011f 	cmp	x8, x9
+  4b68a0:	54000f21 	b.ne	4b6a84 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3537b0>  // b.any
+  4b68a4:	910a43ff 	add	sp, sp, #0x290
+  4b68a8:	a9454ff4 	ldp	x20, x19, [sp, #80]
+  4b68ac:	a94457f6 	ldp	x22, x21, [sp, #64]
+  4b68b0:	a9435ff8 	ldp	x24, x23, [sp, #48]
+  4b68b4:	a94267fa 	ldp	x26, x25, [sp, #32]
+  4b68b8:	a9416ffc 	ldp	x28, x27, [sp, #16]
+  4b68bc:	a8c67bfd 	ldp	x29, x30, [sp], #96
+  4b68c0:	d65f03c0 	ret
+  4b68c4:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b68c8:	90ffdb02 	adrp	x2, 16000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x47a70>
+  4b68cc:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b68d0:	91347421 	add	x1, x1, #0xd1d
+  4b68d4:	911f3042 	add	x2, x2, #0x7cc
+  4b68d8:	913eac63 	add	x3, x3, #0xfab
+  4b68dc:	528000c0 	mov	w0, #0x6                   	// #6
+  4b68e0:	2a1303e4 	mov	w4, w19
+  4b68e4:	94034b07 	bl	589500 <__android_log_print@plt>
+  4b68e8:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b68ec:	f9400108 	ldr	x8, [x8]
+  4b68f0:	f9400108 	ldr	x8, [x8]
+  4b68f4:	b4000be8 	cbz	x8, 4b6a70 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35379c>
+  4b68f8:	b9400908 	ldr	w8, [x8, #8]
+  4b68fc:	7100091f 	cmp	w8, #0x2
+  4b6900:	54000b8b 	b.lt	4b6a70 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35379c>  // b.tstop
+  4b6904:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6908:	f9400508 	ldr	x8, [x8, #8]
+  4b690c:	52800049 	mov	w9, #0x2                   	// #2
+  4b6910:	52801640 	mov	w0, #0xb2                  	// #178
+  4b6914:	b90113e9 	str	w9, [sp, #272]
+  4b6918:	91004108 	add	x8, x8, #0x10
+  4b691c:	f9007fe8 	str	x8, [sp, #248]
+  4b6920:	94034afc 	bl	589510 <syscall@plt>
+  4b6924:	b90117e0 	str	w0, [sp, #276]
+  4b6928:	900006ca 	adrp	x10, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b692c:	f9400d4a 	ldr	x10, [x10, #24]
+  4b6930:	9103e3e9 	add	x9, sp, #0xf8
+  4b6934:	52800748 	mov	w8, #0x3a                  	// #58
+  4b6938:	9100e134 	add	x20, x9, #0x38
+  4b693c:	a911a3ff 	stp	xzr, x8, [sp, #280]
+  4b6940:	91028120 	add	x0, x9, #0xa0
+  4b6944:	91006148 	add	x8, x10, #0x18
+  4b6948:	91010149 	add	x9, x10, #0x40
+  4b694c:	aa1403e1 	mov	x1, x20
+  4b6950:	f90097e8 	str	x8, [sp, #296]
+  4b6954:	f900cfe9 	str	x9, [sp, #408]
+  4b6958:	94034af2 	bl	589520 <std::__1::ios_base::init(void*)@plt>
+  4b695c:	f90113ff 	str	xzr, [sp, #544]
+  4b6960:	900006c9 	adrp	x9, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6964:	f9401129 	ldr	x9, [x9, #32]
+  4b6968:	12800008 	mov	w8, #0xffffffff            	// #-1
+  4b696c:	b9022be8 	str	w8, [sp, #552]
+  4b6970:	aa1403e0 	mov	x0, x20
+  4b6974:	91006128 	add	x8, x9, #0x18
+  4b6978:	91010129 	add	x9, x9, #0x40
+  4b697c:	f90097e8 	str	x8, [sp, #296]
+  4b6980:	f900cfe9 	str	x9, [sp, #408]
+  4b6984:	94034aeb 	bl	589530 <std::__1::basic_streambuf<char, std::__1::char_traits<char> >::basic_streambuf()@plt>
+  4b6988:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b698c:	f9400908 	ldr	x8, [x8, #16]
+  4b6990:	6f00e400 	movi	v0.2d, #0x0
+  4b6994:	52800209 	mov	w9, #0x10                  	// #16
+  4b6998:	910243e0 	add	x0, sp, #0x90
+  4b699c:	91004108 	add	x8, x8, #0x10
+  4b69a0:	f9009be8 	str	x8, [sp, #304]
+  4b69a4:	d0ffdac8 	adrp	x8, 10000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4da70>
+  4b69a8:	3c8782a0 	stur	q0, [x21, #120]
+  4b69ac:	3c8882a0 	stur	q0, [x21, #136]
+  4b69b0:	b90193e9 	str	w9, [sp, #400]
+  4b69b4:	90ffdb89 	adrp	x9, 26000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x37a70>
+  4b69b8:	91263108 	add	x8, x8, #0x98c
+  4b69bc:	910c8929 	add	x9, x9, #0x322
+  4b69c0:	aa1f03e1 	mov	x1, xzr
+  4b69c4:	f9011be8 	str	x8, [sp, #560]
+  4b69c8:	f9011fe9 	str	x9, [sp, #568]
+  4b69cc:	b90243ff 	str	wzr, [sp, #576]
+  4b69d0:	ad0a82a0 	stp	q0, q0, [x21, #336]
+  4b69d4:	3d805ea0 	str	q0, [x21, #368]
+  4b69d8:	a9097fff 	stp	xzr, xzr, [sp, #144]
+  4b69dc:	94034ad9 	bl	589540 <gettimeofday@plt>
+  4b69e0:	a94927e8 	ldp	x8, x9, [sp, #144]
+  4b69e4:	d29ef9ea 	mov	x10, #0xf7cf                	// #63439
+  4b69e8:	f2bc6a6a 	movk	x10, #0xe353, lsl #16
+  4b69ec:	f2d374aa 	movk	x10, #0x9ba5, lsl #32
+  4b69f0:	f2e4188a 	movk	x10, #0x20c4, lsl #48
+  4b69f4:	f90083e8 	str	x8, [sp, #256]
+  4b69f8:	9b4a7d28 	smulh	x8, x9, x10
+  4b69fc:	d37ffd09 	lsr	x9, x8, #63
+  4b6a00:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b6a04:	90ffdb02 	adrp	x2, 16000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x47a70>
+  4b6a08:	f0ffdb43 	adrp	x3, 21000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ca70>
+  4b6a0c:	0b481d28 	add	w8, w9, w8, lsr #7
+  4b6a10:	91347421 	add	x1, x1, #0xd1d
+  4b6a14:	911f3042 	add	x2, x2, #0x7cc
+  4b6a18:	913eac63 	add	x3, x3, #0xfab
+  4b6a1c:	9103e3e0 	add	x0, sp, #0xf8
+  4b6a20:	2a1303e4 	mov	w4, w19
+  4b6a24:	790213e8 	strh	w8, [sp, #264]
+  4b6a28:	97ee952f 	bl	5bee4 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1b8c>
+  4b6a2c:	900006c8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b6a30:	f9400108 	ldr	x8, [x8]
+  4b6a34:	f9400114 	ldr	x20, [x8]
+  4b6a38:	a9412295 	ldp	x21, x8, [x20, #16]
+  4b6a3c:	eb0802bf 	cmp	x21, x8
+  4b6a40:	54000140 	b.eq	4b6a68 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353794>  // b.none
+  4b6a44:	aa0003f3 	mov	x19, x0
+  4b6a48:	f84086a0 	ldr	x0, [x21], #8
+  4b6a4c:	aa1303e1 	mov	x1, x19
+  4b6a50:	f9400008 	ldr	x8, [x0]
+  4b6a54:	f9400908 	ldr	x8, [x8, #16]
+  4b6a58:	d63f0100 	blr	x8
+  4b6a5c:	f9400e88 	ldr	x8, [x20, #24]
+  4b6a60:	eb0802bf 	cmp	x21, x8
+  4b6a64:	54ffff21 	b.ne	4b6a48 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353774>  // b.any
+  4b6a68:	9103e3e0 	add	x0, sp, #0xf8
+  4b6a6c:	97ee956b 	bl	5c018 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1a58>
+  4b6a70:	f94037e0 	ldr	x0, [sp, #104]
+  4b6a74:	b5fff0c0 	cbnz	x0, 4b688c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3535b8>
+  4b6a78:	17ffff87 	b	4b6894 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3535c0>
+  4b6a7c:	910143e0 	add	x0, sp, #0x50
+  4b6a80:	94034b8c 	bl	5898b0 <std::__1::__vector_base_common<true>::__throw_length_error() const@plt>
+  4b6a84:	94034a83 	bl	589490 <__stack_chk_fail@plt>
+  4b6a88:	a9ba7bfd 	stp	x29, x30, [sp, #-96]!
+  4b6a8c:	a9016ffc 	stp	x28, x27, [sp, #16]
+  4b6a90:	a90267fa 	stp	x26, x25, [sp, #32]
+  4b6a94:	a9035ff8 	stp	x24, x23, [sp, #48]
+  4b6a98:	a90457f6 	stp	x22, x21, [sp, #64]
+  4b6a9c:	a9054ff4 	stp	x20, x19, [sp, #80]
+  4b6aa0:	910003fd 	mov	x29, sp
+  4b6aa4:	d14007ff 	sub	sp, sp, #0x1, lsl #12
+  4b6aa8:	d10303ff 	sub	sp, sp, #0xc0
+  4b6aac:	d53bd054 	mrs	x20, tpidr_el0
+  4b6ab0:	f9401688 	ldr	x8, [x20, #40]
+  4b6ab4:	9102b3e0 	add	x0, sp, #0xac
+  4b6ab8:	52820042 	mov	w2, #0x1002                	// #4098
+  4b6abc:	2a1f03e1 	mov	w1, wzr
+  4b6ac0:	f81f03a8 	stur	x8, [x29, #-16]
+  4b6ac4:	94034a8b 	bl	5894f0 <memset@plt>
+  4b6ac8:	52a00028 	mov	w8, #0x10000               	// #65536
+  4b6acc:	52800209 	mov	w9, #0x10                  	// #16
+  4b6ad0:	b90073e8 	str	w8, [sp, #112]
+  4b6ad4:	b90093e9 	str	w9, [sp, #144]
+  4b6ad8:	94034e26 	bl	58a370 <getpid@plt>
+  4b6adc:	12800015 	mov	w21, #0xffffffff            	// #-1
+  4b6ae0:	2912d7e0 	stp	w0, w21, [sp, #148]
+  4b6ae4:	52800200 	mov	w0, #0x10                  	// #16
+  4b6ae8:	52800041 	mov	w1, #0x2                   	// #2
+  4b6aec:	528001e2 	mov	w2, #0xf                   	// #15
+  4b6af0:	94034d14 	bl	589f40 <socket@plt>
+  4b6af4:	37f80200 	tbnz	w0, #31, 4b6b34 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353860>
+  4b6af8:	9101c3e3 	add	x3, sp, #0x70
+  4b6afc:	52800021 	mov	w1, #0x1                   	// #1
+  4b6b00:	52800422 	mov	w2, #0x21                  	// #33
+  4b6b04:	52800084 	mov	w4, #0x4                   	// #4
+  4b6b08:	2a0003f3 	mov	w19, w0
+  4b6b0c:	52800038 	mov	w24, #0x1                   	// #1
+  4b6b10:	9101c3f6 	add	x22, sp, #0x70
+  4b6b14:	94034d33 	bl	589fe0 <setsockopt@plt>
+  4b6b18:	910243e1 	add	x1, sp, #0x90
+  4b6b1c:	52800182 	mov	w2, #0xc                   	// #12
+  4b6b20:	2a1303e0 	mov	w0, w19
+  4b6b24:	94034d0b 	bl	589f50 <bind@plt>
+  4b6b28:	36f80360 	tbz	w0, #31, 4b6b94 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3538c0>
+  4b6b2c:	2a1303e0 	mov	w0, w19
+  4b6b30:	94034ae0 	bl	5896b0 <close@plt>
+  4b6b34:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b6b38:	f0ffdac2 	adrp	x2, 11000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4ca70>
+  4b6b3c:	d0ffdb43 	adrp	x3, 20000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3da70>
+  4b6b40:	d00006c8 	adrp	x8, 590000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x35a0>
+  4b6b44:	91347421 	add	x1, x1, #0xd1d
+  4b6b48:	91193042 	add	x2, x2, #0x64c
+  4b6b4c:	9122f463 	add	x3, x3, #0x8bd
+  4b6b50:	52800080 	mov	w0, #0x4                   	// #4
+  4b6b54:	b902b115 	str	w21, [x8, #688]
+  4b6b58:	94034a6a 	bl	589500 <__android_log_print@plt>
+  4b6b5c:	f9401688 	ldr	x8, [x20, #40]
+  4b6b60:	f85f03a9 	ldur	x9, [x29, #-16]
+  4b6b64:	eb09011f 	cmp	x8, x9
+  4b6b68:	54000141 	b.ne	4b6b90 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3538bc>  // b.any
+  4b6b6c:	914007ff 	add	sp, sp, #0x1, lsl #12
+  4b6b70:	910303ff 	add	sp, sp, #0xc0
+  4b6b74:	a9454ff4 	ldp	x20, x19, [sp, #80]
+  4b6b78:	a94457f6 	ldp	x22, x21, [sp, #64]
+  4b6b7c:	a9435ff8 	ldp	x24, x23, [sp, #48]
+  4b6b80:	a94267fa 	ldp	x26, x25, [sp, #32]
+  4b6b84:	a9416ffc 	ldp	x28, x27, [sp, #16]
+  4b6b88:	a8c67bfd 	ldp	x29, x30, [sp], #96
+  4b6b8c:	d65f03c0 	ret
+  4b6b90:	94034a40 	bl	589490 <__stack_chk_fail@plt>
+  4b6b94:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b6b98:	90ffdac2 	adrp	x2, e000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4fa70>
+  4b6b9c:	d0ffdb43 	adrp	x3, 20000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3da70>
+  4b6ba0:	d00006d4 	adrp	x20, 590000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x35a0>
+  4b6ba4:	91347421 	add	x1, x1, #0xd1d
+  4b6ba8:	91362842 	add	x2, x2, #0xd8a
+  4b6bac:	9122f463 	add	x3, x3, #0x8bd
+  4b6bb0:	52800080 	mov	w0, #0x4                   	// #4
+  4b6bb4:	b902b293 	str	w19, [x20, #688]
+  4b6bb8:	94034a52 	bl	589500 <__android_log_print@plt>
+  4b6bbc:	f0ffdaaa 	adrp	x10, d000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x50a70>
+  4b6bc0:	3dc3d940 	ldr	q0, [x10, #3936]
+  4b6bc4:	f0ffdb8b 	adrp	x11, 29000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x34a70>
+  4b6bc8:	9102116b 	add	x11, x11, #0x84
+  4b6bcc:	b24002c8 	orr	x8, x22, #0x1
+  4b6bd0:	3d8003e0 	str	q0, [sp]
+  4b6bd4:	3dc00160 	ldr	q0, [x11]
+  4b6bd8:	f9000fe8 	str	x8, [sp, #24]
+  4b6bdc:	910163e8 	add	x8, sp, #0x58
+  4b6be0:	910103e9 	add	x9, sp, #0x40
+  4b6be4:	90ffdb93 	adrp	x19, 26000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x37a70>
+  4b6be8:	9102b3f7 	add	x23, sp, #0xac
+  4b6bec:	910c8a73 	add	x19, x19, #0x322
+  4b6bf0:	b2400116 	orr	x22, x8, #0x1
+  4b6bf4:	b2400135 	orr	x21, x9, #0x1
+  4b6bf8:	3d800fe0 	str	q0, [sp, #48]
+  4b6bfc:	b942b280 	ldr	w0, [x20, #688]
+  4b6c00:	9102b3e1 	add	x1, sp, #0xac
+  4b6c04:	52820002 	mov	w2, #0x1000                	// #4096
+  4b6c08:	2a1f03e3 	mov	w3, wzr
+  4b6c0c:	aa1f03e4 	mov	x4, xzr
+  4b6c10:	aa1f03e5 	mov	x5, xzr
+  4b6c14:	94034ddb 	bl	58a380 <recvfrom@plt>
+  4b6c18:	7100041f 	cmp	w0, #0x1
+  4b6c1c:	54ffff0b 	b.lt	4b6bfc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353928>  // b.tstop
+  4b6c20:	7140041f 	cmp	w0, #0x1, lsl #12
+  4b6c24:	540024e0 	b.eq	4b70c0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353dec>  // b.none
+  4b6c28:	d2c00028 	mov	x8, #0x100000000           	// #4294967296
+  4b6c2c:	8b008108 	add	x8, x8, x0, lsl #32
+  4b6c30:	9360fd08 	asr	x8, x8, #32
+  4b6c34:	3820caff 	strb	wzr, [x23, w0, sxtw]
+  4b6c38:	38286aff 	strb	wzr, [x23, x8]
+  4b6c3c:	3942b3e8 	ldrb	w8, [sp, #172]
+  4b6c40:	aa1303fc 	mov	x28, x19
+  4b6c44:	340007c8 	cbz	w8, 4b6d3c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a68>
+  4b6c48:	9102b3fb 	add	x27, sp, #0xac
+  4b6c4c:	aa1303fc 	mov	x28, x19
+  4b6c50:	d0ffdb21 	adrp	x1, 1c000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x41a70>
+  4b6c54:	528000e2 	mov	w2, #0x7                   	// #7
+  4b6c58:	aa1b03e0 	mov	x0, x27
+  4b6c5c:	91059421 	add	x1, x1, #0x165
+  4b6c60:	94034dcc 	bl	58a390 <strncmp@plt>
+  4b6c64:	35000060 	cbnz	w0, 4b6c70 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35399c>
+  4b6c68:	91001f7b 	add	x27, x27, #0x7
+  4b6c6c:	14000030 	b	4b6d2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a58>
+  4b6c70:	b0ffdba1 	adrp	x1, 2b000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x32a70>
+  4b6c74:	52800102 	mov	w2, #0x8                   	// #8
+  4b6c78:	aa1b03e0 	mov	x0, x27
+  4b6c7c:	9108f021 	add	x1, x1, #0x23c
+  4b6c80:	94034dc4 	bl	58a390 <strncmp@plt>
+  4b6c84:	35000060 	cbnz	w0, 4b6c90 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3539bc>
+  4b6c88:	9100237b 	add	x27, x27, #0x8
+  4b6c8c:	14000028 	b	4b6d2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a58>
+  4b6c90:	d0ffdb41 	adrp	x1, 20000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3da70>
+  4b6c94:	52800142 	mov	w2, #0xa                   	// #10
+  4b6c98:	aa1b03e0 	mov	x0, x27
+  4b6c9c:	91232c21 	add	x1, x1, #0x8cb
+  4b6ca0:	94034dbc 	bl	58a390 <strncmp@plt>
+  4b6ca4:	35000060 	cbnz	w0, 4b6cb0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3539dc>
+  4b6ca8:	91002b7b 	add	x27, x27, #0xa
+  4b6cac:	14000020 	b	4b6d2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a58>
+  4b6cb0:	90ffdb41 	adrp	x1, 1e000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3fa70>
+  4b6cb4:	52800122 	mov	w2, #0x9                   	// #9
+  4b6cb8:	aa1b03e0 	mov	x0, x27
+  4b6cbc:	91301021 	add	x1, x1, #0xc04
+  4b6cc0:	94034db4 	bl	58a390 <strncmp@plt>
+  4b6cc4:	35000060 	cbnz	w0, 4b6cd0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3539fc>
+  4b6cc8:	9100277b 	add	x27, x27, #0x9
+  4b6ccc:	14000018 	b	4b6d2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a58>
+  4b6cd0:	b0ffdb41 	adrp	x1, 1f000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3ea70>
+  4b6cd4:	528000c2 	mov	w2, #0x6                   	// #6
+  4b6cd8:	aa1b03e0 	mov	x0, x27
+  4b6cdc:	9125e021 	add	x1, x1, #0x978
+  4b6ce0:	94034dac 	bl	58a390 <strncmp@plt>
+  4b6ce4:	35000060 	cbnz	w0, 4b6cf0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a1c>
+  4b6ce8:	91001b7b 	add	x27, x27, #0x6
+  4b6cec:	14000010 	b	4b6d2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a58>
+  4b6cf0:	b0ffdb01 	adrp	x1, 17000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x46a70>
+  4b6cf4:	52800182 	mov	w2, #0xc                   	// #12
+  4b6cf8:	aa1b03e0 	mov	x0, x27
+  4b6cfc:	912e2821 	add	x1, x1, #0xb8a
+  4b6d00:	94034da4 	bl	58a390 <strncmp@plt>
+  4b6d04:	34000140 	cbz	w0, 4b6d2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a58>
+  4b6d08:	90ffdac1 	adrp	x1, e000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4fa70>
+  4b6d0c:	52800102 	mov	w2, #0x8                   	// #8
+  4b6d10:	aa1b03e0 	mov	x0, x27
+  4b6d14:	9136a021 	add	x1, x1, #0xda8
+  4b6d18:	94034d9e 	bl	58a390 <strncmp@plt>
+  4b6d1c:	91002368 	add	x8, x27, #0x8
+  4b6d20:	7100001f 	cmp	w0, #0x0
+  4b6d24:	9a9c011c 	csel	x28, x8, x28, eq	// eq = none
+  4b6d28:	9a9b011b 	csel	x27, x8, x27, eq	// eq = none
+  4b6d2c:	38401768 	ldrb	w8, [x27], #1
+  4b6d30:	35ffffe8 	cbnz	w8, 4b6d2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353a58>
+  4b6d34:	39400368 	ldrb	w8, [x27]
+  4b6d38:	35fff8c8 	cbnz	w8, 4b6c50 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35397c>
+  4b6d3c:	910243e8 	add	x8, sp, #0x90
+  4b6d40:	aa1c03e0 	mov	x0, x28
+  4b6d44:	a9097fff 	stp	xzr, xzr, [sp, #144]
+  4b6d48:	f90053ff 	str	xzr, [sp, #160]
+  4b6d4c:	940001d4 	bl	4b749c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3541c8>
+  4b6d50:	a94923fb 	ldp	x27, x8, [sp, #144]
+  4b6d54:	cb1b0108 	sub	x8, x8, x27
+  4b6d58:	f1002d1f 	cmp	x8, #0xb
+  4b6d5c:	540006e8 	b.hi	4b6e38 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353b64>  // b.pmore
+  4b6d60:	52800400 	mov	w0, #0x20                  	// #32
+  4b6d64:	940349d3 	bl	5894b0 <operator new(unsigned long)@plt>
+  4b6d68:	3dc003e0 	ldr	q0, [sp]
+  4b6d6c:	f0ffdb88 	adrp	x8, 29000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x34a70>
+  4b6d70:	91025508 	add	x8, x8, #0x95
+  4b6d74:	3dc00fe1 	ldr	q1, [sp, #48]
+  4b6d78:	3d801fe0 	str	q0, [sp, #112]
+  4b6d7c:	3dc00100 	ldr	q0, [x8]
+  4b6d80:	f840f108 	ldur	x8, [x8, #15]
+  4b6d84:	f90043e0 	str	x0, [sp, #128]
+  4b6d88:	39005c1f 	strb	wzr, [x0, #23]
+  4b6d8c:	52800409 	mov	w9, #0x20                  	// #32
+  4b6d90:	f800f008 	stur	x8, [x0, #15]
+  4b6d94:	3d800000 	str	q0, [x0]
+  4b6d98:	910163e8 	add	x8, sp, #0x58
+  4b6d9c:	910103e0 	add	x0, sp, #0x40
+  4b6da0:	9101c3e1 	add	x1, sp, #0x70
+  4b6da4:	a904ffff 	stp	xzr, xzr, [sp, #72]
+  4b6da8:	f90023e9 	str	x9, [sp, #64]
+  4b6dac:	3d8002a1 	str	q1, [x21]
+  4b6db0:	390147ff 	strb	wzr, [sp, #81]
+  4b6db4:	94034c2b 	bl	589e60 <android::base::GetProperty(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@plt>
+  4b6db8:	394103e8 	ldrb	w8, [sp, #64]
+  4b6dbc:	36000068 	tbz	w8, #0, 4b6dc8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353af4>
+  4b6dc0:	f9402be0 	ldr	x0, [sp, #80]
+  4b6dc4:	940349f3 	bl	589590 <operator delete(void*)@plt>
+  4b6dc8:	394163e8 	ldrb	w8, [sp, #88]
+  4b6dcc:	f94037e9 	ldr	x9, [sp, #104]
+  4b6dd0:	7200011f 	tst	w8, #0x1
+  4b6dd4:	9a8902c0 	csel	x0, x22, x9, eq	// eq = none
+  4b6dd8:	910103e8 	add	x8, sp, #0x40
+  4b6ddc:	940001b0 	bl	4b749c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3541c8>
+  4b6de0:	b40000db 	cbz	x27, 4b6df8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353b24>
+  4b6de4:	aa1b03e0 	mov	x0, x27
+  4b6de8:	f9004ffb 	str	x27, [sp, #152]
+  4b6dec:	940349e9 	bl	589590 <operator delete(void*)@plt>
+  4b6df0:	a9097fff 	stp	xzr, xzr, [sp, #144]
+  4b6df4:	f90053ff 	str	xzr, [sp, #160]
+  4b6df8:	f94023fc 	ldr	x28, [sp, #64]
+  4b6dfc:	3cc483e0 	ldur	q0, [sp, #72]
+  4b6e00:	394163e8 	ldrb	w8, [sp, #88]
+  4b6e04:	f9004bfc 	str	x28, [sp, #144]
+  4b6e08:	3d800be0 	str	q0, [sp, #32]
+  4b6e0c:	3c8983e0 	stur	q0, [sp, #152]
+  4b6e10:	36000068 	tbz	w8, #0, 4b6e1c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353b48>
+  4b6e14:	f94037e0 	ldr	x0, [sp, #104]
+  4b6e18:	940349de 	bl	589590 <operator delete(void*)@plt>
+  4b6e1c:	3941c3e8 	ldrb	w8, [sp, #112]
+  4b6e20:	36000068 	tbz	w8, #0, 4b6e2c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353b58>
+  4b6e24:	f94043e0 	ldr	x0, [sp, #128]
+  4b6e28:	940349da 	bl	589590 <operator delete(void*)@plt>
+  4b6e2c:	3dc00be0 	ldr	q0, [sp, #32]
+  4b6e30:	9e660008 	fmov	x8, d0
+  4b6e34:	1400002e 	b	4b6eec <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353c18>
+  4b6e38:	52800408 	mov	w8, #0x20                  	// #32
+  4b6e3c:	a906a3ff 	stp	xzr, x8, [sp, #104]
+  4b6e40:	f9400fe8 	ldr	x8, [sp, #24]
+  4b6e44:	3dc00fe0 	ldr	q0, [sp, #48]
+  4b6e48:	aa1c03e0 	mov	x0, x28
+  4b6e4c:	a907ffff 	stp	xzr, xzr, [sp, #120]
+  4b6e50:	a905ffff 	stp	xzr, xzr, [sp, #88]
+  4b6e54:	3d800100 	str	q0, [x8]
+  4b6e58:	390207ff 	strb	wzr, [sp, #129]
+  4b6e5c:	940349f1 	bl	589620 <strlen@plt>
+  4b6e60:	b100401f 	cmn	x0, #0x10
+  4b6e64:	54001422 	b.cs	4b70e8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353e14>  // b.hs, b.nlast
+  4b6e68:	aa0003fb 	mov	x27, x0
+  4b6e6c:	f1005c1f 	cmp	x0, #0x17
+  4b6e70:	540000c2 	b.cs	4b6e88 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353bb4>  // b.hs, b.nlast
+  4b6e74:	531f7b68 	lsl	w8, w27, #1
+  4b6e78:	aa1603fa 	mov	x26, x22
+  4b6e7c:	390163e8 	strb	w8, [sp, #88]
+  4b6e80:	b500015b 	cbnz	x27, 4b6ea8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353bd4>
+  4b6e84:	1400000d 	b	4b6eb8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353be4>
+  4b6e88:	91004368 	add	x8, x27, #0x10
+  4b6e8c:	927ced19 	and	x25, x8, #0xfffffffffffffff0
+  4b6e90:	aa1903e0 	mov	x0, x25
+  4b6e94:	94034987 	bl	5894b0 <operator new(unsigned long)@plt>
+  4b6e98:	b2400328 	orr	x8, x25, #0x1
+  4b6e9c:	aa0003fa 	mov	x26, x0
+  4b6ea0:	a90603fb 	stp	x27, x0, [sp, #96]
+  4b6ea4:	f9002fe8 	str	x8, [sp, #88]
+  4b6ea8:	aa1a03e0 	mov	x0, x26
+  4b6eac:	aa1c03e1 	mov	x1, x28
+  4b6eb0:	aa1b03e2 	mov	x2, x27
+  4b6eb4:	94034a3f 	bl	5897b0 <memcpy@plt>
+  4b6eb8:	9101c3e0 	add	x0, sp, #0x70
+  4b6ebc:	910163e1 	add	x1, sp, #0x58
+  4b6ec0:	383b6b5f 	strb	wzr, [x26, x27]
+  4b6ec4:	94034d03 	bl	58a2d0 <android::base::SetProperty(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&)@plt>
+  4b6ec8:	394163e8 	ldrb	w8, [sp, #88]
+  4b6ecc:	36000068 	tbz	w8, #0, 4b6ed8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353c04>
+  4b6ed0:	f94037e0 	ldr	x0, [sp, #104]
+  4b6ed4:	940349af 	bl	589590 <operator delete(void*)@plt>
+  4b6ed8:	3941c3e8 	ldrb	w8, [sp, #112]
+  4b6edc:	36000068 	tbz	w8, #0, 4b6ee8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353c14>
+  4b6ee0:	f94043e0 	ldr	x0, [sp, #128]
+  4b6ee4:	940349ab 	bl	589590 <operator delete(void*)@plt>
+  4b6ee8:	a94923fc 	ldp	x28, x8, [sp, #144]
+  4b6eec:	cb1c0108 	sub	x8, x8, x28
+  4b6ef0:	f1002d1f 	cmp	x8, #0xb
+  4b6ef4:	a9077fff 	stp	xzr, xzr, [sp, #112]
+  4b6ef8:	f90043ff 	str	xzr, [sp, #128]
+  4b6efc:	540001e8 	b.hi	4b6f38 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353c64>  // b.pmore
+  4b6f00:	d0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b6f04:	d0ffdae2 	adrp	x2, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b6f08:	90ffdb03 	adrp	x3, 16000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x47a70>
+  4b6f0c:	528000c0 	mov	w0, #0x6                   	// #6
+  4b6f10:	91347421 	add	x1, x1, #0xd1d
+  4b6f14:	9101c842 	add	x2, x2, #0x72
+  4b6f18:	9131b063 	add	x3, x3, #0xc6c
+  4b6f1c:	94034979 	bl	589500 <__android_log_print@plt>
+  4b6f20:	9101c3e1 	add	x1, sp, #0x70
+  4b6f24:	5283e260 	mov	w0, #0x1f13                	// #7955
+  4b6f28:	a907ffff 	stp	xzr, xzr, [sp, #120]
+  4b6f2c:	f9003bff 	str	xzr, [sp, #112]
+  4b6f30:	94000070 	bl	4b70f0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353e1c>
+  4b6f34:	1400005f 	b	4b70b0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353ddc>
+  4b6f38:	528001c0 	mov	w0, #0xe                   	// #14
+  4b6f3c:	9403495d 	bl	5894b0 <operator new(unsigned long)@plt>
+  4b6f40:	92800008 	mov	x8, #0xffffffffffffffff    	// #-1
+  4b6f44:	f9000008 	str	x8, [x0]
+  4b6f48:	f8006008 	stur	x8, [x0, #6]
+  4b6f4c:	39402388 	ldrb	w8, [x28, #8]
+  4b6f50:	52801fe9 	mov	w9, #0xff                  	// #255
+  4b6f54:	39000409 	strb	w9, [x0, #1]
+  4b6f58:	aa0003fb 	mov	x27, x0
+  4b6f5c:	39000008 	strb	w8, [x0]
+  4b6f60:	39400388 	ldrb	w8, [x28]
+  4b6f64:	7100011f 	cmp	w8, #0x0
+  4b6f68:	1a9f07e8 	cset	w8, ne	// ne = any
+  4b6f6c:	39000808 	strb	w8, [x0, #2]
+  4b6f70:	39400388 	ldrb	w8, [x28]
+  4b6f74:	7100fd1f 	cmp	w8, #0x3f
+  4b6f78:	1a9f97e8 	cset	w8, hi	// hi = pmore
+  4b6f7c:	39000c08 	strb	w8, [x0, #3]
+  4b6f80:	3940078b 	ldrb	w11, [x28, #1]
+  4b6f84:	91003808 	add	x8, x0, #0xe
+  4b6f88:	53027d6a 	lsr	w10, w11, #2
+  4b6f8c:	2a0b0149 	orr	w9, w10, w11
+  4b6f90:	7200053f 	tst	w9, #0x3
+  4b6f94:	53020d69 	ubfx	w9, w11, #2, #2
+  4b6f98:	54000160 	b.eq	4b6fc4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353cf0>  // b.none
+  4b6f9c:	1200056b 	and	w11, w11, #0x3
+  4b6fa0:	7100097f 	cmp	w11, #0x2
+  4b6fa4:	54000061 	b.ne	4b6fb0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353cdc>  // b.any
+  4b6fa8:	39001378 	strb	w24, [x27, #4]
+  4b6fac:	14000007 	b	4b6fc8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353cf4>
+  4b6fb0:	7100093f 	cmp	w9, #0x2
+  4b6fb4:	54000081 	b.ne	4b6fc4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353cf0>  // b.any
+  4b6fb8:	5280004b 	mov	w11, #0x2                   	// #2
+  4b6fbc:	3900136b 	strb	w11, [x27, #4]
+  4b6fc0:	14000002 	b	4b6fc8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353cf4>
+  4b6fc4:	3900137f 	strb	wzr, [x27, #4]
+  4b6fc8:	3940078b 	ldrb	w11, [x28, #1]
+  4b6fcc:	721c057f 	tst	w11, #0x30
+  4b6fd0:	1a9f07eb 	cset	w11, ne	// ne = any
+  4b6fd4:	3900176b 	strb	w11, [x27, #5]
+  4b6fd8:	39400b8b 	ldrb	w11, [x28, #2]
+  4b6fdc:	2a0a016a 	orr	w10, w11, w10
+  4b6fe0:	7200055f 	tst	w10, #0x3
+  4b6fe4:	54000140 	b.eq	4b700c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353d38>  // b.none
+  4b6fe8:	7100093f 	cmp	w9, #0x2
+  4b6fec:	54000061 	b.ne	4b6ff8 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353d24>  // b.any
+  4b6ff0:	39001b78 	strb	w24, [x27, #6]
+  4b6ff4:	14000007 	b	4b7010 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353d3c>
+  4b6ff8:	12000569 	and	w9, w11, #0x3
+  4b6ffc:	7100093f 	cmp	w9, #0x2
+  4b7000:	54000061 	b.ne	4b700c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353d38>  // b.any
+  4b7004:	39001b69 	strb	w9, [x27, #6]
+  4b7008:	14000002 	b	4b7010 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353d3c>
+  4b700c:	39001b7f 	strb	wzr, [x27, #6]
+  4b7010:	39400b89 	ldrb	w9, [x28, #2]
+  4b7014:	9101c3e1 	add	x1, sp, #0x70
+  4b7018:	5283e260 	mov	w0, #0x1f13                	// #7955
+  4b701c:	53020d29 	ubfx	w9, w9, #2, #2
+  4b7020:	39001f69 	strb	w9, [x27, #7]
+  4b7024:	39400b89 	ldrb	w9, [x28, #2]
+  4b7028:	721c053f 	tst	w9, #0x30
+  4b702c:	1a9f07e9 	cset	w9, ne	// ne = any
+  4b7030:	39002369 	strb	w9, [x27, #8]
+  4b7034:	39400b89 	ldrb	w9, [x28, #2]
+  4b7038:	7100fd3f 	cmp	w9, #0x3f
+  4b703c:	1a9f97e9 	cset	w9, hi	// hi = pmore
+  4b7040:	39002769 	strb	w9, [x27, #9]
+  4b7044:	39400f89 	ldrb	w9, [x28, #3]
+  4b7048:	7200053f 	tst	w9, #0x3
+  4b704c:	1a9f07e9 	cset	w9, ne	// ne = any
+  4b7050:	39002b69 	strb	w9, [x27, #10]
+  4b7054:	39402789 	ldrb	w9, [x28, #9]
+  4b7058:	39002f69 	strb	w9, [x27, #11]
+  4b705c:	39401f89 	ldrb	w9, [x28, #7]
+  4b7060:	39003369 	strb	w9, [x27, #12]
+  4b7064:	39400389 	ldrb	w9, [x28]
+  4b7068:	a90723fb 	stp	x27, x8, [sp, #112]
+  4b706c:	f90043e8 	str	x8, [sp, #128]
+  4b7070:	121c052c 	and	w12, w9, #0x30
+  4b7074:	53027d2a 	lsr	w10, w9, #2
+  4b7078:	7100819f 	cmp	w12, #0x20
+  4b707c:	121e052b 	and	w11, w9, #0xc
+  4b7080:	2a491149 	orr	w9, w10, w9, lsr #4
+  4b7084:	1a9f17ea 	cset	w10, eq	// eq = none
+  4b7088:	7100217f 	cmp	w11, #0x8
+  4b708c:	531f794a 	lsl	w10, w10, #1
+  4b7090:	1a9f154a 	csinc	w10, w10, wzr, ne	// ne = any
+  4b7094:	7200053f 	tst	w9, #0x3
+  4b7098:	1a8a03e9 	csel	w9, wzr, w10, eq	// eq = none
+  4b709c:	39003769 	strb	w9, [x27, #13]
+  4b70a0:	94000014 	bl	4b70f0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353e1c>
+  4b70a4:	aa1b03e0 	mov	x0, x27
+  4b70a8:	f9003ffb 	str	x27, [sp, #120]
+  4b70ac:	94034939 	bl	589590 <operator delete(void*)@plt>
+  4b70b0:	b400009c 	cbz	x28, 4b70c0 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353dec>
+  4b70b4:	aa1c03e0 	mov	x0, x28
+  4b70b8:	f9004ffc 	str	x28, [sp, #152]
+  4b70bc:	94034935 	bl	589590 <operator delete(void*)@plt>
+  4b70c0:	b942b280 	ldr	w0, [x20, #688]
+  4b70c4:	9102b3e1 	add	x1, sp, #0xac
+  4b70c8:	52820002 	mov	w2, #0x1000                	// #4096
+  4b70cc:	2a1f03e3 	mov	w3, wzr
+  4b70d0:	aa1f03e4 	mov	x4, xzr
+  4b70d4:	aa1f03e5 	mov	x5, xzr
+  4b70d8:	94034caa 	bl	58a380 <recvfrom@plt>
+  4b70dc:	7100001f 	cmp	w0, #0x0
+  4b70e0:	54ffd8ed 	b.le	4b6bfc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353928>
+  4b70e4:	17fffecf 	b	4b6c20 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x35394c>
+  4b70e8:	910163e0 	add	x0, sp, #0x58
+  4b70ec:	940349c1 	bl	5897f0 <std::__1::__basic_string_common<true>::__throw_length_error() const@plt>
+  4b70f0:	d107c3ff 	sub	sp, sp, #0x1f0
+  4b70f4:	a91a7bfd 	stp	x29, x30, [sp, #416]
+  4b70f8:	f900dbfc 	str	x28, [sp, #432]
+  4b70fc:	a91c5ff8 	stp	x24, x23, [sp, #448]
+  4b7100:	a91d57f6 	stp	x22, x21, [sp, #464]
+  4b7104:	a91e4ff4 	stp	x20, x19, [sp, #480]
+  4b7108:	910683fd 	add	x29, sp, #0x1a0
+  4b710c:	d53bd056 	mrs	x22, tpidr_el0
+  4b7110:	f94016c8 	ldr	x8, [x22, #40]
+  4b7114:	aa0103f4 	mov	x20, x1
+  4b7118:	2a0003f3 	mov	w19, w0
+  4b711c:	f0ffdb22 	adrp	x2, 1e000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3fa70>
+  4b7120:	f81f83a8 	stur	x8, [x29, #-8]
+  4b7124:	a9402029 	ldp	x9, x8, [x1]
+  4b7128:	b0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b712c:	b0ffdae3 	adrp	x3, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b7130:	91347421 	add	x1, x1, #0xd1d
+  4b7134:	cb090105 	sub	x5, x8, x9
+  4b7138:	912f6042 	add	x2, x2, #0xbd8
+  4b713c:	9134ec63 	add	x3, x3, #0xd3b
+  4b7140:	52800080 	mov	w0, #0x4                   	// #4
+  4b7144:	2a1303e4 	mov	w4, w19
+  4b7148:	940348ee 	bl	589500 <__android_log_print@plt>
+  4b714c:	f00006b7 	adrp	x23, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b7150:	f94002f7 	ldr	x23, [x23]
+  4b7154:	f94002e8 	ldr	x8, [x23]
+  4b7158:	b4000c68 	cbz	x8, 4b72e4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x354010>
+  4b715c:	b9400908 	ldr	w8, [x8, #8]
+  4b7160:	7100111f 	cmp	w8, #0x4
+  4b7164:	54000c0b 	b.lt	4b72e4 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x354010>  // b.tstop
+  4b7168:	f00006a8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b716c:	f9400508 	ldr	x8, [x8, #8]
+  4b7170:	52800089 	mov	w9, #0x4                   	// #4
+  4b7174:	52801640 	mov	w0, #0xb2                  	// #178
+  4b7178:	910063f8 	add	x24, sp, #0x18
+  4b717c:	91004108 	add	x8, x8, #0x10
+  4b7180:	f9000fe8 	str	x8, [sp, #24]
+  4b7184:	b90033e9 	str	w9, [sp, #48]
+  4b7188:	940348e2 	bl	589510 <syscall@plt>
+  4b718c:	b90037e0 	str	w0, [sp, #52]
+  4b7190:	f00006aa 	adrp	x10, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b7194:	f9400d4a 	ldr	x10, [x10, #24]
+  4b7198:	910063e9 	add	x9, sp, #0x18
+  4b719c:	52800f28 	mov	w8, #0x79                  	// #121
+  4b71a0:	9100e135 	add	x21, x9, #0x38
+  4b71a4:	a903a3ff 	stp	xzr, x8, [sp, #56]
+  4b71a8:	91028120 	add	x0, x9, #0xa0
+  4b71ac:	91006148 	add	x8, x10, #0x18
+  4b71b0:	91010149 	add	x9, x10, #0x40
+  4b71b4:	aa1503e1 	mov	x1, x21
+  4b71b8:	f90027e8 	str	x8, [sp, #72]
+  4b71bc:	f9005fe9 	str	x9, [sp, #184]
+  4b71c0:	940348d8 	bl	589520 <std::__1::ios_base::init(void*)@plt>
+  4b71c4:	f900a3ff 	str	xzr, [sp, #320]
+  4b71c8:	f00006a9 	adrp	x9, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b71cc:	f9401129 	ldr	x9, [x9, #32]
+  4b71d0:	12800008 	mov	w8, #0xffffffff            	// #-1
+  4b71d4:	b9014be8 	str	w8, [sp, #328]
+  4b71d8:	aa1503e0 	mov	x0, x21
+  4b71dc:	91006128 	add	x8, x9, #0x18
+  4b71e0:	91010129 	add	x9, x9, #0x40
+  4b71e4:	f90027e8 	str	x8, [sp, #72]
+  4b71e8:	f9005fe9 	str	x9, [sp, #184]
+  4b71ec:	940348d1 	bl	589530 <std::__1::basic_streambuf<char, std::__1::char_traits<char> >::basic_streambuf()@plt>
+  4b71f0:	f00006a8 	adrp	x8, 58e000 <construction vtable for std::__1::basic_ostream<char, std::__1::char_traits<char> >-in-std::__1::basic_fstream<char, std::__1::char_traits<char> >@@Base+0x15a0>
+  4b71f4:	f9400908 	ldr	x8, [x8, #16]
+  4b71f8:	6f00e400 	movi	v0.2d, #0x0
+  4b71fc:	d0ffdac9 	adrp	x9, 11000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x4ca70>
+  4b7200:	9116d129 	add	x9, x9, #0x5b4
+  4b7204:	91004108 	add	x8, x8, #0x10
+  4b7208:	f9002be8 	str	x8, [sp, #80]
+  4b720c:	52800208 	mov	w8, #0x10                  	// #16
+  4b7210:	3c878300 	stur	q0, [x24, #120]
+  4b7214:	3c888300 	stur	q0, [x24, #136]
+  4b7218:	b900b3e8 	str	w8, [sp, #176]
+  4b721c:	f0ffdb68 	adrp	x8, 26000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x37a70>
+  4b7220:	910c8908 	add	x8, x8, #0x322
+  4b7224:	a91523e9 	stp	x9, x8, [sp, #336]
+  4b7228:	9101a7e8 	add	x8, sp, #0x69
+  4b722c:	b90163ff 	str	wzr, [sp, #352]
+  4b7230:	3c8ff100 	stur	q0, [x8, #255]
+  4b7234:	9101e7e8 	add	x8, sp, #0x79
+  4b7238:	3c8ff100 	stur	q0, [x8, #255]
+  4b723c:	910227e8 	add	x8, sp, #0x89
+  4b7240:	910023e0 	add	x0, sp, #0x8
+  4b7244:	aa1f03e1 	mov	x1, xzr
+  4b7248:	3c8ff100 	stur	q0, [x8, #255]
+  4b724c:	a900ffff 	stp	xzr, xzr, [sp, #8]
+  4b7250:	940348bc 	bl	589540 <gettimeofday@plt>
+  4b7254:	a940a7e8 	ldp	x8, x9, [sp, #8]
+  4b7258:	d29ef9ea 	mov	x10, #0xf7cf                	// #63439
+  4b725c:	f2bc6a6a 	movk	x10, #0xe353, lsl #16
+  4b7260:	f2d374aa 	movk	x10, #0x9ba5, lsl #32
+  4b7264:	f2e4188a 	movk	x10, #0x20c4, lsl #48
+  4b7268:	f90013e8 	str	x8, [sp, #32]
+  4b726c:	9b4a7d28 	smulh	x8, x9, x10
+  4b7270:	d37ffd09 	lsr	x9, x8, #63
+  4b7274:	0b481d28 	add	w8, w9, w8, lsr #7
+  4b7278:	790053e8 	strh	w8, [sp, #40]
+  4b727c:	a9402289 	ldp	x9, x8, [x20]
+  4b7280:	b0ffdae1 	adrp	x1, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b7284:	f0ffdb22 	adrp	x2, 1e000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x3fa70>
+  4b7288:	b0ffdae3 	adrp	x3, 14000 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x49a70>
+  4b728c:	cb090105 	sub	x5, x8, x9
+  4b7290:	91347421 	add	x1, x1, #0xd1d
+  4b7294:	912f6042 	add	x2, x2, #0xbd8
+  4b7298:	9134ec63 	add	x3, x3, #0xd3b
+  4b729c:	910063e0 	add	x0, sp, #0x18
+  4b72a0:	2a1303e4 	mov	w4, w19
+  4b72a4:	97ee9310 	bl	5bee4 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1b8c>
+  4b72a8:	f94002f7 	ldr	x23, [x23]
+  4b72ac:	a94122f8 	ldp	x24, x8, [x23, #16]
+  4b72b0:	eb08031f 	cmp	x24, x8
+  4b72b4:	54000140 	b.eq	4b72dc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x354008>  // b.none
+  4b72b8:	aa0003f5 	mov	x21, x0
+  4b72bc:	f8408700 	ldr	x0, [x24], #8
+  4b72c0:	aa1503e1 	mov	x1, x21
+  4b72c4:	f9400008 	ldr	x8, [x0]
+  4b72c8:	f9400908 	ldr	x8, [x8, #16]
+  4b72cc:	d63f0100 	blr	x8
+  4b72d0:	f9400ee8 	ldr	x8, [x23, #24]
+  4b72d4:	eb08031f 	cmp	x24, x8
+  4b72d8:	54ffff21 	b.ne	4b72bc <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x353fe8>  // b.any
+  4b72dc:	910063e0 	add	x0, sp, #0x18
+  4b72e0:	97ee934e 	bl	5c018 <std::__1::basic_stringbuf<char, std::__1::char_traits<char>, std::__1::allocator<char> >::seekoff(long long, std::__1::ios_base::seekdir, unsigned int)@@Base-0x1a58>
+  4b72e4:	a9405e95 	ldp	x21, x23, [x20]
+  4b72e8:	a901ffff 	stp	xzr, xzr, [sp, #24]
+  4b72ec:	f90017ff 	str	xzr, [sp, #40]
+  4b72f0:	eb1502f4 	subs	x20, x23, x21
+  4b72f4:	54000200 	b.eq	4b7334 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x354060>  // b.none
+  4b72f8:	b7f80474 	tbnz	x20, #63, 4b7384 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3540b0>
+  4b72fc:	aa1403e0 	mov	x0, x20
+  4b7300:	9403486c 	bl	5894b0 <operator new(unsigned long)@plt>
+  4b7304:	8b140008 	add	x8, x0, x20
+  4b7308:	eb1702bf 	cmp	x21, x23
+  4b730c:	a90183e0 	stp	x0, x0, [sp, #24]
+  4b7310:	f90017e8 	str	x8, [sp, #40]
+  4b7314:	54000100 	b.eq	4b7334 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x354060>  // b.none
+  4b7318:	384016a8 	ldrb	w8, [x21], #1
+  4b731c:	39000008 	strb	w8, [x0]
+  4b7320:	f94013e8 	ldr	x8, [sp, #32]
+  4b7324:	eb1502ff 	cmp	x23, x21
+  4b7328:	91000500 	add	x0, x8, #0x1
+  4b732c:	f90013e0 	str	x0, [sp, #32]
+  4b7330:	54ffff41 	b.ne	4b7318 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x354044>  // b.any
+  4b7334:	97f34102 	bl	18773c <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x24468>
+  4b7338:	910063e2 	add	x2, sp, #0x18
+  4b733c:	2a1303e1 	mov	w1, w19
+  4b7340:	97f346eb 	bl	188eec <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x25c18>
+  4b7344:	f9400fe0 	ldr	x0, [sp, #24]
+  4b7348:	b4000060 	cbz	x0, 4b7354 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x354080>
+  4b734c:	f90013e0 	str	x0, [sp, #32]
+  4b7350:	94034890 	bl	589590 <operator delete(void*)@plt>
+  4b7354:	f94016c8 	ldr	x8, [x22, #40]
+  4b7358:	f85f83a9 	ldur	x9, [x29, #-8]
+  4b735c:	eb09011f 	cmp	x8, x9
+  4b7360:	54000101 	b.ne	4b7380 <std::__1::basic_filebuf<char, std::__1::char_traits<char> >::basic_filebuf()@@Base+0x3540ac>  // b.any
+  4b7364:	a95e4ff4 	ldp	x20, x19, [sp, #480]
+  4b7368:	a95d57f6 	ldp	x22, x21, [sp, #464]
+  4b736c:	a95c5ff8 	ldp	x24, x23, [sp, #448]
+  4b7370:	f940dbfc 	ldr	x28, [sp, #432]
+  4b7374:	a95a7bfd 	ldp	x29, x30, [sp, #416]
+  4b7378:	9107c3ff 	add	sp, sp, #0x1f0
+  4b737c:	d65f03c0 	ret
+  4b7380:	94034844 	bl	589490 <__stack_chk_fail@plt>
+  4b7384:	910063e0 	add	x0, sp, #0x18
+  4b7388:	9403494a 	bl	5898b0 <std::__1::__vector_base_common<true>::__throw_length_error() const@plt>

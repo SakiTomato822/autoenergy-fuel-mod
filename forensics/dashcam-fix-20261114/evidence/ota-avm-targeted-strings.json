@@ -1,0 +1,45 @@
+[
+  {
+    "file": "ECarXOtaService.dex",
+    "hits": []
+  },
+  {
+    "file": "ECarXOtaApp.dex",
+    "hits": []
+  },
+  {
+    "file": "ECarXOtaApp-2.dex",
+    "hits": []
+  },
+  {
+    "file": "ECarXOtaApp-3.dex",
+    "hits": []
+  },
+  {
+    "file": "OneOSOTA.dex",
+    "hits": [
+      "CMD_MMI_AVM_CONFIG",
+      "ecarx.camera.dvr.png"
+    ]
+  },
+  {
+    "file": "OneOSOTA-2.dex",
+    "hits": [
+      ", ecuType=",
+      "ECU_TYPE_IHU",
+      "ECU_TYPE_IHU_VALUE",
+      "ECU_TYPE_TEM",
+      "ECU_TYPE_TEM_VALUE",
+      "create index if not exists index_ecuType ON tb_upgrade_task (ecuType)",
+      "ecuType",
+      "ecuType = ? and aVersionCode = ? and bVersionCode = ? and envType = ?",
+      "ecuType = ? and currentVersionCode = ? and preVersionCode = ? and envType = ?",
+      "ecuType = ? and envType = ? and (reportDownload = 0 or reportUpgrade = 0)",
+      "ecuType = ? and toVersion = ? and envType = ?",
+      "ecuType = ? and versionCode = ? and envType = ?",
+      "getEcuType",
+      "getEcuTypeStr",
+      "setEcuType"
+    ]
+  }
+]

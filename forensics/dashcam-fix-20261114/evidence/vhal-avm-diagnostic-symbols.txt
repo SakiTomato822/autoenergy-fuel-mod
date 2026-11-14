@@ -1,0 +1,21 @@
+000000000053edc8 t _GLOBAL__sub_I_AVMManager.cpp
+00000000004b5a48 t _GLOBAL__sub_I_DiagnosticManager.cpp
+00000000000ee630 T android::hardware::automotive::vehicle::V2_0::Obd2SensorStore::setFloatSensor(android::hardware::automotive::vehicle::V2_0::DiagnosticFloatSensorIndex, float)
+00000000000ee5fc T android::hardware::automotive::vehicle::V2_0::Obd2SensorStore::setIntegerSensor(android::hardware::automotive::vehicle::V2_0::DiagnosticIntegerSensorIndex, int)
+0000000000161df4 T android::hardware::automotive::vehicle::V2_0::impl::JsonFakeValueGenerator::generateDiagnosticBytes(android::hardware::automotive::vehicle::V2_0::VehiclePropValue::RawValue const&)
+000000000053f044 T android::hardware::automotive::vehicle::V2_0::mcuengine::AVMManager::processMessage(std::__1::unique_ptr<android::hardware::automotive::vehicle::V2_0::mcuengine::Message, std::__1::default_delete<android::hardware::automotive::vehicle::V2_0::mcuengine::Message> >&)
+000000000053edcc T android::hardware::automotive::vehicle::V2_0::mcuengine::AVMManager::AVMManager(std::__1::shared_ptr<android::hardware::automotive::vehicle::V2_0::impl::VehicleEmulator>)
+000000000053edcc T android::hardware::automotive::vehicle::V2_0::mcuengine::AVMManager::AVMManager(std::__1::shared_ptr<android::hardware::automotive::vehicle::V2_0::impl::VehicleEmulator>)
+000000000053fd60 t android::hardware::automotive::vehicle::V2_0::mcuengine::AVMManager::~AVMManager()
+000000000053fcf8 t android::hardware::automotive::vehicle::V2_0::mcuengine::AVMManager::~AVMManager()
+00000000004da430 t android::hardware::automotive::vehicle::V2_0::mcuengine::ConfigInfoUtils::setSystemPropertyForAvm(std::__1::vector<unsigned char, std::__1::allocator<unsigned char> > const&)
+00000000004b70f0 T android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticUtils::doSetDiagnosticToMcu(int, std::__1::vector<unsigned char, std::__1::allocator<unsigned char> > const&)
+00000000004b6a88 T android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::ueventListen()
+00000000004b5ffc T android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::processMessage(std::__1::unique_ptr<android::hardware::automotive::vehicle::V2_0::mcuengine::Message, std::__1::default_delete<android::hardware::automotive::vehicle::V2_0::mcuengine::Message> >&)
+00000000004b5d2c T android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::registerMcuEmulator(std::__1::shared_ptr<android::hardware::automotive::vehicle::V2_0::impl::VehicleEmulator>)
+00000000004b5a4c T android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::DiagnosticManager(std::__1::shared_ptr<android::hardware::automotive::vehicle::V2_0::impl::VehicleEmulator>)
+00000000004b5a4c T android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::DiagnosticManager(std::__1::shared_ptr<android::hardware::automotive::vehicle::V2_0::impl::VehicleEmulator>)
+00000000004b7410 t android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::~DiagnosticManager()
+00000000004b738c t android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager::~DiagnosticManager()
+000000000058d980 B vtable for android::hardware::automotive::vehicle::V2_0::mcuengine::AVMManager
+000000000058d8c8 B vtable for android::hardware::automotive::vehicle::V2_0::mcuengine::DiagnosticManager

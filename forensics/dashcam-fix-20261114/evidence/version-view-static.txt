@@ -1,0 +1,147 @@
+
+/data/data/com.termux/files/home/forensics/flyme-dvr-20261010/raw/evsapp:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000004004c <RenderAvmInsideViewBX11::drawAVMVersionView()>:
+   4004c:	d10283ff 	sub	sp, sp, #0xa0
+   40050:	a9057bfd 	stp	x29, x30, [sp, #80]
+   40054:	f90033f9 	str	x25, [sp, #96]
+   40058:	a9075ff8 	stp	x24, x23, [sp, #112]
+   4005c:	a90857f6 	stp	x22, x21, [sp, #128]
+   40060:	a9094ff4 	stp	x20, x19, [sp, #144]
+   40064:	910143fd 	add	x29, sp, #0x50
+   40068:	d53bd054 	mrs	x20, tpidr_el0
+   4006c:	f9401688 	ldr	x8, [x20, #40]
+   40070:	91018013 	add	x19, x0, #0x60
+   40074:	52800e21 	mov	w1, #0x71                  	// #113
+   40078:	aa1303e0 	mov	x0, x19
+   4007c:	f81f83a8 	stur	x8, [x29, #-8]
+   40080:	94001aa2 	bl	46b08 <BX11AvmGui::DrawPNGTex(int)>
+   40084:	52800ea1 	mov	w1, #0x75                  	// #117
+   40088:	aa1303e0 	mov	x0, x19
+   4008c:	94001b5c 	bl	46dfc <BX11AvmGui::DrawTranslucentPNGTex(int)>
+   40090:	52800ec1 	mov	w1, #0x76                  	// #118
+   40094:	aa1303e0 	mov	x0, x19
+   40098:	94001b59 	bl	46dfc <BX11AvmGui::DrawTranslucentPNGTex(int)>
+   4009c:	d286064a 	mov	x10, #0x3032                	// #12338
+   400a0:	f2a6a64a 	movk	x10, #0x3532, lsl #16
+   400a4:	f2c6a60a 	movk	x10, #0x3530, lsl #32
+   400a8:	52800048 	mov	w8, #0x2                   	// #2
+   400ac:	52800209 	mov	w9, #0x10                  	// #16
+   400b0:	f2e6664a 	movk	x10, #0x3332, lsl #48
+   400b4:	6f00e400 	movi	v0.2d, #0x0
+   400b8:	7100251f 	cmp	w8, #0x9
+   400bc:	a900ffff 	stp	xzr, xzr, [sp, #8]
+   400c0:	f9000fff 	str	xzr, [sp, #24]
+   400c4:	390047ff 	strb	wzr, [sp, #17]
+   400c8:	390023e9 	strb	w9, [sp, #8]
+   400cc:	f80093ea 	stur	x10, [sp, #9]
+   400d0:	ad0103e0 	stp	q0, q0, [sp, #32]
+   400d4:	54000328 	b.hi	40138 <RenderAvmInsideViewBX11::drawAVMVersionView()+0xec>  // b.pmore
+   400d8:	b0ffff09 	adrp	x9, 21000 <Constants::Property::CAMERA_TYPE+0x323>
+   400dc:	910d8929 	add	x9, x9, #0x362
+   400e0:	100000ca 	adr	x10, 400f8 <RenderAvmInsideViewBX11::drawAVMVersionView()+0xac>
+   400e4:	3868692b 	ldrb	w11, [x9, x8]
+   400e8:	8b0b094a 	add	x10, x10, x11, lsl #2
+   400ec:	52800ee1 	mov	w1, #0x77                  	// #119
+   400f0:	52800348 	mov	w8, #0x1a                  	// #26
+   400f4:	d61f0140 	br	x10
+   400f8:	52800f01 	mov	w1, #0x78                  	// #120
+   400fc:	528001e8 	mov	w8, #0xf                   	// #15
+   40100:	14000017 	b	4015c <RenderAvmInsideViewBX11::drawAVMVersionView()+0x110>
+   40104:	52800f61 	mov	w1, #0x7b                  	// #123
+   40108:	14000014 	b	40158 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x10c>
+   4010c:	52801001 	mov	w1, #0x80                  	// #128
+   40110:	52800328 	mov	w8, #0x19                  	// #25
+   40114:	14000012 	b	4015c <RenderAvmInsideViewBX11::drawAVMVersionView()+0x110>
+   40118:	52800f21 	mov	w1, #0x79                  	// #121
+   4011c:	52800328 	mov	w8, #0x19                  	// #25
+   40120:	1400000f 	b	4015c <RenderAvmInsideViewBX11::drawAVMVersionView()+0x110>
+   40124:	52800f41 	mov	w1, #0x7a                  	// #122
+   40128:	1400000c 	b	40158 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x10c>
+   4012c:	52800fc1 	mov	w1, #0x7e                  	// #126
+   40130:	52800328 	mov	w8, #0x19                  	// #25
+   40134:	1400000a 	b	4015c <RenderAvmInsideViewBX11::drawAVMVersionView()+0x110>
+   40138:	52800641 	mov	w1, #0x32                  	// #50
+   4013c:	14000009 	b	40160 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x114>
+   40140:	52800f81 	mov	w1, #0x7c                  	// #124
+   40144:	14000005 	b	40158 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x10c>
+   40148:	52800fa1 	mov	w1, #0x7d                  	// #125
+   4014c:	52800328 	mov	w8, #0x19                  	// #25
+   40150:	14000003 	b	4015c <RenderAvmInsideViewBX11::drawAVMVersionView()+0x110>
+   40154:	52800fe1 	mov	w1, #0x7f                  	// #127
+   40158:	52800348 	mov	w8, #0x1a                  	// #26
+   4015c:	b90023e8 	str	w8, [sp, #32]
+   40160:	52809e02 	mov	w2, #0x4f0                 	// #1264
+   40164:	52803bc3 	mov	w3, #0x1de                 	// #478
+   40168:	aa1303e0 	mov	x0, x19
+   4016c:	94001bdd 	bl	470e0 <BX11AvmGui::DrawTranslucentPNGTex(int, int, int)>
+   40170:	910023e8 	add	x8, sp, #0x8
+   40174:	b0ffff19 	adrp	x25, 21000 <Constants::Property::CAMERA_TYPE+0x323>
+   40178:	aa1f03f5 	mov	x21, xzr
+   4017c:	2a1f03f6 	mov	w22, wzr
+   40180:	910083f7 	add	x23, sp, #0x20
+   40184:	b27f0118 	orr	x24, x8, #0x2
+   40188:	910db339 	add	x25, x25, #0x36c
+   4018c:	38756b01 	ldrb	w1, [x24, x21]
+   40190:	5100c028 	sub	w8, w1, #0x30
+   40194:	7100251f 	cmp	w8, #0x9
+   40198:	540003a8 	b.hi	4020c <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1c0>  // b.pmore
+   4019c:	100000c9 	adr	x9, 401b4 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x168>
+   401a0:	38686b2a 	ldrb	w10, [x25, x8]
+   401a4:	8b0a0929 	add	x9, x9, x10, lsl #2
+   401a8:	52800ee1 	mov	w1, #0x77                  	// #119
+   401ac:	52800348 	mov	w8, #0x1a                  	// #26
+   401b0:	d61f0120 	br	x9
+   401b4:	52800f01 	mov	w1, #0x78                  	// #120
+   401b8:	528001e8 	mov	w8, #0xf                   	// #15
+   401bc:	14000012 	b	40204 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b8>
+   401c0:	52800f61 	mov	w1, #0x7b                  	// #123
+   401c4:	52800348 	mov	w8, #0x1a                  	// #26
+   401c8:	1400000f 	b	40204 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b8>
+   401cc:	52801001 	mov	w1, #0x80                  	// #128
+   401d0:	1400000c 	b	40200 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b4>
+   401d4:	52800f21 	mov	w1, #0x79                  	// #121
+   401d8:	1400000a 	b	40200 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b4>
+   401dc:	52800f41 	mov	w1, #0x7a                  	// #122
+   401e0:	52800348 	mov	w8, #0x1a                  	// #26
+   401e4:	14000008 	b	40204 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b8>
+   401e8:	52800fc1 	mov	w1, #0x7e                  	// #126
+   401ec:	14000005 	b	40200 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b4>
+   401f0:	52800f81 	mov	w1, #0x7c                  	// #124
+   401f4:	52800348 	mov	w8, #0x1a                  	// #26
+   401f8:	14000003 	b	40204 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b8>
+   401fc:	52800fa1 	mov	w1, #0x7d                  	// #125
+   40200:	52800328 	mov	w8, #0x19                  	// #25
+   40204:	8b150ae9 	add	x9, x23, x21, lsl #2
+   40208:	b9000528 	str	w8, [x9, #4]
+   4020c:	b8757ae8 	ldr	w8, [x23, x21, lsl #2]
+   40210:	52803bc3 	mov	w3, #0x1de                 	// #478
+   40214:	aa1303e0 	mov	x0, x19
+   40218:	0b160116 	add	w22, w8, w22
+   4021c:	1113c2c2 	add	w2, w22, #0x4f0
+   40220:	94001bb0 	bl	470e0 <BX11AvmGui::DrawTranslucentPNGTex(int, int, int)>
+   40224:	910006b5 	add	x21, x21, #0x1
+   40228:	f1001ebf 	cmp	x21, #0x7
+   4022c:	54fffb03 	b.cc	4018c <RenderAvmInsideViewBX11::drawAVMVersionView()+0x140>  // b.lo, b.ul, b.last
+   40230:	14000004 	b	40240 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1f4>
+   40234:	52800fe1 	mov	w1, #0x7f                  	// #127
+   40238:	52800348 	mov	w8, #0x1a                  	// #26
+   4023c:	17fffff2 	b	40204 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x1b8>
+   40240:	52801101 	mov	w1, #0x88                  	// #136
+   40244:	aa1303e0 	mov	x0, x19
+   40248:	94001aed 	bl	46dfc <BX11AvmGui::DrawTranslucentPNGTex(int)>
+   4024c:	f9401688 	ldr	x8, [x20, #40]
+   40250:	f85f83a9 	ldur	x9, [x29, #-8]
+   40254:	eb09011f 	cmp	x8, x9
+   40258:	54000101 	b.ne	40278 <RenderAvmInsideViewBX11::drawAVMVersionView()+0x22c>  // b.any
+   4025c:	a9494ff4 	ldp	x20, x19, [sp, #144]
+   40260:	a94857f6 	ldp	x22, x21, [sp, #128]
+   40264:	a9475ff8 	ldp	x24, x23, [sp, #112]
+   40268:	f94033f9 	ldr	x25, [sp, #96]
+   4026c:	a9457bfd 	ldp	x29, x30, [sp, #80]
+   40270:	910283ff 	add	sp, sp, #0xa0
+   40274:	d65f03c0 	ret
+   40278:	9400615e 	bl	587f0 <__stack_chk_fail@plt>

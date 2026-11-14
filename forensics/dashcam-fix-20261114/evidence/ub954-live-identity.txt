@@ -1,0 +1,6 @@
+READ_EXIT=0
+ 7a 20 01 18 b0 00 5f 55 42 39 35 34 01
+root            344      1 11324080 77688 hrtimer_nanosleep   0 S evsrenderengine
+root            347      1 10882924  7112 binder_thread_read  0 S android.hardware.automotive.evs@1.0-service
+vehicle_network 348      1 11158616 21664 do_epoll_wait       0 S android.hardware.automotive.vehicle@2.0-service
+root            400      1 11142660 41312 hrtimer_nanosleep   0 S evsapp

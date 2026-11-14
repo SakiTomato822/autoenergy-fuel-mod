@@ -1,0 +1,14 @@
+Sat Nov 14 17:40:12 CST 2026
+1924.53 6084.79
+process=344
+lrwx------ 1 root root 64 2026-11-14 17:40 3 -> socket:[20425]
+process=400
+lrwx------ 1 root root 64 2026-11-14 17:40 3 -> socket:[20858]
+crw-rw-rw- 1 system system 253,   0 1970-01-01 08:00 /dev/rpmsg_ctrl0
+crw-rw-rw- 1 system system 253,   1 1970-01-01 08:00 /dev/rpmsg_ctrl1
+crw-rw-rw- 1 system system 253,   2 1970-01-01 08:00 /dev/rpmsg_ctrl2
+crw-rw-rw- 1 system system 253,   8 1970-01-01 08:00 /dev/rpmsg_ctrl2_ap_r5.100.100
+crw-rw-rw- 1 system system 253,   6 1970-01-01 08:00 /dev/rpmsg_ctrl2_ap_r5.99.99
+crw-rw-rw- 1 system system 253,   3 1970-01-01 08:00 /dev/rpmsg_ctrl3
+crw-rw-rw- 1 system system 253,   4 1970-01-01 08:00 /dev/rpmsg_ctrl4
+crw-rw-rw- 1 system system 253,   5 1970-01-01 08:00 /dev/rpmsg_ctrl5

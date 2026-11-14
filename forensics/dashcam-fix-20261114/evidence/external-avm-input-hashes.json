@@ -1,0 +1,32 @@
+[
+  {
+    "path": "flyme-dvr-20261010/raw/current-vhal",
+    "size": 5855384,
+    "sha256": "2d4bbf5ec01ef76103047481b19ba761bc41a24677508739dbd9ceac772c24a4"
+  },
+  {
+    "path": "flyme-dvr-20261010/raw/evsapp",
+    "size": 492768,
+    "sha256": "91a327726c96db987896e62f00433a4a13e7b0d67c7656b76ffd4c2fc8f5d5b6"
+  },
+  {
+    "path": "dashcam-fix-20261114/evidence/cp-dtb-a.fdt",
+    "size": 141360,
+    "sha256": "d750e76587dfe7ebc5ffe8eb5d2d6a756ca39eebef5fc5f9797d9029806a81ac"
+  },
+  {
+    "path": "dashcam-fix-20261114/evidence/cp-dtb-b.fdt",
+    "size": 141844,
+    "sha256": "dbafa74c54b38050080d2a43c965b6da0dbc0ea741f52e7e5f1380cb70ef1a4c"
+  },
+  {
+    "path": "dashcam-fix-20261114/out/read-ub954-identity",
+    "size": 1936,
+    "sha256": "9cfc8a57c32c9187e4bdc27a6d85162119029ac749ace7ab4a591a58f4dc14a3"
+  },
+  {
+    "path": "dashcam-fix-20261114/out/read-ub954-transport",
+    "size": 1592,
+    "sha256": "fa0ccb392a057284e4ea57f26f0d87c115d7837a26265bcdf9e7ee46a11e3910"
+  }
+]

@@ -1,0 +1,284 @@
+
+METHOD Lcom/ecarx/xui/adaptapi/car/impl/info/CarInfoImpl;->getCarInfoInt code=102964 regs=7 ins=2
+   0 0014 02ff 0010 const 1049343 / 0x1002ff
+   3 011a 0322 "CarInfoImpl"
+   5 0214 0200 0010 const 1049088 / 0x100200
+   8 2633 003a if target 66
+  10 5254 0059 Lcom/ecarx/xui/adaptapi/car/impl/info/CarInfoImpl;->mVsm:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+  12 0313 00a1 const/16 161
+  14 206e 0500 0032 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getInfoFromConfigFile
+  17 020a
+  18 0322 022e
+  20 1070 0c64 0003 Ljava/lang/StringBuilder;-><init>
+  23 041a 19b0 "vehicleType = "
+  25 206e 0c6a 0043 Ljava/lang/StringBuilder;->append
+  28 206e 0c67 0023 Ljava/lang/StringBuilder;->append
+  31 106e 0c6e 0003 Ljava/lang/StringBuilder;->toString
+  34 030c
+  35 2071 0135 0031 Landroid/util/Log;->e
+  38 0238 0018 if target 62
+  40 1112 const/4 v1 1
+  41 1232 0011 if target 58
+  43 2112 const/4 v1 2
+  44 1232 000a if target 54
+  46 3112 const/4 v1 3
+  47 1232 0003 if target 50
+  49 000f
+  50 0014 0208 0010 const 1049096 / 0x100208
+  53 000f
+  54 0014 0207 0010 const 1049095 / 0x100207
+  57 000f
+  58 0014 0203 0010 const 1049091 / 0x100203
+  61 000f
+  62 0014 0201 0010 const 1049089 / 0x100201
+  65 000f
+  66 0214 0f02 0010 const 1052418 / 0x100f02
+  69 0312 const/4 v3 0
+  70 2633 0003 if target 73
+  72 030f
+  73 0214 0f01 0010 const 1052417 / 0x100f01
+  76 2633 0003 if target 79
+  78 030f
+  79 0214 0c20 0010 const 1051680 / 0x100c20
+  82 2633 0020 if target 114
+  84 5054 0059 Lcom/ecarx/xui/adaptapi/car/impl/info/CarInfoImpl;->mVsm:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+  86 0214 003f 2870 const 678428735 / 0x2870003f
+  89 206e 0502 0020 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getIntByPropID
+  92 000a
+  93 0222 022e
+  95 1070 0c64 0002 Ljava/lang/StringBuilder;-><init>
+  98 031a 0e11 "distance = "
+ 100 206e 0c6a 0032 Ljava/lang/StringBuilder;->append
+ 103 206e 0c67 0002 Ljava/lang/StringBuilder;->append
+ 106 106e 0c6e 0002 Ljava/lang/StringBuilder;->toString
+ 109 020c
+ 110 2071 0135 0021 Landroid/util/Log;->e
+ 113 000f
+ 114 0214 0c10 0010 const 1051664 / 0x100c10
+ 117 2633 0020 if target 149
+ 119 5054 0059 Lcom/ecarx/xui/adaptapi/car/impl/info/CarInfoImpl;->mVsm:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+ 121 0214 003e 2870 const 678428734 / 0x2870003e
+ 124 206e 0502 0020 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getIntByPropID
+ 127 000a
+ 128 0222 022e
+ 130 1070 0c64 0002 Ljava/lang/StringBuilder;-><init>
+ 133 031a 0dd5 "day = "
+ 135 206e 0c6a 0032 Ljava/lang/StringBuilder;->append
+ 138 206e 0c67 0002 Ljava/lang/StringBuilder;->append
+ 141 106e 0c6e 0002 Ljava/lang/StringBuilder;->toString
+ 144 020c
+ 145 2071 0135 0021 Landroid/util/Log;->e
+ 148 000f
+ 149 0214 0500 0080 const 8389888 / 0x800500
+ 152 2633 001f if target 183
+ 154 5054 0059 Lcom/ecarx/xui/adaptapi/car/impl/info/CarInfoImpl;->mVsm:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+ 156 0213 0067 const/16 103
+ 158 206e 0500 0020 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getInfoFromConfigFile
+ 161 000a
+ 162 0222 022e
+ 164 1070 0c64 0002 Ljava/lang/StringBuilder;-><init>
+ 167 031a 0f1a "getCarInfoInt avm = "
+ 169 206e 0c6a 0032 Ljava/lang/StringBuilder;->append
+ 172 206e 0c67 0002 Ljava/lang/StringBuilder;->append
+ 175 106e 0c6e 0002 Ljava/lang/StringBuilder;->toString
+ 178 020c
+ 179 2071 0135 0021 Landroid/util/Log;->e
+ 182 000f
+ 183 0214 0f04 0010 const 1052420 / 0x100f04
+ 186 2633 0020 if target 218
+ 188 5054 0059 Lcom/ecarx/xui/adaptapi/car/impl/info/CarInfoImpl;->mVsm:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+ 190 0214 004c 2870 const 678428748 / 0x2870004c
+ 193 206e 0502 0020 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getIntByPropID
+ 196 000a
+ 197 0222 022e
+ 199 1070 0c64 0002 Ljava/lang/StringBuilder;-><init>
+ 202 031a 0e3b "engine distance = "
+ 204 206e 0c6a 0032 Ljava/lang/StringBuilder;->append
+ 207 206e 0c67 0002 Ljava/lang/StringBuilder;->append
+ 210 106e 0c6e 0002 Ljava/lang/StringBuilder;->toString
+ 213 020c
+ 214 2071 0135 0021 Landroid/util/Log;->e
+ 217 000f
+ 218 0214 0f03 0010 const 1052419 / 0x100f03
+ 221 2633 0020 if target 253
+ 223 5054 0059 Lcom/ecarx/xui/adaptapi/car/impl/info/CarInfoImpl;->mVsm:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+ 225 0214 004d 2870 const 678428749 / 0x2870004d
+ 228 206e 0502 0020 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getIntByPropID
+ 231 000a
+ 232 0222 022e
+ 234 1070 0c64 0002 Ljava/lang/StringBuilder;-><init>
+ 237 031a 0e3a "engine day = "
+ 239 206e 0c6a 0032 Ljava/lang/StringBuilder;->append
+ 242 206e 0c67 0002 Ljava/lang/StringBuilder;->append
+ 245 106e 0c6e 0002 Ljava/lang/StringBuilder;->toString
+ 248 020c
+ 249 2071 0135 0021 Landroid/util/Log;->e
+ 252 000f
+ 253 000f
+
+METHOD Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getProperty code=112732 regs=11 ins=3
+   0 001a 1045 "getProperty: function="
+   2 1112 const/4 v1 1
+   3 3212 const/4 v2 3
+   4 0312 const/4 v3 0
+   5 1071 0c2c 0003 Ljava/lang/Integer;->valueOf
+   8 040c
+   9 092c 014f 0000 switch payload 344
+  12 306f 0485 0a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleModule;->getProperty
+  15 000c
+  16 0011
+  17 8054 0086 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mVehicleSignalManager:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+  19 0513 0076 const/16 118
+  21 206e 0500 0050 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getInfoFromConfigFile
+  24 000a
+  25 8554 007e Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->TAG:Ljava/lang/String;
+  27 0622 022e
+  29 1070 0c64 0006 Ljava/lang/StringBuilder;-><init>
+  32 071a 140b "mirrorAdjust = "
+  34 206e 0c6a 0076 Ljava/lang/StringBuilder;->append
+  37 206e 0c67 0006 Ljava/lang/StringBuilder;->append
+  40 106e 0c6e 0006 Ljava/lang/StringBuilder;->toString
+  43 060c
+  44 2071 0134 0065 Landroid/util/Log;->d
+  47 1033 0003 if target 50
+  49 3201
+  50 546e 0290 2a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getCarPropertyValue
+  53 010c
+  54 0111
+  55 8054 0086 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mVehicleSignalManager:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+  57 0513 0078 const/16 120
+  59 206e 0500 0050 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getInfoFromConfigFile
+  62 000a
+  63 8554 007e Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->TAG:Ljava/lang/String;
+  65 0622 022e
+  67 1070 0c64 0006 Ljava/lang/StringBuilder;-><init>
+  70 071a 17f8 "soundSwitch = "
+  72 206e 0c6a 0076 Ljava/lang/StringBuilder;->append
+  75 206e 0c67 0006 Ljava/lang/StringBuilder;->append
+  78 106e 0c6e 0006 Ljava/lang/StringBuilder;->toString
+  81 060c
+  82 2071 0134 0065 Landroid/util/Log;->d
+  85 1033 0003 if target 88
+  87 3201
+  88 546e 0290 2a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getCarPropertyValue
+  91 010c
+  92 0111
+  93 8054 0086 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mVehicleSignalManager:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+  95 106e 04f8 0000 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getCarAudioManager
+  98 000c
+  99 106e 0074 0000 Landroid/car/media/CarAudioManager;->isExteriorSpeakersSupported
+ 102 000a
+ 103 8154 007e Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->TAG:Ljava/lang/String;
+ 105 0522 022e
+ 107 1070 0c64 0005 Ljava/lang/StringBuilder;-><init>
+ 110 061a 12e0 "loudspkr = "
+ 112 206e 0c6a 0065 Ljava/lang/StringBuilder;->append
+ 115 206e 0c6b 0005 Ljava/lang/StringBuilder;->append
+ 118 106e 0c6e 0005 Ljava/lang/StringBuilder;->toString
+ 121 050c
+ 122 2071 0134 0051 Landroid/util/Log;->d
+ 125 0038 0003 if target 128
+ 127 3201
+ 128 546e 0290 2a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getCarPropertyValue
+ 131 010c
+ 132 0111
+ 133 8054 0086 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mVehicleSignalManager:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+ 135 0513 0075 const/16 117
+ 137 206e 0500 0050 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getInfoFromConfigFile
+ 140 000a
+ 141 8554 007e Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->TAG:Ljava/lang/String;
+ 143 0622 022e
+ 145 1070 0c64 0006 Ljava/lang/StringBuilder;-><init>
+ 148 071a 18cb "trunk = "
+ 150 206e 0c6a 0076 Ljava/lang/StringBuilder;->append
+ 153 206e 0c67 0006 Ljava/lang/StringBuilder;->append
+ 156 106e 0c6e 0006 Ljava/lang/StringBuilder;->toString
+ 159 060c
+ 160 2071 0134 0065 Landroid/util/Log;->d
+ 163 1033 0003 if target 166
+ 165 3201
+ 166 546e 0290 2a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getCarPropertyValue
+ 169 010c
+ 170 0111
+ 171 8254 0086 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mVehicleSignalManager:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+ 173 0514 0409 1140 const 289408009 / 0x11400409
+ 176 206e 0502 0052 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getIntByPropID
+ 179 020a
+ 180 8554 007e Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->TAG:Ljava/lang/String;
+ 182 0622 022e
+ 184 1070 0c64 0006 Ljava/lang/StringBuilder;-><init>
+ 187 206e 0c6a 0006 Ljava/lang/StringBuilder;->append
+ 190 206e 0c67 0096 Ljava/lang/StringBuilder;->append
+ 193 001a 0084 " ignition="
+ 195 206e 0c6a 0006 Ljava/lang/StringBuilder;->append
+ 198 206e 0c67 0026 Ljava/lang/StringBuilder;->append
+ 201 106e 0c6e 0006 Ljava/lang/StringBuilder;->toString
+ 204 000c
+ 205 2071 0134 0005 Landroid/util/Log;->d
+ 208 2012 const/4 v0 2
+ 209 0233 0003 if target 212
+ 211 0228
+ 212 3101
+ 213 546e 0290 1a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getCarPropertyValue
+ 216 000c
+ 217 0011
+ 218 8154 007e Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->TAG:Ljava/lang/String;
+ 220 0222 022e
+ 222 1070 0c64 0002 Ljava/lang/StringBuilder;-><init>
+ 225 206e 0c6a 0002 Ljava/lang/StringBuilder;->append
+ 228 206e 0c67 0092 Ljava/lang/StringBuilder;->append
+ 231 001a 00de " zone="
+ 233 206e 0c6a 0002 Ljava/lang/StringBuilder;->append
+ 236 206e 0c67 00a2 Ljava/lang/StringBuilder;->append
+ 239 001a 0098 " mTrunkState="
+ 241 206e 0c6a 0002 Ljava/lang/StringBuilder;->append
+ 244 8052 0085 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mTrunkState:I
+ 246 206e 0c67 0002 Ljava/lang/StringBuilder;->append
+ 249 106e 0c6e 0002 Ljava/lang/StringBuilder;->toString
+ 252 000c
+ 253 2071 0134 0001 Landroid/util/Log;->d
+ 256 8052 0085 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mTrunkState:I
+ 258 1071 0c2c 0000 Ljava/lang/Integer;->valueOf
+ 261 000c
+ 262 506e 0290 3a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getCarPropertyValue
+ 265 000c
+ 266 0011
+ 267 8054 0086 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->mVehicleSignalManager:Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;
+ 269 0113 0067 const/16 103
+ 271 206e 0500 0010 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/VehicleSignalManager;->getInfoFromConfigFile
+ 274 000a
+ 275 2033 0005 if target 280
+ 277 3112 const/4 v1 3
+ 278 0212 const/4 v2 0
+ 279 0428
+ 280 0112 const/4 v1 0
+ 281 0213 0086 const/16 134
+ 283 8354 007e Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->TAG:Ljava/lang/String;
+ 285 0422 022e
+ 287 1070 0c64 0004 Ljava/lang/StringBuilder;-><init>
+ 290 051a 0c68 "avm status : avmConfig = "
+ 292 206e 0c6a 0054 Ljava/lang/StringBuilder;->append
+ 295 206e 0c67 0004 Ljava/lang/StringBuilder;->append
+ 298 051a 00bc " status = "
+ 300 206e 0c6a 0054 Ljava/lang/StringBuilder;->append
+ 303 206e 0c67 0014 Ljava/lang/StringBuilder;->append
+ 306 051a 00d1 " value = "
+ 308 206e 0c6a 0054 Ljava/lang/StringBuilder;->append
+ 311 206e 0c67 0024 Ljava/lang/StringBuilder;->append
+ 314 106e 0c6e 0004 Ljava/lang/StringBuilder;->toString
+ 317 040c
+ 318 2071 0134 0043 Landroid/util/Log;->d
+ 321 1071 0c2c 0002 Ljava/lang/Integer;->valueOf
+ 324 030c
+ 325 536e 0290 1a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getCarPropertyValue
+ 328 030c
+ 329 0311
+ 330 0014 0204 2970 const 695206404 / 0x29700204
+ 333 4112 const/4 v1 4
+ 334 1123 026d
+ 336 0126 002e 0000
+ 339 516e 0292 0a98 Lcom/ecarx/xui/adaptapi/car/impl/vehicle/BCMModule;->getPropertyBindActive
+ 342 000c
+ 343 0011
+ 344 0200 0009 0100 200c d600 2030 0f00 2111
+ 382 0300 0004 0004 0000 0001 0000 0002 0000

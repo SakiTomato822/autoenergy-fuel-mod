@@ -330,3 +330,21 @@
 - libavm_sdk::get_sdk_config 0x1f4f4～fc只有加载本地全局指针并返回，不能当远端模块自报能力；libvc_avm中version导入未证远端身份；已有touchcontrol为RPMsg触摸路径，未恢复到能力查询。范围不扩大为整个模块无诊断。
 - 可读驱动格式/控制、已知芯片ID/状态；完整模块能力仍需厂商自描述/诊断协议或模块自身固件。AP/CP/MCU材料不自动等同外置AVM固件。具体边界及下一条件见../dashcam-fix-20261114/CAPABILITY_QUERY.md。
 - 重查条件：具体模块料号、可关联身份/版本响应、查询实现或对应固件；不重复扫全部寄存器/零状态/相同接口名。
+
+## B36：外置AVM身份查询入口与CP接管补漏（2026-11-14）
+- 未知：版本页/RPMsg/debug CAN是否实际查询外置模块；四路原图是否转由CP持有。引用B35，只查具体实现和此前缺失的CP DT，不重扫本地SDK常量。
+- 内置AVM版本绘图用本地立即数20250523，不能作为外置ECU版本。touchcontrol RPMsg配置未见当前进程打开；外置Apa变体经VHAL invokeSet。6E4 debug parser存在，12秒只读观察无调用，仅是窗口阴性，不证明物理总线无帧。VHAL AVM/Diagnostic处理器尚未闭合远端能力/原始输出切换查询，不执行未知请求。
+- CP两个槽位FDT的18个CSI/CIF节点均disabled，没有找到CP接管四路的正证据；明确保留静态DT与运行时启动修改的差别。
+- 证据 ../dashcam-fix-20261114/EXTERNAL_AVM_LINK.md及对应selected evidence。重查：真正远端响应/实际端点或触发条件、CP运行图/槽位/版本变化；不重复空观察/两槽提取。
+
+## B37：沿工作的UB954链路读取真实身份与输入模式（2026-11-14 17:50～17:56）
+- 未知：现有外置360视频链上游地址、访问配置、实际输入协议。按TI官方寄存器定义，两个固定小程序分别一次I2C_RDWR只读已知bus7/0x3d身份与链路模式；没有地址扫描、端口选择、别名/转发/GPIO/控制数据写入，没有清读错误状态。
+- 实读本地ID `_UB954`、rev2/mask0；当前RX0，上游SER_ID=0x58且freeze0，alias0，I2C转发关闭。后续新问题只读4c/6d/4c=01/7f/01，确认RAW10/100MHz的913A/933兼容输入模式，不能把传输RAW10误称四摄原图。精确上游型号未识别。
+- 1280×3200×16bit×25fps需1.6384Gb/s，高于此模式10×100MHz理论输入上限；条件化解释当前链路不能直接承载该同规格未压缩流，不排除其它模式/降帧/链路。当前未实现四路录像，但取得了实物链路证据，不能再把方案差异归结为权限漏扫/改节点名。
+- 证据 ../dashcam-fix-20261114/EXTERNAL_AVM_LINK.md、src/read-ub954-{identity,transport}.S、evidence/ub954-live-{identity,transport}.txt。重查：真实链路配置/驱动变化、上游料号/协议或同款成功方案；相同身份/模式不重复读取，不因无alias循环试远端地址。
+
+## B38：自动泊车假设与OTA身份入口（2026-11-14）
+- 新信息：用户明确群友成功车辆同样无自动泊车，因此不把“无自动泊车”当作解释本车失败的单因分界，不改APA配置/发送泊车命令。
+- 只读离线定位OneOSAvmApp openApa检查externalAvmLockStatus并设置0x23040100；getAvmConfig经0x800500→cmd103。支持区分实际APA功能、apa视频接口名及外置/内置AVM方案，未证明其配置位会生成video6。
+- 复用六个OTA dex定向寻找AVM/DVR升级目标和身份握手，只有通用常量/图标及IHU/TEM任务字段；未恢复外置模块升级/查询链。此窄阴性不扩展为整车不存在该接口。
+- 证据 ../dashcam-fix-20261114/EXTERNAL_AVM_LINK.md、avm-apa-config-{app,adapter}.txt、ota-avm-targeted-strings.json。重查：成功车辆的具体硬件/链路记录、外置模块料号/协议/升级目标或版本变化；不重复功能状态或常量扫描。

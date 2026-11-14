@@ -1,0 +1,388 @@
+
+forensics/flyme-dvr-20261010/raw/evsapp:     file format elf64-littleaarch64
+
+
+Disassembly of section .text:
+
+000000000004e60c <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)>:
+   4e60c:	d10743ff 	sub	sp, sp, #0x1d0
+   4e610:	a9177bfd 	stp	x29, x30, [sp, #368]
+   4e614:	f900c3fc 	str	x28, [sp, #384]
+   4e618:	a91967fa 	stp	x26, x25, [sp, #400]
+   4e61c:	a91a5ff8 	stp	x24, x23, [sp, #416]
+   4e620:	a91b57f6 	stp	x22, x21, [sp, #432]
+   4e624:	a91c4ff4 	stp	x20, x19, [sp, #448]
+   4e628:	9105c3fd 	add	x29, sp, #0x170
+   4e62c:	d53bd058 	mrs	x24, tpidr_el0
+   4e630:	f9401708 	ldr	x8, [x24, #40]
+   4e634:	71000c3f 	cmp	w1, #0x3
+   4e638:	f81f83a8 	stur	x8, [x29, #-8]
+   4e63c:	54001248 	b.hi	4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>  // b.pmore
+   4e640:	90fffea9 	adrp	x9, 22000 <pixShader_Point+0x311>
+   4e644:	2a0103e8 	mov	w8, w1
+   4e648:	9100c129 	add	x9, x9, #0x30
+   4e64c:	1000010a 	adr	x10, 4e66c <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x60>
+   4e650:	3868692b 	ldrb	w11, [x9, x8]
+   4e654:	8b0b094a 	add	x10, x10, x11, lsl #2
+   4e658:	2a0303f4 	mov	w20, w3
+   4e65c:	2a0203f5 	mov	w21, w2
+   4e660:	aa0003f3 	mov	x19, x0
+   4e664:	910243f9 	add	x25, sp, #0x90
+   4e668:	d61f0140 	br	x10
+   4e66c:	52800041 	mov	w1, #0x2                   	// #2
+   4e670:	aa1303e0 	mov	x0, x19
+   4e674:	2a1503e2 	mov	w2, w21
+   4e678:	2a1403e3 	mov	w3, w20
+   4e67c:	940001a1 	bl	4ed00 <RenderApaViewBX11::onClickTouchEvent(int, int, int)>
+   4e680:	b0fffe21 	adrp	x1, 13000 <abitag+0x12d08>
+   4e684:	b0fffe02 	adrp	x2, f000 <abitag+0xed08>
+   4e688:	9113c821 	add	x1, x1, #0x4f2
+   4e68c:	91209442 	add	x2, x2, #0x825
+   4e690:	528000c0 	mov	w0, #0x6                   	// #6
+   4e694:	940027ef 	bl	58650 <__android_log_print@plt>
+   4e698:	52803f03 	mov	w3, #0x1f8                 	// #504
+   4e69c:	52803344 	mov	w4, #0x19a                 	// #410
+   4e6a0:	52800905 	mov	w5, #0x48                  	// #72
+   4e6a4:	52800506 	mov	w6, #0x28                  	// #40
+   4e6a8:	aa1303e0 	mov	x0, x19
+   4e6ac:	2a1503e1 	mov	w1, w21
+   4e6b0:	2a1403e2 	mov	w2, w20
+   4e6b4:	97ff93de 	bl	3362c <RenderBase::isInArae(int, int, int, int, int, int)>
+   4e6b8:	36000e60 	tbz	w0, #0, 4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>
+   4e6bc:	b0fffe21 	adrp	x1, 13000 <abitag+0x12d08>
+   4e6c0:	d0fffe42 	adrp	x2, 18000 <abitag+0x17d08>
+   4e6c4:	9113c821 	add	x1, x1, #0x4f2
+   4e6c8:	911e3842 	add	x2, x2, #0x78e
+   4e6cc:	528000c0 	mov	w0, #0x6                   	// #6
+   4e6d0:	940027e0 	bl	58650 <__android_log_print@plt>
+   4e6d4:	d00000b4 	adrp	x20, 64000 <avmPngTexture+0x6f0>
+   4e6d8:	b942d688 	ldr	w8, [x20, #724]
+   4e6dc:	b0fffe21 	adrp	x1, 13000 <abitag+0x12d08>
+   4e6e0:	9113c821 	add	x1, x1, #0x4f2
+   4e6e4:	7100051f 	cmp	w8, #0x1
+   4e6e8:	54000e61 	b.ne	4e8b4 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x2a8>  // b.any
+   4e6ec:	90fffe42 	adrp	x2, 16000 <abitag+0x15d08>
+   4e6f0:	9119cc42 	add	x2, x2, #0x673
+   4e6f4:	528000c0 	mov	w0, #0x6                   	// #6
+   4e6f8:	940027d6 	bl	58650 <__android_log_print@plt>
+   4e6fc:	d101c3a8 	sub	x8, x29, #0x70
+   4e700:	b902d69f 	str	wzr, [x20, #724]
+   4e704:	91016114 	add	x20, x8, #0x58
+   4e708:	6f00e400 	movi	v0.2d, #0x0
+   4e70c:	aa1403e0 	mov	x0, x20
+   4e710:	f9006b3f 	str	xzr, [x25, #208]
+   4e714:	91012115 	add	x21, x8, #0x48
+   4e718:	ad058320 	stp	q0, q0, [x25, #176]
+   4e71c:	ad048320 	stp	q0, q0, [x25, #144]
+   4e720:	ad038320 	stp	q0, q0, [x25, #112]
+   4e724:	9400285b 	bl	58890 <android::hardware::hidl_string::hidl_string()@plt>
+   4e728:	528046a8 	mov	w8, #0x235                 	// #565
+   4e72c:	72a52e08 	movk	w8, #0x2970, lsl #16
+   4e730:	52800037 	mov	w23, #0x1                   	// #1
+   4e734:	910023e0 	add	x0, sp, #0x8
+   4e738:	910013e1 	add	x1, sp, #0x4
+   4e73c:	a900ffff 	stp	xzr, xzr, [sp, #8]
+   4e740:	f9000fff 	str	xzr, [sp, #24]
+   4e744:	b819c3a8 	stur	w8, [x29, #-100]
+   4e748:	390013f7 	strb	w23, [sp, #4]
+   4e74c:	97ff8df8 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4e750:	385e43a8 	ldurb	w8, [x29, #-28]
+   4e754:	34000088 	cbz	w8, 4e764 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x158>
+   4e758:	f9405f20 	ldr	x0, [x25, #184]
+   4e75c:	b4000040 	cbz	x0, 4e764 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x158>
+   4e760:	9400282c 	bl	58810 <operator delete[](void*)@plt>
+   4e764:	a940a3fa 	ldp	x26, x8, [sp, #8]
+   4e768:	381e43b7 	sturb	w23, [x29, #-28]
+   4e76c:	cb1a0116 	sub	x22, x8, x26
+   4e770:	b81e03b6 	stur	w22, [x29, #-32]
+   4e774:	34001236 	cbz	w22, 4e9b8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x3ac>
+   4e778:	aa1603e0 	mov	x0, x22
+   4e77c:	94002841 	bl	58880 <operator new[](unsigned long)@plt>
+   4e780:	2a1f03e1 	mov	w1, wzr
+   4e784:	aa1603e2 	mov	x2, x22
+   4e788:	aa0003f7 	mov	x23, x0
+   4e78c:	94002845 	bl	588a0 <memset@plt>
+   4e790:	f9005f37 	str	x23, [x25, #184]
+   4e794:	b4001156 	cbz	x22, 4e9bc <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x3b0>
+   4e798:	39400348 	ldrb	w8, [x26]
+   4e79c:	f10006df 	cmp	x22, #0x1
+   4e7a0:	390002e8 	strb	w8, [x23]
+   4e7a4:	540010c0 	b.eq	4e9bc <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x3b0>  // b.none
+   4e7a8:	39400748 	ldrb	w8, [x26, #1]
+   4e7ac:	f1000adf 	cmp	x22, #0x2
+   4e7b0:	390006e8 	strb	w8, [x23, #1]
+   4e7b4:	54001040 	b.eq	4e9bc <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x3b0>  // b.none
+   4e7b8:	39400b48 	ldrb	w8, [x26, #2]
+   4e7bc:	f1000edf 	cmp	x22, #0x3
+   4e7c0:	39000ae8 	strb	w8, [x23, #2]
+   4e7c4:	54000fc0 	b.eq	4e9bc <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x3b0>  // b.none
+   4e7c8:	52800068 	mov	w8, #0x3                   	// #3
+   4e7cc:	f94007e9 	ldr	x9, [sp, #8]
+   4e7d0:	f9405f2a 	ldr	x10, [x25, #184]
+   4e7d4:	38686929 	ldrb	w9, [x9, x8]
+   4e7d8:	38286949 	strb	w9, [x10, x8]
+   4e7dc:	91000508 	add	x8, x8, #0x1
+   4e7e0:	eb0802df 	cmp	x22, x8
+   4e7e4:	54ffff41 	b.ne	4e7cc <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x1c0>  // b.any
+   4e7e8:	14000075 	b	4e9bc <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x3b0>
+   4e7ec:	52800061 	mov	w1, #0x3                   	// #3
+   4e7f0:	14000021 	b	4e874 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x268>
+   4e7f4:	7107d6bf 	cmp	w21, #0x1f5
+   4e7f8:	54000461 	b.ne	4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>  // b.any
+   4e7fc:	d101c3a0 	sub	x0, x29, #0x70
+   4e800:	aa1f03e1 	mov	x1, xzr
+   4e804:	a9077f3f 	stp	xzr, xzr, [x25, #112]
+   4e808:	94002b1a 	bl	59470 <gettimeofday@plt>
+   4e80c:	fd403b20 	ldr	d0, [x25, #112]
+   4e810:	52835ca8 	mov	w8, #0x1ae5                	// #6885
+   4e814:	52800029 	mov	w9, #0x1                   	// #1
+   4e818:	7100069f 	cmp	w20, #0x1
+   4e81c:	5e61d800 	scvtf	d0, d0
+   4e820:	fd0d7660 	str	d0, [x19, #6888]
+   4e824:	38286a69 	strb	w9, [x19, x8]
+   4e828:	540002e1 	b.ne	4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>  // b.any
+   4e82c:	b0fffe80 	adrp	x0, 1f000 <abitag+0x1ed08>
+   4e830:	91040800 	add	x0, x0, #0x102
+   4e834:	2a1f03e1 	mov	w1, wzr
+   4e838:	9400278e 	bl	58670 <property_get_int32@plt>
+   4e83c:	35000240 	cbnz	w0, 4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>
+   4e840:	b0fffe21 	adrp	x1, 13000 <abitag+0x12d08>
+   4e844:	90fffe42 	adrp	x2, 16000 <abitag+0x15d08>
+   4e848:	9113c821 	add	x1, x1, #0x4f2
+   4e84c:	911a8042 	add	x2, x2, #0x6a0
+   4e850:	528000c0 	mov	w0, #0x6                   	// #6
+   4e854:	52804043 	mov	w3, #0x202                 	// #514
+   4e858:	52800044 	mov	w4, #0x2                   	// #2
+   4e85c:	9400277d 	bl	58650 <__android_log_print@plt>
+   4e860:	14000009 	b	4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>
+   4e864:	2a1503e1 	mov	w1, w21
+   4e868:	2a1403e2 	mov	w2, w20
+   4e86c:	940000e5 	bl	4ec00 <RenderApaViewBX11::handleSystemTouchEvent(int, int)>
+   4e870:	52800021 	mov	w1, #0x1                   	// #1
+   4e874:	aa1303e0 	mov	x0, x19
+   4e878:	2a1503e2 	mov	w2, w21
+   4e87c:	2a1403e3 	mov	w3, w20
+   4e880:	94000120 	bl	4ed00 <RenderApaViewBX11::onClickTouchEvent(int, int, int)>
+   4e884:	f9401708 	ldr	x8, [x24, #40]
+   4e888:	f85f83a9 	ldur	x9, [x29, #-8]
+   4e88c:	eb09011f 	cmp	x8, x9
+   4e890:	54001b61 	b.ne	4ebfc <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x5f0>  // b.any
+   4e894:	a95c4ff4 	ldp	x20, x19, [sp, #448]
+   4e898:	a95b57f6 	ldp	x22, x21, [sp, #432]
+   4e89c:	a95a5ff8 	ldp	x24, x23, [sp, #416]
+   4e8a0:	a95967fa 	ldp	x26, x25, [sp, #400]
+   4e8a4:	f940c3fc 	ldr	x28, [sp, #384]
+   4e8a8:	a9577bfd 	ldp	x29, x30, [sp, #368]
+   4e8ac:	910743ff 	add	sp, sp, #0x1d0
+   4e8b0:	d65f03c0 	ret
+   4e8b4:	b0fffe22 	adrp	x2, 13000 <abitag+0x12d08>
+   4e8b8:	91087c42 	add	x2, x2, #0x21f
+   4e8bc:	528000c0 	mov	w0, #0x6                   	// #6
+   4e8c0:	94002764 	bl	58650 <__android_log_print@plt>
+   4e8c4:	52800037 	mov	w23, #0x1                   	// #1
+   4e8c8:	d101c3a8 	sub	x8, x29, #0x70
+   4e8cc:	b902d697 	str	w23, [x20, #724]
+   4e8d0:	91016114 	add	x20, x8, #0x58
+   4e8d4:	6f00e400 	movi	v0.2d, #0x0
+   4e8d8:	aa1403e0 	mov	x0, x20
+   4e8dc:	f9006b3f 	str	xzr, [x25, #208]
+   4e8e0:	91012115 	add	x21, x8, #0x48
+   4e8e4:	ad058320 	stp	q0, q0, [x25, #176]
+   4e8e8:	ad048320 	stp	q0, q0, [x25, #144]
+   4e8ec:	ad038320 	stp	q0, q0, [x25, #112]
+   4e8f0:	940027e8 	bl	58890 <android::hardware::hidl_string::hidl_string()@plt>
+   4e8f4:	528046a8 	mov	w8, #0x235                 	// #565
+   4e8f8:	72a52e08 	movk	w8, #0x2970, lsl #16
+   4e8fc:	52800049 	mov	w9, #0x2                   	// #2
+   4e900:	910023e0 	add	x0, sp, #0x8
+   4e904:	910013e1 	add	x1, sp, #0x4
+   4e908:	a900ffff 	stp	xzr, xzr, [sp, #8]
+   4e90c:	f9000fff 	str	xzr, [sp, #24]
+   4e910:	b819c3a8 	stur	w8, [x29, #-100]
+   4e914:	390013e9 	strb	w9, [sp, #4]
+   4e918:	97ff8d85 	bl	31f2c <void std::__1::vector<unsigned char, std::__1::allocator<unsigned char> >::__push_back_slow_path<unsigned char>(unsigned char&&)>
+   4e91c:	385e43a8 	ldurb	w8, [x29, #-28]
+   4e920:	34000088 	cbz	w8, 4e930 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x324>
+   4e924:	f9405f20 	ldr	x0, [x25, #184]
+   4e928:	b4000040 	cbz	x0, 4e930 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x324>
+   4e92c:	940027b9 	bl	58810 <operator delete[](void*)@plt>
+   4e930:	a940a3fa 	ldp	x26, x8, [sp, #8]
+   4e934:	381e43b7 	sturb	w23, [x29, #-28]
+   4e938:	cb1a0116 	sub	x22, x8, x26
+   4e93c:	b81e03b6 	stur	w22, [x29, #-32]
+   4e940:	34000b36 	cbz	w22, 4eaa4 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x498>
+   4e944:	aa1603e0 	mov	x0, x22
+   4e948:	940027ce 	bl	58880 <operator new[](unsigned long)@plt>
+   4e94c:	2a1f03e1 	mov	w1, wzr
+   4e950:	aa1603e2 	mov	x2, x22
+   4e954:	aa0003f7 	mov	x23, x0
+   4e958:	940027d2 	bl	588a0 <memset@plt>
+   4e95c:	f9005f37 	str	x23, [x25, #184]
+   4e960:	b4000a56 	cbz	x22, 4eaa8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x49c>
+   4e964:	39400348 	ldrb	w8, [x26]
+   4e968:	f10006df 	cmp	x22, #0x1
+   4e96c:	390002e8 	strb	w8, [x23]
+   4e970:	540009c0 	b.eq	4eaa8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x49c>  // b.none
+   4e974:	39400748 	ldrb	w8, [x26, #1]
+   4e978:	f1000adf 	cmp	x22, #0x2
+   4e97c:	390006e8 	strb	w8, [x23, #1]
+   4e980:	54000940 	b.eq	4eaa8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x49c>  // b.none
+   4e984:	39400b48 	ldrb	w8, [x26, #2]
+   4e988:	f1000edf 	cmp	x22, #0x3
+   4e98c:	39000ae8 	strb	w8, [x23, #2]
+   4e990:	540008c0 	b.eq	4eaa8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x49c>  // b.none
+   4e994:	52800068 	mov	w8, #0x3                   	// #3
+   4e998:	f94007e9 	ldr	x9, [sp, #8]
+   4e99c:	f9405f2a 	ldr	x10, [x25, #184]
+   4e9a0:	38686929 	ldrb	w9, [x9, x8]
+   4e9a4:	38286949 	strb	w9, [x10, x8]
+   4e9a8:	91000508 	add	x8, x8, #0x1
+   4e9ac:	eb0802df 	cmp	x22, x8
+   4e9b0:	54ffff41 	b.ne	4e998 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x38c>  // b.any
+   4e9b4:	1400003d 	b	4eaa8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x49c>
+   4e9b8:	f9005f3f 	str	xzr, [x25, #184]
+   4e9bc:	52a12008 	mov	w8, #0x9000000             	// #150994944
+   4e9c0:	b81983a8 	stur	w8, [x29, #-104]
+   4e9c4:	94002803 	bl	589d0 <android::elapsedRealtimeNano()@plt>
+   4e9c8:	f9003b20 	str	x0, [x25, #112]
+   4e9cc:	b81a03bf 	stur	wzr, [x29, #-96]
+   4e9d0:	3dc01f20 	ldr	q0, [x25, #112]
+   4e9d4:	910083f6 	add	x22, sp, #0x20
+   4e9d8:	d101c3b7 	sub	x23, x29, #0x70
+   4e9dc:	910062c0 	add	x0, x22, #0x18
+   4e9e0:	910062e1 	add	x1, x23, #0x18
+   4e9e4:	b90033ff 	str	wzr, [sp, #48]
+   4e9e8:	3d800be0 	str	q0, [sp, #32]
+   4e9ec:	97ff7836 	bl	2cac4 <android::hardware::hidl_vec<float>::hidl_vec(android::hardware::hidl_vec<float> const&)>
+   4e9f0:	9100a2c0 	add	x0, x22, #0x28
+   4e9f4:	9100a2e1 	add	x1, x23, #0x28
+   4e9f8:	97ff7833 	bl	2cac4 <android::hardware::hidl_vec<float>::hidl_vec(android::hardware::hidl_vec<float> const&)>
+   4e9fc:	9100e2c0 	add	x0, x22, #0x38
+   4ea00:	9100e2e1 	add	x1, x23, #0x38
+   4ea04:	97ff786d 	bl	2cbb8 <android::hardware::hidl_vec<long>::hidl_vec(android::hardware::hidl_vec<long> const&)>
+   4ea08:	910122c0 	add	x0, x22, #0x48
+   4ea0c:	aa1503e1 	mov	x1, x21
+   4ea10:	97ff78a7 	bl	2ccac <android::hardware::hidl_vec<unsigned char>::hidl_vec(android::hardware::hidl_vec<unsigned char> const&)>
+   4ea14:	910162d5 	add	x21, x22, #0x58
+   4ea18:	aa1503e0 	mov	x0, x21
+   4ea1c:	aa1403e1 	mov	x1, x20
+   4ea20:	94002790 	bl	58860 <android::hardware::hidl_string::hidl_string(android::hardware::hidl_string const&)@plt>
+   4ea24:	910083e1 	add	x1, sp, #0x20
+   4ea28:	aa1303e0 	mov	x0, x19
+   4ea2c:	97fff5c0 	bl	4c12c <RenderApaViewBX11::invokeSet(android::hardware::automotive::vehicle::V2_0::VehiclePropValue)>
+   4ea30:	aa1503e0 	mov	x0, x21
+   4ea34:	94002773 	bl	58800 <android::hardware::hidl_string::~hidl_string()@plt>
+   4ea38:	3941d3e8 	ldrb	w8, [sp, #116]
+   4ea3c:	34000088 	cbz	w8, 4ea4c <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x440>
+   4ea40:	f94037e0 	ldr	x0, [sp, #104]
+   4ea44:	b4000040 	cbz	x0, 4ea4c <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x440>
+   4ea48:	94002772 	bl	58810 <operator delete[](void*)@plt>
+   4ea4c:	394193e8 	ldrb	w8, [sp, #100]
+   4ea50:	f90037ff 	str	xzr, [sp, #104]
+   4ea54:	34000088 	cbz	w8, 4ea64 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x458>
+   4ea58:	f9402fe0 	ldr	x0, [sp, #88]
+   4ea5c:	b4000040 	cbz	x0, 4ea64 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x458>
+   4ea60:	9400276c 	bl	58810 <operator delete[](void*)@plt>
+   4ea64:	394153e8 	ldrb	w8, [sp, #84]
+   4ea68:	f9002fff 	str	xzr, [sp, #88]
+   4ea6c:	34000088 	cbz	w8, 4ea7c <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x470>
+   4ea70:	f94027e0 	ldr	x0, [sp, #72]
+   4ea74:	b4000040 	cbz	x0, 4ea7c <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x470>
+   4ea78:	94002766 	bl	58810 <operator delete[](void*)@plt>
+   4ea7c:	394113e8 	ldrb	w8, [sp, #68]
+   4ea80:	f90027ff 	str	xzr, [sp, #72]
+   4ea84:	34000088 	cbz	w8, 4ea94 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x488>
+   4ea88:	f9401fe0 	ldr	x0, [sp, #56]
+   4ea8c:	b4000040 	cbz	x0, 4ea94 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x488>
+   4ea90:	94002760 	bl	58810 <operator delete[](void*)@plt>
+   4ea94:	f94007e0 	ldr	x0, [sp, #8]
+   4ea98:	f9001fff 	str	xzr, [sp, #56]
+   4ea9c:	b5000780 	cbnz	x0, 4eb8c <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x580>
+   4eaa0:	1400003d 	b	4eb94 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x588>
+   4eaa4:	f9005f3f 	str	xzr, [x25, #184]
+   4eaa8:	52a12008 	mov	w8, #0x9000000             	// #150994944
+   4eaac:	b81983a8 	stur	w8, [x29, #-104]
+   4eab0:	940027c8 	bl	589d0 <android::elapsedRealtimeNano()@plt>
+   4eab4:	f9003b20 	str	x0, [x25, #112]
+   4eab8:	b81a03bf 	stur	wzr, [x29, #-96]
+   4eabc:	3dc01f20 	ldr	q0, [x25, #112]
+   4eac0:	910243f6 	add	x22, sp, #0x90
+   4eac4:	d101c3b7 	sub	x23, x29, #0x70
+   4eac8:	910062c0 	add	x0, x22, #0x18
+   4eacc:	910062e1 	add	x1, x23, #0x18
+   4ead0:	b900a3ff 	str	wzr, [sp, #160]
+   4ead4:	3d800320 	str	q0, [x25]
+   4ead8:	97ff77fb 	bl	2cac4 <android::hardware::hidl_vec<float>::hidl_vec(android::hardware::hidl_vec<float> const&)>
+   4eadc:	9100a2c0 	add	x0, x22, #0x28
+   4eae0:	9100a2e1 	add	x1, x23, #0x28
+   4eae4:	97ff77f8 	bl	2cac4 <android::hardware::hidl_vec<float>::hidl_vec(android::hardware::hidl_vec<float> const&)>
+   4eae8:	9100e2c0 	add	x0, x22, #0x38
+   4eaec:	9100e2e1 	add	x1, x23, #0x38
+   4eaf0:	97ff7832 	bl	2cbb8 <android::hardware::hidl_vec<long>::hidl_vec(android::hardware::hidl_vec<long> const&)>
+   4eaf4:	910122c0 	add	x0, x22, #0x48
+   4eaf8:	aa1503e1 	mov	x1, x21
+   4eafc:	97ff786c 	bl	2ccac <android::hardware::hidl_vec<unsigned char>::hidl_vec(android::hardware::hidl_vec<unsigned char> const&)>
+   4eb00:	910162d5 	add	x21, x22, #0x58
+   4eb04:	aa1503e0 	mov	x0, x21
+   4eb08:	aa1403e1 	mov	x1, x20
+   4eb0c:	94002755 	bl	58860 <android::hardware::hidl_string::hidl_string(android::hardware::hidl_string const&)@plt>
+   4eb10:	910243e1 	add	x1, sp, #0x90
+   4eb14:	aa1303e0 	mov	x0, x19
+   4eb18:	97fff585 	bl	4c12c <RenderApaViewBX11::invokeSet(android::hardware::automotive::vehicle::V2_0::VehiclePropValue)>
+   4eb1c:	aa1503e0 	mov	x0, x21
+   4eb20:	94002738 	bl	58800 <android::hardware::hidl_string::~hidl_string()@plt>
+   4eb24:	394393e8 	ldrb	w8, [sp, #228]
+   4eb28:	34000088 	cbz	w8, 4eb38 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x52c>
+   4eb2c:	f9402720 	ldr	x0, [x25, #72]
+   4eb30:	b4000040 	cbz	x0, 4eb38 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x52c>
+   4eb34:	94002737 	bl	58810 <operator delete[](void*)@plt>
+   4eb38:	f900273f 	str	xzr, [x25, #72]
+   4eb3c:	394353e8 	ldrb	w8, [sp, #212]
+   4eb40:	34000088 	cbz	w8, 4eb50 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x544>
+   4eb44:	f9401f20 	ldr	x0, [x25, #56]
+   4eb48:	b4000040 	cbz	x0, 4eb50 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x544>
+   4eb4c:	94002731 	bl	58810 <operator delete[](void*)@plt>
+   4eb50:	f9001f3f 	str	xzr, [x25, #56]
+   4eb54:	394313e8 	ldrb	w8, [sp, #196]
+   4eb58:	34000088 	cbz	w8, 4eb68 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x55c>
+   4eb5c:	f9401720 	ldr	x0, [x25, #40]
+   4eb60:	b4000040 	cbz	x0, 4eb68 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x55c>
+   4eb64:	9400272b 	bl	58810 <operator delete[](void*)@plt>
+   4eb68:	f900173f 	str	xzr, [x25, #40]
+   4eb6c:	3942d3e8 	ldrb	w8, [sp, #180]
+   4eb70:	34000088 	cbz	w8, 4eb80 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x574>
+   4eb74:	f9400f20 	ldr	x0, [x25, #24]
+   4eb78:	b4000040 	cbz	x0, 4eb80 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x574>
+   4eb7c:	94002725 	bl	58810 <operator delete[](void*)@plt>
+   4eb80:	f94007e0 	ldr	x0, [sp, #8]
+   4eb84:	f9000f3f 	str	xzr, [x25, #24]
+   4eb88:	b4000060 	cbz	x0, 4eb94 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x588>
+   4eb8c:	f9000be0 	str	x0, [sp, #16]
+   4eb90:	940026c8 	bl	586b0 <operator delete(void*)@plt>
+   4eb94:	aa1403e0 	mov	x0, x20
+   4eb98:	9400271a 	bl	58800 <android::hardware::hidl_string::~hidl_string()@plt>
+   4eb9c:	385e43a8 	ldurb	w8, [x29, #-28]
+   4eba0:	34000088 	cbz	w8, 4ebb0 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x5a4>
+   4eba4:	f9405f20 	ldr	x0, [x25, #184]
+   4eba8:	b4000040 	cbz	x0, 4ebb0 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x5a4>
+   4ebac:	94002719 	bl	58810 <operator delete[](void*)@plt>
+   4ebb0:	f9005f3f 	str	xzr, [x25, #184]
+   4ebb4:	385d43a8 	ldurb	w8, [x29, #-44]
+   4ebb8:	34000088 	cbz	w8, 4ebc8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x5bc>
+   4ebbc:	f9405720 	ldr	x0, [x25, #168]
+   4ebc0:	b4000040 	cbz	x0, 4ebc8 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x5bc>
+   4ebc4:	94002713 	bl	58810 <operator delete[](void*)@plt>
+   4ebc8:	f900573f 	str	xzr, [x25, #168]
+   4ebcc:	385c43a8 	ldurb	w8, [x29, #-60]
+   4ebd0:	34000088 	cbz	w8, 4ebe0 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x5d4>
+   4ebd4:	f9404f20 	ldr	x0, [x25, #152]
+   4ebd8:	b4000040 	cbz	x0, 4ebe0 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x5d4>
+   4ebdc:	9400270d 	bl	58810 <operator delete[](void*)@plt>
+   4ebe0:	f9004f3f 	str	xzr, [x25, #152]
+   4ebe4:	385b43a8 	ldurb	w8, [x29, #-76]
+   4ebe8:	34ffe4e8 	cbz	w8, 4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>
+   4ebec:	f9404720 	ldr	x0, [x25, #136]
+   4ebf0:	b4ffe4a0 	cbz	x0, 4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>
+   4ebf4:	94002707 	bl	58810 <operator delete[](void*)@plt>
+   4ebf8:	17ffff23 	b	4e884 <RenderApaViewBX11::AvmTouchEventProcess(int, int, int)+0x278>
+   4ebfc:	940026fd 	bl	587f0 <__stack_chk_fail@plt>
